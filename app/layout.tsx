@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'VoluChat - AI-powered Instagram DM assistant for ambitious online sellers',
-  description: 'Turn your Instagram DMs into a 24/7 sales machine with VoluChat. AI automation for Instagram sellers and D2C brands.',
+  title: 'VoluChat - Your Instagram Growth Assistant | Automate Engagement & Sales',
+  description: 'The intelligent assistant for ambitious Instagram sellers. Automate comment responses, capture leads instantly, and grow your sales on autopilot.',
   openGraph: {
-    title: 'VoluChat - AI-powered Instagram DM assistant',
-    description: 'Turn your Instagram DMs into a 24/7 sales machine with VoluChat.',
+    title: 'VoluChat - Your Instagram Growth Assistant',
+    description: 'Automate engagement, capture every lead, and grow your Instagram sales effortlessly.',
     type: 'website',
   },
 };
@@ -18,6 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/voluchat_logo.svg" type="image/svg+xml" />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );

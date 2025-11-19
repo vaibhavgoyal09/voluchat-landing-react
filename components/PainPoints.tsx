@@ -1,20 +1,20 @@
 export default function PainPoints() {
     const painPoints = [
         {
-            title: "Stop losing buyers when you're offline",
-            description: "Never miss a sale again. VoluChat responds instantly 24/7, even when you're sleeping or busy with orders.",
+            title: "Never miss a lead again",
+            description: "Every comment and DM gets an instant response — even when you're offline. Capture interested buyers before they move on to competitors.",
         },
         {
-            title: "Auto-reply to repetitive questions",
-            description: "Prices, sizes, shipping, COD, stock availability - VoluChat handles the basics so you don't have to type the same answers 100 times a day.",
+            title: "Scale without hiring",
+            description: "Handle 10x the engagement without adding team members. Your growth assistant works 24/7, no breaks, no salary.",
         },
         {
-            title: "Hand off to humans instantly when needed",
-            description: "Complex queries or custom orders? VoluChat knows when to loop you in, keeping the human touch where it matters.",
+            title: "Convert browsing into buying",
+            description: "Automatically move people from 'just looking' to checkout. Send catalogs, payment links, and order details instantly.",
         },
         {
-            title: "Built for Instagram's rules and limits",
-            description: "Designed to work within Meta's policies. Safe, compliant automation that won't risk your account.",
+            title: "Pre-built for Instagram sellers",
+            description: "No complex setup. We've built the flows you need — product inquiries, pricing, COD, shipping. Just customize and go live in minutes.",
         },
     ];
 
@@ -22,10 +22,10 @@ export default function PainPoints() {
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-                    Built for Instagram sellers
+                    Grow faster with less effort
                 </h2>
                 <p className="text-xl text-slate-400 text-center mb-16 max-w-2xl mx-auto">
-                    We understand the daily grind of managing DMs. VoluChat solves your biggest pain points.
+                    Focus on your products. Let VoluChat handle customer engagement and sales automation.
                 </p>
                 <div className="grid md:grid-cols-2 gap-8">
                     {painPoints.map((point, index) => (

@@ -2,33 +2,33 @@ export default function Features() {
     const features = [
         {
             emoji: "💬",
-            title: "Smart DM Flows for product queries",
-            description: "Set up conversation flows that guide buyers through product selection, sizing, and checkout - all automated.",
-        },
-        {
-            emoji: "📢",
-            title: "Broadcasts for drops & offers",
-            description: "Send targeted messages to your audience about new arrivals, sales, and exclusive deals without spamming.",
-        },
-        {
-            emoji: "📊",
-            title: "Simple dashboard to see conversations",
-            description: "Monitor all your DM conversations in one place. Jump in anytime to take over from the AI.",
-        },
-        {
-            emoji: "✅",
-            title: "Designed for Meta's policies and limits",
-            description: "We follow Instagram's automation rules strictly. Your account stays safe while you scale.",
-        },
-        {
-            emoji: "🎯",
-            title: "Context-aware AI responses",
-            description: "VoluChat understands your products, pricing, and policies to give accurate answers every time.",
+            title: "Smart comment automation",
+            description: "Set keyword triggers like 'Price', 'Buy', 'Interested' and automatically send personalized DMs with product details, catalogs, or payment links.",
         },
         {
             emoji: "⚡",
-            title: "Lightning-fast setup",
-            description: "Get up and running in minutes, not days. We handle the technical complexity for you.",
+            title: "Instant DM responses",
+            description: "Answer repetitive questions automatically. Product info, pricing, shipping, COD availability — all handled without you lifting a finger.",
+        },
+        {
+            emoji: "🎯",
+            title: "Pre-built sales flows",
+            description: "Launch with proven templates for common scenarios. We've done the thinking — you just customize the messages for your products.",
+        },
+        {
+            emoji: "📊",
+            title: "Track what's working",
+            description: "See which posts, keywords, and flows drive the most engagement and sales. Double down on winners, eliminate losers.",
+        },
+        {
+            emoji: "🔗",
+            title: "Send anything via DM",
+            description: "Product catalogs, Razorpay links, WhatsApp numbers, discount codes — automatically share whatever moves the sale forward.",
+        },
+        {
+            emoji: "✅",
+            title: "Instagram-safe automation",
+            description: "Built to comply with Meta's policies. No spam tactics, no account risks. Just smart automation that helps your business grow.",
         },
     ];
 
@@ -38,10 +38,10 @@ export default function Features() {
 
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-                    What VoluChat does for you
+                    Your complete growth toolkit
                 </h2>
                 <p className="text-xl text-slate-400 text-center mb-16 max-w-2xl mx-auto">
-                    Everything you need to automate Instagram DMs and grow your sales
+                    Everything you need to automate engagement and scale your Instagram sales
                 </p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
