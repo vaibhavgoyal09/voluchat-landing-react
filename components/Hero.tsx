@@ -1,152 +1,113 @@
+import { ClientLogos } from "@/components/ui/client-logos";
+import { ThreeBackground } from "@/components/ui/three-background";
+import { Search, Sparkles, ArrowRight } from "lucide-react";
+
 export default function Hero() {
     return (
-        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-500/20 rounded-full blur-[100px] -z-10"></div>
+        <section id="hero" className="pt-16 pb-16 lg:pt-28 lg:pb-8 relative overflow-hidden min-h-screen flex flex-col justify-center">
+            {/* Three.js Animated Background */}
+            <ThreeBackground />
 
-            <div className="max-w-6xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="relative z-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
-                            <span className="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-                            <span className="text-xs font-medium text-slate-300">For ambitious Instagram sellers</span>
-                        </div>
-                        <h1 className="text-5xl sm:text-7xl font-bold leading-tight mb-6 tracking-tight">
-                            Your Instagram{' '}
-                            <span className="bg-gradient-to-r from-primary-300 via-primary-400 to-indigo-400 bg-clip-text text-transparent">
-                                growth assistant
-                            </span>
+            {/* Gradient Mesh Background (fallback overlay) */}
+            <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-40"></div>
+
+            {/* Contrast Booster - Radial Gradient behind text */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.4)_40%,transparent_70%)] -z-10 pointer-events-none"></div>
+
+            <div className="container mx-auto px-6 sm:px-8 relative z-10 w-full">
+                <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 animate-fade-in">
+                    <div className="inline-flex flex-wrap justify-center items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-white/40 shadow-sm text-slate-600 text-xs font-semibold uppercase tracking-wider mb-8 hover:bg-white transition-colors cursor-default max-w-full">
+                        <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-500"></span>
+                        </span>
+                        <span className="text-primary-700">New</span>
+                        <span className="w-px h-3 bg-slate-300 hidden sm:block"></span>
+                        <span className="text-center">Instagram Sales Automation</span>
+                    </div>
+
+                    <div className="mb-8 relative w-full">
+                        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-bold text-slate-900 tracking-tight leading-[1.1] break-words">
+                            The sales assistant <br className="hidden sm:block" />
+                            <span className="font-serif italic font-light text-slate-700 block sm:inline mt-2 sm:mt-0">that works for you</span>
                         </h1>
-                        <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
-                            Automate engagement, capture every lead, and grow your sales — while you focus on your products.
-                            The intelligent assistant built for Instagram sellers.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                            <a
-                                href="#waitlist"
-                                className="px-8 py-4 bg-white text-slate-950 hover:bg-slate-200 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-white/10 text-center"
-                            >
-                                Join the beta
-                            </a>
-                            <a
-                                href="#features"
-                                className="px-8 py-4 glass-button rounded-full text-white font-medium text-lg text-center"
-                            >
-                                See what it does
-                            </a>
-                        </div>
 
-                        {/* Meta Tech Partner Badge */}
-                        <div className="inline-flex items-center gap-3 px-5 py-3 mb-6 rounded-2xl bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/30 backdrop-blur-sm">
-                            <div className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div className="text-xs font-semibold text-blue-300">Official</div>
-                                    <div className="text-sm font-bold text-white">Meta Tech Partner</div>
-                                </div>
-                            </div>
-                            <div className="h-8 w-px bg-blue-500/30"></div>
-                            <div className="flex items-center gap-1 text-blue-200">
-                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                </svg>
-                                <span className="text-xs font-medium">Verified & Compliant</span>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col gap-3 text-sm text-slate-400">
-                            <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                </svg>
-                                <span>Auto-respond to comments & DMs instantly</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                </svg>
-                                <span>Turn engagement into customers</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                </svg>
-                                <span>Setup in minutes, no coding needed</span>
+                        {/* Decorative elements around text */}
+                        <div className="absolute -right-4 lg:-right-12 top-0 hidden lg:block animate-float delay-100">
+                            <div className="bg-white/40 backdrop-blur-md border border-white/50 p-3 rounded-2xl shadow-lg rotate-12">
+                                <span className="text-2xl">✨</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Mock automation preview */}
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/20 to-indigo-500/20 rounded-3xl blur-2xl"></div>
-                        <div className="relative glass-card rounded-3xl p-6 border border-white/10">
-                            <div className="bg-slate-950/80 rounded-2xl p-6 space-y-6">
-                                {/* Post engagement */}
-                                <div>
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-indigo-600"></div>
-                                        <div>
-                                            <div className="font-semibold text-white text-sm">Your Product Post</div>
-                                            <div className="text-xs text-slate-500">Just now</div>
-                                        </div>
-                                    </div>
-                                    <div className="bg-slate-800 rounded-lg p-3 mb-3">
-                                        <p className="text-sm text-slate-300">New collection just dropped! 🔥</p>
-                                    </div>
+                    <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mb-10 font-light px-2">
+                        VoluChat automatically replies to DMs, qualifies leads, and moves them to WhatsApp. Available in <span className="font-medium text-slate-900">Hindi & regional languages</span>.
+                    </p>
 
-                                    {/* Multiple comments */}
-                                    <div className="space-y-2 ml-4 mb-4">
-                                        <div className="flex items-start gap-2">
-                                            <div className="w-6 h-6 rounded-full bg-slate-700"></div>
-                                            <div className="bg-slate-900 rounded-lg px-3 py-2 flex-1">
-                                                <p className="text-xs text-slate-300"><span className="font-semibold">user1:</span> Price?</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-2">
-                                            <div className="w-6 h-6 rounded-full bg-slate-700"></div>
-                                            <div className="bg-slate-900 rounded-lg px-3 py-2 flex-1">
-                                                <p className="text-xs text-slate-300"><span className="font-semibold">user2:</span> Interested!</p>
-                                            </div>
-                                        </div>
+                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center">
+                        <a href="#get-started" className="w-full sm:w-auto group relative px-8 py-4 bg-slate-900 text-white text-lg font-medium rounded-full hover:bg-slate-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center">
+                            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+                            <span className="relative flex items-center gap-2">
+                                Start free trial <ArrowRight className="w-4 h-4" />
+                            </span>
+                        </a>
+                        <a href="#demo" className="w-full sm:w-auto px-8 py-4 bg-white/50 backdrop-blur-sm text-slate-900 border border-white/60 text-lg font-medium rounded-full hover:bg-white/80 transition-all duration-300 shadow-sm hover:shadow-md flex justify-center items-center">
+                            View demo
+                        </a>
+                    </div>
+                </div>
+
+                {/* Glass Card Search Interface */}
+                <div className="relative max-w-3xl mx-auto mt-8 animate-fade-in delay-200 w-full">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-[2rem] blur-xl opacity-20 animate-pulse"></div>
+
+                    <div className="relative bg-white/10 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-2xl overflow-hidden p-6 sm:p-10">
+                        <div className="flex flex-col gap-6">
+                            <div className="text-center">
+                                <h3 className="text-xl sm:text-2xl font-light text-slate-800 mb-2">Your personal assistant</h3>
+                                <p className="text-slate-500 text-sm">Ask VoluChat to handle your sales queries</p>
+                            </div>
+
+                            <div className="relative group w-full">
+                                <div className="absolute inset-0 bg-white/40 rounded-2xl blur-sm group-hover:blur-md transition-all"></div>
+                                <div className="relative bg-white/60 backdrop-blur-md border border-white/60 rounded-2xl p-2 flex flex-col sm:flex-row items-center gap-3 shadow-inner transition-all group-hover:bg-white/80">
+                                    <div className="hidden sm:block pl-4 text-slate-400">
+                                        <Sparkles className="w-5 h-5" />
                                     </div>
+                                    <input
+                                        type="text"
+                                        readOnly
+                                        value="Find the most urgent DMs..."
+                                        className="w-full bg-transparent border-none focus:ring-0 text-slate-700 text-base sm:text-lg placeholder:text-slate-400 font-light py-3 text-center sm:text-left truncate"
+                                    />
+                                    <button className="w-full sm:w-auto bg-slate-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 shadow-lg whitespace-nowrap">
+                                        <Search className="w-4 h-4" />
+                                        <span>Search</span>
+                                    </button>
                                 </div>
+                            </div>
 
-                                {/* Automation indicator */}
-                                <div className="flex items-center justify-center py-2">
-                                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/30">
-                                        <div className="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></div>
-                                        <div className="text-xs font-medium text-primary-300">VoluChat responding...</div>
-                                    </div>
+                            {/* Floating Elements */}
+                            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 mt-4 opacity-80">
+                                <div className="bg-white/40 backdrop-blur-md border border-white/40 px-4 py-2 rounded-full text-xs sm:text-sm text-slate-600 flex items-center gap-2 shadow-sm animate-float delay-100 whitespace-nowrap">
+                                    <span>🛍️</span> Product inquiries
                                 </div>
-
-                                {/* Auto DMs sent */}
-                                <div className="space-y-3">
-                                    <div className="bg-gradient-to-br from-primary-900/20 to-indigo-900/20 border border-primary-500/20 rounded-lg p-3">
-                                        <div className="flex items-center gap-2 mb-2">
-                                            <svg className="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-xs text-slate-400">DM sent to user1</span>
-                                        </div>
-                                        <p className="text-xs text-slate-300">Hey! Prices start at ₹999. Check catalog →</p>
-                                    </div>
-                                    <div className="bg-gradient-to-br from-primary-900/20 to-indigo-900/20 border border-primary-500/20 rounded-lg p-3">
-                                        <div className="flex items-center gap-2 mb-2">
-                                            <svg className="w-3 h-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            <span className="text-xs text-slate-400">DM sent to user2</span>
-                                        </div>
-                                        <p className="text-xs text-slate-300">Thanks! Here's how to order... 🛍️</p>
-                                    </div>
+                                <div className="bg-white/40 backdrop-blur-md border border-white/40 px-4 py-2 rounded-full text-xs sm:text-sm text-slate-600 flex items-center gap-2 shadow-sm animate-float delay-300 whitespace-nowrap">
+                                    <span>📦</span> Order status
+                                </div>
+                                <div className="bg-white/40 backdrop-blur-md border border-white/40 px-4 py-2 rounded-full text-xs sm:text-sm text-slate-600 flex items-center gap-2 shadow-sm animate-float delay-200 whitespace-nowrap">
+                                    <span>💬</span> Hindi support
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="mt-16 sm:mt-20">
+                    <ClientLogos
+                        heading="Trusted by 500+ Indian sellers"
+                        subheading=""
+                    />
                 </div>
             </div>
         </section>

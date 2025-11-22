@@ -1,52 +1,66 @@
+"use client";
+
+import { useState } from "react";
+
 export default function FAQ() {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
     const faqs = [
         {
-            question: "What does invite-only mean?",
-            answer: "We're launching in private beta with limited spots. This lets us onboard sellers personally and ensure everyone gets great results. When you join the waitlist, we'll invite you based on fit and availability.",
+            question: "Is VoluChat safe for my Instagram account?",
+            answer: "Yes! VoluChat is built using official Meta APIs and follows all Instagram and WhatsApp guidelines. We prioritize account safety and compliance."
         },
         {
-            question: "Is this safe for my Instagram account?",
-            answer: "Absolutely. VoluChat is designed to work within Meta's official policies and rate limits. We don't use any shady automation tactics that could get your account flagged.",
+            question: "Do I need technical knowledge to set this up?",
+            answer: "Not at all. We provide done-for-you onboarding with a 30-minute call to help you set everything up. Our pre-built templates make it easy to get started without any technical skills."
         },
         {
-            question: "Do I need technical skills?",
-            answer: "Not at all! We handle the setup for you during onboarding. You just tell us about your products and common questions, and we configure everything.",
+            question: "Which languages do you support?",
+            answer: "VoluChat supports Hindi and major regional Indian languages including Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, and Gujarati. Our AI understands context and replies naturally in the customer's preferred language."
         },
         {
-            question: "How much will it cost after launch?",
-            answer: "Pricing isn't finalized yet, but beta users will get locked-in founding member rates. Expect simple, affordable pricing based on conversation volume.",
-        },
-        {
-            question: "Can VoluChat handle custom or complex orders?",
-            answer: "VoluChat handles the repetitive stuff (sizes, pricing, shipping). For custom requests, it knows to loop you in immediately so you maintain that personal touch.",
-        },
-        {
-            question: "How long does setup take?",
-            answer: "Most sellers are up and running within 24 hours. We do a quick onboarding call, set up your conversation flows, and test everything before going live.",
-        },
+            question: "Can I cancel anytime?",
+            answer: "Absolutely! There are no long-term contracts. You can cancel your subscription anytime, and you'll retain access until the end of your billing period."
+        }
     ];
 
     return (
-        <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 relative">
-            <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-                    Frequently asked questions
-                </h2>
-                <p className="text-xl text-slate-400 text-center mb-16">
-                    Everything you need to know about VoluChat
-                </p>
-                <div className="space-y-6">
+        <section id="faq" className="section-spacing">
+            <div className="max-w-3xl mx-auto container-padding">
+                <div className="text-center mb-12">
+                    <div className="inline-block px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wide mb-4">
+                        FAQ
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        Common Questions
+                    </h2>
+                </div>
+
+                <div className="space-y-4">
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="glass-card rounded-2xl p-6 hover:bg-white/5 transition-all"
+                            className="bg-white/60 backdrop-blur-sm border border-white/40 rounded-2xl overflow-hidden hover:bg-white/80 hover:border-white/60 hover:shadow-premium transition-all duration-300"
                         >
-                            <h3 className="text-lg font-semibold mb-3 text-white">
-                                {faq.question}
-                            </h3>
-                            <p className="text-slate-400 leading-relaxed">
-                                {faq.answer}
-                            </p>
+                            <button
+                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                className="w-full py-6 px-8 text-left flex justify-between items-center"
+                            >
+                                <span className="font-bold text-lg text-slate-900 pr-8">
+                                    {faq.question}
+                                </span>
+                                <span className={`text-2xl text-primary-600 transition-transform duration-300 flex-shrink-0 ${openIndex === index ? "rotate-45" : ""}`}>
+                                    +
+                                </span>
+                            </button>
+                            <div
+                                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
+                                    }`}
+                            >
+                                <p className="px-8 pb-8 text-slate-600 leading-relaxed font-medium">
+                                    {faq.answer}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
