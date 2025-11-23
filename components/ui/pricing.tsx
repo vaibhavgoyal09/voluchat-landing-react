@@ -82,14 +82,27 @@ function Star({
   mousePosition: { x: number | null; y: number | null };
   containerRef: React.RefObject<HTMLDivElement | null>;
 }) {
+  const [mounted, setMounted] = useState(false);
   const [initialPos] = useState({
     top: `${Math.random() * 100}%`,
     left: `${Math.random() * 100}%`,
+  });
+  const [size] = useState({
+    width: 1 + Math.random() * 2,
+    height: 1 + Math.random() * 2,
+  });
+  const [animationConfig] = useState({
+    duration: 2 + Math.random() * 3,
+    delay: Math.random() * 5,
   });
 
   const springConfig = { stiffness: 100, damping: 15, mass: 0.1 };
   const springX = useSpring(0, springConfig);
   const springY = useSpring(0, springConfig);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (
@@ -128,23 +141,27 @@ function Star({
     }
   }, [mousePosition, initialPos, containerRef, springX, springY]);
 
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <motion.div
       className="absolute bg-slate-400 rounded-full"
       style={{
         top: initialPos.top,
         left: initialPos.left,
-        width: `${1 + Math.random() * 2}px`,
-        height: `${1 + Math.random() * 2}px`,
+        width: `${size.width}px`,
+        height: `${size.height}px`,
         x: springX,
         y: springY,
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: [0, 1, 0] }}
       transition={{
-        duration: 2 + Math.random() * 3,
+        duration: animationConfig.duration,
         repeat: Infinity,
-        delay: Math.random() * 5,
+        delay: animationConfig.delay,
       }}
     />
   );
