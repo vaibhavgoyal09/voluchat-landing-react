@@ -1,30 +1,26 @@
 {
-    "name": "VoluChat - Instagram Sales Automation",
-    "short_name": "VoluChat",
-    "description": "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in Indian languages",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#1e3a8a",
-    "orientation": "portrait-primary",
-    "icons": [
-        {
-            "src": "/voluchat_logo.svg",
-            "sizes": "any",
-            "type": "image/svg+xml",
-            "purpose": "any maskable"
-        },
-        {
-            "src": "/favicon.ico",
-            "sizes": "48x48",
-            "type": "image/x-icon"
-        }
-    ],
-    "categories": [
-        "business",
-        "productivity",
-        "social"
-    ],
-    "lang": "en-IN",
-    "dir": "ltr"
+  "name": "VoluChat - Instagram Sales Automation",
+  "short_name": "VoluChat",
+  "description": "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in Indian languages",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/voluchat_logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "productivity", "social"],
+  "lang": "en-IN",
+  "dir": "ltr"
 }

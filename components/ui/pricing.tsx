@@ -57,7 +57,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-  VariantProps<typeof buttonVariants> {
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
@@ -210,7 +210,7 @@ const PricingContext = createContext<{
   setIsMonthly: (value: boolean) => void;
 }>({
   isMonthly: true,
-  setIsMonthly: () => { },
+  setIsMonthly: () => {},
 });
 
 export function PricingSection({
@@ -237,7 +237,7 @@ export function PricingSection({
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setMousePosition({ x: null, y: null })}
-        className="relative w-full py-16 sm:py-20"
+        className="relative w-full py-12 sm:py-16"
       >
         <InteractiveStarfield
           mousePosition={mousePosition}
@@ -311,7 +311,10 @@ function PricingToggle() {
 
   return (
     <div className="flex justify-center">
-      <div ref={confettiRef} className="relative flex w-fit items-center rounded-full bg-slate-100 p-1">
+      <div
+        ref={confettiRef}
+        className="relative flex w-fit items-center rounded-full bg-slate-100 p-1"
+      >
         <motion.div
           className="absolute left-0 top-0 h-full rounded-full bg-primary-600 p-1"
           style={pillStyle}
@@ -322,9 +325,7 @@ function PricingToggle() {
           onClick={() => handleToggle(true)}
           className={cn(
             "relative z-10 rounded-full px-4 sm:px-6 py-2 text-sm font-medium transition-colors",
-            isMonthly
-              ? "text-white"
-              : "text-slate-600 hover:text-slate-900",
+            isMonthly ? "text-white" : "text-slate-600 hover:text-slate-900",
           )}
         >
           Monthly
@@ -334,9 +335,7 @@ function PricingToggle() {
           onClick={() => handleToggle(false)}
           className={cn(
             "relative z-10 rounded-full px-4 sm:px-6 py-2 text-sm font-medium transition-colors",
-            !isMonthly
-              ? "text-white"
-              : "text-slate-600 hover:text-slate-900",
+            !isMonthly ? "text-white" : "text-slate-600 hover:text-slate-900",
           )}
         >
           Annual
@@ -380,11 +379,16 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
           ? "bg-white/80 backdrop-blur-xl border-2 border-transparent shadow-premium-lg hover:shadow-glow z-10 hover:scale-[1.02]"
           : "bg-white/60 backdrop-blur-lg border border-slate-200 shadow-premium hover:shadow-premium-lg hover:bg-white/90 hover:scale-[1.01]",
       )}
-      style={plan.isPopular ? {
-        backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #2546eb, #6366f1, #8b5cf6)',
-        backgroundOrigin: 'border-box',
-        backgroundClip: 'padding-box, border-box',
-      } : undefined}
+      style={
+        plan.isPopular
+          ? {
+              backgroundImage:
+                "linear-gradient(white, white), linear-gradient(135deg, #2546eb, #6366f1, #8b5cf6)",
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
+            }
+          : undefined
+      }
     >
       {plan.isPopular && (
         <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
@@ -397,16 +401,16 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
         </div>
       )}
       <div className="flex-1 flex flex-col text-center">
-        <h3 className="text-xl font-heading font-bold text-slate-900">{plan.name}</h3>
+        <h3 className="text-xl font-heading font-bold text-slate-900">
+          {plan.name}
+        </h3>
         <p className="mt-2 text-sm text-slate-500 font-medium">
           {plan.description}
         </p>
         <div className="mt-6 flex items-baseline justify-center gap-x-1">
           <span className="text-5xl font-bold tracking-tight text-slate-900">
             <NumberFlow
-              value={
-                isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)
-              }
+              value={isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)}
               format={{
                 style: "currency",
                 currency: "INR",
@@ -432,10 +436,7 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
           {plan.features.map((feature) => (
             <li key={feature} className="flex gap-x-3 items-start">
               <div className="mt-0.5 p-0.5 rounded-full bg-primary-50 text-primary-600">
-                <Check
-                  className="h-3.5 w-3.5 flex-none"
-                  aria-hidden="true"
-                />
+                <Check className="h-3.5 w-3.5 flex-none" aria-hidden="true" />
               </div>
               <span className="text-slate-700">{feature}</span>
             </li>
@@ -451,7 +452,9 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
                 size: "lg",
               }),
               "w-full rounded-full text-base py-6 shadow-sm transition-all duration-300",
-              plan.isPopular ? "shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-1" : "hover:border-slate-300 hover:bg-slate-50"
+              plan.isPopular
+                ? "shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-1"
+                : "hover:border-slate-300 hover:bg-slate-50",
             )}
           >
             {plan.buttonText}
