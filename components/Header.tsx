@@ -58,7 +58,7 @@ export default function Header() {
         >
             <nav className="mx-auto flex w-full items-center justify-between px-6 py-2">
                 <div className="flex items-center gap-5">
-                    <a href="#hero" className="hover:bg-accent rounded-md p-2 flex items-center gap-2">
+                    <a href="/" className="hover:bg-accent rounded-md p-2 flex items-center gap-2">
                         <Image
                             src="/voluchat_logo.svg"
                             alt="VoluChat"
@@ -117,7 +117,7 @@ export default function Header() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuLink className="px-4" asChild>
-                                <a href="#pricing" className="hover:bg-accent rounded-md p-2 text-base font-medium text-slate-600 hover:text-slate-900">
+                                <a href="/pricing" className="hover:bg-accent rounded-md p-2 text-base font-medium text-slate-600 hover:text-slate-900">
                                     Pricing
                                 </a>
                             </NavigationMenuLink>
@@ -162,7 +162,7 @@ export default function Header() {
                             </NavigationMenuLink>
                         ))}
                         <NavigationMenuLink asChild className="mt-2">
-                            <a href="#pricing" className="hover:bg-accent rounded-md p-2 text-base font-medium">
+                            <a href="/pricing" className="hover:bg-accent rounded-md p-2 text-base font-medium">
                                 Pricing
                             </a>
                         </NavigationMenuLink>
@@ -245,25 +245,25 @@ function ListItem({
 const featureLinks: LinkItem[] = [
     {
         title: 'DM Automation',
-        href: '#features',
+        href: '/features',
         description: 'Auto-reply to Instagram DMs instantly',
         icon: MessageSquare,
     },
     {
         title: 'WhatsApp Integration',
-        href: '#features',
+        href: '/features',
         description: 'Seamless lead handoff to WhatsApp',
         icon: Zap,
     },
     {
         title: 'Multi-language',
-        href: '#features',
+        href: '/features',
         description: 'Hindi & regional language support',
         icon: Globe,
     },
     {
         title: 'Analytics',
-        href: '#features',
+        href: '/features',
         description: 'Track engagement and conversions',
         icon: BarChart,
     },
@@ -272,7 +272,7 @@ const featureLinks: LinkItem[] = [
 const companyLinks: LinkItem[] = [
     {
         title: 'About Us',
-        href: '#',
+        href: '/about',
         icon: Users,
     },
     {
@@ -282,12 +282,12 @@ const companyLinks: LinkItem[] = [
     },
     {
         title: 'Privacy Policy',
-        href: '#',
+        href: '/privacy',
         icon: Shield,
     },
     {
         title: 'Help Center',
-        href: '#faq',
+        href: '/contact',
         icon: HelpCircle,
     },
 ];
