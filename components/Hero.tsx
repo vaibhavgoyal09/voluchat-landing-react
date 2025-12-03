@@ -49,7 +49,7 @@ export default function Hero() {
             VoluChat automatically replies to DMs, qualifies leads, and moves
             them to WhatsApp. Available in{" "}
             <span className="font-medium text-slate-900">
-              Hindi & regional languages
+              multiple languages
             </span>
             .
           </p>
@@ -116,7 +116,7 @@ export default function Hero() {
                   <span>📦</span> Order status
                 </div>
                 <div className="bg-white/40 backdrop-blur-md border border-white/40 px-4 py-2 rounded-full text-xs sm:text-sm text-slate-600 flex items-center gap-2 shadow-sm animate-float delay-200 whitespace-nowrap">
-                  <span>💬</span> Hindi support
+                  <span>💬</span> Multilingual support
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function Hero() {
         </div>
 
         <div className="mt-16 sm:mt-20">
-          <ClientLogos heading="Trusted by 500+ Indian sellers" subheading="" />
+          <ClientLogos heading="Trusted by 500+ e-commerce brands" subheading="" />
         </div>
       </div>
     </section>

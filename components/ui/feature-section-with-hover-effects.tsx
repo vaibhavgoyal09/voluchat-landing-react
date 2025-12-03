@@ -19,19 +19,19 @@ export function FeaturesSectionWithHoverEffects() {
       icon: <IconRouteAltLeft />,
     },
     {
-      title: "AI Replies in Indian Languages",
+      title: "AI Replies in Multiple Languages",
       description:
-        "Reply in Hindi and regional languages so customers actually read and respond.",
+        "Reply in multiple languages so customers actually read and respond.",
       icon: <IconTerminal2 />,
     },
     {
-      title: "Ready-made Seller Workflows",
+      title: "Ready-made E-commerce Workflows",
       description:
-        "Flash sale, product inquiry, size/stock, COD confirmation – all pre-built for you.",
+        "Flash sale, product inquiry, size/stock, payment confirmation – all pre-built for you.",
       icon: <IconEaseInOut />,
     },
     {
-      title: "Official Meta-friendly Automation",
+      title: "Official Platform-friendly Automation",
       description:
         "Built to respect Instagram and WhatsApp guidelines – no shady bots.",
       icon: <IconCloud />,
@@ -43,9 +43,9 @@ export function FeaturesSectionWithHoverEffects() {
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "Done-for-you Onboarding",
+      title: "Easy Setup & Onboarding",
       description:
-        "We help you set everything up on a 30-minute call so you go live fast.",
+        "Get started quickly with our guided setup process and go live fast.",
       icon: <IconHelp />,
     },
   ];

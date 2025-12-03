@@ -3,11 +3,19 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email, instagramHandle } = body;
+    const { email, instagramHandle, name, whatsappNumber } = body;
 
     // Basic validation
     if (!email || typeof email !== "string") {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
+    }
+
+    if (!name || typeof name !== "string") {
+      return NextResponse.json({ error: "Name is required" }, { status: 400 });
+    }
+
+    if (!whatsappNumber || typeof whatsappNumber !== "string") {
+      return NextResponse.json({ error: "WhatsApp number is required" }, { status: 400 });
     }
 
     // Simple email pattern check
@@ -22,6 +30,8 @@ export async function POST(request: NextRequest) {
     // Log to console (placeholder)
     console.log("Waitlist signup:", {
       email,
+      name,
+      whatsappNumber,
       instagramHandle: instagramHandle || "Not provided",
       timestamp: new Date().toISOString(),
     });

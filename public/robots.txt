@@ -1,6 +1,8 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
 
 # Sitemap location
 Sitemap: https://voluchat.com/sitemap.xml
@@ -11,3 +13,16 @@ Crawl-delay: 0
 
 User-agent: Bingbot
 Crawl-delay: 0
+
+User-agent: Yandex
+Crawl-delay: 0
+
+User-agent: Baiduspider
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Crawl-delay: 0
+
+# International SEO - Allow all major search engines
+User-agent: *
+Allow: /

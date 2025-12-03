@@ -17,8 +17,7 @@ export default function Features() {
             Everything you need to scale
           </h2>
           <p className="text-lg text-slate-600">
-            Powerful features designed specifically for Indian D2C brands and
-            sellers.
+            Powerful features designed for e-commerce brands and sellers.
           </p>
         </div>
 

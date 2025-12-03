@@ -65,6 +65,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/waitlist"
+                  className="text-slate-600 hover:text-primary-600 transition-colors text-sm"
+                >
+                  Join Waitlist
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-slate-600 hover:text-primary-600 transition-colors text-sm"
                 >
@@ -185,7 +193,7 @@ export default function Footer() {
           </div>
 
           <div className="text-sm text-slate-500 font-medium text-center">
-            © {currentYear} VoluChat. Built with ❤️ in India 🇮🇳
+            © {currentYear} VoluChat. All rights reserved.
           </div>
 
           <div className="flex gap-6">

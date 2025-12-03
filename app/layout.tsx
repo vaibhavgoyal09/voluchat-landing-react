@@ -9,27 +9,30 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
   title: {
-    default: "VoluChat - Instagram Sales Automation for Indian Sellers",
+    default: "VoluChat - AI-Powered Instagram Sales Automation",
     template: "%s | VoluChat",
   },
   description:
-    "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in Indian languages. Built for Indian Instagram & WhatsApp Business sellers.",
+    "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in multiple languages. The Instagram sales automation platform for e-commerce brands.",
   keywords: [
     "Instagram automation",
-    "Instagram sales",
+    "Instagram sales automation",
     "Instagram DM automation",
-    "WhatsApp Business",
-    "Indian sellers",
-    "D2C brands India",
-    "Instagram marketing India",
-    "AI chatbot",
-    "Hindi chatbot",
-    "regional language support",
+    "WhatsApp Business automation",
+    "AI chatbot for Instagram",
+    "Multilingual chatbot",
+    "E-commerce automation",
     "Instagram lead generation",
-    "social commerce India",
-    "Instagram to WhatsApp",
-    "automated customer support",
+    "Social commerce automation",
+    "Instagram to WhatsApp automation",
+    "Automated customer support",
     "Instagram business tools",
+    "AI-powered sales assistant",
+    "Cross-platform messaging automation",
+    "Instagram marketing automation",
+    "E-commerce chatbot",
+    "Automated sales funnel",
+    "Instagram CRM automation",
   ],
   authors: [{ name: "VoluChat" }],
   creator: "VoluChat",
@@ -40,26 +43,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
     url: "https://voluchat.com",
-    title: "VoluChat - Instagram Sales Automation for Indian Sellers",
+    title: "VoluChat - AI-Powered Instagram Sales Automation",
     description:
-      "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in Indian languages. Built for Indian Instagram & WhatsApp Business sellers.",
+      "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in multiple languages. The Instagram sales automation platform for e-commerce brands.",
     siteName: "VoluChat",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "VoluChat - Instagram Sales Automation",
+        alt: "VoluChat - Instagram Sales Automation Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "VoluChat - Instagram Sales Automation for Indian Sellers",
+    title: "VoluChat - AI-Powered Instagram Sales Automation",
     description:
-      "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in Indian languages.",
+      "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in multiple languages. The Instagram sales automation platform.",
     images: ["/og-image.png"],
     creator: "@voluchat",
     site: "@voluchat",
@@ -77,7 +80,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico?v=2", sizes: "any" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/voluchat_logo.svg", type: "image/svg+xml" },
@@ -110,7 +113,7 @@ export default function RootLayout({
         "@id": "https://voluchat.com/#website",
         url: "https://voluchat.com",
         name: "VoluChat",
-        description: "Instagram Sales Automation for Indian Sellers",
+        description: "Instagram Sales Automation Platform with AI-Powered Multilingual Support",
         publisher: {
           "@id": "https://voluchat.com/#organization",
         },
@@ -140,8 +143,7 @@ export default function RootLayout({
           "@type": "ContactPoint",
           telephone: "",
           contactType: "customer support",
-          areaServed: "IN",
-          availableLanguage: ["en", "hi"],
+          availableLanguage: ["en", "es", "fr", "de", "hi", "ar", "pt", "it", "ja", "zh"],
         },
       },
       {
@@ -152,11 +154,11 @@ export default function RootLayout({
         offers: {
           "@type": "Offer",
           price: "0",
-          priceCurrency: "INR",
+          priceCurrency: "USD",
           description: "Free trial available",
         },
         description:
-          "Instagram Sales Automation platform for Indian sellers with AI-powered DMs in Indian languages",
+          "Instagram Sales Automation platform with AI-powered multilingual DMs for e-commerce brands",
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "4.8",
@@ -186,7 +188,7 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -195,6 +197,14 @@ export default function RootLayout({
 
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
+
+        {/* International SEO - Hreflang Tags */}
+        <link rel="alternate" href="https://voluchat.com" hrefLang="en" />
+        <link rel="alternate" href="https://voluchat.com/es" hrefLang="es" />
+        <link rel="alternate" href="https://voluchat.com/fr" hrefLang="fr" />
+        <link rel="alternate" href="https://voluchat.com/de" hrefLang="de" />
+        <link rel="alternate" href="https://voluchat.com/hi" hrefLang="hi" />
+        <link rel="alternate" href="https://voluchat.com" hrefLang="x-default" />
 
         {/* Theme Color */}
         <meta name="theme-color" content="#1e3a8a" />
@@ -216,3 +226,4 @@ export default function RootLayout({
     </html>
   );
 }
+
