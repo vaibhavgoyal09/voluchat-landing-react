@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { saveWaitlistEntry } from "@/lib/waitlist-storage";
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,20 +28,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Log to console (placeholder)
-    console.log("Waitlist signup:", {
-      email,
-      name,
-      whatsappNumber,
-      instagramHandle: instagramHandle || "Not provided",
-      timestamp: new Date().toISOString(),
-    });
+    // Save to storage
+    try {
+      await saveWaitlistEntry({
+        email,
+        name,
+        whatsappNumber,
+        instagramHandle: instagramHandle || undefined,
+      });
 
-    // Return success
-    return NextResponse.json({
-      success: true,
-      message: "Successfully joined the waitlist!",
-    });
+      return NextResponse.json({
+        success: true,
+        message: "Successfully joined the waitlist!",
+      });
+    } catch (error) {
+      console.error("Error saving waitlist entry:", error);
+      return NextResponse.json(
+        { error: "Failed to save waitlist entry" },
+        { status: 500 },
+      );
+    }
   } catch (error) {
     console.error("Waitlist error:", error);
     return NextResponse.json(
