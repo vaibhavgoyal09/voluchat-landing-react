@@ -114,13 +114,11 @@ export default function BlogPage() {
                   <p className="text-slate-600 mb-4">{post.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <Image
-                        src={post.authorImage || '/authors/placeholder.jpg'}
-                        alt={post.author}
-                        width={32}
-                        height={32}
-                        className="w-8 h-8 rounded-full"
-                      />
+                      <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center">
+                        <span className="text-xs font-semibold text-slate-700">
+                          {post.author.charAt(0)}
+                        </span>
+                      </div>
                       <span className="text-sm text-slate-600">{post.author}</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm text-slate-500">

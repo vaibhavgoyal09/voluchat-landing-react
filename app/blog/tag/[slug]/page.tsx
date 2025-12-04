@@ -8,13 +8,14 @@ import { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const tags = BlogServiceServer.getAllTags();
-  return tags.map((tag) => ({
-    slug: tag.slug,
+  return tags.map((tagItem) => ({
+    slug: tagItem.slug,
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const tag = BlogServiceServer.getTagBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const tag = BlogServiceServer.getTagBySlug(slug);
 
   if (!tag) {
     return {
@@ -36,14 +37,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogTagPage({ params }: { params: { slug: string } }) {
-  const tag = BlogServiceServer.getTagBySlug(params.slug);
+export default async function BlogTagPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const tag = BlogServiceServer.getTagBySlug(slug);
 
   if (!tag) {
     notFound();
   }
 
-  const posts = BlogServiceServer.getPostsByTag(params.slug);
+  const posts = BlogServiceServer.getPostsByTag(slug);
 
   // JSON-LD structured data for better SEO
   const jsonLd = {
@@ -52,32 +54,39 @@ export default function BlogTagPage({ params }: { params: { slug: string } }) {
     "name": `#${tag.name} - VoluChat Blog`,
     "description": `Articles tagged with ${tag.name} on the VoluChat blog`,
     "url": `https://voluchat.com/blog/tag/${tag.slug}`,
-    "hasPart": posts.map(post => ({
+    "hasPart": posts.map(postItem => ({
       "@type": "BlogPosting",
-      "name": post.title,
-      "url": `https://voluchat.com/blog/${post.slug}`,
-      "datePublished": post.date,
+      "name": postItem.title,
+      "url": `https://voluchat.com/blog/${postItem.slug}`,
+      "datePublished": postItem.date,
       "author": {
         "@type": "Person",
-        "name": post.author
+        "name": postItem.author
       }
     }))
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-4xl mx-auto">
-          {/* Back to Blog Link */}
-          <div className="mb-8">
-            <Button variant="outline" size="sm" className="border-slate-200 text-slate-600" asChild>
-              <Link href="/blog">← Back to Blog</Link>
-            </Button>
-          </div>
+      <main className="min-h-screen bg-white">
+        <div className="container mx-auto px-4 py-8 md:py-16">
+          <div className="max-w-4xl mx-auto">
+            {/* Back to Blog Link */}
+            <div className="mb-12">
+              <Link 
+                href="/blog" 
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors duration-200 font-medium"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Blog
+              </Link>
+            </div>
 
           {/* Tag Header */}
           <header className="text-center mb-12">
@@ -96,7 +105,7 @@ export default function BlogTagPage({ params }: { params: { slug: string } }) {
                 <article key={post.id} className="flex flex-col md:flex-row gap-6">
                   <div className="shrink-0 w-full md:w-48">
                     <Image
-                      src={post.featuredImage || '/blog/placeholder.jpg'}
+                      src={post.featuredImage || '/og-image.png'}
                       alt={post.title}
                       width={200}
                       height={150}
@@ -109,7 +118,7 @@ export default function BlogTagPage({ params }: { params: { slug: string } }) {
                         <span
                           key={postTag}
                           className={`px-2 py-1 text-xs rounded-full ${
-                            postTag === tag.slug
+                            postTag === slug
                               ? 'bg-primary-100 text-primary-600'
                               : 'bg-slate-100 text-slate-600'
                           }`}
@@ -126,13 +135,11 @@ export default function BlogTagPage({ params }: { params: { slug: string } }) {
                     <p className="text-slate-600 mb-4">{post.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <Image
-                          src={post.authorImage || '/authors/placeholder.jpg'}
-                          alt={post.author}
-                          width={32}
-                          height={32}
-                          className="w-8 h-8 rounded-full"
-                        />
+                        <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center">
+                          <span className="text-xs font-semibold text-slate-700">
+                            {post.author.charAt(0)}
+                          </span>
+                        </div>
                         <span className="text-sm text-slate-600">{post.author}</span>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-slate-500">
@@ -156,5 +163,6 @@ export default function BlogTagPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
     </main>
+    </>
   );
 }

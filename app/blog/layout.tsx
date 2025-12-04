@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
@@ -73,7 +75,9 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Header />
       {children}
+      <Footer />
     </>
   );
 }

@@ -52,8 +52,8 @@ export default function Header() {
 
   return (
     <header
-      className={cn("sticky top-0 z-50 w-full border-b border-transparent", {
-        "glass-premium border-slate-200/60 shadow-sm": scrolled,
+      className={cn("sticky top-0 z-50 w-full border-b border-transparent bg-transparent", {
+        "border-slate-200/60 shadow-sm": scrolled,
       })}
     >
       <nav className="mx-auto flex w-full items-center justify-between px-6 py-2">
