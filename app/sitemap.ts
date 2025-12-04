@@ -1,9 +1,55 @@
 import { MetadataRoute } from "next";
+import { BlogServiceServer } from '@/lib/blog-service-server';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://voluchat.com";
 
+  // Generate blog sitemap entries
+  const blogSitemapEntries = [];
+
+  // Add main blog page
+  blogSitemapEntries.push({
+    url: `${baseUrl}/blog`,
+    lastModified: new Date(),
+    changeFrequency: "daily" as const,
+    priority: 0.9,
+  });
+
+  // Add individual blog posts
+  const posts = BlogServiceServer.getAllPosts();
+  posts.forEach(post => {
+    blogSitemapEntries.push({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    });
+  });
+
+  // Add blog categories
+  const categories = BlogServiceServer.getAllCategories();
+  categories.forEach(category => {
+    blogSitemapEntries.push({
+      url: `${baseUrl}/blog/category/${category.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    });
+  });
+
+  // Add blog tags
+  const tags = BlogServiceServer.getAllTags();
+  tags.forEach(tag => {
+    blogSitemapEntries.push({
+      url: `${baseUrl}/blog/tag/${tag.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    });
+  });
+
   return [
+    ...blogSitemapEntries,
     {
       url: baseUrl,
       lastModified: new Date(),

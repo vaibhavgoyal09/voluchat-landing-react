@@ -317,6 +317,11 @@ const companyLinks: LinkItem[] = [
     icon: Users,
   },
   {
+    title: "Blog",
+    href: "/blog",
+    icon: FileText,
+  },
+  {
     title: "Privacy Policy",
     href: "/privacy",
     icon: Shield,
