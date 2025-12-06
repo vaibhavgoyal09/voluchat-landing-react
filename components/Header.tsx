@@ -65,11 +65,11 @@ export default function Header() {
             <Image
               src="/voluchat_logo.svg"
               alt="VoluChat"
-              width={24}
-              height={24}
-              className="w-6 h-6"
+              width={32}
+              height={32}
+              className="w-8 h-8 md:w-6 md:h-6"
             />
-            <span className="font-heading font-bold text-xl text-slate-900 tracking-tight">
+            <span className="font-heading font-bold text-xl text-slate-900 tracking-tight hidden md:inline">
               VoluChat
             </span>
           </Link>
@@ -91,10 +91,10 @@ export default function Header() {
                     <p className="text-slate-600 text-sm">
                       Ready to automate?{" "}
                       <Link
-                        href="#get-started"
+                        href="/waitlist"
                         className="text-primary-600 font-medium hover:underline"
                       >
-                        Start free trial
+                        Join waitlist
                       </Link>
                     </p>
                   </div>
@@ -136,28 +136,37 @@ export default function Header() {
           </NavigationMenu>
         </div>
         <div className="hidden items-center gap-2 md:flex">
+          <Link 
+            href="/waitlist" 
+            className="group relative px-6 py-3 h-10 bg-[var(--color-slate-900)] text-white text-sm font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
+          >
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+            <span className="relative flex items-center gap-2">
+              Join Waitlist
+            </span>
+          </Link>
+        </div>
+        <div className="flex items-center gap-2 md:hidden">
+          <Link 
+            href="/waitlist" 
+            className="group relative px-4 py-3 h-10 bg-[var(--color-slate-900)] text-white text-sm font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
+          >
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+            <span className="relative flex items-center gap-2">
+              Join Waitlist
+            </span>
+          </Link>
           <Button
             variant="outline"
-            size="default"
-            className="h-10 px-6 text-sm"
-            asChild
+            onClick={() => setOpen(!open)}
+            className="md:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label="Toggle menu"
           >
-            <Link href="#get-started">Sign In</Link>
-          </Button>
-          <Button size="default" className="h-10 px-6 text-sm" asChild>
-            <Link href="#get-started">Get Started</Link>
+            <MenuToggleIcon open={open} className="size-6" duration={300} />
           </Button>
         </div>
-        <Button
-          variant="outline"
-          onClick={() => setOpen(!open)}
-          className="md:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label="Toggle menu"
-        >
-          <MenuToggleIcon open={open} className="size-6" duration={300} />
-        </Button>
       </nav>
       <MobileMenu
         open={open}
@@ -195,17 +204,15 @@ export default function Header() {
           </div>
         </NavigationMenu>
         <div className="flex flex-col gap-3">
-          <Button
-            variant="outline"
-            size="lg"
-            className="w-full bg-transparent h-12 px-8 text-base"
-            asChild
+          <Link 
+            href="/waitlist" 
+            className="group relative w-full px-8 py-4 h-12 bg-[var(--color-slate-900)] text-white text-base font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
           >
-            <Link href="#get-started">Sign In</Link>
-          </Button>
-          <Button size="lg" className="w-full h-12 px-8 text-base" asChild>
-            <Link href="#get-started">Get Started</Link>
-          </Button>
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+            <span className="relative flex items-center gap-2">
+              Join Waitlist
+            </span>
+          </Link>
         </div>
       </MobileMenu>
     </header>

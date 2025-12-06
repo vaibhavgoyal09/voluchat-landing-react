@@ -46,9 +46,9 @@ export default function PainPoints() {
 
       <div className="max-w-7xl mx-auto container-padding relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
+          <h2 className="section-heading text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
             Transform your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-slate-800 to-primary-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">
               sales process
             </span>
           </h2>
@@ -126,7 +126,7 @@ export default function PainPoints() {
 
         <div className="mt-16 text-center">
           <a
-            href="#get-started"
+            href="/waitlist"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-medium shadow-xl hover:shadow-2xl hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300 group"
           >
             Switch to VoluChat

@@ -13,7 +13,7 @@ export default function Features() {
           <div className="inline-block px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wide mb-4">
             Features
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="section-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Everything you need to scale
           </h2>
           <p className="text-lg text-slate-600">

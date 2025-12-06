@@ -248,7 +248,7 @@ export function PricingSection({
             <div className="inline-block px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wide mb-4">
               Pricing
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-slate-900">
+            <h2 className="section-heading text-4xl font-bold tracking-tighter sm:text-5xl text-slate-900">
               {title}
             </h2>
             <p className="text-slate-600 text-lg whitespace-pre-line">

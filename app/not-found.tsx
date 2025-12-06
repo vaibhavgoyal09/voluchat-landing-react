@@ -145,9 +145,4 @@ const quickLinks = [
   },
 ];
 
-// Also create the metadata for the 404 page
-export const metadata = {
-  title: "404 - Page Not Found",
-  description:
-    "The page you're looking for doesn't exist. Return to VoluChat - AI-Powered Instagram Sales Automation.",
-};
+

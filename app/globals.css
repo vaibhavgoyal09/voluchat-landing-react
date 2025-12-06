@@ -72,6 +72,22 @@ h6 {
   @apply font-heading font-bold tracking-tight text-slate-900;
 }
 
+/* Make important headings non-selectable */
+h1, h2, h3, .hero-heading, .section-heading, .important-heading {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Special class for hero and main section headings */
+.hero-heading, .section-title, .main-title {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 /* Custom Utilities */
 @utility container-padding {
   @apply px-6 sm:px-8 lg:px-12 max-w-[1440px] mx-auto;

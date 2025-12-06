@@ -45,46 +45,47 @@ function BackgroundScene() {
   const { viewport } = useThree();
   const isMobile = viewport.width < 10; // Adjust threshold as needed
 
+  // Use more conservative positioning to prevent cutoff at section boundaries
   const sphereConfigs = [
     {
       basePos: isMobile
-        ? [-viewport.width * 0.4, viewport.height * 0.3, -5]
-        : [-viewport.width * 0.35, viewport.height * 0.3, -5],
-      scale: isMobile ? 1.5 : 5,
+        ? [-viewport.width * 0.25, viewport.height * 0.15, -5]
+        : [-viewport.width * 0.2, viewport.height * 0.15, -5],
+      scale: isMobile ? 1.2 : 3.5,
       color: "#4f46e5",
       distort: 0.4,
       speed: 1.5,
     },
     {
       basePos: isMobile
-        ? [viewport.width * 0.3, -viewport.height * 0.2, -4]
-        : [viewport.width * 0.4, -viewport.height * 0.3, -8],
-      scale: isMobile ? 2 : 6,
+        ? [viewport.width * 0.2, -viewport.height * 0.1, -4]
+        : [viewport.width * 0.25, -viewport.height * 0.15, -8],
+      scale: isMobile ? 1.5 : 4,
       color: "#3b82f6",
       distort: 0.3,
       speed: 2,
     },
     {
       basePos: isMobile
-        ? [-viewport.width * 0.2, -viewport.height * 0.3, -6]
-        : [-viewport.width * 0.25, -viewport.height * 0.25, -10],
-      scale: isMobile ? 1.2 : 4,
+        ? [-viewport.width * 0.15, -viewport.height * 0.2, -6]
+        : [-viewport.width * 0.15, -viewport.height * 0.2, -10],
+      scale: isMobile ? 1 : 3,
       color: "#8b5cf6",
       distort: 0.4,
       speed: 1.2,
     },
     {
       basePos: isMobile
-        ? [viewport.width * 0.4, viewport.height * 0.35, -25]
-        : [viewport.width * 0.3, viewport.height * 0.4, -35],
-      scale: isMobile ? 2.5 : 8,
+        ? [viewport.width * 0.25, viewport.height * 0.2, -25]
+        : [viewport.width * 0.2, viewport.height * 0.25, -35],
+      scale: isMobile ? 2 : 6,
       color: "#f0f5ff",
       distort: 0.2,
       speed: 0.5,
     },
     {
       basePos: [0, 0, -45],
-      scale: isMobile ? 4 : 12,
+      scale: isMobile ? 3 : 8,
       color: "#e0e7ff",
       distort: 0.3,
       speed: 0.8,
@@ -95,8 +96,8 @@ function BackgroundScene() {
   const offsets = useMemo(
     () =>
       sphereConfigs.map(() => ({
-        x: (Math.random() - 0.5) * (isMobile ? 8 : 15),
-        y: (Math.random() - 0.5) * (isMobile ? 8 : 15),
+        x: (Math.random() - 0.5) * (isMobile ? 4 : 8), // Reduced horizontal movement
+        y: (Math.random() - 0.5) * (isMobile ? 4 : 8), // Reduced vertical movement
         z: (Math.random() - 0.5) * (isMobile ? 2 : 4), // Reduced Z randomness to prevent layering issues
       })),
     [isMobile],
