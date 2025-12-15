@@ -31,6 +31,27 @@ export const metadata: Metadata = {
 };
 
 export default function FeaturesPage() {
+  const featureSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VoluChat Features",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Smart Auto-Replies",
+      "Multi-Language Support (Hindi, Regional)",
+      "Lead Qualification",
+      "WhatsApp Integration",
+      "Advanced Analytics",
+      "CRM Integration"
+    ]
+  };
+
   const additionalFeatures = [
     {
       icon: MessageSquare,
@@ -108,6 +129,10 @@ export default function FeaturesPage() {
 
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(featureSchema) }}
+      />
       <Header />
 
       {/* Hero Section */}

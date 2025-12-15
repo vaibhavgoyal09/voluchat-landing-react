@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     "E-commerce chatbot",
     "Automated sales funnel",
     "Instagram CRM automation",
+    "Instagram automation India",
+    "Hindi Instagram chatbot",
+    "Regional language chatbot",
+    "Instagram sale bot India",
+    "Automated Instagram DM India",
+    "Meta API automation",
+    "Instagram to WhatsApp funnel",
+    "Social media automation tools",
   ],
   authors: [{ name: "VoluChat" }],
   creator: "VoluChat",
@@ -81,13 +89,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/voluchat_logo.svg", type: "image/svg+xml" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  manifest: "/manifest.json",
   verification: {
     // Add your verification codes here when available
     // google: 'your-google-verification-code',
@@ -169,14 +180,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Favicon - Google Search optimized */}
-        <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png" />
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-        {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-
         {/* International SEO - Hreflang Tags */}
         <link rel="alternate" href="https://voluchat.com" hrefLang="en" />
         <link rel="alternate" href="https://voluchat.com/es" hrefLang="es" />

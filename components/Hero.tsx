@@ -28,14 +28,14 @@ export default function Hero() {
             </span>
             <span className="text-primary-700">New</span>
             <span className="w-px h-3 bg-slate-300 hidden sm:block"></span>
-            <span className="text-center">Waitlist Only - Coming Soon</span>
+            <span className="text-center">Early Beta Access Open</span>
           </div>
 
           <div className="mb-8 relative w-full">
             <h1 className="section-heading hero-heading text-4xl sm:text-6xl lg:text-7xl font-heading font-bold text-slate-900 tracking-tight leading-[1.1] wrap-break-word">
-              The sales assistant <br className="hidden sm:block" />
+              Turn Instagram Comments <br className="hidden sm:block" />
               <span className="font-serif italic font-light text-slate-700 block sm:inline mt-2 sm:mt-0">
-                that works for you
+                into Sales Automatically
               </span>
             </h1>
 
@@ -48,28 +48,27 @@ export default function Hero() {
           </div>
 
           <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mb-10 font-light px-2">
-            VoluChat automatically replies to DMs, qualifies leads, and moves
-            them to WhatsApp. Available in{" "}
-            <span className="font-medium text-slate-900">
-              multiple languages
-            </span>
-            . <span className="font-medium text-primary-600">
-              Currently in waitlist mode - join now to get early access!
+            Powerful comment-to-DM automation with advanced growth tools.
+            Use <span className="font-medium text-slate-900">Ask for Follow</span>,
+            <span className="font-medium text-slate-900"> Group Joins</span>, and automated
+            <span className="font-medium text-slate-900"> Promotional Messages</span> to skyrocket your conversion.
+            <span className="block mt-4 font-medium text-primary-600">
+              Get started for free in our Early Beta!
             </span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center">
             <a
-              href="/waitlist"
+              href="https://dashboard.voluchat.com"
               className="w-full sm:w-auto group relative px-8 py-4 bg-slate-900 text-white text-lg font-medium rounded-full hover:bg-slate-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
             >
               <div className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
               <span className="relative flex items-center gap-2">
-                Join Waitlist <ArrowRight className="w-4 h-4" />
+                Get Started for Free <ArrowRight className="w-4 h-4" />
               </span>
             </a>
             <a
-              href="/waitlist"
+              href="#features"
               className="w-full sm:w-auto px-8 py-4 bg-white/50 backdrop-blur-sm text-slate-900 border border-white/60 text-lg font-medium rounded-full hover:bg-white/80 transition-all duration-300 shadow-sm hover:shadow-md flex justify-center items-center"
             >
               Learn More

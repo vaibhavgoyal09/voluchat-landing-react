@@ -23,6 +23,62 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
+  const pricingSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I switch plans later?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! You can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens after the free trial?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "After your 14-day free trial, you'll be automatically enrolled in the plan you selected. You can cancel anytime before the trial ends without being charged."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer refunds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We offer a 30-day money-back guarantee. If you're not satisfied with VoluChat, contact us within 30 days of purchase for a full refund."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "VoluChat Starter Plan",
+        "description": "Perfect for new sellers testing automation.",
+        "offers": {
+          "@type": "Offer",
+          "price": "999",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "VoluChat Growth Plan",
+        "description": "Ideal for growing Instagram businesses.",
+        "offers": {
+          "@type": "Offer",
+          "price": "2499",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  };
   const faqs = [
     {
       question: "Can I switch plans later?",
@@ -120,6 +176,10 @@ export default function PricingPage() {
 
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
+      />
       <Header />
 
       {/* Hero Section */}

@@ -22,6 +22,34 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "VoluChat",
+      "legalName": "VoluChat Technologies",
+      "url": "https://voluchat.com",
+      "logo": "https://voluchat.com/android-chrome-512x512.png",
+      "foundingDate": "2024",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "VoluChat Team"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://twitter.com/voluchat",
+        "https://instagram.com/voluchat",
+        "https://linkedin.com/company/voluchat"
+      ]
+    }
+  };
+
   const values = [
     {
       icon: Target,
@@ -51,6 +79,10 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       <Header />
 
       {/* Hero Section */}

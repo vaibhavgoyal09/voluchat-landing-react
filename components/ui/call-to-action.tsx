@@ -14,19 +14,19 @@ function CTA() {
 
           <div className="relative z-10">
             <Badge className="text-sm px-4 py-1.5 bg-primary-50 text-primary-700 border-primary-100 hover:bg-primary-100">
-              Waitlist Only - Coming Soon
+              Early Beta Open
             </Badge>
           </div>
           <div className="flex flex-col gap-6 relative z-10">
             <h3 className="text-4xl md:text-6xl tracking-tight max-w-3xl font-heading font-bold text-slate-900 leading-tight">
-              Join the waitlist to <br className="hidden md:block" />
+              Start automating your <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-600 to-indigo-600">
-                10x your sales!
+                Instagram Sales today!
               </span>
             </h3>
             <p className="text-xl leading-relaxed tracking-tight text-slate-600 max-w-2xl font-medium mx-auto">
-              Be among the first to experience our revolutionary Instagram DM automation.
-              Get early access and priority support when we launch.
+              Experience the power of comment-to-DM automation.
+              Get started for free during our early beta phase.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-5 relative z-10 w-full sm:w-auto">
@@ -35,8 +35,8 @@ function CTA() {
               size="lg"
               asChild
             >
-              <a href="/waitlist">
-                Join Waitlist <MoveRight className="w-5 h-5" />
+              <a href="https://dashboard.voluchat.com">
+                Get Started Now <MoveRight className="w-5 h-5" />
               </a>
             </Button>
           </div>

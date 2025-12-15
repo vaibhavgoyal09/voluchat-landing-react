@@ -91,10 +91,10 @@ export default function Header() {
                     <p className="text-slate-600 text-sm">
                       Ready to automate?{" "}
                       <Link
-                        href="/waitlist"
+                        href="https://dashboard.voluchat.com"
                         className="text-primary-600 font-medium hover:underline"
                       >
-                        Join waitlist
+                        Get Started
                       </Link>
                     </p>
                   </div>
@@ -136,24 +136,24 @@ export default function Header() {
           </NavigationMenu>
         </div>
         <div className="hidden items-center gap-2 md:flex">
-          <Link 
-            href="/waitlist" 
+          <Link
+            href="https://dashboard.voluchat.com"
             className="group relative px-6 py-3 h-10 bg-[var(--color-slate-900)] text-white text-sm font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
           >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
             <span className="relative flex items-center gap-2">
-              Join Waitlist
+              Get Started
             </span>
           </Link>
         </div>
         <div className="flex items-center gap-2 md:hidden">
-          <Link 
-            href="/waitlist" 
+          <Link
+            href="https://dashboard.voluchat.com"
             className="group relative px-4 py-3 h-10 bg-[var(--color-slate-900)] text-white text-sm font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
           >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
             <span className="relative flex items-center gap-2">
-              Join Waitlist
+              Get Started
             </span>
           </Link>
           <Button
@@ -204,13 +204,13 @@ export default function Header() {
           </div>
         </NavigationMenu>
         <div className="flex flex-col gap-3">
-          <Link 
-            href="/waitlist" 
+          <Link
+            href="https://dashboard.voluchat.com"
             className="group relative w-full px-8 py-4 h-12 bg-[var(--color-slate-900)] text-white text-base font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
           >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
             <span className="relative flex items-center gap-2">
-              Join Waitlist
+              Get Started
             </span>
           </Link>
         </div>
@@ -319,8 +319,8 @@ const companyLinks: LinkItem[] = [
     icon: Star,
   },
   {
-    title: "Join Waitlist",
-    href: "/waitlist",
+    title: "Login",
+    href: "https://dashboard.voluchat.com",
     icon: Users,
   },
   {

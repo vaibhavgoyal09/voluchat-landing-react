@@ -17,7 +17,7 @@ const voluchatPlans = [
     ],
     description: "Perfect for new sellers testing automation.",
     buttonText: "Start Free Trial",
-    href: "#get-started",
+    href: "https://dashboard.voluchat.com",
   },
   {
     name: "Growth",
@@ -34,7 +34,7 @@ const voluchatPlans = [
     ],
     description: "Ideal for growing Instagram businesses.",
     buttonText: "Get Started",
-    href: "#get-started",
+    href: "https://dashboard.voluchat.com",
     isPopular: true,
   },
   {
@@ -52,7 +52,7 @@ const voluchatPlans = [
     ],
     description: "For high-volume sellers and agencies.",
     buttonText: "Contact Sales",
-    href: "#get-started",
+    href: "https://dashboard.voluchat.com",
   },
 ];
 

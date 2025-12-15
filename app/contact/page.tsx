@@ -22,8 +22,48 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "VoluChat",
+      "url": "https://voluchat.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-88475-68693",
+          "contactType": "customer support",
+          "email": "support@voluchat.com",
+          "availableLanguage": ["English", "Hindi"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "sales@voluchat.com"
+        }
+      ]
+    }
+  };
+
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       <Header />
 
       {/* Hero Section */}
