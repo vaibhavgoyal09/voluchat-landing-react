@@ -13,40 +13,40 @@ import {
 export function FeaturesSectionWithHoverEffects() {
   const features = [
     {
-      title: "Instagram → WhatsApp Funnel",
+      title: "Instant Comment-to-DM",
       description:
-        "Automatically move hot leads from Instagram DMs to WhatsApp for closing and follow-ups.",
-      icon: <IconRouteAltLeft />,
-    },
-    {
-      title: "AI Replies in Multiple Languages",
-      description:
-        "Reply in multiple languages so customers actually read and respond.",
+        "Turn comments into conversations instantly. Automatically reply to comments and send a DM to close sales.",
       icon: <IconTerminal2 />,
     },
     {
-      title: "Ready-made E-commerce Workflows",
+      title: "Ask for Follow",
       description:
-        "Flash sale, product inquiry, size/stock, payment confirmation – all pre-built for you.",
-      icon: <IconEaseInOut />,
+        "Boost your follower count by automatically checking if a user follows you before sending exclusive content.",
+      icon: <IconHeart />,
     },
     {
-      title: "Official Platform-friendly Automation",
+      title: "Community Building",
       description:
-        "Built to respect Instagram and WhatsApp guidelines – no shady bots.",
-      icon: <IconCloud />,
+        "Drive traffic to your WhatsApp or Telegram groups with automated invites sent directly to DMs.",
+      icon: <IconRouteAltLeft />,
     },
     {
-      title: "Analytics that Track Real Sales",
+      title: "Smart Promotional Messages",
       description:
-        "See how many DMs turned into orders and which flows perform best.",
+        "Automatically send timed promotional messages after a conversation ends to re-engage leads.",
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "Easy Setup & Onboarding",
+      title: "Multi-language Support",
       description:
-        "Get started quickly with our guided setup process and go live fast.",
-      icon: <IconHelp />,
+        "Engage with customers in Hindi, Tamil, Telugu, and more so they feel at home.",
+      icon: <IconAdjustmentsBolt />,
+    },
+    {
+      title: "Safe & Compliant",
+      description:
+        "Built with official Meta APIs to keep your account safe. No shady bots or bans.",
+      icon: <IconCloud />,
     },
   ];
   return (

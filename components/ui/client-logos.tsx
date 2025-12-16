@@ -1,75 +1,214 @@
 "use client";
 
 import AutoScroll from "embla-carousel-auto-scroll";
+import {
+  IconBrandAmazon,
+  IconBrandInstagram,
+  IconBrandWhatsapp,
+  IconBasket,
+  IconShirt,
+  IconShoppingCart,
+  IconSparkles,
+  IconBuildingStore,
+} from "@tabler/icons-react";
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 
 interface Logo {
   id: string;
   name: string;
-  className?: string;
+  subtext: string;
+  icon: any;
+  color: string;
 }
+
+const DEFAULT_LOGOS_ROW_1: Logo[] = [
+  {
+    id: "instagram",
+    name: "Instagram",
+    subtext: "Social Commerce",
+    icon: IconBrandInstagram,
+    color: "text-pink-600",
+  },
+  {
+    id: "whatsapp",
+    name: "WhatsApp",
+    subtext: "Direct Sales",
+    icon: IconBrandWhatsapp,
+    color: "text-green-600",
+  },
+  {
+    id: "amazon",
+    name: "Amazon",
+    subtext: "Marketplace",
+    icon: IconBrandAmazon,
+    color: "text-orange-500",
+  },
+  {
+    id: "meesho",
+    name: "Meesho",
+    subtext: "Reselling",
+    icon: IconBasket,
+    color: "text-fuchsia-600",
+  },
+];
+
+const DEFAULT_LOGOS_ROW_2: Logo[] = [
+  {
+    id: "myntra",
+    name: "Myntra",
+    subtext: "Fashion",
+    icon: IconShirt,
+    color: "text-rose-500",
+  },
+  {
+    id: "flipkart",
+    name: "Flipkart",
+    subtext: "Marketplace",
+    icon: IconShoppingCart,
+    color: "text-blue-600",
+  },
+  {
+    id: "nykaa",
+    name: "Nykaa",
+    subtext: "Beauty & Wellness",
+    icon: IconSparkles,
+    color: "text-pink-500",
+  },
+  {
+    id: "retail",
+    name: "Retail Stores",
+    subtext: "Offline to Online",
+    icon: IconBuildingStore,
+    color: "text-indigo-600",
+  },
+];
 
 interface ClientLogosProps {
   heading?: string;
   subheading?: string;
-  logos?: Logo[];
-  className?: string;
+  title?: string;
 }
 
-const ClientLogos = ({
+export function ClientLogos({
   heading = "Trusted by 500+ Indian sellers",
-  subheading = "From fashion to electronics, sellers across India are automating their Instagram DMs",
-  logos = [
-    { id: "1", name: "Meesho", className: "h-6 w-auto" },
-    { id: "2", name: "Myntra", className: "h-6 w-auto" },
-    { id: "3", name: "Flipkart", className: "h-6 w-auto" },
-    { id: "4", name: "Instagram", className: "h-6 w-auto" },
-    { id: "5", name: "WhatsApp Business", className: "h-6 w-auto" },
-    { id: "6", name: "Shopify", className: "h-6 w-auto" },
-    { id: "7", name: "Amazon", className: "h-6 w-auto" },
-    { id: "8", name: "Nykaa", className: "h-6 w-auto" },
-  ],
-}: ClientLogosProps) => {
+  subheading,
+  title = "Powering Your Favorite Brands",
+}: ClientLogosProps) {
   return (
-    <section className="py-12 lg:py-16">
-      <div className="container flex flex-col items-center text-center">
-        <p className="text-sm text-slate-600 font-medium mb-2">{heading}</p>
-        {subheading && (
-          <p className="text-xs text-slate-500 max-w-2xl">{subheading}</p>
-        )}
+    <section className="py-20 lg:py-24 overflow-hidden relative">
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary-400/10 blur-[100px] rounded-full pointer-events-none" />
+
+      <div className="container px-4 md:px-6 mb-12 flex flex-col items-center text-center relative z-10">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-sm font-medium mb-6 animate-fade-in">
+          <span className="flex h-2 w-2 rounded-full bg-primary-600 animate-pulse"></span>
+          {heading}
+        </div>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-slate-900 mb-4 animate-fade-in delay-100">
+          {title}
+        </h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto animate-fade-in delay-200">
+          {subheading || "From independent creators to large marketplaces, VoluChat powers automated sales conversations across every channel."}
+        </p>
       </div>
-      <div className="pt-8 md:pt-10">
-        <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
+
+      <div className="relative pt-8 space-y-8 animate-fade-in delay-300">
+        {/* Row 1 - Left */}
+        <div className="relative">
+          <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
           <Carousel
-            opts={{ loop: true }}
-            plugins={[AutoScroll({ playOnInit: true, speed: 1 })]}
+            opts={{ loop: true, align: "start", dragFree: true }}
+            plugins={[
+              AutoScroll({
+                playOnInit: true,
+                speed: 1,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
+            className="w-full"
           >
-            <CarouselContent className="ml-0">
-              {logos.map((logo) => (
+            <CarouselContent className="-ml-4">
+              {[...DEFAULT_LOGOS_ROW_1, ...DEFAULT_LOGOS_ROW_1, ...DEFAULT_LOGOS_ROW_1].map((logo, idx) => (
                 <CarouselItem
-                  key={logo.id}
-                  className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                  key={`${logo.id}-${idx}`}
+                  className="pl-4 basis-auto"
                 >
-                  <div className="mx-8 flex shrink-0 items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
-                    <div className="text-slate-400 font-semibold text-lg">
-                      {logo.name}
-                    </div>
-                  </div>
+                  <LogoCard logo={logo} />
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="absolute inset-y-0 left-0 w-12 bg-linear-to-r from-slate-50 to-transparent pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-12 bg-linear-to-l from-slate-50 to-transparent pointer-events-none"></div>
+        </div>
+
+        {/* Row 2 - Right (Reverse) */}
+        <div className="relative">
+          <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+          <Carousel
+            opts={{ loop: true, align: "start", dragFree: true, direction: "rtl" }}
+            plugins={[
+              AutoScroll({
+                playOnInit: true,
+                speed: 1,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+                direction: "backward"
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {[...DEFAULT_LOGOS_ROW_2, ...DEFAULT_LOGOS_ROW_2, ...DEFAULT_LOGOS_ROW_2].map((logo, idx) => (
+                <CarouselItem
+                  key={`${logo.id}-${idx}`}
+                  className="pl-4 basis-auto"
+                >
+                  <LogoCard logo={logo} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
     </section>
   );
-};
+}
 
-export { ClientLogos };
+function LogoCard({ logo }: { logo: Logo }) {
+  const Icon = logo.icon;
+  return (
+    <div
+      className={cn(
+        "group flex items-center gap-4 px-6 py-4 rounded-2xl border transition-all duration-300 min-w-[200px] cursor-default",
+        "bg-white/60 backdrop-blur-md border-slate-200/60 shadow-sm",
+        "hover:bg-white hover:border-primary-100 hover:shadow-premium hover:-translate-y-1"
+      )}
+    >
+      <div
+        className={cn(
+          "p-3 rounded-xl bg-slate-50 text-slate-500 transition-all duration-300",
+          "group-hover:scale-110 group-hover:bg-primary-50",
+          logo.color.replace("text-", "group-hover:text-")
+        )}
+      >
+        <Icon className="w-6 h-6" stroke={2} />
+      </div>
+      <div className="flex flex-col">
+        <span className="font-heading font-semibold text-slate-800 text-lg group-hover:text-slate-900">
+          {logo.name}
+        </span>
+        <span className="text-xs font-medium text-slate-500 group-hover:text-slate-600">
+          {logo.subtext}
+        </span>
+      </div>
+    </div>
+  );
+}

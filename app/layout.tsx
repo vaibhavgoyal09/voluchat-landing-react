@@ -161,7 +161,7 @@ export default function RootLayout({
           "@type": "Offer",
           price: "0",
           priceCurrency: "USD",
-          description: "Free trial available",
+          description: "Free Early Beta Access",
         },
         description:
           "Instagram Sales Automation platform with AI-powered multilingual DMs for e-commerce brands",

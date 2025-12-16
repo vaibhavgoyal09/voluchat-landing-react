@@ -24,11 +24,11 @@ export default function LoginPage() {
 
           <div className="space-y-4">
             <Button className="w-full h-12 text-base" asChild>
-              <a href="https://app.voluchat.com/login">Sign In</a>
+              <a href="https://dashboard.voluchat.com">Sign In</a>
             </Button>
             <div className="text-sm text-slate-500">
               Don't have an account?{" "}
-              <a href="/start" className="text-primary-600 hover:underline">
+              <a href="https://dashboard.voluchat.com" className="text-primary-600 hover:underline">
                 Get Started
               </a>
             </div>

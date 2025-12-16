@@ -65,10 +65,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/waitlist"
+                  href="https://dashboard.voluchat.com"
                   className="text-slate-600 hover:text-primary-600 transition-colors text-sm"
                 >
-                  Join Waitlist
+                  Get Started
                 </Link>
               </li>
               <li>

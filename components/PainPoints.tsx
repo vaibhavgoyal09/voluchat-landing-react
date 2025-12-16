@@ -126,7 +126,7 @@ export default function PainPoints() {
 
         <div className="mt-16 text-center">
           <a
-            href="/waitlist"
+            href="https://dashboard.voluchat.com"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-medium shadow-xl hover:shadow-2xl hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300 group"
           >
             Switch to VoluChat

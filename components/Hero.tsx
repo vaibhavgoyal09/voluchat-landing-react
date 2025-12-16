@@ -77,9 +77,9 @@ export default function Hero() {
         </div>
 
         {/* Glass Card Search Interface */}
-        <div className="mt-16 sm:mt-20">
+        {/* <div className="mt-16 sm:mt-20">
           <ClientLogos heading="Trusted by 500+ e-commerce brands" subheading="" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -57,7 +57,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
@@ -210,7 +210,7 @@ const PricingContext = createContext<{
   setIsMonthly: (value: boolean) => void;
 }>({
   isMonthly: true,
-  setIsMonthly: () => {},
+  setIsMonthly: () => { },
 });
 
 export function PricingSection({
@@ -255,8 +255,15 @@ export function PricingSection({
               {description}
             </p>
           </div>
-          <PricingToggle />
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 items-start gap-8">
+          {plans.some((p) => Number(p.price) > 0) && <PricingToggle />}
+          <div
+            className={cn(
+              "mt-12 grid grid-cols-1 items-start gap-8",
+              plans.length === 1
+                ? "lg:grid-cols-1 max-w-md mx-auto"
+                : "lg:grid-cols-3",
+            )}
+          >
             {plans.map((plan, index) => (
               <PricingCard key={index} plan={plan} index={index} />
             ))}
@@ -382,11 +389,11 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
       style={
         plan.isPopular
           ? {
-              backgroundImage:
-                "linear-gradient(white, white), linear-gradient(135deg, #2546eb, #6366f1, #8b5cf6)",
-              backgroundOrigin: "border-box",
-              backgroundClip: "padding-box, border-box",
-            }
+            backgroundImage:
+              "linear-gradient(white, white), linear-gradient(135deg, #2546eb, #6366f1, #8b5cf6)",
+            backgroundOrigin: "border-box",
+            backgroundClip: "padding-box, border-box",
+          }
           : undefined
       }
     >
@@ -409,24 +416,33 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
         </p>
         <div className="mt-6 flex items-baseline justify-center gap-x-1">
           <span className="text-5xl font-bold tracking-tight text-slate-900">
-            <NumberFlow
-              value={isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)}
-              format={{
-                style: "currency",
-                currency: "INR",
-                minimumFractionDigits: 0,
-              }}
-              className="font-variant-numeric: tabular-nums"
-            />
+            {Number(plan.price) === 0 ? (
+              "Free"
+            ) : (
+              <NumberFlow
+                value={
+                  isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)
+                }
+                format={{
+                  style: "currency",
+                  currency: "INR",
+                  minimumFractionDigits: 0,
+                }}
+                className="font-variant-numeric: tabular-nums"
+              />
+            )}
           </span>
-          <span className="text-sm font-semibold leading-6 tracking-wide text-slate-500">
-            / {plan.period}
-          </span>
+          {Number(plan.price) > 0 && (
+            <span className="text-sm font-semibold leading-6 tracking-wide text-slate-500">
+              / {plan.period}
+            </span>
+          )}
         </div>
-        <p className="text-xs text-slate-400 mt-2 font-medium">
-          {isMonthly ? "Billed Monthly" : "Billed Annually"}
-        </p>
-
+        {Number(plan.price) > 0 && (
+          <p className="text-xs text-slate-400 mt-2 font-medium">
+            {isMonthly ? "Billed Monthly" : "Billed Annually"}
+          </p>
+        )}
         <div className="my-8 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
 
         <ul

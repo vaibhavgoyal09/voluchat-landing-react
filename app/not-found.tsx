@@ -139,7 +139,7 @@ const quickLinks = [
   },
   {
     title: "Get Started",
-    href: "/start",
+    href: "https://dashboard.voluchat.com",
     description: "Start free trial",
     icon: Home, // You might want to replace with a start/play icon
   },

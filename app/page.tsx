@@ -39,10 +39,10 @@ export default function Home() {
       },
       {
         "@type": "Question",
-        "name": "Can I cancel anytime?",
+        "name": "Is it really free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! There are no long-term contracts. You can cancel your subscription anytime, and you'll retain access until the end of your billing period."
+          "text": "Yes! During our Early Beta period, you get full access to all VoluChat features completely free of charge. We want you to experience the power of automation without any barriers."
         }
       }
     ]

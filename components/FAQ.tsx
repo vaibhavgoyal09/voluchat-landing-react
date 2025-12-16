@@ -22,9 +22,9 @@ export default function FAQ() {
         "VoluChat supports Hindi and major regional Indian languages including Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, and Gujarati. Our AI understands context and replies naturally in the customer's preferred language.",
     },
     {
-      question: "Can I cancel anytime?",
+      question: "Is it really free?",
       answer:
-        "Absolutely! There are no long-term contracts. You can cancel your subscription anytime, and you'll retain access until the end of your billing period.",
+        "Yes! During our Early Beta period, you get full access to all VoluChat features completely free of charge. We want you to experience the power of automation without any barriers.",
     },
   ];
 
@@ -60,11 +60,10 @@ export default function FAQ() {
                 </span>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index
+                className={`overflow-hidden transition-all duration-300 ${openIndex === index
                     ? "max-h-48 opacity-100"
                     : "max-h-0 opacity-0"
-                }`}
+                  }`}
               >
                 <p className="px-6 pb-6 text-slate-600 leading-relaxed font-medium">
                   {faq.answer}
