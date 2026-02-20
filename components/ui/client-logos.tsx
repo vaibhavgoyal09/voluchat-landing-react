@@ -25,6 +25,8 @@ interface Logo {
   subtext: string;
   icon: any;
   color: string;
+  bg?: string;
+  border?: string;
 }
 
 const DEFAULT_LOGOS_ROW_1: Logo[] = [
@@ -34,6 +36,8 @@ const DEFAULT_LOGOS_ROW_1: Logo[] = [
     subtext: "Social Commerce",
     icon: IconBrandInstagram,
     color: "text-pink-600",
+    bg: "group-hover:bg-pink-50",
+    border: "group-hover:border-pink-100",
   },
   {
     id: "whatsapp",
@@ -41,6 +45,8 @@ const DEFAULT_LOGOS_ROW_1: Logo[] = [
     subtext: "Direct Sales",
     icon: IconBrandWhatsapp,
     color: "text-green-600",
+    bg: "group-hover:bg-green-50",
+    border: "group-hover:border-green-100",
   },
   {
     id: "amazon",
@@ -48,6 +54,8 @@ const DEFAULT_LOGOS_ROW_1: Logo[] = [
     subtext: "Marketplace",
     icon: IconBrandAmazon,
     color: "text-orange-500",
+    bg: "group-hover:bg-orange-50",
+    border: "group-hover:border-orange-100",
   },
   {
     id: "meesho",
@@ -55,6 +63,8 @@ const DEFAULT_LOGOS_ROW_1: Logo[] = [
     subtext: "Reselling",
     icon: IconBasket,
     color: "text-fuchsia-600",
+    bg: "group-hover:bg-fuchsia-50",
+    border: "group-hover:border-fuchsia-100",
   },
 ];
 
@@ -65,6 +75,8 @@ const DEFAULT_LOGOS_ROW_2: Logo[] = [
     subtext: "Fashion",
     icon: IconShirt,
     color: "text-rose-500",
+    bg: "group-hover:bg-rose-50",
+    border: "group-hover:border-rose-100",
   },
   {
     id: "flipkart",
@@ -72,6 +84,8 @@ const DEFAULT_LOGOS_ROW_2: Logo[] = [
     subtext: "Marketplace",
     icon: IconShoppingCart,
     color: "text-blue-600",
+    bg: "group-hover:bg-blue-50",
+    border: "group-hover:border-blue-100",
   },
   {
     id: "nykaa",
@@ -79,6 +93,8 @@ const DEFAULT_LOGOS_ROW_2: Logo[] = [
     subtext: "Beauty & Wellness",
     icon: IconSparkles,
     color: "text-pink-500",
+    bg: "group-hover:bg-pink-50",
+    border: "group-hover:border-pink-100",
   },
   {
     id: "retail",
@@ -86,6 +102,8 @@ const DEFAULT_LOGOS_ROW_2: Logo[] = [
     subtext: "Offline to Online",
     icon: IconBuildingStore,
     color: "text-indigo-600",
+    bg: "group-hover:bg-indigo-50",
+    border: "group-hover:border-indigo-100",
   },
 ];
 
@@ -182,30 +200,32 @@ export function ClientLogos({
   );
 }
 
-function LogoCard({ logo }: { logo: Logo }) {
+function LogoCard({ logo }: { logo: Logo & { bg?: string; border?: string } }) {
   const Icon = logo.icon;
   return (
     <div
       className={cn(
-        "group flex items-center gap-4 px-6 py-4 rounded-2xl border transition-all duration-300 min-w-[200px] cursor-default",
-        "bg-white/60 backdrop-blur-md border-slate-200/60 shadow-sm",
-        "hover:bg-white hover:border-primary-100 hover:shadow-premium hover:-translate-y-1"
+        "group flex items-center gap-4 px-6 py-4 rounded-2xl border transition-all duration-300 min-w-[220px] cursor-default",
+        "bg-white/40 backdrop-blur-sm border-white/40 shadow-sm",
+        "hover:bg-white hover:shadow-premium hover:-translate-y-1",
+        logo.border
       )}
     >
       <div
         className={cn(
-          "p-3 rounded-xl bg-slate-50 text-slate-500 transition-all duration-300",
-          "group-hover:scale-110 group-hover:bg-primary-50",
-          logo.color.replace("text-", "group-hover:text-")
+          "p-3 rounded-xl bg-slate-50 text-slate-400 transition-all duration-300",
+          "group-hover:scale-110",
+          logo.bg,
+          `group-hover:${logo.color.replace('text-', '')}` // Safer dynamic class
         )}
       >
-        <Icon className="w-6 h-6" stroke={2} />
+        <Icon className="w-6 h-6" stroke={1.5} />
       </div>
       <div className="flex flex-col">
-        <span className="font-heading font-semibold text-slate-800 text-lg group-hover:text-slate-900">
+        <span className="font-heading font-semibold text-slate-600 text-lg group-hover:text-slate-900 transition-colors">
           {logo.name}
         </span>
-        <span className="text-xs font-medium text-slate-500 group-hover:text-slate-600">
+        <span className="text-xs font-medium text-slate-400 group-hover:text-slate-500 transition-colors">
           {logo.subtext}
         </span>
       </div>

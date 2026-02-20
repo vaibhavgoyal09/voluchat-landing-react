@@ -4,13 +4,13 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import {
   Float,
-  Sphere,
+  Icosahedron,
   MeshDistortMaterial,
   Environment,
 } from "@react-three/drei";
 import * as THREE from "three";
 
-function GradientSphere({
+function GradientShape({
   position,
   color,
   scale,
@@ -24,19 +24,20 @@ function GradientSphere({
   speed?: number;
 }) {
   return (
-    <Float speed={speed} rotationIntensity={1} floatIntensity={2}>
-      <Sphere args={[1, 64, 64]} position={position} scale={scale}>
+    <Float speed={speed} rotationIntensity={2} floatIntensity={2}>
+      <Icosahedron args={[1, 0]} position={position} scale={scale}>
         <MeshDistortMaterial
           color={color}
-          envMapIntensity={0.4}
+          envMapIntensity={0.5}
           clearcoat={0.3}
           clearcoatRoughness={0}
-          metalness={0.1}
-          roughness={0.4}
+          metalness={0.5}
+          roughness={0.2}
+          radius={1}
           distort={distort}
           speed={2}
         />
-      </Sphere>
+      </Icosahedron>
     </Float>
   );
 }
@@ -112,7 +113,7 @@ function BackgroundScene() {
           cfg.basePos[2] + offsets[i].z,
         ] as [number, number, number];
         return (
-          <GradientSphere
+          <GradientShape
             key={i}
             position={pos}
             scale={cfg.scale}

@@ -75,14 +75,14 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="section-spacing relative">
-      <div className="container-padding z-10">
+    <section id="testimonials" className="section-padding relative">
+      <div className="container-wide z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-3xl mx-auto"
+          className="flex flex-col items-center justify-center max-w-3xl mx-auto mb-16"
         >
           <div className="flex justify-center">
             <div className="inline-block px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wide">
@@ -90,15 +90,15 @@ export default function Testimonials() {
             </div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-5 text-slate-900">
-            Loved by Indian Sellers
+          <h2 className="section-heading text-3xl md:text-5xl font-bold tracking-tight mt-5 text-slate-900 text-center">
+            Loved by <span className="text-gradient-primary">Indian Sellers</span>
           </h2>
-          <p className="text-center mt-5 text-slate-600 text-lg">
+          <p className="text-center mt-5 text-slate-600 text-xl font-light">
             See what our customers have to say about us.
           </p>
         </motion.div>
 
-        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[740px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn
             testimonials={secondColumn}

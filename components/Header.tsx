@@ -52,167 +52,178 @@ export default function Header() {
 
   return (
     <header
-      className={cn("sticky top-0 z-50 w-full border-b border-transparent bg-transparent", {
-        "border-slate-200/60 shadow-sm": scrolled,
-      })}
+      className={cn(
+        "fixed top-4 left-0 right-0 z-50 transition-all duration-300 px-4",
+        scrolled ? "py-0" : "py-2"
+      )}
     >
-      <nav className="mx-auto flex w-full items-center justify-between px-6 py-2">
-        <div className="flex items-center gap-5">
+      <nav
+        className={cn(
+          "mx-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300",
+          "bg-white/70 backdrop-blur-xl border border-white/40 shadow-premium supports-[backdrop-filter]:bg-white/60",
+          scrolled ? "max-w-6xl shadow-lg" : "max-w-5xl"
+        )}
+      >
+        <div className="flex items-center gap-8">
           <Link
             href="/"
-            className="hover:bg-accent rounded-md p-2 flex items-center gap-2"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            <Image
-              src="/voluchat_logo.svg"
-              alt="VoluChat"
-              width={32}
-              height={32}
-              className="w-8 h-8 md:w-6 md:h-6"
-            />
+            <div className="relative w-8 h-8">
+              <Image
+                src="/voluchat_logo.svg"
+                alt="VoluChat"
+                fill
+                className="object-contain"
+              />
+            </div>
             <span className="font-heading font-bold text-xl text-slate-900 tracking-tight hidden md:inline">
               VoluChat
             </span>
           </Link>
+
           <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-1">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-slate-600 hover:text-slate-900 text-sm">
+                <NavigationMenuTrigger className="bg-transparent hover:bg-slate-100/50 text-slate-600 hover:text-slate-900 font-medium text-sm rounded-full h-9 px-4 transition-colors focus:bg-slate-100/50">
                   Features
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-background p-1 pr-1.5">
-                  <ul className="bg-white grid w-lg grid-cols-2 gap-2 rounded-md border border-slate-200 p-2 shadow-premium">
+                <NavigationMenuContent>
+                  <ul className="bg-white/95 backdrop-blur-md grid w-[500px] grid-cols-2 gap-3 p-4 rounded-2xl border border-slate-100 shadow-xl">
                     {featureLinks.map((item, i) => (
                       <li key={i}>
                         <ListItem {...item} />
                       </li>
                     ))}
                   </ul>
-                  <div className="p-2">
-                    <p className="text-slate-600 text-sm">
-                      Ready to automate?{" "}
-                      <Link
-                        href="https://dashboard.voluchat.com"
-                        className="text-primary-600 font-medium hover:underline"
-                      >
-                        Get Started
-                      </Link>
-                    </p>
-                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-slate-600 hover:text-slate-900 text-sm">
+                <NavigationMenuTrigger className="bg-transparent hover:bg-slate-100/50 text-slate-600 hover:text-slate-900 font-medium text-sm rounded-full h-9 px-4 transition-colors focus:bg-slate-100/50">
                   Company
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-background p-1 pr-1.5 pb-1.5">
-                  <div className="grid w-md grid-cols-1 gap-2">
-                    <ul className="bg-white space-y-2 rounded-md border border-slate-200 p-2 shadow-premium">
-                      {companyLinks.map((item, i) => (
-                        <li key={i}>
-                          <NavigationMenuLink
-                            href={item.href}
-                            className="flex p-2 hover:bg-accent flex-row rounded-md items-center gap-x-2"
-                          >
-                            <item.icon className="text-slate-900 size-4" />
-                            <span className="font-medium text-sm">
-                              {item.title}
-                            </span>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <NavigationMenuContent>
+                  <ul className="bg-white/95 backdrop-blur-md grid w-[250px] gap-2 p-3 rounded-2xl border border-slate-100 shadow-xl">
+                    {companyLinks.map((item, i) => (
+                      <li key={i}>
+                        <NavigationMenuLink
+                          href={item.href}
+                          className="flex p-2 hover:bg-slate-50 rounded-xl items-center gap-x-3 transition-colors group"
+                        >
+                          <div className="p-1.5 rounded-lg bg-slate-50 group-hover:bg-white transition-colors text-slate-500 group-hover:text-primary-600 border border-transparent group-hover:border-slate-100">
+                            <item.icon className="size-4" />
+                          </div>
+                          <span className="font-medium text-sm text-slate-600 group-hover:text-slate-900">
+                            {item.title}
+                          </span>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuLink className="px-4" asChild>
+              <NavigationMenuItem>
                 <Link
                   href="/pricing"
-                  className="hover:bg-accent rounded-md p-2 text-sm font-medium text-slate-600 hover:text-slate-900"
+                  className="group inline-flex h-9 w-max items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100/50 hover:text-slate-900 text-slate-600 focus:bg-slate-100/50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                 >
                   Pricing
                 </Link>
-              </NavigationMenuLink>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="hidden items-center gap-2 md:flex">
+
+        <div className="hidden items-center gap-3 md:flex">
+          <Link
+            href="https://dashboard.voluchat.com/login"
+            className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors px-4 py-2"
+          >
+            Log in
+          </Link>
           <Link
             href="https://dashboard.voluchat.com"
-            className="group relative px-6 py-3 h-10 bg-[var(--color-slate-900)] text-white text-sm font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
+            className="group relative px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 overflow-hidden flex items-center"
           >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
             <span className="relative flex items-center gap-2">
-              Get Started
+              Start Free
             </span>
           </Link>
         </div>
+
         <div className="flex items-center gap-2 md:hidden">
           <Link
             href="https://dashboard.voluchat.com"
-            className="group relative px-4 py-3 h-10 bg-[var(--color-slate-900)] text-white text-sm font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
+            className="group relative px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-800 transition-all duration-300 shadow-md flex items-center"
           >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
-            <span className="relative flex items-center gap-2">
-              Get Started
-            </span>
+            Get Started
           </Link>
           <Button
-            variant="outline"
+            variant="ghost"
+            size="icon"
             onClick={() => setOpen(!open)}
-            className="md:hidden"
+            className="md:hidden rounded-full hover:bg-slate-100"
             aria-expanded={open}
-            aria-controls="mobile-menu"
             aria-label="Toggle menu"
           >
-            <MenuToggleIcon open={open} className="size-6" duration={300} />
+            <MenuToggleIcon open={open} className="size-5" />
           </Button>
         </div>
       </nav>
+
       <MobileMenu
         open={open}
-        className="flex flex-col justify-between gap-2 overflow-y-auto"
+        className="mt-4 mx-4 rounded-3xl border border-white/20 shadow-2xl bg-white/90 backdrop-blur-xl"
       >
-        <NavigationMenu className="max-w-full">
-          <div className="flex w-full flex-col gap-y-2">
-            <span className="text-base font-semibold text-slate-900">
-              Features
+        <NavigationMenu className="max-w-full block">
+          <div className="flex w-full flex-col gap-y-1 p-2">
+            <span className="px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+              Product
             </span>
             {featureLinks.map((link) => (
-              <ListItem key={link.title} {...link} />
+              <ListItem key={link.title} {...link} className="rounded-xl" />
             ))}
-            <span className="text-base font-semibold text-slate-900 mt-4">
+
+            <div className="h-px bg-slate-100 my-2 mx-4" />
+
+            <span className="px-4 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
               Company
             </span>
             {companyLinks.map((link) => (
               <NavigationMenuLink
                 key={link.title}
                 href={link.href}
-                className="flex p-2 hover:bg-accent flex-row rounded-md items-center gap-x-2"
+                className="flex p-3 hover:bg-slate-50 rounded-xl items-center gap-x-3"
               >
-                <link.icon className="text-slate-900 size-4" />
-                <span className="font-medium text-base">{link.title}</span>
+                <div className="p-1.5 bg-white rounded-lg shadow-sm border border-slate-100 text-slate-500">
+                  <link.icon className="size-4" />
+                </div>
+                <span className="font-medium text-slate-700">{link.title}</span>
               </NavigationMenuLink>
             ))}
-            <NavigationMenuLink asChild className="mt-2">
-              <Link
-                href="/pricing"
-                className="hover:bg-accent rounded-md p-2 text-base font-medium"
-              >
-                Pricing
-              </Link>
+            <NavigationMenuLink
+              href="/pricing"
+              className="flex p-3 hover:bg-slate-50 rounded-xl items-center gap-x-3"
+            >
+              <div className="p-1.5 bg-white rounded-lg shadow-sm border border-slate-100 text-slate-500">
+                <DollarSign className="size-4" />
+              </div>
+              <span className="font-medium text-slate-700">Pricing</span>
             </NavigationMenuLink>
           </div>
         </NavigationMenu>
-        <div className="flex flex-col gap-3">
+
+        <div className="p-4 mt-auto border-t border-slate-100">
           <Link
             href="https://dashboard.voluchat.com"
-            className="group relative w-full px-8 py-4 h-12 bg-[var(--color-slate-900)] text-white text-base font-medium rounded-full hover:bg-[var(--color-slate-800)] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 overflow-hidden flex justify-center items-center"
+            className="w-full justify-center group relative px-8 py-3.5 bg-primary-600 text-white text-base font-medium rounded-full hover:bg-primary-700 transition-all duration-300 shadow-lg shadow-primary-500/20 overflow-hidden flex items-center"
           >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
-            <span className="relative flex items-center gap-2">
-              Get Started
-            </span>
+            Get Started Now
           </Link>
+          <p className="text-center mt-3 text-xs text-slate-400">
+            No credit card required
+          </p>
         </div>
       </MobileMenu>
     </header>
@@ -261,19 +272,19 @@ function ListItem({
   return (
     <NavigationMenuLink
       className={cn(
-        "w-full flex flex-row gap-x-2 hover:bg-slate-50 rounded-md p-2 transition-colors",
+        "group w-full flex flex-row gap-x-3 hover:bg-slate-50 rounded-xl p-3 transition-all duration-300",
         className,
       )}
       {...props}
       asChild
     >
       <Link href={href}>
-        <div className="bg-primary-50/50 flex aspect-square size-10 items-center justify-center rounded-md border border-primary-100 shadow-sm">
-          <Icon className="text-primary-600 size-4" />
+        <div className="bg-slate-50 group-hover:bg-white flex aspect-square size-10 items-center justify-center rounded-lg border border-slate-100 shadow-sm transition-colors text-slate-500 group-hover:text-primary-600 group-hover:border-primary-100/50">
+          <Icon className="size-5 transition-transform group-hover:scale-110" />
         </div>
         <div className="flex flex-col items-start justify-center">
-          <span className="font-medium text-sm">{title}</span>
-          <span className="text-slate-600 text-xs">{description}</span>
+          <span className="font-heading font-semibold text-sm text-slate-900 group-hover:text-primary-700 transition-colors">{title}</span>
+          <span className="text-slate-500 text-xs mt-0.5 font-medium">{description}</span>
         </div>
       </Link>
     </NavigationMenuLink>

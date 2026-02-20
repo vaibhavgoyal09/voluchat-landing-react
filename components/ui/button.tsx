@@ -10,18 +10,21 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary-600 text-white hover:bg-primary-700 shadow-lg hover:shadow-xl hover:-translate-y-0.5",
-        destructive: "bg-red-500 text-white hover:bg-red-600",
+          "btn-primary",
+        destructive:
+          "bg-red-500 text-white shadow-sm hover:bg-red-600/90",
         outline:
-          "border-2 border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 text-slate-900",
-        secondary: "bg-slate-100 text-slate-900 hover:bg-slate-200",
-        ghost: "hover:bg-slate-100 hover:text-slate-900",
+          "border border-slate-200 bg-white hover:bg-slate-50 hover:text-slate-900 shadow-sm transition-all duration-300",
+        secondary:
+          "btn-secondary",
+        ghost: "hover:bg-slate-100 hover:text-slate-900 transition-colors",
         link: "text-primary-600 underline-offset-4 hover:underline",
+        premium: "btn-primary btn-glow", // New variant for hero actions
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-full px-3",
-        lg: "h-12 rounded-full px-8 text-base",
+        default: "h-11 px-6 py-2.5",
+        sm: "h-9 rounded-full px-4 text-xs",
+        lg: "h-14 rounded-full px-10 text-lg",
         icon: "h-10 w-10",
       },
     },
@@ -34,7 +37,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 

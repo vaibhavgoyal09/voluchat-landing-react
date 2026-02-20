@@ -243,7 +243,7 @@ export function PricingSection({
           mousePosition={mousePosition}
           containerRef={containerRef}
         />
-        <div className="relative z-10 container-padding">
+        <div className="relative z-10 container-wide">
           <div className="max-w-4xl mx-auto text-center space-y-4 mb-12">
             <div className="inline-block px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wide mb-4">
               Pricing
