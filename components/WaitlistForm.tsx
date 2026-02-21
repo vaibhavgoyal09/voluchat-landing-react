@@ -50,10 +50,10 @@ export default function WaitlistForm() {
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-[120px] -z-10"></div>
 
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 relative overflow-hidden shadow-lg">
+        <div className="glass p-8 sm:p-12 rounded-[2.5rem] relative overflow-hidden shadow-premium">
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-primary-500 via-purple-500 to-pink-500"></div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-slate-900">
+          <h2 className="section-heading text-3xl sm:text-4xl text-center mb-4">
             Join the private VoluChat beta
           </h2>
           <p className="text-lg text-slate-600 text-center mb-8">
@@ -140,7 +140,7 @@ export default function WaitlistForm() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full px-8 py-4 bg-linear-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl text-white font-semibold text-lg transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary-500/25"
+              className="w-full btn-primary btn-glow disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === "loading" ? "Submitting..." : "Request invite"}
             </button>

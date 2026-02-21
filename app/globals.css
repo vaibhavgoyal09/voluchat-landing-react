@@ -43,11 +43,11 @@ html {
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased font-sans text-base md:text-lg leading-relaxed selection:bg-primary-500/20 selection:text-primary-900;
+  @apply bg-[#fafafc] text-slate-900 antialiased font-sans text-base md:text-lg leading-relaxed selection:bg-primary-500/20 selection:text-primary-900;
   /* Subtle mesh gradient background */
   background-image: 
-    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.03) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.03) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.04) 0px, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -69,11 +69,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Custom Utilities */
 @utility container-wide {
-  @apply px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto;
+  @apply px-5 sm:px-8 lg:px-12 max-w-[1300px] mx-auto;
 }
 
 @utility section-padding {
-  @apply py-16 lg:py-24;
+  @apply py-16 lg:py-20;
 }
 
 /* Glassmorphism System */

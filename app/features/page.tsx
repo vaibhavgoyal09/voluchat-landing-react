@@ -136,16 +136,17 @@ export default function FeaturesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none" />
+      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16 relative overflow-hidden flex flex-col justify-center">
+        <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.4)_40%,transparent_70%)] -z-10 pointer-events-none"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="container-wide relative z-10 w-full pt-12">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <div className="inline-block px-4 py-2 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-sm font-semibold uppercase tracking-wide mb-6">
               Platform Features
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="section-heading text-5xl md:text-6xl lg:text-7xl mb-6">
               Everything you need to{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">
                 automate sales
@@ -158,16 +159,16 @@ export default function FeaturesPage() {
               business effortlessly.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <Link
                 href="/#get-started"
-                className="px-8 py-4 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+                className="btn-primary btn-glow"
               >
                 Start free trial
               </Link>
               <Link
                 href="/pricing"
-                className="px-8 py-4 bg-white border border-slate-200 text-slate-900 rounded-full font-medium hover:bg-slate-50 transition-all"
+                className="btn-secondary glass"
               >
                 View pricing
               </Link>
@@ -180,10 +181,10 @@ export default function FeaturesPage() {
       <Features />
 
       {/* Detailed Features Grid */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="section-padding relative">
+        <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="section-heading text-4xl mb-4">
               Built for Indian sellers
             </h2>
             <p className="text-lg text-slate-600">
@@ -196,13 +197,15 @@ export default function FeaturesPage() {
             {additionalFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl hover:border-primary-200 transition-all duration-300 group"
+                className="glass-card p-8 group hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
               >
-                <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors">
-                  <feature.icon className="w-7 h-7 text-primary-600 group-hover:text-white transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                
+                <div className="w-14 h-14 bg-white shadow-sm border border-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                  <feature.icon className="w-7 h-7 text-primary-600" />
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <h3 className="text-xl font-bold text-slate-900 mb-3 relative z-10 group-hover:text-primary-700 transition-colors">
                   {feature.title}
                 </h3>
 
@@ -226,10 +229,13 @@ export default function FeaturesPage() {
       </section>
 
       {/* Integration Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
+      <section className="section-padding relative overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary-400/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
+
+        <div className="container-wide">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="section-heading text-4xl mb-4">
               Seamless integrations
             </h2>
             <p className="text-lg text-slate-600">
@@ -238,7 +244,7 @@ export default function FeaturesPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 text-center border border-slate-200">
+            <div className="glass-card p-8 text-center hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
                 IG
               </div>
@@ -250,7 +256,7 @@ export default function FeaturesPage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center border border-slate-200">
+            <div className="glass-card p-8 text-center hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
                 WA
               </div>
@@ -262,7 +268,7 @@ export default function FeaturesPage() {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center border border-slate-200">
+            <div className="glass-card p-8 text-center hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
                 API
               </div>
@@ -278,33 +284,25 @@ export default function FeaturesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-600 to-indigo-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
-              backgroundSize: "40px 40px",
-            }}
-          />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-white">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to transform your Instagram sales?
-            </h2>
-            <p className="text-xl mb-8 text-primary-50">
-              Join 500+ Indian sellers already using VoluChat to automate their
-              sales and grow their business.
-            </p>
-            <Link
-              href="/#get-started"
-              className="inline-block px-8 py-4 bg-white text-primary-600 rounded-full font-medium hover:bg-primary-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
-            >
-              Start your free trial
-            </Link>
+      <section className="section-padding relative">
+        <div className="container-wide">
+          <div className="max-w-4xl mx-auto text-center glass-card p-12 rounded-[2.5rem] bg-gradient-to-br from-primary-600 to-indigo-600 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/noise.webp')] opacity-5 mix-blend-overlay"></div>
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 tracking-tighter">
+                Ready to transform your Instagram sales?
+              </h2>
+              <p className="text-xl mb-8 text-primary-50 font-light">
+                Join 500+ Indian sellers already using VoluChat to automate their
+                sales and grow their business.
+              </p>
+              <Link
+                href="/#get-started"
+                className="btn-primary hover:bg-slate-50 text-slate-900 bg-white shadow-xl hover:shadow-2xl"
+              >
+                Start your free trial
+              </Link>
+            </div>
           </div>
         </div>
       </section>

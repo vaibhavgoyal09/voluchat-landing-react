@@ -143,7 +143,7 @@ export default function Header() {
           </Link>
           <Link
             href="https://dashboard.voluchat.com"
-            className="group relative px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 overflow-hidden flex items-center"
+            className="btn-primary py-2 px-5 text-sm group"
           >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
             <span className="relative flex items-center gap-2">
@@ -155,7 +155,7 @@ export default function Header() {
         <div className="flex items-center gap-2 md:hidden">
           <Link
             href="https://dashboard.voluchat.com"
-            className="group relative px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-800 transition-all duration-300 shadow-md flex items-center"
+            className="btn-primary py-2 px-4 text-xs group"
           >
             Get Started
           </Link>
@@ -217,7 +217,7 @@ export default function Header() {
         <div className="p-4 mt-auto border-t border-slate-100">
           <Link
             href="https://dashboard.voluchat.com"
-            className="w-full justify-center group relative px-8 py-3.5 bg-primary-600 text-white text-base font-medium rounded-full hover:bg-primary-700 transition-all duration-300 shadow-lg shadow-primary-500/20 overflow-hidden flex items-center"
+            className="w-full justify-center btn-primary btn-glow"
           >
             Get Started Now
           </Link>

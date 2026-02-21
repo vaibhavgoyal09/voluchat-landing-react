@@ -86,12 +86,13 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none" />
+      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16 relative overflow-hidden flex flex-col justify-center">
+        <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.4)_40%,transparent_70%)] -z-10 pointer-events-none"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+        <div className="container-wide relative z-10 w-full pt-12">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <h1 className="section-heading text-5xl md:text-6xl lg:text-7xl mb-6">
               Empowering Indian sellers with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">
                 AI automation
@@ -108,10 +109,10 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="section-padding relative">
+        <div className="container-wide">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">
+            <h2 className="section-heading text-4xl mb-8 text-center">
               Our Story
             </h2>
 
@@ -149,10 +150,13 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
+      <section className="section-padding relative overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary-400/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
+
+        <div className="container-wide">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4 text-center">
+            <h2 className="section-heading text-4xl mb-4 text-center">
               Our Values
             </h2>
             <p className="text-lg text-slate-600 mb-12 text-center max-w-2xl mx-auto">
@@ -163,9 +167,9 @@ export default function AboutPage() {
               {values.map((value, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow"
+                  className="glass-card p-8 group hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <value.icon className="w-6 h-6 text-primary-600" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">
@@ -180,21 +184,21 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-600 to-indigo-600">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-12 text-center text-white">
+      <section className="section-padding relative">
+        <div className="container-wide">
+          <div className="max-w-5xl mx-auto glass p-12 rounded-[2.5rem]">
+            <div className="grid md:grid-cols-3 gap-12 text-center text-slate-900">
               <div>
-                <div className="text-5xl font-bold mb-2">500+</div>
-                <div className="text-primary-100">Active Sellers</div>
+                <div className="text-5xl font-heading font-bold mb-2 text-gradient-primary">500+</div>
+                <div className="text-slate-600 font-medium">Active Sellers</div>
               </div>
               <div>
-                <div className="text-5xl font-bold mb-2">100K+</div>
-                <div className="text-primary-100">DMs Automated</div>
+                <div className="text-5xl font-heading font-bold mb-2 text-gradient-primary">100K+</div>
+                <div className="text-slate-600 font-medium">DMs Automated</div>
               </div>
               <div>
-                <div className="text-5xl font-bold mb-2">10+</div>
-                <div className="text-primary-100">Languages Supported</div>
+                <div className="text-5xl font-heading font-bold mb-2 text-gradient-primary">10+</div>
+                <div className="text-slate-600 font-medium">Languages Supported</div>
               </div>
             </div>
           </div>
@@ -202,19 +206,19 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+      <section className="section-padding relative">
+        <div className="container-wide">
+          <div className="max-w-3xl mx-auto text-center glass-card p-12 rounded-[2.5rem]">
+            <h2 className="section-heading text-4xl mb-6">
               Join the VoluChat family
             </h2>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-xl text-slate-600 mb-8 font-light">
               Start automating your Instagram sales today and join hundreds of
               successful Indian sellers.
             </p>
             <Link
               href="/#get-started"
-              className="inline-block px-8 py-4 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+              className="btn-primary btn-glow"
             >
               Start your free trial
             </Link>

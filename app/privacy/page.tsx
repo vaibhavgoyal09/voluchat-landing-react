@@ -16,7 +16,8 @@ export default function PrivacyPolicy() {
   const lastUpdated = "November 23, 2025";
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <main className="min-h-screen relative">
+      <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-30" />
       {/* Header */}
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
@@ -30,17 +31,17 @@ export default function PrivacyPolicy() {
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-16 max-w-4xl">
+      <div className="container-wide py-16 max-w-4xl animate-fade-in relative z-10">
         {/* Title Section */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="section-heading text-4xl md:text-5xl mb-4 text-left">
             Privacy Policy
           </h1>
           <p className="text-lg text-slate-600">Last updated: {lastUpdated}</p>
         </div>
 
         {/* Content */}
-        <div className="prose prose-slate max-w-none">
+        <div className="prose prose-slate prose-lg max-w-none glass-card p-8 md:p-12">
           <div className="bg-primary-50 border-l-4 border-primary-500 p-6 rounded-r-lg mb-8">
             <p className="text-slate-700 font-medium mb-0">
               At VoluChat, we take your privacy seriously. This policy explains

@@ -65,12 +65,13 @@ export default function BlogCategoryPage({ params }: { params: { slug: string } 
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen relative overflow-hidden">
+      <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-30" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto px-4 py-12 md:py-20">
+      <div className="container-wide py-12 md:py-20 relative z-10 animate-fade-in">
         <div className="max-w-4xl mx-auto">
           {/* Back to Blog Link */}
           <div className="mb-8">
@@ -81,7 +82,7 @@ export default function BlogCategoryPage({ params }: { params: { slug: string } 
 
           {/* Category Header */}
           <header className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h1 className="section-heading text-4xl md:text-5xl lg:text-6xl mb-4">
               {category.name}
             </h1>
             <p className="text-xl text-slate-600">{category.description}</p>
@@ -89,16 +90,16 @@ export default function BlogCategoryPage({ params }: { params: { slug: string } 
 
           {/* Posts List */}
           {posts.length > 0 ? (
-            <div className="space-y-12">
+            <div className="space-y-8">
               {posts.map((post) => (
-                <article key={post.id} className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0 w-full md:w-48">
+                <article key={post.id} className="flex flex-col md:flex-row gap-8 glass-card p-6 md:p-8 hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
+                  <div className="flex-shrink-0 w-full md:w-64">
                     <Image
                       src={post.featuredImage || '/blog/placeholder.jpg'}
                       alt={post.title}
                       width={200}
                       height={150}
-                      className="w-full h-32 object-cover rounded-lg"
+                      className="w-full h-40 md:h-full object-cover rounded-[1.5rem] shadow-sm hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="flex-1">
@@ -112,12 +113,12 @@ export default function BlogCategoryPage({ params }: { params: { slug: string } 
                         </span>
                       ))}
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                      <Link href={`/blog/${post.slug}`} className="hover:text-primary-600">
+                    <h3 className="text-2xl font-heading font-bold text-slate-900 mb-2">
+                      <Link href={`/blog/${post.slug}`} className="hover:text-primary-600 transition-colors">
                         {post.title}
                       </Link>
                     </h3>
-                    <p className="text-slate-600 mb-4">{post.excerpt}</p>
+                    <p className="text-slate-600 mb-6 font-light">{post.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <Image

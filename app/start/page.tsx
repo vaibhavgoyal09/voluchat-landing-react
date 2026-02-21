@@ -11,19 +11,23 @@ export const metadata: Metadata = {
 
 export default function StartPage() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-40" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.4)_40%,transparent_70%)] -z-10 pointer-events-none"></div>
+
       <Header />
-      <div className="flex-grow flex items-center justify-center bg-slate-50 py-20">
-        <div className="bg-white p-8 rounded-xl shadow-premium max-w-md w-full border border-slate-200 text-center">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">
+      <div className="flex-grow container-wide flex items-center justify-center py-20 relative z-10 animate-fade-in">
+        <div className="glass-card p-8 md:p-12 rounded-[2.5rem] max-w-md w-full text-center">
+          <h1 className="section-heading text-3xl mb-4">
             Start Automating
           </h1>
           <p className="text-slate-600 mb-8">
             Join thousands of Indian sellers automating their sales.
           </p>
 
-          <div className="space-y-4">
-            <Button className="w-full h-12 text-base" asChild>
+          <div className="space-y-6">
+            <Button className="w-full btn-primary btn-glow" asChild>
               <a href="https://app.voluchat.com/register">
                 Create Free Account
               </a>

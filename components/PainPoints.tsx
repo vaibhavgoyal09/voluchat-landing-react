@@ -40,11 +40,11 @@ export default function PainPoints() {
   ];
 
   return (
-    <section className="section-spacing relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto container-padding relative z-10">
+      <div className="max-w-7xl mx-auto container-wide relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="section-heading text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
             Transform your{" "}
@@ -127,7 +127,7 @@ export default function PainPoints() {
         <div className="mt-16 text-center">
           <a
             href="https://dashboard.voluchat.com"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-medium shadow-xl hover:shadow-2xl hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300 group"
+            className="btn-primary btn-glow inline-flex items-center gap-2 px-8 py-4 rounded-full group"
           >
             Switch to VoluChat
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

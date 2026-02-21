@@ -183,16 +183,17 @@ export default function PricingPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none" />
+      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16 relative overflow-hidden flex flex-col justify-center">
+        <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.4)_40%,transparent_70%)] -z-10 pointer-events-none"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="container-wide relative z-10 w-full pt-12">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <div className="inline-block px-4 py-2 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-sm font-semibold uppercase tracking-wide mb-6">
               Simple, Transparent Pricing
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="section-heading text-5xl md:text-6xl lg:text-7xl mb-6">
               Choose the perfect plan for your{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">
                 business
@@ -222,11 +223,11 @@ export default function PricingPage() {
       <Pricing />
 
       {/* Feature Comparison Table */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="section-padding relative">
+        <div className="container-wide">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="section-heading text-4xl mb-4">
                 Compare plans
               </h2>
               <p className="text-lg text-slate-600">
@@ -234,7 +235,7 @@ export default function PricingPage() {
               </p>
             </div>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto glass-card rounded-[2rem]">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b-2 border-slate-200">
@@ -310,11 +311,14 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-6">
+      <section className="section-padding relative overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary-400/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
+
+        <div className="container-wide">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="section-heading text-4xl mb-4">
                 Frequently asked questions
               </h2>
               <p className="text-lg text-slate-600">
@@ -326,7 +330,7 @@ export default function PricingPage() {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 border border-slate-200"
+                  className="glass-card p-6"
                 >
                   <h3 className="text-lg font-semibold text-slate-900 mb-2">
                     {faq.question}
@@ -340,7 +344,7 @@ export default function PricingPage() {
               <p className="text-slate-600 mb-4">Still have questions?</p>
               <Link
                 href="mailto:support@voluchat.com"
-                className="inline-block px-6 py-3 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 transition-colors"
+                className="btn-primary btn-glow"
               >
                 Contact our team
               </Link>
@@ -350,13 +354,13 @@ export default function PricingPage() {
       </section>
 
       {/* Money-back Guarantee */}
-      <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-50 border-y border-green-100">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+      <section className="section-padding relative">
+        <div className="container-wide">
+          <div className="max-w-3xl mx-auto text-center glass-card p-12 bg-gradient-to-br from-green-50 to-emerald-50 border-green-100/50">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
               <Check className="w-8 h-8 text-green-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="section-heading text-3xl mb-4">
               30-Day Money-Back Guarantee
             </h2>
             <p className="text-lg text-slate-600">

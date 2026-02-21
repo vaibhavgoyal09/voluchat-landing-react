@@ -31,7 +31,7 @@ export const TestimonialsColumn = (props: {
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role }, i) => (
                 <div
-                  className="p-6 rounded-3xl border border-white/40 shadow-premium max-w-xs w-full bg-white/60 backdrop-blur-md hover:bg-white/80 transition-colors duration-300"
+                  className="glass p-6 rounded-3xl max-w-xs w-full transition-all duration-300 hover:shadow-premium-lg hover:bg-white/80"
                   key={i}
                 >
                   <div className="text-slate-700 leading-relaxed font-medium">

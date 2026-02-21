@@ -244,14 +244,16 @@ export function PricingSection({
           containerRef={containerRef}
         />
         <div className="relative z-10 container-wide">
-          <div className="max-w-4xl mx-auto text-center space-y-4 mb-12">
-            <div className="inline-block px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wide mb-4">
-              Pricing
+          <div className="max-w-4xl mx-auto text-center space-y-6 mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wider mb-2">
+              <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-primary-400 opacity-75"></span>
+              Early Access
             </div>
-            <h2 className="section-heading text-4xl font-bold tracking-tighter sm:text-5xl text-slate-900">
+            
+            <h2 className="section-heading text-5xl sm:text-6xl text-slate-900">
               {title}
             </h2>
-            <p className="text-slate-600 text-lg whitespace-pre-line">
+            <p className="text-xl text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
               {description}
             </p>
           </div>

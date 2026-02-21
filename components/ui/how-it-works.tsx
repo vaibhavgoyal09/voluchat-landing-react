@@ -36,7 +36,7 @@ const StepCard: React.FC<StepCardProps> = ({
       {icon}
     </div>
     {/* Title and Description */}
-    <h3 className="mb-3 text-2xl font-heading font-bold text-slate-900">
+    <h3 className="mb-3 text-2xl font-heading font-bold text-slate-900 group-hover:text-primary-700 transition-colors">
       {title}
     </h3>
     <p className="mb-8 text-slate-600 leading-relaxed font-medium text-lg">
@@ -116,11 +116,11 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="mx-auto mb-20 max-w-4xl text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-white/40 shadow-sm text-primary-700 text-xs font-semibold uppercase tracking-wider mb-6">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-primary-50/50 backdrop-blur-sm border border-primary-100/50 text-primary-700 text-xs font-semibold uppercase tracking-wider mb-6">
             How It Works
           </div>
-          <h2 className="text-4xl font-heading font-bold tracking-tight text-slate-900 sm:text-5xl mb-6">
-            Live in minutes, not days
+          <h2 className="section-heading text-5xl sm:text-6xl mb-6">
+            Live in minutes, <span className="text-gradient-primary">not days</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
             No coding required. Just connect and start selling.

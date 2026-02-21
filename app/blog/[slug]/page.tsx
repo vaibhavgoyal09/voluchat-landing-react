@@ -93,11 +93,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8 md:py-16">
+      <main className="min-h-screen relative overflow-hidden">
+        <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-30" />
+      <div className="container-wide py-8 md:py-16 relative z-10 animate-fade-in">
         <div className="max-w-4xl mx-auto">
           
-        <article>
+        <article className="glass-card p-6 md:p-12 shadow-premium border-white/40">
           {/* Back to Blog Link */}
           <div className="mb-12">
             <Link 
@@ -113,7 +114,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Post Header */}
           <header className="mb-16">
-            <h1 className="text-4xl md:text-6xl font-normal text-slate-900 mb-8 leading-tight">{post.title}</h1>
+            <h1 className="section-heading text-4xl md:text-5xl lg:text-6xl mb-8 text-left leading-tight">{post.title}</h1>
             
             <div className="flex items-center gap-4 text-slate-600 mb-8">
               <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center">
@@ -132,13 +133,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
 
             {post.featuredImage && (
-              <div className="relative overflow-hidden rounded-lg mb-16">
+              <div className="relative overflow-hidden rounded-[2rem] mb-16 shadow-lg border border-slate-100">
                 <Image
                   src={post.featuredImage}
                   alt={post.title}
                   width={1200}
                   height={600}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                   priority
                 />
               </div>

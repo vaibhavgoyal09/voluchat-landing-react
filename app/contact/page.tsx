@@ -67,12 +67,13 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none" />
+      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16 relative overflow-hidden flex flex-col justify-center">
+        <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.4)_40%,transparent_70%)] -z-10 pointer-events-none"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+        <div className="container-wide relative z-10 w-full pt-12">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <h1 className="section-heading text-5xl md:text-6xl lg:text-7xl mb-6">
               Get in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">
                 touch
@@ -88,10 +89,10 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Options */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
+      <section className="section-padding relative">
+        <div className="container-wide">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div className="glass-card p-6 text-center hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
               <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-6 h-6 text-primary-600" />
               </div>
@@ -109,7 +110,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div className="glass-card p-6 text-center hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
               <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <MessageSquare className="w-6 h-6 text-green-600" />
               </div>
@@ -120,7 +121,7 @@ export default function ContactPage() {
               </button>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div className="glass-card p-6 text-center hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
               <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-6 h-6 text-blue-600" />
               </div>
@@ -138,7 +139,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div className="glass-card p-6 text-center hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-6 h-6 text-purple-600" />
               </div>
@@ -150,8 +151,8 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-lg">
-              <h2 className="text-3xl font-bold text-slate-900 mb-2">
+            <div className="glass-card p-8 md:p-12">
+              <h2 className="section-heading text-3xl mb-2 text-left">
                 Send us a message
               </h2>
               <p className="text-slate-600 mb-8">
@@ -284,7 +285,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+                  className="w-full btn-primary btn-glow"
                 >
                   Send Message
                 </button>
@@ -295,10 +296,11 @@ export default function ContactPage() {
       </section>
 
       {/* Support Hours */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-6">
+      <section className="section-padding relative">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-400/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
+        <div className="container-wide">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white border border-slate-200 rounded-2xl p-8">
+            <div className="glass-card p-8">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Clock className="w-6 h-6 text-primary-600" />

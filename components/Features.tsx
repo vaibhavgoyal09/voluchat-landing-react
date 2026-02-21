@@ -13,47 +13,48 @@ import {
 import { cn } from "@/lib/utils";
 
 const features = [
+
   {
     title: "Comment-to-DM Automation",
     description:
       "Instantly reply to comments and send DMs. Turn engagement into leads without lifting a finger.",
     icon: MessageSquare,
-    className: "md:col-span-2 md:row-span-2",
+    className: "md:col-span-2",
   },
   {
     title: "Regional Language AI",
     description:
       "Chat in Hindi, Hinglish, Tamil, & more. Our AI understands context and culture.",
     icon: Globe,
-    className: "md:col-span-1 md:row-span-1",
+    className: "md:col-span-1",
   },
   {
     title: "Smart Lead Qualification",
     description:
       "Filter tire-kickers from buyers automatically.",
     icon: Zap,
-    className: "md:col-span-1 md:row-span-1",
+    className: "md:col-span-1",
   },
   {
     title: "WhatsApp Handoff",
     description:
       "Seamlessly move hot leads from Instagram DMs to WhatsApp for closing.",
     icon: Smartphone,
-    className: "md:col-span-1 md:row-span-2",
+    className: "md:col-span-2",
   },
   {
     title: "Growth Analytics",
     description:
       "Track every conversion, reply, and sale in real-time.",
     icon: BarChart,
-    className: "md:col-span-2 md:row-span-1",
+    className: "md:col-span-1",
   },
   {
     title: "Enterprise Security",
     description:
       "Bank-grade encryption and Meta-compliant API usage.",
     icon: Shield,
-    className: "md:col-span-1 md:row-span-1",
+    className: "md:col-span-1",
   },
 ];
 
@@ -79,12 +80,12 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(200px,auto)] gap-6 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
           {features.map((feature, index) => (
             <div
               key={index}
               className={cn(
-                "group relative overflow-visible rounded-3xl border border-white/60 bg-white/40 p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:bg-white/60 hover:-translate-y-1",
+                "group relative overflow-hidden rounded-[2.5rem] glass-card p-10",
                 feature.className
               )}
             >
@@ -96,7 +97,7 @@ export default function Features() {
                 </div>
 
                 <div className="mt-auto">
-                  <h3 className="mb-3 text-2xl font-bold text-slate-900 group-hover:text-primary-700 transition-colors">
+                  <h3 className="mb-4 text-2xl font-heading font-bold text-slate-900 group-hover:text-primary-700 transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">

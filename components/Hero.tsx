@@ -1,4 +1,4 @@
-import { ClientLogos } from "@/components/ui/client-logos";
+
 import { ThreeBackground } from "@/components/ui/three-background";
 import { Search, Sparkles, ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="pt-12 pb-12 lg:pt-20 lg:pb-6 relative overflow-hidden min-h-screen flex flex-col justify-center"
+      className="pt-24 pb-12 lg:pt-32 lg:pb-16 relative overflow-hidden flex flex-col"
     >
       {/* Three.js Animated Background */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.4)_40%,transparent_70%)] -z-10 pointer-events-none"></div>
 
       <div className="container-wide relative z-10 w-full">
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-16 animate-fade-in pt-12">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-16 animate-fade-in">
           <div className="inline-flex flex-wrap justify-center items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/40 shadow-sm text-slate-600 text-xs font-semibold uppercase tracking-wider mb-8 hover:bg-white/80 transition-colors cursor-default max-w-full">
             <span className="relative flex h-2.5 w-2.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
@@ -78,14 +78,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Infinite Marquee of Logos */}
-        <div className="mt-20 w-full animate-fade-in delay-700">
-          <ClientLogos
-            heading="Trusted integration ecosystem"
-            title=""
-            subheading=""
-          />
-        </div>
       </div>
     </section>
   );

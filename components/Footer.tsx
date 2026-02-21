@@ -5,8 +5,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-slate-200 pt-8 pb-8">
-      <div className="container-padding">
+    <footer className="bg-transparent border-t border-slate-200 pt-8 pb-8 relative overflow-hidden">
+      <div className="absolute inset-0 bg-white/50 pointer-events-none -z-10"></div>
+      <div className="container-wide relative z-10">
         {/* New CTA Component */}
         <CTA />
 

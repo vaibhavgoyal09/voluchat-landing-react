@@ -11,11 +11,12 @@ export default function BlogPage() {
   const blogCategories = BlogServiceServer.getAllCategories();
 
   return (
-    <main className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-12 md:py-20">
+    <main className="min-h-screen relative overflow-hidden">
+      <div className="absolute inset-0 gradient-mesh pointer-events-none -z-20 opacity-30" />
+      <div className="container-wide py-12 md:py-20 relative z-10 animate-fade-in">
         {/* Hero Section */}
-        <section className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+        <section className="text-center mb-16 max-w-4xl mx-auto">
+          <h1 className="section-heading text-5xl md:text-6xl lg:text-7xl mb-6">
             VoluChat Blog
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
@@ -42,11 +43,11 @@ export default function BlogPage() {
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
           <section className="mb-16">
-            <h2 className="text-2xl font-bold text-slate-900 mb-8">Featured Articles</h2>
+            <h2 className="section-heading text-4xl mb-8">Featured Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredPosts.map((post) => (
-                <article key={post.id} className="group">
-                  <div className="relative overflow-hidden rounded-lg mb-4">
+                <article key={post.id} className="group glass-card p-5 hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
+                  <div className="relative overflow-hidden rounded-[1.5rem] mb-5">
                     <Image
                       src={post.featuredImage || '/blog/placeholder.jpg'}
                       alt={post.title}
@@ -65,10 +66,10 @@ export default function BlogPage() {
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2 group-hover:text-primary-600">
+                  <h3 className="text-xl font-heading font-bold text-slate-900 mb-3 group-hover:text-primary-600 transition-colors">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
-                  <p className="text-slate-600 mb-3">{post.excerpt}</p>
+                  <p className="text-slate-600 mb-4 font-light leading-relaxed">{post.excerpt}</p>
                   <div className="flex items-center justify-between text-sm text-slate-500">
                     <span>{formatDate(post.date)}</span>
                     <span>•</span>
@@ -81,18 +82,18 @@ export default function BlogPage() {
         )}
 
         {/* All Posts */}
-        <section>
-          <h2 className="text-2xl font-bold text-slate-900 mb-8">Latest Articles</h2>
-          <div className="space-y-12">
+        <section className="max-w-5xl mx-auto">
+          <h2 className="section-heading text-4xl mb-8">Latest Articles</h2>
+          <div className="space-y-8">
             {allPosts.map((post) => (
-              <article key={post.id} className="flex flex-col md:flex-row gap-6">
-                <div className="flex-shrink-0 w-full md:w-48">
+              <article key={post.id} className="flex flex-col md:flex-row gap-8 glass-card p-6 md:p-8 hover:shadow-premium hover:-translate-y-1 transition-all duration-300">
+                <div className="flex-shrink-0 w-full md:w-64">
                   <Image
                     src={post.featuredImage || '/blog/placeholder.jpg'}
                     alt={post.title}
                     width={200}
                     height={150}
-                    className="w-full h-32 object-cover rounded-lg"
+                    className="w-full h-40 md:h-full object-cover rounded-[1.5rem] shadow-sm hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="flex-1">
@@ -106,12 +107,12 @@ export default function BlogPage() {
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-primary-600">
+                  <h3 className="text-2xl font-heading font-bold text-slate-900 mb-3">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-primary-600 transition-colors">
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="text-slate-600 mb-4">{post.excerpt}</p>
+                  <p className="text-slate-600 mb-6 font-light leading-relaxed">{post.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center">

@@ -29,13 +29,13 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="section-spacing">
-      <div className="max-w-3xl mx-auto container-padding">
+    <section id="faq" className="section-padding">
+      <div className="max-w-4xl mx-auto container-wide">
         <div className="text-center mb-12">
           <div className="inline-block px-3 py-1 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wide mb-4">
             FAQ
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="section-heading text-4xl sm:text-5xl mb-4">
             Common Questions
           </h2>
         </div>
@@ -44,7 +44,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white/60 backdrop-blur-sm border border-white/40 rounded-2xl overflow-hidden hover:bg-white/80 hover:border-white/60 hover:shadow-premium transition-all duration-300"
+              className="glass rounded-2xl overflow-hidden hover:bg-white/80 transition-all duration-300"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}

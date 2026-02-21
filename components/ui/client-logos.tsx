@@ -118,25 +118,37 @@ export function ClientLogos({
   subheading,
   title = "Powering Your Favorite Brands",
 }: ClientLogosProps) {
+  const isCompact = !title;
+  
   return (
-    <section className="py-20 lg:py-24 overflow-hidden relative">
+    <section className={cn("overflow-hidden relative", isCompact ? "py-8" : "section-padding")}>
       {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary-400/10 blur-[100px] rounded-full pointer-events-none" />
+      {!isCompact && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary-400/10 blur-[100px] rounded-full pointer-events-none" />
+      )}
 
-      <div className="container px-4 md:px-6 mb-12 flex flex-col items-center text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-sm font-medium mb-6 animate-fade-in">
-          <span className="flex h-2 w-2 rounded-full bg-primary-600 animate-pulse"></span>
-          {heading}
-        </div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-slate-900 mb-4 animate-fade-in delay-100">
-          {title}
-        </h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto animate-fade-in delay-200">
-          {subheading || "From independent creators to large marketplaces, VoluChat powers automated sales conversations across every channel."}
-        </p>
+      <div className={cn("container px-4 md:px-6 flex flex-col items-center text-center relative z-10", isCompact ? "mb-6" : "mb-12")}>
+        {heading && (
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-sm font-semibold uppercase tracking-wide mb-6 animate-fade-in">
+            <span className="flex h-2 w-2 rounded-full bg-primary-500 animate-pulse"></span>
+            {heading}
+          </div>
+        )}
+        
+        {title && (
+          <h2 className="section-heading text-4xl sm:text-5xl lg:text-5xl mb-4 animate-fade-in delay-100">
+            {title}
+          </h2>
+        )}
+        
+        {subheading && !isCompact && (
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light animate-fade-in delay-200">
+            {subheading}
+          </p>
+        )}
       </div>
 
-      <div className="relative pt-8 space-y-8 animate-fade-in delay-300">
+      <div className="relative pt-4 space-y-8 animate-fade-in delay-300">
         {/* Row 1 - Left */}
         <div className="relative">
           <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
