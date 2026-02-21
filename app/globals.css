@@ -109,12 +109,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @utility btn-glow {
   @apply relative overflow-hidden;
-}
 
-@utility btn-glow::after {
-  content: "";
-  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full;
-  animation: shimmer 3s infinite;
+  &::after {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full;
+    animation: shimmer 3s infinite;
+  }
 }
 
 /* Shadows */
