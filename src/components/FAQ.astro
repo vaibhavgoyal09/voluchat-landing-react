@@ -1,0 +1,98 @@
+---
+const faqs = [
+  {
+    question: "Is VoluChat safe for my Instagram account?",
+    answer: "Yes! VoluChat is built using official Meta APIs and follows all Instagram and WhatsApp guidelines. We prioritize account safety and compliance.",
+  },
+  {
+    question: "Do I need technical knowledge to set this up?",
+    answer: "Not at all. We provide done-for-you onboarding with a 30-minute call to help you set everything up. Our pre-built templates make it easy to get started without any technical skills.",
+  },
+  {
+    question: "Which languages do you support?",
+    answer: "VoluChat supports Hindi and major regional Indian languages including Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, and Gujarati. Our AI understands context and replies naturally in the customer's preferred language.",
+  },
+  {
+    question: "Is it really free?",
+    answer: "Yes! During our Early Beta period, you get full access to all VoluChat features completely free of charge. We want you to experience the power of automation without any barriers.",
+  },
+];
+---
+
+<section id="faq" class="py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide mb-4 shadow-sm">
+        FAQ
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-heading font-bold text-slate-900 mb-4">
+        Common Questions
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="faq-item glass rounded-2xl overflow-hidden hover:bg-white/80 transition-all duration-300 border border-slate-100 shadow-sm" data-index={index}>
+          <button class="faq-toggle w-full py-5 px-8 text-left flex justify-between items-center group">
+            <span class="font-bold text-lg text-slate-900 pr-8 group-hover:text-blue-700 transition-colors">
+              {faq.question}
+            </span>
+            <div class="faq-icon-container relative w-6 h-6 flex items-center justify-center">
+              <span class="absolute h-0.5 w-4 bg-blue-600 rounded-full transition-all duration-300"></span>
+              <span class="faq-icon-vertical absolute h-4 w-0.5 bg-blue-600 rounded-full transition-all duration-300"></span>
+            </div>
+          </button>
+          <div class="faq-content max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+            <p class="px-8 pb-8 text-slate-600 leading-relaxed font-medium text-lg">
+              {faq.answer}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-item.active {
+    background-color: white;
+    border-color: #dbeafe; /* blue-100 */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  }
+
+  .faq-item.active .faq-icon-vertical {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  
+  .faq-item.active .faq-content {
+    max-height: 500px;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const toggle = item.querySelector('.faq-toggle');
+    
+    toggle?.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close other items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+        }
+      });
+      
+      // Toggle current item
+      if (isActive) {
+        item.classList.remove('active');
+      } else {
+        item.classList.add('active');
+      }
+    });
+  });
+</script>

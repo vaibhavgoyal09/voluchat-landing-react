@@ -1,0 +1,115 @@
+---
+const testimonials = [
+  {
+    text: "We used to miss DMs every evening. With VoluChat, replies go out instantly and we closed 30% more orders last month.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+    name: "Priya Sharma",
+    role: "@priyasjewels · Handmade jewelry",
+  },
+  {
+    text: "The Hindi replies are perfect! Our customers feel more comfortable and actually respond faster now.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+    name: "Rahul Verma",
+    role: "@fashionstreet.in · Fashion boutique",
+  },
+  {
+    text: "Setting up automation was so easy. Now I can focus on making products instead of replying to the same questions.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
+    name: "Sneha Patel",
+    role: "@glowbysneha · D2C skincare",
+  },
+  {
+    text: "VoluChat helped us scale from 50 to 200 orders per month. The WhatsApp funnel is a game-changer.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+    name: "Arjun Mehta",
+    role: "@artisanfoods · Homemade snacks",
+  },
+  {
+    text: "Best investment for our Instagram business. The AI understands context and never sounds robotic.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
+    name: "Ananya Singh",
+    role: "@homedecor.in · Home décor",
+  },
+  {
+    text: "Our response time went from 3 hours to instant. Customers love the quick replies in their language.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
+    name: "Vikram Reddy",
+    role: "@vikramwatches · Accessories",
+  },
+];
+
+const firstColumn = [...testimonials, ...testimonials]; // Duplicate for seamless scroll
+---
+
+<section id="testimonials" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 z-10">
+    <div class="flex flex-col items-center justify-center max-w-3xl mx-auto mb-16 text-center">
+      <div class="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide">
+        Testimonials
+      </div>
+
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight mt-5 text-slate-900">
+        Loved by <span class="text-gradient-primary">Indian Sellers</span>
+      </h2>
+      <p class="mt-5 text-slate-600 text-xl font-light">
+        See what our customers have to say about us.
+      </p>
+    </div>
+
+    <!-- Scrolling Columns -->
+    <div class="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[600px] overflow-hidden">
+      <div class="flex flex-col gap-6 animate-scroll">
+        {firstColumn.map((testimonial) => (
+          <div class="p-8 rounded-3xl glass border border-slate-100 shadow-premium w-[350px]">
+            <p class="text-slate-700 leading-relaxed mb-6 font-medium">"{testimonial.text}"</p>
+            <div class="flex items-center gap-3">
+              <img src={testimonial.image} alt={testimonial.name} class="w-10 h-10 rounded-full object-cover" />
+              <div class="text-left">
+                <div class="font-bold text-slate-900 text-sm">{testimonial.name}</div>
+                <div class="text-slate-500 text-xs">{testimonial.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="hidden md:flex flex-col gap-6 animate-scroll-reverse">
+        {firstColumn.map((testimonial) => (
+          <div class="p-8 rounded-3xl glass border border-slate-100 shadow-premium w-[350px]">
+            <p class="text-slate-700 leading-relaxed mb-6 font-medium">"{testimonial.text}"</p>
+            <div class="flex items-center gap-3">
+              <img src={testimonial.image} alt={testimonial.name} class="w-10 h-10 rounded-full object-cover" />
+              <div class="text-left">
+                <div class="font-bold text-slate-900 text-sm">{testimonial.name}</div>
+                <div class="text-slate-500 text-xs">{testimonial.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+
+  @keyframes scroll-reverse {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll-reverse {
+    animation: scroll-reverse 40s linear infinite;
+  }
+
+  .animate-scroll:hover, .animate-scroll-reverse:hover {
+    animation-play-state: paused;
+  }
+</style>

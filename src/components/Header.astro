@@ -1,0 +1,143 @@
+---
+const featureLinks = [
+  { title: "DM Automation", href: "#features", description: "Auto-reply to Instagram DMs instantly" },
+  { title: "WhatsApp Integration", href: "#features", description: "Seamless lead handoff to WhatsApp" },
+  { title: "Multi-language", href: "#features", description: "Hindi & regional language support" },
+  { title: "Analytics", href: "#features", description: "Track engagement and conversions" },
+];
+
+const companyLinks = [
+  { title: "About Us", href: "#" },
+  { title: "Testimonials", href: "#testimonials" },
+  { title: "Blog", href: "/blog" },
+];
+---
+
+<header id="main-header" class="fixed top-4 left-0 right-0 z-50 transition-all duration-300 px-4">
+  <nav id="nav-container" class="mx-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 glass max-w-5xl">
+    <div class="flex items-center gap-8">
+      <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <div class="relative w-8 h-8">
+          <img src="/voluchat_logo.svg" alt="VoluChat" class="w-full h-full object-contain" />
+        </div>
+        <span class="font-heading font-bold text-xl text-slate-900 tracking-tight hidden md:inline">
+          VoluChat
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-1">
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 bg-transparent hover:bg-slate-100/50 text-slate-600 hover:text-slate-900 font-medium text-sm rounded-full h-9 px-4 transition-colors">
+            Features
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5 transition-transform group-hover:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="absolute top-full left-0 pt-2 opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200">
+            <ul class="w-[450px] bg-white/95 backdrop-blur-md grid grid-cols-2 gap-2 p-3 rounded-2xl border border-slate-100 shadow-xl">
+              {featureLinks.map(link => (
+                <li>
+                  <a href={link.href} class="flex flex-col p-3 hover:bg-slate-50 rounded-xl transition-colors group/item">
+                    <span class="font-semibold text-sm text-slate-900 group-hover/item:text-primary-600">{link.title}</span>
+                    <span class="text-xs text-slate-500">{link.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        
+        <a href="#pricing" class="h-9 inline-flex items-center px-4 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-colors">Pricing</a>
+        <a href="/blog" class="h-9 inline-flex items-center px-4 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-colors">Blog</a>
+      </div>
+    </div>
+
+    <!-- Right Side Actions -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="https://dashboard.voluchat.com/login" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors px-4 py-2">Log in</a>
+      <a href="https://dashboard.voluchat.com" class="btn-primary py-2 px-6 text-sm group relative overflow-hidden">
+        <span class="relative z-10">Start Free</span>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-full hover:bg-slate-100 transition-colors" aria-label="Toggle Menu">
+      <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-slate-700">
+        <line x1="4" x2="20" y1="12" y2="12" class="line-1 transition-all duration-300"></line>
+        <line x1="4" x2="20" y1="6" y2="6" class="line-2 transition-all duration-300"></line>
+        <line x1="4" x2="20" y1="18" y2="18" class="line-3 transition-all duration-300"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 top-[4.5rem] p-4 z-40 bg-white/95 backdrop-blur-xl md:hidden opacity-0 invisible translate-y-4 transition-all duration-300">
+    <div class="flex flex-col gap-4 p-4">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-widest px-2">Navigation</div>
+      <a href="#features" class="text-lg font-semibold text-slate-900 px-2 py-1">Features</a>
+      <a href="#pricing" class="text-lg font-semibold text-slate-900 px-2 py-1">Pricing</a>
+      <a href="/blog" class="text-lg font-semibold text-slate-900 px-2 py-1">Blog</a>
+      
+      <div class="h-px bg-slate-100 my-2"></div>
+      
+      <a href="https://dashboard.voluchat.com/login" class="text-lg font-semibold text-slate-900 px-2 py-1">Log in</a>
+      <a href="https://dashboard.voluchat.com" class="btn-primary w-full mt-4">Get Started</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .mobile-menu-open #menu-icon .line-1 { transform: translateY(6px) rotate(45deg); }
+  .mobile-menu-open #menu-icon .line-2 { opacity: 0; transform: scaleX(0); }
+  .mobile-menu-open #menu-icon .line-3 { transform: translateY(-6px) rotate(-45deg); }
+  
+  .mobile-menu-active { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
+</style>
+
+<script>
+  // Scroll Logic
+  const header = document.getElementById('main-header');
+  const navContainer = document.getElementById('nav-container');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('top-2');
+      header.classList.remove('top-4');
+      navContainer.classList.add('max-w-6xl', 'shadow-premium');
+      navContainer.classList.remove('max-w-5xl');
+    } else {
+      header.classList.add('top-4');
+      header.classList.remove('top-2');
+      navContainer.classList.add('max-w-5xl');
+      navContainer.classList.remove('max-w-6xl', 'shadow-premium');
+    }
+  });
+
+  // Mobile Menu Logic
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const body = document.body;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.contains('mobile-menu-active');
+    
+    if (isOpen) {
+      menu.classList.remove('mobile-menu-active');
+      toggle.classList.remove('mobile-menu-open');
+      body.style.overflow = '';
+    } else {
+      menu.classList.add('mobile-menu-active');
+      toggle.classList.add('mobile-menu-open');
+      body.style.overflow = 'hidden';
+    }
+  });
+
+  // Close menu on link click
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('mobile-menu-active');
+      toggle.classList.remove('mobile-menu-open');
+      body.style.overflow = '';
+    });
+  });
+</script>

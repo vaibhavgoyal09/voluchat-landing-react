@@ -1,0 +1,153 @@
+---
+---
+<section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex flex-col items-center justify-center">
+  <!-- Three.js Canvas -->
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <canvas id="hero-canvas" class="w-full h-full"></canvas>
+  </div>
+
+  <!-- Content -->
+  <div class="container-wide relative z-10 px-6 text-center max-w-5xl">
+    <div id="hero-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/40 shadow-sm text-slate-600 text-xs font-semibold uppercase tracking-wider mb-8 opacity-0 translate-y-4">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+      </span>
+      <span class="text-blue-700">New Beta</span>
+      <span class="w-px h-3 bg-slate-300"></span>
+      <span>Early Access Now Open</span>
+    </div>
+
+    <h1 id="hero-title" class="text-5xl sm:text-7xl lg:text-8xl font-heading font-bold text-slate-900 tracking-tighter leading-[1.05] mb-8 opacity-0 translate-y-8">
+      Turn <span class="text-gradient-primary">Interactions</span> <br class="hidden sm:block" />
+      <span class="font-serif italic font-light text-slate-700 block sm:inline mt-2 sm:mt-0">
+        into Revenue
+      </span>
+    </h1>
+
+    <p id="hero-description" class="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12 font-light opacity-0 translate-y-8">
+      The AI-powered growth engine for modern brands. <br class="hidden md:block" />
+      Automate DMs, capture leads, and drive sales 24/7.
+    </p>
+
+    <div id="hero-actions" class="flex flex-col sm:flex-row gap-5 items-center justify-center opacity-0 translate-y-8">
+      <a href="https://dashboard.voluchat.com" class="btn-primary w-full sm:w-auto group">
+        Get Started for Free
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 transition-transform group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <a href="#features" class="btn-secondary w-full sm:w-auto glass">
+        Learn More
+      </a>
+    </div>
+  </div>
+
+  <!-- Decorative elements -->
+  <div id="hero-deco-1" class="absolute -right-12 top-1/4 hidden lg:block opacity-0">
+    <div class="glass rotate-12 p-6 rounded-3xl animate-float">
+      <span class="text-5xl">✨</span>
+    </div>
+  </div>
+  <div id="hero-deco-2" class="absolute -left-12 top-1/2 hidden lg:block opacity-0">
+    <div class="glass -rotate-6 p-4 rounded-2xl animate-float" style="animation-delay: 1s">
+      <span class="text-3xl">🚀</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  import * as THREE from 'three';
+  import { gsap } from 'gsap';
+
+  // Three.js Scene Setup
+  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+  scene.add(ambientLight);
+
+  const directLight1 = new THREE.DirectionalLight(0x4f46e5, 1);
+  directLight1.position.set(10, 10, 5);
+  scene.add(directLight1);
+
+  const directLight2 = new THREE.DirectionalLight(0x8b5cf6, 0.5);
+  directLight2.position.set(-10, -10, -5);
+  scene.add(directLight2);
+
+  // Animated Objects (Spheres)
+  const geometries = [
+    new THREE.IcosahedronGeometry(2.5, 1),
+    new THREE.IcosahedronGeometry(1.8, 1),
+    new THREE.IcosahedronGeometry(1.2, 0),
+  ];
+
+  const materials = [
+    new THREE.MeshStandardMaterial({ color: 0x4f46e5, metalness: 0.2, roughness: 0.1, wireframe: false }),
+    new THREE.MeshStandardMaterial({ color: 0x3b82f6, metalness: 0.1, roughness: 0.2, wireframe: false }),
+    new THREE.MeshStandardMaterial({ color: 0x8b5cf6, metalness: 0.3, roughness: 0.1, wireframe: false }),
+  ];
+
+  const spheres: THREE.Mesh[] = [];
+  const sphereData: { velocity: THREE.Vector3, rotation: THREE.Vector3 }[] = [];
+
+  for (let i = 0; i < 6; i++) {
+    const sphere = new THREE.Mesh(geometries[i % 3], materials[i % 3]);
+    sphere.position.set(
+      (Math.random() - 0.5) * 15,
+      (Math.random() - 0.5) * 10,
+      -Math.random() * 5
+    );
+    scene.add(sphere);
+    spheres.push(sphere);
+    sphereData.push({
+      velocity: new THREE.Vector3((Math.random() - 0.5) * 0.01, (Math.random() - 0.5) * 0.01, (Math.random() - 0.5) * 0.01),
+      rotation: new THREE.Vector3(Math.random() * 0.01, Math.random() * 0.01, Math.random() * 0.01)
+    });
+  }
+
+  camera.position.z = 8;
+
+  // Animation Loop
+  function animate() {
+    requestAnimationFrame(animate);
+
+    spheres.forEach((sphere, i) => {
+      sphere.position.add(sphereData[i].velocity);
+      sphere.rotation.x += sphereData[i].rotation.x;
+      sphere.rotation.y += sphereData[i].rotation.y;
+
+      // Bounce in cube
+      if (Math.abs(sphere.position.x) > 8) sphereData[i].velocity.x *= -1;
+      if (Math.abs(sphere.position.y) > 5) sphereData[i].velocity.y *= -1;
+      if (Math.abs(sphere.position.z) > 10 || sphere.position.z > 0) sphereData[i].velocity.z *= -1;
+    });
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // Resize Handler
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // Entrance Animations with GSAP
+  window.addEventListener('load', () => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
+    
+    tl.to('#hero-badge', { opacity: 1, y: 0, delay: 0.2 })
+      .to('#hero-title', { opacity: 1, y: 0 }, '-=0.6')
+      .to('#hero-description', { opacity: 1, y: 0 }, '-=0.7')
+      .to('#hero-actions', { opacity: 1, y: 0 }, '-=0.8')
+      .to('#hero-deco-1', { opacity: 1, x: -50 }, '-=0.5')
+      .to('#hero-deco-2', { opacity: 1, x: 50 }, '-=1');
+  });
+</script>
