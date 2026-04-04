@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PricingSection from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+
+const seoTitle = "Transparent Pricing for Growing Brands | VoluChat";
+const seoDescription = "Join VoluChat's Early beta for free. Get unlimited Instagram DMs, comment automation, and WhatsApp funnels at no cost during our beta phase.";
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <Header />
+
+  <main class="pt-20">
+    <section class="relative py-24 overflow-hidden">
+      <div class="sect-grid"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div class="max-w-3xl mx-auto">
+          <div class="section-badge mb-6">Investment</div>
+          <h1 class="text-5xl md:text-6xl font-heading font-extrabold text-slate-900 mb-8 leading-tight">
+            Transparent Pricing for <span class="text-gradient-primary">Modern Brands</span>
+          </h1>
+          <p class="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Scale your Instagram automation without breaking the bank. Join our Early Beta today and get full access for free.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing component -->
+    <PricingSection />
+
+    <!-- Detailed FAQ section for Pricing SEO -->
+    <section class="py-24 bg-slate-50 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-heading font-bold text-slate-900 mb-4">Pricing & Plan FAQ</h2>
+          <p class="text-lg text-slate-500">Need more info? We've got answers.</p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="glass p-8 rounded-3xl border-slate-200/50 shadow-sm">
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-3">Is it really free?</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Yes, honestly. During our public beta period, we're giving all early adopters full, unlimited access to the platform. We want to work with brands like yours to perfect our features.
+            </p>
+          </div>
+          <div class="glass p-8 rounded-3xl border-slate-200/50 shadow-sm">
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-3">When will the free period end?</h3>
+            <p class="text-slate-600 leading-relaxed">
+              We'll provide at least 30 days' notice before our beta period ends. Even after that, early adopters will receive a lifetime discount for believing in us early on.
+            </p>
+          </div>
+          <div class="glass p-8 rounded-3xl border-slate-200/50 shadow-sm">
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-3">Do I need a credit card?</h3>
+            <p class="text-slate-600 leading-relaxed">
+              No. You can sign up and start using VoluChat immediately without entering any payment information.
+            </p>
+          </div>
+          <div class="glass p-8 rounded-3xl border-slate-200/50 shadow-sm">
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-3">What happens to my data after the free period?</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Your data is yours. If you choose not to continue with a paid plan after the beta, your account will simply be paused. Nothing will be deleted without your consent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ />
+  </main>
+
+  <Footer />
+</Layout>

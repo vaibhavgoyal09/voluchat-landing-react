@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const lastUpdated = "April 4, 2026";
+---
+
+<Layout title="Terms & Conditions | VoluChat">
+  <Header />
+
+  <main class="relative pt-32 pb-24 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="sect-grid"></div>
+    <div class="sect-orb w-[500px] h-[500px] bg-indigo-100/50 -top-24 -right-24"></div>
+    <div class="sect-orb w-[400px] h-[400px] bg-sky-100/30 bottom-0 -left-24"></div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <div class="mb-12">
+        <div class="section-badge mb-4">Legal</div>
+        <h1 class="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 mb-6">
+          Terms & Conditions
+        </h1>
+        <p class="text-slate-500 font-medium">
+          Last updated: {lastUpdated}
+        </p>
+      </div>
+
+      <div class="glass p-8 md:p-12 rounded-3xl space-y-8 text-slate-600 leading-relaxed shadow-premium">
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">1. Acceptance of Terms</h2>
+          <p>
+            By accessing or using the VoluChat service ("Service"), you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of the terms, you may not access the Service. These terms apply to all visitors, users, and others who access or use the Service.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">2. Description of Service</h2>
+          <p>
+            VoluChat provides a SaaS platform for automating Instagram comments and Direct Messages (DMs). To perform these automations, you must connect your Instagram Professional account to our Service. We handle actions like replying to comments, sending DMs, and managing lead handoffs.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">3. User Obligations</h2>
+          <p class="mb-4">
+            By using our Service, you agree:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>To provide accurate and complete information when creating an account.</li>
+            <li>To maintain the security of your account and immediately notify us of any unauthorized use.</li>
+            <li>To use the Service in compliance with all applicable laws and regulations, specifically Instagram's Terms of Service and Community Guidelines.</li>
+            <li>You are solely responsible for the content of your automated responses and interactions.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">4. Data Storage & Usage</h2>
+          <p class="mb-4">
+            To provide the automation features, we collect and store:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Instagram Access Tokens:</strong> These are stored securely to allow the Service to act on your behalf.</li>
+            <li><strong>Interaction Data:</strong> We store the comments and DMs received by your connected Instagram accounts to process and automate responses.</li>
+            <li><strong>Publicly Accessible Data:</strong> We may store publicly available info from users who interact with your account to personalize automations.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">5. Disclaimer of Warranties</h2>
+          <p>
+            The Service is provided on an "AS IS" and "AS AVAILABLE" basis. We make no warranties, expressed or implied, that the Service will meet your requirements, be uninterrupted, timely, secure, or error-free. We are not responsible for any actions taken by Instagram (Meta) against your account due to the use of automation.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">6. Limitation of Liability</h2>
+          <p>
+            In no event shall VoluChat, its directors, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, or other intangible losses, resulting from your access to or use of the Service.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">7. Termination</h2>
+          <p>
+            We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">8. Governing Law</h2>
+          <p>
+            These Terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law provisions.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">9. Contact Us</h2>
+          <p>
+            If you have any questions about these Terms, please contact us at: <a href="mailto:support@voluchat.com" class="text-indigo-600 hover:underline">support@voluchat.com</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

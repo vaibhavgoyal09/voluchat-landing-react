@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FeaturesSection from '../components/Features.astro';
+import CTA from '../components/CTA.astro';
+
+const seoTitle = "Powerful AI Features for Instagram Automation | VoluChat";
+const seoDescription = "Discover VoluChat's features: Comment-to-DM automation, regional language AI, smart lead qualification, and WhatsApp integration to grow your Instagram sales.";
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <Header />
+
+  <main class="pt-20">
+    <section class="relative py-24 overflow-hidden">
+      <div class="sect-grid"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-3xl">
+          <div class="section-badge mb-6">Capabilities</div>
+          <h1 class="text-5xl md:text-6xl font-heading font-extrabold text-slate-900 mb-8 leading-tight">
+            The Complete Toolkit for <span class="text-gradient-primary">Social Commerce</span>
+          </h1>
+          <p class="text-xl text-slate-600 leading-relaxed max-w-2xl">
+            VoluChat provides all the tools you need to automate your Instagram engagement, capture high-quality leads, and transition them to sales seamlessly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reuse the Features component -->
+    <FeaturesSection />
+
+    <!-- Extra educational section for SEO -->
+    <section class="py-24 bg-slate-50 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="space-y-12">
+            <div>
+              <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6">Why automate with VoluChat?</h2>
+              <p class="text-slate-600 leading-relaxed mb-6">
+                Direct engagement on Instagram is the highest-converting marketing channel today. But as you grow, manual replies become impossible.
+              </p>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <span class="text-slate-700 font-medium">Reduce response time from hours to seconds.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <span class="text-slate-700 font-medium">Capture leads that would have otherwise gone to your competitors.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <span class="text-slate-700 font-medium">Focus your team only on hot leads ready for WhatsApp closing.</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-premium">
+              <h3 class="text-xl font-heading font-bold text-slate-900 mb-4 italic">"Since using VoluChat, our comment-to-lead conversion rate has increased by 312%."</h3>
+              <p class="text-slate-500 font-medium">— Marketing Director, Fashion Brand</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center">
+              <span class="text-3xl font-bold text-indigo-600 mb-2">24/7</span>
+              <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Automation</span>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center translate-y-6">
+              <span class="text-3xl font-bold text-purple-600 mb-2">10+</span>
+              <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Languages</span>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center">
+              <span class="text-3xl font-bold text-blue-600 mb-2">0ms</span>
+              <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Latency</span>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center translate-y-6">
+              <span class="text-3xl font-bold text-emerald-600 mb-2">100%</span>
+              <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Secure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,14 +1,14 @@
 ---
 const featureLinks = [
-  { title: "DM Automation", href: "#features", description: "Auto-reply to Instagram DMs instantly" },
-  { title: "WhatsApp Integration", href: "#features", description: "Seamless lead handoff to WhatsApp" },
-  { title: "Multi-language", href: "#features", description: "Hindi & regional language support" },
-  { title: "Analytics", href: "#features", description: "Track engagement and conversions" },
+  { title: "DM Automation", href: "/features", description: "Auto-reply to Instagram DMs instantly" },
+  { title: "WhatsApp Integration", href: "/features", description: "Seamless lead handoff to WhatsApp" },
+  { title: "Multi-language", href: "/features", description: "Hindi & regional language support" },
+  { title: "Analytics", href: "/features", description: "Track engagement and conversions" },
 ];
 
 const companyLinks = [
-  { title: "About Us", href: "#" },
-  { title: "Testimonials", href: "#testimonials" },
+  { title: "About Us", href: "/about" },
+  { title: "Testimonials", href: "/#testimonials" },
   { title: "Blog", href: "/blog" },
 ];
 ---
@@ -46,7 +46,8 @@ const companyLinks = [
           </div>
         </div>
         
-        <a href="#pricing" class="h-9 inline-flex items-center px-4 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-colors">Pricing</a>
+        <a href="/pricing" class="h-9 inline-flex items-center px-4 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-colors">Pricing</a>
+        <a href="/about" class="h-9 inline-flex items-center px-4 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-colors">About</a>
         <a href="/blog" class="h-9 inline-flex items-center px-4 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-full transition-colors">Blog</a>
       </div>
     </div>
@@ -74,8 +75,10 @@ const companyLinks = [
   <div id="mobile-menu" class="fixed inset-0 top-[4.5rem] p-4 z-40 bg-white/95 backdrop-blur-xl md:hidden opacity-0 invisible translate-y-4 transition-all duration-300">
     <div class="flex flex-col gap-4 p-4">
       <div class="text-xs font-bold text-slate-400 uppercase tracking-widest px-2">Navigation</div>
-      <a href="#features" class="text-lg font-semibold text-slate-900 px-2 py-1">Features</a>
-      <a href="#pricing" class="text-lg font-semibold text-slate-900 px-2 py-1">Pricing</a>
+      <a href="/features" class="text-lg font-semibold text-slate-900 px-2 py-1">Features</a>
+      <a href="/pricing" class="text-lg font-semibold text-slate-900 px-2 py-1">Pricing</a>
+      <a href="/about" class="text-lg font-semibold text-slate-900 px-2 py-1">About</a>
+      <a href="/contact" class="text-lg font-semibold text-slate-900 px-2 py-1">Contact</a>
       <a href="/blog" class="text-lg font-semibold text-slate-900 px-2 py-1">Blog</a>
       
       <div class="h-px bg-slate-100 my-2"></div>
@@ -100,6 +103,7 @@ const companyLinks = [
   const navContainer = document.getElementById('nav-container');
   
   window.addEventListener('scroll', () => {
+    if (!header || !navContainer) return;
     if (window.scrollY > 20) {
       header.classList.add('top-2');
       header.classList.remove('top-4');
@@ -118,7 +122,8 @@ const companyLinks = [
   const menu = document.getElementById('mobile-menu');
   const body = document.body;
 
-  toggle.addEventListener('click', () => {
+  toggle?.addEventListener('click', () => {
+    if (!menu || !toggle) return;
     const isOpen = menu.classList.contains('mobile-menu-active');
     
     if (isOpen) {
@@ -133,8 +138,9 @@ const companyLinks = [
   });
 
   // Close menu on link click
-  menu.querySelectorAll('a').forEach(link => {
+  menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
+      if (!menu || !toggle) return;
       menu.classList.remove('mobile-menu-active');
       toggle.classList.remove('mobile-menu-open');
       body.style.overflow = '';

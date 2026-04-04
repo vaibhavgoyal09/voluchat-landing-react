@@ -1,122 +1,90 @@
 ---
-const plans = [
-  {
-    name: "Early Adopter",
-    price: "0",
-    period: "beta",
-    features: [
-      "Unlimited Automated DMs",
-      "Unlimited Workflows",
-      "All Indian Languages",
-      "WhatsApp Funnel Integration",
-      "Priority Support",
-      "Early Access to New Features",
-    ],
-    description: "Get full access to all features for free during our public beta.",
-    buttonText: "Get Started Now",
-    href: "https://dashboard.voluchat.com",
-    isPopular: true,
-  },
+const features = [
+  "Unlimited Automated DMs",
+  "Unlimited Workflows",
+  "All Indian Languages",
+  "WhatsApp Funnel Integration",
+  "Priority Support",
+  "Early Access to New Features",
 ];
 ---
 
-<section id="pricing" class="py-24 relative overflow-hidden">
-  <!-- Interactive Starfield Background (simplified) -->
-  <div id="starfield" class="absolute inset-0 pointer-events-none -z-10 bg-slate-50/50"></div>
+<section id="pricing" class="py-28 relative overflow-hidden bg-white">
+  <!-- Background -->
+  <div class="absolute inset-0 pointer-events-none -z-10">
+    <div class="sect-grid"></div>
+    <div class="sect-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  </div>
 
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="max-w-4xl mx-auto text-center space-y-6 mb-16">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-2">
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="section-badge mb-5 inline-flex">
         <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
         </span>
         Early Access
-      </div>
-      
-      <h2 class="text-5xl sm:text-6xl font-heading font-bold text-slate-900">
+      </span>
+      <h2 class="text-4xl sm:text-5xl font-heading font-bold text-slate-900 mb-4 leading-tight">
         Free During Early Beta
       </h2>
-      <p class="text-xl text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
+      <p class="text-lg text-slate-500 max-w-xl mx-auto">
         Join now and get unlimited access to all features. No credit card required.
       </p>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 items-start gap-8 max-w-md mx-auto">
-      {plans.map((plan) => (
-        <div class={`rounded-3xl p-8 flex flex-col relative transition-all duration-300 bg-white/80 backdrop-blur-xl border-2 border-transparent shadow-premium-lg hover:shadow-glow z-10 hover:scale-[1.02] border-indigo-100 group`}>
-          {plan.isPopular && (
-            <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-              <div class="bg-gradient-to-r from-blue-600 to-indigo-600 py-1.5 px-4 rounded-full flex items-center gap-1.5 shadow-lg shadow-blue-500/30 ring-4 ring-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-yellow-300"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <span class="text-white text-xs font-bold tracking-wide uppercase">Most Popular</span>
-              </div>
-            </div>
-          )}
-          
-          <div class="flex-1 flex flex-col text-center">
-            <h3 class="text-xl font-heading font-bold text-slate-900">{plan.name}</h3>
-            <p class="mt-2 text-sm text-slate-500 font-medium">{plan.description}</p>
-            
-            <div class="mt-6 flex items-baseline justify-center gap-x-1">
-              <span class="text-5xl font-bold tracking-tight text-slate-900">Free</span>
-              <span class="text-sm font-semibold leading-6 tracking-wide text-slate-500">/ {plan.period}</span>
-            </div>
-            
-            <div class="my-8 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+    <!-- Pricing card -->
+    <div class="max-w-md mx-auto">
+      <div class="relative group">
+        <!-- Glow ring -->
+        <div class="absolute -inset-px rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-500 to-violet-500 opacity-20 blur-sm group-hover:opacity-40 transition-opacity duration-500"></div>
 
-            <ul role="list" class="space-y-4 text-sm leading-5 text-left text-slate-600">
-              {plan.features.map((feature) => (
-                <li class="flex gap-x-3 items-start font-medium">
-                  <div class="mt-0.5 p-0.5 rounded-full bg-blue-50 text-blue-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  <span class="text-slate-700">{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div class="mt-auto pt-8">
-              <a href={plan.href} class="btn-primary w-full rounded-full text-base py-6 shadow-sm transition-all duration-300 shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1">
-                {plan.buttonText}
-              </a>
+        <div class="relative bg-white rounded-3xl border border-slate-100 p-10 shadow-sm flex flex-col gap-8">
+          <!-- Popular badge -->
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold tracking-wide shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="text-yellow-400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Most Popular
             </div>
           </div>
+
+          <!-- Plan info -->
+          <div class="text-center pt-2">
+            <div class="text-sm font-semibold text-slate-400 mb-1 uppercase tracking-widest">Early Adopter</div>
+            <div class="flex items-baseline justify-center gap-1 mt-2">
+              <span class="text-6xl font-heading font-black text-slate-900">Free</span>
+              <span class="text-slate-400 text-sm font-medium">/beta</span>
+            </div>
+            <p class="text-slate-500 text-sm mt-3">Get full access to all features for free during our public beta.</p>
+          </div>
+
+          <div class="h-px w-full bg-slate-100"></div>
+
+          <!-- Feature list -->
+          <ul class="space-y-4">
+            {features.map((f) => (
+              <li class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                <div class="w-5 h-5 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <!-- CTA -->
+          <div class="relative group/btn">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-25 group-hover/btn:opacity-60 transition duration-500"></div>
+            <a href="https://dashboard.voluchat.com" class="relative flex items-center justify-center gap-2 w-full py-4 bg-slate-900 text-white rounded-full font-semibold text-base transition-all duration-300 hover:scale-[1.02] shadow-lg">
+              Get Started Now — It's Free
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <p class="text-center text-xs text-slate-400">No credit card required · Cancel anytime</p>
         </div>
-      ))}
+      </div>
     </div>
   </div>
 </section>
-
-<script>
-  // Simple starfield effect
-  const starfield = document.getElementById('starfield');
-  const starCount = 100;
-
-  for (let i = 0; i < starCount; i++) {
-    const star = document.createElement('div');
-    star.className = 'absolute bg-slate-300 rounded-full pointer-events-none opacity-0';
-    const size = Math.random() * 2 + 1;
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-    star.style.top = `${Math.random() * 100}%`;
-    star.style.left = `${Math.random() * 100}%`;
-    
-    starfield?.appendChild(star);
-
-    // Random twinkle animation
-    const delay = Math.random() * 5;
-    const duration = Math.random() * 3 + 2;
-    
-    star.animate([
-      { opacity: 0 },
-      { opacity: Math.random() * 0.5 + 0.3 },
-      { opacity: 0 }
-    ], {
-      duration: duration * 1000,
-      delay: delay * 1000,
-      iterations: Infinity,
-      easing: 'ease-in-out'
-    });
-  }
-</script>

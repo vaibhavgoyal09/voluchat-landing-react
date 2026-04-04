@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const lastUpdated = "April 4, 2026";
+---
+
+<Layout title="Privacy Policy | VoluChat">
+  <Header />
+
+  <main class="relative pt-32 pb-24 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="sect-grid"></div>
+    <div class="sect-orb w-[500px] h-[500px] bg-indigo-100/50 -top-24 -left-24"></div>
+    <div class="sect-orb w-[400px] h-[400px] bg-purple-100/30 bottom-0 -right-24"></div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <div class="mb-12">
+        <div class="section-badge mb-4">Legal</div>
+        <h1 class="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 mb-6">
+          Privacy Policy
+        </h1>
+        <p class="text-slate-500 font-medium">
+          Last updated: {lastUpdated}
+        </p>
+      </div>
+
+      <div class="glass p-8 md:p-12 rounded-3xl space-y-8 text-slate-600 leading-relaxed shadow-premium">
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">1. Introduction</h2>
+          <p>
+            At VoluChat ("we," "our," or "us"), we respect your privacy and are committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website and use our Instagram automation services.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">2. Information We Collect</h2>
+          <p class="mb-4">
+            We collect several types of information from and about users of our SaaS platform, including:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Account Information:</strong> Name, email address, and payment details provided during registration.
+            </li>
+            <li>
+              <strong>Instagram Integration Data:</strong> To provide our automation services, we securely store your <strong>Instagram access tokens</strong>. These tokens allow us to perform actions on your behalf as authorized by you.
+            </li>
+            <li>
+              <strong>User Data:</strong> We store publicly accessible data from your Instagram profile and the profiles of users who interact with your account (e.g., username, profile picture URL).
+            </li>
+            <li>
+              <strong>Communication Data:</strong> We store the <strong>comments and Direct Messages (DMs)</strong> we receive through the Instagram API to enable automation, tracking, and response management.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">3. How We Use Your Information</h2>
+          <p class="mb-4">
+            We use information that we collect about you or that you provide to us, including any personal information:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>To provide and maintain our Service.</li>
+            <li>To automate responses to comments and DMs on your Instagram account.</li>
+            <li>To notify you about changes to our Service.</li>
+            <li>To provide customer support.</li>
+            <li>To gather analysis or valuable information so that we can improve our Service.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">4. Data Security</h2>
+          <p>
+            We implement industry-standard security measures to protect your information. Your Instagram access tokens are encrypted at rest and stored securely. We use secure servers and restrict access to personal information to employees, contractors, and agents who need that information to operate and improve our services.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">5. Third-Party Services</h2>
+          <p>
+            Our Service integrates with Instagram (Meta). By using VoluChat, you are also bound by Instagram's Terms of Service and Privacy Policy. We do not sell your personal data to third parties.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">6. Your Rights</h2>
+          <p>
+            Depending on your location, you may have certain rights regarding your personal information, including the right to access, correct, or delete the data we store. You can disconnect your Instagram account at any time, which will revoke our access and stop data collection.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">7. Changes to Our Privacy Policy</h2>
+          <p>
+            It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat our users' personal information, we will notify you through a notice on the Service home page or via email.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">8. Contact Information</h2>
+          <p>
+            To ask questions or comment about this privacy policy and our privacy practices, contact us at: <a href="mailto:support@voluchat.com" class="text-indigo-600 hover:underline">support@voluchat.com</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
