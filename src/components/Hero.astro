@@ -1,143 +1,182 @@
 ---
 ---
 <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex flex-col items-center justify-center">
-  <!-- Three.js Canvas -->
-  <div class="absolute inset-0 -z-10 pointer-events-none">
-    <canvas id="hero-canvas" class="w-full h-full"></canvas>
+  <!-- Professional CSS Background -->
+  <div class="hero-bg" aria-hidden="true">
+    <!-- Soft gradient orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <!-- Subtle dot grid -->
+    <div class="hero-grid"></div>
+    <!-- Bottom fade -->
+    <div class="hero-fade"></div>
   </div>
 
   <!-- Content -->
   <div class="container-wide relative z-10 px-6 text-center max-w-5xl">
-    <div id="hero-badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/40 shadow-sm text-slate-600 text-xs font-semibold uppercase tracking-wider mb-8 opacity-0 translate-y-4">
-      <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-      </span>
-      <span class="text-blue-700">New Beta</span>
-      <span class="w-px h-3 bg-slate-300"></span>
-      <span>Early Access Now Open</span>
+    <div id="hero-badge" class="inline-flex overflow-hidden relative items-center gap-2 px-1 py-1 rounded-full bg-slate-900/5 backdrop-blur-xl border border-slate-900/10 shadow-[0_0_20px_rgba(79,70,229,0.1)] mb-8 opacity-0 translate-y-4 transition-all hover:bg-slate-900/10 cursor-pointer group">
+      <div class="px-3 py-1.5 rounded-full bg-white/90 shadow-sm flex items-center gap-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-600 shadow-[0_0_8px_rgba(79,70,229,0.8)]"></span>
+        </span>
+        <span class="text-indigo-800 text-[10px] sm:text-xs font-bold tracking-widest uppercase">New Beta</span>
+      </div>
+      <span class="text-slate-700 text-xs sm:text-sm font-medium pr-3 pl-1 group-hover:text-indigo-700 transition-colors">Early Access Now Open &rarr;</span>
     </div>
 
-    <h1 id="hero-title" class="text-5xl sm:text-7xl lg:text-8xl font-heading font-bold text-slate-900 tracking-tighter leading-[1.05] mb-8 opacity-0 translate-y-8">
-      Turn <span class="text-gradient-primary">Interactions</span> <br class="hidden sm:block" />
-      <span class="font-serif italic font-light text-slate-700 block sm:inline mt-2 sm:mt-0">
-        into Revenue
+    <h1 id="hero-title" class="text-5xl sm:text-7xl lg:text-[6.5rem] font-bold tracking-tight text-slate-900 leading-[1.05] mb-8 opacity-0 translate-y-8 drop-shadow-sm">
+      Turn <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 hover:from-pink-500 hover:to-indigo-600 transition-all duration-700">Interactions</span> <br class="hidden sm:block" />
+      <span class="relative inline-block mt-2 sm:mt-0">
+        <span class="absolute -inset-2 bg-gradient-to-r from-indigo-100 to-purple-100 blur-xl opacity-50 rounded-full"></span>
+        <span class="relative font-serif italic text-slate-700 font-medium">
+          into Revenue
+        </span>
       </span>
     </h1>
 
-    <p id="hero-description" class="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12 font-light opacity-0 translate-y-8">
+    <p id="hero-description" class="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12 font-medium opacity-0 translate-y-8">
       The AI-powered growth engine for modern brands. <br class="hidden md:block" />
-      Automate DMs, capture leads, and drive sales 24/7.
+      Automate DMs, capture leads, and drive sales <span class="text-indigo-600 font-semibold border-b-2 border-indigo-200">24/7.</span>
     </p>
 
-    <div id="hero-actions" class="flex flex-col sm:flex-row gap-5 items-center justify-center opacity-0 translate-y-8">
-      <a href="https://dashboard.voluchat.com" class="btn-primary w-full sm:w-auto group">
-        Get Started for Free
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 transition-transform group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-      </a>
-      <a href="#features" class="btn-secondary w-full sm:w-auto glass">
-        Learn More
+    <div id="hero-actions" class="flex flex-col sm:flex-row gap-6 items-center justify-center opacity-0 translate-y-8">
+      <div class="relative group w-full sm:w-auto">
+        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
+        <a href="https://dashboard.voluchat.com" class="relative flex items-center justify-center px-8 py-4 bg-slate-900 text-white rounded-full font-semibold text-lg transition-all duration-300 group-hover:scale-105 group-active:scale-95 shadow-xl">
+          Get Started for Free
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1.5 transition-transform duration-300"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <a href="#features" class="relative group flex items-center justify-center px-8 py-4 bg-white/40 backdrop-blur-xl border border-white/60 text-slate-800 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/60 hover:shadow-lg hover:-translate-y-1 w-full sm:w-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-slate-500 group-hover:text-indigo-600 transition-colors"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        Watch Demo
       </a>
     </div>
   </div>
 
-  <!-- Decorative elements -->
-  <div id="hero-deco-1" class="absolute -right-12 top-1/4 hidden lg:block opacity-0">
-    <div class="glass rotate-12 p-6 rounded-3xl animate-float">
-      <span class="text-5xl">✨</span>
+  <!-- Decorative elements (Floating UI Cards) -->
+  <div id="hero-deco-1" class="absolute right-4 lg:right-16 top-1/3 hidden md:block opacity-0 z-20 pointer-events-none">
+    <div class="w-56 h-auto bg-white/40 backdrop-blur-2xl border border-white/50 p-4 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] animate-float rotate-6 transform transition-transform hover:scale-110 hover:rotate-0" style="animation-duration: 6s;">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold shadow-inner border border-white/20">V</div>
+        <div class="space-y-1.5">
+          <div class="h-2 w-20 bg-slate-300/80 rounded-full"></div>
+          <div class="h-1 w-12 bg-slate-300/60 rounded-full"></div>
+        </div>
+      </div>
+      <div class="text-xs font-semibold text-slate-700 bg-white/60 px-3 py-2 rounded-2xl border border-white/40 inline-flex items-center gap-1.5 shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> 
+        Sale Closed! +$120 🎉
+      </div>
     </div>
   </div>
-  <div id="hero-deco-2" class="absolute -left-12 top-1/2 hidden lg:block opacity-0">
-    <div class="glass -rotate-6 p-4 rounded-2xl animate-float" style="animation-delay: 1s">
-      <span class="text-3xl">🚀</span>
+  <div id="hero-deco-2" class="absolute left-4 lg:left-16 top-1/2 hidden md:block opacity-0 z-20 pointer-events-none">
+    <div class="w-48 h-auto bg-white/40 backdrop-blur-2xl border border-white/50 p-4 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] animate-float -rotate-3 transform transition-transform hover:scale-110 hover:rotate-0" style="animation-duration: 8s; animation-delay: 1s;">
+      <div class="flex gap-1.5 mb-4">
+        <div class="w-2.5 h-2.5 rounded-full bg-slate-300/80"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-slate-300/80"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-slate-300/80"></div>
+      </div>
+      <div class="space-y-2.5">
+        <div class="h-2 w-full bg-indigo-200/80 rounded-full"></div>
+        <div class="h-2 w-4/5 bg-slate-300/80 rounded-full"></div>
+        <div class="h-2 w-3/5 bg-slate-300/50 rounded-full"></div>
+      </div>
     </div>
   </div>
 </section>
 
+<style>
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* Dot grid */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.35;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  /* Orb shared styles */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    will-change: transform;
+  }
+
+  /* Large indigo/violet orb - top right */
+  .orb-1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.22) 0%, rgba(139, 92, 246, 0.10) 60%, transparent 100%);
+    top: -200px;
+    right: -150px;
+    animation: drift1 18s ease-in-out infinite;
+  }
+
+  /* Medium blue orb - bottom left */
+  .orb-2 {
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.18) 0%, rgba(99, 102, 241, 0.08) 60%, transparent 100%);
+    bottom: -100px;
+    left: -120px;
+    animation: drift2 22s ease-in-out infinite;
+  }
+
+  /* Small purple orb - center */
+  .orb-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(168, 85, 247, 0.14) 0%, transparent 70%);
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: drift3 26s ease-in-out infinite;
+  }
+
+  /* Bottom white fade so the section blends into the next */
+  .hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, #ffffff, transparent);
+  }
+
+  @keyframes drift1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(-40px, 30px) scale(1.05); }
+    66%       { transform: translate(20px, -20px) scale(0.97); }
+  }
+
+  @keyframes drift2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    40%       { transform: translate(30px, -40px) scale(1.08); }
+    70%       { transform: translate(-20px, 20px) scale(0.95); }
+  }
+
+  @keyframes drift3 {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50%       { transform: translateX(-50%) scale(1.1) translateY(-20px); }
+  }
+</style>
+
 <script>
-  import * as THREE from 'three';
   import { gsap } from 'gsap';
-
-  // Three.js Scene Setup
-  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-  // Lighting
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-  scene.add(ambientLight);
-
-  const directLight1 = new THREE.DirectionalLight(0x4f46e5, 1);
-  directLight1.position.set(10, 10, 5);
-  scene.add(directLight1);
-
-  const directLight2 = new THREE.DirectionalLight(0x8b5cf6, 0.5);
-  directLight2.position.set(-10, -10, -5);
-  scene.add(directLight2);
-
-  // Animated Objects (Spheres)
-  const geometries = [
-    new THREE.IcosahedronGeometry(2.5, 1),
-    new THREE.IcosahedronGeometry(1.8, 1),
-    new THREE.IcosahedronGeometry(1.2, 0),
-  ];
-
-  const materials = [
-    new THREE.MeshStandardMaterial({ color: 0x4f46e5, metalness: 0.2, roughness: 0.1, wireframe: false }),
-    new THREE.MeshStandardMaterial({ color: 0x3b82f6, metalness: 0.1, roughness: 0.2, wireframe: false }),
-    new THREE.MeshStandardMaterial({ color: 0x8b5cf6, metalness: 0.3, roughness: 0.1, wireframe: false }),
-  ];
-
-  const spheres: THREE.Mesh[] = [];
-  const sphereData: { velocity: THREE.Vector3, rotation: THREE.Vector3 }[] = [];
-
-  for (let i = 0; i < 6; i++) {
-    const sphere = new THREE.Mesh(geometries[i % 3], materials[i % 3]);
-    sphere.position.set(
-      (Math.random() - 0.5) * 15,
-      (Math.random() - 0.5) * 10,
-      -Math.random() * 5
-    );
-    scene.add(sphere);
-    spheres.push(sphere);
-    sphereData.push({
-      velocity: new THREE.Vector3((Math.random() - 0.5) * 0.01, (Math.random() - 0.5) * 0.01, (Math.random() - 0.5) * 0.01),
-      rotation: new THREE.Vector3(Math.random() * 0.01, Math.random() * 0.01, Math.random() * 0.01)
-    });
-  }
-
-  camera.position.z = 8;
-
-  // Animation Loop
-  function animate() {
-    requestAnimationFrame(animate);
-
-    spheres.forEach((sphere, i) => {
-      sphere.position.add(sphereData[i].velocity);
-      sphere.rotation.x += sphereData[i].rotation.x;
-      sphere.rotation.y += sphereData[i].rotation.y;
-
-      // Bounce in cube
-      if (Math.abs(sphere.position.x) > 8) sphereData[i].velocity.x *= -1;
-      if (Math.abs(sphere.position.y) > 5) sphereData[i].velocity.y *= -1;
-      if (Math.abs(sphere.position.z) > 10 || sphere.position.z > 0) sphereData[i].velocity.z *= -1;
-    });
-
-    renderer.render(scene, camera);
-  }
-
-  animate();
-
-  // Resize Handler
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
 
   // Entrance Animations with GSAP
   window.addEventListener('load', () => {
