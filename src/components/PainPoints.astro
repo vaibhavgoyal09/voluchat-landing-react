@@ -1,172 +1,151 @@
 ---
-const items = [
+const comparisons = [
   {
-    problem: { icon: "clock", label: "Manual & Slow", text: "Missed DMs while packing orders or busy." },
-    solution: { text: "Instant, human-like auto-replies 24/7." },
+    id: "01",
+    pain: {
+      title: "Manual & Slow",
+      description: "DMs pile up while you're busy packing orders, leading to missed opportunities.",
+      icon: "clock"
+    },
+    gain: {
+      title: "Instant Auto-Replies",
+      description: "Every comment and DM is handled in seconds, keeping leads hot 24/7.",
+      icon: "zap"
+    }
   },
   {
-    problem: { icon: "users", label: "Losing Customers", text: "Customers leave if you reply late." },
-    solution: { text: "Smart flows that qualify & close sales." },
+    id: "02",
+    pain: {
+      title: "Customer Drop-off",
+      description: "Buyers lose interest and leave if they don't get a response within minutes.",
+      icon: "users"
+    },
+    gain: {
+      title: "Smart Qualification",
+      description: "AI filters real buyers from tire-kickers and prepares them for checkout.",
+      icon: "check-circle"
+    }
   },
   {
-    problem: { icon: "message-square", label: "Repetitive Work", text: "Manually sending payment details repeatedly." },
-    solution: { text: "Auto-send offers, stock & payment links." },
-  },
+    id: "03",
+    pain: {
+      title: "Repetitive Tasks",
+      description: "Manually sending payment links and product details over and over again.",
+      icon: "refresh"
+    },
+    gain: {
+      title: "Automated Closures",
+      description: "Payments links, catalogs, and FAQs are sent instantly without you lifting a finger.",
+      icon: "shopping-cart"
+    }
+  }
 ];
 ---
 
-<section class="py-28 relative overflow-hidden bg-white">
-
-  <!-- Background -->
-  <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
-    <div class="pp-grid"></div>
-    <div class="pp-orb pp-orb-a"></div>
-    <div class="pp-orb pp-orb-b"></div>
+<section id="transformation" class="py-20 md:py-32 relative overflow-hidden bg-[#fafafa]">
+  <!-- Background Accents -->
+  <div class="absolute inset-0 pointer-events-none -z-10">
+    <div class="sect-grid opacity-10"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-indigo-50/50 to-transparent"></div>
   </div>
 
-  <div class="max-w-6xl mx-auto px-6">
-
+  <div class="max-w-7xl mx-auto px-6">
     <!-- Header -->
-    <div class="text-center mb-20">
-      <h2 class="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-5">
-        Transform your <span class="text-gradient-primary">sales process</span>
-      </h2>
-      <p class="text-lg text-slate-500 max-w-xl mx-auto">See the difference VoluChat makes in your daily operations.</p>
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <span class="section-badge mb-5">
+        The Transformation
+      </span>
+        <h2 class="text-4xl sm:text-6xl font-heading font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+          Why settle for <span class="text-slate-400">manual</span> when you can have <span class="text-gradient-primary">automatic?</span>
+        </h2>
+      <p class="text-xl text-slate-600 leading-relaxed">
+        Stop losing sales to slow responses. Here's how VoluChat transforms your daily grind into a seamless revenue machine.
+      </p>
     </div>
 
-    <!-- Column Labels -->
-    <div class="grid grid-cols-[1fr_auto_1fr] gap-0 mb-6 px-2">
-      <div class="flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-red-400 inline-block"></span>
-        <span class="text-xs font-bold uppercase tracking-widest text-red-400">Without VoluChat</span>
-      </div>
-      <div class="w-14"></div>
-      <div class="flex items-center gap-2 justify-end">
-        <span class="text-xs font-bold uppercase tracking-widest text-indigo-500">With VoluChat</span>
-        <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 inline-block"></span>
-      </div>
-    </div>
-
-    <!-- Comparison Rows -->
-    <div class="flex flex-col gap-4">
-      {items.map((item, i) => (
-        <div class="comparison-row group grid grid-cols-[1fr_auto_1fr] items-center gap-0 rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white/60 backdrop-blur-sm">
-
-          <!-- Problem Side -->
-          <div class="pp-problem flex items-center gap-5 px-7 py-6">
-            <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center flex-shrink-0 text-red-400">
-              {item.problem.icon === "clock" && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-                </svg>
-              )}
-              {item.problem.icon === "users" && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                </svg>
-              )}
-              {item.problem.icon === "message-square" && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-              )}
-            </div>
-            <div>
-              <div class="text-[10px] uppercase tracking-widest font-semibold text-red-300 mb-1">{item.problem.label}</div>
-              <p class="text-slate-500 text-sm font-medium leading-snug line-through decoration-red-200 decoration-2">{item.problem.text}</p>
-            </div>
-          </div>
-
-          <!-- Center Divider -->
-          <div class="pp-divider flex flex-col items-center justify-center self-stretch px-0">
-            <div class="h-full w-px bg-slate-100 relative">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+    <!-- Comparison Grid -->
+    <div class="space-y-8">
+      {comparisons.map((item) => (
+        <div class="group relative bg-white/40 backdrop-blur-sm rounded-[2.5rem] border border-slate-200/60 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/5 hover:border-indigo-100">
+          <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
+            <!-- Pain Side -->
+            <div class="p-8 md:p-12 relative overflow-hidden bg-slate-50/30 transition-colors group-hover:bg-white/0">
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-6">
+                  <span class="text-sm font-bold text-slate-400 font-heading">{item.id}</span>
+                  <span class="px-3 py-1 rounded-full bg-slate-200/50 text-slate-500 text-[10px] font-bold uppercase tracking-wider">The Old Way</span>
+                </div>
+                
+                <h3 class="text-2xl font-heading font-bold text-slate-400 mb-4 line-through decoration-slate-300">
+                  {item.pain.title}
+                </h3>
+                <p class="text-slate-500 text-lg leading-relaxed">
+                  {item.pain.description}
+                </p>
+              </div>
+              
+              <!-- Subtle Icon Background -->
+              <div class="absolute bottom-[-20%] right-[-5%] opacity-[0.03] group-hover:opacity-[0.05] transition-opacity duration-500">
+                {item.pain.icon === "clock" && <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>}
+                {item.pain.icon === "users" && <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>}
+                {item.pain.icon === "refresh" && <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>}
               </div>
             </div>
-          </div>
 
-          <!-- Solution Side -->
-          <div class="pp-solution flex items-center gap-5 px-7 py-6">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
+            <!-- Gain Side -->
+            <div class="p-8 md:p-12 relative overflow-hidden transition-all duration-500 group-hover:bg-indigo-50/30">
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-bold uppercase tracking-wider">The VoluChat Way</span>
+                </div>
+                
+                <h3 class="text-2xl font-heading font-bold text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors">
+                  {item.gain.title}
+                </h3>
+                <p class="text-slate-600 text-lg leading-relaxed font-medium">
+                  {item.gain.description}
+                </p>
+              </div>
+
+              <!-- Decorative Accent -->
+              <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-100 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
-            <p class="text-slate-900 text-sm font-semibold leading-snug">{item.solution.text}</p>
           </div>
-
+          
+          <!-- Transformation Arrow Indicator (Desktop) -->
+          <div class="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white border border-slate-200 shadow-xl items-center justify-center z-20 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white transition-all duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
         </div>
       ))}
     </div>
 
-    <!-- Bottom CTA row -->
-    <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-      <div class="relative group">
-        <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full blur opacity-20 group-hover:opacity-60 transition duration-500"></div>
-        <a href="https://dashboard.voluchat.com" class="relative inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 text-white rounded-full font-semibold text-sm transition-all duration-300 group-hover:scale-105 shadow-lg">
-          Start for Free — No credit card
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
-            <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+    <!-- Final CTA -->
+    <div class="mt-20 text-center">
+      <div class="inline-flex items-center gap-3 p-2 pr-6 bg-white rounded-full border border-slate-200 shadow-sm transition-all hover:shadow-md hover:border-slate-300 group cursor-default">
+        <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">!</div>
+        <p class="text-slate-600 font-medium text-sm">Most brands see a <span class="text-indigo-600 font-bold">10x faster response time</span> in just 24 hours.</p>
+        <a href="https://dashboard.voluchat.com" class="ml-4 text-indigo-600 font-bold text-sm hover:underline flex items-center gap-1 group/link">
+          Try it yourself
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-0.5 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
     </div>
-
   </div>
 </section>
 
 <style>
-  .pp-grid {
+  /* Use global grid/orb styles where possible, or define local refinements */
+  .sect-grid {
     position: absolute;
     inset: 0;
     background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
     background-size: 32px 32px;
-    opacity: 0.2;
+    opacity: 0.18;
     mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
     -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
-  }
-
-  .pp-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-  }
-
-  .pp-orb-a {
-    width: 480px;
-    height: 480px;
-    background: radial-gradient(circle at center, rgba(99,102,241,0.12) 0%, transparent 70%);
-    top: -80px;
-    right: -80px;
-  }
-
-  .pp-orb-b {
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle at center, rgba(168,85,247,0.10) 0%, transparent 70%);
-    bottom: -60px;
-    left: -60px;
-  }
-
-  /* Problem side: muted, left-aligned bg tint on hover */
-  .comparison-row .pp-problem {
-    background: transparent;
-    transition: background 0.3s;
-  }
-  .comparison-row:hover .pp-problem {
-    background: rgba(254, 242, 242, 0.6);
-  }
-
-  /* Solution side: highlight on hover */
-  .comparison-row .pp-solution {
-    background: transparent;
-    transition: background 0.3s;
-  }
-  .comparison-row:hover .pp-solution {
-    background: rgba(238, 242, 255, 0.6);
   }
 </style>

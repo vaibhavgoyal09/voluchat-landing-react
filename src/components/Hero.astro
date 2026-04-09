@@ -3,12 +3,15 @@
 <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex flex-col items-center justify-center">
   <!-- Professional CSS Background -->
   <div class="hero-bg" aria-hidden="true">
-    <!-- Soft gradient orbs -->
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <!-- Subtle dot grid -->
+    <div class="hero-wash"></div>
+    <div class="hero-spotlight"></div>
+    <div class="hero-mesh hero-mesh-1"></div>
+    <div class="hero-mesh hero-mesh-2"></div>
+    <div class="hero-beam hero-beam-1"></div>
+    <div class="hero-beam hero-beam-2"></div>
+    <div class="hero-ring"></div>
     <div class="hero-grid"></div>
+    <div class="hero-noise"></div>
     <!-- Bottom fade -->
     <div class="hero-fade"></div>
   </div>
@@ -49,7 +52,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1.5 transition-transform duration-300"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
       </div>
-      <a href="#features" class="relative group flex items-center justify-center px-8 py-4 bg-white/40 backdrop-blur-xl border border-white/60 text-slate-800 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/60 hover:shadow-lg hover:-translate-y-1 w-full sm:w-auto">
+      <a href="#demo" class="relative group flex items-center justify-center px-8 py-4 bg-white/40 backdrop-blur-xl border border-white/60 text-slate-800 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/60 hover:shadow-lg hover:-translate-y-1 w-full sm:w-auto">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-slate-500 group-hover:text-indigo-600 transition-colors"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
         Watch Demo
       </a>
@@ -97,54 +100,110 @@
     overflow: hidden;
   }
 
+  .hero-wash {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 14% 15%, rgba(39, 180, 255, 0.3) 0%, rgba(39, 180, 255, 0) 46%),
+      radial-gradient(circle at 83% 23%, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0) 50%),
+      radial-gradient(circle at 50% 82%, rgba(14, 165, 233, 0.22) 0%, rgba(14, 165, 233, 0) 47%);
+  }
+
+  .hero-spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 75% 50% at 50% 42%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.45) 40%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .hero-mesh {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(70px);
+    will-change: transform;
+    mix-blend-mode: multiply;
+  }
+
+  .hero-mesh-1 {
+    width: 720px;
+    height: 520px;
+    left: -180px;
+    top: -120px;
+    background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.38) 0%, rgba(20, 184, 166, 0.2) 40%, rgba(14, 165, 233, 0) 75%);
+    animation: floatMeshA 24s ease-in-out infinite;
+  }
+
+  .hero-mesh-2 {
+    width: 660px;
+    height: 460px;
+    right: -150px;
+    top: 90px;
+    background: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.33) 0%, rgba(56, 189, 248, 0.2) 45%, rgba(59, 130, 246, 0) 75%);
+    animation: floatMeshB 30s ease-in-out infinite;
+  }
+
+  .hero-beam {
+    position: absolute;
+    width: 60vw;
+    max-width: 760px;
+    min-width: 280px;
+    height: 160px;
+    border-radius: 999px;
+    filter: blur(38px);
+    transform-origin: center;
+    will-change: transform;
+    opacity: 0.48;
+  }
+
+  .hero-beam-1 {
+    top: 8%;
+    right: -20%;
+    transform: rotate(-18deg);
+    background: linear-gradient(90deg, rgba(14, 165, 233, 0) 0%, rgba(14, 165, 233, 0.4) 40%, rgba(59, 130, 246, 0.56) 60%, rgba(59, 130, 246, 0) 100%);
+    animation: beamDriftA 16s ease-in-out infinite;
+  }
+
+  .hero-beam-2 {
+    top: 34%;
+    left: -25%;
+    transform: rotate(13deg);
+    background: linear-gradient(90deg, rgba(20, 184, 166, 0) 0%, rgba(20, 184, 166, 0.34) 43%, rgba(14, 165, 233, 0.5) 58%, rgba(56, 189, 248, 0) 100%);
+    animation: beamDriftB 19s ease-in-out infinite;
+  }
+
+  .hero-ring {
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: inset 0 0 80px rgba(14, 165, 233, 0.16), 0 0 120px rgba(14, 165, 233, 0.12);
+    opacity: 0.8;
+    animation: ringPulse 9s ease-in-out infinite;
+  }
+
   /* Dot grid */
   .hero-grid {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
-    background-size: 32px 32px;
-    opacity: 0.35;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+    background-image: radial-gradient(circle, rgba(15, 23, 42, 0.2) 0.9px, transparent 1.1px);
+    background-size: 30px 30px;
+    opacity: 0.28;
+    mask-image: radial-gradient(ellipse 88% 66% at 50% 44%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 88% 66% at 50% 44%, black 30%, transparent 100%);
   }
 
-  /* Orb shared styles */
-  .orb {
+  .hero-noise {
     position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    will-change: transform;
-  }
-
-  /* Large indigo/violet orb - top right */
-  .orb-1 {
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.22) 0%, rgba(139, 92, 246, 0.10) 60%, transparent 100%);
-    top: -200px;
-    right: -150px;
-    animation: drift1 18s ease-in-out infinite;
-  }
-
-  /* Medium blue orb - bottom left */
-  .orb-2 {
-    width: 550px;
-    height: 550px;
-    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.18) 0%, rgba(99, 102, 241, 0.08) 60%, transparent 100%);
-    bottom: -100px;
-    left: -120px;
-    animation: drift2 22s ease-in-out infinite;
-  }
-
-  /* Small purple orb - center */
-  .orb-3 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle at center, rgba(168, 85, 247, 0.14) 0%, transparent 70%);
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: drift3 26s ease-in-out infinite;
+    inset: 0;
+    opacity: 0.1;
+    background-image:
+      radial-gradient(circle at 25% 35%, rgba(15, 23, 42, 0.2) 0.7px, transparent 1.2px),
+      radial-gradient(circle at 75% 65%, rgba(15, 23, 42, 0.16) 0.6px, transparent 1.1px);
+    background-size: 4px 4px, 5px 5px;
+    mix-blend-mode: multiply;
   }
 
   /* Bottom white fade so the section blends into the next */
@@ -153,25 +212,63 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
+    height: 240px;
     background: linear-gradient(to top, #ffffff, transparent);
   }
 
-  @keyframes drift1 {
+  @keyframes floatMeshA {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33%       { transform: translate(-40px, 30px) scale(1.05); }
-    66%       { transform: translate(20px, -20px) scale(0.97); }
+    35% { transform: translate(52px, 30px) scale(1.05); }
+    70% { transform: translate(-20px, -25px) scale(0.95); }
   }
 
-  @keyframes drift2 {
+  @keyframes floatMeshB {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    40%       { transform: translate(30px, -40px) scale(1.08); }
-    70%       { transform: translate(-20px, 20px) scale(0.95); }
+    45% { transform: translate(-34px, 38px) scale(1.08); }
+    75% { transform: translate(24px, -18px) scale(0.97); }
   }
 
-  @keyframes drift3 {
-    0%, 100% { transform: translateX(-50%) scale(1); }
-    50%       { transform: translateX(-50%) scale(1.1) translateY(-20px); }
+  @keyframes beamDriftA {
+    0%, 100% { transform: rotate(-18deg) translateX(0); }
+    50% { transform: rotate(-14deg) translateX(-26px); }
+  }
+
+  @keyframes beamDriftB {
+    0%, 100% { transform: rotate(13deg) translateX(0); }
+    50% { transform: rotate(10deg) translateX(32px); }
+  }
+
+  @keyframes ringPulse {
+    0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.06); }
+  }
+
+  @media (max-width: 768px) {
+    .hero-ring {
+      width: 460px;
+      height: 460px;
+      top: 52%;
+      opacity: 0.46;
+    }
+
+    .hero-beam {
+      opacity: 0.3;
+      filter: blur(30px);
+    }
+
+    .hero-mesh-1 {
+      width: 520px;
+      height: 360px;
+      left: -180px;
+      top: -80px;
+    }
+
+    .hero-mesh-2 {
+      width: 420px;
+      height: 320px;
+      right: -170px;
+      top: 150px;
+    }
   }
 </style>
 

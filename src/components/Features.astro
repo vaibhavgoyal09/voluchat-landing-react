@@ -5,87 +5,128 @@ const features = [
     description: "Instantly reply to comments and send DMs. Turn engagement into leads without lifting a finger.",
     icon: "message-square",
     span: "md:col-span-2",
+    color: "from-blue-500 to-indigo-600",
+    bg: "bg-blue-50/50",
+    border: "group-hover:border-blue-200"
   },
   {
     title: "Regional Language AI",
     description: "Chat in Hindi, Hinglish, Tamil & more. Our AI understands context and culture.",
     icon: "globe",
     span: "md:col-span-1",
+    color: "from-purple-500 to-violet-600",
+    bg: "bg-purple-50/50",
+    border: "group-hover:border-purple-200"
   },
   {
     title: "Smart Lead Qualification",
     description: "Filter tire-kickers from real buyers automatically using smart flows.",
     icon: "zap",
     span: "md:col-span-1",
+    color: "from-amber-400 to-orange-500",
+    bg: "bg-amber-50/50",
+    border: "group-hover:border-amber-200"
   },
   {
     title: "WhatsApp Handoff",
     description: "Seamlessly move hot leads from Instagram DMs to WhatsApp for closing.",
     icon: "smartphone",
     span: "md:col-span-2",
+    color: "from-emerald-500 to-teal-600",
+    bg: "bg-emerald-50/50",
+    border: "group-hover:border-emerald-200"
   },
   {
     title: "Growth Analytics",
     description: "Track every conversion, reply, and sale in real-time.",
     icon: "bar-chart",
     span: "md:col-span-1",
+    color: "from-rose-500 to-pink-600",
+    bg: "bg-rose-50/50",
+    border: "group-hover:border-rose-200"
   },
   {
     title: "Enterprise Security",
     description: "Bank-grade encryption and Meta-compliant API usage.",
     icon: "shield",
     span: "md:col-span-1",
+    color: "from-slate-700 to-slate-900",
+    bg: "bg-slate-50/50",
+    border: "group-hover:border-slate-300"
   },
 ];
 ---
 
-<section id="features" class="py-28 relative overflow-hidden bg-white">
-  <!-- Background -->
+<section id="features" class="py-20 md:py-32 relative overflow-hidden bg-white">
+  <!-- Background Elements -->
   <div class="absolute inset-0 pointer-events-none -z-10">
-    <div class="sect-grid"></div>
-    <div class="sect-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,0.10) 0%,transparent 70%);top:-100px;right:-150px;"></div>
-    <div class="sect-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(168,85,247,0.09) 0%,transparent 70%);bottom:-100px;left:-100px;"></div>
+    <div class="sect-grid opacity-10"></div>
+    <div class="sect-orb" style="width:800px;height:800px;background:radial-gradient(circle,rgba(99,102,241,0.08) 0%,transparent 70%);top:-200px;right:-200px;"></div>
+    <div class="sect-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(168,85,247,0.06) 0%,transparent 70%);bottom:-100px;left:-100px;"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-6">
     <!-- Header -->
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <span class="section-badge mb-5 inline-flex">
-        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        Powerful Features
-      </span>
-      <h2 class="text-4xl sm:text-5xl font-heading font-bold text-slate-900 mb-4 leading-tight">
-        Everything you need to<br /><span class="text-gradient-primary">dominate Instagram sales</span>
-      </h2>
-      <p class="text-lg text-slate-500 leading-relaxed">
-        Stop manually replying to "PP?" and start automating your revenue engine.
-      </p>
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+      <div class="max-w-2xl">
+        <span class="section-badge mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="mr-1"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Capabilities
+        </span>
+        <h2 class="text-4xl sm:text-6xl font-heading font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+          Everything you need to <span class="relative inline-block">
+            <span class="relative z-10 text-gradient-primary">scale faster</span>
+            <span class="absolute bottom-2 left-0 w-full h-3 bg-indigo-100 -z-10 opacity-60"></span>
+          </span>
+        </h2>
+        <p class="text-xl text-slate-600 leading-relaxed max-w-xl">
+          Stop manually replying to "PP?" and start automating your revenue engine with our suite of powerful Instagram growth tools.
+        </p>
+      </div>
+      
+      <div class="hidden md:block">
+        <a href="#demo" class="group inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors">
+          View all features
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <!-- Bento Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
       {features.map((feature) => (
-        <div class={`group relative rounded-3xl border border-slate-100 bg-white p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 ${feature.span}`}>
-          <!-- Hover glow -->
-          <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-50/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div class={`group relative p-px rounded-[2rem] transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/10 ${feature.span}`}>
+          <!-- Border Gradient on Hover -->
+          <div class={`absolute inset-0 rounded-[2rem] bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
+          
+          <!-- Card Content -->
+          <div class={`relative h-full glass rounded-[2rem] p-8 border border-slate-200/60 transition-all duration-500 group-hover:border-transparent group-hover:bg-white`}>
+            {/* Background Accent */}
+            <div class={`absolute top-0 right-0 w-32 h-32 rounded-full blur-[80px] -z-10 opacity-0 group-hover:opacity-30 transition-opacity duration-500 ${feature.bg}`}></div>
 
-          <div class="relative z-10 flex flex-col h-full">
-            <!-- Icon -->
-            <div class="mb-6 w-12 h-12 rounded-2xl bg-slate-900 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-              {feature.icon === "message-square" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}
-              {feature.icon === "globe" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>}
-              {feature.icon === "zap" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
-              {feature.icon === "smartphone" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>}
-              {feature.icon === "bar-chart" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>}
-              {feature.icon === "shield" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>}
+            <div class="flex flex-col h-full relative z-10">
+              <!-- Icon Container -->
+              <div class={`mb-8 w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-indigo-500/10 bg-gradient-to-br ${feature.color} group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500`}>
+                {feature.icon === "message-square" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}
+                {feature.icon === "globe" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>}
+                {feature.icon === "zap" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
+                {feature.icon === "smartphone" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>}
+                {feature.icon === "bar-chart" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>}
+                {feature.icon === "shield" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>}
+              </div>
+
+              <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
+                {feature.title}
+              </h3>
+              <p class="text-slate-500 text-base leading-relaxed group-hover:text-slate-600 transition-colors duration-300">
+                {feature.description}
+              </p>
+              
+              <div class="mt-auto pt-8 flex items-center gap-2 text-sm font-bold text-slate-900 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                Learn more
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
             </div>
-
-            <h3 class="text-lg font-heading font-bold text-slate-900 mb-2 group-hover:text-indigo-700 transition-colors">
-              {feature.title}
-            </h3>
-            <p class="text-slate-500 text-sm leading-relaxed">
-              {feature.description}
-            </p>
           </div>
         </div>
       ))}
