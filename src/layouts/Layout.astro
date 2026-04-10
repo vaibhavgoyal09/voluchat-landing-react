@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ContactButtons from '../components/ContactButtons.astro';
 
 interface Props {
 	title: string;
@@ -38,5 +39,6 @@ const { title, description = "The AI-powered growth engine for modern brands. Au
 	</head>
 	<body class="selection:bg-indigo-100 selection:text-indigo-900">
 		<slot />
+		<ContactButtons />
 	</body>
 </html>
