@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+interface Blog {
+  id: number;
+  slug: string;
+  title: string;
+  content: string;
+  published: number;
+  author_id: number;
+  created_at?: string;
+}
+
+const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://127.0.0.1:8000';
+let blogs: Blog[] = [];
+let error: string | null = null;
+
+try {
+  console.log(`[Server] Fetching blogs from: ${apiUrl}/blogs/`);
+  const response = await fetch(`${apiUrl}/blogs/?published=1&limit=12`);
+  if (!response.ok) {
+    throw new Error(`State: ${response.status}`);
+  }
+  blogs = await response.json();
+  console.log(`[Server] Successfully fetched ${blogs.length} blogs.`);
+} catch (e) {
+  console.error(`[Server] Failed to fetch blogs:`, e);
+  error = "The blog API is unreachable from the server. Check backend logs.";
+}
+
+// Fallback data if API is empty or failing (for demo purposes)
+const fallbackBlogs = [
+  {
+    id: 1,
+    slug: "ai-revolutionizing-instagram-growth",
+    title: "How AI is Revolutionizing Instagram Growth in 2024",
+    content: "The landscape of social media marketing is shifting. With the advent of advanced AI tools, brands are now able to automate interactions that once required a full team. Discover how VoluChat is leading the charge with regional language support and intelligent DM automation.",
+    published: 1,
+    author_id: 1
+  },
+  {
+    id: 2,
+    slug: "regional-language-support-ecommerce",
+    title: "The Power of Regional Language Support in Indian E-commerce",
+    content: "India is a land of many languages. For brands to truly scale, they must speak the language of their customers. Learn why regional language automation is the key to unlocking 10x growth in tier 2 and tier 3 cities.",
+    published: 1,
+    author_id: 1
+  },
+  {
+    id: 3,
+    slug: "maximizing-conversions-dm-whatsapp",
+    title: "Maximizing Conversions: From DM to WhatsApp in Seconds",
+    content: "The friction between an Instagram interest and a WhatsApp sale often leads to lost revenue. VoluChat's seamless integration bridge ensures that every lead is captured and moved into a high-intent conversation immediately.",
+    published: 1,
+    author_id: 1
+  }
+];
+
+const displayBlogs = blogs.length > 0 ? blogs : fallbackBlogs;
+---
+
+<Layout title="VoluChat Blog | Insights on AI & Social Commerce">
+  <Header />
+  
+  <main class="relative pt-32 pb-20 overflow-hidden min-h-screen bg-slate-50/50">
+    <!-- Decorative background -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      <div class="sect-grid"></div>
+      <div class="sect-orb w-[600px] h-[600px] -top-48 -right-48 bg-indigo-100/40"></div>
+      <div class="sect-orb w-[600px] h-[600px] -bottom-48 -left-48 bg-purple-100/40"></div>
+    </div>
+
+    <div class="container-wide relative z-10 px-6 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-20 animate-fade-in">
+        <span class="section-badge mb-4">Our Resources</span>
+        <h1 class="text-4xl sm:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
+          Latest Insights from <br/>
+          <span class="text-gradient-primary">The VoluChat Blog</span>
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Expert advice, case studies, and the latest updates on AI-powered growth for modern commerce brands.
+        </p>
+      </div>
+
+      {error && !blogs.length && (
+        <div class="p-6 rounded-2xl bg-amber-50 border border-amber-100 text-amber-800 text-center mb-12">
+          {error}
+        </div>
+      )}
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {displayBlogs.map((blog) => (
+          <BlogCard {...blog} />
+        ))}
+      </div>
+
+      {displayBlogs.length === 0 && (
+        <div class="text-center py-20">
+          <p class="text-slate-400 font-medium">No blog posts found yet.</p>
+        </div>
+      )}
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script is:inline define:vars={{ apiUrl }}>
+  // Client-side ping to verify API connectivity in Network tab
+  console.log('[Client] Pinging API at:', apiUrl);
+  fetch(`${apiUrl}/health`)
+    .then(r => r.json())
+    .then(data => console.log('[Client] API Health:', data))
+    .catch(err => console.error('[Client] API unreachable:', err));
+</script>

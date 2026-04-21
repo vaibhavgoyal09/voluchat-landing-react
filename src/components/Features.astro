@@ -1,131 +1,144 @@
 ---
 const features = [
   {
+    id: "automation",
     title: "Comment-to-DM Automation",
     description: "Instantly reply to comments and send DMs. Turn engagement into leads without lifting a finger.",
     icon: "message-square",
-    span: "md:col-span-2",
-    color: "from-blue-500 to-indigo-600",
-    bg: "bg-blue-50/50",
-    border: "group-hover:border-blue-200"
+    color: "indigo"
   },
   {
+    id: "language",
     title: "Regional Language AI",
     description: "Chat in Hindi, Hinglish, Tamil & more. Our AI understands context and culture.",
     icon: "globe",
-    span: "md:col-span-1",
-    color: "from-purple-500 to-violet-600",
-    bg: "bg-purple-50/50",
-    border: "group-hover:border-purple-200"
+    color: "purple"
   },
   {
+    id: "leads",
     title: "Smart Lead Qualification",
     description: "Filter tire-kickers from real buyers automatically using smart flows.",
     icon: "zap",
-    span: "md:col-span-1",
-    color: "from-amber-400 to-orange-500",
-    bg: "bg-amber-50/50",
-    border: "group-hover:border-amber-200"
+    color: "amber"
   },
   {
+    id: "whatsapp",
     title: "WhatsApp Handoff",
     description: "Seamlessly move hot leads from Instagram DMs to WhatsApp for closing.",
     icon: "smartphone",
-    span: "md:col-span-2",
-    color: "from-emerald-500 to-teal-600",
-    bg: "bg-emerald-50/50",
-    border: "group-hover:border-emerald-200"
+    color: "emerald"
   },
   {
+    id: "analytics",
     title: "Growth Analytics",
     description: "Track every conversion, reply, and sale in real-time.",
     icon: "bar-chart",
-    span: "md:col-span-1",
-    color: "from-rose-500 to-pink-600",
-    bg: "bg-rose-50/50",
-    border: "group-hover:border-rose-200"
+    color: "rose"
   },
   {
+    id: "security",
     title: "Enterprise Security",
     description: "Bank-grade encryption and Meta-compliant API usage.",
     icon: "shield",
-    span: "md:col-span-1",
-    color: "from-slate-700 to-slate-900",
-    bg: "bg-slate-50/50",
-    border: "group-hover:border-slate-300"
-  },
+    color: "slate"
+  }
 ];
 ---
 
-<section id="features" class="py-20 md:py-32 relative overflow-hidden bg-white">
-  <!-- Background Elements -->
+<section id="features" class="py-24 md:py-32 relative bg-white overflow-hidden">
+  <!-- Background Decorations -->
   <div class="absolute inset-0 pointer-events-none -z-10">
     <div class="sect-grid opacity-10"></div>
-    <div class="sect-orb" style="width:800px;height:800px;background:radial-gradient(circle,rgba(99,102,241,0.08) 0%,transparent 70%);top:-200px;right:-200px;"></div>
-    <div class="sect-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(168,85,247,0.06) 0%,transparent 70%);bottom:-100px;left:-100px;"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-6">
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-      <div class="max-w-2xl">
-        <span class="section-badge mb-5">
-          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="mr-1"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          Capabilities
-        </span>
-        <h2 class="text-4xl sm:text-6xl font-heading font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
-          Everything you need to <span class="relative inline-block">
-            <span class="relative z-10 text-gradient-primary">scale faster</span>
-            <span class="absolute bottom-2 left-0 w-full h-3 bg-indigo-100 -z-10 opacity-60"></span>
-          </span>
-        </h2>
-        <p class="text-xl text-slate-600 leading-relaxed max-w-xl">
-          Stop manually replying to "PP?" and start automating your revenue engine with our suite of powerful Instagram growth tools.
-        </p>
-      </div>
-      
-      <div class="hidden md:block">
-        <a href="#demo" class="group inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors">
-          View all features
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <span class="section-badge mb-6">Capabilities</span>
+      <h2 class="text-4xl md:text-6xl font-heading font-bold text-slate-900 mb-6 tracking-tight">
+        Engineered for <span class="text-gradient-primary">Growth</span>
+      </h2>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        Stop manually replying to every "Price?" and start automating your revenue engine with our suite of powerful tools.
+      </p>
     </div>
 
-    <!-- Bento Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <!-- Spotlight Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 spotlight-grid">
       {features.map((feature) => (
-        <div class={`group relative p-px rounded-[2rem] transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/10 ${feature.span}`}>
-          <!-- Border Gradient on Hover -->
-          <div class={`absolute inset-0 rounded-[2rem] bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
+        <div class="feature-card group relative p-8 rounded-[2rem] bg-white border border-slate-100 transition-all duration-500 hover:-translate-y-1 overflow-hidden shadow-sm hover:shadow-xl">
           
-          <!-- Card Content -->
-          <div class={`relative h-full glass rounded-[2rem] p-8 border border-slate-200/60 transition-all duration-500 group-hover:border-transparent group-hover:bg-white`}>
-            {/* Background Accent */}
-            <div class={`absolute top-0 right-0 w-32 h-32 rounded-full blur-[80px] -z-10 opacity-0 group-hover:opacity-30 transition-opacity duration-500 ${feature.bg}`}></div>
-
-            <div class="flex flex-col h-full relative z-10">
-              <!-- Icon Container -->
-              <div class={`mb-8 w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-indigo-500/10 bg-gradient-to-br ${feature.color} group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500`}>
-                {feature.icon === "message-square" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}
-                {feature.icon === "globe" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>}
-                {feature.icon === "zap" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
-                {feature.icon === "smartphone" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>}
-                {feature.icon === "bar-chart" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>}
-                {feature.icon === "shield" && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>}
-              </div>
-
-              <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
-                {feature.title}
-              </h3>
-              <p class="text-slate-500 text-base leading-relaxed group-hover:text-slate-600 transition-colors duration-300">
-                {feature.description}
-              </p>
+          <!-- Spotlight Glow (Follows Mouse) -->
+          <div class="spotlight pointer-events-none absolute -inset-px rounded-[2rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={`background: radial-gradient(600px circle at var(--x) var(--y), rgba(var(--rgb-${feature.color}), 0.06), transparent 40%);`}></div>
+          
+          <div class="relative z-10 h-full flex flex-col">
+            <!-- Compact Widget Area -->
+            <div class="mb-10 h-32 flex items-center justify-center rounded-2xl bg-slate-50/50 group-hover:bg-white transition-colors duration-500 overflow-hidden">
+              {feature.id === "automation" && (
+                <div class="relative w-full max-w-[160px] space-y-2 scale-90">
+                  <div class="flex gap-2 animate-float">
+                    <div class="w-6 h-6 rounded-full bg-slate-200"></div>
+                    <div class="bg-white px-3 py-1.5 rounded-xl rounded-tl-none shadow-sm border border-slate-100 text-[10px] text-slate-600 font-medium">"Price? 😍"</div>
+                  </div>
+                  <div class="flex flex-row-reverse gap-2 animate-float" style="animation-delay: 1.5s">
+                    <div class="w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-white text-[8px] font-bold">VC</div>
+                    <div class="bg-indigo-600 px-3 py-1.5 rounded-xl rounded-tr-none shadow-lg text-[10px] text-white font-bold italic">Check DM! 🚀</div>
+                  </div>
+                </div>
+              )}
               
-              <div class="mt-auto pt-8 flex items-center gap-2 text-sm font-bold text-slate-900 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                Learn more
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </div>
+              {feature.id === "language" && (
+                <div class="relative w-16 h-16 rounded-full bg-purple-600/10 flex items-center justify-center">
+                  <div class="absolute inset-0 rounded-full border border-dashed border-purple-200 animate-[spin_10s_linear_infinite]"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+              )}
+
+              {feature.id === "leads" && (
+                <div class="relative w-16 h-16 flex items-center justify-center">
+                  <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="10" fill="transparent" class="text-slate-100" />
+                    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="10" fill="transparent" stroke-dasharray="251.2" stroke-dashoffset="60" class="text-amber-500 animate-[dash_3s_ease-in-out_infinite]" />
+                  </svg>
+                  <span class="absolute text-[12px] font-bold text-slate-900">98%</span>
+                </div>
+              )}
+
+              {feature.id === "whatsapp" && (
+                <div class="flex items-center gap-3 scale-90">
+                  <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+                  <div class="w-8 h-px bg-dashed-gradient animate-slide"></div>
+                  <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                </div>
+              )}
+
+              {feature.id === "analytics" && (
+                <div class="w-24 h-12 flex justify-between items-end gap-1">
+                  {[30, 60, 40, 90, 50, 70].map((h, i) => (
+                    <div class="w-full bg-rose-200 rounded-t-sm animate-[bar_2s_ease-in-out_infinite]" style={`height: ${h}%; animation-delay: ${i * 0.1}s`}></div>
+                  ))}
+                </div>
+              )}
+
+              {feature.id === "security" && (
+                <div class="relative w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg overflow-hidden">
+                  <div class="absolute inset-0 bg-gradient-to-tr from-slate-700 to-slate-900"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+              )}
+            </div>
+
+            <!-- Content -->
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
+              {feature.title}
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-8 flex-grow">
+              {feature.description}
+            </p>
+
+            <div class="flex items-center gap-2 text-[10px] font-bold text-slate-400 group-hover:text-indigo-600 tracking-widest transition-all duration-300">
+              EXPLORE FEATURE
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
         </div>
@@ -133,3 +146,74 @@ const features = [
     </div>
   </div>
 </section>
+
+<script>
+  function initSpotlight() {
+    const grid = document.querySelector('.spotlight-grid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.feature-card');
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      cards.forEach((card) => {
+        if (card instanceof HTMLElement) {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          card.style.setProperty('--x', `${x}px`);
+          card.style.setProperty('--y', `${y}px`);
+        }
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+  }
+
+  // Initial load
+  initSpotlight();
+  
+  // Astro view transitions
+  document.addEventListener('astro:after-swap', initSpotlight);
+</script>
+
+<style>
+  :root {
+    --rgb-indigo: 79, 70, 229;
+    --rgb-purple: 147, 51, 234;
+    --rgb-amber: 245, 158, 11;
+    --rgb-emerald: 16, 185, 129;
+    --rgb-rose: 225, 29, 72;
+    --rgb-slate: 71, 85, 105;
+  }
+
+  @keyframes dash {
+    0% { stroke-dashoffset: 251.2; }
+    50% { stroke-dashoffset: 60; }
+    100% { stroke-dashoffset: 251.2; }
+  }
+
+  @keyframes bar {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.5); }
+  }
+
+  .bg-dashed-gradient {
+    background-image: linear-gradient(to right, #10b981 50%, transparent 50%);
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+  }
+
+  .animate-slide {
+    animation: slide 1s linear infinite;
+  }
+
+  @keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: 20px 0; }
+  }
+
+  .feature-card {
+    backface-visibility: hidden;
+  }
+</style>
