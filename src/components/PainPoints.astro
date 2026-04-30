@@ -3,46 +3,46 @@ const comparisons = [
   {
     id: "01",
     pain: {
-      title: "Drowning in DMs",
-      description: "Instagram and Facebook DMs pile up while you're busy packing orders or sleeping.",
+      title: "Orders get missed in comments",
+      description: "People comment 'price?', 'available?', or 'size?' on your posts, but many never get a quick reply.",
       icon: "clock"
     },
     gain: {
-      title: "Instant AI Responses",
-      description: "Every comment and DM is handled in under 1 second, 24/7, even while you sleep.",
+      title: "VoluChat turns comments into chats",
+      description: "VoluChat can reply to comments and send buyers a DM with product details, price, and next steps.",
       icon: "zap"
     }
   },
   {
     id: "02",
     pain: {
-      title: "Losing Sales to Delay",
-      description: "Buyers lose interest and buy from competitors if you don't reply in minutes.",
+      title: "Customers ask for product suggestions",
+      description: "A buyer says, 'Show me a blue kurti under Rs 1,500,' and you have to search manually.",
       icon: "users"
     },
     gain: {
-      title: "80% Auto-Pilot Growth",
-      description: "Our bot automatically answers 80% of pricing, sizing, and stock questions for you.",
+      title: "AI finds matching products",
+      description: "VoluChat can search your products by budget, color, size, and need, then reply with the right options.",
       icon: "check-circle"
     }
   },
   {
     id: "03",
     pain: {
-      title: "Repetitive Typing",
-      description: "Manually typing the same prices, details, and payment instructions 100x a day.",
+      title: "Orders need too much follow-up",
+      description: "You reply in DM, send photos, explain details, then move the buyer to WhatsApp manually.",
       icon: "refresh"
     },
     gain: {
-      title: "Secure Payment Handoff",
-      description: "AI handles the initial interest, then hands off hot leads to WhatsApp for secure closing.",
+      title: "Send serious buyers to WhatsApp",
+      description: "VoluChat answers first, shows products, and sends ready-to-buy customers to WhatsApp or checkout.",
       icon: "shopping-cart"
     }
   }
 ];
 ---
 
-<section id="transformation" class="py-20 md:py-32 relative overflow-hidden bg-[#fafafa]">
+<section id="transformation" class="py-20 md:py-32 relative overflow-hidden">
   <!-- Background Accents -->
   <div class="absolute inset-0 pointer-events-none -z-10">
     <div class="sect-grid opacity-10"></div>
@@ -53,27 +53,27 @@ const comparisons = [
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-20">
       <span class="section-badge mb-5">
-        The Transformation
+          The Problem
       </span>
         <h2 class="text-4xl sm:text-6xl font-heading font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
-          Why type DMs <span class="text-slate-400">manually</span> when you can <span class="text-gradient-primary">automate?</span>
+          Missed comments are missed <span class="text-gradient-primary">online orders.</span>
         </h2>
       <p class="text-xl text-slate-600 leading-relaxed">
-        Stop losing sales to slow responses. Here's how VoluChat transforms your daily grind into a seamless revenue machine.
+        Customers ask buying questions in comments and DMs. VoluChat helps you reply faster, show products, and move buyers to the next step.
       </p>
     </div>
 
     <!-- Comparison Grid -->
     <div class="space-y-8">
       {comparisons.map((item) => (
-        <div class="group relative bg-white/40 backdrop-blur-sm rounded-[2.5rem] border border-slate-200/60 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/5 hover:border-indigo-100">
+        <div class="glass-panel group relative rounded-[2rem] overflow-hidden transition-all duration-500 hover:border-indigo-100">
           <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
             <!-- Pain Side -->
-            <div class="p-8 md:p-12 relative overflow-hidden bg-slate-50/30 transition-colors group-hover:bg-white/0">
+            <div class="p-8 md:p-12 relative overflow-hidden bg-white/25 transition-colors group-hover:bg-white/10">
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <span class="text-sm font-bold text-slate-400 font-heading">{item.id}</span>
-                  <span class="px-3 py-1 rounded-full bg-slate-200/50 text-slate-500 text-[10px] font-bold uppercase tracking-wider">The Old Way</span>
+                  <span class="px-3 py-1 rounded-full bg-slate-200/50 text-slate-500 text-[10px] font-bold uppercase tracking-wider">Before</span>
                 </div>
                 
                 <h3 class="text-2xl font-heading font-bold text-slate-400 mb-4 line-through decoration-slate-300">
@@ -99,7 +99,7 @@ const comparisons = [
                   <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-200">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-bold uppercase tracking-wider">The VoluChat Way</span>
+                  <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-bold uppercase tracking-wider">With VoluChat</span>
                 </div>
                 
                 <h3 class="text-2xl font-heading font-bold text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors">
@@ -116,7 +116,7 @@ const comparisons = [
           </div>
           
           <!-- Transformation Arrow Indicator (Desktop) -->
-          <div class="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white border border-slate-200 shadow-xl items-center justify-center z-20 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white transition-all duration-500">
+          <div class="glass hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full items-center justify-center z-20 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white transition-all duration-500">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </div>
         </div>
@@ -125,11 +125,11 @@ const comparisons = [
 
     <!-- Final CTA -->
     <div class="mt-20 text-center">
-      <div class="inline-flex items-center gap-3 p-2 pr-6 bg-white rounded-full border border-slate-200 shadow-sm transition-all hover:shadow-md hover:border-slate-300 group cursor-default">
+      <div class="glass inline-flex items-center gap-3 p-2 pr-6 rounded-full transition-all group cursor-default">
         <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">!</div>
-        <p class="text-slate-600 font-medium text-sm">Most brands see a <span class="text-indigo-600 font-bold">10x faster response time</span> in just 24 hours.</p>
+        <p class="text-slate-600 font-medium text-sm">Save time on comments and DMs, and <span class="text-indigo-600 font-bold">reply to buyers faster</span>.</p>
         <a href="https://dashboard.voluchat.com" class="ml-4 text-indigo-600 font-bold text-sm hover:underline flex items-center gap-1 group/link">
-          Try it yourself
+          Start free
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-0.5 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>

@@ -3,28 +3,28 @@ const steps = [
   {
     number: "01",
     icon: "link",
-    title: "Connect",
-    description: "Link your Instagram & WhatsApp accounts securely in one click.",
+    title: "Connect channels",
+    description: "Link Instagram and Facebook securely through official Meta authorization.",
     benefits: ["Official Meta API integration", "Secure OAuth authentication", "No password sharing required"],
   },
   {
     number: "02",
     icon: "workflow",
-    title: "Select Flow",
-    description: "Choose a pre-built template for your niche — Fashion, Food, and more.",
-    benefits: ["Industry-specific templates", "Customizable automation rules", "Multi-language support built-in"],
+    title: "Sync your commerce context",
+    description: "Add products, variants, categories, offers, and store policies so AI can answer accurately.",
+    benefits: ["Catalog-aware recommendations", "Product title and description generation", "Variants, price, and stock context"],
   },
   {
     number: "03",
     icon: "zap",
-    title: "Automate",
-    description: "VoluChat replies instantly and sends warm leads straight to WhatsApp.",
+    title: "Automate conversations",
+    description: "Let VoluChat answer, qualify, create carts, and hand off high-intent buyers.",
     benefits: ["Instant AI-powered responses", "Automatic lead qualification", "Seamless WhatsApp handoff"],
   },
 ];
 ---
 
-<section id="how-it-works" class="py-20 md:py-32 relative overflow-hidden bg-white">
+<section id="how-it-works" class="py-20 md:py-32 relative overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0 pointer-events-none -z-10">
     <div class="sect-grid"></div>
@@ -36,9 +36,9 @@ const steps = [
     <div class="text-center mb-20 max-w-2xl mx-auto">
       <span class="section-badge mb-5 inline-flex">How It Works</span>
       <h2 class="text-4xl sm:text-6xl font-heading font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
-        Live in minutes,<br /><span class="text-gradient-primary">not days</span>
+        From setup to sales automation,<br /><span class="text-gradient-primary">without code.</span>
       </h2>
-      <p class="text-lg text-slate-500">No coding required. Just connect and start selling.</p>
+      <p class="text-lg text-slate-500">Give VoluChat your channels and catalog. It turns them into a working AI sales assistant.</p>
     </div>
 
     <!-- Steps -->
@@ -47,10 +47,10 @@ const steps = [
       <div class="hidden md:block absolute top-10 left-[22%] right-[22%] h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent z-0"></div>
 
       {steps.map((step) => (
-        <div class="relative group bg-white rounded-3xl border border-slate-100 p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 z-10">
+        <div class="glass-card relative group rounded-2xl p-8 z-10">
           <!-- Step number + icon row -->
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
               {step.icon === "link" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>}
               {step.icon === "workflow" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>}
               {step.icon === "zap" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}

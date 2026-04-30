@@ -2,28 +2,28 @@
 const faqs = [
   {
     question: "Is VoluChat safe for my Instagram account?",
-    answer: "Yes! VoluChat is built using official Meta APIs and follows all Instagram and WhatsApp guidelines. We prioritize account safety and compliance.",
+    answer: "Yes. VoluChat connects through official Meta APIs, so you do not share your Instagram or Facebook password with us.",
   },
   {
-    question: "Do I need technical knowledge to set this up?",
-    answer: "Not at all. We provide done-for-you onboarding with a 30-minute call to help you set everything up. Our pre-built templates make it easy to get started without any technical skills.",
+    question: "Can the AI answer product-specific questions?",
+    answer: "Yes. VoluChat is designed to use your product catalog, variants, pricing, stock, categories, and policies to answer detailed buyer questions and recommend relevant products.",
   },
   {
-    question: "Which languages do you support?",
-    answer: "VoluChat supports Hindi and major regional Indian languages including Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, and Gujarati. Our AI understands context and replies naturally in the customer's preferred language.",
+    question: "Does it only send fixed templates?",
+    answer: "No. You can use templates for predictable flows, but the AI can also understand natural language questions like budget, color, size, occasion, delivery, and product comparisons.",
   },
   {
-    question: "Is it really free?",
-    answer: "Yes! During our Early Beta period, you get full access to all VoluChat features completely free of charge. No credit card is required to sign up.",
+    question: "Can it generate product titles and descriptions?",
+    answer: "Yes. VoluChat includes AI-assisted product copy generation so your store data becomes cleaner and your chatbot has stronger context for replies.",
   },
   {
-    question: "What happens to my data after the free period?",
-    answer: "Your data is yours. If you choose not to continue with a paid plan after the beta, your account will simply be paused—nothing will be deleted without your explicit consent.",
+    question: "Is it really free during beta?",
+    answer: "Yes. During early beta, you can use VoluChat without a credit card while we onboard stores and improve the platform.",
   },
 ];
 ---
 
-<section id="faq" class="py-20 md:py-32 bg-[#fafafa] relative overflow-hidden">
+<section id="faq" class="py-20 md:py-32 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none -z-10">
     <div class="sect-grid"></div>
   </div>
@@ -36,10 +36,10 @@ const faqs = [
       </h2>
     </div>
 
-    <div class="divide-y divide-slate-100 border border-slate-100 rounded-3xl overflow-hidden bg-white shadow-sm">
+    <div class="glass-panel divide-y divide-white/55 rounded-3xl overflow-hidden">
       {faqs.map((faq, index) => (
         <div class="faq-item" data-index={index}>
-          <button class="faq-toggle w-full py-6 px-7 text-left flex justify-between items-center gap-6 group transition-colors hover:bg-slate-50/80">
+          <button class="faq-toggle w-full py-6 px-7 text-left flex justify-between items-center gap-6 group transition-colors hover:bg-white/35">
             <span class="font-heading font-semibold text-slate-900 text-base leading-snug group-hover:text-indigo-700 transition-colors">
               {faq.question}
             </span>

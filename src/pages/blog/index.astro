@@ -65,7 +65,7 @@ const displayBlogs = blogs.length > 0 ? blogs : fallbackBlogs;
 <Layout title="VoluChat Blog | Insights on AI & Social Commerce">
   <Header />
   
-  <main class="relative pt-32 pb-20 overflow-hidden min-h-screen bg-slate-50/50">
+  <main class="relative pt-32 pb-20 overflow-hidden min-h-screen">
     <!-- Decorative background -->
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
       <div class="sect-grid"></div>
@@ -75,18 +75,18 @@ const displayBlogs = blogs.length > 0 ? blogs : fallbackBlogs;
 
     <div class="container-wide relative z-10 px-6 max-w-7xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-20 animate-fade-in">
-        <span class="section-badge mb-4">Our Resources</span>
+        <span class="section-badge mb-4">Blog</span>
         <h1 class="text-4xl sm:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
-          Latest Insights from <br/>
-          <span class="text-gradient-primary">The VoluChat Blog</span>
+          Simple guides for <br/>
+          <span class="text-gradient-primary">online sellers</span>
         </h1>
         <p class="text-lg text-slate-600 leading-relaxed">
-          Expert advice, case studies, and the latest updates on AI-powered growth for modern commerce brands.
+          Learn how to reply faster, automate DMs, and sell better on Instagram, Facebook, and WhatsApp.
         </p>
       </div>
 
       {error && !blogs.length && (
-        <div class="p-6 rounded-2xl bg-amber-50 border border-amber-100 text-amber-800 text-center mb-12">
+        <div class="glass-card p-6 rounded-2xl text-amber-800 text-center mb-12">
           {error}
         </div>
       )}
