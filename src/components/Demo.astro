@@ -1,66 +1,77 @@
 ---
 ---
 
-<section id="demo" class="py-20 md:py-32 relative overflow-hidden">
+<section id="demo" class="py-24 md:py-40 relative overflow-hidden">
   <!-- Background Accents -->
   <div class="absolute inset-0 pointer-events-none -z-10">
-    <div class="sect-grid opacity-5"></div>
-    <div class="sect-orb" style="width:700px;height:700px;background:radial-gradient(circle,rgba(79,70,229,0.05) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%, -50%);"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-indigo-50/30 rounded-full blur-[180px] opacity-40"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="section-badge mb-5">
-        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" class="mr-1"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        Product Proof
-      </span>
-      <h2 class="text-4xl sm:text-5xl font-heading font-bold text-slate-900 mb-6 leading-tight">
-        Built for the work inside your <span class="text-gradient-primary">actual store.</span>
+    <div class="text-center max-w-4xl mx-auto mb-24">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100/50 border border-slate-200/50 backdrop-blur-md mb-8">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="text-indigo-600"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Live Infrastructure</span>
+      </div>
+      <h2 class="text-5xl sm:text-7xl font-heading font-black text-slate-950 mb-10 leading-[1.05] tracking-tight">
+        Engineered for the <br /><span class="text-gradient-primary">modern storefront.</span>
       </h2>
-      <p class="text-lg text-slate-600 leading-relaxed">
-        From social comments to product lookup, carts, orders, and customer conversations, VoluChat gives your team one place to run AI-assisted commerce.
+      <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto">
+        A unified command center for your entire commerce operation. Intelligent, automated, and always-on.
       </p>
     </div>
 
-    <div class="relative max-w-5xl mx-auto group">
-      <div class="glass-panel relative overflow-hidden rounded-[1.75rem]">
-        <img src="/dashboard-preview.png" alt="VoluChat dashboard showing ecommerce automation analytics" class="w-full object-cover" loading="lazy" />
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/55 to-transparent p-6 md:p-8">
-          <div class="grid gap-4 md:grid-cols-3">
-            <div class="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
-              <div class="text-xs font-bold uppercase tracking-[0.18em] text-white/60">Inbox automation</div>
-              <div class="mt-2 text-lg font-black text-white">DMs, comments, replies</div>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
-              <div class="text-xs font-bold uppercase tracking-[0.18em] text-white/60">Commerce context</div>
-              <div class="mt-2 text-lg font-black text-white">Products, carts, orders</div>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur-xl">
-              <div class="text-xs font-bold uppercase tracking-[0.18em] text-white/60">AI assistant</div>
-              <div class="mt-2 text-lg font-black text-white">Copy, search, answers</div>
+    <div class="relative max-w-6xl mx-auto group">
+      <div class="glass-panel-premium relative overflow-hidden rounded-[3rem] shadow-2xl p-4 md:p-6 bg-white/40">
+        <div class="relative rounded-[2.5rem] overflow-hidden shadow-inner bg-slate-50">
+          <img src="/dashboard-preview.png" alt="VoluChat dashboard showing ecommerce automation analytics" class="w-full object-cover" loading="lazy" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-10 md:p-14">
+            <div class="grid gap-6 md:grid-cols-3">
+              <div class="glass-card-premium rounded-3xl p-6 bg-white/5 border-white/10 shadow-2xl">
+                <div class="text-[10px] font-black uppercase tracking-[0.2em] text-white/60 mb-2">Inbox Engine</div>
+                <div class="text-xl font-black text-white tracking-tight">Automated DMs & Comments</div>
+              </div>
+              <div class="glass-card-premium rounded-3xl p-6 bg-white/5 border-white/10 shadow-2xl">
+                <div class="text-[10px] font-black uppercase tracking-[0.2em] text-white/60 mb-2">Catalog Sync</div>
+                <div class="text-xl font-black text-white tracking-tight">Real-time Product Context</div>
+              </div>
+              <div class="glass-card-premium rounded-3xl p-6 bg-white/5 border-white/10 shadow-2xl">
+                <div class="text-[10px] font-black uppercase tracking-[0.2em] text-white/60 mb-2">AI Architect</div>
+                <div class="text-xl font-black text-white tracking-tight">Dynamic Search & Conversion</div>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      
+      <!-- Floating Element -->
+      <div class="absolute -top-10 -right-10 glass-card-premium p-6 rounded-3xl shadow-2xl hidden lg:block rotate-6 group-hover:rotate-0 transition-all duration-700">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="text-emerald-500"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="font-black text-slate-950 text-sm">Real-time Automation Active</div>
         </div>
       </div>
     </div>
     
     <!-- Stats / Footnote -->
-    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
-      <div>
-        <div class="text-3xl font-heading font-bold text-slate-900">2s</div>
-        <div class="text-sm text-slate-500 font-medium">AI Response Time</div>
+    <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-12 max-w-5xl mx-auto text-center border-t border-slate-100 pt-16">
+      <div class="group">
+        <div class="text-4xl md:text-5xl font-heading font-black text-slate-950 tracking-tighter mb-2 group-hover:text-indigo-600 transition-colors">2s</div>
+        <div class="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">AI Latency</div>
       </div>
-      <div>
-        <div class="text-3xl font-heading font-bold text-slate-900">24/7</div>
-        <div class="text-sm text-slate-500 font-medium">Sales Engine</div>
+      <div class="group">
+        <div class="text-4xl md:text-5xl font-heading font-black text-slate-950 tracking-tighter mb-2 group-hover:text-indigo-600 transition-colors">24/7</div>
+        <div class="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">Market Presence</div>
       </div>
-      <div>
-        <div class="text-3xl font-heading font-bold text-slate-900">100%</div>
-        <div class="text-sm text-slate-500 font-medium">Meta Compliant</div>
+      <div class="group">
+        <div class="text-4xl md:text-5xl font-heading font-black text-slate-950 tracking-tighter mb-2 group-hover:text-indigo-600 transition-colors">100%</div>
+        <div class="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">Compliance Rate</div>
       </div>
-      <div>
-        <div class="text-3xl font-heading font-bold text-slate-900">80%</div>
-        <div class="text-sm text-slate-500 font-medium">Queries Automated</div>
+      <div class="group">
+        <div class="text-4xl md:text-5xl font-heading font-black text-slate-950 tracking-tighter mb-2 group-hover:text-indigo-600 transition-colors">80%</div>
+        <div class="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">Efficiency Lift</div>
       </div>
     </div>
   </div>

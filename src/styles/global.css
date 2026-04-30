@@ -81,8 +81,32 @@
   }
 
   .glass-dark {
-    @apply border border-white/15 bg-slate-950/78 backdrop-blur-2xl;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 26px 80px rgba(15,23,42,0.22);
+    @apply border border-white/10 bg-slate-900/60 backdrop-blur-3xl;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 26px 80px rgba(15,23,42,0.18);
+  }
+
+  .glass-panel-premium {
+    @apply border border-white/60 bg-white/50 backdrop-blur-3xl;
+    box-shadow: 
+      inset 0 1px 0 rgba(255,255,255,0.85), 
+      0 10px 40px -10px rgba(15,23,42,0.04),
+      0 30px 80px -15px rgba(15,23,42,0.08);
+  }
+
+  .glass-card-premium {
+    @apply border border-white/70 bg-white/55 backdrop-blur-2xl transition-all duration-300;
+    box-shadow: 
+      inset 0 1px 0 rgba(255,255,255,0.9), 
+      0 12px 36px -8px rgba(15,23,42,0.06),
+      0 20px 50px -12px rgba(15,23,42,0.08);
+  }
+
+  .glass-card-premium:hover {
+    @apply -translate-y-1.5 bg-white/75;
+    box-shadow: 
+      inset 0 1px 0 rgba(255,255,255,0.95), 
+      0 20px 45px -8px rgba(15,23,42,0.08),
+      0 30px 70px -12px rgba(15,23,42,0.1);
   }
 
   .text-gradient-primary {
