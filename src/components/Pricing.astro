@@ -7,7 +7,7 @@ const features = [
   "Conversation starters and persistent menus",
   "Conversation, cart, order, and revenue dashboard",
   "WhatsApp handoff for qualified buyers",
-  "Done-with-you onboarding during beta",
+  "White-glove onboarding & support",
 ];
 ---
 
@@ -18,82 +18,71 @@ const features = [
     <div class="sect-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
     <!-- Header -->
     <div class="text-center mb-16">
-      <span class="section-badge mb-5 inline-flex">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-        </span>
-        Early Access
-      </span>
-      <h2 class="text-4xl sm:text-6xl font-heading font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
-        Premium automation, free during beta.
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 backdrop-blur-md mb-8">
+        <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+        <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Scale Your Store</span>
+      </div>
+      <h2 class="text-5xl sm:text-7xl font-heading font-black text-slate-950 mb-10 leading-[1.05] tracking-tight">
+        Automation built for <br /><span class="text-gradient-primary">your growth.</span>
       </h2>
-      <p class="text-lg text-slate-500 max-w-xl mx-auto">
-        Build your automation while beta access is open. No credit card required.
+      <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
+        We handle your 'Price?' comments and DMs automatically so you can focus on making great products.
       </p>
     </div>
 
     <!-- Pricing card -->
-    <div class="max-w-md mx-auto">
+    <div class="max-w-2xl mx-auto">
       <div class="relative group">
         <!-- Glow ring -->
-        <div class="absolute -inset-4 rounded-[2.5rem] bg-indigo-500/5 blur-3xl group-hover:bg-indigo-500/10 transition-colors duration-700"></div>
+        <div class="absolute -inset-4 rounded-[3rem] bg-indigo-500/5 blur-3xl group-hover:bg-indigo-500/10 transition-colors duration-700"></div>
 
-        <div class="glass-panel-premium relative rounded-[2.5rem] p-12 flex flex-col gap-10">
-          <!-- Early Adopter Tag -->
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-950 text-white text-[11px] font-black uppercase tracking-widest shadow-2xl">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              Limited Beta Access
+        <div class="glass-panel-premium relative rounded-[3rem] p-12 md:p-16 flex flex-col md:flex-row gap-12 items-center">
+          <!-- Side info -->
+          <div class="flex-1 text-center md:text-left">
+            <div class="text-[11px] font-black text-indigo-600 uppercase tracking-[0.25em] mb-4">Custom Plan</div>
+            <div class="flex items-baseline justify-center md:justify-start gap-2">
+              <span class="text-6xl font-heading font-black text-slate-950 tracking-tighter">Growth</span>
+            </div>
+            <p class="text-slate-600 font-medium text-lg mt-6 leading-relaxed">
+              Everything you need to automate your store and close more sales every day.
+            </p>
+            
+            <div class="mt-10">
+               <a href="/contact" class="group relative flex items-center justify-center gap-3 w-full py-5 bg-slate-950 text-white rounded-2xl font-black text-lg transition-all duration-300 hover:scale-[1.02] hover:bg-slate-900 shadow-2xl overflow-hidden">
+                <span class="relative z-10">Request Demo</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              </a>
             </div>
           </div>
-
-          <!-- Plan info -->
-          <div class="text-center">
-            <div class="text-[11px] font-black text-indigo-600 uppercase tracking-[0.25em] mb-4">Founder's Special</div>
-            <div class="flex items-baseline justify-center gap-2">
-              <span class="text-7xl font-heading font-black text-slate-950 tracking-tighter">Free</span>
-            </div>
-            <div class="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-xs font-bold text-slate-500 uppercase tracking-wide">
-              No credit card required
-            </div>
-            <p class="text-slate-600 font-medium text-sm mt-6 leading-relaxed">Join our early beta to shape the future of AI-powered social commerce.</p>
-          </div>
-
-          <div class="h-px w-full bg-slate-100/50"></div>
 
           <!-- Feature list -->
-          <ul class="space-y-5">
-            {features.map((f) => (
-              <li class="flex items-start gap-4 text-[15px] text-slate-700 font-semibold leading-snug">
-                <div class="w-6 h-6 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                {f}
-              </li>
-            ))}
-          </ul>
-
-          <!-- CTA -->
-          <div class="pt-2">
-            <a href="https://dashboard.voluchat.com" class="group relative flex items-center justify-center gap-3 w-full py-5 bg-slate-950 text-white rounded-2xl font-black text-base transition-all duration-300 hover:scale-[1.02] hover:bg-slate-900 shadow-2xl overflow-hidden">
-              <span class="relative z-10">Get Started Now</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              <!-- Shiny hover effect -->
-              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </a>
+          <div class="flex-1 bg-slate-50/50 rounded-3xl p-8 border border-white/60">
+            <ul class="space-y-4">
+              {[
+                "Unlimited Auto-Replies",
+                "Official Meta Tech Partner",
+                "White-Glove Setup Support",
+                "Inventory & Catalog Sync",
+                "Store Owner Dashboard",
+                "WhatsApp Payment Handoff"
+              ].map((f) => (
+                <li class="flex items-start gap-3 text-sm text-slate-700 font-bold leading-tight">
+                  <div class="w-5 h-5 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  {f}
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest">Setup in under 5 minutes</p>
         </div>
       </div>
     </div>
+  </div>
       </div>
     </div>
   </div>
