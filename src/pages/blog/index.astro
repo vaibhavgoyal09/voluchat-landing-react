@@ -3,63 +3,18 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import BlogCard from '../../components/BlogCard.astro';
+import { fetchPublishedBlogPosts, getBlogApiBaseUrl } from '../../lib/blogApi.mjs';
 
-interface Blog {
-  id: number;
-  slug: string;
-  title: string;
-  content: string;
-  published: number;
-  author_id: number;
-  created_at?: string;
-}
-
-const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://127.0.0.1:8000';
-let blogs: Blog[] = [];
+const apiUrl = getBlogApiBaseUrl(import.meta.env);
+let blogs = [];
 let error: string | null = null;
 
 try {
-  console.log(`[Server] Fetching blogs from: ${apiUrl}/blogs/`);
-  const response = await fetch(`${apiUrl}/blogs/?published=1&limit=12`);
-  if (!response.ok) {
-    throw new Error(`State: ${response.status}`);
-  }
-  blogs = await response.json();
-  console.log(`[Server] Successfully fetched ${blogs.length} blogs.`);
+  blogs = await fetchPublishedBlogPosts({ baseUrl: apiUrl, limit: 12 });
 } catch (e) {
   console.error(`[Server] Failed to fetch blogs:`, e);
-  error = "The blog API is unreachable from the server. Check backend logs.";
+  error = 'The blog API is unreachable from the server. Check backend logs.';
 }
-
-// Fallback data if API is empty or failing (for demo purposes)
-const fallbackBlogs = [
-  {
-    id: 1,
-    slug: "ai-revolutionizing-instagram-growth",
-    title: "How AI is Revolutionizing Instagram Growth in 2024",
-    content: "The landscape of social media marketing is shifting. With the advent of advanced AI tools, brands are now able to automate interactions that once required a full team. Discover how VoluChat is leading the charge with regional language support and intelligent DM automation.",
-    published: 1,
-    author_id: 1
-  },
-  {
-    id: 2,
-    slug: "regional-language-support-ecommerce",
-    title: "The Power of Regional Language Support in Indian E-commerce",
-    content: "India is a land of many languages. For brands to truly scale, they must speak the language of their customers. Learn why regional language automation is the key to unlocking 10x growth in tier 2 and tier 3 cities.",
-    published: 1,
-    author_id: 1
-  },
-  {
-    id: 3,
-    slug: "maximizing-conversions-dm-whatsapp",
-    title: "Maximizing Conversions: From DM to WhatsApp in Seconds",
-    content: "The friction between an Instagram interest and a WhatsApp sale often leads to lost revenue. VoluChat's seamless integration bridge ensures that every lead is captured and moved into a high-intent conversation immediately.",
-    published: 1,
-    author_id: 1
-  }
-];
-
-const displayBlogs = blogs.length > 0 ? blogs : fallbackBlogs;
 ---
 
 <Layout title="VoluChat Blog | Insights on AI & Social Commerce">
@@ -85,19 +40,19 @@ const displayBlogs = blogs.length > 0 ? blogs : fallbackBlogs;
         </p>
       </div>
 
-      {error && !blogs.length && (
+      {error && (
         <div class="glass-card p-6 rounded-2xl text-amber-800 text-center mb-12">
           {error}
         </div>
       )}
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {displayBlogs.map((blog) => (
-          <BlogCard {...blog} />
+        {blogs.map((blog) => (
+          <BlogCard blog={blog} />
         ))}
       </div>
 
-      {displayBlogs.length === 0 && (
+      {blogs.length === 0 && (
         <div class="text-center py-20">
           <p class="text-slate-400 font-medium">No blog posts found yet.</p>
         </div>
@@ -118,12 +73,3 @@ const displayBlogs = blogs.length > 0 ? blogs : fallbackBlogs;
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
-
-<script is:inline define:vars={{ apiUrl }}>
-  // Client-side ping to verify API connectivity in Network tab
-  console.log('[Client] Pinging API at:', apiUrl);
-  fetch(`${apiUrl}/health`)
-    .then(r => r.json())
-    .then(data => console.log('[Client] API Health:', data))
-    .catch(err => console.error('[Client] API unreachable:', err));
-</script>

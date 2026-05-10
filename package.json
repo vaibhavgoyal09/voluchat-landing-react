@@ -6,9 +6,11 @@
     "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
+    "start": "node ./dist/server/entry.mjs",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@astrojs/node": "^10.1.0",
     "@fontsource/geist-sans": "^5.2.5",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
