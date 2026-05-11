@@ -38,4 +38,5 @@ yarn-error.log*
 .astro
 dist
 .worktrees/
+.superpowers/
 docs/superpowers

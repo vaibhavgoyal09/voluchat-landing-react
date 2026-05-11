@@ -17,26 +17,50 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is VoluChat safe for my Instagram and Facebook accounts?",
+      "name": "Is VoluChat safe for my Instagram account?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes! VoluChat is built using official Meta APIs and follows all Instagram and WhatsApp guidelines. We prioritize account safety and compliance."
+        "text": "VoluChat connects through official Meta APIs, so you do not share your Instagram password with us."
       }
     },
     {
       "@type": "Question",
-      "name": "Do I need technical knowledge to set this up?",
+      "name": "Do I need technical knowledge to use it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not at all. We provide done-for-you onboarding with a 30-minute call to help you set everything up. Our pre-built templates make it easy to get started without any technical skills."
+        "text": "No. Founding stores get hands-on setup help for Instagram, shoe details, buyer messages, and WhatsApp handoff."
       }
     },
     {
       "@type": "Question",
-      "name": "Which languages do you support?",
+      "name": "What happens after a customer comments on my Reel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VoluChat supports Hindi and major regional Indian languages including Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, and Gujarati. Our AI understands context and replies naturally in the customer's preferred language."
+        "text": "VoluChat can send the buyer an Instagram DM, ask helpful questions, answer common product details, and guide them to WhatsApp when they are ready."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the WhatsApp handoff work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When the buyer is ready, VoluChat opens WhatsApp with useful details like the shoe, size, color, budget, and question they asked. Your team can then process the order manually."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can VoluChat answer shoe-specific questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can add product names, prices, sizes, colors, photos, stock notes, and delivery details so buyers get clearer answers in Instagram DM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it support Hindi or Hinglish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VoluChat can be set up for English, Hindi, and Hinglish buyer messages. We can tune the tone during onboarding."
       }
     },
     {
@@ -44,14 +68,14 @@ const faqSchema = {
       "name": "How much does VoluChat cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We offer bespoke pricing tailored to your brand's specific scale and automation requirements. Since we provide white-glove onboarding and dedicated infrastructure, we recommend requesting a demo for a personalized quote."
+        "text": "Pricing is shared after a demo because founding stores may need different setup support depending on catalog size, message volume, and WhatsApp workflow."
       }
     }
   ]
 };
 ---
 
-<Layout title="VoluChat | Instagram & Facebook Automation for Small Businesses">
+<Layout title="VoluChat | Instagram Comment Replies for Indian Shoe Stores">
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   
   <Header />

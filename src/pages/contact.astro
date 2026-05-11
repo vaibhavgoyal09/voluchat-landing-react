@@ -4,8 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FAQ from '../components/FAQ.astro';
 
-const seoTitle = "Request a Private Demo | VoluChat";
-const seoDescription = "Schedule a personalized demo with our team to see how VoluChat can automate your Instagram DMs, comments, and order processing for your scaling brand.";
+const seoTitle = "Request a demo for your shoe store | VoluChat";
+const seoDescription = "See how VoluChat can reply to Instagram comments, answer shoe questions in DM, and send ready buyers to your WhatsApp.";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
@@ -22,13 +22,13 @@ const seoDescription = "Schedule a personalized demo with our team to see how Vo
           <div>
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 backdrop-blur-md mb-10">
               <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-              <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Concierge Onboarding</span>
+              <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Founding-store demo</span>
             </div>
             <h1 class="text-6xl md:text-8xl font-heading font-black text-slate-950 mb-10 leading-[1.02] tracking-tighter">
-              The first step to <br /><span class="text-gradient-primary">unlimited scale.</span>
+              Request a demo for <br /><span class="text-gradient-primary">your shoe store.</span>
             </h1>
             <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium mb-12 max-w-xl">
-              Schedule a private walkthrough of our infrastructure and see how we can transform your social commerce workflow.
+              Show us how buyers comment on your Reels today. We'll walk you through how VoluChat can answer in DM and send clearer chats to WhatsApp.
             </p>
             
             <div class="space-y-8">
@@ -58,6 +58,10 @@ const seoDescription = "Schedule a personalized demo with our team to see how Vo
             <div class="absolute -inset-10 bg-indigo-500/5 blur-[120px] rounded-full -z-10"></div>
             <div class="glass-panel-premium p-10 md:p-12 rounded-[3rem] relative z-10 shadow-2xl">
               <form id="demo-form" class="space-y-6">
+                <div>
+                  <h2 class="text-2xl font-heading font-black text-slate-950 tracking-tight">Shoe store details</h2>
+                  <p class="mt-2 text-sm font-medium text-slate-500">Share the Instagram and WhatsApp details you use for orders today.</p>
+                </div>
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
                     <label for="firstName" class="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2.5">First Name</label>
@@ -86,24 +90,24 @@ const seoDescription = "Schedule a personalized demo with our team to see how Vo
                     <input type="text" id="instagram" name="instagram" required placeholder="@yourstore" class="w-full px-5 py-4 bg-white/50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:bg-white focus:border-indigo-200 transition-all font-medium text-slate-900" />
                   </div>
                   <div>
-                    <label for="dailyDms" class="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2.5">Estimated Daily DMs</label>
+                    <label for="dailyDms" class="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2.5">Daily Instagram Comments or DMs</label>
                     <select id="dailyDms" name="dailyDms" required class="w-full px-5 py-4 bg-white/50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:bg-white focus:border-indigo-200 transition-all font-medium text-slate-900 appearance-none cursor-pointer">
                       <option value="" disabled selected>Select volume...</option>
-                      <option value="0-50">0 - 50 DMs</option>
-                      <option value="50-200">50 - 200 DMs</option>
-                      <option value="200-1000">200 - 1000 DMs</option>
-                      <option value="1000+">More than 1000 DMs</option>
+                      <option value="0-25">0 - 25 per day</option>
+                      <option value="25-100">25 - 100 per day</option>
+                      <option value="100+">More than 100 per day</option>
+                      <option value="not-sure">Not sure yet</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label for="message" class="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2.5">Tell us about your business</label>
-                  <textarea id="message" name="message" rows="3" placeholder="I sell handmade jewelry and get a lot of price inquiries..." class="w-full px-5 py-4 bg-white/50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:bg-white focus:border-indigo-200 transition-all font-medium text-slate-900 resize-none"></textarea>
+                  <textarea id="message" name="message" rows="3" placeholder="I sell sneakers on Instagram and buyers ask price, size, and delivery in comments..." class="w-full px-5 py-4 bg-white/50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:bg-white focus:border-indigo-200 transition-all font-medium text-slate-900 resize-none"></textarea>
                 </div>
 
-                <button type="submit" id="submit-btn" class="group relative flex items-center justify-center gap-3 w-full py-5 bg-slate-950 text-white rounded-2xl font-black text-lg transition-all duration-300 hover:scale-[1.02] hover:bg-slate-900 shadow-2xl overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed mt-4">
-                  <span id="btn-text" class="relative z-10">Request Private Demo</span>
+                <button type="submit" id="submit-btn" class="group relative flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-2xl font-black text-lg transition-all duration-300 hover:scale-[1.02] shadow-2xl shadow-indigo-500/20 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed mt-4">
+                  <span id="btn-text" class="relative z-10">Request Demo</span>
                   <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>
@@ -120,7 +124,7 @@ const seoDescription = "Schedule a personalized demo with our team to see how Vo
       <div class="glass-panel-premium p-5 rounded-[3rem] overflow-hidden group shadow-2xl">
         <img 
           src="/contact_support.png" 
-          alt="VoluChat Support Team" 
+          alt="VoluChat demo for shoe stores" 
           class="w-full h-[550px] object-cover rounded-[2.5rem] transition-transform duration-[2s] group-hover:scale-105"
         />
       </div>

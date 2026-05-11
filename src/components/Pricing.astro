@@ -1,88 +1,64 @@
 ---
-const features = [
-  "Instagram & Facebook comment-to-DM automation",
-  "Automatic DM replies for customer questions",
-  "Catalog-aware product search",
-  "AI product title and description generation",
-  "Conversation starters and persistent menus",
-  "Conversation, cart, order, and revenue dashboard",
-  "WhatsApp handoff for qualified buyers",
-  "White-glove onboarding & support",
+const includes = [
+  "Instagram comment and DM setup",
+  "Shoe product details, sizes, colors, and prices",
+  "WhatsApp handoff with order details",
+  "Hindi and Hinglish buyer messages",
+  "Hands-on onboarding support",
+  "Early feedback access",
 ];
 ---
 
 <section id="pricing" class="py-20 md:py-32 relative overflow-hidden">
-  <!-- Background -->
   <div class="absolute inset-0 pointer-events-none -z-10">
     <div class="sect-grid"></div>
-    <div class="sect-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
   </div>
 
-    <div class="max-w-5xl mx-auto px-6 relative z-10">
-    <!-- Header -->
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
     <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 backdrop-blur-md mb-8">
-        <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-        <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Scale Your Store</span>
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 mb-8">
+        <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+        <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Founding access</span>
       </div>
-      <h2 class="text-5xl sm:text-7xl font-heading font-black text-slate-950 mb-10 leading-[1.05] tracking-tight">
-        Automation built for <br /><span class="text-gradient-primary">your growth.</span>
+      <h2 class="text-4xl sm:text-6xl font-heading font-black text-slate-950 mb-8 leading-[1.05] tracking-tight">
+        Request a demo before you decide.
       </h2>
-      <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
-        We handle your 'Price?' comments and DMs automatically so you can focus on making great products.
+      <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto">
+        We will look at how your Instagram comments and WhatsApp orders work today, then show how VoluChat can fit your store.
       </p>
     </div>
 
-    <!-- Pricing card -->
     <div class="max-w-2xl mx-auto">
-      <div class="relative group">
-        <!-- Glow ring -->
-        <div class="absolute -inset-4 rounded-[3rem] bg-indigo-500/5 blur-3xl group-hover:bg-indigo-500/10 transition-colors duration-700"></div>
-
-        <div class="glass-panel-premium relative rounded-[3rem] p-12 md:p-16 flex flex-col md:flex-row gap-12 items-center">
-          <!-- Side info -->
-          <div class="flex-1 text-center md:text-left">
-            <div class="text-[11px] font-black text-indigo-600 uppercase tracking-[0.25em] mb-4">Custom Plan</div>
-            <div class="flex items-baseline justify-center md:justify-start gap-2">
-              <span class="text-6xl font-heading font-black text-slate-950 tracking-tighter">Growth</span>
-            </div>
-            <p class="text-slate-600 font-medium text-lg mt-6 leading-relaxed">
-              Everything you need to automate your store and close more sales every day.
-            </p>
-            
-            <div class="mt-10">
-               <a href="/contact" class="group relative flex items-center justify-center gap-3 w-full py-5 bg-slate-950 text-white rounded-2xl font-black text-lg transition-all duration-300 hover:scale-[1.02] hover:bg-slate-900 shadow-2xl overflow-hidden">
-                <span class="relative z-10">Request Demo</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              </a>
-            </div>
-          </div>
-
-          <!-- Feature list -->
-          <div class="flex-1 bg-slate-50/50 rounded-3xl p-8 border border-white/60">
-            <ul class="space-y-4">
-              {[
-                "Unlimited Auto-Replies",
-                "Official Meta Tech Partner",
-                "White-Glove Setup Support",
-                "Inventory & Catalog Sync",
-                "Store Owner Dashboard",
-                "WhatsApp Payment Handoff"
-              ].map((f) => (
-                <li class="flex items-start gap-3 text-sm text-slate-700 font-bold leading-tight">
-                  <div class="w-5 h-5 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div class="glass-panel-premium rounded-[2rem] p-8 md:p-12">
+        <div class="text-center md:text-left">
+          <div class="text-[11px] font-black text-indigo-600 uppercase tracking-[0.25em] mb-4">Founding Store Setup</div>
+          <p class="text-slate-600 font-medium text-lg leading-relaxed">
+            For Indian shoe stores selling on Instagram and WhatsApp.
+          </p>
+          <a href="/contact" class="mt-8 inline-flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-indigo-600 via-violet-600 to-blue-600 text-white rounded-2xl font-black text-lg transition-all duration-300 hover:shadow-violet-500/30 shadow-xl shadow-indigo-500/25">
+            <span>Request Demo</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>
-      </div>
-    </div>
-  </div>
+
+        <div class="mt-10 bg-slate-50/70 rounded-3xl p-6 md:p-8 border border-white/60">
+          <h3 class="text-sm font-black text-slate-950 uppercase tracking-[0.18em] mb-6">Includes</h3>
+          <ul class="space-y-4">
+            {includes.map((item) => (
+              <li class="flex items-start gap-3 text-sm text-slate-700 font-bold leading-relaxed">
+                <div class="w-5 h-5 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>
+                  {item}
+                  {item === "Early feedback access" && (
+                    <span class="block mt-1 text-xs text-slate-500 font-semibold">Help shape reply and order flows for your store.</span>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   </div>

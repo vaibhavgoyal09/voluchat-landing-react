@@ -2,93 +2,213 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import FeaturesSection from '../components/Features.astro';
-import CTA from '../components/CTA.astro';
 
-const seoTitle = "Powerful AI Features for Instagram Automation | VoluChat";
-const seoDescription = "Discover VoluChat's features: Comment-to-DM automation, regional language AI, smart lead qualification, and WhatsApp integration to grow your Instagram sales.";
+const seoTitle = "Features for Indian shoe stores | VoluChat";
+const seoDescription = "See how VoluChat replies to Instagram comments, answers shoe questions in DM, and sends ready buyers to WhatsApp with order details.";
+
+const featureDetails = [
+  {
+    eyebrow: "01 / Comment Replies",
+    title: "Turn Reel comments into private buyer chats",
+    description: "When someone comments \"price?\", \"link\", \"size?\", or a similar keyword, VoluChat replies and opens the right Instagram DM conversation. Buyers do not need to visit your profile, find the WhatsApp link, or repeat the shoe they were asking about.",
+    points: [
+      "Works from comments on Instagram Reels and posts.",
+      "Starts the DM while the buyer is still interested.",
+      "Keeps public comments active, which helps the post look alive."
+    ],
+    visualTitle: "Reel comment",
+    visualBody: "Buyer comments: \"price for black sneakers?\"",
+    visualAction: "VoluChat starts the DM"
+  },
+  {
+    eyebrow: "02 / Instagram DM Help",
+    title: "Answer the questions shoe buyers ask again and again",
+    description: "Inside Instagram DM, VoluChat can help with product search and common shoe questions before the store team steps in. It is written for simple buyer conversations, not complicated software dashboards.",
+    points: [
+      "Handles size, color, price, delivery, availability, and COD questions.",
+      "Can guide buyers to the right shoe when they ask for a type or budget.",
+      "Keeps replies clear for Indian shoppers who are used to quick DM chats."
+    ],
+    visualTitle: "DM assistant",
+    visualBody: "Size, color, price, delivery, and availability collected",
+    visualAction: "Buyer is ready for WhatsApp"
+  },
+  {
+    eyebrow: "03 / WhatsApp Handoff",
+    title: "Send serious buyers to WhatsApp with order details",
+    description: "VoluChat does not force you to change how you close orders. Your team can still process orders manually on WhatsApp, but the chat starts with better context.",
+    points: [
+      "Passes the selected shoe, size, color, and buyer interest to WhatsApp.",
+      "Reduces back-and-forth because the buyer has already answered basics.",
+      "Lets your team focus on payment, confirmation, and dispatch."
+    ],
+    visualTitle: "WhatsApp handoff",
+    visualBody: "Shoe: Black sneaker, Size: 8, Buyer asked for COD",
+    visualAction: "Store team closes the order"
+  },
+  {
+    eyebrow: "04 / Founding Setup",
+    title: "Hands-on setup for early shoe stores",
+    description: "Since VoluChat is working with founding stores, setup is guided. We look at your current Instagram posts, comment patterns, shoe categories, and WhatsApp order style before configuring the flow.",
+    points: [
+      "Connect your Instagram Professional account through official Meta APIs.",
+      "Map your common comments and buyer questions before launch.",
+      "Improve the setup with real feedback from your store conversations."
+    ],
+    visualTitle: "Setup checklist",
+    visualBody: "Instagram connected, shoe FAQs added, WhatsApp handoff ready",
+    visualAction: "Launch with guided support"
+  }
+];
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-    <!-- Hero Section -->
-    <section class="relative py-32 overflow-hidden">
+  <main class="pt-24">
+    <section class="relative py-28 overflow-hidden">
       <div class="absolute inset-0 pointer-events-none -z-10">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-50/30 rounded-full blur-[150px] opacity-50"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(79,70,229,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(79,70,229,0.06)_1px,transparent_1px)] bg-[size:44px_44px]"></div>
+        <div class="absolute top-1/2 left-1/2 h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/45 blur-[140px]"></div>
       </div>
       <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="max-w-4xl">
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 backdrop-blur-md mb-10">
             <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-            <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Scale Without Limits</span>
+            <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">For shoe sellers</span>
           </div>
-          <h1 class="text-6xl sm:text-8xl font-heading font-black text-slate-950 mb-10 leading-[1.02] tracking-tighter">
-            Engineered for <br /><span class="text-gradient-primary">massive growth.</span>
+          <h1 class="text-5xl sm:text-7xl lg:text-8xl font-heading font-black text-slate-950 mb-10 leading-[1.02] tracking-tighter">
+            Features for Indian <br /><span class="text-gradient-primary">shoe stores.</span>
           </h1>
           <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl">
-            Automate every customer interaction with intelligent infrastructure designed for high-volume social commerce.
+            Help buyers comment on Reels, get answers in Instagram DM, and continue on WhatsApp only when the shoe, size, and interest are clear.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Reuse the Features component -->
-    <FeaturesSection />
+    <section class="relative pb-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
+          <aside class="lg:sticky lg:top-32">
+            <div class="glass-panel-premium p-8 rounded-[2rem]">
+              <p class="text-[11px] font-black uppercase tracking-[0.2em] text-indigo-600 mb-4">How it works</p>
+              <h2 class="text-3xl font-heading font-black text-slate-950 mb-5 tracking-tight">From a comment to a cleaner WhatsApp order chat.</h2>
+              <p class="text-slate-600 font-medium leading-relaxed mb-8">
+                VoluChat sits between your Instagram comments and WhatsApp order process. It replies fast, collects the basics, and keeps your team in control.
+              </p>
+              <div class="space-y-4">
+                <div class="flex items-center gap-4 rounded-2xl bg-white/70 border border-white/80 p-4">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 font-black text-sm">1</span>
+                  <span class="font-bold text-slate-800">Buyer comments on a shoe Reel</span>
+                </div>
+                <div class="flex items-center gap-4 rounded-2xl bg-white/70 border border-white/80 p-4">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-50 text-violet-600 font-black text-sm">2</span>
+                  <span class="font-bold text-slate-800">VoluChat helps in Instagram DM</span>
+                </div>
+                <div class="flex items-center gap-4 rounded-2xl bg-white/70 border border-white/80 p-4">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600 font-black text-sm">3</span>
+                  <span class="font-bold text-slate-800">Ready buyer reaches WhatsApp</span>
+                </div>
+              </div>
+            </div>
+          </aside>
 
-    <!-- Extra educational section for SEO -->
-    <section class="py-24 relative">
+          <div class="space-y-8">
+            {featureDetails.map((feature) => (
+              <article class="glass-card-premium rounded-[2rem] p-7 md:p-9 overflow-hidden">
+                <div class="grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
+                  <div>
+                    <p class="text-[11px] font-black uppercase tracking-[0.2em] text-indigo-600 mb-4">{feature.eyebrow}</p>
+                    <h3 class="text-3xl md:text-4xl font-heading font-black text-slate-950 mb-5 tracking-tight leading-tight">{feature.title}</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed mb-6">{feature.description}</p>
+                    <ul class="space-y-3">
+                      {feature.points.map((point) => (
+                        <li class="flex gap-3 text-slate-700 font-semibold leading-relaxed">
+                          <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                          </span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div class="rounded-[1.75rem] border border-white/80 bg-white/70 p-5 shadow-xl shadow-slate-200/40">
+                    <div class="rounded-2xl bg-gradient-to-br from-indigo-50 via-white to-blue-50 p-5 border border-indigo-100/60">
+                      <div class="flex items-center justify-between mb-6">
+                        <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">{feature.visualTitle}</span>
+                        <span class="h-3 w-3 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/30"></span>
+                      </div>
+                      <p class="text-lg font-black text-slate-950 leading-snug mb-5">{feature.visualBody}</p>
+                      <div class="flex items-center gap-3 rounded-2xl bg-slate-950 text-white p-4">
+                        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+                        </span>
+                        <span class="text-sm font-black">{feature.visualAction}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 relative bg-white/35">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-16 items-center">
           <div class="space-y-12">
             <div>
-              <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6">Why use VoluChat?</h2>
+              <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6">Why shoe stores use VoluChat?</h2>
               <p class="text-slate-600 leading-relaxed mb-6">
-                As your store grows, replying manually takes too much time. VoluChat helps you reply quickly without hiring more people.
+                When a Reel gets comments, buyers should not have to search your profile, tap a WhatsApp link, and explain everything again. VoluChat starts the chat where their interest begins.
               </p>
               <ul class="space-y-4">
                 <li class="flex items-start gap-3">
                   <div class="mt-1 w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <span class="text-slate-700 font-medium">Reply to customers in seconds.</span>
+                  <span class="text-slate-700 font-medium">Reply when buyers comment "price?" or "LINK" on your shoe posts.</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <div class="mt-1 w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <span class="text-slate-700 font-medium">Stop missing customers when you are busy.</span>
+                  <span class="text-slate-700 font-medium">Answer size, color, price, delivery, and availability questions in DM.</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <div class="mt-1 w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <span class="text-slate-700 font-medium">Send ready buyers to WhatsApp for payment.</span>
+                  <span class="text-slate-700 font-medium">Send WhatsApp chats with the shoe and size already clear.</span>
                 </li>
               </ul>
             </div>
             
             <div class="glass-card-premium p-8 rounded-3xl">
-              <h3 class="text-2xl font-heading font-black text-slate-950 mb-4 italic leading-snug">"We save hours every day because common DM questions are handled automatically."</h3>
-              <p class="text-slate-500 font-bold uppercase tracking-widest text-[11px]">— Online fashion seller</p>
+              <h3 class="text-2xl font-heading font-black text-slate-950 mb-4 leading-snug">A cleaner way to handle "price?" comments.</h3>
+              <p class="text-slate-500 font-bold uppercase tracking-widest text-[11px]">Buyer journey</p>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-6">
             <div class="glass-card-premium p-8 rounded-3xl flex flex-col items-center text-center">
-              <span class="text-4xl font-black text-indigo-600 mb-2">24/7</span>
-              <span class="text-[10px] text-slate-400 uppercase tracking-widest font-black">Automation</span>
+              <span class="text-3xl font-black text-indigo-600 mb-2">Comment</span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest font-black">Buyer starts</span>
             </div>
             <div class="glass-card-premium p-8 rounded-3xl flex flex-col items-center text-center translate-y-8">
-              <span class="text-4xl font-black text-purple-600 mb-2">84%</span>
-              <span class="text-[10px] text-slate-400 uppercase tracking-widest font-black">Queries</span>
+              <span class="text-3xl font-black text-purple-600 mb-2">DM Help</span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest font-black">Questions answered</span>
             </div>
             <div class="glass-card-premium p-8 rounded-3xl flex flex-col items-center text-center">
-              <span class="text-4xl font-black text-blue-600 mb-2">&lt;1s</span>
-              <span class="text-[10px] text-slate-400 uppercase tracking-widest font-black">Replies</span>
+              <span class="text-3xl font-black text-blue-600 mb-2">Details</span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest font-black">Shoe, size, delivery</span>
             </div>
             <div class="glass-card-premium p-8 rounded-3xl flex flex-col items-center text-center translate-y-8">
-              <span class="text-4xl font-black text-emerald-600 mb-2">100%</span>
-              <span class="text-[10px] text-slate-400 uppercase tracking-widest font-black">Secure</span>
+              <span class="text-3xl font-black text-emerald-600 mb-2">WhatsApp</span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest font-black">Store closes order</span>
             </div>
           </div>
         </div>

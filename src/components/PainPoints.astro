@@ -3,39 +3,39 @@ const comparisons = [
   {
     id: "01",
     pain: {
-      title: "Orders get missed in comments",
-      description: "People comment 'price?', 'available?', or 'size?' on your posts, but many never get a quick reply.",
+      title: "Customers comment, then wait",
+      description: "Someone asks for price or size on your Reel. If the reply comes late, they forget, get confused, or move on.",
       icon: "clock"
     },
     gain: {
-      title: "VoluChat turns comments into chats",
-      description: "VoluChat can reply to comments and send buyers a DM with product details, price, and next steps.",
+      title: "VoluChat replies while they are interested",
+      description: "When a buyer comments, VoluChat can send a helpful DM and keep the conversation moving.",
       icon: "zap"
     }
   },
   {
     id: "02",
     pain: {
-      title: "Customers ask for product suggestions",
-      description: "A buyer says, 'Show me a blue kurti under Rs 1,500,' and you have to search manually.",
+      title: "You answer the same shoe questions all day",
+      description: "Price, size, color, photos, delivery, and stock questions keep repeating in comments and DMs.",
       icon: "users"
     },
     gain: {
-      title: "AI finds matching products",
-      description: "VoluChat can search your products by budget, color, size, and need, then reply with the right options.",
+      title: "Buyers get clear answers in Instagram DM",
+      description: "VoluChat can use your shoe details to answer common questions before the chat reaches WhatsApp.",
       icon: "check-circle"
     }
   },
   {
     id: "03",
     pain: {
-      title: "Orders need too much follow-up",
-      description: "You reply in DM, send photos, explain details, then move the buyer to WhatsApp manually.",
+      title: "WhatsApp chats start with no context",
+      description: "You open WhatsApp and still need to ask which shoe, size, color, and budget the buyer wanted.",
       icon: "refresh"
     },
     gain: {
-      title: "Send serious buyers to WhatsApp",
-      description: "VoluChat answers first, shows products, and sends ready-to-buy customers to WhatsApp or checkout.",
+      title: "WhatsApp opens with useful order details",
+      description: "VoluChat sends serious buyers to WhatsApp after collecting the product, size, color, and question they asked.",
       icon: "shopping-cart"
     }
   }
@@ -54,13 +54,13 @@ const comparisons = [
     <div class="text-center max-w-4xl mx-auto mb-24">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100/50 border border-slate-200/50 backdrop-blur-md mb-8">
         <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-        <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">The Problem</span>
+        <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">The problem</span>
       </div>
       <h2 class="text-5xl sm:text-7xl font-heading font-black text-slate-950 mb-10 leading-[1.05] tracking-tight">
-        Missed comments are <br class="hidden md:block"/><span class="text-gradient-primary">lost online revenue.</span>
+        Instagram comments should not <br class="hidden md:block"/><span class="text-gradient-primary">turn into missed orders.</span>
       </h2>
       <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto">
-        Don't let serious buyers wait. VoluChat automates the heavy lifting so you can focus on scaling.
+        Most shoe stores already get interest on Reels. The hard part is replying fast and collecting the details before the buyer loses interest.
       </p>
     </div>
 
@@ -74,7 +74,7 @@ const comparisons = [
               <div class="relative z-10">
                 <div class="flex items-center gap-4 mb-8">
                   <span class="text-xs font-black text-slate-400 font-heading tracking-widest">{item.id}</span>
-                  <span class="px-4 py-1.5 rounded-full bg-slate-200/40 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em]">Manual Phase</span>
+                  <span class="px-4 py-1.5 rounded-full bg-slate-200/40 text-slate-500 text-[10px] font-black uppercase tracking-[0.2em]">Today</span>
                 </div>
                 
                 <h3 class="text-3xl font-heading font-black text-slate-400 mb-6 line-through decoration-slate-300 tracking-tight">
@@ -100,7 +100,7 @@ const comparisons = [
                   <div class="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-xl shadow-indigo-200 group-hover:scale-110 transition-transform duration-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <span class="px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-black uppercase tracking-[0.2em]">Automated Era</span>
+                  <span class="px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-black uppercase tracking-[0.2em]">With VoluChat</span>
                 </div>
                 
                 <h3 class="text-3xl font-heading font-black text-slate-950 mb-6 group-hover:text-indigo-600 transition-colors tracking-tight">
@@ -126,10 +126,10 @@ const comparisons = [
 
     <!-- Final CTA -->
     <div class="mt-24 text-center">
-      <div class="glass-panel-premium inline-flex items-center gap-5 p-3 pr-8 rounded-full transition-all group cursor-default shadow-xl">
-        <div class="w-12 h-12 rounded-full bg-slate-950 flex items-center justify-center text-white font-black text-lg shadow-lg">!</div>
-        <p class="text-slate-600 font-black text-sm tracking-tight">Stop missing sales from your comments. <span class="text-indigo-600">Let VoluChat handle the replies for you.</span></p>
-        <a href="/contact" class="ml-6 flex items-center gap-2 group/link px-6 py-2.5 bg-indigo-600 text-white rounded-full font-black text-sm transition-all hover:scale-105 hover:bg-indigo-700 shadow-lg shadow-indigo-200">
+      <div class="glass-panel-premium inline-flex flex-col sm:flex-row items-center gap-5 p-4 sm:p-3 sm:pr-8 rounded-[2rem] sm:rounded-full transition-all group cursor-default shadow-xl">
+        <div class="w-12 h-12 rounded-full bg-slate-950 flex shrink-0 items-center justify-center text-white font-black text-lg shadow-lg">!</div>
+        <p class="text-center sm:text-left text-slate-600 font-black text-sm tracking-tight">Stop missing sales from your comments. <span class="text-indigo-600">Let VoluChat handle the replies for you.</span></p>
+        <a href="/contact" class="sm:ml-6 flex items-center gap-2 group/link px-6 py-2.5 bg-indigo-600 text-white rounded-full font-black text-sm transition-all hover:scale-105 hover:bg-indigo-700 shadow-lg shadow-indigo-200">
           Request Demo
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/link:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>

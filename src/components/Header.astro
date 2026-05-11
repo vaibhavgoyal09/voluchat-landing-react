@@ -1,11 +1,4 @@
 ---
-const featureLinks = [
-  { title: "Comments & DMs", href: "/features", description: "Auto-reply to comments and DMs instantly" },
-  { title: "WhatsApp Integration", href: "/features", description: "Seamless lead handoff to WhatsApp" },
-  { title: "Multi-language", href: "/features", description: "Hindi & regional language support" },
-  { title: "Analytics", href: "/features", description: "Track engagement and conversions" },
-];
-
 const companyLinks = [
   { title: "About Us", href: "/about" },
   { title: "Testimonials", href: "/#testimonials" },
@@ -27,25 +20,7 @@ const companyLinks = [
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-2">
-        <div class="relative group">
-          <button class="flex items-center gap-2 bg-transparent hover:bg-slate-50 text-slate-600 hover:text-slate-950 font-bold text-[13px] uppercase tracking-widest rounded-xl h-10 px-5 transition-all">
-            Features
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="size-3 transition-transform group-hover:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="absolute top-full left-0 pt-3 opacity-0 translate-y-3 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300">
-            <ul class="glass-panel-premium w-[480px] grid grid-cols-2 gap-3 p-4 rounded-3xl shadow-2xl">
-              {featureLinks.map(link => (
-                <li>
-                  <a href={link.href} class="flex flex-col p-4 hover:bg-slate-50 rounded-2xl transition-all group/item border border-transparent hover:border-slate-100 shadow-sm hover:shadow-md">
-                    <span class="font-black text-sm text-slate-950 group-hover/item:text-indigo-600">{link.title}</span>
-                    <span class="text-xs font-medium text-slate-500 mt-1">{link.description}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        
+        <a href="/features" class="h-10 inline-flex items-center px-5 text-[13px] font-bold text-slate-600 hover:text-slate-950 uppercase tracking-widest hover:bg-slate-50 rounded-xl transition-all">Features</a>
         <a href="/pricing" class="h-10 inline-flex items-center px-5 text-[13px] font-bold text-slate-600 hover:text-slate-950 uppercase tracking-widest hover:bg-slate-50 rounded-xl transition-all">Pricing</a>
         <a href="/about" class="h-10 inline-flex items-center px-5 text-[13px] font-bold text-slate-600 hover:text-slate-950 uppercase tracking-widest hover:bg-slate-50 rounded-xl transition-all">About</a>
         <a href="/blog" class="h-10 inline-flex items-center px-5 text-[13px] font-bold text-slate-600 hover:text-slate-950 uppercase tracking-widest hover:bg-slate-50 rounded-xl transition-all">Blog</a>
@@ -55,7 +30,7 @@ const companyLinks = [
     <!-- Right Side Actions -->
     <div class="hidden md:flex items-center gap-4">
 
-      <a href="/contact" class="group relative flex items-center justify-center gap-2 px-7 py-3 bg-slate-950 text-white rounded-2xl font-black text-sm transition-all duration-300 hover:scale-[1.05] hover:bg-slate-900 shadow-xl overflow-hidden">
+      <a href="/contact" class="group relative flex items-center justify-center gap-2 px-7 py-3 bg-gradient-to-r from-indigo-600 via-violet-600 to-blue-600 text-white rounded-2xl font-black text-sm transition-all duration-300 hover:scale-[1.05] shadow-xl shadow-indigo-500/25 overflow-hidden">
         <span class="relative z-10">Request Demo</span>
         <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
       </a>
@@ -63,7 +38,7 @@ const companyLinks = [
 
     <!-- Mobile Actions -->
     <div class="flex items-center gap-3 lg:hidden">
-      <a href="/contact" class="px-5 py-2.5 bg-slate-950 text-white rounded-xl text-xs font-black uppercase tracking-widest shadow-lg">
+      <a href="/contact" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-violet-600 to-blue-600 text-white rounded-xl text-xs font-black uppercase tracking-widest shadow-lg shadow-indigo-500/25">
         Request Demo
       </a>
       
@@ -93,7 +68,7 @@ const companyLinks = [
       
       <div class="flex flex-col gap-4">
 
-        <a href="/contact" class="w-full py-5 bg-slate-950 text-white rounded-2xl text-center font-black text-base shadow-2xl">Request Demo</a>
+        <a href="/contact" class="w-full py-5 bg-gradient-to-r from-indigo-600 via-violet-600 to-blue-600 text-white rounded-2xl text-center font-black text-base shadow-2xl shadow-indigo-500/25">Request Demo</a>
       </div>
 
       <div class="grid grid-cols-2 gap-4">

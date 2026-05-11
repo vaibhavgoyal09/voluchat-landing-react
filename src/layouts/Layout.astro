@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import ContactButtons from '../components/ContactButtons.astro';
 
 interface Props {
 	title: string;
@@ -12,7 +11,7 @@ interface Props {
 
 const {
 	title,
-	description = "The ultimate Instagram & Facebook DM automation tool for small businesses. Stop handling DMs manually. Automate comments, stories, and order processing 24/7.",
+	description = "VoluChat turns Instagram comments into WhatsApp orders for Indian shoe stores. Reply in DM, answer shoe questions, and send ready buyers to WhatsApp.",
 	image = "/og-image.png",
 	type = "website",
 	robots,
@@ -25,7 +24,7 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		{robots && <meta name="robots" content={robots} />}
-		<meta name="keywords" content="Instagram DM automation, Facebook DM automation, comment to DM, automated order processing, WhatsApp integration, small business automation, Indian sellers automation, revenue growth tool, social media sales" />
+		<meta name="keywords" content="Instagram comments into WhatsApp orders for Indian shoe stores, shoe store Instagram DM, comment to WhatsApp, WhatsApp orders, Indian shoe sellers, Instagram shoe store replies" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
@@ -50,6 +49,5 @@ const {
 	</head>
 	<body class="selection:bg-indigo-100 selection:text-indigo-900">
 		<slot />
-		<ContactButtons />
 	</body>
 </html>
