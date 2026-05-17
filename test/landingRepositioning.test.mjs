@@ -49,19 +49,24 @@ test('homepage hero uses the reviewed premium visual treatment', () => {
   assert.match(heroSource, /WhatsApp handoff ready/);
 });
 
-test('homepage primary buttons use blue-violet accents instead of black', () => {
+test('homepage primary buttons use charcoal accents instead of title-gradient colors', () => {
   const buttonSources = [
     'src/components/Hero.astro',
+    'src/components/PainPoints.astro',
     'src/components/Header.astro',
     'src/components/Pricing.astro',
     'src/components/Testimonials.astro',
     'src/components/CTA.astro',
   ];
-  const buttonSource = buttonSources.map((file) => sourceByFile[file]).join('\n');
+  const requestDemoButtonClasses = buttonSources.flatMap((file) => (
+    [...sourceByFile[file].matchAll(/<a href="\/contact" class="([^"]+)">(?:(?!<\/a>)[\s\S])*Request Demo(?:(?!<\/a>)[\s\S])*<\/a>/g)]
+      .map((match) => match[1])
+  ));
+  const buttonSource = requestDemoButtonClasses.join('\n');
 
-  assert.doesNotMatch(buttonSource, /bg-slate-950|hover:bg-slate-900|hover:bg-slate-800|shadow-slate-900/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /from-indigo-600[^"]*via-violet-600[^"]*to-blue-600/);
-  assert.match(sourceByFile['src/components/Header.astro'], /from-indigo-600[^"]*via-violet-600[^"]*to-blue-600/);
+  assert.ok(requestDemoButtonClasses.length >= 7, 'Expected homepage Request Demo primary buttons to be covered');
+  assert.doesNotMatch(buttonSource, /from-indigo-600[^"]*(via-violet-600|to-violet-600|to-blue-600)|shadow-indigo-500|hover:shadow-violet/);
+  assert.match(buttonSource, /bg-zinc-900[^"]*hover:bg-zinc-800/);
 });
 
 test('homepage layout does not render floating contact buttons', () => {
