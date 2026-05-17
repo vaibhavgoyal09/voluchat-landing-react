@@ -10,7 +10,7 @@
 
   <div class="relative z-10 max-w-7xl mx-auto px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <div id="hero-badge" class="inline-flex items-center gap-3 rounded-full border border-blue-500/20 bg-white/80 px-3 py-2.5 shadow-2xl shadow-blue-500/10 ring-1 ring-white/80 backdrop-blur-2xl opacity-0 translate-y-4">
+      <div id="hero-badge" class="inline-flex items-center gap-3 rounded-full border border-blue-500/20 bg-white/80 px-3 py-2.5 shadow-2xl shadow-blue-500/10 ring-1 ring-white/80 backdrop-blur-2xl">
         <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#0668E1] to-[#38bdf8] text-white shadow-lg shadow-blue-500/25">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
         </span>
@@ -20,20 +20,20 @@
         </span>
       </div>
 
-      <div id="hero-intro" class="mt-8 text-lg font-black text-indigo-600 uppercase tracking-[0.2em] opacity-0 translate-y-4">
+      <div id="hero-intro" class="mt-8 text-lg font-black text-indigo-600 uppercase tracking-[0.2em]">
         Built for Instagram shoe stores in India
       </div>
 
-      <h1 id="hero-title" class="mt-4 text-4xl font-black leading-[1.1] tracking-tight text-slate-950 opacity-0 translate-y-8 sm:text-5xl lg:text-7xl">
+      <h1 id="hero-title" class="mt-4 text-4xl font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-7xl">
         Turn <span class="text-gradient-primary">"price?" comments</span><br />
         into <span class="text-gradient-primary">WhatsApp orders</span>
       </h1>
 
-      <p id="hero-description" class="mx-auto mt-8 max-w-3xl text-lg font-medium leading-relaxed text-slate-600 opacity-0 translate-y-8 sm:text-xl">
+      <p id="hero-description" class="mx-auto mt-8 max-w-3xl text-lg font-medium leading-relaxed text-slate-600 sm:text-xl">
         VoluChat replies to Instagram comments, talks to buyers in DM, answers common shoe questions like size, color, price, and delivery, then sends ready buyers to your WhatsApp with order details.
       </p>
 
-      <div id="hero-actions" class="mt-8 flex flex-col items-center justify-center gap-4 opacity-0 translate-y-8 sm:flex-row">
+      <div id="hero-actions" class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <a href="/contact" class="group inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-violet-600 to-blue-600 px-7 py-4 text-base font-bold text-white shadow-xl shadow-indigo-500/25 transition hover:-translate-y-0.5 hover:shadow-violet-500/30 sm:w-auto">
           Request Demo
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-2 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -43,7 +43,7 @@
         </a>
       </div>
 
-      <div id="hero-trust" class="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 opacity-0 translate-y-8">
+      <div id="hero-trust" class="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
         <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
           Built for Indian shoe stores selling through Instagram Reels and WhatsApp.
         </span>
@@ -54,7 +54,7 @@
     </div>
 
     <!-- Premium Buyer Flow -->
-    <div id="hero-scene" class="relative mx-auto mt-20 max-w-6xl opacity-0 translate-y-10">
+    <div id="hero-scene" class="relative mx-auto mt-20 max-w-6xl">
       <div class="relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/45 p-4 shadow-[0_40px_110px_-40px_rgba(15,23,42,0.35)] ring-1 ring-white/80 backdrop-blur-3xl md:p-6 lg:p-8">
         <div class="absolute inset-0 hero-dot-grid opacity-20"></div>
         <div class="relative grid gap-5 lg:grid-cols-[0.85fr_1.2fr_0.85fr] lg:items-center">
@@ -89,7 +89,7 @@
             </div>
           </div>
 
-          <div class="glass-panel-premium rounded-[2rem] p-5 shadow-[0_28px_80px_-30px_rgba(15,23,42,0.35)] ring-1 ring-white/50 md:p-7 lg:animate-float-slow">
+          <div class="glass-panel-premium rounded-[2rem] p-5 shadow-[0_28px_80px_-30px_rgba(15,23,42,0.35)] ring-1 ring-white/50 md:p-7">
             <div class="mb-7 flex items-center justify-between border-b border-white/30 pb-4">
               <div class="flex items-center gap-2">
                 <span class="h-3 w-3 rounded-full bg-slate-300"></span>
@@ -204,41 +204,4 @@
     opacity: 0.4;
   }
 
-  .floating-card {
-    transition: transform 0.3s ease;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-  }
-
-  @keyframes float-slow {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-20px) scale(1.02); }
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-float-slow {
-    animation: float-slow 8s ease-in-out infinite;
-  }
 </style>
-
-<script>
-  import { gsap } from 'gsap';
-
-  window.addEventListener('load', () => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
-
-    tl.to('#hero-badge', { opacity: 1, y: 0, delay: 0.2 })
-      .to('#hero-intro', { opacity: 1, y: 0 }, '-=0.7')
-      .to('#hero-title', { opacity: 1, y: 0 }, '-=0.8')
-      .to('#hero-description', { opacity: 1, y: 0 }, '-=0.8')
-      .to('#hero-actions', { opacity: 1, y: 0 }, '-=0.8')
-      .to('#hero-trust', { opacity: 1, y: 0 }, '-=0.8')
-      .to('#hero-scene', { opacity: 1, y: 0 }, '-=0.6');
-  });
-</script>
