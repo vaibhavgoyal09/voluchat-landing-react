@@ -1,4 +1,28 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Automated asset copying for high-fidelity thumbnails
+try {
+  const srcDir = '/home/vaibhav/.gemini/antigravity/brain/8fc3df8a-361f-4b39-b414-a6103f98e55e';
+  const destDir = '/home/vaibhav/voluchat-landing-react/public';
+  const files = [
+    { src: 'white_runner_thumb_1779199566108.png', dest: 'white_runner_thumb.png' },
+    { src: 'grey_runner_thumb_1779199585002.png', dest: 'grey_runner_thumb.png' },
+    { src: 'black_trainer_thumb_1779199608114.png', dest: 'black_trainer_thumb.png' }
+  ];
+
+  files.forEach(file => {
+    const srcPath = path.join(srcDir, file.src);
+    const destPath = path.join(destDir, file.dest);
+    if (fs.existsSync(srcPath) && !fs.existsSync(destPath)) {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  });
+} catch (e) {
+  console.error('Asset copy failed:', e);
+}
+
 const features = [
   {
     title: "24/7 Smart Cover",
@@ -7,7 +31,7 @@ const features = [
     badge: "Automated engagement"
   },
   {
-    title: "AI Product Matching",
+    title: "AI Catalog Search",
     description: "Buyers can describe a product or send a screenshot. VoluChat uses vector search to match it against your catalog in seconds.",
     stat: "Vector search",
     badge: "Catalog discovery"
@@ -20,7 +44,11 @@ const features = [
   }
 ];
 
-const matches = ["White Runner", "Grey Runner", "Black Trainer"];
+const matches = [
+  { name: "White Runner", image: "/white_runner_thumb.png", score: "98% Match" },
+  { name: "Grey Runner", image: "/grey_runner_thumb.png", score: "84% Match" },
+  { name: "Black Trainer", image: "/black_trainer_thumb.png", score: "72% Match" }
+];
 ---
 
 <section id="features" class="relative overflow-hidden py-24 md:py-32">
@@ -64,7 +92,7 @@ const matches = ["White Runner", "Grey Runner", "Black Trainer"];
         <!-- Micro-UI: DM Mockup -->
         <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 space-y-3 shadow-inner">
           <div class="flex gap-2">
-            <div class="h-6 w-6 rounded-full bg-slate-200 shrink-0"></div>
+            <img src="/buyer_avatar.png" alt="Buyer Avatar" class="h-6 w-6 rounded-full object-cover shrink-0 shadow-sm border border-slate-100" />
             <div class="rounded-2xl bg-white border border-slate-100 p-2.5 text-[11px] font-medium text-slate-800 shadow-sm max-w-[80%]">
               Hi, is the white sneaker in stock in size 9?
             </div>
@@ -73,7 +101,9 @@ const matches = ["White Runner", "Grey Runner", "Black Trainer"];
             <div class="rounded-2xl bg-blue-600 p-2.5 text-[11px] font-semibold text-white shadow-md max-w-[80%]">
               Yes, white runner sneaker is available in size 9! ⚡️ Shipping is free today. Should I secure it for you?
             </div>
-            <div class="h-6 w-6 rounded-full bg-blue-100 border border-blue-200 shrink-0 flex items-center justify-center text-[8px] font-black text-blue-700">AI</div>
+            <div class="h-6 w-6 rounded-full bg-blue-50 border border-blue-100 shrink-0 flex items-center justify-center p-1 shadow-sm">
+              <img src="/voluchat_logo.svg" alt="VoluChat AI" class="w-full h-full object-contain" />
+            </div>
           </div>
         </div>
       </div>
@@ -93,13 +123,13 @@ const matches = ["White Runner", "Grey Runner", "Black Trainer"];
         <!-- Micro-UI: Search Catalog Mockup -->
         <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 space-y-2.5 shadow-inner">
           <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Semantic matches found</div>
-          {matches.map((item, index) => (
+          {matches.map((item) => (
             <div class="flex items-center justify-between gap-3 bg-white border border-slate-100 p-2 rounded-xl shadow-sm">
               <div class="flex items-center gap-2">
-                <div class="h-8 w-10 bg-gradient-to-br from-blue-50 to-indigo-50 border border-slate-100 rounded-lg flex items-center justify-center text-[8px] font-black text-slate-400">IMG</div>
-                <div class="text-xs font-black text-slate-950">{item}</div>
+                <img src={item.image} alt={item.name} class="h-10 w-10 object-contain bg-white border border-slate-100 rounded-lg flex-shrink-0 p-0.5" />
+                <div class="text-xs font-black text-slate-950">{item.name}</div>
               </div>
-              <span class="text-[10px] font-black text-blue-600">{index === 0 ? "98%" : index === 1 ? "84%" : "72%"} Match</span>
+              <span class="text-[10px] font-black text-blue-600">{item.score}</span>
             </div>
           ))}
         </div>
@@ -143,4 +173,3 @@ const matches = ["White Runner", "Grey Runner", "Black Trainer"];
     </div>
   </div>
 </section>
-

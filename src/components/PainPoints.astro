@@ -2,22 +2,28 @@
 const transformations = [
   {
     title: "Instant 24/7 Response",
-    friction: "Buyers expect immediate replies. If staff is sleeping, busy, or away, they ghost and buy from someone else.",
-    flow: "VoluChat responds within seconds 24/7, keeping the momentum high and holding their attention.",
+    frictionTitle: "Staff away = ghosted buyers",
+    friction: "When staff sleeps or is busy, hot leads get no replies and purchase elsewhere.",
+    flowTitle: "Replies in under 2s, 24/7",
+    flow: "Every comment and message is qualified instantly, holding buyer attention.",
     icon: "clock",
     badge: "Response time"
   },
   {
     title: "AI Catalog Search",
-    friction: "Staff manually searches photo galleries or sends complex catalog links when buyers share a screenshot.",
-    flow: "AI instantly matches buyer photos or text descriptions against your product catalog in real-time.",
+    frictionTitle: "Manual gallery scroll",
+    friction: "Staff spends minutes matching screenshots to photos, causing long buyer wait times.",
+    flowTitle: "Instant visual catalog match",
+    flow: "AI searches catalog in real-time, matching photos and text instantly.",
     icon: "search",
     badge: "Product discovery"
   },
   {
     title: "Structured Handoff",
-    friction: "Your team wastes hours asking the same questions about sizing, color, quantity, and delivery address.",
-    flow: "VoluChat collects all purchase details first, handing over a clean, ready-to-close brief to staff on WhatsApp.",
+    frictionTitle: "Repetitive questions",
+    friction: "Hours spent manually asking for PIN code, address, and size over and over.",
+    flowTitle: "1-Click brief on WhatsApp",
+    flow: "Presents a pre-filled purchase card to your sales team to close payment.",
     icon: "zap",
     badge: "Sales velocity"
   }
@@ -67,16 +73,38 @@ const transformations = [
               <h3 class="font-heading text-xl font-black tracking-tight text-slate-950">{item.title}</h3>
             </div>
 
-            <!-- Friction Box (Before) -->
-            <div class="mb-5 p-4 rounded-2xl bg-rose-50/50 border border-rose-100/50 text-xs sm:text-sm font-medium text-rose-800/90 leading-relaxed">
-              <div class="text-[9px] font-black uppercase tracking-wider text-rose-500 mb-1">Old Way</div>
-              {item.friction}
+            <!-- Friction Box (Before / Old Way) -->
+            <div class="mb-5 p-4 rounded-2xl bg-rose-50/40 border border-rose-100/50">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] font-black uppercase tracking-wider text-rose-500">Old Way</span>
+                <span class="text-[9px] font-black uppercase tracking-wider text-rose-600 bg-rose-100/30 px-2 py-0.5 rounded-md">Friction</span>
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex items-start gap-2 text-rose-950 text-xs font-black leading-tight">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-rose-500 shrink-0 mt-0.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <span>{item.frictionTitle}</span>
+                </div>
+                <div class="text-[11px] font-medium text-rose-800/80 leading-normal pl-5.5">
+                  {item.friction}
+                </div>
+              </div>
             </div>
 
             <!-- Flow Box (With VoluChat) -->
-            <div class="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100/50 text-xs sm:text-sm font-medium text-emerald-800/90 leading-relaxed">
-              <div class="text-[9px] font-black uppercase tracking-wider text-emerald-600 mb-1">VoluChat Way</div>
-              {item.flow}
+            <div class="p-4 rounded-2xl bg-emerald-50/40 border border-emerald-100/50">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] font-black uppercase tracking-wider text-emerald-600">VoluChat Way</span>
+                <span class="text-[9px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-100/30 px-2 py-0.5 rounded-md">Automated</span>
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex items-start gap-2 text-emerald-950 text-xs font-black leading-tight">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600 shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{item.flowTitle}</span>
+                </div>
+                <div class="text-[11px] font-medium text-emerald-800/80 leading-normal pl-5.5">
+                  {item.flow}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -95,4 +123,5 @@ const transformations = [
     </div>
   </div>
 </section>
+
 
