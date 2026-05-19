@@ -1,120 +1,146 @@
 ---
 const features = [
   {
-    title: "Reply before buyers lose interest",
-    description: "VoluChat answers new comments and DMs quickly, even when your team is busy packing orders or posting new Reels.",
-    stat: "Fast Replies",
+    title: "24/7 Smart Cover",
+    description: "Never keep a buyer waiting. VoluChat instantly replies to comments and DMs, keeping the excitement alive day or night.",
+    stat: "Always online",
+    badge: "Automated engagement"
   },
   {
-    title: "Answer size, color, and price questions",
-    description: "Add your shoe details once so buyers can ask natural questions and get useful answers in Instagram DM.",
-    stat: "Shoe Details",
+    title: "AI Product Matching",
+    description: "Buyers can describe a product or send a screenshot. VoluChat uses vector search to match it against your catalog in seconds.",
+    stat: "Vector search",
+    badge: "Catalog discovery"
   },
   {
-    title: "Send better chats to WhatsApp",
-    description: "When a buyer is ready, VoluChat opens WhatsApp with the shoe, size, color, and question already clear.",
-    stat: "Ready Chats",
-  },
-  {
-    title: "Get more value from Reel comments",
-    description: "Asking buyers to comment keeps the post active and gives every interested shopper an easy next step.",
-    stat: "More Comments",
-  },
-  {
-    title: "Spend less time repeating yourself",
-    description: "Common questions about price, stock, delivery, and photos can be handled before you personally step in.",
-    stat: "Less Typing",
-  },
-  {
-    title: "Start with hands-on setup",
-    description: "Founding stores get help connecting Instagram, adding products, and checking the first buyer conversations.",
-    stat: "Setup Help",
-  },
+    title: "Lead Qualification",
+    description: "VoluChat collects size, color, quantity, and delivery address before passing the chat to WhatsApp, pre-qualifying the lead.",
+    stat: "Ready to close",
+    badge: "Zero repetitive typing"
+  }
 ];
+
+const matches = ["White Runner", "Grey Runner", "Black Trainer"];
 ---
 
-<section id="features" class="relative overflow-hidden py-20 md:py-28">
-  <div class="absolute inset-0 pointer-events-none -z-10">
-    <div class="sect-grid opacity-10"></div>
+<section id="features" class="relative overflow-hidden py-24 md:py-32">
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div class="sect-grid opacity-15"></div>
+    <div class="absolute -left-44 top-24 h-[36rem] w-[36rem] rounded-full bg-blue-300/15 blur-3xl"></div>
+    <div class="absolute right-0 bottom-12 h-[36rem] w-[36rem] rounded-full bg-indigo-300/10 blur-3xl"></div>
   </div>
 
   <div class="mx-auto max-w-7xl px-6">
-    <div class="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-      <div class="lg:sticky lg:top-28">
-        <span class="section-badge mb-5">Why store owners use it</span>
-        <h2 class="max-w-xl text-5xl font-heading font-black leading-[1.05] tracking-tight text-slate-950">
-          More buyers helped, fewer repeated replies.
-        </h2>
-        <p class="mt-6 max-w-lg text-xl font-medium leading-relaxed text-slate-600">
-          VoluChat handles the first questions inside Instagram so your WhatsApp stays focused on people who are closer to ordering.
-        </p>
+    <div class="mx-auto max-w-3xl text-center mb-20">
+      <!-- Standardized Glowing Badge -->
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
+        <span>AI Capabilities</span>
+      </div>
+      <!-- Consistent Responsive Heading -->
+      <h2 class="text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+        Automate the first layer of Instagram DM sales.
+      </h2>
+      <p class="mx-auto mt-6 text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
+        Our AI DM helpdesk takes care of routine catalog queries and details so your staff can focus purely on closing sales on WhatsApp.
+      </p>
+    </div>
 
-        <div class="glass-panel-premium mt-8 overflow-hidden rounded-3xl">
-          <div class="flex items-center justify-between border-b border-slate-100 px-6 py-5">
-            <div>
-              <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Live Status</div>
-              <div class="mt-1 text-lg font-black text-slate-900">Instagram reply helper</div>
-            </div>
-            <div class="flex items-center gap-2 px-3 py-1 bg-emerald-50 rounded-full border border-emerald-100">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span class="text-[10px] font-black text-emerald-700 uppercase tracking-widest">ACTIVE</span>
-            </div>
+    <!-- 3-Column Feature Grid with Interactive Micro-UIs -->
+    <div class="grid gap-8 lg:grid-cols-3">
+      
+      <!-- Feature 1: 24/7 Smart Cover -->
+      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <span class="text-[10px] font-black uppercase tracking-[0.18em] text-blue-600 bg-blue-50/50 border border-blue-100/50 px-3 py-1 rounded-full">Always online</span>
+            <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
           </div>
 
-          <div class="space-y-4 p-6">
-            <div class="rounded-2xl bg-slate-50/50 border border-slate-100 p-5">
-              <div class="mb-3 flex items-center justify-between">
-                <span class="text-sm font-bold text-slate-900">Buyer commented</span>
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Instagram Reel</span>
-              </div>
-              <p class="text-sm leading-relaxed text-slate-600">Price? Available in black, size 8?</p>
-            </div>
+          <h3 class="font-heading text-2xl font-black tracking-tight text-slate-950 mb-3">24/7 Smart Cover</h3>
+          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">Never keep a buyer waiting. VoluChat instantly replies to comments and DMs, keeping the excitement alive day or night.</p>
+        </div>
 
-            <div class="rounded-2xl bg-indigo-600 p-5 shadow-lg shadow-indigo-100 border border-indigo-500">
-              <div class="mb-3 flex items-center justify-between">
-                <span class="text-sm font-bold text-white">VoluChat replied</span>
-                <span class="text-[10px] font-bold text-white/70 uppercase tracking-wider">Auto DM</span>
-              </div>
-              <p class="text-sm leading-relaxed text-white">Sent you the price, photos, and size details in DM.</p>
+        <!-- Micro-UI: DM Mockup -->
+        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 space-y-3 shadow-inner">
+          <div class="flex gap-2">
+            <div class="h-6 w-6 rounded-full bg-slate-200 shrink-0"></div>
+            <div class="rounded-2xl bg-white border border-slate-100 p-2.5 text-[11px] font-medium text-slate-800 shadow-sm max-w-[80%]">
+              Hi, is the white sneaker in stock in size 9?
             </div>
+          </div>
+          <div class="flex gap-2 justify-end">
+            <div class="rounded-2xl bg-blue-600 p-2.5 text-[11px] font-semibold text-white shadow-md max-w-[80%]">
+              Yes, white runner sneaker is available in size 9! ⚡️ Shipping is free today. Should I secure it for you?
+            </div>
+            <div class="h-6 w-6 rounded-full bg-blue-100 border border-blue-200 shrink-0 flex items-center justify-center text-[8px] font-black text-blue-700">AI</div>
+          </div>
+        </div>
+      </div>
 
-            <div class="grid gap-3 sm:grid-cols-3">
-              <div class="glass-card-premium rounded-2xl p-4">
-                <div class="text-[10px] font-black uppercase tracking-widest text-slate-400">Questions</div>
-                <div class="mt-2 text-2xl font-black text-slate-950">Answered</div>
+      <!-- Feature 2: AI Product Matching -->
+      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <span class="text-[10px] font-black uppercase tracking-[0.18em] text-blue-600 bg-blue-50/50 border border-blue-100/50 px-3 py-1 rounded-full">Vector search</span>
+            <span class="text-xs font-black text-slate-300">02</span>
+          </div>
+
+          <h3 class="font-heading text-2xl font-black tracking-tight text-slate-950 mb-3">AI Product Matching</h3>
+          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">Buyers can describe a product or send a screenshot. VoluChat matches descriptions and photos to your catalog in seconds.</p>
+        </div>
+
+        <!-- Micro-UI: Search Catalog Mockup -->
+        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 space-y-2.5 shadow-inner">
+          <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Semantic matches found</div>
+          {matches.map((item, index) => (
+            <div class="flex items-center justify-between gap-3 bg-white border border-slate-100 p-2 rounded-xl shadow-sm">
+              <div class="flex items-center gap-2">
+                <div class="h-8 w-10 bg-gradient-to-br from-blue-50 to-indigo-50 border border-slate-100 rounded-lg flex items-center justify-center text-[8px] font-black text-slate-400">IMG</div>
+                <div class="text-xs font-black text-slate-950">{item}</div>
               </div>
-              <div class="glass-card-premium rounded-2xl p-4">
-                <div class="text-[10px] font-black uppercase tracking-widest text-slate-400">Catalog</div>
-                <div class="mt-2 text-2xl font-black text-slate-950">Active</div>
+              <span class="text-[10px] font-black text-blue-600">{index === 0 ? "98%" : index === 1 ? "84%" : "72%"} Match</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Feature 3: Lead Qualification -->
+      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <span class="text-[10px] font-black uppercase tracking-[0.18em] text-blue-600 bg-blue-50/50 border border-blue-100/50 px-3 py-1 rounded-full">Ready to close</span>
+            <span class="text-xs font-black text-slate-300">03</span>
+          </div>
+
+          <h3 class="font-heading text-2xl font-black tracking-tight text-slate-950 mb-3">Lead Qualification</h3>
+          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">VoluChat gathers sizing, color, quantity, and delivery address before passing the chat to WhatsApp, pre-qualifying the lead.</p>
+        </div>
+
+        <!-- Micro-UI: Structured Lead Handoff Card -->
+        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 space-y-2 shadow-inner">
+          <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Buyer Summary Card</div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-white border border-slate-100 p-2 rounded-xl shadow-sm text-center">
+              <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">Size</div>
+              <div class="text-xs font-black text-slate-900 mt-0.5">UK 9</div>
+            </div>
+            <div class="bg-white border border-slate-100 p-2 rounded-xl shadow-sm text-center">
+              <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">Color</div>
+              <div class="text-xs font-black text-slate-900 mt-0.5">Classic White</div>
+            </div>
+            <div class="bg-white border border-slate-100 p-2.5 rounded-xl shadow-sm col-span-2 flex items-center justify-between">
+              <div>
+                <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">Shipping Pin</div>
+                <div class="text-xs font-black text-slate-900 mt-0.5">Pune 411014</div>
               </div>
-              <div class="glass-card-premium rounded-2xl p-4">
-                <div class="text-[10px] font-black uppercase tracking-widest text-slate-400">Connect</div>
-                <div class="mt-2 text-sm font-black text-slate-950">Instagram</div>
-              </div>
+              <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="grid gap-6 sm:grid-cols-2">
-        {features.map((feature, index) => (
-          <div class={`glass-card-premium rounded-3xl p-8 ${index === 0 ? 'sm:col-span-2' : ''}`}>
-            <div class="mb-6 flex items-center justify-between gap-4">
-              <div class={`flex h-12 w-12 items-center justify-center rounded-2xl ${index === 0 ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-200' : 'bg-white/80 text-indigo-600 border border-slate-100 shadow-sm'}`}>
-                {index === 0 && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}
-                {index === 1 && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>}
-                {index === 2 && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L8.1 9.91a16 16 0 0 0 6 6l1.48-1.19a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>}
-                {index === 3 && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>}
-                {index === 4 && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.4 2.6a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>}
-                {index === 5 && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>}
-              </div>
-              <span class={`rounded-full border border-slate-100 bg-white/80 px-4 py-1 text-[10px] font-black uppercase tracking-widest shadow-sm ${index === 0 ? 'text-indigo-700' : 'text-slate-400'}`}>{feature.stat}</span>
-            </div>
-            <h3 class="text-xl font-heading font-black text-slate-950">{feature.title}</h3>
-            <p class="mt-4 text-[15px] font-medium leading-relaxed text-slate-600">{feature.description}</p>
-          </div>
-        ))}
-      </div>
     </div>
   </div>
 </section>
+

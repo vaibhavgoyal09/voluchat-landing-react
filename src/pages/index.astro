@@ -17,10 +17,50 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is VoluChat safe for my Instagram account?",
+      "name": "What does VoluChat do for my Instagram DMs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VoluChat connects through official Meta APIs, so you do not share your Instagram password with us."
+        "text": "VoluChat works like an AI DM helpdesk. It replies to buyers, answers routine questions, searches your catalog, collects useful details, and prepares a WhatsApp handoff for your staff."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can VoluChat find products from photos or buyer messages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Buyers can describe what they want or send an image. VoluChat can use catalog data and vector search to find relevant product matches."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does VoluChat replace my store staff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. VoluChat handles the repetitive first layer of DM work so your staff can spend more time on buyers who are ready to close."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does VoluChat manage cart, address, and offer details?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It can collect product, size, color, quantity, shipping address, and discount or offer-code details before the WhatsApp handoff."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does VoluChat process orders or payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your team still handles final order confirmation and payment manually in WhatsApp. VoluChat prepares the conversation with the details your staff needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can store owners track missed chats and team workload?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VoluChat is designed to make DM ownership clearer by separating handled chats, follow-ups, and WhatsApp-ready conversations."
       }
     },
     {
@@ -28,54 +68,14 @@ const faqSchema = {
       "name": "Do I need technical knowledge to use it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Founding stores get hands-on setup help for Instagram, shoe details, buyer messages, and WhatsApp handoff."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens after a customer comments on my Reel?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VoluChat can send the buyer an Instagram DM, ask helpful questions, answer common product details, and guide them to WhatsApp when they are ready."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the WhatsApp handoff work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "When the buyer is ready, VoluChat opens WhatsApp with useful details like the shoe, size, color, budget, and question they asked. Your team can then process the order manually."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can VoluChat answer shoe-specific questions?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. You can add product names, prices, sizes, colors, photos, stock notes, and delivery details so buyers get clearer answers in Instagram DM."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does it support Hindi or Hinglish?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VoluChat can be set up for English, Hindi, and Hinglish buyer messages. We can tune the tone during onboarding."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does VoluChat cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pricing is shared after a demo because founding stores may need different setup support depending on catalog size, message volume, and WhatsApp workflow."
+        "text": "No. Founding stores get hands-on help connecting Instagram, adding catalog details, tuning replies, and setting up the WhatsApp handoff."
       }
     }
   ]
 };
 ---
 
-<Layout title="VoluChat | Instagram Comment Replies for Indian Shoe Stores">
+<Layout title="VoluChat | AI DM Helpdesk for Instagram Stores">
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   
   <Header />

@@ -1,65 +1,70 @@
 ---
 const includes = [
-  "Instagram comment and DM setup",
-  "Shoe product details, sizes, colors, and prices",
-  "WhatsApp handoff with order details",
-  "Hindi and Hinglish buyer messages",
-  "Hands-on onboarding support",
-  "Early feedback access",
+  "Instagram comment and DM automation setup",
+  "Product catalog semantic image search integration",
+  "Sizing, stock, and offer-code data collection",
+  "WhatsApp-ready buyer brief handoff cards",
+  "Hindi, English, and Hinglish reply message tuning",
+  "Hands-on dedicated onboarding assistance"
 ];
 ---
 
-<section id="pricing" class="py-20 md:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 pointer-events-none -z-10">
-    <div class="sect-grid"></div>
+<section id="pricing" class="relative overflow-hidden py-24 md:py-32">
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div class="sect-grid opacity-15"></div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-6 relative z-10">
-    <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 mb-8">
-        <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
-        <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Founding access</span>
+  <div class="relative z-10 mx-auto max-w-5xl px-6">
+    <div class="mb-20 text-center">
+      <!-- Standardized Glowing Badge -->
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
+        <span>Exclusive plan</span>
       </div>
-      <h2 class="text-4xl sm:text-6xl font-heading font-black text-slate-950 mb-8 leading-[1.05] tracking-tight">
-        Request a demo before you decide.
+      <!-- Consistent Responsive Heading -->
+      <h2 class="text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+        Request a demo to secure founding access.
       </h2>
-      <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto">
-        We will look at how your Instagram comments and WhatsApp orders work today, then show how VoluChat can fit your store.
+      <p class="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
+        We map your existing catalog, common DM queries, and staff handoff rules before finding the absolute best setup for your store.
       </p>
     </div>
 
-    <div class="max-w-2xl mx-auto">
-      <div class="glass-panel-premium rounded-[2rem] p-8 md:p-12">
-        <div class="text-center md:text-left">
-          <div class="text-[11px] font-black text-indigo-600 uppercase tracking-[0.25em] mb-4">Founding Store Setup</div>
-          <p class="text-slate-600 font-medium text-lg leading-relaxed">
-            For Indian shoe stores selling on Instagram and WhatsApp.
-          </p>
-          <a href="/contact" class="mt-8 inline-flex items-center justify-center gap-3 w-full py-5 bg-zinc-900 text-white rounded-2xl font-black text-lg transition-all duration-300 hover:bg-zinc-800 hover:shadow-zinc-900/25 shadow-xl shadow-zinc-900/20">
-            <span>Request Demo</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-
-        <div class="mt-10 bg-slate-50/70 rounded-3xl p-6 md:p-8 border border-white/60">
-          <h3 class="text-sm font-black text-slate-950 uppercase tracking-[0.18em] mb-6">Includes</h3>
+    <!-- Main Pricing Panel -->
+    <div class="glass-card-premium rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden relative">
+      <div class="grid gap-12 md:grid-cols-[1.1fr_0.9fr] items-center">
+        
+        <!-- Left: Includes list -->
+        <div>
+          <div class="text-[10px] font-black uppercase tracking-[0.25em] text-blue-600 mb-6">Founding Store Package</div>
+          <h3 class="font-heading text-2xl font-black text-slate-950 tracking-tight mb-8">What is included in your setup</h3>
+          
           <ul class="space-y-4">
             {includes.map((item) => (
-              <li class="flex items-start gap-3 text-sm text-slate-700 font-bold leading-relaxed">
-                <div class="w-5 h-5 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <li class="flex items-start gap-3.5 text-sm font-semibold leading-relaxed text-slate-700">
+                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-lg border border-emerald-100 bg-emerald-50">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <span>
-                  {item}
-                  {item === "Early feedback access" && (
-                    <span class="block mt-1 text-xs text-slate-500 font-semibold">Help shape reply and order flows for your store.</span>
-                  )}
                 </span>
+                <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
+
+        <!-- Right: Call to action box -->
+        <div class="rounded-3xl border border-slate-100 bg-slate-50/50 p-8 shadow-inner text-center">
+          <div class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2">Member Plan</div>
+          <div class="font-heading text-4xl font-black text-slate-950 mb-4">Founding Member</div>
+          <p class="text-xs font-semibold leading-relaxed text-slate-500 mb-8">Exclusive access for active Indian Instagram retailers who want to cut manual work and close sales on autopilot.</p>
+          
+          <a href="/contact" class="group flex items-center justify-center gap-3 rounded-full bg-blue-600 py-4 px-6 text-sm font-black text-white shadow-xl shadow-blue-500/25 transition duration-300 hover:bg-blue-700 hover:scale-[1.02]">
+            <span>Request Founding Access</span>
+            <span class="h-2 w-2 rounded-full bg-white"></span>
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+

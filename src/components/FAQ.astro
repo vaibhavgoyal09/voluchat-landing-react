@@ -1,65 +1,71 @@
 ---
 const faqs = [
   {
-    question: "Is VoluChat safe for my Instagram account?",
-    answer: "VoluChat connects through official Meta APIs, so you do not share your Instagram password with us.",
+    question: "What does VoluChat do for my Instagram DMs?",
+    answer: "VoluChat works like an AI DM helpdesk. It replies to buyers, answers routine questions, searches your catalog, collects useful details, and prepares a WhatsApp handoff for your staff.",
+  },
+  {
+    question: "Can VoluChat find products from photos or buyer messages?",
+    answer: "Yes. Buyers can describe what they want or send an image. VoluChat can use catalog data and vector search to find relevant product matches.",
+  },
+  {
+    question: "Does VoluChat replace my store staff?",
+    answer: "No. VoluChat handles the repetitive first layer of DM work so your staff can spend more time on buyers who are ready to close.",
+  },
+  {
+    question: "Does VoluChat manage cart, address, and offer details?",
+    answer: "Yes. It can collect product, size, color, quantity, shipping address, and discount or offer-code details before the WhatsApp handoff.",
+  },
+  {
+    question: "Does VoluChat process orders or payments?",
+    answer: "No. Your team still handles final order confirmation and payment manually in WhatsApp. VoluChat prepares the conversation with the details your staff needs.",
+  },
+  {
+    question: "Can store owners track missed chats and team workload?",
+    answer: "VoluChat is designed to make DM ownership clearer by separating handled chats, follow-ups, and WhatsApp-ready conversations.",
   },
   {
     question: "Do I need technical knowledge to use it?",
-    answer: "No. Founding stores get hands-on setup help for Instagram, shoe details, buyer messages, and WhatsApp handoff.",
-  },
-  {
-    question: "What happens after a customer comments on my Reel?",
-    answer: "VoluChat can send the buyer an Instagram DM, ask helpful questions, answer common product details, and guide them to WhatsApp when they are ready.",
-  },
-  {
-    question: "How does the WhatsApp handoff work?",
-    answer: "When the buyer is ready, VoluChat opens WhatsApp with useful details like the shoe, size, color, budget, and question they asked. Your team can then process the order manually.",
-  },
-  {
-    question: "Can VoluChat answer shoe-specific questions?",
-    answer: "Yes. You can add product names, prices, sizes, colors, photos, stock notes, and delivery details so buyers get clearer answers in Instagram DM.",
-  },
-  {
-    question: "Does it support Hindi or Hinglish?",
-    answer: "VoluChat can be set up for English, Hindi, and Hinglish buyer messages. We can tune the tone during onboarding.",
-  },
-  {
-    question: "How much does VoluChat cost?",
-    answer: "Pricing is shared after a demo because founding stores may need different setup support depending on catalog size, message volume, and WhatsApp workflow.",
+    answer: "No. Founding stores get hands-on help connecting Instagram, adding catalog details, tuning replies, and setting up the WhatsApp handoff.",
   },
 ];
 ---
 
-<section id="faq" class="py-20 md:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 pointer-events-none -z-10">
-    <div class="sect-grid"></div>
+<section id="faq" class="relative overflow-hidden py-20 md:py-32">
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div class="sect-grid opacity-20"></div>
   </div>
 
-  <div class="max-w-2xl mx-auto px-6">
-    <div class="text-center mb-14">
-      <span class="section-badge mb-5 inline-flex">FAQ</span>
-      <h2 class="text-4xl sm:text-6xl font-heading font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+  <div class="mx-auto max-w-2xl px-6">
+    <div class="mb-14 text-center">
+      <!-- Standardized Glowing Badge -->
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
+        <span>FAQ</span>
+      </div>
+      <!-- Consistent Responsive Heading -->
+      <h2 class="mb-8 text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
         Common Questions
       </h2>
     </div>
 
-    <div class="glass-panel-premium divide-y divide-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl">
+    <!-- Main Accordion Container (Responsive padding & premium glass) -->
+    <div class="divide-y divide-slate-100 overflow-hidden glass-card-premium rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl">
       {faqs.map((faq, index) => (
         <div class="faq-item" data-index={index}>
-          <button class="faq-toggle w-full py-7 px-8 text-left flex justify-between items-center gap-6 group transition-colors hover:bg-slate-50/50">
-            <span class="font-heading font-black text-slate-950 text-lg leading-tight group-hover:text-indigo-600 transition-colors tracking-tight">
+          <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-slate-50/70">
+            <span class="font-heading text-base sm:text-lg font-black leading-snug tracking-tight text-slate-950 transition-colors group-hover:text-blue-700">
               {faq.question}
             </span>
-            <div class="faq-icon-wrap w-8 h-8 rounded-xl border border-slate-100 bg-white flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:border-indigo-100 group-hover:bg-indigo-50 shadow-sm group-hover:shadow-indigo-100">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron text-slate-400 group-hover:text-indigo-600 transition-all duration-300">
+            <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-slate-100 bg-white shadow-sm transition-all duration-300 group-hover:border-blue-100 group-hover:bg-blue-50">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron text-slate-400 transition-all duration-300 group-hover:text-blue-600">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
-            </div>
+            </span>
           </button>
           <div class="faq-body max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <div class="px-8 pb-8">
-              <p class="text-slate-600 font-medium leading-relaxed text-base">{faq.answer}</p>
+            <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+              <p class="text-xs sm:text-sm font-semibold leading-relaxed text-slate-600">{faq.answer}</p>
             </div>
           </div>
         </div>
@@ -71,14 +77,14 @@ const faqs = [
 <style>
   .faq-item.active .faq-chevron {
     transform: rotate(180deg);
-    color: #6366f1;
+    color: #2563eb;
   }
   .faq-item.active .faq-icon-wrap {
-    background-color: #eef2ff;
-    border-color: #c7d2fe;
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
   }
   .faq-item.active .faq-body {
-    max-height: 400px;
+    max-height: 420px;
   }
 </style>
 

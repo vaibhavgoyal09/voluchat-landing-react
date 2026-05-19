@@ -1,78 +1,68 @@
 ---
 const foundingHighlights = [
-  "No fake case studies",
-  "Hands-on setup",
-  "Early product input",
-  "Built around real comments",
-];
-
-const foundingBenefits = [
-  "Setup help for Instagram, shoe details, and WhatsApp",
-  "Review of the first comment and DM flows before you share them publicly",
-  "Direct feedback loop while we improve the product for Indian shoe sellers",
+  {
+    title: "Real Store Workload",
+    desc: "Built around manual tasks: late replies, repeat questions, and manual photo searches."
+  },
+  {
+    title: "1-on-1 Dedicated Setup",
+    desc: "We personally configure your account, catalog mapping, and WhatsApp handoff."
+  },
+  {
+    title: "Localized Reply Tuning",
+    desc: "Optimized for Indian shoppers with seamless support for English, Hindi, and Hinglish queries."
+  },
+  {
+    title: "Early Co-Creation",
+    desc: "Shape our upcoming product features directly around your daily retail operations."
+  }
 ];
 ---
 
-<section id="testimonials" class="py-24 md:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 pointer-events-none -z-10">
-    <div class="sect-grid opacity-40"></div>
+<section id="testimonials" class="relative overflow-hidden py-24 md:py-32">
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div class="sect-grid opacity-15"></div>
   </div>
 
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid lg:grid-cols-[1fr_0.9fr] gap-12 lg:gap-16 items-center">
-      <div>
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 mb-8">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Founding stores</span>
-        </div>
-        <h2 class="text-4xl sm:text-6xl font-heading font-black text-slate-950 mb-8 leading-[1.05] tracking-tight">
-          Now onboarding founding shoe stores in India
-        </h2>
-        <p class="text-xl text-slate-600 leading-relaxed font-medium">
-          VoluChat is new, so we are opening a small founding batch for shoe stores that want hands-on setup for Instagram comments, DMs, and WhatsApp orders.
-        </p>
-        <p class="mt-5 rounded-2xl border border-slate-200 bg-white/70 p-5 text-sm text-slate-500 leading-relaxed font-bold">
-          We are not showing fake testimonials or inflated customer counts. VoluChat is opening a small founding batch for shoe stores that sell through Instagram and WhatsApp.
-        </p>
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <!-- Standardized Glowing Badge -->
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50/70 px-4 py-1.5 text-xs font-black text-emerald-700 shadow-sm backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+        <span>Founding stores</span>
+      </div>
+      <!-- Consistent Responsive Heading -->
+      <h2 class="text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+        Onboarding founding Instagram stores in India.
+      </h2>
+      <p class="mt-6 text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
+        We build side-by-side with real retail operators to ensure our automation perfectly fits real-world sales operations.
+      </p>
+    </div>
 
-        <div class="grid sm:grid-cols-2 gap-4 mt-10">
-          {foundingHighlights.map((item) => (
-            <div class="rounded-2xl border border-slate-200 bg-white/70 p-5 shadow-sm">
-              <div class="flex items-center gap-3">
-                <div class="w-6 h-6 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <span class="text-sm font-black text-slate-900">{item}</span>
-              </div>
+    <!-- Onboarding Benefits Grid -->
+    <div class="grid gap-8 md:grid-cols-2 lg:gap-12 max-w-5xl mx-auto">
+      {foundingHighlights.map((item) => (
+        <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-emerald-100 bg-emerald-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <h3 class="font-heading text-lg font-black tracking-tight text-slate-950">{item.title}</h3>
             </div>
-          ))}
+            <p class="text-sm font-semibold leading-relaxed text-slate-600">{item.desc}</p>
+          </div>
         </div>
-      </div>
+      ))}
+    </div>
 
-      <div class="glass-panel-premium rounded-[2rem] p-8 md:p-10">
-        <h3 class="text-2xl font-heading font-black text-slate-950 mb-8 tracking-tight">What founding stores get</h3>
-        <ul class="space-y-5">
-          {foundingBenefits.map((item) => (
-            <li class="flex gap-4 text-slate-700 font-bold leading-relaxed">
-              <div class="w-7 h-7 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <span>{item}</span>
-                {item === "Direct feedback loop while we improve the product for Indian shoe sellers" && (
-                  <p class="mt-2 text-sm text-slate-500 font-semibold leading-relaxed">
-                    You can tell us which replies sound right for your store and what details buyers need before WhatsApp.
-                  </p>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
-        <a href="/contact" class="mt-10 inline-flex items-center justify-center gap-3 w-full py-5 bg-zinc-900 text-white rounded-2xl font-black text-lg transition-all duration-300 hover:bg-zinc-800 hover:shadow-zinc-900/25 shadow-xl shadow-zinc-900/20">
-          <span>Request Demo</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
+    <div class="mt-16 text-center">
+      <a href="/contact" class="group inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 py-4 px-8 text-sm font-black text-white shadow-xl shadow-blue-500/25 transition duration-300 hover:bg-blue-700 hover:scale-[1.02]">
+        <span>Request Demo & Join Founding Program</span>
+        <span class="h-2 w-2 rounded-full bg-white"></span>
+      </a>
     </div>
   </div>
 </section>
+
