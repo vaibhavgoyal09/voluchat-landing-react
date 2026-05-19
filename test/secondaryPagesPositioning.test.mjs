@@ -43,5 +43,5 @@ test('secondary pages avoid old broad SaaS positioning and unsupported proof', (
 test('secondary page CTAs stay demo-first and shoe-store specific', () => {
   assert.match(sourceByFile['src/pages/blog/[slug].astro'], /See how VoluChat works for your shoe store/);
   assert.match(sourceByFile['src/pages/contact.astro'], /Shoe store details/);
-  assert.match(sourceByFile['src/layouts/Layout.astro'], /AI DM helpdesk for Instagram stores|Instagram comments into WhatsApp orders for Indian shoe stores/);
+  assert.match(sourceByFile['src/layouts/Layout.astro'], /Instagram DMs into WhatsApp-ready chats|Instagram comments into WhatsApp orders for Indian shoe stores/);
 });

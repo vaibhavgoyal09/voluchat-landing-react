@@ -28,8 +28,8 @@ const sources = await Promise.all(
 const sourceByFile = Object.fromEntries(sources);
 const landingSource = Object.values(sourceByFile).join('\n');
 
-test('homepage leads with the approved AI DM helpdesk positioning', () => {
-  assert.match(sourceByFile['src/components/Hero.astro'], /AI DM helpdesk for Instagram stores/);
+test('homepage leads with the approved WhatsApp-ready chat positioning', () => {
+  assert.match(sourceByFile['src/components/Hero.astro'], /Turn Instagram DMs into WhatsApp-ready chats/);
   assert.match(sourceByFile['src/components/Hero.astro'], /VoluChat replies instantly, handles repeat buyer questions, finds products from your catalog, and prepares clean WhatsApp chats for your staff to close/);
   assert.match(sourceByFile['src/components/Hero.astro'], /24\/7 AI DM Helpdesk/);
 });
@@ -103,13 +103,13 @@ test('homepage public copy avoids jargon-heavy positioning', () => {
   assert.doesNotMatch(landingSource, /growth stack/i);
 });
 
-test('homepage FAQ schema is aligned with the AI DM helpdesk questions', () => {
+test('homepage FAQ schema is aligned with the WhatsApp-ready chat questions', () => {
   const indexSource = sourceByFile['src/pages/index.astro'];
   const schemaMatch = indexSource.match(/const faqSchema = ([\s\S]*?);\n---/);
   assert.ok(schemaMatch, 'Expected src/pages/index.astro to define const faqSchema before frontmatter closes');
   const faqSchemaSource = schemaMatch[1];
 
-  assert.match(faqSchemaSource, /"name": "What does VoluChat do for my Instagram DMs\?"/);
+  assert.match(faqSchemaSource, /"name": "How does VoluChat turn Instagram DMs into WhatsApp-ready chats\?"/);
   assert.match(faqSchemaSource, /"name": "Can VoluChat find products from photos or buyer messages\?"/);
   assert.match(faqSchemaSource, /"name": "Does VoluChat manage cart, address, and offer details\?"/);
   assert.match(faqSchemaSource, /"name": "Does VoluChat process orders or payments\?"/);

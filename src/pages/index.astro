@@ -11,16 +11,21 @@ import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 
+const siteUrl = "https://voluchat.com";
+const seoTitle = "VoluChat | Turn Instagram DMs into WhatsApp-ready chats";
+const seoDescription = "VoluChat replies to Instagram buyers, finds catalog products, and prepares WhatsApp-ready chats so your staff can close orders faster.";
+const seoKeywords = "Instagram DMs to WhatsApp, WhatsApp-ready chats, Instagram DM automation, AI DM helpdesk, Instagram store replies, product search, WhatsApp handoff";
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does VoluChat do for my Instagram DMs?",
+      "name": "How does VoluChat turn Instagram DMs into WhatsApp-ready chats?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VoluChat works like an AI DM helpdesk. It replies to buyers, answers routine questions, searches your catalog, collects useful details, and prepares a WhatsApp handoff for your staff."
+        "text": "VoluChat replies to buyers in Instagram DM, answers repeat questions, finds products from your catalog, collects useful details, and prepares a WhatsApp-ready chat for your staff."
       }
     },
     {
@@ -73,10 +78,74 @@ const faqSchema = {
     }
   ]
 };
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "VoluChat",
+    "url": siteUrl,
+    "description": seoDescription,
+    "publisher": {
+      "@id": `${siteUrl}/#organization`
+    },
+    "inLanguage": "en"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    "name": "VoluChat",
+    "url": siteUrl,
+    "logo": `${siteUrl}/voluchat_logo.svg`,
+    "description": seoDescription
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "SiteNavigationElement",
+        "position": 1,
+        "name": "Features",
+        "url": `${siteUrl}/features/`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 2,
+        "name": "Pricing",
+        "url": `${siteUrl}/pricing/`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 3,
+        "name": "About",
+        "url": `${siteUrl}/about/`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 4,
+        "name": "Blog",
+        "url": `${siteUrl}/blog/`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 5,
+        "name": "Request Demo",
+        "url": `${siteUrl}/contact/`
+      }
+    ]
+  },
+  faqSchema
+];
 ---
 
-<Layout title="VoluChat | AI DM Helpdesk for Instagram Stores">
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   
   <Header />
   

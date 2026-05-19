@@ -4,18 +4,25 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	keywords?: string;
 	image?: string;
 	type?: string;
 	robots?: string;
+	canonical?: string;
 }
 
 const {
 	title,
-	description = "VoluChat is an AI DM helpdesk for Instagram stores. It replies instantly, searches products by text or image, collects order details, and prepares WhatsApp handoffs for staff.",
+	description = "VoluChat turns Instagram DMs into WhatsApp-ready chats for stores. It replies to buyers, searches products, collects details, and prepares WhatsApp handoffs.",
+	keywords = "Instagram DMs to WhatsApp, WhatsApp-ready chats, Instagram DM automation, AI DM helpdesk, Instagram store replies, product search, WhatsApp handoff",
 	image = "/og-image.png",
 	type = "website",
 	robots,
+	canonical,
 } = Astro.props;
+
+const siteOrigin = Astro.site?.origin ?? "https://voluchat.com";
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteOrigin).toString();
 ---
 
 <!doctype html>
@@ -24,22 +31,24 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		{robots && <meta name="robots" content={robots} />}
-		<meta name="keywords" content="AI DM helpdesk for Instagram stores, Instagram DM automation, product search by image, WhatsApp handoff, Instagram store replies, DM workload reduction" />
+		<meta name="keywords" content={keywords} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={canonicalUrl} />
 		<title>{title}</title>
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={type} />
-		<meta property="og:url" content={Astro.url} />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={image} />
+		<meta property="og:site_name" content="VoluChat" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:url" content={canonicalUrl} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={image} />

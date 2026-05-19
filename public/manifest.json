@@ -1,7 +1,7 @@
 {
-  "name": "VoluChat - Instagram Sales Automation",
+  "name": "VoluChat - Instagram DMs to WhatsApp-ready chats",
   "short_name": "VoluChat",
-  "description": "Turn Instagram followers into paying customers on autopilot with AI-powered DMs in multiple languages",
+  "description": "Reply to Instagram buyers, find catalog products, and prepare WhatsApp-ready chats for your sales staff.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
