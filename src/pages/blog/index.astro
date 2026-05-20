@@ -6,7 +6,7 @@ import BlogCard from '../../components/BlogCard.astro';
 import { fetchPublishedBlogPosts, getBlogApiBaseUrl } from '../../lib/blogApi.mjs';
 
 const apiUrl = getBlogApiBaseUrl(import.meta.env);
-let blogs = [];
+let blogs: any = [];
 let error: string | null = null;
 
 try {
@@ -20,7 +20,7 @@ try {
 <Layout title="VoluChat Blog | Instagram and WhatsApp guides for shoe sellers">
   <Header />
   
-  <main class="relative pt-32 pb-20 overflow-hidden min-h-screen">
+  <main class="relative pt-32 pb-20 overflow-hidden min-h-screen animate-page-entry opacity-0">
     <!-- Decorative background -->
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
       <div class="sect-grid"></div>
@@ -47,7 +47,7 @@ try {
       )}
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogs.map((blog) => (
+        {blogs.map((blog: any) => (
           <BlogCard blog={blog} />
         ))}
       </div>

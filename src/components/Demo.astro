@@ -1,7 +1,7 @@
 ---
 ---
 
-<section id="demo" class="relative overflow-hidden py-24 md:py-32">
+<section id="demo" class="relative overflow-hidden py-28 md:py-36">
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-10"></div>
     <div class="absolute -right-44 top-1/4 h-[36rem] w-[36rem] rounded-full bg-blue-300/10 blur-3xl"></div>
@@ -9,7 +9,7 @@
   </div>
 
   <div class="mx-auto max-w-7xl px-6">
-    <div class="mx-auto max-w-3xl text-center mb-20">
+    <div class="mx-auto max-w-3xl text-center mb-24">
       <!-- Standardized Glowing Badge -->
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
         <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
@@ -28,14 +28,14 @@
     <div class="grid gap-12 lg:grid-cols-2 max-w-5xl mx-auto items-center">
       
       <!-- Left: Instagram DM Experience -->
-      <div class="glass-panel-premium rounded-[2.5rem] p-8 shadow-2xl relative">
+      <div class="glass-panel-premium rounded-[2.5rem] p-8 shadow-2xl relative hover:scale-[1.01] hover:shadow-indigo-500/5 hover:border-indigo-500/20 transition-all duration-500 group/insta">
         <div class="absolute top-4 left-6 flex items-center gap-2">
           <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
           <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
           <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
         </div>
         <div class="text-center border-b border-slate-100 pb-4 mb-6">
-          <div class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Instagram DM Automation</div>
+          <div class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover/insta:text-slate-600 transition-colors">Instagram DM Automation</div>
           <div class="text-xs font-black text-slate-900 mt-1">@buyer_chat</div>
         </div>
 
@@ -76,17 +76,17 @@
       </div>
 
       <!-- Right: WhatsApp Structured Handoff -->
-      <div class="glass-panel-premium rounded-[2.5rem] p-8 shadow-2xl relative border-emerald-500/30">
+      <div class="glass-panel-premium rounded-[2.5rem] p-8 shadow-2xl relative border-emerald-500/30 hover:scale-[1.01] hover:shadow-emerald-500/5 hover:border-emerald-500/50 transition-all duration-500 group/wa">
         <div class="absolute inset-0 bg-emerald-500/[0.02] rounded-[2.5rem] pointer-events-none"></div>
         
         <div class="text-center border-b border-slate-100 pb-4 mb-6">
-          <div class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600">WhatsApp Sales Handoff</div>
+          <div class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600 group-hover/wa:text-emerald-700 transition-colors">WhatsApp Sales Handoff</div>
           <div class="text-xs font-black text-slate-900 mt-1">Pre-filled Order Summary</div>
         </div>
 
         <div class="space-y-4">
           <!-- Structured Fields -->
-          <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm flex items-center justify-between">
+          <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm flex items-center justify-between hover:scale-[1.03] hover:border-indigo-100 hover:shadow-md transition-all duration-300">
             <div>
               <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Product Interest</div>
               <div class="text-sm font-black text-slate-900 mt-0.5">White Runner Sneaker</div>
@@ -95,22 +95,22 @@
           </div>
 
           <div class="grid grid-cols-2 gap-4">
-            <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+            <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:scale-[1.03] hover:border-indigo-100 hover:shadow-md transition-all duration-300">
               <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Selected Size</div>
               <div class="text-sm font-black text-slate-900 mt-0.5">UK Size 9</div>
             </div>
-            <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+            <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:scale-[1.03] hover:border-indigo-100 hover:shadow-md transition-all duration-300">
               <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Quantity</div>
               <div class="text-sm font-black text-slate-900 mt-0.5">1 Pair</div>
             </div>
           </div>
 
-          <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+          <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:scale-[1.02] hover:border-indigo-100 hover:shadow-md transition-all duration-300">
             <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Shipping Address</div>
             <div class="text-xs font-semibold text-slate-800 mt-1">Indiranagar, Bangalore — 560038</div>
           </div>
 
-          <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 shadow-sm flex items-center justify-between">
+          <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 shadow-sm flex items-center justify-between hover:scale-[1.02] hover:border-emerald-200 hover:shadow-md transition-all duration-300">
             <div>
               <div class="text-[9px] font-black uppercase tracking-wider text-emerald-600">Handoff Action</div>
               <div class="text-xs font-black text-emerald-800 mt-0.5">Staff confirms payment & closes</div>

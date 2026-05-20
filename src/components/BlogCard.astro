@@ -26,7 +26,7 @@ const authorInitials = blog.author.name
   .toUpperCase();
 ---
 
-<a href={blog.href} class="glass-card-premium group relative flex flex-col h-full rounded-2xl overflow-hidden">
+<a href={blog.href} class="glass-card-premium group relative flex flex-col h-full rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-indigo-500/20 transition-all duration-500">
   <!-- Card Header / Image Placeholder -->
   <div class="relative aspect-[16/9] overflow-hidden bg-white/35">
     {blog.featuredImageUrl ? (
@@ -34,11 +34,11 @@ const authorInitials = blog.author.name
         src={blog.featuredImageUrl}
         alt={blog.featuredImageAlt || blog.title}
         loading="lazy"
-        class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        class="h-full w-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.06]"
       />
     ) : (
       <>
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 group-hover:scale-110 transition-transform duration-700"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 group-hover:scale-110 transition-transform duration-[800ms]"></div>
         <div class="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
           <div class="sect-grid"></div>
         </div>
@@ -95,9 +95,9 @@ const authorInitials = blog.author.name
         <span class="text-xs font-bold text-slate-700">{blog.author.name}</span>
       </div>
       
-      <div class="text-indigo-600 font-bold text-xs flex items-center gap-1 group-hover:gap-2 transition-all">
+      <div class="text-indigo-600 font-bold text-xs flex items-center gap-1.5">
         Read More
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
       </div>
     </div>
   </div>

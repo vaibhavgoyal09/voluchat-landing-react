@@ -9,13 +9,13 @@ const includes = [
 ];
 ---
 
-<section id="pricing" class="relative overflow-hidden py-24 md:py-32">
+<section id="pricing" class="relative overflow-hidden py-28 md:py-36">
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-15"></div>
   </div>
 
   <div class="relative z-10 mx-auto max-w-5xl px-6">
-    <div class="mb-20 text-center">
+    <div class="mb-24 text-center">
       <!-- Standardized Glowing Badge -->
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
         <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
@@ -31,7 +31,7 @@ const includes = [
     </div>
 
     <!-- Main Pricing Panel -->
-    <div class="glass-card-premium rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden relative">
+    <div class="glass-card-premium rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-hidden relative hover:scale-[1.01] hover:shadow-indigo-500/5 transition-all duration-500 group/panel">
       <div class="grid gap-12 md:grid-cols-[1.1fr_0.9fr] items-center">
         
         <!-- Left: Includes list -->
@@ -41,8 +41,8 @@ const includes = [
           
           <ul class="space-y-4">
             {includes.map((item) => (
-              <li class="flex items-start gap-3.5 text-sm font-semibold leading-relaxed text-slate-700">
-                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-lg border border-emerald-100 bg-emerald-50">
+              <li class="flex items-start gap-3.5 text-sm font-semibold leading-relaxed text-slate-700 hover:text-slate-950 transition-colors duration-200 group/item">
+                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-lg border border-emerald-100 bg-emerald-50 group-hover/item:bg-emerald-100 group-hover/item:scale-110 transition-all duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
                 </span>
                 <span>{item}</span>
@@ -57,9 +57,10 @@ const includes = [
           <div class="font-heading text-4xl font-black text-slate-950 mb-4">Founding Member</div>
           <p class="text-xs font-semibold leading-relaxed text-slate-500 mb-8">Exclusive access for active Indian Instagram retailers who want to cut manual work and close sales on autopilot.</p>
           
-          <a href="/contact" class="group flex items-center justify-center gap-3 rounded-full bg-blue-600 py-4 px-6 text-sm font-black text-white shadow-xl shadow-blue-500/25 transition duration-300 hover:bg-blue-700 hover:scale-[1.02]">
-            <span>Request Founding Access</span>
-            <span class="h-2 w-2 rounded-full bg-white"></span>
+          <a href="/contact" class="group relative flex items-center justify-center gap-3 rounded-full bg-zinc-950 py-4 px-6 text-sm font-black text-white shadow-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:bg-blue-600">
+            <span class="relative z-10">Request Founding Access</span>
+            <span class="h-2.5 w-2.5 rounded-full bg-blue-400 group-hover:bg-white transition-colors duration-300 relative z-10"></span>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           </a>
         </div>
 

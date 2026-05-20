@@ -51,7 +51,7 @@ const matches = [
 ];
 ---
 
-<section id="features" class="relative overflow-hidden py-24 md:py-32">
+<section id="features" class="relative overflow-hidden py-28 md:py-36">
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-15"></div>
     <div class="absolute -left-44 top-24 h-[36rem] w-[36rem] rounded-full bg-blue-300/15 blur-3xl"></div>
@@ -59,7 +59,7 @@ const matches = [
   </div>
 
   <div class="mx-auto max-w-7xl px-6">
-    <div class="mx-auto max-w-3xl text-center mb-20">
+    <div class="mx-auto max-w-3xl text-center mb-24">
       <!-- Standardized Glowing Badge -->
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
         <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
@@ -78,7 +78,7 @@ const matches = [
     <div class="grid gap-8 lg:grid-cols-3">
       
       <!-- Feature 1: 24/7 Smart Cover -->
-      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full">
+      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500/20 transition-all duration-500 group/card reveal-on-scroll">
         <div>
           <div class="flex items-center justify-between gap-4 mb-6">
             <span class="text-[10px] font-black uppercase tracking-[0.18em] text-blue-600 bg-blue-50/50 border border-blue-100/50 px-3 py-1 rounded-full">Always online</span>
@@ -109,7 +109,7 @@ const matches = [
       </div>
 
       <!-- Feature 2: AI Product Matching -->
-      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full">
+      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500/20 transition-all duration-500 group/card reveal-on-scroll reveal-delay-100">
         <div>
           <div class="flex items-center justify-between gap-4 mb-6">
             <span class="text-[10px] font-black uppercase tracking-[0.18em] text-blue-600 bg-blue-50/50 border border-blue-100/50 px-3 py-1 rounded-full">Vector search</span>
@@ -124,19 +124,19 @@ const matches = [
         <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 space-y-2.5 shadow-inner">
           <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Semantic matches found</div>
           {matches.map((item) => (
-            <div class="flex items-center justify-between gap-3 bg-white border border-slate-100 p-2 rounded-xl shadow-sm">
+            <div class="flex items-center justify-between gap-3 bg-white border border-slate-100 p-2 rounded-xl shadow-sm hover:scale-[1.03] hover:shadow-md transition-all duration-300 group/item">
               <div class="flex items-center gap-2">
                 <img src={item.image} alt={item.name} class="h-10 w-10 object-contain bg-white border border-slate-100 rounded-lg flex-shrink-0 p-0.5" />
-                <div class="text-xs font-black text-slate-950">{item.name}</div>
+                <div class="text-xs font-black text-slate-950 group-hover/item:text-blue-600 transition-colors">{item.name}</div>
               </div>
-              <span class="text-[10px] font-black text-blue-600">{item.score}</span>
+              <span class="text-[10px] font-black text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100/30">{item.score}</span>
             </div>
           ))}
         </div>
       </div>
 
       <!-- Feature 3: Lead Qualification -->
-      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full">
+      <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500/20 transition-all duration-500 group/card reveal-on-scroll reveal-delay-200">
         <div>
           <div class="flex items-center justify-between gap-4 mb-6">
             <span class="text-[10px] font-black uppercase tracking-[0.18em] text-blue-600 bg-blue-50/50 border border-blue-100/50 px-3 py-1 rounded-full">Ready to close</span>
@@ -151,15 +151,15 @@ const matches = [
         <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 space-y-2 shadow-inner">
           <div class="text-[9px] font-black uppercase tracking-wider text-slate-400">Buyer Summary Card</div>
           <div class="grid grid-cols-2 gap-2">
-            <div class="bg-white border border-slate-100 p-2 rounded-xl shadow-sm text-center">
+            <div class="bg-white border border-slate-100 p-2 rounded-xl shadow-sm text-center hover:scale-[1.03] hover:border-indigo-100 hover:shadow-md transition-all duration-300">
               <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">Size</div>
               <div class="text-xs font-black text-slate-900 mt-0.5">UK 9</div>
             </div>
-            <div class="bg-white border border-slate-100 p-2 rounded-xl shadow-sm text-center">
+            <div class="bg-white border border-slate-100 p-2 rounded-xl shadow-sm text-center hover:scale-[1.03] hover:border-indigo-100 hover:shadow-md transition-all duration-300">
               <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">Color</div>
               <div class="text-xs font-black text-slate-900 mt-0.5">Classic White</div>
             </div>
-            <div class="bg-white border border-slate-100 p-2.5 rounded-xl shadow-sm col-span-2 flex items-center justify-between">
+            <div class="bg-white border border-slate-100 p-2.5 rounded-xl shadow-sm col-span-2 flex items-center justify-between hover:scale-[1.03] hover:border-emerald-100 hover:shadow-md transition-all duration-300">
               <div>
                 <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">Shipping Pin</div>
                 <div class="text-xs font-black text-slate-900 mt-0.5">Pune 411014</div>

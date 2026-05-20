@@ -14,50 +14,50 @@ const currentYear = new Date().getFullYear();
       <div>
         <h3 class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Product</h3>
         <ul class="space-y-4">
-          <li><a href="/features" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Features</a></li>
-          <li><a href="/pricing" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Pricing</a></li>
-          <li><a href="https://docs.voluchat.com" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Documentation</a></li>
+          <li><a href="/features" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Features</a></li>
+          <li><a href="/pricing" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Pricing</a></li>
+          <li><a href="https://docs.voluchat.com" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Documentation</a></li>
         </ul>
       </div>
       <div>
         <h3 class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Company</h3>
         <ul class="space-y-4">
-          <li><a href="/about" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">About Us</a></li>
-          <li><a href="https://dashboard.voluchat.com" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Get Started</a></li>
-          <li><a href="/contact" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Contact Support</a></li>
-          <li><a href="/blog" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Our Blog</a></li>
+          <li><a href="/about" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">About Us</a></li>
+          <li><a href="https://dashboard.voluchat.com" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Get Started</a></li>
+          <li><a href="/contact" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Contact Support</a></li>
+          <li><a href="/blog" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Our Blog</a></li>
         </ul>
       </div>
       <div>
         <h3 class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Legal</h3>
         <ul class="space-y-4">
-          <li><a href="/privacy" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Privacy Policy</a></li>
-          <li><a href="/terms" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Terms of Service</a></li>
-          <li><a href="#" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Security Standards</a></li>
+          <li><a href="/privacy" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Privacy Policy</a></li>
+          <li><a href="/terms" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Terms of Service</a></li>
+          <li><a href="/security" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Security Standards</a></li>
         </ul>
       </div>
       <div>
         <h3 class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Connect</h3>
         <ul class="space-y-4">
-          <li><a href="https://twitter.com/voluchat" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Twitter / X</a></li>
-          <li><a href="https://linkedin.com/company/voluchat" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">LinkedIn</a></li>
-          <li><a href="https://instagram.com/voluchat" class="text-sm text-slate-600 hover:text-indigo-600 transition-colors font-bold">Instagram</a></li>
+          <li><a href="https://twitter.com/voluchat" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Twitter / X</a></li>
+          <li><a href="https://linkedin.com/company/voluchat" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">LinkedIn</a></li>
+          <li><a href="https://instagram.com/voluchat" class="inline-block text-sm text-slate-600 hover:text-blue-600 hover:translate-x-1 transition-all duration-300 font-bold">Instagram</a></li>
         </ul>
       </div>
     </div>
 
     <!-- Bottom bar -->
     <div class="flex flex-col md:flex-row justify-between items-center gap-6 py-10 border-t border-slate-100">
-      <div class="flex items-center gap-3">
-        <img src="/voluchat_logo.svg" alt="VoluChat" class="w-8 h-8" />
-        <span class="font-heading font-black text-xl text-slate-950 tracking-tighter">VoluChat</span>
+      <div class="flex items-center gap-3 group/logo cursor-pointer">
+        <img src="/voluchat_logo.svg" alt="VoluChat" class="w-8 h-8 transition-transform duration-500 group-hover/logo:rotate-12 group-hover/logo:scale-110" />
+        <span class="font-heading font-black text-xl text-slate-950 tracking-tighter group-hover/logo:text-blue-600 transition-colors duration-300">VoluChat</span>
       </div>
       <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest leading-loose text-center">
         © {currentYear} QubitNine Technologies Private Limited. <br class="md:hidden" />
         Built for Indian shoe stores selling through Instagram and WhatsApp.
       </p>
-      <div class="flex gap-6 items-center">
-        <div class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+      <div class="flex gap-3 items-center px-4 py-2 rounded-full border border-emerald-100 bg-emerald-50/50 backdrop-blur-md hover:scale-[1.03] transition-transform duration-300">
+        <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
         <span class="text-[10px] font-black text-emerald-700 uppercase tracking-widest">Founding Stores Open</span>
       </div>
     </div>

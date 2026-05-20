@@ -16,26 +16,27 @@
       </div>
 
       <h1 id="hero-title" class="mx-auto mt-6 max-w-4xl text-5xl font-black leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
-        Turn Instagram DMs into WhatsApp-ready chats
+        Turn Instagram DMs into <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600 bg-clip-text text-transparent">WhatsApp-ready chats</span>
       </h1>
 
       <p id="hero-description" class="mx-auto mt-6 max-w-2xl text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
         VoluChat replies instantly, handles repeat buyer questions, finds products from your catalog, and prepares clean WhatsApp chats for your staff to close.
       </p>
 
-      <div id="hero-actions" class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="/contact" class="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-4 text-base font-black text-white shadow-xl shadow-blue-500/25 transition hover:-translate-y-0.5 hover:bg-blue-700 sm:w-auto">
-          Request Demo
-          <span class="h-2 w-2 rounded-full bg-white"></span>
+      <div id="hero-actions" class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="/contact" class="group relative inline-flex w-full items-center justify-center gap-3 rounded-full bg-zinc-950 px-8 py-4.5 text-base font-black text-white shadow-2xl transition-all duration-300 hover:scale-[1.03] hover:bg-blue-600 sm:w-auto overflow-hidden">
+          <span class="relative z-10">Request Demo</span>
+          <span class="h-2 w-2 rounded-full bg-blue-400 group-hover:bg-white transition-colors duration-300 relative z-10"></span>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
         </a>
-        <a href="#features" class="inline-flex w-full items-center justify-center rounded-full border border-slate-200/80 bg-white/70 px-7 py-4 text-base font-black text-slate-900 shadow-sm backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white sm:w-auto">
+        <a href="#features" class="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-8 py-4.5 text-base font-black text-slate-900 shadow-sm backdrop-blur-xl transition-all duration-300 hover:bg-white hover:border-slate-300 hover:scale-[1.03] sm:w-auto cursor-pointer">
           See capabilities
         </a>
       </div>
     </div>
 
     <!-- State-of-the-Art Live AI Handoff Simulator -->
-    <div id="hero-scene" class="relative mx-auto mt-16 w-full max-w-5xl overflow-visible">
+    <div id="hero-scene" class="relative mx-auto mt-20 w-full max-w-5xl overflow-visible">
       
       <!-- Ambient light behind the simulator -->
       <div class="absolute inset-0 -z-10 overflow-visible flex items-center justify-center pointer-events-none">
@@ -52,14 +53,14 @@
         </div>
 
         <!-- Left Column: Instagram DM Mockup -->
-        <div class="glass-panel-premium rounded-[2.5rem] p-6 shadow-2xl relative border-slate-200/50">
+        <div class="glass-panel-premium rounded-[2.5rem] p-6 shadow-2xl relative border-slate-200/50 hover:scale-[1.02] hover:shadow-indigo-500/10 transition-all duration-500 group/insta">
           <div class="absolute top-4 left-6 flex items-center gap-1.5">
             <span class="h-2 w-2 rounded-full bg-red-400"></span>
             <span class="h-2 w-2 rounded-full bg-yellow-400"></span>
             <span class="h-2 w-2 rounded-full bg-green-400"></span>
           </div>
           <div class="text-center border-b border-slate-100 pb-3 mb-5">
-            <div class="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">Instagram DM Chat</div>
+            <div class="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover/insta:text-slate-600 transition-colors">Instagram DM Chat</div>
             <div class="text-xs font-black text-slate-900 mt-0.5">@buyer_chat</div>
           </div>
 
@@ -104,11 +105,11 @@
         </div>
 
         <!-- Right Column: WhatsApp Pre-filled Summary Card -->
-        <div class="glass-panel-premium rounded-[2.5rem] p-6 shadow-2xl relative border-emerald-500/20">
+        <div class="glass-panel-premium rounded-[2.5rem] p-6 shadow-2xl relative border-emerald-500/20 hover:scale-[1.02] hover:shadow-emerald-500/10 transition-all duration-500 group/wa">
           <div class="absolute inset-0 bg-emerald-500/[0.01] rounded-[2.5rem] pointer-events-none"></div>
           
           <div class="text-center border-b border-slate-100 pb-3 mb-5">
-            <div class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-600">WhatsApp Handoff Panel</div>
+            <div class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-600 group-hover/wa:text-emerald-700 transition-colors">WhatsApp Handoff Panel</div>
             <div class="text-xs font-black text-slate-900 mt-0.5">Pre-qualified Lead Card</div>
           </div>
 

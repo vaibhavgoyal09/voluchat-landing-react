@@ -30,7 +30,7 @@ const transformations = [
 ];
 ---
 
-<section id="transformation" class="relative overflow-hidden py-24 md:py-32">
+<section id="transformation" class="relative overflow-hidden py-28 md:py-36">
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-15"></div>
     <div class="absolute -right-44 top-32 h-[32rem] w-[32rem] rounded-full bg-blue-400/10 blur-3xl"></div>
@@ -38,7 +38,7 @@ const transformations = [
   </div>
 
   <div class="mx-auto max-w-7xl px-6">
-    <div class="text-center max-w-3xl mx-auto mb-20">
+    <div class="text-center max-w-3xl mx-auto mb-24">
       <!-- Standardized Glowing Badge -->
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
         <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
@@ -56,7 +56,7 @@ const transformations = [
     <!-- Transformation Grid -->
     <div class="grid gap-8 md:grid-cols-3">
       {transformations.map((item, index) => (
-        <div class="glass-card-premium relative rounded-[2rem] p-8 shadow-xl flex flex-col justify-between">
+        <div class={`glass-card-premium relative rounded-[2rem] p-8 shadow-xl flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500/20 transition-all duration-500 group/card reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
           <div>
             <div class="flex items-center justify-between gap-4 mb-6">
               <span class="text-[10px] font-black uppercase tracking-[0.18em] text-blue-600 bg-blue-50/50 border border-blue-100/50 px-3 py-1 rounded-full">{item.badge}</span>
@@ -74,7 +74,7 @@ const transformations = [
             </div>
 
             <!-- Friction Box (Before / Old Way) -->
-            <div class="mb-5 p-4 rounded-2xl bg-rose-50/40 border border-rose-100/50">
+            <div class="mb-5 p-4 rounded-2xl bg-rose-50/40 border border-rose-100/50 hover:bg-rose-50/80 hover:border-rose-200 transition-all duration-300">
               <div class="flex items-center justify-between mb-3">
                 <span class="text-[9px] font-black uppercase tracking-wider text-rose-500">Old Way</span>
                 <span class="text-[9px] font-black uppercase tracking-wider text-rose-600 bg-rose-100/30 px-2 py-0.5 rounded-md">Friction</span>
@@ -91,7 +91,7 @@ const transformations = [
             </div>
 
             <!-- Flow Box (With VoluChat) -->
-            <div class="p-4 rounded-2xl bg-emerald-50/40 border border-emerald-100/50">
+            <div class="p-4 rounded-2xl bg-emerald-50/40 border border-emerald-100/50 hover:bg-emerald-50/80 hover:border-emerald-200 transition-all duration-300">
               <div class="flex items-center justify-between mb-3">
                 <span class="text-[9px] font-black uppercase tracking-wider text-emerald-600">VoluChat Way</span>
                 <span class="text-[9px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-100/30 px-2 py-0.5 rounded-md">Automated</span>
