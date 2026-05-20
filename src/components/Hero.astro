@@ -65,7 +65,7 @@
           </div>
 
           <!-- Animated Chat Timeline -->
-          <div class="space-y-4 min-h-[290px] flex flex-col justify-end">
+          <div class="space-y-4 min-h-[290px] flex flex-col justify-start">
             <!-- Bubble 1 -->
             <div class="flex gap-2 animate-bubble-1">
               <img src="/buyer_avatar.png" alt="Buyer Avatar" class="h-7 w-7 rounded-full object-cover shrink-0 shadow-sm border border-slate-100" />
@@ -115,7 +115,7 @@
 
           <div class="space-y-3 min-h-[290px] flex flex-col justify-center">
             <!-- Product Identification -->
-            <div class="bg-white border border-slate-100 rounded-xl p-3 shadow-sm flex items-center justify-between animate-ticket-1">
+            <div class="bg-white border border-slate-100 rounded-xl p-3 shadow-sm flex items-center justify-between animate-ticket-product">
               <div>
                 <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">AI MATCHED PRODUCT</div>
                 <div class="text-xs font-black text-slate-950 mt-0.5">White Runner Sneaker</div>
@@ -124,25 +124,25 @@
             </div>
 
             <!-- Collected Variants -->
-            <div class="grid grid-cols-2 gap-3 animate-ticket-2">
-              <div class="bg-white border border-slate-100 rounded-xl p-3 shadow-sm">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-white border border-slate-100 rounded-xl p-3 shadow-sm animate-ticket-size">
                 <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">UK SIZE</div>
                 <div class="text-xs font-black text-slate-950 mt-0.5">Size 9</div>
               </div>
-              <div class="bg-white border border-slate-100 rounded-xl p-3 shadow-sm">
+              <div class="bg-white border border-slate-100 rounded-xl p-3 shadow-sm animate-ticket-pin">
                 <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">PIN CODE</div>
                 <div class="text-xs font-black text-slate-950 mt-0.5">Pune 411014</div>
               </div>
             </div>
 
             <!-- Payment preference detected -->
-            <div class="bg-white border border-slate-100 rounded-xl p-3 shadow-sm animate-ticket-3">
+            <div class="bg-white border border-slate-100 rounded-xl p-3 shadow-sm animate-ticket-payment">
               <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">PAYMENT PREFERENCE</div>
               <div class="text-xs font-semibold text-slate-800 mt-0.5">UPI / GPay Requested</div>
             </div>
 
             <!-- Handoff state -->
-            <div class="bg-emerald-50 border border-emerald-100 rounded-xl p-3 shadow-sm flex items-center justify-between animate-ticket-4">
+            <div class="bg-emerald-50 border border-emerald-100 rounded-xl p-3 shadow-sm flex items-center justify-between animate-ticket-status">
               <div>
                 <div class="text-[8px] font-black uppercase tracking-wider text-emerald-600">HANDOFF STATUS</div>
                 <div class="text-xs font-black text-emerald-800 mt-0.5">Ready for WhatsApp Sales Closing</div>
@@ -202,71 +202,85 @@
 
   /* Core Looping Simulator Timeline Animation */
   @keyframes fade-in-out-bubble-1 {
-    0%, 100% { opacity: 0; transform: translateY(8px); }
-    8%, 90% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(8px); }
+    1%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+  @keyframes fade-in-out-ticket-product-size {
+    0%, 4% { opacity: 0; transform: translateY(5px); }
+    5%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-5px); }
   }
   @keyframes fade-in-out-bubble-2 {
-    0%, 18% { opacity: 0; transform: translateY(8px); }
-    26%, 90% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; }
+    0%, 7% { opacity: 0; transform: translateY(8px); }
+    9%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
   }
   @keyframes fade-in-out-bubble-3 {
-    0%, 38% { opacity: 0; transform: translateY(8px); }
-    46%, 90% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; }
+    0%, 12% { opacity: 0; transform: translateY(8px); }
+    14%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+  @keyframes fade-in-out-ticket-pin-payment {
+    0%, 15% { opacity: 0; transform: translateY(5px); }
+    17%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-5px); }
   }
   @keyframes fade-in-out-bubble-4 {
-    0%, 58% { opacity: 0; transform: translateY(8px); }
-    66%, 90% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; }
+    0%, 19% { opacity: 0; transform: translateY(8px); }
+    21%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+  @keyframes fade-in-out-ticket-status {
+    0%, 22% { opacity: 0; transform: translateY(5px); }
+    24%, 96% { opacity: 1; transform: translateY(0); }
+    98%, 100% { opacity: 0; transform: translateY(-5px); }
   }
 
   .animate-bubble-1 {
-    animation: fade-in-out-bubble-1 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-bubble-1 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  .animate-ticket-product {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-ticket-product-size 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  .animate-ticket-size {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-ticket-product-size 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
   .animate-bubble-2 {
-    animation: fade-in-out-bubble-2 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-bubble-2 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
   .animate-bubble-3 {
-    animation: fade-in-out-bubble-3 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-bubble-3 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  .animate-ticket-pin {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-ticket-pin-payment 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  .animate-ticket-payment {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-ticket-pin-payment 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
   .animate-bubble-4 {
-    animation: fade-in-out-bubble-4 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-bubble-4 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
-
-  /* WhatsApp Ticket elements sync */
-  @keyframes fade-in-out-ticket-1 {
-    0%, 20% { opacity: 0; transform: translateY(5px) scale(0.98); }
-    28%, 90% { opacity: 1; transform: translateY(0) scale(1); }
-    100% { opacity: 0; }
-  }
-  @keyframes fade-in-out-ticket-2 {
-    0%, 48% { opacity: 0; transform: translateY(5px) scale(0.98); }
-    56%, 90% { opacity: 1; transform: translateY(0) scale(1); }
-    100% { opacity: 0; }
-  }
-  @keyframes fade-in-out-ticket-3 {
-    0%, 58% { opacity: 0; transform: translateY(5px) scale(0.98); }
-    66%, 90% { opacity: 1; transform: translateY(0) scale(1); }
-    100% { opacity: 0; }
-  }
-  @keyframes fade-in-out-ticket-4 {
-    0%, 70% { opacity: 0; transform: translateY(5px) scale(0.98); }
-    78%, 90% { opacity: 1; transform: translateY(0) scale(1); }
-    100% { opacity: 0; }
-  }
-
-  .animate-ticket-1 {
-    animation: fade-in-out-ticket-1 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-  .animate-ticket-2 {
-    animation: fade-in-out-ticket-2 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-  .animate-ticket-3 {
-    animation: fade-in-out-ticket-3 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-  .animate-ticket-4 {
-    animation: fade-in-out-ticket-4 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  .animate-ticket-status {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: fade-in-out-ticket-status 27s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 </style>
 
