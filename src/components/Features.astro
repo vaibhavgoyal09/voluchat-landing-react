@@ -1,28 +1,4 @@
 ---
-import fs from 'node:fs';
-import path from 'node:path';
-
-// Automated asset copying for high-fidelity thumbnails
-try {
-  const srcDir = '/home/vaibhav/.gemini/antigravity/brain/8fc3df8a-361f-4b39-b414-a6103f98e55e';
-  const destDir = '/home/vaibhav/voluchat-landing-react/public';
-  const files = [
-    { src: 'white_runner_thumb_1779199566108.png', dest: 'white_runner_thumb.png' },
-    { src: 'grey_runner_thumb_1779199585002.png', dest: 'grey_runner_thumb.png' },
-    { src: 'black_trainer_thumb_1779199608114.png', dest: 'black_trainer_thumb.png' }
-  ];
-
-  files.forEach(file => {
-    const srcPath = path.join(srcDir, file.src);
-    const destPath = path.join(destDir, file.dest);
-    if (fs.existsSync(srcPath) && !fs.existsSync(destPath)) {
-      fs.copyFileSync(srcPath, destPath);
-    }
-  });
-} catch (e) {
-  console.error('Asset copy failed:', e);
-}
-
 const features = [
   {
     title: "24/7 Smart Cover",
@@ -45,9 +21,9 @@ const features = [
 ];
 
 const matches = [
-  { name: "White Runner", image: "/white_runner_thumb.png", score: "98% Match" },
-  { name: "Grey Runner", image: "/grey_runner_thumb.png", score: "84% Match" },
-  { name: "Black Trainer", image: "/black_trainer_thumb.png", score: "72% Match" }
+  { name: "White Runner", image: "/white_runner_thumb.webp", score: "98% Match" },
+  { name: "Grey Runner", image: "/grey_runner_thumb.webp", score: "84% Match" },
+  { name: "Black Trainer", image: "/black_trainer_thumb.webp", score: "72% Match" }
 ];
 ---
 
@@ -92,7 +68,7 @@ const matches = [
         <!-- Micro-UI: DM Mockup -->
         <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 space-y-3 shadow-inner">
           <div class="flex gap-2">
-            <img src="/buyer_avatar.png" alt="Buyer Avatar" class="h-6 w-6 rounded-full object-cover shrink-0 shadow-sm border border-slate-100" />
+            <img src="/buyer_avatar.webp" alt="Buyer Avatar" class="h-6 w-6 rounded-full object-cover shrink-0 shadow-sm border border-slate-100" />
             <div class="rounded-2xl bg-white border border-slate-100 p-2.5 text-[11px] font-medium text-slate-800 shadow-sm max-w-[80%]">
               Hi, is the white sneaker in stock in size 9?
             </div>
@@ -135,7 +111,7 @@ const matches = [
         </div>
       </div>
 
-      <!-- Feature 3: Lead Qualification -->
+      <!-- Feature 3: Buyer Details Collection -->
       <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500/20 transition-all duration-500 group/card reveal-on-scroll reveal-delay-200">
         <div>
           <div class="flex items-center justify-between gap-4 mb-6">
@@ -143,8 +119,8 @@ const matches = [
             <span class="text-xs font-black text-slate-300">03</span>
           </div>
 
-          <h3 class="font-heading text-2xl font-black tracking-tight text-slate-950 mb-3">Lead Qualification</h3>
-          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">VoluChat gathers sizing, color, quantity, and delivery address before passing the chat to WhatsApp, pre-qualifying the lead.</p>
+          <h3 class="font-heading text-2xl font-black tracking-tight text-slate-950 mb-3">Buyer Details Collected</h3>
+          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">VoluChat automatically gathers sizing, color, and delivery address in the DM before passing the buyer to your team on WhatsApp for a smooth handoff.</p>
         </div>
 
         <!-- Micro-UI: Structured Lead Handoff Card -->

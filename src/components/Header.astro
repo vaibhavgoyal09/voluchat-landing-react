@@ -4,10 +4,12 @@ const companyLinks = [
   { title: "Testimonials", href: "/#testimonials" },
   { title: "Blog", href: "/blog" },
 ];
+
+const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20want%20the%2030-sec%20demo%20for%20my%20Instagram%20store.";
 ---
 
-<header id="main-header" class="fixed top-6 left-0 right-0 z-50 transition-all duration-500 px-6">
-  <nav id="nav-container" class="mx-auto flex items-center justify-between px-8 py-4 rounded-3xl transition-all duration-500 bg-slate-50/90 backdrop-blur-2xl border border-slate-200/50 max-w-6xl shadow-2xl shadow-slate-200/40">
+<header id="main-header" class="fixed top-3 left-0 right-0 z-50 px-3 transition-all duration-500 sm:px-6">
+  <nav id="nav-container" class="mx-auto flex items-center justify-between rounded-3xl bg-slate-50/90 px-3 py-3 shadow-2xl border border-slate-200/50 max-w-6xl sm:px-6 md:px-8">
     <div class="flex items-center gap-10">
       <a href="/" class="flex items-center gap-2.5 group hover:opacity-90 transition-opacity">
         <div class="relative w-9 h-9">
@@ -41,7 +43,7 @@ const companyLinks = [
 
     <!-- Right Side Actions -->
     <div class="hidden md:flex items-center gap-4">
-      <a href="/contact" class="group relative flex items-center justify-center gap-2 px-8 py-3 bg-zinc-950 text-white rounded-full font-black text-sm transition-all duration-300 hover:scale-[1.03] hover:bg-blue-600 hover:shadow-2xl hover:shadow-blue-500/25 overflow-hidden">
+      <a href={demoWhatsappUrl} target="_blank" rel="noopener" class="group relative flex items-center justify-center gap-2 px-8 py-3 bg-zinc-950 text-white rounded-full font-black text-sm transition-all duration-300 hover:scale-[1.03] hover:bg-blue-600 hover:shadow-2xl hover:shadow-blue-500/25 overflow-hidden">
         <span class="relative z-10">Request Demo</span>
         <span class="h-1.5 w-1.5 rounded-full bg-blue-400 group-hover:bg-white transition-colors duration-300"></span>
         <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -50,8 +52,9 @@ const companyLinks = [
 
     <!-- Mobile Actions -->
     <div class="flex items-center gap-3 lg:hidden">
-      <a href="/contact" class="px-5 py-2.5 bg-zinc-950 text-white rounded-full text-xs font-black uppercase tracking-widest shadow-md hover:bg-blue-600 transition-all">
-        Request Demo
+      <a href={demoWhatsappUrl} target="_blank" rel="noopener" class="px-5 py-2.5 bg-zinc-950 text-white rounded-full text-xs font-black uppercase tracking-widest shadow-md hover:bg-blue-600 transition-all">
+        <span class="hidden min-[390px]:inline">Request Demo</span>
+        <span class="min-[390px]:hidden">Demo</span>
       </a>
       
       <!-- Mobile Menu Toggle -->
@@ -82,7 +85,7 @@ const companyLinks = [
       <div class="h-px bg-slate-100"></div>
       
       <div class="flex flex-col gap-4">
-        <a href="/contact" class="w-full py-4 bg-blue-600 text-white rounded-full text-center font-black text-base shadow-2xl shadow-blue-500/20 hover:bg-blue-700 transition-all">Request Demo</a>
+        <a href={demoWhatsappUrl} target="_blank" rel="noopener" class="w-full py-4 bg-blue-600 text-white rounded-full text-center font-black text-base shadow-2xl shadow-blue-500/20 hover:bg-blue-700 transition-all">Request Demo</a>
       </div>
 
       <div class="grid grid-cols-2 gap-4">
@@ -138,11 +141,11 @@ const companyLinks = [
     if (!header || !navContainer) return;
     if (window.scrollY > 20) {
       header.classList.add('top-2');
-      header.classList.remove('top-6');
+      header.classList.remove('top-3');
       navContainer.classList.add('max-w-5xl', 'shadow-premium');
       navContainer.classList.remove('max-w-6xl');
     } else {
-      header.classList.add('top-6');
+      header.classList.add('top-3');
       header.classList.remove('top-2');
       navContainer.classList.add('max-w-6xl');
       navContainer.classList.remove('max-w-5xl', 'shadow-premium');
