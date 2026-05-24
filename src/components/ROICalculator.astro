@@ -1,0 +1,186 @@
+---
+---
+
+<section id="roi-calculator" class="relative overflow-hidden py-28 md:py-36 bg-slate-50 border-t border-b border-slate-100">
+  <!-- Grid background -->
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div class="sect-grid opacity-10"></div>
+    <div class="absolute right-0 top-1/4 h-[30rem] w-[30rem] rounded-full bg-emerald-100/40 blur-3xl"></div>
+    <div class="absolute left-0 bottom-1/4 h-[30rem] w-[30rem] rounded-full bg-blue-100/40 blur-3xl"></div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-3xl text-center mb-20">
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50/70 px-4 py-1.5 text-xs font-black text-emerald-700 shadow-sm backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-emerald-600 shadow-[0_0_8px_rgba(16,185,129,0.6)] animate-pulse"></span>
+        <span>Return on Investment</span>
+      </div>
+      <h2 class="text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+        Calculate your <span class="bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 bg-clip-text text-transparent">recovered revenue</span>.
+      </h2>
+      <p class="mx-auto mt-6 text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
+        Slide the controls below to see how answering catalog and inventory DMs instantly preserves customer excitement and grows sales.
+      </p>
+    </div>
+
+    <!-- Interactive Grid Layout -->
+    <div class="grid gap-12 lg:grid-cols-12 items-center">
+      
+      <!-- Left Column: Inputs/Sliders -->
+      <div class="lg:col-span-5 space-y-8 bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-premium">
+        
+        <!-- Input 1: Monthly DMs -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <label for="monthly-dms" class="text-sm font-black text-slate-900">Average Monthly DMs</label>
+            <span class="text-xs font-black text-blue-600 bg-blue-50 border border-blue-100/30 px-3 py-1 rounded-full font-mono">
+              <span id="label-monthly-dms">1,500</span> DMs
+            </span>
+          </div>
+          <input 
+            type="range" 
+            id="slider-monthly-dms" 
+            min="200" 
+            max="10000" 
+            step="100" 
+            value="1500" 
+            class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-blue-600 focus:outline-none"
+          />
+          <div class="flex justify-between text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+            <span>200</span>
+            <span>10,000</span>
+          </div>
+        </div>
+
+        <!-- Input 2: Average Order Value -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <label for="aov" class="text-sm font-black text-slate-900">Average Order Value (AOV)</label>
+            <span class="text-xs font-black text-emerald-600 bg-emerald-50 border border-emerald-100/30 px-3 py-1 rounded-full font-mono">
+              Rs. <span id="label-aov">8,000</span>
+            </span>
+          </div>
+          <input 
+            type="range" 
+            id="slider-aov" 
+            min="1000" 
+            max="30000" 
+            step="250" 
+            value="8000" 
+            class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-emerald-600 focus:outline-none"
+          />
+          <div class="flex justify-between text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+            <span>Rs. 1,000</span>
+            <span>Rs. 30,000</span>
+          </div>
+        </div>
+
+        <!-- Footnote context -->
+        <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-semibold leading-relaxed">
+          *Calculations are based on industry standards showing a 30% drop-off rate on reply times exceeding 10 minutes, with a conservative 40% conversion recovery rate from instant replies.
+        </div>
+      </div>
+
+      <!-- Right Column: Results Display -->
+      <div class="lg:col-span-7 grid gap-6 sm:grid-cols-2">
+        
+        <!-- Result 1: Revenue Recovered -->
+        <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between border-emerald-500/20 col-span-2 relative overflow-hidden bg-gradient-to-br from-white to-emerald-50/20">
+          <div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-emerald-500/5 blur-xl"></div>
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
+              <span class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600">REVENUE GAINED</span>
+            </div>
+            <div class="text-4xl sm:text-5xl font-heading font-black text-slate-900 tracking-tight font-mono">
+              Rs. <span id="result-revenue">1,44,000</span><span class="text-sm font-semibold text-slate-500 ml-1">/ mo</span>
+            </div>
+          </div>
+          <p class="text-xs font-semibold leading-relaxed text-slate-500 mt-6 border-t border-slate-100 pt-4">
+            Answering buyers instantly keeps them hot, successfully recovering sales that would have abandoned due to slow support reply times.
+          </p>
+        </div>
+
+        <!-- Result 2: Hours Saved -->
+        <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between border-blue-500/20">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+              <span class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600 font-bold">STAFF HOURS SAVED</span>
+            </div>
+            <div class="text-3xl font-heading font-black text-slate-900 tracking-tight font-mono">
+              <span id="result-hours">75</span><span class="text-xs font-semibold text-slate-500 ml-1">hrs / mo</span>
+            </div>
+          </div>
+          <p class="text-[11px] font-semibold leading-relaxed text-slate-500 mt-6 border-t border-slate-100 pt-4">
+            Automating catalog search and size qualification saves support staff from typing.
+          </p>
+        </div>
+
+        <!-- Result 3: ROI Lift -->
+        <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between border-purple-500/20">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="h-2 w-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)]"></span>
+              <span class="text-[10px] font-black uppercase tracking-[0.2em] text-purple-600 font-bold">INVESTMENT ROI</span>
+            </div>
+            <div class="text-3xl font-heading font-black text-slate-900 tracking-tight font-mono">
+              <span id="result-roi">18</span>x<span class="text-xs font-semibold text-slate-500 ml-1">Lift</span>
+            </div>
+          </div>
+          <p class="text-[11px] font-semibold leading-relaxed text-slate-500 mt-6 border-t border-slate-100 pt-4">
+            Calculated against our Rs. 7,999/mo founding subscription tier.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Calculator Logic script -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sliderDms = document.getElementById('slider-monthly-dms');
+    const sliderAov = document.getElementById('slider-aov');
+    
+    const labelDms = document.getElementById('label-monthly-dms');
+    const labelAov = document.getElementById('label-aov');
+    
+    const resultRevenue = document.getElementById('result-revenue');
+    const resultHours = document.getElementById('result-hours');
+    const resultRoi = document.getElementById('result-roi');
+
+    function calculate() {
+      const dms = parseInt(sliderDms.value, 10);
+      const aov = parseInt(sliderAov.value, 10);
+      
+      // Update inputs labels
+      labelDms.textContent = dms.toLocaleString('en-IN');
+      labelAov.textContent = aov.toLocaleString('en-IN');
+
+      // Calculation logic
+      // 30% of DMs are dropped/unanswered, and instant replies recover 40% of those dropped DMs
+      const recoveredSalesCount = dms * 0.3 * 0.4;
+      const totalRevenueRecovered = Math.round(recoveredSalesCount * aov);
+      
+      // Average 3 minutes saved per DM handled (answering sizing, check stock, look up links, etc.)
+      const hoursSaved = Math.round((dms * 3) / 60);
+      
+      // Founding price: Rs. 7,999/mo
+      const roiMultiplier = Math.round(totalRevenueRecovered / 7999);
+
+      // Animate counting / values update
+      resultRevenue.textContent = totalRevenueRecovered.toLocaleString('en-IN');
+      resultHours.textContent = hoursSaved.toLocaleString('en-IN');
+      resultRoi.textContent = roiMultiplier > 0 ? roiMultiplier.toLocaleString('en-IN') : '0';
+    }
+
+    sliderDms.addEventListener('input', calculate);
+    sliderAov.addEventListener('input', calculate);
+
+    // Initial calculation
+    calculate();
+  });
+</script>
