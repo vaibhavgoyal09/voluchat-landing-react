@@ -6,6 +6,7 @@ const sourceFiles = [
   'src/pages/index.astro',
   'src/layouts/Layout.astro',
   'src/components/Hero.astro',
+  'src/components/HeroAutomationScene.astro',
   'src/components/PainPoints.astro',
   'src/components/Features.astro',
   'src/components/Demo.astro',
@@ -30,17 +31,17 @@ const landingSource = Object.values(sourceByFile).join('\n');
 
 test('homepage leads with the approved slow-reply sales positioning', () => {
   assert.match(sourceByFile['src/components/Hero.astro'], /Stop Losing Sales to Slow Replies/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /VoluChat automates repeated product questions across Instagram and Facebook Pages/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /price, size, stock, delivery, and offers/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /VoluChat answers repeated product questions across Instagram, Facebook Pages, and WhatsApp-native automation soon/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /Price, size, stock, delivery, and offers/);
   assert.match(sourceByFile['src/components/Hero.astro'], /14-day free trial/);
 });
 
 test('homepage hero uses broad high-consideration ecommerce examples', () => {
-  const heroSource = sourceByFile['src/components/Hero.astro'];
+  const heroSource = `${sourceByFile['src/components/Hero.astro']}\n${sourceByFile['src/components/HeroAutomationScene.astro']}`;
 
-  assert.match(heroSource, /Online store reply automation/);
+  assert.match(heroSource, /Automate repetitive product replies/);
   assert.match(heroSource, /shoe stores, accessories, premium fashion, jewelry, beauty, and other product-heavy stores/);
-  assert.match(heroSource, /premium sneaker/);
+  assert.match(heroSource, /premium sneaker/i);
   assert.match(heroSource, /UK 9/);
   assert.match(heroSource, /Pune 411014/);
   assert.match(heroSource, /Facebook Page/);
