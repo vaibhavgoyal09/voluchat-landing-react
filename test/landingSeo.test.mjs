@@ -29,8 +29,8 @@ const [
 
 test('homepage SEO metadata leads with ecommerce-store positioning', () => {
   assert.match(indexSource, /const seoTitle = "Stop Losing Sales to Slow Replies \| VoluChat";/);
-  assert.match(indexSource, /const seoDescription = "VoluChat is the AI reply layer for ecommerce sales teams, automating repeated product questions across Instagram and Facebook Pages so stores answer faster and stop losing sales.";/);
-  assert.match(indexSource, /const seoKeywords = "ecommerce sales team automation, ecommerce reply automation, Instagram DM automation, Facebook Page automation, repeated product questions, slow reply lost sales, AI sales assistant, product catalog search, WhatsApp handoff automation, multi-agent ecommerce replies";/);
+  assert.match(indexSource, /const seoDescription = "VoluChat is the 24\/7 AI checkout agent for ecommerce sales teams, answering product questions, building carts, collecting delivery addresses, and preparing WhatsApp checkout text.";/);
+  assert.match(indexSource, /const seoKeywords = "24\/7 ecommerce reply automation, AI checkout agent, ecommerce sales team automation, Instagram DM automation, Facebook Page automation, WhatsApp checkout automation, prefilled WhatsApp order text, cart automation, delivery address collection, UPI payment confirmation";/);
   assert.match(indexSource, /<Layout\s+title={seoTitle}\s+description={seoDescription}\s+keywords={seoKeywords}/);
 });
 
@@ -50,8 +50,8 @@ test('homepage structured data and FAQ copy reinforce the ecommerce landing prom
   assert.match(indexSource, /"@type": "SiteNavigationElement"/);
   assert.match(indexSource, /"name": "How does VoluChat stop ecommerce stores losing sales to slow replies\?"/);
   assert.match(faqSource, /question: "How does VoluChat stop ecommerce stores losing sales to slow replies\?"/);
-  assert.match(faqSource, /answer: "VoluChat acts as a shared AI reply layer for ecommerce sales teams, answering repeated product questions across Instagram and Facebook Pages before a buyer loses interest."/);
-  assert.match(faqSource, /question: "Can VoluChat support multiple sales reps or WhatsApp numbers\?"/);
+  assert.match(faqSource, /answer: "VoluChat replies 24\/7, answers common product questions, builds the buyer's cart, collects delivery details, and prepares a WhatsApp checkout draft before the buyer drops off."/);
+  assert.match(faqSource, /question: "Does VoluChat create the WhatsApp checkout message\?"/);
   assert.match(faqSource, /question: "How is VoluChat different from Manychat, WATI, Interakt, respond.io, AiSensy, or Gallabox\?"/);
 });
 
@@ -68,6 +68,6 @@ test('public crawl hints expose the main pages Google can consider for sitelinks
 
 test('web app manifest avoids the old autopilot positioning', () => {
   assert.match(manifestSource, /"name": "VoluChat - Stop Losing Sales to Slow Replies"/);
-  assert.match(manifestSource, /"description": "AI reply automation for ecommerce sales teams handling repeated product questions across Instagram and Facebook Pages."/);
+  assert.match(manifestSource, /"description": "24\/7 AI checkout agent for ecommerce stores handling product questions, carts, delivery addresses, and WhatsApp checkout drafts."/);
   assert.doesNotMatch(manifestSource, /autopilot|paying customers/i);
 });

@@ -2,7 +2,7 @@
 import HeroAutomationScene from './HeroAutomationScene.astro';
 ---
 
-<section id="hero" class="relative isolate overflow-hidden pt-32 pb-14 sm:pt-36 lg:min-h-[calc(100dvh-4rem)] lg:pt-32 lg:pb-14">
+<section id="hero" class="relative isolate overflow-hidden pt-28 pb-12 sm:pt-36 lg:min-h-[calc(100dvh-4rem)] lg:pt-32 lg:pb-14">
   <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_18%,rgba(83,111,159,0.11),transparent_28%),radial-gradient(circle_at_82%_10%,rgba(203,217,234,0.16),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,249,252,0.86)_58%,rgba(255,255,255,0.96))]"></div>
   <div class="ambient-noise"></div>
 
@@ -10,24 +10,25 @@ import HeroAutomationScene from './HeroAutomationScene.astro';
     <div class="grid items-center gap-8 lg:grid-cols-[0.92fr_1.08fr] xl:gap-12">
       <div class="max-w-xl text-left">
         <div id="hero-badge" class="chip">
-          Automate repetitive product replies
+          24/7 product reply and checkout agent
         </div>
 
-        <h1 id="hero-title" class="mt-6 max-w-[17ch] text-[2.75rem] font-semibold leading-[0.98] text-stone-950 sm:text-[3.7rem] lg:mt-5 lg:text-[3.75rem] xl:text-[4.05rem]">
+        <h1 id="hero-title" class="mt-5 max-w-[17ch] text-[2.9rem] font-semibold leading-[0.94] text-stone-950 sm:mt-6 sm:text-[3.7rem] sm:leading-[0.98] lg:mt-5 lg:text-[3.75rem] xl:text-[4.05rem]">
           <span class="sr-only">Stop Losing Sales to Slow Replies</span>
-          <span aria-hidden="true" class="block">Stop Losing Sales</span>
+          <span aria-hidden="true" class="block">Stop Losing</span>
+          <span aria-hidden="true" class="block">Sales</span>
           <span aria-hidden="true" class="accent-gradient-text block">to Slow Replies</span>
         </h1>
 
-        <p id="hero-description" class="mt-6 max-w-lg text-base font-medium leading-relaxed text-stone-600 sm:text-lg">
-          VoluChat is the AI reply layer for ecommerce sales teams across Instagram, Facebook Pages, and WhatsApp workflows.
+        <p id="hero-description" class="mt-5 max-w-lg text-base font-medium leading-relaxed text-stone-600 sm:mt-6 sm:text-lg">
+          VoluChat answers Instagram comments and DMs 24/7, builds carts, collects addresses, and prepares WhatsApp checkout text.
         </p>
 
-        <p class="mt-3 max-w-lg text-sm font-semibold leading-relaxed text-stone-500">
-          Repeated price, size, stock, delivery, and offer questions get handled before buyers leave.
+        <p class="mt-3 hidden max-w-lg text-sm font-semibold leading-relaxed text-stone-500 sm:block">
+          Repeated price, size, stock, delivery, and offer questions get handled before buyers leave. The agent builds the cart, collects delivery details, and prepares WhatsApp checkout text.
         </p>
 
-        <div id="hero-actions" class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div id="hero-actions" class="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
           <a href="/contact" class="btn-primary">
             Start 14-day free trial
           </a>
@@ -36,24 +37,24 @@ import HeroAutomationScene from './HeroAutomationScene.astro';
           </a>
         </div>
 
-        <p class="mt-5 max-w-lg text-xs font-semibold leading-relaxed text-stone-500">
-          Built for shoe stores, accessories, premium fashion, jewelry, beauty, and other product-heavy stores: one inbox or many, owner-led or 5-10 people handling sales conversations.
+        <p class="mt-5 hidden max-w-lg text-xs font-semibold leading-relaxed text-stone-500 lg:block">
+          Built for Instagram-first stores with 50K+ followers across shoe stores, accessories, premium fashion, jewelry, beauty, and other product-heavy stores with high comment volume, busy DMs, and buyers who should reach WhatsApp with checkout-ready order details.
         </p>
 
-        <div class="mt-7 grid max-w-lg grid-cols-3 gap-2.5 sm:gap-3">
-          <div class="hero-metric-card kinetic-card">
-            <p class="mini-label">Replies</p>
-            <p class="mt-2 text-lg font-semibold text-stone-950">Instant</p>
-          </div>
-          <div class="hero-metric-card kinetic-card">
-            <p class="mini-label">Layer</p>
-            <p class="mt-2 text-lg font-semibold text-stone-950">Shared</p>
-          </div>
-          <div class="hero-metric-card kinetic-card">
-            <p class="mini-label">Trial</p>
-            <p class="mt-2 text-lg font-semibold text-stone-950">14 days</p>
-          </div>
-        </div>
+        <ol class="mt-7 hidden max-w-lg grid-cols-3 gap-2.5 sm:gap-3 lg:grid" aria-label="VoluChat reply workflow highlights">
+          <li class="hero-metric-card kinetic-card">
+            <p class="mini-label">Buyer asks</p>
+            <p class="mt-2 text-sm font-semibold leading-snug text-stone-950 sm:text-base">Price, size, stock</p>
+          </li>
+          <li class="hero-metric-card kinetic-card">
+            <p class="mini-label">Agent builds</p>
+            <p class="mt-2 text-sm font-semibold leading-snug text-stone-950 sm:text-base">Cart + address</p>
+          </li>
+          <li class="hero-metric-card kinetic-card">
+            <p class="mini-label">Store confirms</p>
+            <p class="mt-2 text-sm font-semibold leading-snug text-stone-950 sm:text-base">UPI QR + order</p>
+          </li>
+        </ol>
       </div>
 
       <HeroAutomationScene />

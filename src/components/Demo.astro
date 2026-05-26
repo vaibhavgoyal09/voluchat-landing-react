@@ -1,9 +1,9 @@
 ---
 const demoSteps = [
-  { label: "Buyer asks", value: "Is the white sneaker available in UK 9?" },
+  { label: "Buyer asks", value: "Is the linen co-ord available in Size M?" },
   { label: "VoluChat checks", value: "Product, stock, price, delivery, offer rules" },
-  { label: "Reply sent", value: "Yes. UK 9 is available. Delivery to Pune works." },
-  { label: "Team sees", value: "Buyer intent, product, size, PIN code, next step" },
+  { label: "Cart built", value: "Linen co-ord, Size M, Ivory, Qty 1" },
+  { label: "Checkout draft", value: "Prefilled WhatsApp text with cart and delivery address" },
 ];
 ---
 
@@ -14,10 +14,10 @@ const demoSteps = [
     <div class="mx-auto max-w-3xl text-center reveal-on-scroll">
       <p class="section-eyebrow">Live workflow preview</p>
       <h2 class="section-title mt-4">
-        Watch one question become a sales-ready reply.
+        Watch a product question become a checkout-ready WhatsApp draft.
       </h2>
       <p class="section-copy mx-auto mt-5 max-w-2xl">
-        Repeated product questions, answered automatically for any shoe, fashion, beauty, jewelry, or accessory store.
+        Cart, address, and WhatsApp checkout text prepared automatically for any shoe, fashion, beauty, jewelry, or accessory store.
       </p>
     </div>
 
@@ -33,10 +33,13 @@ const demoSteps = [
 
         <div class="mt-5 space-y-4">
           <div class="max-w-[83%] rounded-2xl bg-stone-100 px-4 py-3 text-sm font-medium leading-relaxed text-stone-800">
-            Is the white premium sneaker available in UK 9? Need delivery to Pune.
+            Is the linen co-ord available in Size M? Need delivery to Delhi.
           </div>
           <div class="ml-auto max-w-[83%] rounded-2xl bg-[linear-gradient(135deg,#283957,#536f9f)] px-4 py-3 text-sm font-semibold leading-relaxed text-white shadow-[0_16px_42px_rgba(40,57,87,0.18)]">
-            Yes. UK 9 is available in white. Delivery to Pune 411014 is supported.
+            Yes. Size M is available in ivory. Share your delivery address and I will prepare the checkout message.
+          </div>
+          <div class="ml-auto max-w-[83%] rounded-2xl bg-[linear-gradient(135deg,#283957,#536f9f)] px-4 py-3 text-sm font-semibold leading-relaxed text-white shadow-[0_16px_42px_rgba(40,57,87,0.18)]">
+            Checkout draft ready for WhatsApp: Linen Co-ord Set, Size M, Ivory, Qty 1, Delhi 110024.
           </div>
         </div>
       </div>

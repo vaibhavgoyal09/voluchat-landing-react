@@ -192,7 +192,7 @@
   }
 
   .section-title {
-    @apply text-3xl font-semibold leading-[1.05] text-stone-950 sm:text-5xl lg:text-6xl;
+    @apply text-[2.35rem] font-semibold leading-[1.04] text-stone-950 sm:text-5xl sm:leading-[1.05] lg:text-6xl;
   }
 
   .section-copy {
@@ -304,23 +304,6 @@
   }
 }
 
-@keyframes orbitFloat {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate3d(0, -10px, 0) rotate(0.7deg);
-  }
-}
-
-.motion-orbit {
-  animation: orbitFloat 7.5s cubic-bezier(0.32, 0.72, 0, 1) infinite;
-}
-
-.motion-orbit-delay {
-  animation-delay: -2.4s;
-}
-
 @keyframes pageFadeIn {
   from {
     opacity: 0;
@@ -382,10 +365,5 @@
   .reveal-on-scroll {
     opacity: 1;
     transform: none;
-  }
-
-  .motion-orbit,
-  .motion-orbit-delay {
-    animation: none;
   }
 }

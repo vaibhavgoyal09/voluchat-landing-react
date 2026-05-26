@@ -1,19 +1,37 @@
 ---
 const capabilities = [
   {
-    eyebrow: "Reply automation",
-    title: "Answers the same questions first",
-    text: "The repeated questions handled before a sales rep steps in: price, size, stock, delivery, COD, and offers.",
+    eyebrow: "24/7 reply agent",
+    title: "Answers before buyers leave",
+    text: "VoluChat handles price, size, stock, delivery, COD, and offer questions in comments and DMs while buyer intent is still active.",
+    visualEyebrow: "24/7 reply agent",
+    visualTitle: "Need price and Size M",
+    visualText: "Answered inside Instagram",
+    visualImage: "/linen_coord_thumb.png",
+    visualAlt: "Ivory linen co-ord product question",
+    visualTags: ["Price", "Size M", "COD"],
   },
   {
-    eyebrow: "Catalog context",
-    title: "Keeps answers consistent across agents",
-    text: "Buyers can describe a product, send a screenshot, or ask for a variant. VoluChat matches it against the same catalog context for every agent.",
+    eyebrow: "Cart builder",
+    title: "Builds the cart in the DM",
+    text: "Builds the buyer's cart with item, quantity, size, color, delivery address, and offer details before the store steps in.",
+    visualEyebrow: "Cart builder",
+    visualTitle: "Linen Co-ord Set",
+    visualText: "Ivory / M / Qty 1",
+    visualImage: "/linen_coord_thumb.png",
+    visualAlt: "Linen co-ord catalog match",
+    visualTags: ["Cart", "Address", "Offer"],
   },
   {
-    eyebrow: "Team handoff",
-    title: "Escalates when intent is clear",
-    text: "Your sales team receives product, size, delivery, and buyer context instead of opening every chat cold.",
+    eyebrow: "WhatsApp checkout",
+    title: "Moves to WhatsApp only at checkout",
+    text: "Generates prefilled WhatsApp text with cart items, variant options, and delivery address. The store sends the UPI QR and confirms.",
+    visualEyebrow: "WhatsApp checkout",
+    visualTitle: "UPI QR and confirm",
+    visualText: "Prefilled order ready",
+    visualImage: "/satin_kurta_thumb.png",
+    visualAlt: "Satin kurta set prepared for checkout",
+    visualTags: ["WhatsApp", "UPI", "Order"],
   },
 ];
 ---
@@ -22,12 +40,12 @@ const capabilities = [
   <div class="page-shell">
     <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-10">
       <div class="relative z-10 max-w-xl reveal-on-scroll lg:sticky lg:top-28">
-        <p class="section-eyebrow">AI reply layer for ecommerce sales teams</p>
+        <p class="section-eyebrow">24/7 AI checkout agent for ecommerce sales teams</p>
         <h2 class="section-title mt-4">
-          A shared reply layer for every product channel.
+          A 24/7 checkout agent for every product channel.
         </h2>
         <p class="section-copy mt-5">
-          VoluChat covers common buying questions across Instagram, Facebook Pages, and WhatsApp workflows while your team keeps the final sale.
+          VoluChat keeps buyers inside Instagram until they are checkout-ready, then prepares the WhatsApp order text for final payment confirmation.
         </p>
       </div>
 
@@ -35,13 +53,17 @@ const capabilities = [
         {capabilities.map((item, index) => (
           <article class={`kinetic-card group rounded-[1.75rem] border border-white/80 bg-white/92 p-4 shadow-[0_18px_70px_rgba(28,25,23,0.08)] transition duration-500 hover:-translate-y-1 hover:bg-white sm:p-5 lg:bg-white/70 lg:backdrop-blur-2xl reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
             <div class="grid gap-4 sm:grid-cols-[0.8fr_1.2fr] sm:items-center sm:gap-5">
-              <div class="rounded-2xl border border-stone-200/70 bg-primary-50/70 p-4 sm:p-5">
-                <p class="mini-label">{item.eyebrow}</p>
-                <div class="mt-5 h-2 rounded-full bg-stone-200 sm:mt-6">
-                  <div class={`h-full rounded-full bg-primary-800 ${index === 0 ? 'w-[88%]' : index === 1 ? 'w-[72%]' : 'w-[62%]'}`}></div>
+              <div class="rounded-2xl border border-stone-200/70 bg-[linear-gradient(135deg,rgba(243,247,251,0.92),rgba(255,255,255,0.74))] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.88)] sm:p-4">
+                <div class="flex items-center gap-3">
+                  <img src={item.visualImage} alt={item.visualAlt} class="h-16 w-16 rounded-xl object-cover shadow-sm" loading="lazy" decoding="async" />
+                  <div class="min-w-0">
+                    <p class="mini-label">{item.visualEyebrow}</p>
+                    <p class="mt-2 text-sm font-semibold leading-snug text-stone-950">{item.visualTitle}</p>
+                    <p class="mt-1 text-[11px] font-medium leading-snug text-stone-500">{item.visualText}</p>
+                  </div>
                 </div>
                 <div class="mt-4 grid grid-cols-3 gap-2">
-                  {["Price", "Stock", "Size"].map((label) => (
+                  {item.visualTags.map((label) => (
                     <span class="rounded-lg border border-stone-200/70 bg-white px-2 py-1 text-center text-[10px] font-semibold text-stone-600">{label}</span>
                   ))}
                 </div>
