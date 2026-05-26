@@ -31,8 +31,9 @@ const landingSource = Object.values(sourceByFile).join('\n');
 
 test('homepage leads with the approved slow-reply sales positioning', () => {
   assert.match(sourceByFile['src/components/Hero.astro'], /Stop Losing Sales to Slow Replies/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /VoluChat answers repeated product questions across Instagram, Facebook Pages, and WhatsApp-native automation soon/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /Price, size, stock, delivery, and offers/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /AI reply layer for ecommerce sales teams/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /Instagram, Facebook Pages, and WhatsApp workflows/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /Repeated price, size, stock, delivery, and offer questions/);
   assert.match(sourceByFile['src/components/Hero.astro'], /14-day free trial/);
 });
 
@@ -41,6 +42,8 @@ test('homepage hero uses broad high-consideration ecommerce examples', () => {
 
   assert.match(heroSource, /Automate repetitive product replies/);
   assert.match(heroSource, /shoe stores, accessories, premium fashion, jewelry, beauty, and other product-heavy stores/);
+  assert.match(heroSource, /one inbox or many/);
+  assert.match(heroSource, /5-10 people handling sales conversations/);
   assert.match(heroSource, /premium sneaker/i);
   assert.match(heroSource, /UK 9/);
   assert.match(heroSource, /Pune 411014/);
@@ -50,12 +53,14 @@ test('homepage hero uses broad high-consideration ecommerce examples', () => {
 
 test('homepage sections carry the workload-first AI helpdesk story', () => {
   assert.match(sourceByFile['src/components/PainPoints.astro'], /The repeated-question workload/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /same questions hit every inbox/);
   assert.match(sourceByFile['src/components/PainPoints.astro'], /Slow manual replies cost sales when shoppers are comparing options/);
-  assert.match(sourceByFile['src/components/Features.astro'], /AI reply automation for product sellers/);
-  assert.match(sourceByFile['src/components/Features.astro'], /The repeated questions handled before staff steps in/);
+  assert.match(sourceByFile['src/components/Features.astro'], /AI reply layer for ecommerce sales teams/);
+  assert.match(sourceByFile['src/components/Features.astro'], /The repeated questions handled before a sales rep steps in/);
   assert.match(sourceByFile['src/components/Demo.astro'], /Repeated product questions, answered automatically/);
   assert.match(sourceByFile['src/components/Demo.astro'], /shoe, fashion, beauty, jewelry, or accessory store/);
   assert.match(sourceByFile['src/components/HowItWorks.astro'], /Set up VoluChat around your store workflow/);
+  assert.match(sourceByFile['src/components/HowItWorks.astro'], /one inbox or many/);
   assert.match(sourceByFile['src/components/Pricing.astro'], /Try automated replies free for 14 days/);
 });
 
@@ -113,7 +118,14 @@ test('homepage FAQ schema is aligned with the WhatsApp-ready chat questions', ()
 
   assert.match(faqSchemaSource, /"name": "How does VoluChat stop ecommerce stores losing sales to slow replies\?"/);
   assert.match(faqSchemaSource, /"name": "Can VoluChat find products from photos or buyer messages\?"/);
+  assert.match(faqSchemaSource, /"name": "Can VoluChat support multiple sales reps or WhatsApp numbers\?"/);
   assert.match(faqSchemaSource, /"name": "Does VoluChat manage cart, address, and offer details\?"/);
   assert.match(faqSchemaSource, /"name": "Does VoluChat process orders or payments\?"/);
   assert.match(faqSchemaSource, /"name": "How is VoluChat different from Manychat, WATI, Interakt, respond.io, AiSensy, or Gallabox\?"/);
+});
+
+test('homepage avoids owner-only or small-team positioning', () => {
+  assert.doesNotMatch(landingSource, /many small teams|store owners track/i);
+  assert.match(landingSource, /one owner or a 5-10 person sales team/);
+  assert.match(landingSource, /consistent answers across agents/);
 });

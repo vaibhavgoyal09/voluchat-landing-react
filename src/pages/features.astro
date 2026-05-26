@@ -3,18 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const seoTitle = "Features for ecommerce reply automation | VoluChat";
-const seoDescription = "See how VoluChat answers repeated product questions across Instagram and Facebook Pages, checks catalog context, and prepares buyer handoffs for ecommerce stores.";
+const seoTitle = "Features for ecommerce sales teams | VoluChat";
+const seoDescription = "See how VoluChat gives ecommerce sales teams a shared AI reply layer for repeated product questions across Instagram, Facebook Pages, and WhatsApp handoffs.";
 
 const featureDetails = [
   {
     eyebrow: "01 / Channel automation",
     title: "Answer repeated questions where buyers ask",
-    description: "VoluChat helps stores reply across Instagram and Facebook Pages, with WhatsApp-native automation coming after Meta app review. Your team stops retyping the same answers all day.",
+    description: "VoluChat helps sales teams reply across Instagram and Facebook Pages, with WhatsApp-native automation coming after Meta app review. Your team stops retyping the same answers all day.",
     points: [
       "Responds to common product questions before buyers lose interest.",
       "Supports Instagram and Facebook Page conversations.",
-      "Keeps WhatsApp-native automation ready for the next channel expansion."
+      "Keeps WhatsApp handoff context ready for the next channel expansion."
     ],
     visualTitle: "Buyer asks",
     visualBody: "Is this sneaker available in UK 9?",
@@ -22,7 +22,7 @@ const featureDetails = [
   },
   {
     eyebrow: "02 / Catalog context",
-    title: "Use product data before staff steps in",
+    title: "Use product data before a rep steps in",
     description: "Questions about price, stock, size, delivery, COD, variants, and offers can be checked against the details you already manage for your store.",
     points: [
       "Handles price, size, stock, delivery, and offer-code questions.",
@@ -34,17 +34,17 @@ const featureDetails = [
     visualAction: "Context saved"
   },
   {
-    eyebrow: "03 / Staff handoff",
+    eyebrow: "03 / Team handoff",
     title: "Send cleaner conversations to your team",
-    description: "When a shopper needs help or is ready to buy, your staff receives the product, size, delivery, and buyer intent context instead of opening every chat cold.",
+    description: "When a shopper needs help or is ready to buy, your sales team receives the product, size, delivery, and buyer intent context instead of opening every chat cold.",
     points: [
       "Summarizes buyer intent and product details.",
       "Escalates unusual or high-intent messages.",
-      "Keeps final order confirmation and payment with your team."
+      "Keeps final order confirmation and payment with your sales team."
     ],
     visualTitle: "Sales handoff",
     visualBody: "Buyer intent, product, size, PIN code",
-    visualAction: "Ready for staff"
+    visualAction: "Ready for team"
   },
   {
     eyebrow: "04 / Guided setup",
@@ -74,10 +74,10 @@ const featureDetails = [
         <div class="max-w-4xl">
           <div class="chip">Product reply automation</div>
           <h1 class="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl lg:text-7xl">
-            Features for faster ecommerce replies.
+            Features for ecommerce sales teams.
           </h1>
           <p class="section-copy mt-6 max-w-2xl">
-            Automate repeated buying questions across Instagram, Facebook Pages, and upcoming WhatsApp-native automation without turning your store workflow upside down.
+            Give every rep the same AI reply layer for repeated buying questions across Instagram, Facebook Pages, and WhatsApp handoffs.
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="/contact" class="btn-primary">Start 14-day free trial</a>
@@ -99,7 +99,7 @@ const featureDetails = [
               VoluChat sits in the repetitive first layer: product questions, catalog checks, and handoff preparation. Your team keeps control of final sales conversations.
             </p>
             <div class="mt-6 space-y-3">
-              {["Buyer asks", "VoluChat checks context", "Staff gets a cleaner handoff"].map((step, index) => (
+              {["Buyer asks", "VoluChat checks context", "Sales team gets a cleaner handoff"].map((step, index) => (
                 <div class="flex items-center gap-3 rounded-2xl border border-white/80 bg-white/76 p-3">
                   <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-primary-800 font-mono text-xs font-semibold text-white">0{index + 1}</span>
                   <span class="text-sm font-semibold text-stone-800">{step}</span>

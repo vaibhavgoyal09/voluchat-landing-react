@@ -1,7 +1,7 @@
 {
   "name": "VoluChat - Stop Losing Sales to Slow Replies",
   "short_name": "VoluChat",
-  "description": "Automate repeated product questions across Instagram and Facebook Pages so ecommerce shoppers get faster replies.",
+  "description": "AI reply automation for ecommerce sales teams handling repeated product questions across Instagram and Facebook Pages.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

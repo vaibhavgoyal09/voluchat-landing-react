@@ -45,7 +45,7 @@ test('redesigned landing page leads with a Framer-like SaaS hero and 3D automati
   assert.match(heroSource, /<HeroAutomationScene \/>/);
   assert.match(heroSource, /Stop Losing Sales to Slow Replies/);
   assert.match(heroSource, /Automate repetitive product replies/);
-  assert.match(heroSource, /Instagram, Facebook Pages, and WhatsApp-native automation/);
+  assert.match(heroSource, /Instagram, Facebook Pages, and WhatsApp workflows/);
   assert.match(heroSource, /hero-metric-card/);
   assert.match(sceneSource, /import \* as THREE from 'three';/);
   assert.match(sceneSource, /<canvas id="automation-scene"/);
@@ -55,8 +55,8 @@ test('redesigned landing page leads with a Framer-like SaaS hero and 3D automati
 });
 
 test('redesigned sections use premium motion surfaces without reverting to narrow boutique positioning', () => {
-  assert.match(painSource, /Every repeated answer is a delay/);
-  assert.match(featuresSource, /A faster reply layer for every product channel/);
+  assert.match(painSource, /The same questions hit every inbox/);
+  assert.match(featuresSource, /A shared reply layer for every product channel/);
   assert.match(demoSource, /Watch one question become a sales-ready reply/);
   assert.match(cssSource, /\.hero-stage/);
   assert.match(cssSource, /\.motion-orbit/);
