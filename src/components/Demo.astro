@@ -1,125 +1,275 @@
 ---
+const queryPresets = [
+  {
+    id: "query-1",
+    label: "👗 Linen co-ord query",
+    shopperText: "Hi! Is the linen co-ord set from today's Reel available in Size M? And how much is it?",
+    parsedFilters: [
+      { key: "Style / Category", value: "Linen co-ord set" },
+      { key: "Target Size", value: "Size M" },
+      { key: "Location Search", value: "Instagram Reel Sync" }
+    ],
+    matches: [
+      { name: "Linen co-ord set", image: "/linen_coord_thumb.png", price: "Rs. 2,999", stock: "14 in stock", status: "Available" }
+    ]
+  },
+  {
+    id: "query-2",
+    label: "🏮 Satin kurta query",
+    shopperText: "Hey, do you have the grey satin kurta in Size L? Can you deliver to Bangalore?",
+    parsedFilters: [
+      { key: "Style / Category", value: "Satin kurta set" },
+      { key: "Target Size", value: "Size L" },
+      { key: "Delivery Check", value: "Bangalore (PIN sync)" }
+    ],
+    matches: [
+      { name: "Satin kurta set", image: "/satin_kurta_thumb.png", price: "Rs. 4,500", stock: "Low stock (3 left)", status: "Low Stock" }
+    ]
+  },
+  {
+    id: "query-3",
+    label: "🧥 Denim overshirt query",
+    shopperText: "Looking for that black denim overshirt! Any size XL left?",
+    parsedFilters: [
+      { key: "Style / Category", value: "Denim overshirt" },
+      { key: "Target Size", value: "Size XL" },
+      { key: "Material", value: "Denim / Cotton" }
+    ],
+    matches: [
+      { name: "Denim overshirt", image: "/denim_overshirt_thumb.png", price: "Rs. 3,800", stock: "Out of stock", status: "Sold Out" }
+    ]
+  }
+];
 ---
 
-<section id="demo" class="relative overflow-hidden py-28 md:py-36">
-  <div class="absolute inset-0 -z-10 pointer-events-none">
-    <div class="sect-grid opacity-10"></div>
-    <div class="absolute -right-44 top-1/4 h-[36rem] w-[36rem] rounded-full bg-primary-300/10 blur-3xl"></div>
-    <div class="absolute -left-44 bottom-12 h-[36rem] w-[36rem] rounded-full bg-emerald-300/10 blur-3xl"></div>
-  </div>
-
-  <div class="mx-auto max-w-7xl px-6">
-    <div class="mx-auto max-w-3xl text-center mb-24">
-      <!-- Standardized Glowing Badge -->
-      <div class="mb-6 inline-flex items-center gap-2 rounded-lg border border-primary-200/70 bg-primary-50/70 px-4 py-1.5 text-xs font-semibold text-primary-800 shadow-sm backdrop-blur-md">
-        <span class="h-2 w-2 rounded-full bg-primary-600 shadow-[0_0_8px_rgba(51,141,115,0.42)]"></span>
-        <span>The flow</span>
-      </div>
-      <!-- Consistent Responsive Heading -->
-      <h2 class="text-3xl font-heading font-semibold leading-[1.1] tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
-        From messy Instagram DM to clean WhatsApp handoff.
+<section id="demo" class="section-pad relative overflow-hidden">
+  <div class="page-shell">
+    <div class="mx-auto max-w-3xl text-center mb-16">
+      <p class="section-eyebrow">Interactive Showcase</p>
+      <h2 class="text-3xl font-heading font-semibold leading-[1.08] text-stone-950 sm:text-5xl mt-3">
+        See the AI catalog search in action.
       </h2>
-      <p class="mx-auto mt-6 text-lg font-semibold leading-relaxed text-stone-600 sm:text-xl">
-        VoluChat gathers the product, size, shade, delivery, and buyer notes first. Final order and payment stay manual in WhatsApp.
+      <p class="section-copy mx-auto mt-5 max-w-2xl">
+        Shoppers ask questions in organic language. VoluChat parses style, size, and availability to query your live inventory catalog in real-time.
       </p>
     </div>
 
-    <!-- Simulator Workspace -->
-    <div class="grid gap-12 lg:grid-cols-2 max-w-5xl mx-auto items-center">
+    <!-- Interactive Sandbox Board -->
+    <div class="glass-panel-premium rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative border border-white/95 overflow-hidden">
       
-      <!-- Left: Instagram DM Experience -->
-      <div class="glass-panel-premium rounded-3xl p-8 shadow-2xl relative hover:scale-[1.01] hover:shadow-primary-700/10 hover:border-primary-500/20 transition-all duration-500 group/insta">
-        <div class="absolute top-4 left-6 flex items-center gap-2">
-          <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
-          <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
-          <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
-        </div>
-        <div class="text-center border-b border-stone-100 pb-4 mb-6">
-          <div class="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 group-hover/insta:text-stone-600 transition-colors">Instagram DM Automation</div>
-          <div class="text-xs font-semibold text-stone-900 mt-1">@buyer_chat</div>
-        </div>
-
-        <div class="space-y-4 min-h-[300px] flex flex-col justify-end">
-          <!-- Chat bubbles -->
-          <div class="flex gap-2">
-            <img src="/buyer_avatar.webp" alt="Buyer Avatar" class="h-8 w-8 rounded-full object-cover shrink-0 shadow-sm border border-stone-100" />
-            <div class="rounded-2xl bg-stone-100 p-3 text-xs font-medium text-stone-800 shadow-sm max-w-[80%]">
-              Hey! I saw your Reel. How much is the linen co-ord and do you deliver to Bangalore?
-            </div>
-          </div>
-
-          <div class="flex gap-2 justify-end">
-            <div class="rounded-2xl bg-primary-700 p-3 text-xs font-semibold text-white shadow-md max-w-[80%]">
-              Hey there! The linen co-ord is Rs. 2,999. Yes, delivery is available to Bangalore. What size do you need?
-            </div>
-            <div class="h-8 w-8 rounded-full bg-primary-50 border border-primary-100 shrink-0 flex items-center justify-center p-1.5 shadow-sm">
-              <img src="/voluchat_logo.svg" alt="VoluChat AI" class="w-full h-full object-contain" />
-            </div>
-          </div>
-
-          <div class="flex gap-2">
-            <img src="/buyer_avatar.webp" alt="Buyer Avatar" class="h-8 w-8 rounded-full object-cover shrink-0 shadow-sm border border-stone-100" />
-            <div class="rounded-2xl bg-stone-100 p-3 text-xs font-medium text-stone-800 shadow-sm max-w-[80%]">
-              Perfect, Size M please. Address is Indiranagar, Bangalore 560038.
-            </div>
-          </div>
-
-          <div class="flex gap-2 justify-end">
-            <div class="rounded-2xl bg-primary-700 p-3 text-xs font-semibold text-white shadow-md max-w-[80%]">
-              Great. I am preparing a WhatsApp handoff with the product, Size M, delivery area, and your payment question for the team.
-            </div>
-            <div class="h-8 w-8 rounded-full bg-primary-50 border border-primary-100 shrink-0 flex items-center justify-center p-1.5 shadow-sm">
-              <img src="/voluchat_logo.svg" alt="VoluChat AI" class="w-full h-full object-contain" />
-            </div>
-          </div>
+      <!-- Shopper Question Click Area -->
+      <div class="mb-10 text-center">
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400/90 mb-4">
+          Click a shopper question preset to simulate the search:
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          {queryPresets.map((preset, index) => (
+            <button
+              id={`btn-${preset.id}`}
+              class={`preset-btn px-4 py-3 rounded-xl text-xs font-bold border transition-all duration-300 hover:scale-[1.03] hover:shadow-md cursor-pointer ${
+                index === 0
+                  ? "bg-stone-950 border-stone-950 text-white shadow-lg ring-1 ring-stone-900/50"
+                  : "bg-white border-stone-200 text-stone-600 hover:bg-stone-50 hover:text-stone-950"
+              }`}
+              data-target={preset.id}
+            >
+              {preset.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      <!-- Right: WhatsApp Structured Handoff -->
-      <div class="glass-panel-premium rounded-3xl p-8 shadow-2xl relative border-emerald-500/30 hover:scale-[1.01] hover:shadow-emerald-500/5 hover:border-emerald-500/50 transition-all duration-500 group/wa">
-        <div class="absolute inset-0 bg-emerald-500/[0.02] rounded-3xl pointer-events-none"></div>
+      <!-- Main Columns: Chat Mockup Left & Search Engine Output Right -->
+      <div class="grid gap-8 lg:grid-cols-12 items-stretch">
         
-        <div class="text-center border-b border-stone-100 pb-4 mb-6">
-          <div class="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-600 group-hover/wa:text-emerald-700 transition-colors">WhatsApp Sales Handoff</div>
-          <div class="text-xs font-semibold text-stone-900 mt-1">Pre-filled Order Summary</div>
+        <!-- Left: Instagram DM Parser View -->
+        <div class="lg:col-span-6 flex flex-col justify-between rounded-[2rem] border border-stone-200/50 bg-stone-50/50 p-6 shadow-inner min-h-[320px]">
+          <div>
+            <div class="border-b border-stone-200 pb-3.5 mb-4 flex items-center justify-between">
+              <span class="mini-label">Shopper Input (DM)</span>
+              <span class="h-2 w-2 rounded-full bg-stone-400 animate-pulse"></span>
+            </div>
+            
+            <div class="flex gap-3">
+              <div class="h-8 w-8 rounded-full bg-white border border-stone-200 shrink-0 overflow-hidden flex items-center justify-center font-bold text-[10px] text-stone-500 shadow-sm">
+                S
+              </div>
+              <div class="flex-1">
+                <div id="shopper-bubble" class="rounded-2xl bg-white border border-stone-200 px-4 py-3 text-xs font-semibold text-stone-800 shadow-sm leading-relaxed transition-all duration-300">
+                  {queryPresets[0].shopperText}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Parser Panel -->
+          <div class="mt-8 pt-5 border-t border-stone-200">
+            <div class="text-[9px] font-bold text-stone-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5 text-stone-750 animate-spin" id="spinner-icon" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>
+              <span>AI Token Extraction</span>
+            </div>
+            <div id="parser-rows" class="space-y-2 transition-all duration-300">
+              {queryPresets[0].parsedFilters.map((filter) => (
+                <div class="flex items-center justify-between rounded-xl bg-stone-100/80 border border-stone-200/50 px-3.5 py-2.5 text-[10px] font-mono text-stone-700 shadow-sm">
+                  <span>{filter.key}:</span>
+                  <span class="font-bold text-stone-900 bg-white border border-stone-200/80 px-2 py-0.5 rounded-lg shadow-sm">{filter.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div class="space-y-4">
-          <!-- Structured Fields -->
-          <div class="bg-white border border-stone-100 rounded-2xl p-4 shadow-sm flex items-center justify-between hover:scale-[1.03] hover:border-primary-100 hover:shadow-md transition-all duration-300">
-            <div>
-              <div class="text-[9px] font-semibold uppercase tracking-wider text-stone-400">Product Interest</div>
-              <div class="text-sm font-semibold text-stone-900 mt-0.5">Linen co-ord set</div>
+        <!-- Right: Catalog Search Output -->
+        <div class="lg:col-span-6 flex flex-col justify-between rounded-[2rem] border border-stone-200/50 bg-white p-6 shadow-sm min-h-[320px]">
+          <div>
+            <div class="border-b border-stone-200 pb-3.5 mb-4 flex items-center justify-between">
+              <span class="mini-label">Inventory Engine</span>
+              <div class="flex items-center gap-1.5 bg-stone-50 border border-stone-200/60 px-2 py-0.5 rounded-lg shadow-sm">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.6)] animate-pulse"></span>
+                <span class="text-[8px] font-mono font-bold text-stone-600 uppercase tracking-widest">Catalog Synced</span>
+              </div>
             </div>
-            <span class="text-xs font-bold text-stone-600">Rs. 2,999</span>
+
+            <!-- Match Output Card -->
+            <div id="match-card-container" class="space-y-4 transition-all duration-300">
+              {queryPresets[0].matches.map((item) => (
+                <div class="flex items-center gap-4 bg-stone-50/50 border border-stone-200/50 p-4.5 rounded-2xl shadow-sm hover:scale-[1.01] hover:border-stone-300 hover:bg-white hover:shadow-md transition-all duration-300">
+                  <img src={item.image} alt={item.name} class="h-14 w-14 rounded-xl border border-stone-200 object-contain bg-white p-1 shadow-sm shrink-0" />
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-bold text-stone-950">{item.name}</p>
+                    <p class="text-xs text-stone-500 font-bold mt-1">{item.price} • {item.stock}</p>
+                  </div>
+                  <span class={`rounded-xl px-3.5 py-1.5 text-[10px] font-bold tracking-wide shrink-0 border ${
+                    item.status === "Available"
+                      ? "bg-stone-950 border-stone-950 text-white"
+                      : item.status === "Low Stock"
+                      ? "bg-amber-50 border-amber-200 text-amber-800"
+                      : "bg-stone-100 border-stone-200 text-stone-400"
+                  }`}>
+                    {item.status}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-white border border-stone-100 rounded-2xl p-4 shadow-sm hover:scale-[1.03] hover:border-primary-100 hover:shadow-md transition-all duration-300">
-              <div class="text-[9px] font-semibold uppercase tracking-wider text-stone-400">Selected size</div>
-              <div class="text-sm font-semibold text-stone-900 mt-0.5">Size M</div>
+          <!-- Sandbox CTA Handoff Status -->
+          <div class="mt-8 pt-5 border-t border-stone-150 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="text-[9px] font-bold text-stone-400 uppercase tracking-wider">Handoff ready status</span>
+              <div class="flex items-center gap-2 mt-1" id="handoff-status-container">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" id="handoff-dot"></span>
+                <span class="text-xs font-bold text-stone-900" id="handoff-status">Ready for WhatsApp Handoff</span>
+              </div>
             </div>
-            <div class="bg-white border border-stone-100 rounded-2xl p-4 shadow-sm hover:scale-[1.03] hover:border-primary-100 hover:shadow-md transition-all duration-300">
-              <div class="text-[9px] font-semibold uppercase tracking-wider text-stone-400">Quantity</div>
-              <div class="text-sm font-semibold text-stone-900 mt-0.5">1 item</div>
-            </div>
-          </div>
-
-          <div class="bg-white border border-stone-100 rounded-2xl p-4 shadow-sm hover:scale-[1.02] hover:border-primary-100 hover:shadow-md transition-all duration-300">
-            <div class="text-[9px] font-semibold uppercase tracking-wider text-stone-400">Shipping Address</div>
-            <div class="text-xs font-semibold text-stone-800 mt-1">Indiranagar, Bangalore — 560038</div>
-          </div>
-
-          <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 shadow-sm flex items-center justify-between hover:scale-[1.02] hover:border-emerald-200 hover:shadow-md transition-all duration-300">
-            <div>
-              <div class="text-[9px] font-semibold uppercase tracking-wider text-emerald-600">Handoff Action</div>
-              <div class="text-xs font-semibold text-emerald-800 mt-0.5">Staff confirms shade, payment, and dispatch</div>
-            </div>
-            <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
+            <a href="/contact" class="btn-primary px-4 py-2.5 text-[11px] rounded-xl cursor-pointer">
+              Test on your store
+            </a>
           </div>
         </div>
+
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- Client Side Interactive Controller -->
+<script define:vars={{ queryPresets }}>
+  const presetBtns = document.querySelectorAll('.preset-btn');
+  const shopperBubble = document.getElementById('shopper-bubble');
+  const parserRows = document.getElementById('parser-rows');
+  const matchCardContainer = document.getElementById('match-card-container');
+  const spinnerIcon = document.getElementById('spinner-icon');
+  const handoffStatus = document.getElementById('handoff-status');
+  const handoffDot = document.getElementById('handoff-dot');
+
+  presetBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle button active classes
+      presetBtns.forEach(b => {
+        b.className = 'preset-btn px-4 py-3 rounded-xl text-xs font-bold border transition-all duration-300 hover:scale-[1.03] hover:shadow-md cursor-pointer bg-white border-stone-200 text-stone-600 hover:bg-stone-50 hover:text-stone-950';
+      });
+      btn.className = 'preset-btn px-4 py-3 rounded-xl text-xs font-bold border transition-all duration-300 hover:scale-[1.03] hover:shadow-md cursor-pointer bg-stone-950 border-stone-950 text-white shadow-lg ring-1 ring-stone-900/50';
+
+      const targetId = btn.getAttribute('data-target');
+      const preset = queryPresets.find(p => p.id === targetId);
+
+      if (!preset) return;
+
+      // Show spinner and fade out content to simulate real-time AI API parsing
+      if (spinnerIcon) spinnerIcon.style.display = 'inline-block';
+      if (parserRows) parserRows.style.opacity = '0.35';
+      if (matchCardContainer) matchCardContainer.style.opacity = '0.35';
+
+      setTimeout(() => {
+        // Set Shopper Text
+        if (shopperBubble) {
+          shopperBubble.textContent = preset.shopperText;
+        }
+
+        // Set Parser Filters
+        if (parserRows) {
+          parserRows.innerHTML = preset.parsedFilters.map(filter => `
+            <div class="flex items-center justify-between rounded-xl bg-stone-100/80 border border-stone-200/50 px-3.5 py-2.5 text-[10px] font-mono text-stone-700 shadow-sm">
+              <span>${filter.key}:</span>
+              <span class="font-bold text-stone-900 bg-white border border-stone-200/80 px-2 py-0.5 rounded-lg shadow-sm">${filter.value}</span>
+            </div>
+          `).join('');
+          parserRows.style.opacity = '1';
+        }
+
+        // Set Catalog Matches
+        if (matchCardContainer) {
+          matchCardContainer.innerHTML = preset.matches.map(item => `
+            <div class="flex items-center gap-4 bg-stone-50/50 border border-stone-200/50 p-4.5 rounded-2xl shadow-sm hover:scale-[1.01] hover:border-stone-300 hover:bg-white hover:shadow-md transition-all duration-300">
+              <img src="${item.image}" alt="${item.name}" class="h-14 w-14 rounded-xl border border-stone-200 object-contain bg-white p-1 shadow-sm shrink-0" />
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-bold text-stone-950">${item.name}</p>
+                <p class="text-xs text-stone-500 font-bold mt-1">${item.price} • ${item.stock}</p>
+              </div>
+              <span class="rounded-xl px-3.5 py-1.5 text-[10px] font-bold tracking-wide shrink-0 border ${
+                item.status === 'Available'
+                  ? 'bg-stone-950 border-stone-950 text-white'
+                  : item.status === 'Low Stock'
+                  ? 'bg-amber-50 border-amber-200 text-amber-800'
+                  : 'bg-stone-100 border-stone-200 text-stone-400'
+              }">
+                ${item.status}
+              </span>
+            </div>
+          `).join('');
+          matchCardContainer.style.opacity = '1';
+        }
+
+        // Hide spinner
+        if (spinnerIcon) spinnerIcon.style.display = 'none';
+
+        // Adjust Handoff Action Text
+        if (handoffStatus) {
+          if (preset.matches[0].status === 'Sold Out') {
+            handoffStatus.textContent = 'Catalog Sold Out: proposed styling alternative';
+            handoffStatus.className = 'text-xs font-bold text-stone-500';
+            if (handoffDot) {
+              handoffDot.className = 'w-2 h-2 rounded-full bg-stone-300 animate-pulse';
+            }
+          } else if (preset.matches[0].status === 'Low Stock') {
+            handoffStatus.textContent = 'Low Stock Alert: order priority handoff ready';
+            handoffStatus.className = 'text-xs font-bold text-amber-700';
+            if (handoffDot) {
+              handoffDot.className = 'w-2 h-2 rounded-full bg-amber-500 animate-pulse';
+            }
+          } else {
+            handoffStatus.textContent = 'Ready for WhatsApp Handoff';
+            handoffStatus.className = 'text-xs font-bold text-stone-900';
+            if (handoffDot) {
+              handoffDot.className = 'w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
+            }
+          }
+        }
+
+      }, 450);
+    });
+  });
+</script>

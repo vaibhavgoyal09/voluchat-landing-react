@@ -1,118 +1,209 @@
 ---
-const transformations = [
+const frictionPoints = [
   {
-    title: "Fast First Replies",
-    frictionTitle: "Hot comments wait too long",
-    friction: "A shopper asks for price or size, but your team is packing orders or answering older WhatsApp chats.",
-    flowTitle: "Useful DM replies while interest is fresh",
-    flow: "VoluChat starts the conversation, answers the basics, and keeps the buyer moving.",
-    icon: "clock",
-    badge: "Response"
+    num: "01",
+    issue: "Comments & DMs left waiting",
+    desc: "A shopper asks for price or size while your team is busy packing orders. By the time you reply, the impulse interest has cooled down."
   },
   {
-    title: "Catalog Help",
-    frictionTitle: "Manual product matching",
-    friction: "Staff scrolls through posts, highlights, and spreadsheets to identify the exact outfit a buyer wants.",
-    flowTitle: "Product context ready for staff",
-    flow: "VoluChat checks catalog details such as style, size, shade, availability, and delivery area.",
-    icon: "search",
-    badge: "Catalog"
+    num: "02",
+    issue: "Manual catalog double-entry",
+    desc: "Staff has to scroll through endless posts, highlights, and excel sheets to check if a specific satin kurta is in stock or matches the size."
   },
   {
-    title: "Clean Handoff",
-    frictionTitle: "Repeated order questions",
-    friction: "The same size, color, address, COD, and payment questions get asked again after the buyer reaches WhatsApp.",
-    flowTitle: "WhatsApp starts with the basics done",
-    flow: "Your team receives a clear buyer summary and keeps final confirmation in WhatsApp.",
-    icon: "zap",
-    badge: "Handoff"
+    num: "03",
+    issue: "Order questions repeat on WhatsApp",
+    desc: "Even after reaching WhatsApp, you spend hours re-asking for size, color, shipping address, and delivery PIN codes manually."
+  }
+];
+
+interface ChatMockup {
+  type: "chat";
+  lines: Array<{ sender: string; text: string }>;
+}
+
+interface CatalogMockup {
+  type: "catalog";
+  name: string;
+  price: string;
+  status: string;
+  img: string;
+}
+
+interface TicketMockup {
+  type: "ticket";
+  items: Array<{ label: string; val: string }>;
+}
+
+interface FlowCard {
+  badge: string;
+  title: string;
+  desc: string;
+  mockup: ChatMockup | CatalogMockup | TicketMockup;
+}
+
+const flowCards: FlowCard[] = [
+  {
+    badge: "Always Online Cover",
+    title: "Instant coverage on every post & Reel",
+    desc: "VoluChat replies to comments and DMs instantly, ensuring shoppers get prices and sizing details the second interest is fresh.",
+    mockup: {
+      type: "chat",
+      lines: [
+        { sender: "buyer", text: "Is the ivory linen set available in Size S?" },
+        { sender: "voluchat", text: "Yes, Size S is available. Ready to sync size M & L too. Can I sync this to WhatsApp?" }
+      ]
+    }
+  },
+  {
+    badge: "Synced Catalog",
+    title: "Zero-effort database matching",
+    desc: "Shoppers send screenshots or write descriptions. VoluChat queries your live Meta inventory in 0.8 seconds to verify stock and price.",
+    mockup: {
+      type: "catalog",
+      name: "Satin Kurta Set",
+      price: "Rs. 4,500",
+      status: "In Stock",
+      img: "/satin_kurta_thumb.png"
+    }
+  },
+  {
+    badge: "Clean Handoff",
+    title: "WhatsApp starts with order details done",
+    desc: "VoluChat pre-collects sizing, shade choice, and shipping PIN codes, passing a neat order summary ticket to your WhatsApp team.",
+    mockup: {
+      type: "ticket",
+      items: [
+        { label: "Product", val: "Linen co-ord" },
+        { label: "Size Selected", val: "Size M" },
+        { label: "PIN Code", val: "Pune 411014" }
+      ]
+    }
   }
 ];
 ---
 
-<section id="transformation" class="relative overflow-hidden py-28 md:py-36">
+<section id="transformation" class="section-pad relative overflow-hidden">
   <div class="absolute inset-0 -z-10 pointer-events-none">
-    <div class="sect-grid opacity-15"></div>
-    <div class="absolute -right-44 top-32 h-[32rem] w-[32rem] rounded-full bg-primary-400/10 blur-3xl"></div>
-    <div class="absolute -left-44 bottom-32 h-[32rem] w-[32rem] rounded-full bg-stone-300/12 blur-3xl"></div>
+    <div class="absolute left-1/4 top-1/4 h-[30rem] w-[30rem] rounded-full bg-stone-300/10 blur-3xl"></div>
   </div>
 
-  <div class="mx-auto max-w-7xl px-6">
-    <div class="text-center max-w-3xl mx-auto mb-24">
-      <div class="mb-6 inline-flex items-center gap-2 rounded-lg border border-primary-200/70 bg-primary-50/70 px-4 py-1.5 text-xs font-semibold text-primary-800 shadow-sm backdrop-blur-md">
-        <span class="h-2 w-2 rounded-full bg-primary-600 shadow-[0_0_8px_rgba(51,141,115,0.42)]"></span>
-        <span>The boutique workload</span>
-      </div>
-      <h2 class="text-3xl font-heading font-semibold leading-[1.1] tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
-        The daily DM workload for Instagram boutiques.
-      </h2>
-      <p class="mt-6 text-lg font-semibold leading-relaxed text-stone-600 sm:text-xl">
-        Your team should not spend the day repeating price, size, color, COD, and delivery replies.
-      </p>
-    </div>
-
-    <div class="grid gap-8 md:grid-cols-3">
-      {transformations.map((item, index) => (
-        <div class={`glass-card-premium relative rounded-2xl p-8 shadow-xl flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl hover:border-primary-500/20 transition-all duration-500 group/card reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
-          <div>
-            <div class="flex items-center justify-between gap-4 mb-6">
-              <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-700 bg-primary-50/50 border border-primary-100/50 px-3 py-1 rounded-full">{item.badge}</span>
-              <span class="text-xs font-semibold text-stone-300">0{index + 1}</span>
-            </div>
-
-            <div class="flex items-center gap-3 mb-6">
-              <div class="grid h-12 w-12 place-items-center rounded-xl bg-primary-50 border border-primary-100 text-primary-700 shadow-sm shrink-0">
-                {item.icon === "clock" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>}
-                {item.icon === "search" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>}
-                {item.icon === "zap" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
-              </div>
-              <h3 class="font-heading text-xl font-semibold tracking-tight text-stone-950">{item.title}</h3>
-            </div>
-
-            <div class="mb-5 p-4 rounded-2xl bg-rose-50/40 border border-rose-100/50 hover:bg-rose-50/80 hover:border-rose-200 transition-all duration-300">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[9px] font-semibold uppercase tracking-wider text-rose-500">Old way</span>
-                <span class="text-[9px] font-semibold uppercase tracking-wider text-rose-600 bg-rose-100/30 px-2 py-0.5 rounded-md">Friction</span>
-              </div>
-              <div class="space-y-1.5">
-                <div class="flex items-start gap-2 text-rose-950 text-xs font-semibold leading-tight">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-rose-500 shrink-0 mt-0.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                  <span>{item.frictionTitle}</span>
-                </div>
-                <div class="text-[11px] font-medium text-rose-800/80 leading-normal pl-5.5">
-                  {item.friction}
-                </div>
-              </div>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-emerald-50/40 border border-emerald-100/50 hover:bg-emerald-50/80 hover:border-emerald-200 transition-all duration-300">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[9px] font-semibold uppercase tracking-wider text-emerald-600">VoluChat way</span>
-                <span class="text-[9px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100/30 px-2 py-0.5 rounded-md">Prepared</span>
-              </div>
-              <div class="space-y-1.5">
-                <div class="flex items-start gap-2 text-emerald-950 text-xs font-semibold leading-tight">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600 shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>{item.flowTitle}</span>
-                </div>
-                <div class="text-[11px] font-medium text-emerald-800/80 leading-normal pl-5.5">
-                  {item.flow}
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="page-shell">
+    <div class="grid gap-12 lg:grid-cols-12 items-start">
+      
+      <!-- Left Column: Sticky Friction Description -->
+      <div class="lg:col-span-5 lg:sticky lg:top-28 space-y-8 reveal-on-scroll">
+        <div>
+          <p class="section-eyebrow">The boutique workload</p>
+          <h2 class="text-3xl font-heading font-semibold leading-[1.08] text-stone-950 sm:text-5xl mt-3">
+            Why DM sales feel so slow <span class="text-stone-400 font-normal italic">& exhausting</span>.
+          </h2>
+          <p class="section-copy mt-5">
+            Fashion boutiques shouldn't spend the day manually re-typing price lists, size charts, shipping rates, and address forms for every single Instagram commenter.
+          </p>
         </div>
-      ))}
-    </div>
 
-    <div class="mt-16 text-center">
-      <div class="inline-flex flex-col sm:flex-row items-center gap-5 justify-center rounded-3xl sm:rounded-full border border-white/80 bg-white/50 p-4 sm:px-8 sm:py-4 shadow-xl backdrop-blur-xl w-full sm:w-auto">
-        <span class="text-sm font-bold text-stone-700">Want to test this on your boutique DMs?</span>
-        <a href="/contact" class="group inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-950 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-primary-700/15 transition hover:bg-primary-700 hover:scale-[1.02] w-full sm:w-auto">
-          Start 14-day free trial
-          <span class="h-2 w-2 rounded-full bg-white"></span>
-        </a>
+        <!-- Vertical Friction Stepper -->
+        <div class="space-y-6 pt-6 border-t border-stone-200/80">
+          {frictionPoints.map((point) => (
+            <div class="flex gap-4 group">
+              <span class="font-mono text-xs font-bold text-stone-600 bg-white border border-stone-200/80 rounded-xl h-9 w-9 shrink-0 flex items-center justify-center shadow-sm group-hover:border-stone-300 transition-colors">
+                {point.num}
+              </span>
+              <div>
+                <h4 class="text-sm font-bold text-stone-900 group-hover:text-stone-950 transition-colors">{point.issue}</h4>
+                <p class="text-xs text-stone-500 mt-1.5 leading-relaxed font-medium">{point.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      <!-- Right Column: Staggered Premium Flow Cards -->
+      <div class="lg:col-span-7 space-y-8">
+        <div class="text-[10px] font-bold uppercase tracking-[0.22em] text-stone-700 bg-stone-100/70 border border-stone-200/80 px-4.5 py-2 rounded-xl inline-block mb-2 backdrop-blur-md shadow-sm">
+          The Flow: Powered by VoluChat
+        </div>
+
+        {flowCards.map((card, index) => (
+          <article class={`glass-card-premium rounded-[2.25rem] p-6 md:p-8 hover:-translate-y-1.5 hover:shadow-2xl hover:border-white transition-all duration-500 group reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
+            <div class="grid gap-6 md:grid-cols-[1.1fr_0.9fr] items-center">
+              
+              <!-- Content -->
+              <div class="space-y-4">
+                <span class="chip">{card.badge}</span>
+                <h3 class="font-heading text-xl font-semibold text-stone-950 leading-tight">
+                  {card.title}
+                </h3>
+                <p class="text-xs font-semibold leading-relaxed text-stone-600">
+                  {card.desc}
+                </p>
+              </div>
+
+              <!-- Interactive Mockup Inside Card -->
+              <div class="rounded-2xl border border-stone-200/50 bg-stone-50/50 p-4.5 shadow-inner">
+                {card.mockup.type === "chat" && (
+                  <div class="space-y-3">
+                    <div class="flex gap-2">
+                      <div class="h-6 w-6 rounded-full bg-stone-200 shrink-0 border border-stone-300 overflow-hidden flex items-center justify-center font-bold text-[8px] text-stone-500">B</div>
+                      <div class="max-w-[80%] rounded-2xl bg-white border border-stone-200/80 px-3 py-2 text-[10px] font-semibold text-stone-850 shadow-sm leading-normal">
+                        {card.mockup.lines![0].text}
+                      </div>
+                    </div>
+                    <div class="flex justify-end gap-2">
+                      <div class="max-w-[80%] rounded-2xl bg-stone-950 px-3 py-2 text-[10px] font-semibold text-white leading-normal shadow-sm border border-stone-900">
+                        {card.mockup.lines![1].text}
+                      </div>
+                      <div class="h-6 w-6 rounded-full bg-white border border-stone-200 flex items-center justify-center shrink-0 shadow-sm p-1">
+                        <img src="/voluchat_logo.svg" alt="VoluChat AI" class="h-full w-full object-contain" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {card.mockup.type === "catalog" && (
+                  <div class="flex items-center gap-3 bg-white border border-stone-200/80 p-3 rounded-xl shadow-md hover:scale-[1.02] transition-transform duration-300">
+                    <img src={card.mockup.img} alt={card.mockup.name} class="h-11 w-11 rounded-lg border border-stone-100 object-contain bg-stone-50 p-0.5" />
+                    <div class="flex-1 min-w-0">
+                      <p class="text-xs font-bold text-stone-900 truncate">{card.mockup.name}</p>
+                      <p class="text-[10px] text-stone-500 font-bold mt-0.5">{card.mockup.price}</p>
+                    </div>
+                    <span class="rounded-lg bg-emerald-50 border border-emerald-100 px-2 py-0.5 text-[9px] font-bold text-emerald-700 shrink-0">
+                      {card.mockup.status}
+                    </span>
+                  </div>
+                )}
+
+                {card.mockup.type === "ticket" && (
+                  <div class="space-y-1.5 font-mono text-[9px] bg-white border border-stone-200/80 rounded-xl p-3.5 shadow-sm">
+                    <div class="border-b border-stone-200 pb-1.5 flex justify-between text-stone-400 font-bold">
+                      <span>HANDOFF TICKET</span>
+                      <span class="text-stone-900 font-bold flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        READY
+                      </span>
+                    </div>
+                    {card.mockup.items?.map((it) => (
+                      <div class="flex justify-between py-0.5 border-b border-stone-100/50">
+                        <span class="text-stone-500">{it.label}:</span>
+                        <span class="font-bold text-stone-900">{it.val}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+    
+    <div class="mt-16 flex justify-center reveal-on-scroll">
+      <a href="/contact" class="btn-primary">
+        Start 14-day free trial
+      </a>
     </div>
   </div>
 </section>
