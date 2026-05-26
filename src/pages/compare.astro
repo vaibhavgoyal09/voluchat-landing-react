@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const seoTitle = "VoluChat vs Manychat, WATI, Interakt, respond.io, AiSensy, and Gallabox";
+const seoDescription = "Compare VoluChat with broad Instagram automation and WhatsApp inbox tools for Instagram-first fashion boutiques.";
+
+const competitors = [
+  {
+    name: "Manychat",
+    fit: "Broad Instagram, Messenger, and WhatsApp automation for teams that want a general automation builder.",
+    contrast: "VoluChat focuses on boutique catalog questions and WhatsApp-ready handoffs instead of broad campaign automation."
+  },
+  {
+    name: "WATI",
+    fit: "WhatsApp Business messaging, team inboxes, broadcasts, and support workflows.",
+    contrast: "VoluChat starts earlier in the buyer journey, inside Instagram comments and DMs."
+  },
+  {
+    name: "Interakt",
+    fit: "WhatsApp commerce, broadcasts, inbox workflows, and CRM-style follow-up.",
+    contrast: "VoluChat is built for Instagram boutique catalog conversations before the WhatsApp close."
+  },
+  {
+    name: "respond.io",
+    fit: "Multi-channel messaging, inbox routing, automation, and sales or support operations.",
+    contrast: "VoluChat keeps the first version tighter: Instagram product questions into a clean WhatsApp handoff."
+  },
+  {
+    name: "AiSensy",
+    fit: "WhatsApp campaigns, chatbots, templates, and Business API workflows.",
+    contrast: "VoluChat is not a generic WhatsApp inbox; it prepares boutique buyer context before staff steps in."
+  },
+  {
+    name: "Gallabox",
+    fit: "WhatsApp shared inbox, automation, campaigns, and customer conversation workflows.",
+    contrast: "VoluChat is narrower by design, centered on Instagram boutique catalog interest."
+  }
+];
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <Header />
+
+  <main class="pt-24 animate-page-entry opacity-0">
+    <section class="relative overflow-hidden py-28 md:py-32">
+      <div class="absolute inset-0 pointer-events-none -z-10">
+        <div class="sect-grid opacity-20"></div>
+        <div class="absolute left-1/2 top-20 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-blue-100/50 blur-[120px]"></div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
+            <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
+            <span>Comparison guide</span>
+          </div>
+          <h1 class="text-5xl font-heading font-black leading-[1.02] tracking-tight text-slate-950 sm:text-7xl">
+            Compare VoluChat with popular automation tools.
+          </h1>
+          <p class="mx-auto mt-7 max-w-3xl text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
+            Manychat, WATI, Interakt, respond.io, AiSensy, and Gallabox can be strong options. VoluChat is built for a narrower job: Instagram boutique catalog conversations that become WhatsApp-ready buyer handoffs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[0.8fr_1.2fr]">
+        <aside class="glass-panel-premium h-fit rounded-[2rem] p-8 lg:sticky lg:top-32">
+          <p class="text-[11px] font-black uppercase tracking-[0.2em] text-blue-600">VoluChat is focused</p>
+          <h2 class="mt-4 text-3xl font-heading font-black tracking-tight text-slate-950">
+            Use it when Instagram is where purchase intent starts.
+          </h2>
+          <p class="mt-5 text-sm font-semibold leading-relaxed text-slate-600">
+            VoluChat is not trying to replace every chat platform. It helps fashion boutiques answer Instagram product questions, collect buyer details, and send cleaner context to WhatsApp.
+          </p>
+          <a href="/contact" class="mt-8 inline-flex w-full items-center justify-center rounded-full bg-zinc-950 px-6 py-4 text-sm font-black text-white transition hover:bg-blue-600">
+            Start 14-day free trial
+          </a>
+        </aside>
+
+        <div class="space-y-6">
+          {competitors.map((item) => (
+            <article class="glass-card-premium rounded-[2rem] p-7 shadow-xl">
+              <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                <div>
+                  <p class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">Alternative</p>
+                  <h3 class="mt-2 text-2xl font-heading font-black text-slate-950">{item.name}</h3>
+                </div>
+                <a href="/contact" class="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-xs font-black text-slate-900 transition hover:bg-white">
+                  Try VoluChat
+                </a>
+              </div>
+              <div class="mt-6 grid gap-4 md:grid-cols-2">
+                <div class="rounded-2xl border border-slate-100 bg-slate-50/70 p-5">
+                  <p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Often useful for</p>
+                  <p class="mt-3 text-sm font-semibold leading-relaxed text-slate-600">{item.fit}</p>
+                </div>
+                <div class="rounded-2xl border border-blue-100 bg-blue-50/60 p-5">
+                  <p class="text-[10px] font-black uppercase tracking-[0.18em] text-blue-600">VoluChat angle</p>
+                  <p class="mt-3 text-sm font-semibold leading-relaxed text-slate-700">{item.contrast}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

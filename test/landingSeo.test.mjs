@@ -28,9 +28,9 @@ const [
 ]);
 
 test('homepage SEO metadata matches the WhatsApp-ready chat positioning', () => {
-  assert.match(indexSource, /const seoTitle = "VoluChat \| Turn Instagram DMs into WhatsApp-ready chats";/);
-  assert.match(indexSource, /const seoDescription = "VoluChat replies to Instagram buyers, finds catalog products, and prepares WhatsApp-ready chats so your staff can close orders faster.";/);
-  assert.match(indexSource, /const seoKeywords = "Instagram DMs to WhatsApp, WhatsApp-ready chats, Instagram DM automation, AI DM helpdesk, Instagram store replies, product search, WhatsApp handoff";/);
+  assert.match(indexSource, /const seoTitle = "VoluChat \| Instagram DMs to WhatsApp-ready chats for boutiques";/);
+  assert.match(indexSource, /const seoDescription = "VoluChat helps fashion boutiques reply to Instagram buyers, answer product questions, collect details, and prepare WhatsApp-ready handoffs during a 14-day free trial.";/);
+  assert.match(indexSource, /const seoKeywords = "Instagram DM automation for boutiques, fashion boutique WhatsApp automation, Instagram DMs to WhatsApp, WhatsApp-ready chats, AI DM helpdesk, Instagram store replies, product catalog search, WhatsApp handoff";/);
   assert.match(indexSource, /<Layout\s+title={seoTitle}\s+description={seoDescription}\s+keywords={seoKeywords}/);
 });
 
@@ -48,9 +48,10 @@ test('homepage structured data and FAQ copy reinforce the new landing-page promi
   assert.match(indexSource, /"@type": "WebSite"/);
   assert.match(indexSource, /"@type": "Organization"/);
   assert.match(indexSource, /"@type": "SiteNavigationElement"/);
-  assert.match(indexSource, /"name": "How does VoluChat turn Instagram DMs into WhatsApp-ready chats\?"/);
-  assert.match(faqSource, /question: "How does VoluChat turn Instagram DMs into WhatsApp-ready chats\?"/);
-  assert.match(faqSource, /answer: "VoluChat replies to buyers in Instagram DM, answers repeat questions, finds products from your catalog, collects useful details, and prepares a WhatsApp-ready chat for your staff."/);
+  assert.match(indexSource, /"name": "How does VoluChat help fashion boutiques turn Instagram DMs into WhatsApp-ready chats\?"/);
+  assert.match(faqSource, /question: "How does VoluChat help fashion boutiques turn Instagram DMs into WhatsApp-ready chats\?"/);
+  assert.match(faqSource, /answer: "VoluChat replies to shoppers in Instagram DM, answers repeat boutique questions, finds products from your catalog, collects useful details, and prepares a WhatsApp-ready chat for your staff."/);
+  assert.match(faqSource, /question: "How is VoluChat different from Manychat, WATI, Interakt, respond.io, AiSensy, or Gallabox\?"/);
 });
 
 test('public crawl hints expose the main pages Google can consider for sitelinks', () => {
@@ -58,13 +59,14 @@ test('public crawl hints expose the main pages Google can consider for sitelinks
   assert.match(sitemapSource, /<loc>https:\/\/voluchat\.com\/<\/loc>/);
   assert.match(sitemapSource, /<loc>https:\/\/voluchat\.com\/features\/<\/loc>/);
   assert.match(sitemapSource, /<loc>https:\/\/voluchat\.com\/pricing\/<\/loc>/);
+  assert.match(sitemapSource, /<loc>https:\/\/voluchat\.com\/compare\/<\/loc>/);
   assert.match(sitemapSource, /<loc>https:\/\/voluchat\.com\/about\/<\/loc>/);
   assert.match(sitemapSource, /<loc>https:\/\/voluchat\.com\/blog\/<\/loc>/);
   assert.match(sitemapSource, /<loc>https:\/\/voluchat\.com\/contact\/<\/loc>/);
 });
 
 test('web app manifest avoids the old autopilot positioning', () => {
-  assert.match(manifestSource, /"name": "VoluChat - Instagram DMs to WhatsApp-ready chats"/);
-  assert.match(manifestSource, /"description": "Reply to Instagram buyers, find catalog products, and prepare WhatsApp-ready chats for your sales staff."/);
+  assert.match(manifestSource, /"name": "VoluChat - Instagram DMs to WhatsApp-ready boutique chats"/);
+  assert.match(manifestSource, /"description": "Reply to boutique shoppers, find catalog products, and prepare WhatsApp-ready chats for your sales staff."/);
   assert.doesNotMatch(manifestSource, /autopilot|paying customers/i);
 });

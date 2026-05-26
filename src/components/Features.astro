@@ -2,28 +2,28 @@
 const features = [
   {
     title: "24/7 Smart Cover",
-    description: "Never keep a buyer waiting. VoluChat instantly replies to comments and DMs, keeping the excitement alive day or night.",
+    description: "Never keep a shopper waiting. VoluChat replies to comments and DMs while your boutique team is busy.",
     stat: "Always online",
     badge: "Automated engagement"
   },
   {
     title: "AI Catalog Search",
-    description: "Buyers can describe a product or send a screenshot. VoluChat uses vector search to match it against your catalog in seconds.",
+    description: "Buyers can describe an outfit, shade, size, or screenshot. VoluChat matches it against your boutique catalog.",
     stat: "Vector search",
     badge: "Catalog discovery"
   },
   {
-    title: "Lead Qualification",
-    description: "VoluChat collects size, color, quantity, and delivery address before passing the chat to WhatsApp, pre-qualifying the lead.",
+    title: "Buyer Details Collected",
+    description: "VoluChat collects size, color, quantity, delivery, and offer details before passing the chat to WhatsApp.",
     stat: "Ready to close",
     badge: "Zero repetitive typing"
   }
 ];
 
 const matches = [
-  { name: "White Runner", image: "/white_runner_thumb.webp", score: "98% Match" },
-  { name: "Grey Runner", image: "/grey_runner_thumb.webp", score: "84% Match" },
-  { name: "Black Trainer", image: "/black_trainer_thumb.webp", score: "72% Match" }
+  { name: "Linen co-ord", image: "/white_runner_thumb.webp", score: "Best match" },
+  { name: "Satin kurta set", image: "/grey_runner_thumb.webp", score: "Close match" },
+  { name: "Denim overshirt", image: "/grey_runner_thumb.webp", score: "Related style" }
 ];
 ---
 
@@ -39,14 +39,14 @@ const matches = [
       <!-- Standardized Glowing Badge -->
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
         <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
-        <span>AI Capabilities</span>
+        <span>AI helpdesk capabilities for boutique sellers</span>
       </div>
       <!-- Consistent Responsive Heading -->
       <h2 class="text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-        Automate the first layer of Instagram DM sales.
+        The first layer of boutique DM work, handled before staff steps in.
       </h2>
       <p class="mx-auto mt-6 text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
-        Our AI DM helpdesk takes care of routine catalog queries and details so your staff can focus purely on closing sales on WhatsApp.
+        VoluChat takes care of routine catalog questions and buyer details so your staff can focus on real conversations in WhatsApp.
       </p>
     </div>
 
@@ -62,7 +62,7 @@ const matches = [
           </div>
 
           <h3 class="font-heading text-2xl font-black tracking-tight text-slate-950 mb-3">24/7 Smart Cover</h3>
-          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">Never keep a buyer waiting. VoluChat instantly replies to comments and DMs, keeping the excitement alive day or night.</p>
+          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">Never keep a shopper waiting. VoluChat replies to comments and DMs while your boutique team is busy.</p>
         </div>
 
         <!-- Micro-UI: DM Mockup -->
@@ -70,12 +70,12 @@ const matches = [
           <div class="flex gap-2">
             <img src="/buyer_avatar.webp" alt="Buyer Avatar" class="h-6 w-6 rounded-full object-cover shrink-0 shadow-sm border border-slate-100" />
             <div class="rounded-2xl bg-white border border-slate-100 p-2.5 text-[11px] font-medium text-slate-800 shadow-sm max-w-[80%]">
-              Hi, is the white sneaker in stock in size 9?
+              Hi, is the sage co-ord set available in Size M?
             </div>
           </div>
           <div class="flex gap-2 justify-end">
             <div class="rounded-2xl bg-blue-600 p-2.5 text-[11px] font-semibold text-white shadow-md max-w-[80%]">
-              Yes, white runner sneaker is available in size 9! ⚡️ Shipping is free today. Should I secure it for you?
+              Yes, Size M is available. Delivery is possible to your PIN code. Should I send this to WhatsApp?
             </div>
             <div class="h-6 w-6 rounded-full bg-blue-50 border border-blue-100 shrink-0 flex items-center justify-center p-1 shadow-sm">
               <img src="/voluchat_logo.svg" alt="VoluChat AI" class="w-full h-full object-contain" />
@@ -93,7 +93,7 @@ const matches = [
           </div>
 
           <h3 class="font-heading text-2xl font-black tracking-tight text-slate-950 mb-3">AI Product Matching</h3>
-          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">Buyers can describe a product or send a screenshot. VoluChat matches descriptions and photos to your catalog in seconds.</p>
+          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">Buyers can describe a product or send a screenshot. VoluChat matches descriptions and photos to your boutique catalog.</p>
         </div>
 
         <!-- Micro-UI: Search Catalog Mockup -->
@@ -120,7 +120,7 @@ const matches = [
           </div>
 
           <h3 class="font-heading text-2xl font-black tracking-tight text-slate-950 mb-3">Buyer Details Collected</h3>
-          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">VoluChat automatically gathers sizing, color, and delivery address in the DM before passing the buyer to your team on WhatsApp for a smooth handoff.</p>
+          <p class="text-sm font-semibold leading-relaxed text-slate-600 mb-8">VoluChat gathers sizing, color, quantity, and delivery address in the DM before passing the buyer to your team on WhatsApp.</p>
         </div>
 
         <!-- Micro-UI: Structured Lead Handoff Card -->
@@ -129,11 +129,11 @@ const matches = [
           <div class="grid grid-cols-2 gap-2">
             <div class="bg-white border border-slate-100 p-2 rounded-xl shadow-sm text-center hover:scale-[1.03] hover:border-indigo-100 hover:shadow-md transition-all duration-300">
               <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">Size</div>
-              <div class="text-xs font-black text-slate-900 mt-0.5">UK 9</div>
+              <div class="text-xs font-black text-slate-900 mt-0.5">Size M</div>
             </div>
             <div class="bg-white border border-slate-100 p-2 rounded-xl shadow-sm text-center hover:scale-[1.03] hover:border-indigo-100 hover:shadow-md transition-all duration-300">
               <div class="text-[8px] font-black uppercase tracking-wider text-slate-400">Color</div>
-              <div class="text-xs font-black text-slate-900 mt-0.5">Classic White</div>
+              <div class="text-xs font-black text-slate-900 mt-0.5">Sage</div>
             </div>
             <div class="bg-white border border-slate-100 p-2.5 rounded-xl shadow-sm col-span-2 flex items-center justify-between hover:scale-[1.03] hover:border-emerald-100 hover:shadow-md transition-all duration-300">
               <div>

@@ -5,13 +5,12 @@ import test from 'node:test';
 const pageFiles = [
   'src/layouts/Layout.astro',
   'src/pages/about.astro',
+  'src/pages/compare.astro',
   'src/pages/features.astro',
   'src/pages/pricing.astro',
   'src/pages/contact.astro',
   'src/pages/blog/index.astro',
   'src/pages/blog/[slug].astro',
-  'src/pages/privacy.astro',
-  'src/pages/terms.astro',
 ];
 
 const sourceByFile = Object.fromEntries(
@@ -25,23 +24,37 @@ const sourceByFile = Object.fromEntries(
 
 const secondarySource = Object.values(sourceByFile).join('\n');
 
-test('secondary pages use the shoe-store Instagram to WhatsApp positioning', () => {
-  assert.match(sourceByFile['src/pages/features.astro'], /Features for Indian shoe stores/);
-  assert.match(sourceByFile['src/pages/pricing.astro'], /Founding-store pricing for shoe sellers/);
-  assert.match(sourceByFile['src/pages/contact.astro'], /Request a demo for your shoe store/);
-  assert.match(sourceByFile['src/pages/about.astro'], /Built for shoe stores selling through Instagram and WhatsApp/);
-  assert.match(sourceByFile['src/pages/blog/index.astro'], /Instagram and WhatsApp guides for shoe sellers/);
+test('secondary pages use the fashion-boutique Instagram to WhatsApp positioning', () => {
+  assert.match(sourceByFile['src/pages/features.astro'], /Features for Instagram fashion boutiques/);
+  assert.match(sourceByFile['src/pages/pricing.astro'], /14-day free trial for Instagram boutiques/);
+  assert.match(sourceByFile['src/pages/contact.astro'], /Start the 14-day trial for your boutique/);
+  assert.match(sourceByFile['src/pages/about.astro'], /Built for fashion boutiques selling through Instagram and WhatsApp/);
+  assert.match(sourceByFile['src/pages/blog/index.astro'], /Instagram and WhatsApp guides for boutique sellers/);
 });
 
 test('secondary pages avoid old broad SaaS positioning and unsupported proof', () => {
   assert.doesNotMatch(secondarySource, /massive growth|unlimited scale|high-growth D2C|scaling brand|social commerce workflow|future of social commerce/i);
   assert.doesNotMatch(secondarySource, /smart lead qualification|lead qualification|revenue growth tool|growth targets|metrics that drive your revenue/i);
   assert.doesNotMatch(secondarySource, /5M\+|98%|84%|<1s|100% Secure|first million|thousands of DMs/i);
-  assert.doesNotMatch(secondarySource, /handmade jewelry|Online fashion seller|Facebook DM automation|Instagram & Facebook DM automation/i);
+  assert.doesNotMatch(secondarySource, /first 10 stores only|fully compliant|highest level|Official Meta Tech Partner/i);
 });
 
-test('secondary page CTAs stay demo-first and shoe-store specific', () => {
-  assert.match(sourceByFile['src/pages/blog/[slug].astro'], /See how VoluChat works for your shoe store/);
-  assert.match(sourceByFile['src/pages/contact.astro'], /Shoe store details/);
-  assert.match(sourceByFile['src/layouts/Layout.astro'], /Instagram DMs into WhatsApp-ready chats|Instagram comments into WhatsApp orders for Indian shoe stores/);
+test('secondary page CTAs stay trial-first and boutique specific', () => {
+  assert.match(sourceByFile['src/pages/blog/[slug].astro'], /See how VoluChat works for your boutique/);
+  assert.match(sourceByFile['src/pages/contact.astro'], /Boutique details/);
+  assert.match(sourceByFile['src/layouts/Layout.astro'], /Instagram DMs into WhatsApp-ready chats for fashion boutiques|Instagram comments into WhatsApp-ready boutique chats/);
+});
+
+test('comparison page covers the approved competitor set without brittle pricing claims', () => {
+  const compareSource = sourceByFile['src/pages/compare.astro'];
+
+  assert.match(compareSource, /Manychat/);
+  assert.match(compareSource, /WATI/);
+  assert.match(compareSource, /Interakt/);
+  assert.match(compareSource, /respond\.io/);
+  assert.match(compareSource, /AiSensy/);
+  assert.match(compareSource, /Gallabox/);
+  assert.match(compareSource, /Instagram boutique catalog conversations/);
+  assert.match(compareSource, /not a generic WhatsApp inbox/);
+  assert.doesNotMatch(compareSource, /₹\d|\$\d|cheaper than|better than|#1|best/i);
 });

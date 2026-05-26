@@ -14,9 +14,9 @@ import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 
 const siteUrl = "https://voluchat.com";
-const seoTitle = "VoluChat | Turn Instagram DMs into WhatsApp-ready chats";
-const seoDescription = "VoluChat replies to Instagram buyers, finds catalog products, and prepares WhatsApp-ready chats so your staff can close orders faster.";
-const seoKeywords = "Instagram DMs to WhatsApp, WhatsApp-ready chats, Instagram DM automation, AI DM helpdesk, Instagram store replies, product search, WhatsApp handoff";
+const seoTitle = "VoluChat | Instagram DMs to WhatsApp-ready chats for boutiques";
+const seoDescription = "VoluChat helps fashion boutiques reply to Instagram buyers, answer product questions, collect details, and prepare WhatsApp-ready handoffs during a 14-day free trial.";
+const seoKeywords = "Instagram DM automation for boutiques, fashion boutique WhatsApp automation, Instagram DMs to WhatsApp, WhatsApp-ready chats, AI DM helpdesk, Instagram store replies, product catalog search, WhatsApp handoff";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -24,10 +24,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How does VoluChat turn Instagram DMs into WhatsApp-ready chats?",
+      "name": "How does VoluChat help fashion boutiques turn Instagram DMs into WhatsApp-ready chats?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VoluChat replies to buyers in Instagram DM, answers repeat questions, finds products from your catalog, collects useful details, and prepares a WhatsApp-ready chat for your staff."
+        "text": "VoluChat replies to shoppers in Instagram DM, answers repeat boutique questions, finds products from your catalog, collects useful details, and prepares a WhatsApp-ready chat for your staff."
       }
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       "name": "Can VoluChat find products from photos or buyer messages?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Buyers can describe what they want or send an image. VoluChat can use catalog data and vector search to find relevant product matches."
+        "text": "Yes. Shoppers can describe an outfit, ask for a shade, or send an image. VoluChat can use catalog data and vector search to find relevant product matches."
       }
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = {
       "name": "Does VoluChat replace my store staff?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. VoluChat handles the repetitive first layer of DM work so your staff can spend more time on buyers who are ready to close."
+        "text": "No. VoluChat handles the repetitive first layer of DM work so your staff can spend more time on shoppers who are ready to close."
       }
     },
     {
@@ -72,10 +72,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      "name": "How is VoluChat different from Manychat, WATI, Interakt, respond.io, AiSensy, or Gallabox?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Those tools are strong options for broad chat automation, WhatsApp inboxes, or customer support workflows. VoluChat is focused on Instagram boutique catalog conversations that prepare a clean WhatsApp handoff for staff."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do I need technical knowledge to use it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Founding stores get hands-on help connecting Instagram, adding catalog details, tuning replies, and setting up the WhatsApp handoff."
+        "text": "No. Boutique teams get hands-on help connecting Instagram, adding catalog details, tuning replies, and setting up the WhatsApp handoff during the 14-day trial."
       }
     }
   ]
@@ -121,19 +129,25 @@ const structuredData = [
       {
         "@type": "SiteNavigationElement",
         "position": 3,
+        "name": "Compare",
+        "url": `${siteUrl}/compare/`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 4,
         "name": "About",
         "url": `${siteUrl}/about/`
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 4,
+        "position": 5,
         "name": "Blog",
         "url": `${siteUrl}/blog/`
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 5,
-        "name": "Request Demo",
+        "position": 6,
+        "name": "Start Trial",
         "url": `${siteUrl}/contact/`
       }
     ]

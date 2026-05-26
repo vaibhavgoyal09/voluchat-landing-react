@@ -1,31 +1,31 @@
 ---
 const transformations = [
   {
-    title: "Instant 24/7 Response",
-    frictionTitle: "Staff away = ghosted buyers",
-    friction: "When staff sleeps or is busy, hot leads get no replies and purchase elsewhere.",
-    flowTitle: "Replies in under 2s, 24/7",
-    flow: "Every comment and message is qualified instantly, holding buyer attention.",
+    title: "Fast First Replies",
+    frictionTitle: "Hot comments wait too long",
+    friction: "A shopper asks for price or size, but your team is packing orders or answering older WhatsApp chats.",
+    flowTitle: "Useful DM replies while interest is fresh",
+    flow: "VoluChat starts the conversation, answers the basics, and keeps the buyer moving.",
     icon: "clock",
-    badge: "Response time"
+    badge: "Response"
   },
   {
-    title: "AI Catalog Search",
-    frictionTitle: "Manual gallery scroll",
-    friction: "Staff spends minutes matching screenshots to photos, causing long buyer wait times.",
-    flowTitle: "Instant visual catalog match",
-    flow: "AI searches catalog in real-time, matching photos and text instantly.",
+    title: "Catalog Help",
+    frictionTitle: "Manual product matching",
+    friction: "Staff scrolls through posts, highlights, and spreadsheets to identify the exact outfit a buyer wants.",
+    flowTitle: "Product context ready for staff",
+    flow: "VoluChat checks catalog details such as style, size, shade, availability, and delivery area.",
     icon: "search",
-    badge: "Product discovery"
+    badge: "Catalog"
   },
   {
-    title: "Structured Handoff",
-    frictionTitle: "Repetitive questions",
-    friction: "Hours spent manually asking for PIN code, address, and size over and over.",
-    flowTitle: "1-Click brief on WhatsApp",
-    flow: "Presents a pre-filled purchase card to your sales team to close payment.",
+    title: "Clean Handoff",
+    frictionTitle: "Repeated order questions",
+    friction: "The same size, color, address, COD, and payment questions get asked again after the buyer reaches WhatsApp.",
+    flowTitle: "WhatsApp starts with the basics done",
+    flow: "Your team receives a clear buyer summary and keeps final confirmation in WhatsApp.",
     icon: "zap",
-    badge: "Sales velocity"
+    badge: "Handoff"
   }
 ];
 ---
@@ -39,21 +39,18 @@ const transformations = [
 
   <div class="mx-auto max-w-7xl px-6">
     <div class="text-center max-w-3xl mx-auto mb-24">
-      <!-- Standardized Glowing Badge -->
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
         <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
-        <span>The transformation</span>
+        <span>The boutique workload</span>
       </div>
-      <!-- Consistent Responsive Heading -->
       <h2 class="text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-        Chasing details in Instagram DMs is slowing you down.
+        The daily DM workload for Instagram boutiques.
       </h2>
       <p class="mt-6 text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
-        VoluChat automates the repetitive, manual tasks that tire your staff and cause interested buyers to ghost.
+        Your team should not spend the day repeating price, size, color, COD, and delivery replies.
       </p>
     </div>
 
-    <!-- Transformation Grid -->
     <div class="grid gap-8 md:grid-cols-3">
       {transformations.map((item, index) => (
         <div class={`glass-card-premium relative rounded-[2rem] p-8 shadow-xl flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500/20 transition-all duration-500 group/card reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
@@ -63,7 +60,6 @@ const transformations = [
               <span class="text-xs font-black text-slate-300">0{index + 1}</span>
             </div>
 
-            <!-- Icon + Title -->
             <div class="flex items-center gap-3 mb-6">
               <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 border border-blue-100 text-blue-600 shadow-sm shrink-0">
                 {item.icon === "clock" && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>}
@@ -73,10 +69,9 @@ const transformations = [
               <h3 class="font-heading text-xl font-black tracking-tight text-slate-950">{item.title}</h3>
             </div>
 
-            <!-- Friction Box (Before / Old Way) -->
             <div class="mb-5 p-4 rounded-2xl bg-rose-50/40 border border-rose-100/50 hover:bg-rose-50/80 hover:border-rose-200 transition-all duration-300">
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[9px] font-black uppercase tracking-wider text-rose-500">Old Way</span>
+                <span class="text-[9px] font-black uppercase tracking-wider text-rose-500">Old way</span>
                 <span class="text-[9px] font-black uppercase tracking-wider text-rose-600 bg-rose-100/30 px-2 py-0.5 rounded-md">Friction</span>
               </div>
               <div class="space-y-1.5">
@@ -90,11 +85,10 @@ const transformations = [
               </div>
             </div>
 
-            <!-- Flow Box (With VoluChat) -->
             <div class="p-4 rounded-2xl bg-emerald-50/40 border border-emerald-100/50 hover:bg-emerald-50/80 hover:border-emerald-200 transition-all duration-300">
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[9px] font-black uppercase tracking-wider text-emerald-600">VoluChat Way</span>
-                <span class="text-[9px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-100/30 px-2 py-0.5 rounded-md">Automated</span>
+                <span class="text-[9px] font-black uppercase tracking-wider text-emerald-600">VoluChat way</span>
+                <span class="text-[9px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-100/30 px-2 py-0.5 rounded-md">Prepared</span>
               </div>
               <div class="space-y-1.5">
                 <div class="flex items-start gap-2 text-emerald-950 text-xs font-black leading-tight">
@@ -111,17 +105,14 @@ const transformations = [
       ))}
     </div>
 
-    <!-- Centered Action Box -->
     <div class="mt-16 text-center">
       <div class="inline-flex flex-col sm:flex-row items-center gap-5 justify-center rounded-3xl sm:rounded-full border border-white/80 bg-white/50 p-4 sm:px-8 sm:py-4 shadow-xl backdrop-blur-xl w-full sm:w-auto">
-        <span class="text-sm font-bold text-slate-700">Ready to transform your DM workload?</span>
-        <a href="/contact" class="group inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-black text-white shadow-xl shadow-blue-500/20 transition hover:bg-blue-700 hover:scale-[1.02] w-full sm:w-auto">
-          Request a Demo
+        <span class="text-sm font-bold text-slate-700">Want to test this on your boutique DMs?</span>
+        <a href="/contact" class="group inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-6 py-3 text-sm font-black text-white shadow-xl shadow-blue-500/20 transition hover:bg-blue-600 hover:scale-[1.02] w-full sm:w-auto">
+          Start 14-day free trial
           <span class="h-2 w-2 rounded-full bg-white"></span>
         </a>
       </div>
     </div>
   </div>
 </section>
-
-

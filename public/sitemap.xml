@@ -13,6 +13,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://voluchat.com/compare/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://voluchat.com/about/</loc>
     <priority>0.7</priority>
   </url>

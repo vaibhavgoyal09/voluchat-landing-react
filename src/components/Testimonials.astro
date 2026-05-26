@@ -1,20 +1,20 @@
 ---
-const foundingHighlights = [
+const trustHighlights = [
   {
-    title: "Real Store Workload",
-    desc: "Built around manual tasks: late replies, repeat questions, and manual photo searches."
+    title: "No fake case studies",
+    desc: "VoluChat is still early, so we do not pretend to have public reviews, logos, or inflated performance numbers."
   },
   {
-    title: "1-on-1 Dedicated Setup",
-    desc: "We personally configure your account, catalog mapping, and WhatsApp handoff."
+    title: "Try it for 14 days",
+    desc: "Use the trial to test your real Instagram comments, catalog questions, and WhatsApp handoff before deciding."
   },
   {
-    title: "Localized Reply Tuning",
-    desc: "Optimized for Indian shoppers with seamless support for English, Hindi, and Hinglish queries."
+    title: "Hands-on boutique setup",
+    desc: "We help tune products, sizes, shades, COD, delivery, and Hinglish replies around your actual boutique workflow."
   },
   {
-    title: "Early Co-Creation",
-    desc: "Shape our upcoming product features directly around your daily retail operations."
+    title: "Built with early boutique sellers",
+    desc: "The product is shaped around Instagram-first fashion sellers who still close orders manually on WhatsApp."
   }
 ];
 ---
@@ -26,23 +26,20 @@ const foundingHighlights = [
 
   <div class="mx-auto max-w-6xl px-6">
     <div class="text-center max-w-3xl mx-auto mb-24">
-      <!-- Standardized Glowing Badge -->
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50/70 px-4 py-1.5 text-xs font-black text-emerald-700 shadow-sm backdrop-blur-md">
         <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-        <span>Founding stores</span>
+        <span>Early-stage proof</span>
       </div>
-      <!-- Consistent Responsive Heading -->
       <h2 class="text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-        Onboarding founding Instagram stores in India.
+        Built with early boutique sellers.
       </h2>
       <p class="mt-6 text-lg font-semibold leading-relaxed text-slate-600 sm:text-xl">
-        We build side-by-side with real retail operators to ensure our automation perfectly fits real-world sales operations.
+        We earn trust through a real trial, guided setup, and honest expectations instead of borrowed review badges.
       </p>
     </div>
 
-    <!-- Onboarding Benefits Grid -->
     <div class="grid gap-8 md:grid-cols-2 lg:gap-12 max-w-5xl mx-auto">
-      {foundingHighlights.map((item) => (
+      {trustHighlights.map((item) => (
         <div class="glass-card-premium rounded-[2rem] p-8 shadow-xl flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl hover:border-emerald-500/20 transition-all duration-500 group/card">
           <div>
             <div class="flex items-center gap-3.5 mb-4">
@@ -59,11 +56,10 @@ const foundingHighlights = [
 
     <div class="mt-16 text-center">
       <a href="/contact" class="group relative inline-flex items-center justify-center gap-3 rounded-full bg-zinc-950 py-4 px-8 text-sm font-black text-white shadow-2xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:bg-blue-600">
-        <span class="relative z-10">Request Demo & Join Founding Program</span>
+        <span class="relative z-10">Start 14-day free trial</span>
         <span class="h-2.5 w-2.5 rounded-full bg-blue-400 group-hover:bg-white transition-colors duration-300 relative z-10"></span>
         <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
       </a>
     </div>
   </div>
 </section>
-
