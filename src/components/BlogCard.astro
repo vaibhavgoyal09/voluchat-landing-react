@@ -26,7 +26,7 @@ const authorInitials = blog.author.name
   .toUpperCase();
 ---
 
-<a href={blog.href} class="glass-card-premium group relative flex flex-col h-full rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-indigo-500/20 transition-all duration-500">
+<a href={blog.href} class="glass-card-premium group relative flex flex-col h-full rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-primary-500/20 transition-all duration-500">
   <!-- Card Header / Image Placeholder -->
   <div class="relative aspect-[16/9] overflow-hidden bg-white/35">
     {blog.featuredImageUrl ? (
@@ -51,8 +51,8 @@ const authorInitials = blog.author.name
     </div>
 
     <!-- Icon Overlay -->
-    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-indigo-600/5 backdrop-blur-[2px]">
-      <div class="glass w-12 h-12 rounded-full flex items-center justify-center text-indigo-600 scale-75 group-hover:scale-100 transition-transform duration-500">
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-primary-600/5 backdrop-blur-[2px]">
+      <div class="glass w-12 h-12 rounded-full flex items-center justify-center text-primary-700 scale-75 group-hover:scale-100 transition-transform duration-500">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
       </div>
     </div>
@@ -61,19 +61,19 @@ const authorInitials = blog.author.name
   <!-- Card Content -->
   <div class="flex flex-col flex-grow p-8">
     <div class="flex items-center gap-3 mb-4">
-      <div class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
+      <div class="flex items-center gap-2 text-xs font-bold text-stone-400 uppercase tracking-wider">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
         {blog.dateLabel}
       </div>
       <span class="w-1 h-1 rounded-full bg-slate-200"></span>
-      <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">5 min read</span>
+      <span class="text-xs font-bold text-stone-400 uppercase tracking-wider">5 min read</span>
     </div>
 
-    <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors line-clamp-2 leading-tight">
+    <h3 class="text-xl font-bold text-stone-900 mb-4 group-hover:text-primary-700 transition-colors line-clamp-2 leading-tight">
       {blog.title}
     </h3>
 
-    <p class="text-slate-600 text-sm leading-relaxed mb-8 line-clamp-3">
+    <p class="text-stone-600 text-sm leading-relaxed mb-8 line-clamp-3">
       {blog.excerpt}
     </p>
 
@@ -88,14 +88,14 @@ const authorInitials = blog.author.name
             class="h-8 w-8 rounded-full object-cover border border-white/60"
           />
         ) : (
-          <div class="w-8 h-8 rounded-full bg-white/65 flex items-center justify-center font-bold text-[10px] text-indigo-600 border border-white/60">
+          <div class="w-8 h-8 rounded-full bg-white/65 flex items-center justify-center font-bold text-[10px] text-primary-700 border border-white/60">
             {authorInitials || 'VT'}
           </div>
         )}
-        <span class="text-xs font-bold text-slate-700">{blog.author.name}</span>
+        <span class="text-xs font-bold text-stone-700">{blog.author.name}</span>
       </div>
       
-      <div class="text-indigo-600 font-bold text-xs flex items-center gap-1.5">
+      <div class="text-primary-700 font-bold text-xs flex items-center gap-1.5">
         Read More
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
       </div>

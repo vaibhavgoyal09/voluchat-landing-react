@@ -4,42 +4,48 @@
 @import "@fontsource/inter/latin-500.css";
 @import "@fontsource/inter/latin-600.css";
 @import "@fontsource/inter/latin-700.css";
+@import "@fontsource/geist-sans/latin-400.css";
+@import "@fontsource/geist-sans/latin-500.css";
+@import "@fontsource/geist-sans/latin-600.css";
+@import "@fontsource/geist-sans/latin-700.css";
 @import "@fontsource/plus-jakarta-sans/latin-400.css";
 @import "@fontsource/plus-jakarta-sans/latin-500.css";
 @import "@fontsource/plus-jakarta-sans/latin-700.css";
 @import "@fontsource/plus-jakarta-sans/latin-800.css";
+@import "@fontsource/space-grotesk/latin-500.css";
+@import "@fontsource/space-grotesk/latin-600.css";
+@import "@fontsource/space-grotesk/latin-700.css";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-heading: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, "SF Mono", "Fira Code", monospace;
+  --font-sans: "Geist Sans", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Space Grotesk", "Plus Jakarta Sans", "Geist Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Fira Code", monospace;
 
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
+  --color-primary-50: #edf8f4;
+  --color-primary-100: #d8efe7;
+  --color-primary-200: #b5ded1;
+  --color-primary-300: #86c7b1;
+  --color-primary-400: #55aa8f;
+  --color-primary-500: #338d73;
+  --color-primary-600: #26725d;
+  --color-primary-700: #215c4d;
+  --color-primary-800: #1d4a3f;
+  --color-primary-900: #183d35;
 }
 
 @layer base {
   html { scroll-behavior: smooth; }
 
   body {
-    @apply text-slate-900 antialiased;
+    @apply text-stone-950 antialiased;
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background:
-      radial-gradient(circle at 14% 8%, rgba(14, 165, 233, 0.16), transparent 28rem),
-      radial-gradient(circle at 86% 12%, rgba(99, 102, 241, 0.14), transparent 30rem),
-      radial-gradient(circle at 72% 72%, rgba(16, 185, 129, 0.1), transparent 28rem),
-      linear-gradient(180deg, #f8fbff 0%, #eef5ff 42%, #f8fbff 100%);
+      radial-gradient(ellipse at 16% 0%, rgba(51, 141, 115, 0.16), transparent 34rem),
+      radial-gradient(ellipse at 88% 18%, rgba(120, 113, 108, 0.12), transparent 30rem),
+      linear-gradient(180deg, #fbfaf7 0%, #f4f1eb 48%, #faf8f3 100%);
   }
 
   body::before {
@@ -49,91 +55,102 @@
     z-index: -1;
     pointer-events: none;
     background-image:
-      linear-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: linear-gradient(to bottom, black 0%, transparent 92%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 92%);
+      linear-gradient(rgba(68, 64, 60, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(68, 64, 60, 0.045) 1px, transparent 1px),
+      radial-gradient(circle at center, rgba(68, 64, 60, 0.16) 0 0.7px, transparent 0.8px);
+    background-size: 56px 56px, 56px 56px, 18px 18px;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 88%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 88%);
+    opacity: 0.72;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a, button {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50;
   }
 }
 
 @layer components {
   .glass {
-    @apply border border-white/60 bg-white/55 shadow-sm backdrop-blur-2xl;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.82), 0 18px 60px rgba(15,23,42,0.08);
+    @apply border border-white/70 bg-white/58 shadow-sm backdrop-blur-2xl;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.86), 0 18px 60px rgba(68,64,60,0.08);
   }
 
   .glass-panel {
-    @apply border border-white/60 bg-white/50 backdrop-blur-2xl;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.78), 0 24px 80px rgba(15,23,42,0.1);
+    @apply border border-white/70 bg-white/56 backdrop-blur-2xl;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.82), 0 24px 80px rgba(68,64,60,0.1);
   }
 
   .glass-card {
-    @apply border border-white/60 bg-white/48 backdrop-blur-xl transition-all duration-300;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.72), 0 14px 42px rgba(15,23,42,0.07);
+    @apply border border-white/70 bg-white/54 backdrop-blur-xl transition-all duration-300;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.76), 0 14px 42px rgba(68,64,60,0.07);
   }
 
   .glass-card:hover {
-    @apply -translate-y-1 bg-white/62;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.86), 0 22px 60px rgba(15,23,42,0.11);
+    @apply -translate-y-1 bg-white/72;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 22px 60px rgba(68,64,60,0.11);
   }
 
   .glass-dark {
-    @apply border border-white/10 bg-slate-900/60 backdrop-blur-3xl;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 26px 80px rgba(15,23,42,0.18);
+    @apply border border-white/10 bg-stone-950/72 backdrop-blur-3xl;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 26px 80px rgba(68,64,60,0.18);
   }
 
   .glass-panel-premium {
-    @apply border border-white/60 bg-white/50 backdrop-blur-3xl;
+    @apply border border-white/75 bg-white/58 backdrop-blur-3xl;
     box-shadow: 
-      inset 0 1px 0 rgba(255,255,255,0.85), 
-      0 10px 40px -10px rgba(15,23,42,0.04),
-      0 30px 80px -15px rgba(15,23,42,0.08);
+      inset 0 1px 0 rgba(255,255,255,0.88), 
+      0 10px 40px -10px rgba(68,64,60,0.05),
+      0 30px 80px -15px rgba(68,64,60,0.1);
   }
 
   .glass-card-premium {
-    @apply border border-white/70 bg-white/55 backdrop-blur-2xl transition-all duration-300;
+    @apply border border-white/75 bg-white/62 backdrop-blur-2xl transition-all duration-300;
     box-shadow: 
-      inset 0 1px 0 rgba(255,255,255,0.9), 
-      0 12px 36px -8px rgba(15,23,42,0.06),
-      0 20px 50px -12px rgba(15,23,42,0.08);
+      inset 0 1px 0 rgba(255,255,255,0.92), 
+      0 12px 36px -8px rgba(68,64,60,0.07),
+      0 20px 50px -12px rgba(68,64,60,0.09);
   }
 
   .glass-card-premium:hover {
-    @apply -translate-y-1.5 bg-white/75;
+    @apply -translate-y-1.5 bg-white/78;
     box-shadow: 
-      inset 0 1px 0 rgba(255,255,255,0.95), 
-      0 20px 45px -8px rgba(15,23,42,0.08),
-      0 30px 70px -12px rgba(15,23,42,0.1);
+      inset 0 1px 0 rgba(255,255,255,0.95),
+      0 20px 45px -8px rgba(51,141,115,0.09),
+      0 30px 70px -12px rgba(68,64,60,0.11);
   }
 
   .text-gradient-primary {
-    @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-stone-950 via-primary-800 to-primary-600 bg-clip-text text-transparent;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-zinc-900 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-zinc-900/20 transition-all hover:scale-[1.02] hover:bg-zinc-800 active:scale-[0.98] focus:outline-none;
+    @apply inline-flex items-center justify-center rounded-xl bg-stone-950 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-stone-900/15 transition-all hover:-translate-y-0.5 hover:bg-primary-700 active:translate-y-0 active:scale-[0.98] focus:outline-none;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full bg-white/55 px-8 py-4 text-sm font-semibold text-slate-800 border border-white/60 shadow-sm backdrop-blur-xl transition-all hover:bg-white/75 hover:scale-[1.02] active:scale-[0.98] focus:outline-none;
+    @apply inline-flex items-center justify-center rounded-xl bg-white/60 px-8 py-4 text-sm font-semibold text-stone-800 border border-white/70 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-white/85 active:translate-y-0 active:scale-[0.98] focus:outline-none;
   }
 
   .section-badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/55 border border-white/60 text-indigo-700 text-[11px] font-bold uppercase tracking-widest backdrop-blur-xl shadow-sm;
+    @apply inline-flex items-center gap-2 rounded-lg border border-primary-200/70 bg-primary-50/70 px-3 py-1.5 text-[11px] font-semibold text-primary-800 backdrop-blur-xl shadow-sm;
   }
 
   .shadow-premium {
-    box-shadow: 0 1px 3px rgb(0 0 0 / 0.04), 0 4px 8px rgb(0 0 0 / 0.04), 0 16px 32px rgb(0 0 0 / 0.04);
+    box-shadow: 0 1px 3px rgb(68 64 60 / 0.05), 0 4px 8px rgb(68 64 60 / 0.05), 0 16px 32px rgb(68 64 60 / 0.05);
   }
 
   .shadow-glow {
-    box-shadow: 0 0 0 1px rgba(99,102,241,0.1), 0 4px 16px rgba(99,102,241,0.15), 0 20px 40px rgba(99,102,241,0.1);
+    box-shadow: 0 0 0 1px rgba(51,141,115,0.12), 0 4px 16px rgba(51,141,115,0.15), 0 20px 40px rgba(68,64,60,0.08);
   }
 
   .hero-wave {
@@ -183,17 +200,19 @@
 .sect-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
-  background-size: 32px 32px;
-  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(68, 64, 60, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(68, 64, 60, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.16;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
 }
 
 .sect-orb {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
+  border-radius: 999px;
+  filter: blur(110px);
   pointer-events: none;
 }
 

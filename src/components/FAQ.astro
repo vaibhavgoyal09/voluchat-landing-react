@@ -43,33 +43,33 @@ const faqs = [
   <div class="mx-auto max-w-2xl px-6">
     <div class="mb-24 text-center">
       <!-- Standardized Glowing Badge -->
-      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/70 px-4 py-1.5 text-xs font-black text-blue-700 shadow-sm backdrop-blur-md">
-        <span class="h-2 w-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
+      <div class="mb-6 inline-flex items-center gap-2 rounded-lg border border-primary-200/70 bg-primary-50/70 px-4 py-1.5 text-xs font-semibold text-primary-800 shadow-sm backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-primary-600 shadow-[0_0_8px_rgba(51,141,115,0.42)]"></span>
         <span>FAQ</span>
       </div>
       <!-- Consistent Responsive Heading -->
-      <h2 class="mb-8 text-3xl font-heading font-black leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+      <h2 class="mb-8 text-3xl font-heading font-semibold leading-[1.1] tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
         Common Questions
       </h2>
     </div>
 
     <!-- Main Accordion Container (Responsive padding & premium glass) -->
-    <div class="divide-y divide-slate-100 overflow-hidden glass-card-premium rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl">
+    <div class="divide-y divide-stone-100 overflow-hidden glass-card-premium rounded-2xl sm:rounded-3xl shadow-2xl">
       {faqs.map((faq, index) => (
         <div class="faq-item transition-all duration-300" data-index={index}>
-          <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-slate-50/70">
-            <span class="font-heading text-base sm:text-lg font-black leading-snug tracking-tight text-slate-950 transition-colors group-hover:text-blue-700">
+          <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-stone-50/70">
+            <span class="font-heading text-base sm:text-lg font-semibold leading-snug tracking-tight text-stone-950 transition-colors group-hover:text-primary-800">
               {faq.question}
             </span>
-            <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-slate-100 bg-white shadow-sm transition-all duration-300 group-hover:border-blue-100 group-hover:bg-blue-50">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron text-slate-400 transition-all duration-300 group-hover:text-blue-600">
+            <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-stone-100 bg-white shadow-sm transition-all duration-300 group-hover:border-primary-100 group-hover:bg-primary-50">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron text-stone-400 transition-all duration-300 group-hover:text-primary-700">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </span>
           </button>
           <div class="faq-body max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
             <div class="px-6 pb-6 sm:px-8 sm:pb-8">
-              <p class="text-xs sm:text-sm font-semibold leading-relaxed text-slate-600">{faq.answer}</p>
+              <p class="text-xs sm:text-sm font-semibold leading-relaxed text-stone-600">{faq.answer}</p>
             </div>
           </div>
         </div>
