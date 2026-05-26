@@ -4,39 +4,33 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PricingSection from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
-import CTA from '../components/CTA.astro';
 
-const seoTitle = "14-day free trial for Instagram boutiques | VoluChat";
-const seoDescription = "Start a 14-day free trial for Instagram comment replies, boutique product answers in DM, and WhatsApp handoff for fashion sellers.";
+const seoTitle = "14-day free trial for ecommerce stores | VoluChat";
+const seoDescription = "Start a 14-day VoluChat trial for ecommerce reply automation across Instagram, Facebook Pages, product questions, and sales handoffs.";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="pt-24 animate-page-entry opacity-0">
-    <section class="relative py-32 overflow-hidden">
-      <div class="absolute inset-0 pointer-events-none -z-10">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-50/30 rounded-full blur-[150px] opacity-50"></div>
-      </div>
-      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <div class="max-w-4xl mx-auto">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 backdrop-blur-md mb-10">
-            <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-            <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">14-day free trial</span>
-          </div>
-          <h1 class="text-6xl sm:text-8xl font-heading font-black text-slate-950 mb-10 leading-[1.02] tracking-tighter">
-            14-day free trial <br /><span class="text-gradient-primary">for Instagram boutiques.</span>
+  <main class="animate-page-entry opacity-0">
+    <section class="relative overflow-hidden pt-36 pb-12 sm:pt-40 lg:pb-16">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(83,111,159,0.12),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.9),rgba(247,249,252,0.86))]"></div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell text-center">
+        <div class="mx-auto max-w-4xl">
+          <div class="chip">14-day free trial</div>
+          <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl lg:text-7xl">
+            Try automated replies before you pay.
           </h1>
-          <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
-            Test VoluChat on your real Instagram comments, product questions, and WhatsApp order process before deciding if it fits.
+          <p class="section-copy mx-auto mt-6 max-w-2xl">
+            Test VoluChat on your real product questions, catalog context, and staff handoff rules before deciding whether it fits your ecommerce workflow.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Pricing component -->
     <PricingSection />
-
     <FAQ />
   </main>
 

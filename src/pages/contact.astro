@@ -4,109 +4,96 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FAQ from '../components/FAQ.astro';
 
-const seoTitle = "Start the 14-day trial for your boutique | VoluChat";
-const seoDescription = "Start a 14-day VoluChat trial for Instagram comments, boutique product questions in DM, and WhatsApp-ready handoffs.";
-const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20want%20to%20start%20the%2014-day%20trial%20for%20my%20Instagram%20boutique.";
+const seoTitle = "Start the 14-day trial for your ecommerce store | VoluChat";
+const seoDescription = "Start a 14-day VoluChat trial for ecommerce reply automation across Instagram, Facebook Pages, product questions, and sales handoffs.";
+const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20want%20to%20start%20the%2014-day%20trial%20for%20my%20ecommerce%20store.";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="pt-24 overflow-hidden animate-page-entry opacity-0">
-    <!-- Hero Section -->
-    <section class="relative py-32">
-      <div class="absolute inset-0 pointer-events-none -z-10">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-50/30 rounded-full blur-[150px] opacity-50"></div>
-      </div>
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
+  <main class="animate-page-entry overflow-hidden opacity-0">
+    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-28">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(203,217,234,0.2),transparent_28%)]"></div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/60 backdrop-blur-md mb-10">
-              <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-              <span class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">Boutique trial</span>
-            </div>
-            <h1 class="text-6xl md:text-8xl font-heading font-black text-slate-950 mb-10 leading-[1.02] tracking-tighter">
-              Start the 14-day trial for <br /><span class="text-gradient-primary">your boutique.</span>
+            <div class="chip">Start your trial</div>
+            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl">
+              Start the 14-day trial for your store.
             </h1>
-            <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium mb-12 max-w-xl">
-              Show us how buyers comment on your Reels today. We will help configure VoluChat around your catalog, product questions, and WhatsApp handoff.
+            <p class="section-copy mt-6 max-w-xl">
+              Show us your repeated product questions. We will help configure VoluChat around your channels, catalog, reply tone, and staff handoff.
             </p>
-            
-            <div class="space-y-8">
-              <div class="flex items-center gap-5 group">
-                <div class="glass-card-premium w-14 h-14 rounded-2xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+
+            <div class="mt-10 space-y-5">
+              <div class="flex items-center gap-4">
+                <div class="grid h-12 w-12 place-items-center rounded-full border border-primary-100 bg-primary-50 text-primary-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </div>
                 <div>
-                  <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Email Us</div>
-                  <a href="mailto:support@voluchat.com" class="text-xl font-black text-slate-950 hover:text-indigo-600 transition-colors tracking-tight">support@voluchat.com</a>
+                  <p class="mini-label">Email</p>
+                  <a href="mailto:support@voluchat.com" class="text-lg font-semibold text-stone-950 transition-colors hover:text-primary-700">support@voluchat.com</a>
                 </div>
               </div>
-              
-              <div class="flex items-center gap-5 group">
-                <div class="glass-card-premium w-14 h-14 rounded-2xl flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-all shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+
+              <div class="flex items-center gap-4">
+                <div class="grid h-12 w-12 place-items-center rounded-full border border-primary-100 bg-primary-50 text-primary-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 </div>
                 <div>
-                  <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Phone Support</div>
-                  <a href="tel:+918847568693" class="text-xl font-black text-slate-950 hover:text-indigo-600 transition-colors tracking-tight">+91-88475-68693</a>
+                  <p class="mini-label">Phone</p>
+                  <a href="tel:+918847568693" class="text-lg font-semibold text-stone-950 transition-colors hover:text-primary-700">+91-88475-68693</a>
                 </div>
               </div>
             </div>
           </div>
-          
-          <div class="relative">
-            <div class="absolute -inset-10 bg-indigo-500/5 blur-[120px] rounded-full -z-10"></div>
-            <div class="glass-panel-premium p-10 md:p-12 rounded-[3rem] relative z-10 shadow-2xl">
-              <form id="demo-form" class="space-y-6">
-                <div>
-                  <h2 class="text-2xl font-heading font-black text-slate-950 tracking-tight">Boutique details</h2>
-                  <p class="mt-2 text-sm font-medium text-slate-500">Share your details to start the 14-day trial.</p>
-                </div>
-                
-                <div>
-                  <label for="name" class="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2.5">Your Name</label>
-                  <input type="text" id="name" name="name" required placeholder="Your name" class="w-full px-5 py-4 bg-white/50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:bg-white focus:border-blue-400 transition-all font-medium text-slate-900" />
-                </div>
 
-                <div>
-                  <label for="whatsapp" class="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2.5">WhatsApp Number</label>
-                  <input type="tel" id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="+91 WhatsApp number" class="w-full px-5 py-4 bg-white/50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:bg-white focus:border-blue-400 transition-all font-medium text-slate-900" />
-                </div>
+          <div class="glass-panel-premium rounded-[2.5rem] p-6 shadow-2xl sm:p-8 lg:p-10">
+            <form id="demo-form" class="space-y-6">
+              <div>
+                <h2 class="text-2xl font-heading font-semibold text-stone-950">Store details</h2>
+                <p class="mt-2 text-sm font-semibold text-stone-500">Share a few details to start the guided trial.</p>
+              </div>
 
-                <div>
-                  <label for="instagram" class="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2.5">Instagram Username</label>
-                  <input type="text" id="instagram" name="instagram" required placeholder="@yourstore" class="w-full px-5 py-4 bg-white/50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:bg-white focus:border-blue-400 transition-all font-medium text-slate-900" />
-                </div>
+              <div>
+                <label for="name" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-400">Your name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name" class="w-full rounded-2xl border border-stone-200/80 bg-white/72 px-5 py-4 font-medium text-stone-900 transition-all focus:border-primary-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary-500/10" />
+              </div>
 
-                <button type="submit" id="submit-btn" class="group relative flex items-center justify-center gap-3 w-full py-5 bg-zinc-950 text-white rounded-2xl font-black text-lg transition-all duration-300 hover:scale-[1.03] hover:bg-blue-600 shadow-2xl hover:shadow-blue-500/25 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed mt-4">
-                  <span id="btn-text" class="relative z-10">Start my 14-day free trial</span>
-                  <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 transition-transform group-hover:translate-x-1.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                </button>
+              <div>
+                <label for="whatsapp" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-400">WhatsApp number</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="+91 WhatsApp number" class="w-full rounded-2xl border border-stone-200/80 bg-white/72 px-5 py-4 font-medium text-stone-900 transition-all focus:border-primary-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary-500/10" />
+              </div>
 
-                <div class="text-center mt-4">
-                  <a href={trialWhatsappUrl} target="_blank" rel="noopener" class="text-sm font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
-                    Prefer WhatsApp? Message us now
-                  </a>
-                </div>
-                
-                <div id="form-message" class="hidden text-center p-4 rounded-2xl font-bold text-sm"></div>
-              </form>
-            </div>
+              <div>
+                <label for="instagram" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-400">Instagram or Facebook Page</label>
+                <input type="text" id="instagram" name="instagram" required placeholder="@yourstore or page name" class="w-full rounded-2xl border border-stone-200/80 bg-white/72 px-5 py-4 font-medium text-stone-900 transition-all focus:border-primary-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary-500/10" />
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-primary w-full gap-3 px-6 py-5 text-base disabled:cursor-not-allowed disabled:opacity-55">
+                <span id="btn-text">Start my 14-day free trial</span>
+                <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+
+              <div class="text-center">
+                <a href={trialWhatsappUrl} target="_blank" rel="noopener" class="text-sm font-semibold text-primary-700 transition-colors hover:text-primary-900">
+                  Prefer WhatsApp? Message us now
+                </a>
+              </div>
+
+              <div id="form-message" class="hidden rounded-2xl p-4 text-center text-sm font-semibold"></div>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Visual Divider -->
-    <section class="max-w-7xl mx-auto px-6 mb-32">
-      <div class="glass-panel-premium p-5 rounded-[3rem] overflow-hidden group shadow-2xl">
-        <img 
-          src="/contact_support.webp" 
-          alt="VoluChat trial for boutiques" 
-          class="w-full h-[550px] object-cover rounded-[2.5rem] transition-transform duration-[2s] group-hover:scale-105"
-        />
+    <section class="page-shell pb-28">
+      <div class="glass-panel-premium rounded-[2.5rem] p-3 shadow-2xl">
+        <img src="/contact_support.webp" alt="VoluChat support for ecommerce trial setup" class="h-[420px] w-full rounded-[2rem] object-cover sm:h-[520px]" />
       </div>
     </section>
 
@@ -122,10 +109,9 @@ const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%2
     const formMessage = document.getElementById('form-message');
 
     if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Loading state
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
         submitBtn.disabled = true;
         const originalText = btnText.innerText;
         btnText.innerText = 'Sending...';
@@ -143,18 +129,18 @@ const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%2
             body: JSON.stringify(data),
           });
 
-          if (response.ok) {
-            formMessage.innerText = 'Thank you! We will reach out to set up your trial shortly.';
-            formMessage.className = 'text-center p-4 rounded-2xl font-bold text-sm bg-emerald-50 text-emerald-600 mt-6';
-            formMessage.classList.remove('hidden');
-            form.reset();
-            btnText.innerText = 'Trial requested';
-          } else {
+          if (!response.ok) {
             throw new Error('Failed to send request');
           }
+
+          formMessage.innerText = 'Thank you. We will reach out to set up your trial shortly.';
+          formMessage.className = 'rounded-2xl bg-primary-50 p-4 text-center text-sm font-semibold text-primary-800 mt-6';
+          formMessage.classList.remove('hidden');
+          form.reset();
+          btnText.innerText = 'Trial requested';
         } catch (error) {
           formMessage.innerText = 'Something went wrong. Please try again or email us directly.';
-          formMessage.className = 'text-center p-4 rounded-2xl font-bold text-sm bg-rose-50 text-rose-600 mt-6';
+          formMessage.className = 'rounded-2xl bg-rose-50 p-4 text-center text-sm font-semibold text-rose-700 mt-6';
           formMessage.classList.remove('hidden');
           submitBtn.disabled = false;
           btnText.innerText = originalText;

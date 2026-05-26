@@ -76,7 +76,8 @@ test('homepage primary buttons lead with the 14-day trial', () => {
 
   assert.ok(trialButtonClasses.length >= 5, 'Expected homepage trial primary buttons to be covered');
   assert.doesNotMatch(buttonSource, /from-indigo-600[^"]*(via-violet-600|to-violet-600|to-blue-600)|shadow-indigo-500|hover:shadow-violet/);
-  assert.match(buttonSource, /bg-zinc-950|bg-zinc-900/);
+  assert.doesNotMatch(buttonSource, /bg-zinc-950|bg-zinc-900|bg-stone-950|bg-black|rounded-xl|rounded-2xl/);
+  assert.ok(trialButtonClasses.every((className) => className.includes('btn-primary')), 'Expected trial CTAs to use the shared primary button style');
 });
 
 test('homepage layout does not render floating contact buttons', () => {

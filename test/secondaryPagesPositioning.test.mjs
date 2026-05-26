@@ -24,12 +24,12 @@ const sourceByFile = Object.fromEntries(
 
 const secondarySource = Object.values(sourceByFile).join('\n');
 
-test('secondary pages use the fashion-boutique Instagram to WhatsApp positioning', () => {
-  assert.match(sourceByFile['src/pages/features.astro'], /Features for Instagram fashion boutiques/);
-  assert.match(sourceByFile['src/pages/pricing.astro'], /14-day free trial for Instagram boutiques/);
-  assert.match(sourceByFile['src/pages/contact.astro'], /Start the 14-day trial for your boutique/);
-  assert.match(sourceByFile['src/pages/about.astro'], /Built for fashion boutiques selling through Instagram and WhatsApp/);
-  assert.match(sourceByFile['src/pages/blog/index.astro'], /Instagram and WhatsApp guides for boutique sellers/);
+test('secondary pages use broad ecommerce product-reply positioning', () => {
+  assert.match(sourceByFile['src/pages/features.astro'], /Features for ecommerce reply automation/);
+  assert.match(sourceByFile['src/pages/pricing.astro'], /14-day free trial for ecommerce stores/);
+  assert.match(sourceByFile['src/pages/contact.astro'], /Start the 14-day trial for your ecommerce store/);
+  assert.match(sourceByFile['src/pages/about.astro'], /Built for stores losing sales to slow replies/);
+  assert.match(sourceByFile['src/pages/blog/index.astro'], /Ecommerce reply automation guides/);
 });
 
 test('secondary pages avoid old broad SaaS positioning and unsupported proof', () => {
@@ -40,9 +40,10 @@ test('secondary pages avoid old broad SaaS positioning and unsupported proof', (
 });
 
 test('secondary page CTAs stay trial-first while shared metadata is broader', () => {
-  assert.match(sourceByFile['src/pages/blog/[slug].astro'], /See how VoluChat works for your boutique/);
-  assert.match(sourceByFile['src/pages/contact.astro'], /Boutique details/);
+  assert.match(sourceByFile['src/pages/blog/[slug].astro'], /See how VoluChat works for ecommerce stores/);
+  assert.match(sourceByFile['src/pages/contact.astro'], /Store details/);
   assert.match(sourceByFile['src/layouts/Layout.astro'], /repeated product questions across Instagram and Facebook Pages|ecommerce reply automation/);
+  assert.doesNotMatch(secondarySource, /fashion boutiques|boutique sellers|your boutique|Boutique details|Instagram boutiques/i);
 });
 
 test('comparison page covers the approved competitor set without brittle pricing claims', () => {
@@ -54,7 +55,7 @@ test('comparison page covers the approved competitor set without brittle pricing
   assert.match(compareSource, /respond\.io/);
   assert.match(compareSource, /AiSensy/);
   assert.match(compareSource, /Gallabox/);
-  assert.match(compareSource, /Instagram boutique catalog conversations/);
+  assert.match(compareSource, /ecommerce product conversations/);
   assert.match(compareSource, /not a generic WhatsApp inbox/);
   assert.doesNotMatch(compareSource, /₹\d|\$\d|cheaper than|better than|#1|best/i);
 });

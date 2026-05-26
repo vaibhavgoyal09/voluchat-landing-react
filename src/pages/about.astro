@@ -2,149 +2,96 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const principles = [
+  {
+    title: "Speed before the buyer leaves",
+    text: "Repeated questions should not wait for a staff member when a clear answer can be automated."
+  },
+  {
+    title: "Context before handoff",
+    text: "When staff joins, they should already know the product, size, delivery area, offer context, and buyer intent."
+  },
+  {
+    title: "Store workflows stay human",
+    text: "VoluChat handles the repetitive first layer. Your team keeps control of unusual questions, order confirmation, and payment."
+  }
+];
 ---
 
-<Layout title="About VoluChat | Instagram to WhatsApp for Fashion Boutiques">
+<Layout title="About VoluChat | Ecommerce reply automation" description="VoluChat helps ecommerce stores answer repeated product questions faster across Instagram, Facebook Pages, and upcoming WhatsApp-native automation.">
   <Header />
 
-  <main class="pt-32 overflow-hidden animate-page-entry opacity-0">
-    <!-- Hero Section -->
-    <section class="relative px-6 pb-24">
-      <div class="sect-grid"></div>
-      <div class="max-w-7xl mx-auto relative z-10">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <main class="animate-page-entry opacity-0">
+    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-24">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_80%_16%,rgba(203,217,234,0.2),transparent_30%)]"></div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <div class="section-badge mb-6">Our Story</div>
-            <h1 class="text-5xl md:text-6xl font-heading font-extrabold text-slate-900 mb-8 leading-tight">
-              Built for fashion boutiques selling through Instagram and WhatsApp
+            <div class="chip">Our story</div>
+            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl">
+              Built for stores losing sales to slow replies.
             </h1>
-            <p class="text-lg text-slate-600 leading-relaxed mb-10 max-w-xl">
-              VoluChat was created for boutique sellers that get real buyer interest in Reel comments but still process orders manually on WhatsApp. We help shoppers move from a simple comment to a clearer WhatsApp chat.
+            <p class="section-copy mt-6 max-w-xl">
+              VoluChat was created for product-heavy ecommerce teams that answer the same price, size, stock, delivery, and offer questions all day while buyers compare options elsewhere.
             </p>
-            <div class="flex flex-wrap gap-6">
-              <div class="glass-card-premium flex items-center gap-4 px-6 py-4 rounded-2xl">
-                <span class="text-2xl font-black text-indigo-600 tracking-tighter">Instagram</span>
-                <span class="text-[10px] text-slate-500 font-black uppercase tracking-widest leading-tight">Comments start<br/>the chat</span>
-              </div>
-              <div class="glass-card-premium flex items-center gap-4 px-6 py-4 rounded-2xl">
-                <span class="text-2xl font-black text-emerald-600 tracking-tighter">WhatsApp</span>
-                <span class="text-[10px] text-slate-500 font-black uppercase tracking-widest leading-tight">Stores close<br/>the order</span>
-              </div>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="/contact" class="btn-primary">Start 14-day free trial</a>
+              <a href="/features" class="btn-secondary">Explore features</a>
             </div>
           </div>
-          <div class="relative group">
-            <div class="absolute -inset-4 bg-indigo-500/5 blur-3xl rounded-[3rem] -z-10 group-hover:bg-indigo-500/10 transition-colors"></div>
-            <div class="glass-panel-premium p-4 rounded-[2.5rem] rotate-1 transition-transform group-hover:rotate-0 duration-700 shadow-2xl">
-              <img 
-                src="/about_hero.webp" 
-                alt="VoluChat Workspace" 
-                class="rounded-[2rem] w-full"
-              />
-            </div>
+
+          <div class="glass-panel-premium rounded-[2.5rem] p-3 shadow-2xl">
+            <img src="/about_hero.webp" alt="VoluChat workspace for ecommerce reply automation" class="h-full w-full rounded-[2rem] object-cover" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="py-24 relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-20">
-          <div class="section-badge mb-6">Our Mission</div>
-          <h2 class="text-4xl md:text-5xl font-heading font-black text-slate-950 mb-8 leading-tight tracking-tight">
-            Helping small boutiques reply while interest is fresh
-          </h2>
-          <p class="text-lg text-slate-600 font-medium leading-relaxed">
-            Store owners should spend less time copy-pasting the same price, size, color, COD, and delivery replies, and more time helping serious buyers finish their order on WhatsApp.
+    <section class="section-pad relative overflow-hidden">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="section-eyebrow">What we believe</p>
+          <h2 class="section-title mt-4">Automation should remove repeated work, not control the sale.</h2>
+          <p class="section-copy mx-auto mt-5 max-w-2xl">
+            We are building a focused reply layer for stores where every delayed answer can become a missed sale.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-24">
-          <div class="glass-card-premium p-10 rounded-3xl group">
-            <div class="w-14 h-14 bg-indigo-50 border border-indigo-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 class="text-xl font-heading font-black text-slate-950 mb-4">Security First</h3>
-            <p class="text-slate-600 font-medium text-[15px] leading-relaxed">
-              We protect Instagram access tokens and customer data with encryption, scoped access, and clear operating practices.
-            </p>
-          </div>
-          <div class="glass-card-premium p-10 rounded-3xl group">
-            <div class="w-14 h-14 bg-purple-50 border border-purple-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
-            </div>
-            <h3 class="text-xl font-heading font-black text-slate-950 mb-4">Fast First Replies</h3>
-            <p class="text-slate-600 font-medium text-[15px] leading-relaxed">
-              Buyers get a useful DM after they comment, even when the store team is busy packing, sourcing, or handling WhatsApp chats.
-            </p>
-          </div>
-          <div class="glass-card-premium p-10 rounded-3xl group">
-            <div class="w-14 h-14 bg-emerald-50 border border-emerald-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3 class="text-xl font-heading font-black text-slate-950 mb-4">Clear WhatsApp Handoff</h3>
-            <p class="text-slate-600 font-medium text-[15px] leading-relaxed">
-              When the buyer is ready, your WhatsApp chat starts with the product, size, color, and key order details already understood.
-            </p>
-          </div>
-        </div>
-
-        <div class="glass-panel-premium p-5 rounded-[3rem] overflow-hidden group shadow-2xl">
-          <img 
-            src="/mission_collaboration.webp" 
-            alt="Collaborating on VoluChat" 
-            class="rounded-[2.2rem] w-full object-cover max-h-[500px] transition-transform duration-[2s] group-hover:scale-105"
-          />
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          {principles.map((item, index) => (
+            <article class={`glass-card-premium rounded-[2rem] p-7 reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-primary-800 font-mono text-xs font-semibold text-white">0{index + 1}</span>
+              <h3 class="mt-6 text-xl font-heading font-semibold text-stone-950">{item.title}</h3>
+              <p class="mt-4 text-sm font-semibold leading-relaxed text-stone-600">{item.text}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
 
-    <!-- Values & Philosophy -->
-    <section class="py-24 px-6 relative">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 class="text-4xl md:text-5xl font-heading font-black text-slate-950 mb-12 leading-[1.1] tracking-tight">
-              We're building around real <span class="text-gradient-primary">Instagram selling habits.</span>
-            </h2>
-            <div class="space-y-10">
-              <div class="flex gap-5">
-                <div class="mt-1 w-7 h-7 rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 flex-shrink-0 flex items-center justify-center text-white text-[11px] font-black shadow-lg shadow-indigo-200">1</div>
-                <div>
-                  <p class="font-black text-slate-950 mb-2 uppercase tracking-wide text-sm">Boutique context</p>
-                  <p class="text-slate-600 font-medium leading-relaxed">The product is shaped around common boutique questions: price, size, color, delivery, COD, and availability.</p>
-                </div>
-              </div>
-              <div class="flex gap-5">
-                <div class="mt-1 w-7 h-7 rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 flex-shrink-0 flex items-center justify-center text-white text-[11px] font-black shadow-lg shadow-indigo-200">2</div>
-                <div>
-                  <p class="font-black text-slate-950 mb-2 uppercase tracking-wide text-sm">Human on WhatsApp</p>
-                  <p class="text-slate-600 font-medium leading-relaxed">VoluChat helps with Instagram replies, then sends serious buyers to the store team for manual order processing.</p>
-                </div>
-              </div>
-              <div class="flex gap-5">
-                <div class="mt-1 w-7 h-7 rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 flex-shrink-0 flex items-center justify-center text-white text-[11px] font-black shadow-lg shadow-indigo-200">3</div>
-                <div>
-                  <p class="font-black text-slate-950 mb-2 uppercase tracking-wide text-sm">Early boutique feedback</p>
-                  <p class="text-slate-600 font-medium leading-relaxed">We are working closely with early boutique sellers so the product fits the way Indian Instagram sellers already work.</p>
-                </div>
-              </div>
-            </div>
+    <section class="relative pb-28">
+      <div class="page-shell">
+        <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div class="glass-panel-premium rounded-[2.5rem] p-3 shadow-2xl">
+            <img src="/mission_collaboration.webp" alt="Team configuring ecommerce automation workflows" class="max-h-[500px] w-full rounded-[2rem] object-cover" />
           </div>
-          <div class="glass-dark rounded-[2.5rem] p-16 text-white relative shadow-2xl overflow-hidden">
-            <div class="absolute -top-12 -right-12 w-48 h-48 bg-indigo-500/20 rounded-full blur-[100px]"></div>
-            <div class="relative z-10">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor" class="text-indigo-400 mb-10 opacity-30 outline-none border-none"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H19.017C21.2261 3 23.017 4.79086 23.017 7V15C23.017 18.3137 20.3307 21 17.017 21H14.017ZM1.017 21L1.017 18C1.017 16.8954 1.91243 16 3.017 16H6.017C6.56928 16 7.017 15.5523 7.017 15V9C7.017 8.44772 6.56928 8 6.017 8H3.017C1.91243 8 1.017 7.10457 1.017 6V5C1.017 3.89543 1.91243 3 3.017 3H6.017C8.22614 3 10.017 4.79086 10.017 7V15C10.017 18.3137 7.33072 21 4.017 21H1.017Z"/></svg>
-              <p class="text-2xl font-heading font-medium mb-12 leading-relaxed">
-                "VoluChat is about making Instagram selling less messy for boutiques. Buyers can ask once, get help in DM, and reach WhatsApp with the important details already clear."
+
+          <div>
+            <p class="section-eyebrow">Founder note</p>
+            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-stone-950 sm:text-5xl">
+              We are keeping the product narrow on purpose.
+            </h2>
+            <p class="mt-5 text-base font-semibold leading-relaxed text-stone-600">
+              Broad chat platforms are useful, but many small teams just need the repetitive product-question layer handled well. VoluChat focuses on that first: fast answers, catalog context, and clean handoffs.
+            </p>
+            <div class="mt-8 rounded-[2rem] border border-primary-100 bg-primary-50/70 p-6">
+              <p class="text-lg font-semibold leading-relaxed text-stone-800">
+                "If your staff is typing the same answers every day, automation should handle that before the buyer leaves."
               </p>
-              <div class="flex items-center gap-5">
-                <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700/50 flex items-center justify-center font-black text-indigo-400 shadow-xl">VG</div>
-                <div>
-                  <div class="font-black text-lg">Vaibhav Goyal</div>
-                  <div class="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-black">Founder, VoluChat</div>
-                </div>
-              </div>
+              <p class="mt-5 text-sm font-semibold text-primary-800">Vaibhav Goyal, Founder</p>
             </div>
           </div>
         </div>

@@ -38,7 +38,7 @@ const authorInitials = blog.author.name
       />
     ) : (
       <>
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 group-hover:scale-110 transition-transform duration-[800ms]"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(83,111,159,0.12),rgba(255,255,255,0.5),rgba(203,217,234,0.16))] transition-transform duration-[800ms] group-hover:scale-110"></div>
         <div class="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
           <div class="sect-grid"></div>
         </div>
@@ -47,7 +47,7 @@ const authorInitials = blog.author.name
 
     <!-- Badge -->
     <div class="absolute top-4 left-4">
-      <span class="section-badge bg-white/90 backdrop-blur-md shadow-sm">{category}</span>
+      <span class="chip bg-white/90 shadow-sm">{category}</span>
     </div>
 
     <!-- Icon Overlay -->

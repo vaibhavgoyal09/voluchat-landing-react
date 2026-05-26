@@ -4,105 +4,69 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const lastUpdated = "April 4, 2026";
+
+const sections = [
+  {
+    title: "1. Introduction",
+    body: "VoluChat respects your privacy and is committed to protecting information connected to your store, channels, products, and buyer conversations."
+  },
+  {
+    title: "2. Information we collect",
+    body: "We may collect account details, connected Instagram or Facebook Page integration data, authorized access tokens, product catalog information, and conversation data needed to provide reply automation and handoff workflows."
+  },
+  {
+    title: "3. How we use information",
+    body: "We use this information to operate VoluChat, answer repeated product questions, prepare buyer summaries, provide support, improve the service, and keep your authorized integrations working."
+  },
+  {
+    title: "4. Data security",
+    body: "We use encryption, scoped access, secure infrastructure practices, and restricted internal access to protect store data and connected-channel credentials."
+  },
+  {
+    title: "5. Third-party services",
+    body: "VoluChat integrates with Meta services such as Instagram and Facebook Pages. Your use of those channels is also subject to Meta's terms and privacy policies."
+  },
+  {
+    title: "6. Your rights",
+    body: "You can request access, correction, or deletion of personal information where applicable. You can also disconnect authorized channels to stop future collection through those integrations."
+  },
+  {
+    title: "7. Changes",
+    body: "We may update this policy as the product changes. Material changes will be reflected on this page or communicated through appropriate product or email notices."
+  }
+];
 ---
 
-<Layout title="Privacy Policy | VoluChat">
+<Layout title="Privacy Policy | VoluChat" description="VoluChat privacy policy for ecommerce reply automation, connected social channels, and buyer conversation data.">
   <Header />
 
-  <main class="relative pt-32 pb-24 overflow-hidden">
-    <!-- Background Elements -->
-    <div class="sect-grid"></div>
-    <div class="sect-orb w-[500px] h-[500px] bg-indigo-100/50 -top-24 -left-24"></div>
-    <div class="sect-orb w-[400px] h-[400px] bg-purple-100/30 bottom-0 -right-24"></div>
+  <main class="relative overflow-hidden pt-36 pb-24 animate-page-entry opacity-0 sm:pt-40">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.1),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(203,217,234,0.18),transparent_30%)]"></div>
+    <div class="ambient-noise"></div>
 
-    <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <div class="mx-auto max-w-4xl px-6">
       <div class="mb-12">
-        <div class="section-badge mb-4">Legal</div>
-        <h1 class="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 mb-6">
-          Privacy Policy
-        </h1>
-        <p class="text-slate-500 font-medium">
-          Last updated: {lastUpdated}
-        </p>
+        <div class="chip">Legal</div>
+        <h1 class="mt-6 text-4xl font-semibold text-stone-950 md:text-5xl">Privacy Policy</h1>
+        <p class="mt-4 font-medium text-stone-500">Last updated: {lastUpdated}</p>
       </div>
 
-      <div class="glass-panel-premium p-8 md:p-12 rounded-3xl space-y-8 text-slate-600 leading-relaxed">
-        <section>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">1. Introduction</h2>
-          <p>
-            At VoluChat ("we," "our," or "us"), we respect your privacy and are committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website and use our Instagram comment, DM, and WhatsApp handoff services for online shoe stores.
-          </p>
-        </section>
+      <div class="glass-panel-premium rounded-[2rem] p-6 text-stone-600 md:p-10">
+        <div class="space-y-8">
+          {sections.map((section) => (
+            <section>
+              <h2 class="mb-3 text-2xl font-heading font-semibold text-stone-950">{section.title}</h2>
+              <p class="leading-relaxed">{section.body}</p>
+            </section>
+          ))}
 
-        <section>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">2. Information We Collect</h2>
-          <p class="mb-4">
-            We collect several types of information from and about users of our service, including:
-          </p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>
-              <strong>Account Information:</strong> Name, email address, and payment details provided during registration.
-            </li>
-            <li>
-              <strong>Instagram Integration Data:</strong> To provide our comment reply and DM assistance services, we securely store your <strong>Instagram access tokens</strong>. These tokens allow us to perform actions on your behalf as authorized by you.
-            </li>
-            <li>
-              <strong>User Data:</strong> We store publicly accessible data from your Instagram profile and the profiles of users who interact with your account, such as usernames.
-            </li>
-            <li>
-              <strong>Communication Data:</strong> We store the <strong>comments and Direct Messages (DMs)</strong> we receive through the Instagram API to enable comment replies, DM assistance, WhatsApp handoff, and service improvement.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">3. How We Use Your Information</h2>
-          <p class="mb-4">
-            We use information that we collect about you or that you provide to us, including any personal information:
-          </p>
-          <ul class="list-disc pl-6 space-y-2">
-            <li>To provide and maintain our Service.</li>
-            <li>To reply to comments and DMs on your Instagram account as authorized by you.</li>
-            <li>To notify you about changes to our Service.</li>
-            <li>To provide customer support.</li>
-            <li>To gather analysis or valuable information so that we can improve our Service.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">4. Data Security</h2>
-          <p>
-            We implement industry-standard security measures to protect your information. Your Instagram access tokens are encrypted at rest and stored securely. We use secure servers and restrict access to personal information to employees, contractors, and agents who need that information to operate and improve our services.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">5. Third-Party Services</h2>
-          <p>
-            Our Service integrates with Instagram (Meta). By using VoluChat, you are also bound by Instagram's Terms of Service and Privacy Policy. We do not sell your personal data to third parties.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">6. Your Rights</h2>
-          <p>
-            Depending on your location, you may have certain rights regarding your personal information, including the right to access, correct, or delete the data we store. You can disconnect your Instagram account at any time, which will revoke our access and stop data collection.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">7. Changes to Our Privacy Policy</h2>
-          <p>
-            It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat our users' personal information, we will notify you through a notice on the Service home page or via email.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-heading font-bold text-slate-900 mb-4">8. Contact Information</h2>
-          <p>
-            To ask questions or comment about this privacy policy and our privacy practices, contact us at: <a href="mailto:support@voluchat.com" class="text-indigo-600 hover:underline">support@voluchat.com</a>.
-          </p>
-        </section>
+          <section>
+            <h2 class="mb-3 text-2xl font-heading font-semibold text-stone-950">8. Contact information</h2>
+            <p class="leading-relaxed">
+              To ask questions about this privacy policy, contact us at <a href="mailto:support@voluchat.com" class="font-semibold text-primary-700 hover:underline">support@voluchat.com</a>.
+            </p>
+          </section>
+        </div>
       </div>
     </div>
   </main>
