@@ -39,10 +39,10 @@ test('secondary pages avoid old broad SaaS positioning and unsupported proof', (
   assert.doesNotMatch(secondarySource, /first 10 stores only|fully compliant|highest level|Official Meta Tech Partner/i);
 });
 
-test('secondary page CTAs stay trial-first and boutique specific', () => {
+test('secondary page CTAs stay trial-first while shared metadata is broader', () => {
   assert.match(sourceByFile['src/pages/blog/[slug].astro'], /See how VoluChat works for your boutique/);
   assert.match(sourceByFile['src/pages/contact.astro'], /Boutique details/);
-  assert.match(sourceByFile['src/layouts/Layout.astro'], /Instagram DMs into WhatsApp-ready chats for fashion boutiques|Instagram comments into WhatsApp-ready boutique chats/);
+  assert.match(sourceByFile['src/layouts/Layout.astro'], /repeated product questions across Instagram and Facebook Pages|ecommerce reply automation/);
 });
 
 test('comparison page covers the approved competitor set without brittle pricing claims', () => {

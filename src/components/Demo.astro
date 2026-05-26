@@ -2,25 +2,25 @@
 const queryPresets = [
   {
     id: "query-1",
-    label: "👗 Linen co-ord query",
-    shopperText: "Hi! Is the linen co-ord set from today's Reel available in Size M? And how much is it?",
+    label: "👟 Sneaker size query",
+    shopperText: "Hi! Is the white premium sneaker from today's post available in UK 9? And how much is it?",
     parsedFilters: [
-      { key: "Style / Category", value: "Linen co-ord set" },
-      { key: "Target Size", value: "Size M" },
-      { key: "Location Search", value: "Instagram Reel Sync" }
+      { key: "Product / Category", value: "Premium sneaker" },
+      { key: "Target Size", value: "UK 9" },
+      { key: "Channel", value: "Instagram post" }
     ],
     matches: [
-      { name: "Linen co-ord set", image: "/linen_coord_thumb.png", price: "Rs. 2,999", stock: "14 in stock", status: "Available" }
+      { name: "Premium sneaker", image: "/white_runner_thumb.png", price: "Rs. 6,999", stock: "8 in stock", status: "Available" }
     ]
   },
   {
     id: "query-2",
-    label: "🏮 Satin kurta query",
-    shopperText: "Hey, do you have the grey satin kurta in Size L? Can you deliver to Bangalore?",
+    label: "🏮 Fashion delivery query",
+    shopperText: "Is this grey satin kurta available for delivery to Bangalore by Friday?",
     parsedFilters: [
-      { key: "Style / Category", value: "Satin kurta set" },
-      { key: "Target Size", value: "Size L" },
-      { key: "Delivery Check", value: "Bangalore (PIN sync)" }
+      { key: "Product / Category", value: "Satin kurta set" },
+      { key: "Delivery Check", value: "Bangalore by Friday" },
+      { key: "Channel", value: "Facebook Page message" }
     ],
     matches: [
       { name: "Satin kurta set", image: "/satin_kurta_thumb.png", price: "Rs. 4,500", stock: "Low stock (3 left)", status: "Low Stock" }
@@ -28,10 +28,10 @@ const queryPresets = [
   },
   {
     id: "query-3",
-    label: "🧥 Denim overshirt query",
-    shopperText: "Looking for that black denim overshirt! Any size XL left?",
+    label: "🧥 Premium fashion query",
+    shopperText: "Looking for that black denim overshirt. Any size XL left?",
     parsedFilters: [
-      { key: "Style / Category", value: "Denim overshirt" },
+      { key: "Product / Category", value: "Denim overshirt" },
       { key: "Target Size", value: "Size XL" },
       { key: "Material", value: "Denim / Cotton" }
     ],
@@ -47,10 +47,10 @@ const queryPresets = [
     <div class="mx-auto max-w-3xl text-center mb-16">
       <p class="section-eyebrow">Interactive Showcase</p>
       <h2 class="text-3xl font-heading font-semibold leading-[1.08] text-stone-950 sm:text-5xl mt-3">
-        See the AI catalog search in action.
+        Repeated product questions, answered automatically.
       </h2>
       <p class="section-copy mx-auto mt-5 max-w-2xl">
-        Shoppers ask questions in organic language. VoluChat parses style, size, and availability to query your live inventory catalog in real-time.
+        Whether you run a shoe, fashion, beauty, jewelry, or accessory store, VoluChat parses product, size, stock, delivery, and offer questions before your team spends time replying manually.
       </p>
     </div>
 

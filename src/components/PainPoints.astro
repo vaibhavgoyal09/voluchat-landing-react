@@ -3,17 +3,17 @@ const frictionPoints = [
   {
     num: "01",
     issue: "Comments & DMs left waiting",
-    desc: "A shopper asks for price or size while your team is busy packing orders. By the time you reply, the impulse interest has cooled down."
+    desc: "A shopper asks for price, size, stock, or delivery while your team is busy packing orders. By the time you reply, the sale may be gone."
   },
   {
     num: "02",
-    issue: "Manual catalog double-entry",
-    desc: "Staff has to scroll through endless posts, highlights, and excel sheets to check if a specific satin kurta is in stock or matches the size."
+    issue: "The same product questions repeat",
+    desc: "Staff keeps typing the same answers about sizes, colors, COD, offers, delivery dates, and availability across every channel."
   },
   {
     num: "03",
-    issue: "Order questions repeat on WhatsApp",
-    desc: "Even after reaching WhatsApp, you spend hours re-asking for size, color, shipping address, and delivery PIN codes manually."
+    issue: "Ready buyers get mixed with browsers",
+    desc: "Without automated triage, your team spends time on casual questions while purchase-ready shoppers wait for a human reply."
   }
 ];
 
@@ -46,23 +46,23 @@ const flowCards: FlowCard[] = [
   {
     badge: "Always Online Cover",
     title: "Instant coverage on every post & Reel",
-    desc: "VoluChat replies to comments and DMs instantly, ensuring shoppers get prices and sizing details the second interest is fresh.",
+    desc: "VoluChat replies to repeated product questions instantly, so shoppers get price, size, stock, delivery, and offer answers while interest is fresh.",
     mockup: {
       type: "chat",
       lines: [
-        { sender: "buyer", text: "Is the ivory linen set available in Size S?" },
-        { sender: "voluchat", text: "Yes, Size S is available. Ready to sync size M & L too. Can I sync this to WhatsApp?" }
+        { sender: "buyer", text: "Is this white sneaker available in UK 9?" },
+        { sender: "voluchat", text: "Yes, UK 9 is available. Delivery to Pune is supported. Should I mark this for staff follow-up?" }
       ]
     }
   },
   {
     badge: "Synced Catalog",
-    title: "Zero-effort database matching",
-    desc: "Shoppers send screenshots or write descriptions. VoluChat queries your live Meta inventory in 0.8 seconds to verify stock and price.",
+    title: "Catalog matching without manual search",
+    desc: "Shoppers send screenshots or write descriptions. VoluChat checks your catalog details to verify product, stock, size, and price.",
     mockup: {
       type: "catalog",
-      name: "Satin Kurta Set",
-      price: "Rs. 4,500",
+      name: "Premium Sneaker",
+      price: "Rs. 6,999",
       status: "In Stock",
       img: "/satin_kurta_thumb.png"
     }
@@ -70,12 +70,12 @@ const flowCards: FlowCard[] = [
   {
     badge: "Clean Handoff",
     title: "WhatsApp starts with order details done",
-    desc: "VoluChat pre-collects sizing, shade choice, and shipping PIN codes, passing a neat order summary ticket to your WhatsApp team.",
+    desc: "VoluChat pre-collects size, color, quantity, delivery, and offer details, passing a clean buyer summary to your sales team.",
     mockup: {
       type: "ticket",
       items: [
-        { label: "Product", val: "Linen co-ord" },
-        { label: "Size Selected", val: "Size M" },
+        { label: "Product", val: "Premium sneaker" },
+        { label: "Size Selected", val: "UK 9" },
         { label: "PIN Code", val: "Pune 411014" }
       ]
     }
@@ -94,12 +94,12 @@ const flowCards: FlowCard[] = [
       <!-- Left Column: Sticky Friction Description -->
       <div class="lg:col-span-5 lg:sticky lg:top-28 space-y-8 reveal-on-scroll">
         <div>
-          <p class="section-eyebrow">The boutique workload</p>
+          <p class="section-eyebrow">The repeated-question workload</p>
           <h2 class="text-3xl font-heading font-semibold leading-[1.08] text-stone-950 sm:text-5xl mt-3">
-            Why DM sales feel so slow <span class="text-stone-400 font-normal italic">& exhausting</span>.
+            Slow manual replies cost sales when shoppers are comparing options.
           </h2>
           <p class="section-copy mt-5">
-            Fashion boutiques shouldn't spend the day manually re-typing price lists, size charts, shipping rates, and address forms for every single Instagram commenter.
+            Shoe stores, premium fashion sellers, jewelry brands, beauty stores, and other catalog-led ecommerce teams should not spend the day re-typing answers that automation can handle.
           </p>
         </div>
 

@@ -27,10 +27,10 @@ const [
   readSource('public/sitemap.xml'),
 ]);
 
-test('homepage SEO metadata matches the WhatsApp-ready chat positioning', () => {
-  assert.match(indexSource, /const seoTitle = "VoluChat \| Instagram DMs to WhatsApp-ready chats for boutiques";/);
-  assert.match(indexSource, /const seoDescription = "VoluChat helps fashion boutiques reply to Instagram buyers, answer product questions, collect details, and prepare WhatsApp-ready handoffs during a 14-day free trial.";/);
-  assert.match(indexSource, /const seoKeywords = "Instagram DM automation for boutiques, fashion boutique WhatsApp automation, Instagram DMs to WhatsApp, WhatsApp-ready chats, AI DM helpdesk, Instagram store replies, product catalog search, WhatsApp handoff";/);
+test('homepage SEO metadata leads with ecommerce-store positioning', () => {
+  assert.match(indexSource, /const seoTitle = "Stop Losing Sales to Slow Replies \| VoluChat";/);
+  assert.match(indexSource, /const seoDescription = "VoluChat automates repeated product questions across Instagram and Facebook Pages so ecommerce stores answer faster, save hours, and stop losing sales.";/);
+  assert.match(indexSource, /const seoKeywords = "ecommerce reply automation, Instagram DM automation, Facebook Page automation, repeated product questions, slow reply lost sales, AI sales assistant, product catalog search, WhatsApp automation, shoe store automation, high-ticket ecommerce automation";/);
   assert.match(indexSource, /<Layout\s+title={seoTitle}\s+description={seoDescription}\s+keywords={seoKeywords}/);
 });
 
@@ -43,14 +43,14 @@ test('shared layout emits crawlable canonical and per-page keyword metadata', ()
   assert.match(layoutSource, /<meta property="og:site_name" content="VoluChat" \/>/);
 });
 
-test('homepage structured data and FAQ copy reinforce the new landing-page promise', () => {
+test('homepage structured data and FAQ copy reinforce the ecommerce landing promise', () => {
   assert.match(indexSource, /const structuredData = \[/);
   assert.match(indexSource, /"@type": "WebSite"/);
   assert.match(indexSource, /"@type": "Organization"/);
   assert.match(indexSource, /"@type": "SiteNavigationElement"/);
-  assert.match(indexSource, /"name": "How does VoluChat help fashion boutiques turn Instagram DMs into WhatsApp-ready chats\?"/);
-  assert.match(faqSource, /question: "How does VoluChat help fashion boutiques turn Instagram DMs into WhatsApp-ready chats\?"/);
-  assert.match(faqSource, /answer: "VoluChat replies to shoppers in Instagram DM, answers repeat boutique questions, finds products from your catalog, collects useful details, and prepares a WhatsApp-ready chat for your staff."/);
+  assert.match(indexSource, /"name": "How does VoluChat stop ecommerce stores losing sales to slow replies\?"/);
+  assert.match(faqSource, /question: "How does VoluChat stop ecommerce stores losing sales to slow replies\?"/);
+  assert.match(faqSource, /answer: "VoluChat automates replies to repeated product questions across Instagram and Facebook Pages, checks catalog details, collects buyer context, and helps your team step in when shoppers are ready to move forward."/);
   assert.match(faqSource, /question: "How is VoluChat different from Manychat, WATI, Interakt, respond.io, AiSensy, or Gallabox\?"/);
 });
 
@@ -66,7 +66,7 @@ test('public crawl hints expose the main pages Google can consider for sitelinks
 });
 
 test('web app manifest avoids the old autopilot positioning', () => {
-  assert.match(manifestSource, /"name": "VoluChat - Instagram DMs to WhatsApp-ready boutique chats"/);
-  assert.match(manifestSource, /"description": "Reply to boutique shoppers, find catalog products, and prepare WhatsApp-ready chats for your sales staff."/);
+  assert.match(manifestSource, /"name": "VoluChat - Stop Losing Sales to Slow Replies"/);
+  assert.match(manifestSource, /"description": "Automate repeated product questions across Instagram and Facebook Pages so ecommerce shoppers get faster replies."/);
   assert.doesNotMatch(manifestSource, /autopilot|paying customers/i);
 });
