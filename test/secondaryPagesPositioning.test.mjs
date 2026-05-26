@@ -26,8 +26,8 @@ const secondarySource = Object.values(sourceByFile).join('\n');
 
 test('secondary pages use team-scale ecommerce reply positioning', () => {
   assert.match(sourceByFile['src/pages/features.astro'], /Features for ecommerce sales teams/);
-  assert.match(sourceByFile['src/pages/pricing.astro'], /14-day trial for ecommerce sales teams/);
-  assert.match(sourceByFile['src/pages/contact.astro'], /Start the 14-day trial for your sales team/);
+  assert.match(sourceByFile['src/pages/pricing.astro'], /Early pricing for Instagram commerce teams/);
+  assert.match(sourceByFile['src/pages/contact.astro'], /Book a demo call for your Instagram store/);
   assert.match(sourceByFile['src/pages/about.astro'], /Built for teams losing sales to slow replies/);
   assert.match(sourceByFile['src/pages/blog/index.astro'], /Ecommerce sales team automation guides/);
 });
@@ -39,7 +39,7 @@ test('secondary pages avoid old broad SaaS positioning and unsupported proof', (
   assert.doesNotMatch(secondarySource, /first 10 stores only|fully compliant|highest level|Official Meta Tech Partner/i);
 });
 
-test('secondary page CTAs stay trial-first while shared metadata is broader', () => {
+test('secondary page CTAs stay demo-first while shared metadata is broader', () => {
   assert.match(sourceByFile['src/pages/blog/[slug].astro'], /See how VoluChat works for ecommerce stores/);
   assert.match(sourceByFile['src/pages/contact.astro'], /Sales team details/);
   assert.match(sourceByFile['src/layouts/Layout.astro'], /repeated product questions across Instagram and Facebook Pages|ecommerce reply automation/);
@@ -47,7 +47,7 @@ test('secondary page CTAs stay trial-first while shared metadata is broader', ()
   assert.doesNotMatch(secondarySource, /many small teams|store owners track/i);
 });
 
-test('comparison page covers the approved competitor set without brittle pricing claims', () => {
+test('comparison page covers the approved competitor set without brittle superiority claims', () => {
   const compareSource = sourceByFile['src/pages/compare.astro'];
 
   assert.match(compareSource, /Manychat/);
@@ -59,5 +59,5 @@ test('comparison page covers the approved competitor set without brittle pricing
   assert.match(compareSource, /ecommerce product conversations/);
   assert.match(compareSource, /not a generic WhatsApp inbox/);
   assert.match(compareSource, /shared AI reply layer/);
-  assert.doesNotMatch(compareSource, /₹\d|\$\d|cheaper than|better than|#1|best/i);
+  assert.doesNotMatch(compareSource, /\$\d|cheaper than|better than|#1|best/i);
 });

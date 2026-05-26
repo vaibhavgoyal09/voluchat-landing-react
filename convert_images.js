@@ -27,6 +27,9 @@ const filesToConvert = [
   'white_runner_thumb.png',
   'grey_runner_thumb.png',
   'black_trainer_thumb.png',
+  'linen_coord_thumb.png',
+  'satin_kurta_thumb.png',
+  'denim_overshirt_thumb.png',
   'buyer_avatar.png',
   'og-image.png'
 ];

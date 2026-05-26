@@ -34,7 +34,11 @@ const faqs = [
   },
   {
     question: "Do I need technical knowledge to use it?",
-    answer: "No. Store teams get hands-on help connecting Instagram and Facebook Pages, adding catalog details, tuning replies, and setting up checkout drafts during the 14-day trial.",
+    answer: "No. Store teams get founder-led help connecting Instagram and Facebook Pages, adding catalog details, tuning replies, and setting up checkout drafts.",
+  },
+  {
+    question: "How much does VoluChat cost?",
+    answer: "Early access pricing is Rs. 5,000 for one-time setup and Rs. 3,000 per month, with a 30-day money-back guarantee.",
   },
 ];
 ---
@@ -58,7 +62,7 @@ const faqs = [
     </div>
 
     <!-- Main Accordion Container (Responsive padding & premium glass) -->
-    <div class="divide-y divide-stone-100 overflow-hidden glass-card-premium rounded-2xl sm:rounded-3xl shadow-2xl">
+    <div class="divide-y divide-stone-100 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_18px_60px_rgba(28,25,23,0.08)]">
       {faqs.map((faq, index) => (
         <div class="faq-item transition-all duration-300" data-index={index}>
           <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-stone-50/70">

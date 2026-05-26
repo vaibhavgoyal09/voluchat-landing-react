@@ -38,13 +38,13 @@ const principles = [
               VoluChat was created for product-heavy ecommerce sales teams that answer the same price, size, stock, delivery, and offer questions all day while buyers compare options elsewhere.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/contact" class="btn-primary">Start 14-day free trial</a>
+              <a href="/contact" class="btn-primary">Book demo call</a>
               <a href="/features" class="btn-secondary">Explore features</a>
             </div>
           </div>
 
-          <div class="glass-panel-premium rounded-[2.5rem] p-3 shadow-2xl">
-            <img src="/about_hero.webp" alt="VoluChat workspace for ecommerce reply automation" class="h-full w-full rounded-[2rem] object-cover" />
+          <div class="solid-card p-3">
+            <img src="/about_hero.webp" alt="VoluChat workspace for ecommerce reply automation" class="h-full w-full rounded-xl object-cover" width="1024" height="1024" loading="eager" decoding="async" />
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@ const principles = [
 
         <div class="mt-12 grid gap-5 md:grid-cols-3">
           {principles.map((item, index) => (
-            <article class={`glass-card-premium rounded-[2rem] p-7 reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
+            <article class={`solid-card reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
               <span class="grid h-10 w-10 place-items-center rounded-full bg-primary-800 font-mono text-xs font-semibold text-white">0{index + 1}</span>
               <h3 class="mt-6 text-xl font-heading font-semibold text-stone-950">{item.title}</h3>
               <p class="mt-4 text-sm font-semibold leading-relaxed text-stone-600">{item.text}</p>
@@ -75,8 +75,8 @@ const principles = [
     <section class="relative pb-28">
       <div class="page-shell">
         <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div class="glass-panel-premium rounded-[2.5rem] p-3 shadow-2xl">
-            <img src="/mission_collaboration.webp" alt="Team configuring ecommerce automation workflows" class="max-h-[500px] w-full rounded-[2rem] object-cover" />
+          <div class="solid-card p-3">
+            <img src="/mission_collaboration.webp" alt="Team configuring ecommerce automation workflows" class="max-h-[500px] w-full rounded-xl object-cover" width="1024" height="1024" loading="lazy" decoding="async" />
           </div>
 
           <div>
@@ -87,7 +87,7 @@ const principles = [
             <p class="mt-5 text-base font-semibold leading-relaxed text-stone-600">
               Broad chat platforms are useful, but growing stores need the repetitive product-question layer handled well before the inbox fills up. VoluChat focuses on that first: fast answers, catalog context, and clean handoffs for one owner or a 5-10 person sales team.
             </p>
-            <div class="mt-8 rounded-[2rem] border border-primary-100 bg-primary-50/70 p-6">
+            <div class="mt-8 rounded-xl border border-primary-100 bg-primary-50/70 p-6">
               <p class="text-lg font-semibold leading-relaxed text-stone-800">
                 "If five reps are typing the same answers every day, automation should handle that before the buyer leaves."
               </p>

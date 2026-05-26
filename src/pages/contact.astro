@@ -4,9 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FAQ from '../components/FAQ.astro';
 
-const seoTitle = "Start the 14-day trial for your sales team | VoluChat";
-const seoDescription = "Start a 14-day VoluChat trial for ecommerce sales team automation across Instagram, Facebook Pages, product questions, and sales handoffs.";
-const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20want%20to%20start%20the%2014-day%20trial%20for%20my%20ecommerce%20sales%20team.";
+const seoTitle = "Book a demo call for your Instagram store | VoluChat";
+const seoDescription = "Book a VoluChat demo call for high-volume Instagram stores that need automated product replies, cart collection, and WhatsApp checkout drafts.";
+const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20want%20to%20book%20a%20demo%20call%20for%20my%20Instagram%20store.";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
@@ -20,12 +20,12 @@ const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%2
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <div class="chip">Start your trial</div>
+            <div class="chip">Book a demo call</div>
             <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl">
-              Start the 14-day trial for your sales team.
+              See VoluChat on your Instagram sales workflow.
             </h1>
             <p class="section-copy mt-6 max-w-xl">
-              Show us your repeated product questions and sales workflow. We will help configure VoluChat around your channels, catalog, reply tone, and team handoffs.
+              Show us your repeated product questions, comment volume, and DM workflow. We will walk you through live replies, catalog matching, cart collection, address capture, and WhatsApp checkout drafts.
             </p>
 
             <div class="mt-10 space-y-5">
@@ -51,11 +51,11 @@ const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%2
             </div>
           </div>
 
-          <div class="glass-panel-premium rounded-[2.5rem] p-6 shadow-2xl sm:p-8 lg:p-10">
+          <div class="solid-card p-6 sm:p-8 lg:p-10">
             <form id="demo-form" class="space-y-6">
               <div>
                 <h2 class="text-2xl font-heading font-semibold text-stone-950">Sales team details</h2>
-                <p class="mt-2 text-sm font-semibold text-stone-500">Share a few details to start the guided trial.</p>
+                <p class="mt-2 text-sm font-semibold text-stone-500">Share a few details so we can prepare the demo around your store.</p>
               </div>
 
               <div>
@@ -74,12 +74,12 @@ const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%2
               </div>
 
               <button type="submit" id="submit-btn" class="btn-primary w-full gap-3 px-6 py-5 text-base disabled:cursor-not-allowed disabled:opacity-55">
-                <span id="btn-text">Start my 14-day free trial</span>
+                <span id="btn-text">Book my demo call</span>
                 <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </button>
 
               <div class="text-center">
-                <a href={trialWhatsappUrl} target="_blank" rel="noopener" class="text-sm font-semibold text-primary-700 transition-colors hover:text-primary-900">
+                <a href={demoWhatsappUrl} target="_blank" rel="noopener" class="text-sm font-semibold text-primary-700 transition-colors hover:text-primary-900">
                   Prefer WhatsApp? Message us now
                 </a>
               </div>
@@ -92,8 +92,8 @@ const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%2
     </section>
 
     <section class="page-shell pb-28">
-      <div class="glass-panel-premium rounded-[2.5rem] p-3 shadow-2xl">
-        <img src="/contact_support.webp" alt="VoluChat support for ecommerce trial setup" class="h-[420px] w-full rounded-[2rem] object-cover sm:h-[520px]" />
+      <div class="solid-card p-3">
+        <img src="/contact_support.webp" alt="VoluChat founder-led ecommerce demo setup" class="h-[420px] w-full rounded-xl object-cover sm:h-[520px]" />
       </div>
     </section>
 
@@ -121,6 +121,10 @@ const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%2
         const data = Object.fromEntries(formData.entries());
 
         try {
+          if (!webhookUrl) {
+            throw new Error('Missing demo webhook URL');
+          }
+
           const response = await fetch(webhookUrl, {
             method: 'POST',
             headers: {
@@ -133,11 +137,11 @@ const trialWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%2
             throw new Error('Failed to send request');
           }
 
-          formMessage.innerText = 'Thank you. We will reach out to set up your trial shortly.';
+          formMessage.innerText = 'Thank you. We will reach out to schedule your demo call shortly.';
           formMessage.className = 'rounded-2xl bg-primary-50 p-4 text-center text-sm font-semibold text-primary-800 mt-6';
           formMessage.classList.remove('hidden');
           form.reset();
-          btnText.innerText = 'Trial requested';
+          btnText.innerText = 'Demo requested';
         } catch (error) {
           formMessage.innerText = 'Something went wrong. Please try again or email us directly.';
           formMessage.className = 'rounded-2xl bg-rose-50 p-4 text-center text-sm font-semibold text-rose-700 mt-6';

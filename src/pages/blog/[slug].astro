@@ -34,7 +34,7 @@ const robots = [
 <Layout
   title={blog ? `${blog.seoTitle} | VoluChat Blog` : 'Blog Post Not Found'}
   description={blog?.seoDescription || 'The requested VoluChat blog post is unavailable.'}
-  image={blog?.featuredImageUrl || '/og-image.png'}
+  image={blog?.featuredImageUrl || '/og-image.webp'}
   type="article"
   robots={robots}
 >
@@ -67,7 +67,7 @@ const robots = [
           <div class="mt-8 flex flex-wrap items-center justify-center gap-5 text-stone-500">
             <div class="flex items-center gap-3">
               {blog.author.avatarUrl ? (
-                <img src={blog.author.avatarUrl} alt="" class="h-10 w-10 rounded-full object-cover" />
+                <img src={blog.author.avatarUrl} alt="" class="h-10 w-10 rounded-full object-cover" width="40" height="40" loading="lazy" decoding="async" />
               ) : (
                 <div class="grid h-10 w-10 place-items-center rounded-full bg-primary-50 font-semibold text-primary-700">V</div>
               )}
@@ -78,9 +78,9 @@ const robots = [
           </div>
         </div>
 
-        <div class="glass-panel-premium relative mb-14 aspect-[21/9] overflow-hidden rounded-[2rem]">
+        <div class="solid-card relative mb-14 aspect-[21/9] overflow-hidden p-0">
           {blog.featuredImageUrl ? (
-            <img src={blog.featuredImageUrl} alt={blog.featuredImageAlt} class="h-full w-full object-cover" />
+            <img src={blog.featuredImageUrl} alt={blog.featuredImageAlt} class="h-full w-full object-cover" loading="eager" decoding="async" />
           ) : (
             <>
               <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(83,111,159,0.12),rgba(255,255,255,0.6),rgba(203,217,234,0.16))]"></div>
@@ -91,7 +91,7 @@ const robots = [
           )}
         </div>
 
-        <div class="glass-panel-premium rounded-[2rem] p-6 shadow-none md:p-10">
+        <div class="solid-card p-6 shadow-none md:p-10">
           {contentBlocks.map((block) => {
             if (block.startsWith('# ')) {
               return <h2 class="mt-10 mb-5 text-3xl font-semibold text-stone-950">{block.replace(/^#\s+/, '')}</h2>;
@@ -130,7 +130,7 @@ const robots = [
             <h2 class="mb-6 text-3xl font-semibold text-stone-950">FAQs</h2>
             <div class="space-y-4">
               {blog.faqs.map((faq) => (
-                <details class="glass-card-premium rounded-2xl p-6">
+                <details class="solid-card p-6">
                   <summary class="cursor-pointer font-semibold text-stone-950">{faq.question}</summary>
                   <p class="mt-4 leading-relaxed text-stone-600">{faq.answer}</p>
                 </details>
@@ -140,10 +140,10 @@ const robots = [
         )}
 
         <div class="mt-20 border-t border-white/55 pt-10">
-          <div class="glass-card-premium rounded-[2rem] p-8 text-center">
+          <div class="solid-card p-8 text-center">
             <h4 class="text-2xl font-heading font-semibold text-stone-950">See how VoluChat works for ecommerce stores</h4>
-            <p class="mx-auto mt-4 max-w-xl font-medium leading-relaxed text-stone-600">Start a 14-day trial to see how repeated product questions can become faster replies and cleaner sales-team handoffs.</p>
-            <a href="/contact" class="btn-primary mt-8">Start 14-day free trial</a>
+            <p class="mx-auto mt-4 max-w-xl font-medium leading-relaxed text-stone-600">Book a demo call to see how repeated product questions can become faster replies and cleaner sales-team handoffs.</p>
+            <a href="/contact" class="btn-primary mt-8">Book demo call</a>
           </div>
         </div>
       </article>

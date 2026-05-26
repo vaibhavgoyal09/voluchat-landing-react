@@ -25,16 +25,16 @@ const steps = [
       <div class="max-w-xl reveal-on-scroll space-y-4">
         <p class="section-eyebrow">Simple setup</p>
         <h2 class="section-title">
-          Set up VoluChat around your store workflow.
+          Launch without rebuilding how your team sells.
         </h2>
         <p class="section-copy">
-          Our team helps you connect channels, add policies and catalog details, tune automated replies, and test checkout-ready WhatsApp drafts during the 14-day free trial.
+          Setup is about permissions, store rules, and reply tone. We map what your team already does, then turn the repetitive parts into controlled automation.
         </p>
       </div>
 
       <div class="grid gap-5">
         {steps.map((step, index) => (
-          <article class={`surface-soft rounded-[2.25rem] p-7 md:p-8 hover:-translate-y-1 hover:shadow-xl hover:border-white transition-all duration-300 reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
+          <article class={`solid-card hover:-translate-y-1 hover:shadow-xl transition-all duration-300 reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div class="space-y-2">
                 <h3 class="font-heading text-xl font-bold text-stone-950">{step.title}</h3>

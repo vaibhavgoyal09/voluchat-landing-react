@@ -65,7 +65,7 @@ test('redesigned landing page leads with a Framer-like SaaS hero and static chec
   assert.doesNotMatch(sceneSource, /import \* as THREE from 'three';/);
   assert.doesNotMatch(sceneSource, /<canvas id="automation-scene"/);
   assert.match(sceneSource, /min-h-\[360px\]/);
-  assert.match(sceneSource, /hidden rounded-\[1\.35rem\][\s\S]*sm:block/);
+  assert.match(sceneSource, /hidden rounded-xl[\s\S]*sm:block/);
   assert.match(sceneSource, /Live checkout automation/);
   assert.match(sceneSource, /Linen Co-ord Set/);
   assert.match(sceneSource, /Checkout draft/);
@@ -75,16 +75,19 @@ test('redesigned landing page leads with a Framer-like SaaS hero and static chec
 
 test('redesigned sections use premium motion surfaces without reverting to narrow boutique positioning', () => {
   assert.match(painSource, /The same questions and checkout steps hit every inbox/);
-  assert.match(featuresSource, /A 24\/7 checkout agent for every product channel/);
+  assert.match(featuresSource, /The repetitive layer handled before your team opens the chat/);
   assert.match(featuresSource, /24\/7 reply agent/);
   assert.match(featuresSource, /Cart builder/);
   assert.match(featuresSource, /WhatsApp checkout/);
+  assert.match(featuresSource, /Keeps buyer context together/);
   assert.match(featuresSource, /UPI QR and confirm/);
   assert.doesNotMatch(featuresSource, /w-\[88%\]|w-\[72%\]|w-\[62%\]/);
   assert.doesNotMatch(featuresSource, /h-2 rounded-full bg-stone-200/);
   assert.match(demoSource, /Watch a product question become a checkout-ready WhatsApp draft/);
   assert.match(cssSource, /\.hero-stage/);
-  assert.match(cssSource, /\.section-title\s*{\s*@apply text-\[2\.35rem\]/);
+  assert.match(cssSource, /\.section-title\s*{\s*@apply text-\[2\.15rem\]/);
+  assert.match(cssSource, /\.solid-card/);
+  assert.match(cssSource, /\.dark-band/);
   assert.doesNotMatch(cssSource, /\.motion-orbit|orbitFloat|motion-orbit-delay/);
   assert.match(cssSource, /\.kinetic-card/);
   assert.match(cssSource, /\.ambient-noise/);

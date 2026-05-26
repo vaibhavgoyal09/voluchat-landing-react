@@ -1,51 +1,49 @@
 ---
 const includes = [
-  "Instagram and Facebook Page reply setup",
-  "Product catalog search and item matching",
-  "Size, color, stock, delivery, and offer-code replies",
-  "Cart, variant, quantity, and delivery address collection",
-  "Prefilled WhatsApp checkout text for confirmed carts",
-  "UPI/payment confirmation workflow planning",
+  "Instagram comments and DM reply setup",
+  "Meta catalog connection and product matching",
+  "Store policy, COD, delivery, and offer rules",
+  "Conversation handoff and payment workflow planning",
   "Hindi, English, and Hinglish reply tuning",
-  "Hands-on setup during your 14-day trial"
+  "Founder-led launch support"
 ];
 ---
 
-<section id="pricing" class="relative overflow-hidden py-28 md:py-36">
+<section id="pricing" class="relative overflow-hidden py-20 md:py-24">
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-15"></div>
   </div>
 
   <div class="relative z-10 mx-auto max-w-5xl px-6">
-    <div class="mb-24 text-center">
+    <div class="mb-12 text-center">
       <!-- Standardized Glowing Badge -->
       <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200/70 bg-primary-50/70 px-4 py-1.5 text-xs font-semibold text-primary-800 shadow-sm backdrop-blur-md">
         <span class="h-2 w-2 rounded-full bg-primary-600 shadow-[0_0_8px_rgba(83,111,159,0.42)]"></span>
-        <span>Trial-first pricing</span>
+        <span>Early access pricing</span>
       </div>
       <!-- Consistent Responsive Heading -->
       <h2 class="text-3xl font-heading font-semibold leading-[1.1] tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
-        Try 24/7 checkout automation free for 14 days.
+        Early pricing for high-volume Instagram stores.
       </h2>
       <p class="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-relaxed text-stone-600 sm:text-xl">
-        We help map your catalog, repeated product questions, cart rules, delivery fields, and WhatsApp checkout draft before you decide whether VoluChat fits your store.
+        Simple early pricing, founder-led setup, and a 30-day money-back guarantee if VoluChat is not a fit.
       </p>
     </div>
 
     <!-- Main Pricing Panel -->
-    <div class="glass-card-premium rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden relative hover:scale-[1.01] hover:shadow-primary-700/10 transition-all duration-500 group/panel">
-      <div class="grid gap-12 md:grid-cols-[1.1fr_0.9fr] items-center">
+    <div class="dark-band overflow-hidden rounded-2xl p-6 md:p-10">
+      <div class="grid gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-center">
         
         <!-- Left: Includes list -->
         <div>
-          <div class="text-[10px] font-semibold uppercase tracking-[0.25em] text-primary-700 mb-6">Store trial setup</div>
-          <h3 class="font-heading text-2xl font-semibold text-stone-950 tracking-tight mb-8">What is included during the trial</h3>
+          <div class="mb-6 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary-200">Founder-led setup</div>
+          <h3 class="mb-8 font-heading text-2xl font-semibold tracking-tight text-white">What is included when you launch</h3>
           
-          <ul class="space-y-4">
+          <ul class="grid gap-3 sm:grid-cols-2">
             {includes.map((item) => (
-              <li class="flex items-start gap-3.5 text-sm font-semibold leading-relaxed text-stone-700 hover:text-stone-950 transition-colors duration-200 group/item">
-                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full border border-primary-100 bg-primary-50 group-hover/item:bg-primary-100 group-hover/item:scale-110 transition-all duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-primary-700"><polyline points="20 6 9 17 4 12"/></svg>
+              <li class="flex items-start gap-3 text-sm font-semibold leading-relaxed text-primary-50/88">
+                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white/12 text-primary-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 </span>
                 <span>{item}</span>
               </li>
@@ -54,23 +52,23 @@ const includes = [
         </div>
 
         <!-- Right: Call to action box -->
-        <div class="rounded-3xl border border-stone-100 bg-stone-50/50 p-8 shadow-inner text-center">
-          <div class="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400 mb-2">
-            No-risk evaluation
+        <div class="rounded-2xl border border-white/15 bg-white p-7 text-center shadow-[0_24px_70px_rgba(0,0,0,0.22)]">
+          <div class="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-700">
+            Early access plan
           </div>
-          <div class="font-heading text-4xl font-semibold text-stone-950 mb-3">
-            14-day free trial
+          <div class="mb-2 font-heading text-4xl font-semibold text-stone-950">
+            Rs. 3,000/month
           </div>
-          <div class="mb-4">
-            <span class="font-heading text-5xl font-semibold text-stone-950">Free</span>
-            <span class="text-sm font-bold text-stone-500"> for 14 days</span>
+          <div class="mb-5 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3">
+            <span class="font-heading text-3xl font-semibold text-stone-950">Rs. 5,000</span>
+            <span class="block text-xs font-bold uppercase tracking-[0.16em] text-stone-500">one-time setup</span>
           </div>
-          <p class="text-xs font-semibold leading-relaxed text-stone-500 mb-8">
-            Test Instagram and Facebook Page replies, catalog answers, cart collection, Hinglish message tuning, and WhatsApp checkout drafts with guided setup.
+          <p class="mb-6 text-xs font-semibold leading-relaxed text-stone-500">
+            Includes setup, policy mapping, reply tuning, handoff planning, and a 30-day money-back guarantee.
           </p>
           
           <a href="/contact" class="btn-primary group w-full gap-3 px-6 py-4">
-            <span class="relative z-10">Start 14-day free trial</span>
+            <span class="relative z-10">Book demo call</span>
             <span class="h-2.5 w-2.5 rounded-full bg-primary-300 group-hover:bg-white transition-colors duration-300 relative z-10"></span>
           </a>
         </div>

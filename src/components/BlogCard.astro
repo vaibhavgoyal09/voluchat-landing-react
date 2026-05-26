@@ -26,7 +26,7 @@ const authorInitials = blog.author.name
   .toUpperCase();
 ---
 
-<a href={blog.href} class="glass-card-premium group relative flex flex-col h-full rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-primary-500/20 transition-all duration-500">
+<a href={blog.href} class="solid-card group relative flex h-full flex-col overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-primary-500/20 hover:shadow-2xl">
   <!-- Card Header / Image Placeholder -->
   <div class="relative aspect-[16/9] overflow-hidden bg-white/35">
     {blog.featuredImageUrl ? (
@@ -34,6 +34,7 @@ const authorInitials = blog.author.name
         src={blog.featuredImageUrl}
         alt={blog.featuredImageAlt || blog.title}
         loading="lazy"
+        decoding="async"
         class="h-full w-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.06]"
       />
     ) : (
@@ -85,6 +86,9 @@ const authorInitials = blog.author.name
             src={blog.author.avatarUrl}
             alt=""
             loading="lazy"
+            decoding="async"
+            width="32"
+            height="32"
             class="h-8 w-8 rounded-full object-cover border border-white/60"
           />
         ) : (
