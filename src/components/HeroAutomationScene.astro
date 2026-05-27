@@ -1,15 +1,15 @@
 ---
-const heroVideoSrc = "/inshot_20260527_142413828.mp4";
+const heroVideoSrc = "/hero_demo.mp4";
 ---
 
-<div class="relative mx-auto w-full max-w-[22rem] sm:max-w-[25rem] lg:max-w-[26rem]" aria-label="VoluChat mobile Instagram automation demo">
+<div class="relative mx-auto w-full max-w-[16.5rem] sm:max-w-[18.5rem] lg:-mt-20 lg:max-w-[18.5rem]" aria-label="VoluChat mobile Instagram automation demo">
   <div class="absolute -inset-5 rounded-[2rem] bg-rose-100/55 blur-3xl"></div>
 
   <div class="relative rounded-[2rem] border border-stone-200 bg-white p-3 shadow-[0_28px_90px_rgba(28,25,23,0.14)]">
     <div class="rounded-[1.65rem] bg-stone-950 p-2 shadow-inner">
       <div class="relative overflow-hidden rounded-[1.35rem] bg-stone-900">
         <video
-          class="aspect-[9/16] w-full bg-stone-950 object-cover"
+          class="aspect-[9/20] w-full bg-stone-950 object-cover"
           src={heroVideoSrc}
           autoplay
           muted
@@ -22,21 +22,6 @@ const heroVideoSrc = "/inshot_20260527_142413828.mp4";
         <div class="pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-2">
           <div class="h-5 w-24 rounded-full bg-stone-950/80"></div>
         </div>
-      </div>
-    </div>
-
-    <div class="mt-4 grid grid-cols-3 gap-2" aria-label="VoluChat workflow highlights">
-      <div class="rounded-xl border border-stone-200 bg-stone-50 p-3">
-        <p class="mini-label">Channel</p>
-        <p class="mt-1 text-sm font-semibold text-stone-950">Instagram</p>
-      </div>
-      <div class="rounded-xl border border-stone-200 bg-stone-50 p-3">
-        <p class="mini-label">Context</p>
-        <p class="mt-1 text-sm font-semibold text-stone-950">Catalog</p>
-      </div>
-      <div class="rounded-xl border border-stone-200 bg-primary-50 p-3">
-        <p class="mini-label">Handoff</p>
-        <p class="mt-1 text-sm font-semibold text-stone-950">Ready</p>
       </div>
     </div>
   </div>

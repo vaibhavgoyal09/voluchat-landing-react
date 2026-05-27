@@ -49,9 +49,9 @@ test('homepage hero uses broad high-consideration ecommerce examples', () => {
   assert.match(heroSource, /linen co-ord/i);
   assert.match(heroSource, /Size M/);
   assert.match(heroSource, /Delhi 110024/);
-  assert.match(heroSource, /linen_coord_thumb\.png/);
-  assert.match(heroSource, /satin_kurta_thumb\.png/);
-  assert.match(heroSource, /denim_overshirt_thumb\.png/);
+  assert.match(heroSource, /linen_coord_thumb\.webp/);
+  assert.match(heroSource, /satin_kurta_thumb\.webp/);
+  assert.match(heroSource, /denim_overshirt_thumb\.webp/);
   assert.doesNotMatch(sourceByFile['src/components/HeroAutomationScene.astro'], /sneaker|runner|Cloud Runner|white_runner/i);
   assert.match(heroSource, /Facebook Page/);
   assert.doesNotMatch(heroSource, /Official Meta Tech Partner/);

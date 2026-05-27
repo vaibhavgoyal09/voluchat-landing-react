@@ -1,0 +1,60 @@
+---
+const comparisonRows = [
+  {
+    alternative: "Generic chatbot builders",
+    usualFit: "Flow builders, broadcasts, and broad channel automation.",
+    voluChatFit: "Product questions, catalog matching, cart context, and checkout handoff.",
+  },
+  {
+    alternative: "WhatsApp inbox tools",
+    usualFit: "Team inboxes, templates, campaigns, and support follow-up.",
+    voluChatFit: "Prepares the buyer before WhatsApp, so your team receives cleaner order context.",
+  },
+  {
+    alternative: "Manual sales replies",
+    usualFit: "Flexible for edge cases, but slow when the same questions repeat all day.",
+    voluChatFit: "Handles price, size, stock, delivery, and address collection before a rep steps in.",
+  },
+];
+---
+
+<section id="comparison" class="section-pad relative overflow-hidden">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(203,217,234,0.18),transparent_28%),radial-gradient(circle_at_82%_48%,rgba(245,245,244,0.72),transparent_30%)]"></div>
+  <div class="ambient-noise"></div>
+
+  <div class="page-shell relative z-10">
+    <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+      <div class="max-w-xl reveal-on-scroll">
+        <p class="section-eyebrow">Focused by design</p>
+        <h2 class="section-title mt-4">
+          Not another generic inbox or chatbot builder.
+        </h2>
+        <p class="section-copy mt-5">
+          VoluChat is narrower: it handles repeated ecommerce buying questions and prepares checkout-ready handoffs for your sales team.
+        </p>
+        <a href="/compare" class="btn-secondary mt-7">
+          Compare alternatives
+        </a>
+      </div>
+
+      <div class="grid gap-3 reveal-on-scroll reveal-delay-100">
+        {comparisonRows.map((row) => (
+          <article class="solid-card-compact">
+            <div class="grid gap-4 md:grid-cols-[0.78fr_1fr] md:items-stretch">
+              <div class="rounded-xl border border-stone-200 bg-stone-50 p-4">
+                <p class="mini-label">Alternative</p>
+                <h3 class="mt-2 text-lg font-semibold leading-snug text-stone-950">{row.alternative}</h3>
+                <p class="mt-3 text-sm font-medium leading-relaxed text-stone-600">{row.usualFit}</p>
+              </div>
+
+              <div class="rounded-xl border border-primary-100 bg-primary-50/80 p-4">
+                <p class="mini-label text-primary-700">VoluChat</p>
+                <p class="mt-2 text-base font-semibold leading-relaxed text-stone-950">{row.voluChatFit}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
