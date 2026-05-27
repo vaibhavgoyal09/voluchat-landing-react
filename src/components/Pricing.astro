@@ -9,32 +9,24 @@ const includes = [
 ];
 ---
 
-<section id="pricing" class="relative overflow-hidden py-20 md:py-24">
+<section id="pricing" class="section-pad relative overflow-hidden">
   <div class="absolute inset-0 -z-10 pointer-events-none">
-    <div class="sect-grid opacity-15"></div>
+    <div class="sect-grid opacity-10"></div>
   </div>
 
-  <div class="relative z-10 mx-auto max-w-5xl px-6">
-    <div class="mb-12 text-center">
-      <!-- Standardized Glowing Badge -->
-      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200/70 bg-primary-50/70 px-4 py-1.5 text-xs font-semibold text-primary-800 shadow-sm backdrop-blur-md">
-        <span class="h-2 w-2 rounded-full bg-primary-600 shadow-[0_0_8px_rgba(83,111,159,0.42)]"></span>
-        <span>Early access pricing</span>
-      </div>
-      <!-- Consistent Responsive Heading -->
-      <h2 class="text-3xl font-heading font-semibold leading-[1.1] tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
+  <div class="page-shell relative z-10">
+    <div class="mx-auto mb-10 max-w-3xl text-center">
+      <p class="section-eyebrow">Early access pricing</p>
+      <h2 class="section-title mt-4">
         Early pricing for high-volume Instagram stores.
       </h2>
-      <p class="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-relaxed text-stone-600 sm:text-xl">
+      <p class="section-copy mx-auto mt-5 max-w-2xl">
         Simple early pricing, founder-led setup, and a 30-day money-back guarantee if VoluChat is not a fit.
       </p>
     </div>
 
-    <!-- Main Pricing Panel -->
-    <div class="dark-band overflow-hidden rounded-2xl p-6 md:p-10">
+    <div class="dark-band mx-auto max-w-5xl overflow-hidden rounded-2xl p-5 md:p-8 lg:p-10">
       <div class="grid gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-center">
-        
-        <!-- Left: Includes list -->
         <div>
           <div class="mb-6 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary-200">Founder-led setup</div>
           <h3 class="mb-8 font-heading text-2xl font-semibold tracking-tight text-white">What is included when you launch</h3>
@@ -51,12 +43,11 @@ const includes = [
           </ul>
         </div>
 
-        <!-- Right: Call to action box -->
-        <div class="rounded-2xl border border-white/15 bg-white p-7 text-center shadow-[0_24px_70px_rgba(0,0,0,0.22)]">
+        <div class="rounded-2xl border border-white/15 bg-white p-7 text-center shadow-[0_24px_70px_rgba(0,0,0,0.2)]">
           <div class="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-700">
             Early access plan
           </div>
-          <div class="mb-2 font-heading text-4xl font-semibold text-stone-950">
+          <div class="mb-2 font-heading text-4xl font-semibold leading-none text-stone-950">
             Rs. 3,000/month
           </div>
           <div class="mb-5 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3">

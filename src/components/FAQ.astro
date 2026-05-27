@@ -25,10 +25,6 @@ const faqs = [
     answer: "No. Your team still handles final order confirmation and payment details. Most stores send their UPI QR code or payment instructions after VoluChat prepares the checkout-ready order.",
   },
   {
-    question: "Why not send buyers to WhatsApp immediately?",
-    answer: "Every extra step creates drop-off. VoluChat keeps the buying conversation inside Instagram first, then moves the buyer to WhatsApp only after cart and delivery details are ready.",
-  },
-  {
     question: "How is VoluChat different from Manychat, WATI, Interakt, respond.io, AiSensy, or Gallabox?",
     answer: "Those tools are strong options for broad chat automation, WhatsApp inboxes, or customer support workflows. VoluChat is focused on ecommerce product conversations where slow manual replies can cost sales.",
   },
@@ -43,27 +39,24 @@ const faqs = [
 ];
 ---
 
-<section id="faq" class="relative overflow-hidden py-28 md:py-36">
+<section id="faq" class="section-pad relative overflow-hidden">
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-20"></div>
   </div>
 
-  <div class="mx-auto max-w-2xl px-6">
-    <div class="mb-24 text-center">
-      <!-- Standardized Glowing Badge -->
-      <div class="mb-6 inline-flex items-center gap-2 rounded-lg border border-primary-200/70 bg-primary-50/70 px-4 py-1.5 text-xs font-semibold text-primary-800 shadow-sm backdrop-blur-md">
-        <span class="h-2 w-2 rounded-full bg-primary-600 shadow-[0_0_8px_rgba(51,141,115,0.42)]"></span>
-        <span>FAQ</span>
-      </div>
-      <!-- Consistent Responsive Heading -->
-      <h2 class="mb-8 text-3xl font-heading font-semibold leading-[1.1] tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
-        Common Questions
+  <div class="page-shell">
+    <div class="mx-auto mb-10 max-w-2xl text-center">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title mt-4">
+        Common questions
       </h2>
+      <p class="section-copy mx-auto mt-5 max-w-xl">
+        The practical details teams usually ask before connecting an Instagram sales workflow.
+      </p>
     </div>
 
-    <!-- Main Accordion Container (Responsive padding & premium glass) -->
-    <div class="divide-y divide-stone-100 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_18px_60px_rgba(28,25,23,0.08)]">
-      {faqs.map((faq, index) => (
+    <div class="mx-auto max-w-3xl divide-y divide-stone-100 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_18px_60px_rgba(28,25,23,0.07)]">
+      {faqs.slice(0, 7).map((faq, index) => (
         <div class="faq-item transition-all duration-300" data-index={index}>
           <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-stone-50/70">
             <span class="font-heading text-base sm:text-lg font-semibold leading-snug tracking-tight text-stone-950 transition-colors group-hover:text-primary-800">
