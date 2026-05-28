@@ -30,6 +30,10 @@ export function buildBlogDetailUrl(baseUrl, blogId) {
   return new URL(`/blogs/${blogId}`, withTrailingSlash(baseUrl));
 }
 
+export function buildBlogSlugUrl(baseUrl, slug) {
+  return new URL(`/blogs/slug/${slug}`, withTrailingSlash(baseUrl));
+}
+
 export async function fetchPublishedBlogPosts({
   baseUrl = getBlogApiBaseUrl(),
   limit = 12,
@@ -60,20 +64,18 @@ export async function fetchBlogPostById(blogId, {
 export async function fetchBlogPostBySlug(slug, {
   baseUrl = getBlogApiBaseUrl(),
   fetcher = fetch,
-  limit = 100,
 } = {}) {
-  const blogs = await fetchPublishedBlogPosts({ baseUrl, fetcher, limit });
-  const listedBlog = blogs.find((blog) => blog.slug === slug);
+  const response = await fetcher(buildBlogSlugUrl(baseUrl, slug));
 
-  if (!listedBlog) {
+  if (response.status === 404) {
     return null;
   }
 
-  if (!listedBlog.id) {
-    return listedBlog;
+  if (!response.ok) {
+    throw new Error(`Blog API returned ${response.status} for blog slug ${slug}`);
   }
 
-  return fetchBlogPostById(listedBlog.id, { baseUrl, fetcher });
+  return normalizeBlogPost(await response.json());
 }
 
 export function normalizeBlogPosts(records) {
@@ -91,15 +93,16 @@ export function normalizeBlogPost(record) {
 
   const title = text(record.title);
   const slug = text(record.slug);
-  const content = text(record.content);
+  const rawExcerpt = text(record.excerpt);
+  const content = text(record.content) || rawExcerpt;
 
   if (!title || !slug || !content) {
     return null;
   }
 
   const publishedAt = text(record.published_at) || text(record.created_at) || '';
-  const excerpt = text(record.excerpt) || excerptFromContent(content);
-  const author = normalizeAuthor(record.author);
+  const excerpt = rawExcerpt || excerptFromContent(content);
+  const author = normalizeAuthor(record.author, record.author_name);
 
   return {
     id: record.id,
@@ -114,11 +117,12 @@ export function normalizeBlogPost(record) {
     dateLabel: formatDate(publishedAt),
     seoTitle: text(record.seo_title) || title,
     seoDescription: text(record.seo_description) || excerpt,
+    canonicalUrl: text(record.canonical_url) || `/blog/${slug}`,
     focusKeyword: text(record.focus_keyword),
     keywords: normalizeStringList(record.keywords),
     robotsIndex: record.robots_index !== false,
     robotsFollow: record.robots_follow !== false,
-    featuredImageUrl: text(record.featured_image_url),
+    featuredImageUrl: text(record.featured_image_url) || text(record.image_url),
     featuredImageAlt: text(record.featured_image_alt) || title,
     authorId: record.author_id,
     author,
@@ -139,13 +143,16 @@ function withTrailingSlash(baseUrl) {
   return baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 }
 
-function normalizeAuthor(author) {
+function normalizeAuthor(author, fallbackName = '') {
   if (!author || typeof author !== 'object') {
-    return DEFAULT_AUTHOR;
+    return {
+      ...DEFAULT_AUTHOR,
+      name: text(fallbackName) || DEFAULT_AUTHOR.name,
+    };
   }
 
   return {
-    name: text(author.name) || DEFAULT_AUTHOR.name,
+    name: text(author.name) || text(fallbackName) || DEFAULT_AUTHOR.name,
     avatarUrl: text(author.avatar_url),
     jobTitle: text(author.job_title),
     websiteUrl: text(author.website_url),

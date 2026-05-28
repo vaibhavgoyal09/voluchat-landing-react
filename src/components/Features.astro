@@ -1,37 +1,28 @@
 ---
-const capabilities = [
+const setupAdvantages = [
   {
-    eyebrow: "24/7 reply agent",
-    title: "Answers with your store logic",
-    text: "VoluChat uses your catalog, policies, and tone so buyers get useful answers even when your team is busy.",
-    visualEyebrow: "24/7 reply agent",
-    visualTitle: "Need price and Size M",
-    visualText: "Answered inside Instagram",
-    visualImage: "/linen_coord_thumb.webp",
-    visualAlt: "Ivory linen co-ord product question",
-    visualTags: ["Price", "Size M", "COD"],
+    eyebrow: "Prebuilt flows",
+    title: "Start with comment-to-DM paths that already match ecommerce",
+    text: "Comments, product interest, size questions, delivery details, and WhatsApp follow-up are already shaped for Instagram and Facebook stores.",
+    steps: ["Comment trigger", "Product interest", "DM follow-up", "WhatsApp-ready"],
+    metric: "Setup path",
+    metricValue: "Choose, tune, launch",
   },
   {
-    eyebrow: "Cart builder",
-    title: "Keeps the buying trail intact",
-    text: "Selections, preferences, and eligibility checks stay attached to the conversation instead of being pieced together later.",
-    visualEyebrow: "Cart builder",
-    visualTitle: "Linen Co-ord Set",
-    visualText: "Ivory / M / Qty 1",
-    visualImage: "/linen_coord_thumb.webp",
-    visualAlt: "Linen co-ord catalog match",
-    visualTags: ["Cart", "Address", "Offer"],
+    eyebrow: "Less manual building",
+    title: "No blank automation canvas to wire from scratch",
+    text: "You tune your products, tone, delivery rules, and when a human should step in instead of building every branch yourself.",
+    steps: ["Store rules", "Catalog cues", "Reply tone", "Human step-in"],
+    metric: "Setup effort",
+    metricValue: "Tune, not build",
   },
   {
-    eyebrow: "WhatsApp checkout",
-    title: "Escalates only when it matters",
-    text: "Your team enters after the buyer has made the key choices, so the next step is confirmation instead of discovery.",
-    visualEyebrow: "WhatsApp checkout",
-    visualTitle: "UPI QR and confirm",
-    visualText: "Prefilled order ready",
-    visualImage: "/satin_kurta_thumb.webp",
-    visualAlt: "Satin kurta set prepared for checkout",
-    visualTags: ["WhatsApp", "UPI", "Order"],
+    eyebrow: "Custom DM agent",
+    title: "Built around the sales conversation, not a generic chatbot",
+    text: "VoluChat answers repeat shopper questions with your products, policies, and brand voice so the chat still feels like your store.",
+    steps: ["Product answers", "Policy checks", "Shopper context", "Clean confirm"],
+    metric: "Differentiator",
+    metricValue: "Store-ready DMs",
   },
 ];
 ---
@@ -40,36 +31,48 @@ const capabilities = [
   <div class="page-shell">
     <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-10">
       <div class="relative z-10 max-w-xl reveal-on-scroll lg:sticky lg:top-28">
-        <p class="section-eyebrow">24/7 AI checkout agent for ecommerce sales teams</p>
+        <p class="section-eyebrow">Easy setup for premium stores</p>
         <h2 class="section-title mt-4">
-          The repetitive layer handled before your team opens the chat.
+          Built for stores that do not want to design every bot path manually.
         </h2>
         <p class="section-copy mt-5">
-          Think of it as a sales assistant trained on your store: quick replies, organized buyer intent, and clean escalation boundaries.
+          Broad chatbot tools give you more controls. VoluChat gives you the Instagram and Facebook selling flows you need first, then lets you make them yours.
         </p>
+        <div class="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          <div class="rounded-xl border border-stone-200 bg-white/80 p-4 shadow-sm">
+            <p class="mini-label">Broad tools</p>
+            <p class="mt-2 text-sm font-semibold leading-snug text-stone-600">More channels, more builders, more setup choices.</p>
+          </div>
+          <div class="rounded-xl border border-primary-100 bg-primary-50/80 p-4 shadow-sm">
+            <p class="mini-label text-primary-700">VoluChat</p>
+            <p class="mt-2 text-sm font-semibold leading-snug text-stone-700">Prebuilt comment-to-DM flows plus a custom DM assistant.</p>
+          </div>
+        </div>
       </div>
 
       <div class="relative z-20 grid gap-4">
-        {capabilities.map((item, index) => (
+        {setupAdvantages.map((item, index) => (
           <article class={`kinetic-card group solid-card transition duration-500 hover:-translate-y-1 hover:bg-white sm:p-5 reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
-            <div class="grid gap-4 sm:grid-cols-[0.8fr_1.2fr] sm:items-center sm:gap-5">
-              <div class="rounded-xl border border-stone-200 bg-stone-50 p-3 sm:p-4">
-                <div class="flex items-center gap-3">
-                  <img src={item.visualImage} alt={item.visualAlt} class="h-16 w-16 rounded-xl object-cover shadow-sm" width="1024" height="1024" loading="lazy" decoding="async" />
-                  <div class="min-w-0">
-                    <p class="mini-label">{item.visualEyebrow}</p>
-                    <p class="mt-2 text-sm font-semibold leading-snug text-stone-950">{item.visualTitle}</p>
-                    <p class="mt-1 text-[11px] font-medium leading-snug text-stone-500">{item.visualText}</p>
-                  </div>
+            <div class="grid gap-5 sm:grid-cols-[0.9fr_1.1fr] sm:items-center">
+              <div class="rounded-xl border border-stone-200 bg-stone-50 p-4">
+                <div class="flex items-center justify-between gap-3">
+                  <p class="mini-label">{item.metric}</p>
+                  <span class="rounded-md bg-white px-2.5 py-1 font-mono text-[10px] font-semibold text-primary-700 shadow-sm">{item.metricValue}</span>
                 </div>
-                <div class="mt-4 grid grid-cols-3 gap-2">
-                  {item.visualTags.map((label) => (
-                    <span class="rounded-md border border-stone-200 bg-white px-2 py-1 text-center text-[10px] font-semibold text-stone-600">{label}</span>
+                <div class="mt-4 space-y-2">
+                  {item.steps.map((label, stepIndex) => (
+                    <div class="flex items-center gap-3 rounded-lg border border-stone-200 bg-white px-3 py-2">
+                      <span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-primary-800 font-mono text-[10px] font-semibold text-white">
+                        {stepIndex + 1}
+                      </span>
+                      <span class="text-xs font-semibold text-stone-700">{label}</span>
+                    </div>
                   ))}
                 </div>
               </div>
 
               <div>
+                <p class="mini-label text-primary-700">{item.eyebrow}</p>
                 <h3 class="text-xl font-semibold text-stone-950 sm:text-2xl">{item.title}</h3>
                 <p class="mt-3 text-sm font-medium leading-relaxed text-stone-600">{item.text}</p>
               </div>

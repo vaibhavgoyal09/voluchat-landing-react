@@ -30,11 +30,11 @@ const sourceByFile = Object.fromEntries(sources);
 const landingSource = Object.values(sourceByFile).join('\n');
 
 test('homepage leads with the approved checkout-agent positioning', () => {
-  assert.match(sourceByFile['src/components/Hero.astro'], /Stop Losing Sales to Slow Replies/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /24\/7 product reply and checkout agent/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /VoluChat answers Instagram comments and DMs 24\/7, builds carts, collects addresses, and prepares WhatsApp checkout text/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /Repeated price, size, stock, delivery, and offer questions/);
-  assert.match(sourceByFile['src/components/Hero.astro'], /builds the cart, collects delivery details, and prepares WhatsApp checkout text/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /Answer Product Questions on Instagram and Facebook Instantly/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /VoluChat replies instantly to comments and DMs, suggests the right products, collects size and delivery details, and prepares a WhatsApp order message/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /It learns your catalog, tone, and store rules/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /Built for premium stores selling through Meta/);
+  assert.match(sourceByFile['src/components/Hero.astro'], /Product \+ details/);
   assert.match(sourceByFile['src/components/Hero.astro'], /mt-3 hidden max-w-lg/);
   assert.match(sourceByFile['src/components/Hero.astro'], /mt-7 hidden max-w-lg grid-cols-3/);
   assert.match(sourceByFile['src/components/Hero.astro'], /Book demo call/);
@@ -43,49 +43,44 @@ test('homepage leads with the approved checkout-agent positioning', () => {
 test('homepage hero uses broad high-consideration ecommerce examples', () => {
   const heroSource = `${sourceByFile['src/components/Hero.astro']}\n${sourceByFile['src/components/HeroAutomationScene.astro']}`;
 
-  assert.match(heroSource, /24\/7 product reply and checkout agent/);
+  assert.match(heroSource, /Answer Product Questions on Instagram and Facebook Instantly/);
   assert.doesNotMatch(sourceByFile['src/components/Hero.astro'], /Instagram-first stores with high comment volume/);
   assert.doesNotMatch(sourceByFile['src/components/Hero.astro'], /50K\+ followers/);
-  assert.match(heroSource, /linen co-ord/i);
-  assert.match(heroSource, /Size M/);
-  assert.match(heroSource, /Delhi 110024/);
-  assert.match(heroSource, /linen_coord_thumb\.webp/);
-  assert.match(heroSource, /satin_kurta_thumb\.webp/);
-  assert.match(heroSource, /denim_overshirt_thumb\.webp/);
+  assert.match(heroSource, /hero_demo\.mp4/);
+  assert.match(heroSource, /social shoppers and preparing checkout context/);
+  assert.match(heroSource, /Price, size, stock/);
+  assert.match(heroSource, /Product \+ details/);
   assert.doesNotMatch(sourceByFile['src/components/HeroAutomationScene.astro'], /sneaker|runner|Cloud Runner|white_runner/i);
-  assert.match(heroSource, /Facebook Page/);
+  assert.match(heroSource, /Facebook/);
   assert.doesNotMatch(heroSource, /Official Meta Tech Partner/);
 });
 
 test('homepage sections carry the workload-first AI helpdesk story', () => {
   assert.match(sourceByFile['src/components/PainPoints.astro'], /The repeated-question workload/);
   assert.match(sourceByFile['src/components/PainPoints.astro'], /same questions and checkout steps hit every inbox/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /Price and size questions pile up/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /price, size, color, and fit/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /Stock and delivery checks repeat/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /availability, delivery PIN code, return rules, and COD/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /Cart and checkout details stall/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /Cart items, quantities, variant choices, delivery address, and offer codes/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /Simple questions steal hours/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /Every answer needs store context/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /Interested buyers lose momentum/);
   assert.doesNotMatch(sourceByFile['src/components/PainPoints.astro'], /Questions repeat across every inbox|Slow replies leak buyers|Teams duplicate manual work|same question in three stores|typing the same answer|Messages arrive from every channel|Product context is scattered|Sales handoffs start cold/);
   assert.match(sourceByFile['src/components/PainPoints.astro'], /Incoming chats/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /Price, size/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /delivery questions/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /High intent/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /low patience/);
   assert.match(sourceByFile['src/components/PainPoints.astro'], /Cart context/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /Stock, offers/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /variants and address/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /Store rules/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /scattered facts/);
   assert.match(sourceByFile['src/components/PainPoints.astro'], /WhatsApp checkout/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /Prefilled text/);
-  assert.match(sourceByFile['src/components/PainPoints.astro'], /payment left/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /Cleaner close/);
+  assert.match(sourceByFile['src/components/PainPoints.astro'], /less backtracking/);
   assert.doesNotMatch(sourceByFile['src/components/PainPoints.astro'], /Manual reply|Repeated Qs|6 min|buyer waits|automation layer/);
-  assert.match(sourceByFile['src/components/Features.astro'], /24\/7 AI checkout agent for ecommerce sales teams/);
-  assert.match(sourceByFile['src/components/Features.astro'], /Product, variant, quantity, delivery area, offer intent, and buyer preference stay attached/);
-  assert.match(sourceByFile['src/components/Demo.astro'], /One concrete example, from incoming DM to a handoff your team can actually act on/);
-  assert.match(sourceByFile['src/components/Demo.astro'], /incoming DM to a handoff/);
+  assert.match(sourceByFile['src/components/Features.astro'], /Built for stores that do not want to design every bot path manually/);
+  assert.match(sourceByFile['src/components/Features.astro'], /Prebuilt comment-to-DM flows plus a custom DM assistant/);
+  assert.match(sourceByFile['src/components/Demo.astro'], /One product chat, ready to confirm on WhatsApp/);
+  assert.match(sourceByFile['src/components/Demo.astro'], /clean order message/);
   assert.match(sourceByFile['src/components/HowItWorks.astro'], /Launch without rebuilding how your team sells/);
   assert.match(sourceByFile['src/components/HowItWorks.astro'], /Connect sales channels[\s\S]*Provide your store policies[\s\S]*Add your product catalog/);
-  assert.match(sourceByFile['src/components/HowItWorks.astro'], /shipping, return, and refund/);
+  assert.match(sourceByFile['src/components/HowItWorks.astro'], /shipping, returns, COD/);
   assert.doesNotMatch(sourceByFile['src/components/HowItWorks.astro'], /Configure checkout flow|checkout message format/);
-  assert.match(sourceByFile['src/components/Pricing.astro'], /Early pricing for high-volume Instagram stores/);
+  assert.match(sourceByFile['src/components/Pricing.astro'], /Early pricing for premium social stores/);
 });
 
 test('homepage primary buttons lead with the demo call', () => {
@@ -117,7 +112,8 @@ test('homepage layout does not render floating contact buttons', () => {
 });
 
 test('homepage replaces fake proof with honest early-stage positioning', () => {
-  assert.match(sourceByFile['src/components/Testimonials.astro'], /Real product, honest proof/);
+  assert.match(sourceByFile['src/components/Testimonials.astro'], /Transparent proof/);
+  assert.match(sourceByFile['src/components/Testimonials.astro'], /Early access, no inflated proof/);
   assert.match(sourceByFile['src/components/Testimonials.astro'], /No fake client logos/);
   assert.match(sourceByFile['src/components/Testimonials.astro'], /30-day money-back guarantee/i);
   assert.doesNotMatch(landingSource, /500\+|Loved by|Join 500|Real Proof|Global Praise|closed 30% more orders|Priya Sharma|Rahul Verma|Sneha Patel|Arjun Mehta|Ananya Singh|Vikram Reddy|50 to 200 orders per month|Best investment|response time went from 3 hours to instant|84%|90% Automated Queries|100% Compliance Rate|80% Efficiency Lift|AI Latency|Efficiency Lift|Compliance Rate/);
@@ -140,8 +136,8 @@ test('homepage FAQ schema is aligned with the WhatsApp-ready chat questions', ()
   assert.ok(schemaMatch, 'Expected src/pages/index.astro to define const faqSchema before frontmatter closes');
   const faqSchemaSource = schemaMatch[1];
 
-  assert.match(faqSchemaSource, /"name": "How does VoluChat stop ecommerce stores losing sales to slow replies\?"/);
-  assert.match(faqSchemaSource, /"name": "Can VoluChat find products from photos or buyer messages\?"/);
+  assert.match(faqSchemaSource, /"name": "How does VoluChat help stores reply faster on Instagram and Facebook\?"/);
+  assert.match(faqSchemaSource, /"name": "Can VoluChat find products from photos or shopper messages\?"/);
   assert.match(faqSchemaSource, /"name": "Does VoluChat create the WhatsApp checkout message\?"/);
   assert.match(faqSchemaSource, /"name": "Does VoluChat manage cart, address, and offer details\?"/);
   assert.match(faqSchemaSource, /"name": "Does VoluChat process orders or payments\?"/);
@@ -151,5 +147,5 @@ test('homepage FAQ schema is aligned with the WhatsApp-ready chat questions', ()
 
 test('homepage avoids owner-only or small-team positioning', () => {
   assert.doesNotMatch(landingSource, /many small teams|store owners track/i);
-  assert.match(landingSource, /checkout-ready WhatsApp draft|WhatsApp checkout drafts/);
+  assert.match(landingSource, /checkout-ready conversations|WhatsApp messages/);
 });

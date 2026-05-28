@@ -58,6 +58,6 @@ test('comparison page covers the approved competitor set without brittle superio
   assert.match(compareSource, /Gallabox/);
   assert.match(compareSource, /ecommerce product conversations/);
   assert.match(compareSource, /not a generic WhatsApp inbox/);
-  assert.match(compareSource, /shared AI reply layer/);
+  assert.match(compareSource, /custom DM automation agent/);
   assert.doesNotMatch(compareSource, /\$\d|cheaper than|better than|#1|best/i);
 });

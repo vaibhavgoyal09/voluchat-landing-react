@@ -5,13 +5,14 @@ export default defineConfig([
   globalIgnores(['dist/**', '.astro/**', '.vercel/**', 'node_modules/**', 'scripts/**', 'convert_images.js']),
   js.configs.recommended,
   {
-    files: ['**/*.mjs'],
+    files: ['**/*.mjs', 'src/pages/**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
         console: 'readonly',
         fetch: 'readonly',
+        Response: 'readonly',
         URL: 'readonly',
       },
     },

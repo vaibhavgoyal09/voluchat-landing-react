@@ -4,8 +4,30 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { fetchBlogPostBySlug, getBlogApiBaseUrl } from '../../lib/blogApi.mjs';
 
+const relatedLinks = [
+  {
+    href: '/features',
+    label: 'Pillar',
+    title: 'Instagram and Facebook reply automation',
+    text: 'See the core product flow for product questions, catalog replies, order details, and WhatsApp handoffs.',
+  },
+  {
+    href: '/compare',
+    label: 'Compare',
+    title: 'VoluChat versus broad automation builders',
+    text: 'Compare focused ecommerce reply setup with larger chatbot and shared-inbox tools.',
+  },
+  {
+    href: '/contact',
+    label: 'Demo',
+    title: 'Book a founder-led demo',
+    text: 'Review a live workflow and decide whether early access fits your store.',
+  },
+];
+
 const { slug } = Astro.params;
 const apiUrl = getBlogApiBaseUrl(import.meta.env);
+const siteOrigin = Astro.site?.origin ?? 'https://voluchat.com';
 let blog = null;
 let error: string | null = null;
 
@@ -29,15 +51,77 @@ const robots = [
   blog?.robotsIndex ? 'index' : 'noindex',
   blog?.robotsFollow ? 'follow' : 'nofollow',
 ].join(', ');
+
+const blogKeywords = blog ? Array.from(new Set([
+  blog.focusKeyword,
+  ...blog.keywords,
+  ...blog.categories.map((category) => category.name),
+  ...blog.tags.map((tag) => tag.name),
+].filter(Boolean))).join(', ') || 'Instagram DM automation, Facebook Page automation, ecommerce reply automation' : undefined;
+
+const blogCanonicalUrl = blog ? new URL(blog.canonicalUrl || blog.href, siteOrigin).toString() : undefined;
+const blogImageUrl = blog?.featuredImageUrl || '/og-image.webp';
+const absoluteBlogImageUrl = new URL(blogImageUrl, siteOrigin).toString();
+const structuredData = blog ? [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: blog.title,
+    description: blog.excerpt,
+    image: absoluteBlogImageUrl,
+    datePublished: blog.publishedAt || undefined,
+    dateModified: blog.createdAt || blog.publishedAt || undefined,
+    author: {
+      '@type': 'Person',
+      name: blog.author.name,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'VoluChat',
+      logo: {
+        '@type': 'ImageObject',
+        url: new URL('/voluchat_logo.svg', siteOrigin).toString(),
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': blogCanonicalUrl,
+    },
+    keywords: blogKeywords,
+    articleBody: contentBlocks.join('\n\n'),
+  },
+  ...(blog.faqs.length > 0 ? [{
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: blog.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }] : []),
+] : [];
 ---
 
 <Layout
   title={blog ? `${blog.seoTitle} | VoluChat Blog` : 'Blog Post Not Found'}
   description={blog?.seoDescription || 'The requested VoluChat blog post is unavailable.'}
-  image={blog?.featuredImageUrl || '/og-image.webp'}
+  keywords={blogKeywords}
+  image={blogImageUrl}
   type="article"
   robots={robots}
+  canonical={blog?.canonicalUrl || blog?.href}
+  author={blog?.author.name}
+  publishedTime={blog?.publishedAt}
+  modifiedTime={blog?.createdAt}
+  tags={blog?.tags.map((tag) => tag.name) || []}
 >
+  {structuredData.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  )}
+
   <Header />
 
   <main class="relative overflow-hidden pt-36 pb-20 animate-page-entry opacity-0 sm:pt-40">
@@ -63,6 +147,10 @@ const robots = [
           <h1 class="text-4xl font-semibold leading-[1.05] text-stone-950 md:text-5xl lg:text-6xl">
             {blog.title}
           </h1>
+
+          <p class="mx-auto mt-6 max-w-2xl text-lg font-medium leading-relaxed text-stone-600">
+            {blog.excerpt}
+          </p>
 
           <div class="mt-8 flex flex-wrap items-center justify-center gap-5 text-stone-500">
             <div class="flex items-center gap-3">
@@ -124,6 +212,24 @@ const robots = [
             return <p class="mb-6 text-lg leading-relaxed text-stone-600">{block}</p>;
           })}
         </div>
+
+        <section class="mt-14">
+          <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="section-eyebrow">Related paths</p>
+              <h2 class="mt-3 text-3xl font-semibold text-stone-950">Keep exploring VoluChat</h2>
+            </div>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            {relatedLinks.map((link) => (
+              <a href={link.href} class="solid-card group p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-500/20">
+                <span class="mini-label">{link.label}</span>
+                <h3 class="mt-3 text-lg font-semibold text-stone-950 transition-colors group-hover:text-primary-700">{link.title}</h3>
+                <p class="mt-3 text-sm font-medium leading-relaxed text-stone-600">{link.text}</p>
+              </a>
+            ))}
+          </div>
+        </section>
 
         {blog.faqs.length > 0 && (
           <section class="mt-14">
