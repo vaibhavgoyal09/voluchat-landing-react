@@ -1,7 +1,7 @@
 {
-  "name": "VoluChat - Stop Losing Sales to Slow Replies",
+  "name": "VoluChat - Turn More DMs Into Orders",
   "short_name": "VoluChat",
-  "description": "24/7 AI checkout agent for ecommerce stores handling product questions, carts, delivery addresses, and WhatsApp checkout drafts.",
+  "description": "AI DM automation for Instagram-led stores that answers product questions and prepares WhatsApp-ready order messages.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -30,9 +30,9 @@ const [
 ]);
 
 test('homepage SEO metadata leads with ecommerce-store positioning', () => {
-  assert.match(indexSource, /const seoTitle = "Instant Product Replies for Instagram and Facebook Stores \| VoluChat";/);
-  assert.match(indexSource, /const seoDescription = "VoluChat helps premium ecommerce stores answer Instagram and Facebook product questions, collect order details, and prepare WhatsApp messages without a complicated chatbot setup.";/);
-  assert.match(indexSource, /const seoKeywords = "Instagram DM automation, Facebook Page automation, ecommerce reply automation, premium ecommerce stores, comment to DM automation, Meta shopping assistant, product catalog replies, WhatsApp order messages, Manychat alternative for ecommerce";/);
+  assert.match(indexSource, /const seoTitle = "Turn More DMs Into Orders \| VoluChat";/);
+  assert.match(indexSource, /const seoDescription = "VoluChat helps Instagram-led stores answer repeated DMs, recommend products, collect delivery details, and send customers to WhatsApp with the order message filled in.";/);
+  assert.match(indexSource, /const seoKeywords = "Instagram DM automation, WhatsApp order message, DM to order automation, ecommerce reply automation, product catalog AI agent, COD delivery questions, Hinglish customer replies, Manychat alternative India";/);
   assert.match(indexSource, /<Layout\s+title={seoTitle}\s+description={seoDescription}\s+keywords={seoKeywords}/);
 });
 
@@ -50,11 +50,11 @@ test('homepage structured data and FAQ copy reinforce the ecommerce landing prom
   assert.match(indexSource, /"@type": "WebSite"/);
   assert.match(indexSource, /"@type": "Organization"/);
   assert.match(indexSource, /"@type": "SiteNavigationElement"/);
-  assert.match(indexSource, /"name": "How does VoluChat help stores reply faster on Instagram and Facebook\?"/);
-  assert.match(faqSource, /question: "How does VoluChat help stores reply faster on Instagram and Facebook\?"/);
-  assert.match(faqSource, /answer: "VoluChat answers common product questions from comments and DMs, collects size and delivery details, and prepares a WhatsApp order message before the shopper loses interest."/);
-  assert.match(faqSource, /question: "Does VoluChat create the WhatsApp checkout message\?"/);
-  assert.match(faqSource, /question: "How is VoluChat different from Manychat, WATI, Interakt, respond.io, AiSensy, or Gallabox\?"/);
+  assert.match(indexSource, /"name": "How does VoluChat turn DMs into orders\?"/);
+  assert.match(faqSource, /question: "How does VoluChat turn DMs into orders\?"/);
+  assert.match(faqSource, /answer: "VoluChat answers repeated product questions, recommends products from your catalog, collects cart and delivery details, and sends customers to WhatsApp with the order message already filled in."/);
+  assert.match(faqSource, /question: "Does VoluChat process payments or fully confirm orders\?"/);
+  assert.match(faqSource, /question: "Will my team still control the final sale\?"/);
 });
 
 test('public crawl hints expose the main pages Google can consider for sitelinks', () => {
@@ -98,7 +98,7 @@ test('blog detail pages wire SEO metadata, visible JSON-LD, and internal links',
 });
 
 test('web app manifest avoids the old autopilot positioning', () => {
-  assert.match(manifestSource, /"name": "VoluChat - Stop Losing Sales to Slow Replies"/);
-  assert.match(manifestSource, /"description": "24\/7 AI checkout agent for ecommerce stores handling product questions, carts, delivery addresses, and WhatsApp checkout drafts."/);
+  assert.match(manifestSource, /"name": "VoluChat - Turn More DMs Into Orders"/);
+  assert.match(manifestSource, /"description": "AI DM automation for Instagram-led stores that answers product questions and prepares WhatsApp-ready order messages."/);
   assert.doesNotMatch(manifestSource, /autopilot|paying customers/i);
 });

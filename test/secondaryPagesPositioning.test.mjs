@@ -42,7 +42,7 @@ test('secondary pages avoid old broad SaaS positioning and unsupported proof', (
 test('secondary page CTAs stay demo-first while shared metadata is broader', () => {
   assert.match(sourceByFile['src/pages/blog/[slug].astro'], /See how VoluChat works for ecommerce stores/);
   assert.match(sourceByFile['src/pages/contact.astro'], /Sales team details/);
-  assert.match(sourceByFile['src/layouts/Layout.astro'], /repeated product questions across Instagram and Facebook Pages|ecommerce reply automation/);
+  assert.match(sourceByFile['src/layouts/Layout.astro'], /Instagram-led stores answer repeated DMs|DM to order automation/);
   assert.doesNotMatch(secondarySource, /fashion boutiques|boutique sellers|your boutique|Boutique details|Instagram boutiques/i);
   assert.doesNotMatch(secondarySource, /many small teams|store owners track/i);
 });

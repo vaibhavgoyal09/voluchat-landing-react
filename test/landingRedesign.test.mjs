@@ -41,24 +41,26 @@ const landingSource = [
 
 test('redesigned landing page leads with a Framer-like SaaS hero and static checkout automation scene', () => {
   assert.match(indexSource, /<Hero \/>/);
+  assert.match(indexSource, /<PainPoints \/>[\s\S]*<BestFor \/>[\s\S]*<Demo \/>[\s\S]*<Features \/>[\s\S]*<HowItWorks \/>[\s\S]*<CompactComparison \/>[\s\S]*<Pricing \/>[\s\S]*<Testimonials \/>[\s\S]*<FAQ \/>[\s\S]*<CTA \/>/);
   assert.match(heroSource, /import HeroAutomationScene from '\.\/HeroAutomationScene\.astro';/);
   assert.match(heroSource, /<HeroAutomationScene \/>/);
-  assert.match(heroSource, /Answer Product Questions on Instagram and Facebook Instantly/);
-  assert.match(heroSource, /<span aria-hidden="true" class="block">Answer Product<\/span>/);
-  assert.match(heroSource, /<span aria-hidden="true" class="block">Questions<\/span>/);
-  assert.match(heroSource, /<span aria-hidden="true" class="accent-gradient-text block">on Instagram and Facebook<\/span>/);
-  assert.match(heroSource, /text-\[2\.9rem\][\s\S]*sm:text-\[3\.7rem\]/);
-  assert.match(heroSource, /VoluChat replies instantly to comments and DMs, suggests the right products, collects size and delivery details, and prepares a WhatsApp order message/);
-  assert.match(heroSource, /It learns your catalog, tone, and store rules/);
+  assert.match(heroSource, /Turn More DMs Into Orders/);
+  assert.match(heroSource, /<span aria-hidden="true" class="block">Turn More<\/span>/);
+  assert.match(heroSource, /<span aria-hidden="true" class="accent-gradient-text block">DMs<\/span>/);
+  assert.match(heroSource, /<span aria-hidden="true" class="block">Into Orders<\/span>/);
+  assert.match(heroSource, /text-\[3\.45rem\][\s\S]*sm:text-\[4\.25rem\]/);
+  assert.match(heroSource, /text-center[\s\S]*lg:text-left/);
+  assert.match(heroSource, /VoluChat answers repeated product questions, recommends products from your catalog, collects delivery details, and sends customers to WhatsApp with the order message already filled in/);
+  assert.match(heroSource, /Your team stays in control of confirmation and payment/);
   assert.match(heroSource, /hidden[\s\S]*sm:block/);
   assert.match(heroSource, /mt-7 hidden max-w-lg grid-cols-3/);
   assert.match(heroSource, /hero-metric-card/);
-  assert.match(heroSource, /Comment or DM/);
+  assert.match(heroSource, /Incoming DM/);
   assert.match(heroSource, /Price, size, stock/);
-  assert.match(heroSource, /VoluChat replies/);
-  assert.match(heroSource, /Product \+ details/);
-  assert.match(heroSource, /Store confirms/);
-  assert.match(heroSource, /UPI QR \+ order/);
+  assert.match(heroSource, /VoluChat prepares/);
+  assert.match(heroSource, /Cart \+ address/);
+  assert.match(heroSource, /Store closes/);
+  assert.match(heroSource, /WhatsApp order/);
   assert.doesNotMatch(heroSource, /<p class="mini-label">Replies<\/p>/);
   assert.doesNotMatch(heroSource, /<p class="mini-label">Layer<\/p>/);
   assert.doesNotMatch(heroSource, /<p class="mini-label">Trial<\/p>/);
@@ -70,16 +72,16 @@ test('redesigned landing page leads with a Framer-like SaaS hero and static chec
   assert.doesNotMatch(sceneSource, /CatmullRomCurve3|SphereGeometry|LineBasicMaterial|requestAnimationFrame|motion-orbit/);
 });
 
-test('redesigned sections use premium motion surfaces without reverting to narrow boutique positioning', () => {
-  assert.match(painSource, /The same questions and checkout steps hit every inbox/);
-  assert.match(featuresSource, /Built for stores that do not want to design every bot path manually/);
-  assert.match(featuresSource, /Prebuilt flows/);
-  assert.match(featuresSource, /Less manual building/);
-  assert.match(featuresSource, /Custom DM agent/);
-  assert.match(featuresSource, /Prebuilt comment-to-DM flows plus a custom DM assistant/);
+test('redesigned sections use motion surfaces without reverting to narrow boutique positioning', () => {
+  assert.match(painSource, /Slow replies turn warm buyers cold/);
+  assert.match(featuresSource, /Automate the repeat work before checkout/);
+  assert.match(featuresSource, /DM replies/);
+  assert.match(featuresSource, /Product matching/);
+  assert.match(featuresSource, /WhatsApp handoff/);
+  assert.match(featuresSource, /A DM agent tuned for product questions and WhatsApp order prep/);
   assert.doesNotMatch(featuresSource, /w-\[88%\]|w-\[72%\]|w-\[62%\]/);
   assert.doesNotMatch(featuresSource, /h-2 rounded-full bg-stone-200/);
-  assert.match(demoSource, /One product chat, ready to confirm on WhatsApp/);
+  assert.match(demoSource, /From DM to WhatsApp order message/);
   assert.match(cssSource, /\.hero-stage/);
   assert.match(cssSource, /\.section-title\s*{\s*@apply text-\[2\.15rem\]/);
   assert.match(cssSource, /\.solid-card/);
