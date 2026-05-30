@@ -41,7 +41,9 @@ const landingSource = [
 
 test('redesigned landing page leads with a Framer-like SaaS hero and static checkout automation scene', () => {
   assert.match(indexSource, /<Hero \/>/);
-  assert.match(indexSource, /<PainPoints \/>[\s\S]*<BestFor \/>[\s\S]*<Demo \/>[\s\S]*<Features \/>[\s\S]*<HowItWorks \/>[\s\S]*<CompactComparison \/>[\s\S]*<Pricing \/>[\s\S]*<Testimonials \/>[\s\S]*<FAQ \/>[\s\S]*<CTA \/>/);
+  assert.match(indexSource, /<PainPoints \/>[\s\S]*<BestFor \/>[\s\S]*<Demo \/>[\s\S]*<Features \/>[\s\S]*<HowItWorks \/>[\s\S]*<CompactComparison \/>[\s\S]*<Pricing \/>[\s\S]*<Testimonials \/>[\s\S]*<FAQ \/>[\s\S]*<\/main>[\s\S]*<Footer \/>/);
+  assert.doesNotMatch(indexSource, /import CTA from/);
+  assert.doesNotMatch(indexSource, /<CTA \/>/);
   assert.match(heroSource, /import HeroAutomationScene from '\.\/HeroAutomationScene\.astro';/);
   assert.match(heroSource, /<HeroAutomationScene \/>/);
   assert.match(heroSource, /Turn More DMs Into Orders/);
