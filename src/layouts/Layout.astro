@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
 	title: string;
@@ -33,7 +34,6 @@ const siteOrigin = Astro.site?.origin ?? "https://voluchat.com";
 const canonicalUrl = new URL(canonical ?? Astro.url.pathname, siteOrigin).toString();
 const imageUrl = new URL(image, siteOrigin).toString();
 const articleTags = Array.isArray(tags) ? tags.filter(Boolean) : [];
-const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -72,18 +72,6 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 		<meta name="twitter:image" content={imageUrl} />
 		<meta name="theme-color" content="#0f172a" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		{gaMeasurementId && (
-			<>
-				<script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
-				<script
-					is:inline
-					set:html={`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', ${JSON.stringify(gaMeasurementId)});`}
-				/>
-			</>
-		)}
 	</head>
 	<body class="selection:bg-primary-100 selection:text-primary-900">
 		<a href="#hero" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-stone-950 focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white">
@@ -92,6 +80,7 @@ gtag('config', ${JSON.stringify(gaMeasurementId)});`}
 		<div class="animate-page-fade opacity-0">
 			<slot />
 		</div>
+		<CookieConsent />
 
 		<!-- Intersection Observer scroll-revealer script -->
 		<script is:inline>
