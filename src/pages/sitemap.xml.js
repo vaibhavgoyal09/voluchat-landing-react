@@ -1,6 +1,7 @@
 import { fetchPublishedBlogPosts, getBlogApiBaseUrl } from '../lib/blogApi.mjs';
 
-const DEFAULT_SITE_ORIGIN = 'https://voluchat.com';
+const DEFAULT_SITE_ORIGIN = 'https://www.voluchat.com';
+const SITEMAP_BLOG_LIMIT = 100;
 const STATIC_ROUTES = [
   { path: '/', priority: '1.0' },
   { path: '/features/', priority: '0.8' },
@@ -18,7 +19,7 @@ export async function GET({ site }) {
   try {
     blogs = await fetchPublishedBlogPosts({
       baseUrl: getBlogApiBaseUrl(import.meta.env),
-      limit: 200,
+      limit: SITEMAP_BLOG_LIMIT,
     });
   } catch (error) {
     console.error('[Server] Failed to fetch blog posts for sitemap:', error);

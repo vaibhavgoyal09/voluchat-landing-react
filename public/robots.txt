@@ -1,4 +1,4 @@
-Sitemap: https://voluchat.com/sitemap.xml
+Sitemap: https://www.voluchat.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
