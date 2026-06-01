@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { fetchBlogPostBySlug, getBlogApiBaseUrl } from '../../lib/blogApi.mjs';
+import { renderMarkdownToHtml } from '../../lib/markdown.mjs';
 
 const relatedLinks = [
   {
@@ -46,6 +47,8 @@ const contentBlocks = blog?.content
   .split(/\n{2,}/)
   .map((block) => block.trim())
   .filter(Boolean) || [];
+
+const renderedContentHtml = blog ? renderMarkdownToHtml(blog.content) : '';
 
 const robots = [
   blog?.robotsIndex ? 'index' : 'noindex',
@@ -181,43 +184,7 @@ const structuredData = blog ? [
         </div>
 
         <div class="blog-prose-shell">
-          <div class="blog-prose">
-            {contentBlocks.map((block, index) => {
-              if (block.startsWith('# ')) {
-                return <h2>{block.replace(/^#\s+/, '')}</h2>;
-              }
-
-              if (block.startsWith('## ')) {
-                return <h2>{block.replace(/^##\s+/, '')}</h2>;
-              }
-
-              if (/^\d+\.\s/.test(block)) {
-                return (
-                  <ol>
-                    {block.split('\n').map((item) => (
-                      <li>{item.replace(/^\d+\.\s/, '')}</li>
-                    ))}
-                  </ol>
-                );
-              }
-
-              if (/^-\s/.test(block)) {
-                return (
-                  <ul>
-                    {block.split('\n').map((item) => (
-                      <li>{item.replace(/^-\s/, '')}</li>
-                    ))}
-                  </ul>
-                );
-              }
-
-              if (index === 0) {
-                return <p class="lede">{block}</p>;
-              }
-
-              return <p>{block}</p>;
-            })}
-          </div>
+          <div class="blog-prose" set:html={renderedContentHtml} />
         </div>
 
         {blog.faqs.length > 0 && (
