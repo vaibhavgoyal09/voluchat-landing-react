@@ -11,6 +11,8 @@ const DATE_FORMATTER = new Intl.DateTimeFormat('en-US', {
 });
 
 export function getBlogApiBaseUrl(env = import.meta.env) {
+  env = env || {};
+
   return env.PUBLIC_BLOG_API_URL || env.PUBLIC_API_URL || 'http://localhost:8000';
 }
 

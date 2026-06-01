@@ -32,7 +32,7 @@ export async function GET({ site }) {
     })),
     ...blogs.map((blog) => ({
       loc: absoluteUrl(blog.href, siteOrigin),
-      lastmod: blog.publishedAt || blog.createdAt || undefined,
+      lastmod: formatSitemapDate(blog.publishedAt || blog.createdAt),
       priority: '0.6',
     })),
   ];
@@ -62,6 +62,26 @@ ${urls}
 
 function absoluteUrl(path, siteOrigin) {
   return new URL(path, siteOrigin).toString();
+}
+
+function formatSitemapDate(value) {
+  if (!value) {
+    return undefined;
+  }
+
+  const dateOnly = String(value).match(/^\d{4}-\d{2}-\d{2}/)?.[0];
+
+  if (!dateOnly) {
+    return undefined;
+  }
+
+  const date = new Date(`${dateOnly}T00:00:00Z`);
+
+  if (Number.isNaN(date.getTime())) {
+    return undefined;
+  }
+
+  return dateOnly;
 }
 
 function escapeXml(value) {
