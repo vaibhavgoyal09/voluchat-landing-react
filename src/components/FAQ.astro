@@ -1,4 +1,8 @@
 ---
+const {
+  pricingAnswer = "Early access pricing is Rs. 5,000 for one-time setup and Rs. 3,000 per month, with a 30-day money-back guarantee."
+} = Astro.props;
+
 const faqs = [
   {
     question: "How does VoluChat turn DMs into orders?",
@@ -26,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much does VoluChat cost?",
-    answer: "Early access pricing is Rs. 5,000 for one-time setup and Rs. 3,000 per month, with a 30-day money-back guarantee.",
+    answer: pricingAnswer,
   },
 ];
 ---

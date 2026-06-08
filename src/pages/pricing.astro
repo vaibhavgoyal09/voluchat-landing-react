@@ -6,7 +6,7 @@ import PricingSection from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
 
 const seoTitle = "Early pricing for Instagram commerce teams | VoluChat";
-const seoDescription = "See VoluChat early pricing for high-volume Instagram stores that need automated product replies, cart collection, and WhatsApp checkout drafts.";
+const seoDescription = "See VoluChat early pricing for high-volume Instagram stores, including setup, base monthly conversations, and additional usage charges.";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
@@ -24,14 +24,68 @@ const seoDescription = "See VoluChat early pricing for high-volume Instagram sto
             Launch with founder-led setup and clear pricing.
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-2xl">
-            Book a demo call to see the live workflow, then launch at Rs. 5,000 setup and Rs. 3,000/month with a 30-day money-back guarantee.
+            Book a demo call to see the live workflow, then launch with Rs. 5,000 setup and a Rs. 3,000/month base plan that includes up to 1,000 conversations.
           </p>
         </div>
       </div>
     </section>
 
     <PricingSection />
-    <FAQ />
+
+    <section id="usage-terms" class="relative overflow-hidden pb-16 sm:pb-20">
+      <div class="page-shell">
+        <div class="mx-auto max-w-5xl rounded-2xl border border-stone-200 bg-white p-6 shadow-[0_18px_60px_rgba(28,25,23,0.07)] md:p-8 lg:p-10">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p class="section-eyebrow">Plan details</p>
+              <h2 class="mt-3 max-w-md font-heading text-2xl font-semibold leading-tight tracking-tight text-stone-950 sm:text-3xl">
+                Built for the first 1,000 customer conversations.
+              </h2>
+              <p class="mt-4 max-w-md text-sm font-semibold leading-relaxed text-stone-600">
+                Your Rs. 3,000 monthly plan covers the conversations most growing stores need to handle repeated DMs, product questions, and WhatsApp handoffs. When your store goes beyond the included volume, you only pay for the extra conversations you use.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-stone-200 bg-stone-50 p-3">
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div class="rounded-xl bg-white p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+                  <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-stone-500">Base plan</p>
+                  <p class="mt-2 font-heading text-3xl font-semibold leading-none text-stone-950">Rs. 3,000</p>
+                  <p class="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-stone-500">per month</p>
+                </div>
+                <div class="rounded-xl bg-white p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+                  <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-stone-500">Included</p>
+                  <p class="mt-2 font-heading text-3xl font-semibold leading-none text-stone-950">1,000</p>
+                  <p class="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-stone-500">conversations/month</p>
+                </div>
+              </div>
+
+              <div class="mt-3 divide-y divide-stone-200 rounded-xl bg-white px-5">
+                <div class="grid gap-2 py-4 sm:grid-cols-[0.72fr_1fr] sm:items-center">
+                  <div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-stone-500">Launch setup</p>
+                    <p class="mt-1 font-heading text-2xl font-semibold leading-none text-stone-950">Rs. 5,000</p>
+                  </div>
+                  <p class="text-xs font-semibold leading-relaxed text-stone-600">
+                    One-time onboarding for your catalog, reply rules, tone, and WhatsApp order handoff.
+                  </p>
+                </div>
+                <div class="grid gap-2 py-4 sm:grid-cols-[0.72fr_1fr] sm:items-center">
+                  <div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-stone-500">After included volume</p>
+                    <p class="mt-1 font-heading text-2xl font-semibold leading-none text-stone-950">Rs. 5 each</p>
+                  </div>
+                  <p class="text-xs font-semibold leading-relaxed text-stone-600">
+                    Extra conversations are billed only after the first 1,000 conversations in a month.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ pricingAnswer="Early access pricing is Rs. 5,000 for one-time setup and Rs. 3,000/month for the base plan. The base plan includes your first 1,000 customer conversations each month. If your store crosses that volume, extra conversations are billed at Rs. 5 each." />
   </main>
 
   <Footer />
