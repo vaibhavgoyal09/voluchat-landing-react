@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import HeroTrustStrip from '../components/HeroTrustStrip.astro';
 import PainPoints from '../components/PainPoints.astro';
-import BestFor from '../components/BestFor.astro';
 import Features from '../components/Features.astro';
 import Demo from '../components/Demo.astro';
 import HowItWorks from '../components/HowItWorks.astro';
@@ -14,8 +14,8 @@ import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 
 const siteUrl = "https://www.voluchat.com";
-const seoTitle = "Turn More DMs Into Orders | VoluChat";
-const seoDescription = "VoluChat helps Instagram-led stores answer repeated DMs, recommend products, collect delivery details, and send customers to WhatsApp with the order message filled in.";
+const seoTitle = "Stop losing Instagram buyers to slow replies | VoluChat";
+const seoDescription = "VoluChat helps Instagram-led stores answer repeated product DMs, recommend catalog items, collect delivery details, and prepare WhatsApp order messages your team can close.";
 const seoKeywords = "Instagram DM automation, WhatsApp order message, DM to order automation, ecommerce reply automation, product catalog AI agent, COD delivery questions, Hinglish customer replies, Manychat alternative India";
 
 const faqSchema = {
@@ -75,7 +75,7 @@ const faqSchema = {
       "name": "How much does VoluChat cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Early access pricing is Rs. 9,999 for one-time setup and Rs. 2,999 per month, with a 30-day money-back guarantee."
+        "text": "Early access pricing is Rs. 9,999 for one-time setup and Rs. 2,999/month for the base plan. The base plan includes your first 1,000 customer conversations each month. If your store crosses that volume, extra conversations are billed at Rs. 5 each."
       }
     }
   ]
@@ -159,14 +159,14 @@ const structuredData = [
   
   <main class="animate-page-entry opacity-0">
     <Hero />
+    <HeroTrustStrip />
+    <Testimonials />
     <PainPoints />
-    <BestFor />
     <Demo />
     <Features />
     <HowItWorks />
     <CompactComparison />
     <Pricing />
-    <Testimonials />
     <FAQ />
   </main>
 

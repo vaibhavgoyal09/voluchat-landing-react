@@ -1,7 +1,14 @@
 ---
+const outcomes = [
+  "Recover missed sales conversations automatically",
+  "Reply to ready buyers 24/7 without hiring another inbox shift",
+  "Prepare complete WhatsApp order messages before staff steps in",
+  "Reduce repeated size, stock, COD, delivery, and offer replies"
+];
+
 const includes = [
   "Instagram and Facebook comment and DM setup",
-  "Shopify inventory sync and product matching",
+  "Shopify inventory sync and product matching where available",
   "Store policy, COD, delivery, and offer rules",
   "WhatsApp order message handoff",
   "Hindi, English, and Hinglish reply tuning",
@@ -19,18 +26,29 @@ const includes = [
     <div class="mx-auto mb-10 max-w-3xl text-center">
       <p class="section-eyebrow">Early access pricing</p>
       <h2 class="section-title mt-4">
-        Early pricing for DM-to-order automation.
+        Pricing built around the inbox work you stop repeating.
       </h2>
       <p class="section-copy mx-auto mt-5 max-w-2xl">
-        Simple early pricing, hands-on setup, and a 30-day money-back guarantee if VoluChat is not a fit for your store.
+        Start with hands-on setup, your first 1,000 monthly conversations included, and a 30-day money-back guarantee if VoluChat is not a fit for your store.
       </p>
     </div>
 
     <div class="dark-band mx-auto max-w-5xl overflow-hidden rounded-2xl p-5 md:p-8 lg:p-10">
       <div class="grid gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-center">
         <div>
-          <div class="mb-6 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary-200">Hands-on setup</div>
-          <h3 class="mb-8 font-heading text-2xl font-semibold tracking-tight text-white">What we set up with you</h3>
+          <div class="mb-5 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary-200">Outcome-first plan</div>
+          <h3 class="mb-6 font-heading text-2xl font-semibold tracking-tight text-white">What the base plan is meant to replace</h3>
+
+          <ul class="mb-8 grid gap-3">
+            {outcomes.map((item) => (
+              <li class="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-3 text-sm font-semibold leading-relaxed text-primary-50/90">
+                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-primary-200"></span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h4 class="mb-4 font-heading text-lg font-semibold tracking-tight text-white">What we set up with you</h4>
           
           <ul class="grid gap-3 sm:grid-cols-2">
             {includes.map((item) => (
@@ -51,12 +69,15 @@ const includes = [
           <div class="mb-2 font-heading text-4xl font-semibold leading-none text-stone-950">
             Rs. 2,999/month
           </div>
-          <div class="mb-5 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3">
+          <p class="mb-4 text-sm font-semibold leading-relaxed text-stone-600">
+            Includes your first 1,000 customer conversations each month.
+          </p>
+          <div class="mb-4 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3">
             <span class="font-heading text-3xl font-semibold text-stone-950">Rs. 9,999</span>
             <span class="block text-xs font-bold uppercase tracking-[0.16em] text-stone-500">one-time setup</span>
           </div>
-          <p class="mb-6 text-xs font-semibold leading-relaxed text-stone-500">
-            Includes setup, store rule mapping, reply tuning, WhatsApp order handoff, and a 30-day money-back guarantee.
+          <p class="mb-5 text-xs font-semibold leading-relaxed text-stone-500">
+            After the included volume, extra conversations are billed at Rs. 5 each. Includes setup, store rule mapping, reply tuning, WhatsApp order handoff, and a 30-day money-back guarantee.
           </p>
           <a href="/pricing/#usage-terms" class="mb-6 inline-block text-[11px] font-bold uppercase tracking-[0.14em] text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-900">
             Terms and conditions apply
