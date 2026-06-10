@@ -35,3 +35,25 @@ test("sitemap formats API timestamps as Google-compatible dates", async () => {
     globalThis.fetch = originalFetch;
   }
 });
+
+test("sitemap includes the security trust page", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify([]), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+
+  const sitemap = await import("../src/pages/sitemap.xml.js");
+
+  try {
+    const response = await sitemap.GET({
+      site: new URL("https://www.voluchat.com"),
+    });
+
+    const xml = await response.text();
+
+    assert.match(xml, /<loc>https:\/\/www\.voluchat\.com\/security\/<\/loc>/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

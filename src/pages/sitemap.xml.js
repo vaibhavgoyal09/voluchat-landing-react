@@ -8,6 +8,7 @@ const STATIC_ROUTES = [
   { path: '/pricing/', priority: '0.8' },
   { path: '/compare/', priority: '0.8' },
   { path: '/about/', priority: '0.7' },
+  { path: '/security/', priority: '0.7' },
   { path: '/blog/', priority: '0.6' },
   { path: '/contact/', priority: '0.9' },
 ];

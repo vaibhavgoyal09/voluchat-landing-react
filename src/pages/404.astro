@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const recoveryLinks = [
+  { label: "Features", href: "/features", note: "See what VoluChat can answer" },
+  { label: "Pricing", href: "/pricing", note: "Compare buyer-chat plans" },
+  { label: "Contact", href: "/contact", note: "Get help finding the right page" },
+];
+---
+
+<Layout
+  title="Page not found | VoluChat"
+  description="The VoluChat page you opened is missing or has moved. Return home, compare pricing, or contact support."
+  robots="noindex, follow"
+>
+  <Header />
+
+  <main id="hero" class="animate-page-entry opacity-0">
+    <section class="relative overflow-hidden px-4 pt-32 pb-18 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(83,111,159,0.16),transparent_30rem),radial-gradient(circle_at_82%_18%,rgba(203,217,234,0.22),transparent_28rem),linear-gradient(180deg,rgba(255,255,255,0.94),rgba(247,249,252,0.88)_48%,rgba(253,252,249,0.96))]"></div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.78fr)] lg:gap-14">
+          <div class="max-w-3xl reveal-on-scroll">
+            <div class="chip">404 - page not found</div>
+            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl lg:text-7xl">
+              This page slipped out of the chat.
+            </h1>
+            <p class="section-copy mt-6 max-w-2xl">
+              The link may be old, mistyped, or moved during a site update. Head back to the main VoluChat flow and keep exploring Instagram DM automation for ecommerce stores.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="/" class="btn-primary group min-h-12 px-5">
+                <span>Go home</span>
+                <span class="ml-3 grid h-7 w-7 place-items-center rounded-full bg-white/12 text-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5">
+                  &rarr;
+                </span>
+              </a>
+              <a href="/pricing" class="btn-secondary min-h-12 px-5">
+                View pricing
+              </a>
+            </div>
+          </div>
+
+          <div class="relative reveal-on-scroll">
+            <div class="absolute -left-5 top-8 h-28 w-28 rounded-full bg-primary-200/55 blur-3xl"></div>
+            <div class="absolute -right-4 bottom-10 h-32 w-32 rounded-full bg-coral-100/80 blur-3xl"></div>
+
+            <div class="relative rounded-[2rem] border border-white/80 bg-white/58 p-2 shadow-[0_30px_90px_rgba(68,64,60,0.11)]">
+              <div class="overflow-hidden rounded-[1.55rem] border border-stone-200/80 bg-white shadow-[inset_0_1px_0_rgba(255,255,255,0.95)]">
+                <div class="flex items-center justify-between border-b border-stone-200/75 bg-stone-50/78 px-4 py-3">
+                  <div class="flex items-center gap-2">
+                    <span class="h-2.5 w-2.5 rounded-full bg-primary-700"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-primary-200"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-stone-200"></span>
+                  </div>
+                  <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-stone-400">missing route</span>
+                </div>
+
+                <div class="space-y-4 p-5 sm:p-6">
+                  <div class="rounded-2xl bg-primary-50/88 p-4 ring-1 ring-primary-100">
+                    <p class="mini-label text-primary-700">Customer path</p>
+                    <p class="mt-2 font-heading text-2xl font-semibold leading-tight text-primary-950">/old-page</p>
+                  </div>
+
+                  <div class="grid gap-3">
+                    <div class="ml-auto max-w-[15rem] rounded-2xl rounded-tr-md bg-primary-900 px-4 py-3 text-white shadow-[0_14px_34px_rgba(29,43,67,0.18)]">
+                      <p class="text-sm font-semibold leading-relaxed">Can I still find VoluChat?</p>
+                    </div>
+                    <div class="max-w-[18rem] rounded-2xl rounded-tl-md border border-stone-200 bg-stone-50 px-4 py-3">
+                      <p class="text-sm font-semibold leading-relaxed text-stone-700">Yes. Try the homepage or jump to the pages below.</p>
+                    </div>
+                  </div>
+
+                  <div class="grid gap-2 pt-1">
+                    {recoveryLinks.map((link) => (
+                      <a href={link.href} class="group flex items-center justify-between rounded-2xl border border-stone-200/80 bg-white/78 p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-primary-100 hover:bg-primary-50/80">
+                        <span>
+                          <span class="block text-sm font-bold text-stone-950">{link.label}</span>
+                          <span class="mt-0.5 block text-xs font-semibold text-stone-500">{link.note}</span>
+                        </span>
+                        <span class="grid h-8 w-8 place-items-center rounded-full bg-stone-100 text-sm font-bold text-primary-800 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 group-hover:bg-white">
+                          &rarr;
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
