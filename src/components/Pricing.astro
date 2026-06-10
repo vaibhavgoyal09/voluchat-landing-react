@@ -1,96 +1,114 @@
 ---
-const outcomes = [
-  "Recover missed sales conversations automatically",
-  "Reply to ready buyers 24/7 without hiring another inbox shift",
-  "Prepare complete WhatsApp order messages before staff steps in",
-  "Reduce repeated size, stock, COD, delivery, and offer replies"
+const plans = [
+  {
+    name: "Starter",
+    eyebrow: "Small stores",
+    price: "Rs. 2,999/month",
+    volume: "600 buyer chats/month",
+    daily: "around 20/day",
+    note: "For stores starting to automate repeated product questions.",
+    cta: "Start Free Setup",
+  },
+  {
+    name: "Growth",
+    eyebrow: "Growing volume",
+    price: "Rs. 5,999/month",
+    volume: "1,500 buyer chats/month",
+    daily: "around 50/day",
+    note: "For stores running regular reels, launches, offers, and busy DM days.",
+    cta: "Start Free Setup",
+  },
+  {
+    name: "High Volume",
+    eyebrow: "Recommended for 100/day",
+    price: "Rs. 12,999/month",
+    volume: "3,000 buyer chats/month",
+    daily: "around 100/day",
+    note: "Best for stores near 100 buyer chats/day with regular campaign traffic.",
+    cta: "Start Free Setup",
+    suggested: true,
+  },
+  {
+    name: "Scale",
+    eyebrow: "Custom usage",
+    price: "Contact sales",
+    volume: "Above 3,000 buyer chats/month",
+    daily: "custom daily volume",
+    note: "For larger teams, multiple pages, or unpredictable campaign spikes.",
+    cta: "Contact sales",
+  },
 ];
 
-const includes = [
-  "Instagram and Facebook comment and DM setup",
-  "Shopify inventory sync and product matching where available",
-  "Store policy, COD, delivery, and offer rules",
-  "WhatsApp order message handoff",
-  "Hindi, English, and Hinglish reply tuning",
-  "Founder-led launch help"
+const setupItems = [
+  "Assisted Launch available",
+  "No surprise charges",
+  "No coding required",
+  "30-day money-back guarantee",
 ];
-
 ---
 
 <section id="pricing" class="section-pad relative overflow-hidden">
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-10"></div>
   </div>
+  <div class="ambient-noise"></div>
 
   <div class="page-shell relative z-10">
     <div class="mx-auto mb-10 max-w-3xl text-center">
-      <p class="section-eyebrow">Early access pricing</p>
+      <p class="section-eyebrow">Pricing that follows your DM volume</p>
       <h2 class="section-title mt-4">
-        Pricing built around the inbox work you stop repeating.
+        Plans that scale without usage guesswork.
       </h2>
       <p class="section-copy mx-auto mt-5 max-w-2xl">
-        Start with hands-on setup, your first 1,000 monthly conversations included, and a 30-day money-back guarantee if VoluChat is not a fit for your store.
+        Pick the monthly plan by buyer-chat volume. We keep usage plain, notify you before upgrades, and avoid surprise overage bills.
       </p>
     </div>
 
-    <div class="dark-band mx-auto max-w-5xl overflow-hidden rounded-2xl p-5 md:p-8 lg:p-10">
-      <div class="grid gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-center">
-        <div>
-          <div class="mb-5 text-[10px] font-semibold uppercase tracking-[0.25em] text-primary-200">Outcome-first plan</div>
-          <h3 class="mb-6 font-heading text-2xl font-semibold tracking-tight text-white">What the base plan is meant to replace</h3>
+    <div class="mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] border border-stone-200/80 bg-white/78 shadow-[0_28px_90px_rgba(28,25,23,0.075)]">
+      <div class="grid border-b border-stone-200/80 bg-stone-50/72 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.16em] text-stone-500 sm:grid-cols-4">
+        <span>Plan</span>
+        <span class="hidden sm:block">Monthly volume</span>
+        <span class="hidden sm:block">Daily guide</span>
+        <span class="hidden sm:block">Best fit</span>
+      </div>
 
-          <ul class="mb-8 grid gap-3">
-            {outcomes.map((item) => (
-              <li class="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-3 text-sm font-semibold leading-relaxed text-primary-50/90">
-                <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-primary-200"></span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+      <div class="grid divide-y divide-stone-200/80 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+        {plans.map((plan) => (
+          <article class={`relative flex min-h-[22rem] flex-col p-5 sm:p-6 ${plan.suggested ? 'bg-primary-50/80' : 'bg-white/58'}`}>
+            {plan.suggested && <div class="absolute inset-x-0 top-0 h-1 bg-primary-800"></div>}
 
-          <h4 class="mb-4 font-heading text-lg font-semibold tracking-tight text-white">What we set up with you</h4>
-          
-          <ul class="grid gap-3 sm:grid-cols-2">
-            {includes.map((item) => (
-              <li class="flex items-start gap-3 text-sm font-semibold leading-relaxed text-primary-50/88">
-                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white/12 text-primary-100">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+            <p class={`text-[10px] font-bold uppercase tracking-[0.16em] ${plan.suggested ? 'text-primary-800' : 'text-stone-500'}`}>
+              {plan.eyebrow}
+            </p>
+            <h3 class="mt-4 font-heading text-2xl font-semibold leading-tight text-stone-950">{plan.name}</h3>
+            <p class="mt-3 min-h-12 text-sm font-semibold leading-relaxed text-stone-600">{plan.note}</p>
 
-        <div class="rounded-2xl border border-white/15 bg-white p-7 text-center shadow-[0_24px_70px_rgba(0,0,0,0.2)]">
-          <div class="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-700">
-            Early access plan
-          </div>
-          <div class="mb-2 font-heading text-4xl font-semibold leading-none text-stone-950">
-            Rs. 2,999/month
-          </div>
-          <p class="mb-4 text-sm font-semibold leading-relaxed text-stone-600">
-            Includes your first 1,000 customer conversations each month.
-          </p>
-          <div class="mb-4 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3">
-            <span class="font-heading text-3xl font-semibold text-stone-950">Rs. 9,999</span>
-            <span class="block text-xs font-bold uppercase tracking-[0.16em] text-stone-500">one-time setup</span>
-          </div>
-          <p class="mb-5 text-xs font-semibold leading-relaxed text-stone-500">
-            After the included volume, extra conversations are billed at Rs. 5 each. Includes setup, store rule mapping, reply tuning, WhatsApp order handoff, and a 30-day money-back guarantee.
-          </p>
-          <a href="/pricing/#usage-terms" class="mb-6 inline-block text-[11px] font-bold uppercase tracking-[0.14em] text-primary-700 underline decoration-primary-200 underline-offset-4 transition-colors hover:text-primary-900">
-            Terms and conditions apply
-          </a>
-          
-          <a href="/contact" class="btn-primary group w-full gap-3 px-6 py-4">
-            <span class="relative z-10">Book demo call</span>
-            <span class="h-2.5 w-2.5 rounded-full bg-primary-300 group-hover:bg-white transition-colors duration-300 relative z-10"></span>
-          </a>
-        </div>
+            <div class="mt-6 space-y-3">
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-stone-400">Price</p>
+                <p class="mt-1 font-heading text-2xl font-semibold leading-tight text-stone-950">{plan.price}</p>
+              </div>
+              <div class="grid gap-2 rounded-2xl bg-white/76 p-3 ring-1 ring-stone-200/75">
+                <p class="text-sm font-semibold text-stone-950">{plan.volume}</p>
+                <p class="text-xs font-bold uppercase tracking-[0.12em] text-stone-500">{plan.daily}</p>
+              </div>
+            </div>
 
+            <a href={plan.cta === "Contact sales" ? "/contact" : "https://dashboard.voluchat.com/register"} class={`mt-auto inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:scale-[0.98] ${plan.suggested ? 'bg-primary-900 text-white shadow-[0_18px_44px_rgba(29,43,67,0.18)] hover:bg-primary-800' : 'border border-stone-200 bg-white text-stone-950 hover:border-primary-100 hover:bg-primary-50'}`}>
+              {plan.cta}
+            </a>
+          </article>
+        ))}
       </div>
     </div>
 
+    <div class="mx-auto mt-4 grid max-w-6xl gap-2 rounded-2xl border border-stone-200/80 bg-white/76 p-3 shadow-[0_16px_44px_rgba(28,25,23,0.055)] sm:grid-cols-2 lg:grid-cols-4">
+      {setupItems.map((item) => (
+        <div class="flex items-center gap-3 rounded-xl bg-stone-50/76 px-4 py-3">
+          <span class="h-2 w-2 shrink-0 rounded-full bg-primary-800"></span>
+          <span class="text-sm font-semibold leading-snug text-stone-700">{item}</span>
+        </div>
+      ))}
+    </div>
   </div>
 </section>

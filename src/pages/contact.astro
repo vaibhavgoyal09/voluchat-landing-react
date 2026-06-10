@@ -4,9 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FAQ from '../components/FAQ.astro';
 
-const seoTitle = "Book a demo call for your Instagram store | VoluChat";
-const seoDescription = "Book a VoluChat demo call for high-volume Instagram stores that need automated product replies, cart collection, and WhatsApp checkout drafts.";
-const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20want%20to%20book%20a%20demo%20call%20for%20my%20Instagram%20store.";
+const seoTitle = "Contact VoluChat for Instagram store support | VoluChat";
+const seoDescription = "Contact VoluChat for high-volume Instagram stores that need automated product replies, cart collection, and WhatsApp checkout drafts.";
+const contactWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20want%20help%20with%20my%20Instagram%20store%20setup.";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
@@ -20,12 +20,12 @@ const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <div class="chip">Book a demo call</div>
+            <div class="chip">Contact VoluChat</div>
             <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl">
               See VoluChat on your Instagram sales workflow.
             </h1>
             <p class="section-copy mt-6 max-w-xl">
-              Show us your repeated product questions, comment volume, and DM workflow. We will walk you through live replies, catalog matching, cart collection, address capture, and WhatsApp checkout drafts.
+              Share your repeated product questions, comment volume, and DM workflow. We will help with replies, catalog matching, cart collection, address capture, and WhatsApp checkout drafts.
             </p>
 
             <div class="mt-10 space-y-5">
@@ -52,10 +52,10 @@ const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20
           </div>
 
           <div class="solid-card p-6 sm:p-8 lg:p-10">
-            <form id="demo-form" class="space-y-6">
+            <form id="contact-form" class="space-y-6">
               <div>
                 <h2 class="text-2xl font-heading font-semibold text-stone-950">Sales team details</h2>
-                <p class="mt-2 text-sm font-semibold text-stone-500">Share a few details so we can prepare the demo around your store.</p>
+                <p class="mt-2 text-sm font-semibold text-stone-500">Share a few details so we can understand your store and support needs.</p>
               </div>
 
               <div>
@@ -74,12 +74,12 @@ const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20
               </div>
 
               <button type="submit" id="submit-btn" class="btn-primary w-full gap-3 px-6 py-5 text-base disabled:cursor-not-allowed disabled:opacity-55">
-                <span id="btn-text">Book my demo call</span>
+                <span id="btn-text">Send request</span>
                 <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </button>
 
               <div class="text-center">
-                <a href={demoWhatsappUrl} target="_blank" rel="noopener" class="text-sm font-semibold text-primary-700 transition-colors hover:text-primary-900">
+                <a href={contactWhatsappUrl} target="_blank" rel="noopener" class="text-sm font-semibold text-primary-700 transition-colors hover:text-primary-900">
                   Prefer WhatsApp? Message us now
                 </a>
               </div>
@@ -93,7 +93,7 @@ const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20
 
     <section class="page-shell pb-28">
       <div class="solid-card p-3">
-        <img src="/contact_support.webp" alt="VoluChat founder-led ecommerce demo setup" class="h-[420px] w-full rounded-xl object-cover sm:h-[520px]" />
+        <img src="/contact_support.webp" alt="VoluChat ecommerce setup support" class="h-[420px] w-full rounded-xl object-cover sm:h-[520px]" />
       </div>
     </section>
 
@@ -103,7 +103,7 @@ const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20
   <Footer />
 
   <script is:inline define:vars={{ webhookUrl: import.meta.env.PUBLIC_N8N_DEMO_WEBHOOK_URL }}>
-    const form = document.getElementById('demo-form');
+    const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const btnText = document.getElementById('btn-text');
     const formMessage = document.getElementById('form-message');
@@ -122,7 +122,7 @@ const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20
 
         try {
           if (!webhookUrl) {
-            throw new Error('Missing demo webhook URL');
+            throw new Error('Missing contact webhook URL');
           }
 
           const response = await fetch(webhookUrl, {
@@ -137,11 +137,11 @@ const demoWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20
             throw new Error('Failed to send request');
           }
 
-          formMessage.innerText = 'Thank you. We will reach out to schedule your demo call shortly.';
+          formMessage.innerText = 'Thank you. We will reach out shortly.';
           formMessage.className = 'rounded-2xl bg-primary-50 p-4 text-center text-sm font-semibold text-primary-800 mt-6';
           formMessage.classList.remove('hidden');
           form.reset();
-          btnText.innerText = 'Demo requested';
+          btnText.innerText = 'Request sent';
         } catch (error) {
           formMessage.innerText = 'Something went wrong. Please try again or email us directly.';
           formMessage.className = 'rounded-2xl bg-rose-50 p-4 text-center text-sm font-semibold text-rose-700 mt-6';

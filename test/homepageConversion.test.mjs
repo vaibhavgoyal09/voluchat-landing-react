@@ -43,11 +43,29 @@ test("homepage proof stays honest for early access", async () => {
   assert.doesNotMatch(sources, /Trusted by|customers served|processed orders|\$2\.8M|15,000\+|2,500\+|42% faster|Loved by|closed 30% more orders/);
 });
 
-test("pricing uses outcome-focused early access copy and volume terms", async () => {
+test("pricing presents simple buyer-chat growth plans without credit language", async () => {
   const pricing = await readSource("src/components/Pricing.astro");
 
-  assert.match(pricing, /Recover missed sales conversations automatically/);
-  assert.match(pricing, /Reply to ready buyers 24\/7 without hiring another inbox shift/);
-  assert.match(pricing, /Includes your first 1,000 customer conversations each month/);
-  assert.match(pricing, /extra conversations are billed at Rs\. 5 each/);
+  assert.match(pricing, /Starter/);
+  assert.match(pricing, /Rs\. 2,999\/month/);
+  assert.match(pricing, /600 buyer chats\/month/);
+  assert.match(pricing, /around 20\/day/);
+  assert.match(pricing, /Growth/);
+  assert.match(pricing, /Rs\. 5,999\/month/);
+  assert.match(pricing, /1,500 buyer chats\/month/);
+  assert.match(pricing, /around 50\/day/);
+  assert.match(pricing, /High Volume/);
+  assert.match(pricing, /Rs\. 12,999\/month/);
+  assert.match(pricing, /3,000 buyer chats\/month/);
+  assert.match(pricing, /around 100\/day/);
+  assert.match(pricing, /Best for stores near 100 buyer chats\/day/);
+  assert.match(pricing, /Recommended for 100\/day/);
+  assert.match(pricing, /Scale/);
+  assert.match(pricing, /Contact sales/);
+  assert.match(pricing, /Above 3,000 buyer chats\/month/);
+  assert.match(pricing, /No surprise charges/);
+  assert.match(pricing, /Assisted Launch/);
+  assert.doesNotMatch(pricing, /launch setup|setup fee|self-serve/i);
+  assert.doesNotMatch(pricing, /High Volume is the recommended plan|Most popular|Target plan/);
+  assert.doesNotMatch(pricing, /credit|credits|Rs\. 5 each|first 1,000 customer conversations/i);
 });
