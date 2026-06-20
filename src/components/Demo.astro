@@ -23,16 +23,14 @@ const demoSteps = [
 ];
 ---
 
-<section id="demo" class="section-pad relative overflow-hidden">
-  <div class="ambient-noise"></div>
-
+<section id="demo" class="dark-technical-bg relative overflow-hidden py-16 sm:py-24 lg:py-28">
   <div class="page-shell relative z-10">
-    <div class="solid-card overflow-hidden p-0">
-      <div class="grid gap-8 p-5 sm:p-7 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:p-9">
-        <div class="mx-auto w-full max-w-[17rem] lg:max-w-[18rem] reveal-on-scroll">
-          <div class="relative rounded-[2rem] border border-stone-200 bg-white p-3 shadow-[0_28px_90px_rgba(28,25,23,0.13)]">
-            <div class="rounded-[1.65rem] bg-stone-950 p-2 shadow-inner">
-              <div class="relative overflow-hidden rounded-[1.35rem] bg-stone-950">
+    <div class="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+      <div class="mx-auto w-full max-w-[17rem] reveal-on-scroll lg:max-w-[19rem]">
+        <div class="relative">
+          <div class="relative rounded-[2.15rem] border border-white/16 bg-white/10 p-3 shadow-[0_42px_120px_rgba(0,0,0,0.34)] backdrop-blur-xl">
+            <div class="rounded-[1.75rem] bg-stone-950 p-2 shadow-inner">
+              <div class="relative overflow-hidden rounded-[1.45rem] bg-stone-950">
                 <img
                   src="/demo-screenshot-04.webp"
                   alt="WhatsApp message showing the selected product, total, shipping address, and phone number from the social checkout flow"
@@ -50,32 +48,28 @@ const demoSteps = [
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="reveal-on-scroll reveal-delay-100">
-          <p class="section-eyebrow">Demo breakdown</p>
-          <h2 class="section-title mt-4">
-            From DM to WhatsApp order message.
-          </h2>
-          <p class="section-copy mt-5 max-w-2xl">
-            VoluChat keeps the buyer moving from product discovery to a complete WhatsApp message your store can review and close.
-          </p>
+      <div class="reveal-on-scroll reveal-delay-100">
+        <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-100/70">Demo breakdown</p>
+        <h2 class="mt-4 max-w-3xl text-[2.15rem] font-semibold leading-[1.06] text-white sm:text-5xl lg:text-[3.45rem]">
+          From DM to WhatsApp order message.
+        </h2>
+        <p class="mt-5 max-w-2xl text-base font-medium leading-relaxed text-primary-50/76 sm:text-lg">
+          VoluChat keeps the buyer moving from product discovery to a complete WhatsApp message your store can review and close.
+        </p>
 
-          <div class="mt-8 grid gap-3 sm:grid-cols-2">
-            {demoSteps.map((step, index) => (
-              <article class="rounded-xl border border-stone-200 bg-stone-50/80 p-4">
-                <div class="flex items-start gap-3">
-                  <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-primary-800 font-mono text-[11px] font-semibold text-white">
-                    0{index + 1}
-                  </span>
-                  <div>
-                    <p class="mini-label">{step.label}</p>
-                    <h3 class="mt-2 text-base font-semibold leading-snug text-stone-950">{step.title}</h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-stone-600">{step.text}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+        <div class="mt-10 divide-y divide-white/12 border-y border-white/12">
+          {demoSteps.map((step, index) => (
+            <article class="grid gap-4 py-5 transition duration-300 hover:bg-white/[0.04] sm:grid-cols-[4rem_1fr]">
+              <span class="font-mono text-sm font-semibold text-primary-200">0{index + 1}</span>
+              <div>
+                <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-primary-100/58">{step.label}</p>
+                <h3 class="mt-2 text-xl font-semibold leading-tight text-white">{step.title}</h3>
+                <p class="mt-2 max-w-xl text-sm font-medium leading-relaxed text-primary-50/68">{step.text}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </div>
