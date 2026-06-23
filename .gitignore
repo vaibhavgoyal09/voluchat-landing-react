@@ -12,7 +12,7 @@
 
 # testing
 /coverage
-
+.cursor
 # production
 /build
 /docs
