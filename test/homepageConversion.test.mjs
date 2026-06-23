@@ -9,7 +9,7 @@ test("homepage leads with the slow-reply buyer-loss message", async () => {
   const index = await readSource("src/pages/index.astro");
 
   assert.match(hero, /Stop losing Instagram buyers to slow replies/);
-  assert.match(index, /Stop losing Instagram buyers to slow replies \| VoluChat/);
+  assert.match(index, /Instagram DM Automation for WhatsApp Orders \| VoluChat/);
 });
 
 test("homepage moves honest proof directly after the hero and removes standalone best-for section", async () => {

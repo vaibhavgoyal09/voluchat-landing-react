@@ -14,9 +14,9 @@ import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 
 const siteUrl = "https://www.voluchat.com";
-const seoTitle = "Stop losing Instagram buyers to slow replies | VoluChat";
-const seoDescription = "VoluChat helps Instagram-led stores answer repeated product DMs, recommend catalog items, collect delivery details, and prepare WhatsApp order messages your team can close.";
-const seoKeywords = "Instagram DM automation, WhatsApp order message, DM to order automation, ecommerce reply automation, product catalog AI agent, COD delivery questions, Hinglish customer replies, Manychat alternative India";
+const seoTitle = "Instagram DM Automation for WhatsApp Orders | VoluChat";
+const seoDescription = "VoluChat automates Instagram product DMs, captures buyer details, syncs Shopify catalog context, and prepares WhatsApp order messages your team can close.";
+const seoKeywords = "Instagram DM automation, WhatsApp order automation, DM to order automation, ecommerce DM automation, Shopify Instagram automation, product catalog AI agent, COD delivery questions, Hinglish customer replies, Manychat alternative India";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -27,7 +27,7 @@ const faqSchema = {
       "name": "How does VoluChat turn DMs into orders?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VoluChat answers repeated product questions, recommends products from your catalog, collects cart and delivery details, and sends customers to WhatsApp with the order message already filled in."
+        "text": "VoluChat replies to repeated product DMs, recommends products from your catalog, captures variant and delivery details, and sends customers to WhatsApp with the order message already filled in."
       }
     },
     {
@@ -100,7 +100,59 @@ const structuredData = [
     "name": "VoluChat",
     "url": siteUrl,
     "logo": `${siteUrl}/voluchat_logo.svg`,
-    "description": seoDescription
+    "description": seoDescription,
+    "sameAs": [
+      "https://twitter.com/voluchat",
+      "https://linkedin.com/company/voluchat",
+      "https://instagram.com/voluchat"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${siteUrl}/#software`,
+    "name": "VoluChat",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": siteUrl,
+    "description": seoDescription,
+    "image": `${siteUrl}/og-image.webp`,
+    "publisher": {
+      "@id": `${siteUrl}/#organization`
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "price": "2999",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": `${siteUrl}/pricing/`
+      },
+      {
+        "@type": "Offer",
+        "name": "Growth",
+        "price": "5999",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": `${siteUrl}/pricing/`
+      },
+      {
+        "@type": "Offer",
+        "name": "High Volume",
+        "price": "12999",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": `${siteUrl}/pricing/`
+      }
+    ],
+    "featureList": [
+      "Instagram DM automation",
+      "Shopify catalog sync",
+      "Product and variant capture",
+      "WhatsApp order message handoff",
+      "Founder-led setup"
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -141,6 +193,18 @@ const structuredData = [
         "position": 6,
         "name": "Start Free Setup",
         "url": "https://dashboard.voluchat.com/register"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteUrl
       }
     ]
   },
