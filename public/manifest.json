@@ -1,7 +1,7 @@
 {
-  "name": "VoluChat - AI Commerce Agents for Shopify Brands",
+  "name": "VoluChat - Shopify AI Agents for Revenue Recovery",
   "short_name": "VoluChat",
-  "description": "VoluChat gives growing Shopify stores commerce agents that answer product questions, recover carts, suggest upsells, follow up with customers, and surface revenue leaks.",
+  "description": "Use VoluChat's Shopify AI agents to recover carts, answer product questions, recommend upsells, follow up with buyers, and control actions with guardrails.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

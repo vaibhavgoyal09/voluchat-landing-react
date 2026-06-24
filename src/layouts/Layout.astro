@@ -14,11 +14,12 @@ interface Props {
 	publishedTime?: string;
 	modifiedTime?: string;
 	tags?: string[];
+	structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
 	title,
-	description = "VoluChat gives Shopify brands commerce agents that handle repetitive customer questions, cart recovery, upsells, follow-ups, and revenue leak detection.",
+	description = "VoluChat finds Shopify revenue leaks and deploys controlled AI agents for cart recovery, product questions, upsells, follow-ups, inventory, and revenue workflows.",
 	keywords = "AI commerce agents, commerce agents, Shopify AI agents, ecommerce automation, cart recovery agent, product recommendation agent, customer follow-up agent, VoluChat",
 	image = "/og-image.webp",
 	type = "website",
@@ -28,12 +29,18 @@ const {
 	publishedTime,
 	modifiedTime,
 	tags = [],
+	structuredData,
 } = Astro.props;
 
 const siteOrigin = Astro.site?.origin ?? "https://www.voluchat.com";
 const canonicalUrl = new URL(canonical ?? Astro.url.pathname, siteOrigin).toString();
 const imageUrl = new URL(image, siteOrigin).toString();
 const articleTags = Array.isArray(tags) ? tags.filter(Boolean) : [];
+const structuredDataItems = Array.isArray(structuredData)
+	? structuredData.filter(Boolean)
+	: structuredData
+		? [structuredData]
+		: [];
 ---
 
 <!doctype html>
@@ -72,6 +79,9 @@ const articleTags = Array.isArray(tags) ? tags.filter(Boolean) : [];
 		<meta name="twitter:image" content={imageUrl} />
 		<meta name="theme-color" content="#0f172a" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		{structuredDataItems.map((item) => (
+			<script type="application/ld+json" set:html={JSON.stringify(item)} />
+		))}
 	</head>
 	<body class="selection:bg-primary-100 selection:text-primary-900">
 		<a href="#hero" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-stone-950 focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white">

@@ -9,9 +9,9 @@ test("homepage SEO matches the commerce agents positioning", async () => {
   const layout = await readSource("src/layouts/Layout.astro");
   const manifest = await readSource("public/manifest.json");
 
-  assert.match(index, /VoluChat \| AI Commerce Agents for Shopify Brands/);
-  assert.match(layout, /commerce agents that handle repetitive customer questions/);
-  assert.match(manifest, /AI Commerce Agents for Shopify Brands/);
+  assert.match(index, /Shopify AI Agents for Revenue Recovery \| VoluChat/);
+  assert.match(layout, /VoluChat finds Shopify revenue leaks/);
+  assert.match(manifest, /Shopify AI Agents for Revenue Recovery/);
 });
 
 test("homepage layout uses the new commerce agent platform structure", async () => {
@@ -32,10 +32,12 @@ test("homepage nav and footer wire to real sections and new pages", async () => 
   assert.match(navbar, /href:\s*"\/features"/);
   assert.match(navbar, /href:\s*"\/pricing"/);
   assert.match(navbar, /href:\s*"\/compare"/);
+  assert.match(navbar, /href:\s*"\/about"/);
 
   assert.match(footer, /href="\/agents\/product-assistant"/);
   assert.match(footer, /href="\/agents\/cart-recovery"/);
   assert.match(footer, /href="\/integrations\/shopify"/);
+  assert.match(footer, /href="\/about"/);
 
   const workflowsSection = await readSource("src/components/landing/UseCasesSection.astro");
   const demoFlowSection = await readSource("src/components/landing/DemoFlowSection.astro");
@@ -52,7 +54,7 @@ test("homepage nav and footer wire to real sections and new pages", async () => 
 test("pricing presents closed tailored pricing", async () => {
   const pricing = await readSource("src/pages/pricing.astro");
 
-  assert.match(pricing, /Custom Pricing/);
+  assert.match(pricing, /Custom pricing/i);
   assert.match(pricing, /tailored pricing/);
   assert.doesNotMatch(pricing, /Rs\.|Starter Agent|Growth Suite|Scale Platform/);
 });

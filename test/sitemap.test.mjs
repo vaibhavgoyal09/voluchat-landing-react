@@ -57,3 +57,25 @@ test("sitemap includes the security trust page", async () => {
     globalThis.fetch = originalFetch;
   }
 });
+
+test("sitemap includes lastmod for static routes", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify([]), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+
+  const sitemap = await import("../src/pages/sitemap.xml.js");
+
+  try {
+    const response = await sitemap.GET({
+      site: new URL("https://www.voluchat.com"),
+    });
+
+    const xml = await response.text();
+
+    assert.match(xml, /<loc>https:\/\/www\.voluchat\.com\/<\/loc>\s*<lastmod>2026-06-24<\/lastmod>/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

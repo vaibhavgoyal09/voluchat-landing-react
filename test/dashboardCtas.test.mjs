@@ -4,7 +4,7 @@ import { test } from "node:test";
 
 const readSource = (path) => readFile(new URL(`../${path}`, import.meta.url), "utf8");
 
-test("primary acquisition CTAs send users to book a demo or dashboard with correct hrefs", async () => {
+test("primary acquisition CTAs send users to the agent review flow with correct hrefs", async () => {
   const navbar = await readSource("src/components/landing/Navbar.astro");
   const pricing = await readSource("src/pages/pricing.astro");
   const about = await readSource("src/pages/about.astro");
@@ -13,7 +13,7 @@ test("primary acquisition CTAs send users to book a demo or dashboard with corre
   const sources = [navbar, pricing, about, features].join("\n");
 
   // Verify that the text exists
-  assert.match(sources, /Book a Demo|Start Free Setup/);
+  assert.match(sources, /Request Agent Review|Start Agent Review/);
   
   // Verify that the exact destination exists and is used in CTAs.
   assert.match(sources, /href="\/contact"/);

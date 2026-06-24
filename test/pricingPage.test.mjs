@@ -7,9 +7,9 @@ const readPricingPage = () => readFile(new URL("../src/pages/pricing.astro", imp
 test("pricing page uses closed tailored pricing", async () => {
   const page = await readPricingPage();
 
-  assert.match(page, /Custom Pricing/);
+  assert.match(page, /Custom pricing/i);
   assert.match(page, /tailored to how your store actually operates/);
-  assert.match(page, /Request a Pricing Review/);
+  assert.match(page, /Request Agent Review/);
   assert.match(page, /How we quote/);
   assert.doesNotMatch(page, /Starter Agent|Growth Suite|Scale Platform|Enterprise/);
   assert.doesNotMatch(page, /Rs\. ?\d|actions\/month|fixed public tiers|preset public tiers/i);

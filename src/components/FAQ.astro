@@ -6,7 +6,7 @@ const {
 const faqs = [
   {
     question: "What is an AI commerce agent?",
-    answer: "A commerce agent is an autonomous software program that acts on your Shopify store data. Unlike a chatbot that just replies to questions, an agent can detect a left cart, calculate a profitable discount, send an offer, and process the order without human intervention.",
+    answer: "A commerce agent uses your Shopify catalog, cart, customer, and policy data to recommend or execute a specific revenue workflow. Unlike a chatbot that only replies, it can detect a left cart, draft a margin-safe offer, route it for approval, and track the result.",
   },
   {
     question: "Does VoluChat sync with my Shopify inventory?",
@@ -33,6 +33,19 @@ const faqs = [
     answer: pricingAnswer,
   },
 ];
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
 ---
 
 <section id="faq" class="section-pad section-band-quiet relative overflow-hidden">
@@ -75,14 +88,16 @@ const faqs = [
 
     <div class="mx-auto mt-8 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] px-5 py-5 text-center shadow-[0_18px_60px_rgba(0,0,0,0.28)] sm:flex-row sm:text-left">
       <p class="text-base font-medium leading-relaxed text-slate-200">
-        Ready to see agents in action? Connect your store and see what they find.
+        Ready to see which agents are worth deploying first? Share your store details and get a workflow review.
       </p>
       <a href="/contact" class="btn-primary shrink-0">
-        Book a Demo
+        Request Agent Review
       </a>
     </div>
   </div>
 </section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
 
 <style>
   .faq-item.active {

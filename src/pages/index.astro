@@ -13,15 +13,43 @@ import TrustSection from '../components/landing/TrustSection.astro';
 import FAQ from '../components/FAQ.astro';
 import Footer from '../components/landing/Footer.astro';
 
-const seoTitle = "VoluChat | AI Commerce Agents for Shopify Brands";
-const seoDescription = "VoluChat gives growing Shopify stores commerce agents that answer product questions, recover carts, suggest upsells, follow up with customers, and surface revenue leaks.";
-const seoKeywords = "AI commerce agents, commerce agents, Shopify AI agents, ecommerce agents, cart recovery agent, product recommendation agent, D2C automation, Shopify automation, VoluChat";
+const seoTitle = "Shopify AI Agents for Revenue Recovery | VoluChat";
+const seoDescription = "Use VoluChat's Shopify AI agents to recover carts, answer product questions, recommend upsells, follow up with buyers, and control actions with guardrails.";
+const seoKeywords = "Shopify AI agents, AI cart recovery, ecommerce AI agents, Shopify automation, product question AI, revenue recovery agent, D2C automation, VoluChat";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VoluChat",
+    "url": siteUrl,
+    "logo": `${siteUrl}/voluchat_logo.svg`,
+    "sameAs": []
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "VoluChat",
+    "url": siteUrl,
+    "description": seoDescription
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VoluChat",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": siteUrl,
+    "description": seoDescription
+  }
+];
 ---
 
 <Layout
   title={seoTitle}
   description={seoDescription}
   keywords={seoKeywords}
+  structuredData={structuredData}
 >
   <Navbar />
   
