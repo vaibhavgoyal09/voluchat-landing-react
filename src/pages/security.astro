@@ -8,27 +8,27 @@ const lastUpdated = "June 24, 2026";
 
 const safeguards = [
   {
-    title: "Store Data Boundaries",
-    text: "VoluChat agents only access the specific Shopify scopes required for your configured workflows. We adhere to strict data minimization."
+    title: "Scoped store access",
+    text: "Agents should only work with the store data needed for the workflows you enable: catalog, inventory, carts, orders, and policy context where relevant."
   },
   {
-    title: "Human Approval Workflows",
-    text: "Agents can be set to 'recommend-only' mode, requiring a team member to approve actions like sending a discount or launching a clearance campaign."
+    title: "Approval before sensitive action",
+    text: "Discounts, campaign launches, high-value recovery messages, and unusual escalations can be queued for review before anything reaches a customer."
   },
   {
-    title: "Margin Controls",
-    text: "Set strict limits on the maximum discount an agent can offer for cart recovery or upselling. Agents cannot override these financial guardrails."
+    title: "Margin and offer limits",
+    text: "Set boundaries around discounts, bundles, clearance products, and recovery incentives so an agent cannot trade away margin to chase a conversion."
   },
   {
-    title: "Full Audit Logs",
-    text: "Every action, recommendation, and execution taken by a commerce agent is permanently logged for your team's review."
+    title: "Reviewable decision trail",
+    text: "Teams need to know why an agent acted. VoluChat is designed to keep the signal, recommendation, approval state, and outcome visible."
   }
 ];
 ---
 
 <Layout
   title="Security & Guardrails | VoluChat AI Commerce Agents"
-  description="Learn how VoluChat protects your Shopify data and enforces strict approval workflows and margin controls for autonomous commerce agents."
+  description="See how VoluChat gives Shopify brands control over AI commerce agents with scoped access, approval workflows, margin rules, and reviewable action history."
   keywords="commerce agent security, AI guardrails, Shopify data security, human-in-the-loop AI, AI approval workflows"
 >
   <Header />
@@ -41,10 +41,10 @@ const safeguards = [
       <div class="mx-auto mb-14 max-w-3xl text-center">
         <div class="chip">Trust & Guardrails</div>
         <h1 class="mt-6 text-4xl font-semibold leading-[1.03] text-white md:text-6xl">
-          Security and control for autonomous commerce.
+          Control the agent before the agent talks to customers.
         </h1>
         <p class="section-copy mx-auto mt-6 max-w-2xl">
-          VoluChat is built around scoped access, margin protection, and clear human approval boundaries for stores deploying AI agents.
+          Commerce agents can move fast. VoluChat is built so operators can decide what agents can see, what they can recommend, what needs approval, and what should never happen automatically.
         </p>
         <p class="mt-4 text-sm font-medium text-slate-300">Last updated: {lastUpdated}</p>
       </div>
@@ -52,10 +52,10 @@ const safeguards = [
       <div class="solid-card mb-10 p-6 md:p-10">
         <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <div class="rounded-xl bg-teal-500 p-8 text-white">
-            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-100">Human-in-the-loop</p>
-            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08]">You have the final say.</h2>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-100">Human judgment stays in the loop</p>
+            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08]">Automation should not mean blind permission.</h2>
             <p class="mt-5 text-base font-medium leading-relaxed text-white/78">
-              AI shouldn't make unilateral financial decisions without your permission. VoluChat's approval workflows let you review, edit, or reject agent recommendations before they reach the customer.
+              A commerce agent may draft a cart recovery message, suggest a bundle, or propose a clearance offer. Your team can keep those actions in recommend-only mode, review the exact suggestion, and decide what gets sent.
             </p>
           </div>
 
@@ -73,24 +73,24 @@ const safeguards = [
 
       <div class="grid gap-5 md:grid-cols-3">
         <article class="solid-card">
-          <p class="section-eyebrow">Data Privacy</p>
-          <h2 class="mt-4 text-2xl font-heading font-semibold text-white">Strict Boundaries</h2>
+          <p class="section-eyebrow">Data boundaries</p>
+          <h2 class="mt-4 text-2xl font-heading font-semibold text-white">Use store context carefully</h2>
           <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
-            Your product catalog, customer data, and store metrics are used exclusively to operate your agents. We never train public models on your private data.
+            Agents need context to be useful, but they should not have unlimited context by default. VoluChat's security posture starts with using the store data needed to operate the configured workflow.
           </p>
         </article>
         <article class="solid-card">
           <p class="section-eyebrow">Access</p>
-          <h2 class="mt-4 text-2xl font-heading font-semibold text-white">Shopify Scopes</h2>
+          <h2 class="mt-4 text-2xl font-heading font-semibold text-white">Keep permissions tied to workflows</h2>
           <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
-            We request only the Shopify API permissions needed for the agents you deploy, adhering to the principle of least privilege.
+            Product answers, cart recovery, upsells, and inventory clearance do not need the same level of access. Permissions should map to the agent workflows you actually deploy.
           </p>
         </article>
         <article class="solid-card">
           <p class="section-eyebrow">Oversight</p>
-          <h2 class="mt-4 text-2xl font-heading font-semibold text-white">Action History</h2>
+          <h2 class="mt-4 text-2xl font-heading font-semibold text-white">Make every action explainable</h2>
           <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
-            Easily audit the exact triggers, logic, and output of every agent workflow in your workspace to ensure brand safety.
+            Operators should be able to inspect the trigger, recommendation, approval state, and final result. That visibility is what makes automation usable for serious stores.
           </p>
         </article>
       </div>

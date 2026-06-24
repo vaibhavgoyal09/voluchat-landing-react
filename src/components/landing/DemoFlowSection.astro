@@ -1,105 +1,49 @@
 ---
+const steps = [
+  "Buyer asks a product question",
+  "Agent checks Shopify context",
+  "Cart intent is detected",
+  "Recovery action is approved",
+  "Revenue is attributed"
+];
 ---
 
-<section id="demo-flow" class="section-pad relative overflow-hidden">
-  <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-
-  <div class="page-shell relative z-10">
-    <div class="mx-auto max-w-3xl text-center mb-16">
-      <div class="reveal-on-scroll chip mb-6">
-        <span class="mini-label text-teal-300">See The Loop</span>
+<section id="demo-flow" class="relative overflow-hidden bg-[#07111f] py-24 sm:py-32">
+  <div class="page-shell">
+    <div class="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+      <div>
+        <div class="reveal-on-scroll chip mb-6">
+          <span class="mini-label">Operating loop</span>
+        </div>
+        <h2 class="reveal-on-scroll max-w-2xl text-4xl font-semibold leading-[1.02] text-white sm:text-5xl lg:text-6xl">
+          One clean path from question to revenue.
+        </h2>
       </div>
-      <h2 class="reveal-on-scroll section-title">
-        A single workflow, from question to revenue.
-      </h2>
+
+      <p class="reveal-on-scroll max-w-2xl text-lg font-medium leading-relaxed text-slate-300">
+        VoluChat is not another inbox view. It turns customer intent into a controlled commerce workflow: answer the buyer, watch the signal, ask for approval when needed, and record the result.
+      </p>
     </div>
 
-    <div class="mx-auto max-w-4xl glass-panel-premium rounded-2xl p-6 lg:p-10">
-      
-      <div class="relative border-l-2 border-white/10 pl-6 lg:pl-8 space-y-10 py-4">
-        
-        <!-- Timeline Item -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[35px] lg:-left-[43px] top-1 h-5 w-5 rounded-full border-[3px] border-[#0b1220] bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.4)]"></div>
-          <div class="flex items-center gap-2 text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Customer</div>
-          <div class="bg-blue-900/20 border border-blue-500/20 rounded-2xl rounded-tl-none p-4 shadow-sm inline-block max-w-md">
-            <p class="text-white font-medium">"I'm looking for a solid outdoor jacket for hiking."</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[35px] lg:-left-[43px] top-1 h-5 w-5 rounded-full border-[3px] border-[#0b1220] bg-teal-500 shadow-[0_0_10px_rgba(45,212,191,0.5)]"></div>
-          <div class="flex items-center gap-2 text-xs font-bold text-teal-400 uppercase tracking-wider mb-2">AI Product Assistant</div>
-          <div class="bg-teal-900/30 border border-teal-500/30 rounded-2xl rounded-tl-none p-4 shadow-sm inline-block max-w-md">
-            <p class="text-teal-50 font-medium">"We have the Trailblazer Pro and the Alpine Shell. Both are waterproof. The Trailblazer is currently 20% off. Interested?"</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[35px] lg:-left-[43px] top-1 h-5 w-5 rounded-full border-[3px] border-[#0b1220] bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.4)]"></div>
-          <div class="flex items-center gap-2 text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Customer</div>
-          <div class="bg-blue-900/20 border border-blue-500/20 rounded-2xl rounded-tl-none p-4 shadow-sm inline-block max-w-md">
-            <p class="text-white font-medium">"How much is the Alpine Shell in Medium?"</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[35px] lg:-left-[43px] top-1 h-5 w-5 rounded-full border-[3px] border-[#0b1220] bg-teal-500 shadow-[0_0_10px_rgba(45,212,191,0.5)]"></div>
-          <div class="flex items-center gap-2 text-xs font-bold text-teal-400 uppercase tracking-wider mb-2">AI Product Assistant</div>
-          <div class="bg-teal-900/30 border border-teal-500/30 rounded-2xl rounded-tl-none p-4 shadow-sm inline-block max-w-md">
-            <p class="text-teal-50 font-medium">"The Alpine Shell in Medium is $140. We have 3 left in stock."</p>
-          </div>
-        </div>
-
-        <!-- Timeline Event -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[35px] lg:-left-[43px] top-1 h-5 w-5 rounded-full border-[3px] border-[#0b1220] bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
-          <div class="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">System Event</div>
-          <div class="bg-amber-500/20 border border-amber-500/30 rounded-xl p-3 inline-block">
-            <p class="text-amber-300 font-semibold text-sm flex items-center gap-2">
-              <span class="text-lg">🛒</span> Customer added item to cart but abandoned.
-            </p>
-          </div>
-        </div>
-
-        <!-- Timeline Item -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[35px] lg:-left-[43px] top-1 h-5 w-5 rounded-full border-[3px] border-[#0b1220] bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
-          <div class="flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Cart Recovery & Upsell Agent</div>
-          <div class="bg-emerald-900/30 border border-emerald-500/30 rounded-2xl rounded-tl-none p-4 shadow-sm inline-block max-w-md">
-            <p class="text-emerald-200 font-medium text-sm mb-2">Drafted recovery follow-up:</p>
-            <p class="text-emerald-50 font-medium">"Hey! Saw you left the Alpine Shell in your cart. If you complete your order today, we'll throw in a free pair of thermal socks (clearing old stock)."</p>
-          </div>
-        </div>
-
-        <!-- Timeline Item -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[35px] lg:-left-[43px] top-1 h-5 w-5 rounded-full border-[3px] border-[#0b1220] bg-slate-300 shadow-sm"></div>
-          <div class="flex items-center gap-2 text-xs font-bold text-white uppercase tracking-wider mb-2">Store Owner (You)</div>
-          <div class="bg-[#1e293b] border border-[rgba(148,163,184,0.2)] rounded-2xl rounded-tl-none p-4 shadow-sm inline-block max-w-md text-white">
-            <div class="flex items-center justify-between gap-4">
-              <span class="font-bold text-sm">Review Action</span>
-              <button class="bg-emerald-500 hover:bg-emerald-400 px-3 py-1.5 rounded-md text-xs font-bold text-slate-950 transition-colors">Approve & Export</button>
+    <div class="mt-14 border-y border-white/10 py-8">
+      <div class="grid gap-4 md:grid-cols-5">
+        {steps.map((step, index) => (
+          <div class="reveal-on-scroll">
+            <div class="mb-5 flex items-center gap-3">
+              <span class="font-mono text-sm font-semibold text-slate-500">0{index + 1}</span>
+              <span class="h-px flex-1 bg-white/10"></span>
             </div>
+            <p class="max-w-[16rem] text-lg font-semibold leading-tight text-white">{step}</p>
           </div>
-        </div>
-
-        <!-- Timeline Event -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[35px] lg:-left-[43px] top-1 h-5 w-5 rounded-full border-[3px] border-[#0b1220] bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
-          <div class="flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Outcome</div>
-          <div class="bg-emerald-500/20 border border-emerald-500/40 rounded-xl p-3 inline-block shadow-sm">
-            <p class="text-emerald-300 font-bold text-sm flex items-center gap-2">
-              <span class="text-emerald-400 text-lg">✅</span> +$140 Recovered Revenue | Old Stock Cleared
-            </p>
-          </div>
-        </div>
-
+        ))}
       </div>
+    </div>
 
+    <div class="mt-8 grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
+      <p class="max-w-2xl text-base font-medium leading-relaxed text-slate-400">
+        Example outcome: an Rs. 11,500 cart is recovered without giving the agent open-ended permission to discount or message customers freely.
+      </p>
+      <a href="/contact" class="btn-secondary lg:justify-self-end">Map your workflow</a>
     </div>
   </div>
 </section>

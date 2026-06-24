@@ -3,43 +3,37 @@ const loopSteps = [
   {
     number: "01",
     title: "Connect store data",
-    desc: "Connects to Shopify to understand your products, variants, inventory levels, cart data, and customer history.",
-    icon: "🔌"
+    desc: "Connects to Shopify to understand your products, variants, inventory levels, cart data, and customer history."
   },
   {
     number: "02",
     title: "Detect opportunities",
-    desc: "Monitors events continuously to spot abandoned carts, missed upsells, old-stock opportunities, and repeated support questions.",
-    icon: "🕵️"
+    desc: "Monitors events continuously to spot abandoned carts, missed upsells, old-stock opportunities, and repeated support questions."
   },
   {
     number: "03",
     title: "Recommend actions",
-    desc: "Prepares a context-aware follow-up, cart recovery message, or upsell offer tailored to the exact customer segment.",
-    icon: "💡"
+    desc: "Prepares a context-aware follow-up, cart recovery message, or upsell offer tailored to the exact customer segment."
   },
   {
     number: "04",
     title: "Ask for approval",
-    desc: "Keeps the human in control. Review the suggested action and approve it before the AI talks to your customers.",
-    icon: "⚖️"
+    desc: "Keeps the human in control. Review the suggested action and approve it before the AI talks to your customers."
   },
   {
     number: "05",
     title: "Execute follow-up",
-    desc: "Sends the message through your preferred channel or exports a ready-to-use campaign list for your marketing tool.",
-    icon: "🚀"
+    desc: "Sends the message through your preferred channel or exports a ready-to-use campaign list for your marketing tool."
   },
   {
     number: "06",
     title: "Attribute outcome",
-    desc: "Tracks the result of the action, clearly showing you recovered carts, cleared stock, and the exact revenue generated.",
-    icon: "📈"
+    desc: "Tracks the result of the action, clearly showing you recovered carts, cleared stock, and the exact revenue generated."
   }
 ];
 ---
 
-<section id="how-it-works" class="section-band-quiet py-24">
+<section id="how-it-works" class="relative overflow-hidden border-y border-white/10 bg-[#0b1828] py-24 sm:py-32">
   <div class="page-shell">
     <div class="mx-auto max-w-3xl text-center mb-16">
       <div class="reveal-on-scroll chip mb-6">
@@ -55,22 +49,22 @@ const loopSteps = [
 
     <div class="relative mx-auto max-w-5xl">
       <!-- Connecting Line -->
-      <div class="absolute left-[27px] top-[40px] bottom-[40px] w-[2px] bg-gradient-to-b from-teal-300/10 via-teal-300/45 to-teal-300/10 lg:left-1/2 lg:-ml-[1px]"></div>
+      <div class="absolute left-[27px] top-[40px] bottom-[40px] w-px bg-white/12 lg:left-1/2 lg:-ml-[1px]"></div>
 
       <div class="space-y-12 lg:space-y-20">
         {loopSteps.map((step, index) => (
           <div class={`reveal-on-scroll relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-16 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
             
             <!-- Icon / Node -->
-            <div class="absolute left-0 top-0 lg:left-1/2 lg:top-1/2 flex h-[56px] w-[56px] lg:-ml-[28px] lg:-mt-[28px] items-center justify-center rounded-full border-[4px] border-[#07111f] bg-[#101b2e] shadow-[0_0_28px_rgba(45,212,191,0.18)] z-10 transition-all hover:scale-110">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-teal-300/16 text-xl border border-teal-300/45 shadow-[inset_0_0_12px_rgba(45,212,191,0.18)] text-teal-200">
-                {step.icon}
+            <div class="absolute left-0 top-0 lg:left-1/2 lg:top-1/2 z-10 flex h-[56px] w-[56px] items-center justify-center rounded-full border-[4px] border-[#0b1828] bg-[#142438] transition-all hover:scale-105 lg:-ml-[28px] lg:-mt-[28px]">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.045] font-mono text-xs font-bold text-slate-300">
+                {step.number}
               </div>
             </div>
 
             <!-- Content Card -->
             <div class="ml-20 lg:ml-0 w-[calc(100%-5rem)] lg:w-[calc(50%-3rem)] kinetic-card solid-card">
-              <div class="text-[11px] font-bold text-teal-400 uppercase tracking-wider mb-2">Step {step.number}</div>
+              <div class="text-[11px] font-bold text-teal-200 uppercase tracking-wider mb-2">Step {step.number}</div>
               <h3 class="text-xl font-bold text-white mb-2">{step.title}</h3>
               <p class="text-sm text-slate-200 font-medium leading-relaxed">{step.desc}</p>
             </div>

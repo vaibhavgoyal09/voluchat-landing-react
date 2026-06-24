@@ -18,7 +18,7 @@ test("homepage layout uses the new commerce agent platform structure", async () 
   const index = await readSource("src/pages/index.astro");
 
   assert.match(index, /<Hero \/>\s*<ProblemSection \/>\s*<PlatformSection \/>\s*<UseCasesSection \/>\s*<ProductLoopSection \/>/);
-  assert.match(index, /<GuardrailsSection \/>\s*<DemoFlowSection \/>\s*<TrustSection \/>\s*<FAQ \/>\s*<\/main>\s*<Footer \/>/);
+  assert.match(index, /<GuardrailsSection \/>\s*<DemoFlowSection \/>\s*<FounderNoteSection \/>\s*<TrustSection \/>\s*<FAQ \/>\s*<\/main>\s*<Footer \/>/);
   assert.doesNotMatch(index, /CTASection/);
   assert.doesNotMatch(index, /import BestFor/);
   assert.doesNotMatch(index, /<BestFor \/>/);
@@ -39,10 +39,12 @@ test("homepage nav and footer wire to real sections and new pages", async () => 
 
   const workflowsSection = await readSource("src/components/landing/UseCasesSection.astro");
   const demoFlowSection = await readSource("src/components/landing/DemoFlowSection.astro");
+  const founderNote = await readSource("src/components/landing/FounderNoteSection.astro");
 
   assert.match(workflowsSection, /id="workflows"/);
-  assert.match(workflowsSection, /href="\/agents\/cart-recovery"/);
-  assert.match(workflowsSection, /href="\/agents\/product-assistant"/);
+  assert.match(workflowsSection, /\/agents\/cart-recovery/);
+  assert.match(workflowsSection, /\/agents\/product-assistant/);
+  assert.match(founderNote, /Founder note/);
   assert.match(footer, /id="demo"/);
   assert.match(demoFlowSection, /id="demo-flow"/);
 });

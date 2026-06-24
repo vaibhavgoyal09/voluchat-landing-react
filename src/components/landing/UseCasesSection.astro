@@ -1,112 +1,81 @@
 ---
+const workflows = [
+  {
+    code: "CR",
+    href: "/agents/cart-recovery",
+    title: "Recover carts with context, not reminder spam",
+    text: "Detect checkout drop-off, identify the likely objection, and use approved recovery offers only when they make commercial sense.",
+    metric: "Cart recovery"
+  },
+  {
+    code: "PA",
+    href: "/agents/product-assistant",
+    title: "Answer buying questions from live catalog data",
+    text: "Handle sizing, stock, delivery, returns, and product-fit questions before the buyer leaves the product page.",
+    metric: "Product confidence"
+  },
+  {
+    code: "UB",
+    href: "/agents/upsell",
+    title: "Introduce relevant bundles at the right moment",
+    text: "Suggest add-ons and upgrades when intent is clear, then back off cleanly when the buyer wants to checkout.",
+    metric: "Order value"
+  },
+  {
+    code: "IC",
+    href: "/agents/inventory-clearance",
+    title: "Move slow stock without store-wide discounting",
+    text: "Turn aging inventory into targeted offers for shoppers already browsing related products or categories.",
+    metric: "Stock velocity"
+  },
+  {
+    code: "CF",
+    href: "/agents/customer-follow-up",
+    title: "Turn delivery moments into retention workflows",
+    text: "Check satisfaction, route issues to support, ask for reviews, and prompt repeat purchases when timing is right.",
+    metric: "Repeat purchase"
+  },
+  {
+    code: "RL",
+    href: "/agents/revenue-leak-detection",
+    title: "Find the revenue leaks hiding between tools",
+    text: "Rank operational gaps across unanswered demand, abandoned carts, slow inventory, and product-page hesitation.",
+    metric: "Leak detection"
+  }
+];
 ---
 
-<section id="workflows" class="relative overflow-hidden py-20 sm:py-24">
-  <div class="sect-grid"></div>
-  <div class="sect-orb absolute top-10 right-1/4 h-[300px] w-[300px] bg-teal-500/10 opacity-30"></div>
-  
+<section id="workflows" class="relative overflow-hidden bg-[#07111f] py-28 sm:py-36">
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent"></div>
+  <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent"></div>
   <div class="page-shell relative z-10">
-    <div class="mx-auto max-w-3xl text-center">
-      <span class="section-eyebrow text-teal-300 font-bold uppercase tracking-wider text-xs">Revenue Workflows</span>
-      <h2 class="section-title mt-4 text-white">Automate the workflows that actually move revenue.</h2>
-      <p class="section-copy mt-6 text-slate-300">
-        Deploy pre-configured operations plays that connect customer intent with catalog details to increase checkout conversion, average order value, and stock velocity.
+    <div class="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-end">
+      <div>
+        <span class="section-eyebrow">Revenue workflows</span>
+        <h2 class="section-title mt-4 text-white">Automate the work that moves revenue.</h2>
+      </div>
+      <p class="section-copy max-w-2xl text-slate-300">
+        Deploy agent workflows that connect customer intent with catalog details, inventory pressure, approval rules, and measurable outcomes.
       </p>
     </div>
 
-    <!-- Core Workflows Grid -->
-    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      
-      <!-- Workflow 1 -->
-      <div class="solid-card hover:border-teal-400/50 hover:shadow-[0_8px_32px_-8px_rgba(45,212,191,0.15)] transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="h-10 w-10 rounded-lg bg-[#1e293b] border border-[rgba(148,163,184,0.18)] flex items-center justify-center text-lg shadow-sm">🛒</div>
-          <h3 class="font-heading text-base font-bold text-white mt-5">Recover abandoned carts with personalized offers</h3>
-          <p class="text-sm text-slate-200 mt-3 leading-relaxed">
-            Detect abandoned checkout sequences and trigger targeted recovery flows across your customer channels. Dynamically customize coupons based on the exact margins of the cart item.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-[rgba(148,163,184,0.18)] flex items-center justify-between gap-4 text-[11px] font-bold text-teal-300">
-          <span>Cart Recovery Rate</span>
-          <a href="/agents/cart-recovery" class="transition hover:text-teal-200">View agent</a>
-        </div>
-      </div>
-
-      <!-- Workflow 2 -->
-      <div class="solid-card hover:border-teal-400/50 hover:shadow-[0_8px_32px_-8px_rgba(45,212,191,0.15)] transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="h-10 w-10 rounded-lg bg-[#1e293b] border border-[rgba(148,163,184,0.18)] flex items-center justify-center text-lg shadow-sm">👟</div>
-          <h3 class="font-heading text-base font-bold text-white mt-5">Recommend products based on browsing and purchase history</h3>
-          <p class="text-sm text-slate-200 mt-3 leading-relaxed">
-            Provide real-time sizing guidance and product fit matches right on the product page. Prevent customers from leaving due to size doubt.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-[rgba(148,163,184,0.18)] flex items-center justify-between gap-4 text-[11px] font-bold text-teal-300">
-          <span>PDP Conversion</span>
-          <a href="/agents/product-assistant" class="transition hover:text-teal-200">View agent</a>
-        </div>
-      </div>
-
-      <!-- Workflow 3 -->
-      <div class="solid-card hover:border-teal-400/50 hover:shadow-[0_8px_32px_-8px_rgba(45,212,191,0.15)] transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="h-10 w-10 rounded-lg bg-[#1e293b] border border-[rgba(148,163,184,0.18)] flex items-center justify-center text-lg shadow-sm">📈</div>
-          <h3 class="font-heading text-base font-bold text-white mt-5">Upsell before and after checkout</h3>
-          <p class="text-sm text-slate-200 mt-3 leading-relaxed">
-            Offer margin-safe bundle deals, complementary accessories, or subscription upgrades during checkout review and immediately post-purchase.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-[rgba(148,163,184,0.18)] flex items-center justify-between gap-4 text-[11px] font-bold text-teal-300">
-          <span>Average Order Value</span>
-          <a href="/agents/upsell" class="transition hover:text-teal-200">View agent</a>
-        </div>
-      </div>
-
-      <!-- Workflow 4 -->
-      <div class="solid-card hover:border-teal-400/50 hover:shadow-[0_8px_32px_-8px_rgba(45,212,191,0.15)] transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="h-10 w-10 rounded-lg bg-[#1e293b] border border-[rgba(148,163,184,0.18)] flex items-center justify-center text-lg shadow-sm">🔥</div>
-          <h3 class="font-heading text-base font-bold text-white mt-5">Clear slow-moving inventory with targeted campaigns</h3>
-          <p class="text-sm text-slate-200 mt-3 leading-relaxed">
-            Identify catalog variants that have been in the warehouse for 90+ days. Automatically extract segments of previous category buyers and launch clearance offers.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-[rgba(148,163,184,0.18)] flex items-center justify-between gap-4 text-[11px] font-bold text-teal-300">
-          <span>Stock Velocity</span>
-          <a href="/agents/inventory-clearance" class="transition hover:text-teal-200">View agent</a>
-        </div>
-      </div>
-
-      <!-- Workflow 5 -->
-      <div class="solid-card hover:border-teal-400/50 hover:shadow-[0_8px_32px_-8px_rgba(45,212,191,0.15)] transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="h-10 w-10 rounded-lg bg-[#1e293b] border border-[rgba(148,163,184,0.18)] flex items-center justify-center text-lg shadow-sm">🤝</div>
-          <h3 class="font-heading text-base font-bold text-white mt-5">Automate repetitive support without losing brand control</h3>
-          <p class="text-sm text-slate-200 mt-3 leading-relaxed">
-            Resolve shipping disputes, policy queries, and delivery status updates instantly. Restrict responses to deterministic policies with strict human review guardrails.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-[rgba(148,163,184,0.18)] flex items-center justify-between gap-4 text-[11px] font-bold text-teal-300">
-          <span>First Reply Time</span>
-          <a href="/agents/customer-follow-up" class="transition hover:text-teal-200">View agent</a>
-        </div>
-      </div>
-
-      <!-- Workflow 6 -->
-      <div class="solid-card hover:border-teal-400/50 hover:shadow-[0_8px_32px_-8px_rgba(45,212,191,0.15)] transition duration-300 flex flex-col justify-between">
-        <div>
-          <div class="h-10 w-10 rounded-lg bg-[#1e293b] border border-[rgba(148,163,184,0.18)] flex items-center justify-center text-lg shadow-sm">🔄</div>
-          <h3 class="font-heading text-base font-bold text-white mt-5">Trigger win-back campaigns for existing customers</h3>
-          <p class="text-sm text-slate-200 mt-3 leading-relaxed">
-            Identify customers whose average replenishment period has elapsed. Automatically send reorder prompts containing their previously selected variants.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-[rgba(148,163,184,0.18)] flex items-center justify-between gap-4 text-[11px] font-bold text-teal-300">
-          <span>Customer Lifetime Value</span>
-          <a href="/agents/revenue-leak-detection" class="transition hover:text-teal-200">View agent</a>
-        </div>
-      </div>
-
+    <div class="mt-14 grid gap-4 md:grid-cols-6">
+      {workflows.map((workflow, index) => (
+        <a href={workflow.href} class={`reveal-on-scroll group flex min-h-[16rem] flex-col justify-between rounded-[1.35rem] border border-white/10 bg-[#101b2b] p-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-slate-400/30 hover:bg-[#142438] md:col-span-3 ${index === 0 || index === 5 ? 'lg:col-span-3' : 'lg:col-span-2'} reveal-delay-${(index % 3) * 100}`}>
+          <div>
+            <div class="flex items-center justify-between gap-4">
+              <span class="font-mono text-sm font-semibold text-slate-500">{workflow.code}</span>
+              <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-teal-200">{workflow.metric}</span>
+            </div>
+            <h3 class="mt-8 text-xl font-semibold leading-tight text-white">{workflow.title}</h3>
+            <p class="mt-4 text-[15px] font-medium leading-relaxed text-slate-300">{workflow.text}</p>
+          </div>
+          <div class="mt-8 flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
+            <span class="text-slate-400">Agent page</span>
+            <span class="text-teal-200 transition group-hover:translate-x-1">Open</span>
+          </div>
+        </a>
+      ))}
     </div>
   </div>
 </section>
