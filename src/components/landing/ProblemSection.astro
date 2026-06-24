@@ -1,0 +1,67 @@
+---
+const painPoints = [
+  {
+    icon: "💬",
+    title: "Same product questions every day",
+    description: "Your team spends hours answering repetitive questions about sizing, materials, and stock instead of doing high-value work."
+  },
+  {
+    icon: "🛒",
+    title: "Abandoned carts with no follow-up",
+    description: "Carts sit empty without timely outreach, leaving easy revenue on the table because manual messaging is too slow."
+  },
+  {
+    icon: "📦",
+    title: "Slow-moving stock sitting idle",
+    description: "Old inventory takes up space and ties up capital because launching targeted clearance campaigns takes too much effort."
+  },
+  {
+    icon: "💸",
+    title: "Missed upsell moments",
+    description: "Customers check out without seeing the perfect matching accessory because upsells require smart, context-aware suggestions."
+  },
+  {
+    icon: "📊",
+    title: "Manual WhatsApp campaigns",
+    description: "Running targeted campaigns depends on messy, manual CSV exports and guesswork. Operations feel disconnected and slow."
+  },
+  {
+    icon: "🔍",
+    title: "No clear view of revenue leaks",
+    description: "Founders cannot clearly see where money is leaking across the customer journey because the data lives in too many places."
+  }
+];
+---
+
+<section id="problem" class="section-band py-20 lg:py-28">
+  <div class="page-shell">
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="reveal-on-scroll chip mb-6">
+        <span class="mini-label">The Growth Trap</span>
+      </div>
+      
+      <h2 class="reveal-on-scroll section-title">
+        Your store grows.<br class="hidden sm:inline" />
+        <span class="text-stone-500">Then the manual work grows faster.</span>
+      </h2>
+      
+      <p class="reveal-on-scroll mt-6 section-copy text-center">
+        Online stores were supposed to make business easier. But as you scale, the team gets buried under repetitive operations, missing opportunities everywhere.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {painPoints.map((point, index) => (
+        <div class={`reveal-on-scroll solid-card hover:border-coral-200 transition-colors duration-300 reveal-delay-${(index % 3) * 100}`}>
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800/80 text-2xl border border-white/10 shadow-inner">
+            {point.icon}
+          </div>
+          <h3 class="mb-3 text-lg font-bold text-white">{point.title}</h3>
+          <p class="text-[15px] font-medium leading-relaxed text-slate-300">
+            {point.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

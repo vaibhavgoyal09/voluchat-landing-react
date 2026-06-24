@@ -1,0 +1,86 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="relative overflow-hidden border-t border-white/5 bg-slate-950 py-16">
+  <div class="page-shell relative z-10">
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+      
+      <!-- Brand column -->
+      <div class="flex flex-col gap-4">
+        <a href="/" class="flex items-center gap-2.5 rounded-xl pr-2 transition hover:opacity-85" aria-label="VoluChat home">
+          <img src="/voluchat_logo.svg" alt="VoluChat Logo" class="h-8 w-8 object-contain" />
+          <span class="font-heading text-xl font-bold text-white">VoluChat</span>
+        </a>
+        <p class="text-xs text-slate-400 font-medium leading-relaxed max-w-[24ch]">
+          The AI operating layer and commerce automation platform for modern D2C and Shopify brands.
+        </p>
+      </div>
+
+      <!-- Links Column 1 -->
+      <div>
+        <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Platform</h4>
+        <ul class="mt-4 space-y-2">
+          <li>
+            <a href="#platform" class="text-xs text-slate-400 font-semibold hover:text-white transition">
+              Overview
+            </a>
+          </li>
+          <li>
+            <a href="#guardrails" class="text-xs text-slate-400 font-semibold hover:text-white transition">
+              Guardrails
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2 -->
+      <div>
+        <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Use Cases</h4>
+        <ul class="mt-4 space-y-2">
+          <li>
+            <a href="#use-cases" class="text-xs text-slate-400 font-semibold hover:text-white transition">
+              Commerce Workflows
+            </a>
+          </li>
+          <li>
+            <a href="#storefront-assistant" class="text-xs text-slate-400 font-semibold hover:text-white transition">
+              Shopping Assistant
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3 -->
+      <div>
+        <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Contact & Demo</h4>
+        <ul class="mt-4 space-y-2">
+          <li>
+            <a href="#demo" class="text-xs text-slate-400 font-semibold hover:text-white transition">
+              Book a Demo
+            </a>
+          </li>
+          <li>
+            <a href="mailto:founder@voluchat.com" class="text-xs text-slate-400 font-semibold hover:text-white transition">
+              Email Founder
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-white/10 flex flex-col items-center justify-between gap-6 sm:flex-row">
+      <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center sm:text-left leading-relaxed">
+        © {currentYear} QubitNine Technologies Pvt Ltd. All rights reserved. <br />
+        Built for serious Shopify brands requiring margin-safe automation.
+      </p>
+      
+      <div class="flex gap-2.5 items-center px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
+        <span class="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">Platform Operational</span>
+      </div>
+    </div>
+
+  </div>
+</footer>

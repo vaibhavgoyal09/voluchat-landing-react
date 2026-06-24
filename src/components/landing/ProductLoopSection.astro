@@ -1,0 +1,86 @@
+---
+const loopSteps = [
+  {
+    number: "01",
+    title: "Connect store data",
+    desc: "Connects to Shopify to understand your products, variants, inventory levels, cart data, and customer history.",
+    icon: "🔌"
+  },
+  {
+    number: "02",
+    title: "Detect opportunities",
+    desc: "Monitors events continuously to spot abandoned carts, missed upsells, old-stock opportunities, and repeated support questions.",
+    icon: "🕵️"
+  },
+  {
+    number: "03",
+    title: "Recommend actions",
+    desc: "Prepares a context-aware follow-up, cart recovery message, or WhatsApp upsell offer tailored to the exact customer segment.",
+    icon: "💡"
+  },
+  {
+    number: "04",
+    title: "Ask for approval",
+    desc: "Keeps the human in control. Review the suggested action and approve it before the AI talks to your customers.",
+    icon: "⚖️"
+  },
+  {
+    number: "05",
+    title: "Execute follow-up",
+    desc: "Sends the message via WhatsApp, email, or your preferred channel, or exports a ready-to-use CSV for your campaign tool.",
+    icon: "🚀"
+  },
+  {
+    number: "06",
+    title: "Attribute outcome",
+    desc: "Tracks the result of the action, clearly showing you recovered carts, cleared stock, and the exact revenue generated.",
+    icon: "📈"
+  }
+];
+---
+
+<section id="how-it-works" class="section-band-quiet py-24">
+  <div class="page-shell">
+    <div class="mx-auto max-w-3xl text-center mb-16">
+      <div class="reveal-on-scroll chip mb-6">
+        <span class="mini-label">The Core Loop</span>
+      </div>
+      <h2 class="reveal-on-scroll section-title">
+        How the operations layer works
+      </h2>
+      <p class="reveal-on-scroll mt-6 section-copy text-center">
+        VoluChat doesn't just wait for questions. It actively finds opportunities in your store's data and executes revenue-generating workflows.
+      </p>
+    </div>
+
+    <div class="relative mx-auto max-w-5xl">
+      <!-- Connecting Line -->
+      <div class="absolute left-[27px] top-[40px] bottom-[40px] w-[2px] bg-white/10 lg:left-1/2 lg:-ml-[1px]"></div>
+
+      <div class="space-y-12 lg:space-y-20">
+        {loopSteps.map((step, index) => (
+          <div class={`reveal-on-scroll relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-16 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+            
+            <!-- Icon / Node -->
+            <div class="absolute left-0 top-0 lg:left-1/2 lg:top-1/2 flex h-[56px] w-[56px] lg:-ml-[28px] lg:-mt-[28px] items-center justify-center rounded-full border-[4px] border-slate-950 bg-slate-900 shadow-md z-10">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/10 text-xl border border-indigo-500/20">
+                {step.icon}
+              </div>
+            </div>
+
+            <!-- Content Card -->
+            <div class="ml-20 lg:ml-0 w-[calc(100%-5rem)] lg:w-[calc(50%-3rem)] kinetic-card solid-card">
+              <div class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider mb-2">Step {step.number}</div>
+              <h3 class="text-xl font-bold text-white mb-2">{step.title}</h3>
+              <p class="text-sm text-slate-400 font-medium leading-relaxed">{step.desc}</p>
+            </div>
+            
+            <!-- Empty space for staggered layout on desktop -->
+            <div class="hidden lg:block lg:w-[calc(50%-3rem)]"></div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

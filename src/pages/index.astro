@@ -1,215 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import HeroTrustStrip from '../components/HeroTrustStrip.astro';
-import PainPoints from '../components/PainPoints.astro';
-import Features from '../components/Features.astro';
-import Demo from '../components/Demo.astro';
-import HowItWorks from '../components/HowItWorks.astro';
-import CompactComparison from '../components/CompactComparison.astro';
-import Pricing from '../components/Pricing.astro';
-import Testimonials from '../components/Testimonials.astro';
-import FAQ from '../components/FAQ.astro';
-import Footer from '../components/Footer.astro';
+import Navbar from '../components/landing/Navbar.astro';
+import Hero from '../components/landing/Hero.astro';
+import ProblemSection from '../components/landing/ProblemSection.astro';
+import ComparisonSection from '../components/landing/ComparisonSection.astro';
+import ProductLoopSection from '../components/landing/ProductLoopSection.astro';
+import FeatureGrid from '../components/landing/FeatureGrid.astro';
+import DemoFlowSection from '../components/landing/DemoFlowSection.astro';
+import AudienceSection from '../components/landing/AudienceSection.astro';
+import TrustSection from '../components/landing/TrustSection.astro';
+import CTASection from '../components/landing/CTASection.astro';
+import Footer from '../components/landing/Footer.astro';
 
-const siteUrl = "https://www.voluchat.com";
-const seoTitle = "Instagram DM Automation for WhatsApp Orders | VoluChat";
-const seoDescription = "VoluChat automates Instagram product DMs, captures buyer details, syncs Shopify catalog context, and prepares WhatsApp order messages your team can close.";
-const seoKeywords = "Instagram DM automation, WhatsApp order automation, DM to order automation, ecommerce DM automation, Shopify Instagram automation, product catalog AI agent, COD delivery questions, Hinglish customer replies, Manychat alternative India";
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How does VoluChat turn DMs into orders?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VoluChat replies to repeated product DMs, recommends products from your catalog, captures variant and delivery details, and sends customers to WhatsApp with the order message already filled in."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does VoluChat sync with Shopify inventory?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. VoluChat syncs with your Shopify inventory so product, size, color, and stock changes can be reflected in replies without manual CSV uploads."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens when the customer is ready to order?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VoluChat prepares the product, variant, quantity, delivery address, and phone details, then gives the customer a WhatsApp link with the order message prefilled for your store."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does VoluChat process payments or fully confirm orders?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Your store still handles final confirmation and payment details. VoluChat prepares the WhatsApp-ready order so your team can close faster."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will my team still control the final sale?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. VoluChat handles repeated replies and detail collection. Your team stays in control of confirmation, payment instructions, exceptions, and customer judgment."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need technical knowledge to use it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. You get help connecting Instagram and Facebook Pages, syncing Shopify inventory, tuning replies, and setting up WhatsApp order messages."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does VoluChat cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Early access plans start at Rs. 2,999/month for 600 buyer chats/month. Growth is Rs. 5,999/month for 1,500 buyer chats/month, High Volume is Rs. 12,999/month for 3,000 buyer chats/month, and larger stores can contact sales. Assisted Launch is available for teams that want help configuring workflows before going live."
-      }
-    }
-  ]
-};
-
-const structuredData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "VoluChat",
-    "url": siteUrl,
-    "description": seoDescription,
-    "publisher": {
-      "@id": `${siteUrl}/#organization`
-    },
-    "inLanguage": "en"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${siteUrl}/#organization`,
-    "name": "VoluChat",
-    "url": siteUrl,
-    "logo": `${siteUrl}/voluchat_logo.svg`,
-    "description": seoDescription,
-    "sameAs": [
-      "https://twitter.com/voluchat",
-      "https://linkedin.com/company/voluchat",
-      "https://instagram.com/voluchat"
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "@id": `${siteUrl}/#software`,
-    "name": "VoluChat",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "url": siteUrl,
-    "description": seoDescription,
-    "image": `${siteUrl}/og-image.webp`,
-    "publisher": {
-      "@id": `${siteUrl}/#organization`
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Starter",
-        "price": "2999",
-        "priceCurrency": "INR",
-        "availability": "https://schema.org/InStock",
-        "url": `${siteUrl}/pricing/`
-      },
-      {
-        "@type": "Offer",
-        "name": "Growth",
-        "price": "5999",
-        "priceCurrency": "INR",
-        "availability": "https://schema.org/InStock",
-        "url": `${siteUrl}/pricing/`
-      },
-      {
-        "@type": "Offer",
-        "name": "High Volume",
-        "price": "12999",
-        "priceCurrency": "INR",
-        "availability": "https://schema.org/InStock",
-        "url": `${siteUrl}/pricing/`
-      }
-    ],
-    "featureList": [
-      "Instagram DM automation",
-      "Shopify catalog sync",
-      "Product and variant capture",
-      "WhatsApp order message handoff",
-      "Founder-led setup"
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "SiteNavigationElement",
-        "position": 1,
-        "name": "Features",
-        "url": `${siteUrl}/features/`
-      },
-      {
-        "@type": "SiteNavigationElement",
-        "position": 2,
-        "name": "Pricing",
-        "url": `${siteUrl}/pricing/`
-      },
-      {
-        "@type": "SiteNavigationElement",
-        "position": 3,
-        "name": "Compare",
-        "url": `${siteUrl}/compare/`
-      },
-      {
-        "@type": "SiteNavigationElement",
-        "position": 4,
-        "name": "About",
-        "url": `${siteUrl}/about/`
-      },
-      {
-        "@type": "SiteNavigationElement",
-        "position": 5,
-        "name": "Blog",
-        "url": `${siteUrl}/blog/`
-      },
-      {
-        "@type": "SiteNavigationElement",
-        "position": 6,
-        "name": "Start Free Setup",
-        "url": "https://dashboard.voluchat.com/register"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": siteUrl
-      }
-    ]
-  },
-  faqSchema
-];
+const seoTitle = "VoluChat | AI Commerce Operations Platform for Shopify Brands";
+const seoDescription = "VoluChat gives growing Shopify stores AI agents that handle repetitive commerce operations — from product questions and cart recovery to upsells, follow-ups, and revenue leak detection.";
+const seoKeywords = "AI commerce platform, Shopify automation, Shopify AI agents, D2C automation layer, cart recovery, product recommendations, ecommerce operations, VoluChat";
 ---
 
 <Layout
@@ -217,21 +22,18 @@ const structuredData = [
   description={seoDescription}
   keywords={seoKeywords}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  <Navbar />
   
-  <Header />
-  
-  <main class="animate-page-entry opacity-0">
+  <main class="animate-page-entry opacity-0 overflow-x-hidden">
     <Hero />
-    <HeroTrustStrip />
-    <Testimonials />
-    <PainPoints />
-    <Demo />
-    <Features />
-    <HowItWorks />
-    <CompactComparison />
-    <Pricing />
-    <FAQ />
+    <ProblemSection />
+    <ComparisonSection />
+    <ProductLoopSection />
+    <FeatureGrid />
+    <DemoFlowSection />
+    <AudienceSection />
+    <TrustSection />
+    <CTASection />
   </main>
 
   <Footer />

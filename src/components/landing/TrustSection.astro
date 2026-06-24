@@ -1,0 +1,55 @@
+---
+const trustCards = [
+  {
+    title: "Human approval before outreach",
+    description: "Important campaigns and targeted follow-ups can be queued for your approval. Nothing goes out until you say so.",
+    icon: "✋"
+  },
+  {
+    title: "Every action is logged",
+    description: "Full visibility into exactly what the AI recommended, when it happened, and why the decision was made.",
+    icon: "📝"
+  },
+  {
+    title: "Built around store context",
+    description: "The AI bases its actions strictly on your live Shopify inventory, cart data, and historical orders.",
+    icon: "🧠"
+  },
+  {
+    title: "Outcome attribution included",
+    description: "Know exactly how much revenue was generated or recovered from each automated action or approved campaign.",
+    icon: "🎯"
+  }
+];
+---
+
+<section class="section-band-quiet py-20 lg:py-28">
+  <div class="page-shell">
+    <div class="mx-auto max-w-3xl text-center mb-16">
+      <div class="reveal-on-scroll chip mb-6">
+        <span class="mini-label">Safe & Controlled</span>
+      </div>
+      <h2 class="reveal-on-scroll section-title">
+        AI recommends.<br class="hidden sm:inline" />
+        <span class="text-stone-500">You stay in control.</span>
+      </h2>
+      <p class="reveal-on-scroll mt-6 section-copy text-center">
+        VoluChat does not blindly spam customers. Sensitive actions go through approval, every recommendation is logged, and outcomes are tracked back to the original opportunity.
+      </p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {trustCards.map((card, index) => (
+        <div class={`reveal-on-scroll solid-card-compact text-center reveal-delay-${(index % 4) * 100}`}>
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800/80 text-2xl border border-white/10 shadow-inner">
+            {card.icon}
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">{card.title}</h3>
+          <p class="text-sm font-medium leading-relaxed text-slate-400">
+            {card.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

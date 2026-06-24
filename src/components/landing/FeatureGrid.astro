@@ -1,0 +1,66 @@
+---
+const features = [
+  {
+    title: "Product Assistant Agent",
+    description: "Automatically answers product, price, size, availability, and recommendation questions using your Shopify catalog data.",
+    icon: "🤖"
+  },
+  {
+    title: "Cart Recovery Agent",
+    description: "Identifies abandoned carts and prepares personalized recovery follow-ups to recapture lost sales.",
+    icon: "🛒"
+  },
+  {
+    title: "Upsell Agent",
+    description: "Suggests relevant add-ons and better bundles intelligently based on what the customer is currently buying.",
+    icon: "🎁"
+  },
+  {
+    title: "Old Stock Clearance Agent",
+    description: "Finds slow-moving inventory and recommends targeted offers to segments most likely to convert.",
+    icon: "📦"
+  },
+  {
+    title: "Customer Follow-up Agent",
+    description: "Helps market to existing customers based on their purchase history and context, driving repeat buys.",
+    icon: "📨"
+  },
+  {
+    title: "Approval Workflow",
+    description: "Keeps the human in control. AI queues up important customer-facing actions for your approval.",
+    icon: "⚖️"
+  },
+  {
+    title: "Outcome Attribution",
+    description: "Shows exactly what happened after an action: recovered revenue, ignored messages, converted carts, or lost sales.",
+    icon: "📊"
+  }
+];
+---
+
+<section class="section-band py-20 lg:py-28">
+  <div class="page-shell">
+    <div class="mx-auto max-w-3xl text-center mb-16">
+      <div class="reveal-on-scroll chip mb-6">
+        <span class="mini-label">The Agents</span>
+      </div>
+      <h2 class="reveal-on-scroll section-title">
+        A complete team of operations agents
+      </h2>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {features.map((feature, index) => (
+          <div class={`reveal-on-scroll solid-card reveal-delay-${(index % 3) * 100}`}>
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500/10 text-xl border border-indigo-500/20">
+              {feature.icon}
+            </div>
+            <h3 class="mb-2 text-base font-bold text-white">{feature.title}</h3>
+            <p class="text-sm font-medium leading-relaxed text-slate-400">
+              {feature.description}
+            </p>
+          </div>
+      ))}
+    </div>
+  </div>
+</section>
