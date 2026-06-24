@@ -22,7 +22,7 @@ const painPoints = [
   },
   {
     icon: "📊",
-    title: "Manual WhatsApp campaigns",
+    title: "Manual customer campaigns",
     description: "Running targeted campaigns depends on messy, manual CSV exports and guesswork. Operations feel disconnected and slow."
   },
   {
@@ -42,7 +42,7 @@ const painPoints = [
       
       <h2 class="reveal-on-scroll section-title">
         Your store grows.<br class="hidden sm:inline" />
-        <span class="text-stone-500">Then the manual work grows faster.</span>
+        <span class="text-slate-300">Then the manual work grows faster.</span>
       </h2>
       
       <p class="reveal-on-scroll mt-6 section-copy text-center">
@@ -52,8 +52,8 @@ const painPoints = [
 
     <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {painPoints.map((point, index) => (
-        <div class={`reveal-on-scroll solid-card hover:border-coral-200 transition-colors duration-300 reveal-delay-${(index % 3) * 100}`}>
-          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800/80 text-2xl border border-white/10 shadow-inner">
+        <div class={`reveal-on-scroll solid-card hover:border-teal-400/50 transition-colors duration-300 reveal-delay-${(index % 3) * 100}`}>
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#1e293b] text-2xl border border-[rgba(148,163,184,0.18)] shadow-sm">
             {point.icon}
           </div>
           <h3 class="mb-3 text-lg font-bold text-white">{point.title}</h3>

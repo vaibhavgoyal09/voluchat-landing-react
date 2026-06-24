@@ -1,50 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/landing/Navbar.astro';
+import Footer from '../components/landing/Footer.astro';
+import FAQ from '../components/FAQ.astro';
 
 const principles = [
   {
-    title: "Speed before the buyer leaves",
-    text: "Repeated questions should not wait for whichever sales rep happens to open the chat first."
+    title: "Agents over automation",
+    text: "Rule-based chatbots break when buyers ask real questions. Commerce agents adapt, using your catalog and policies to solve problems."
   },
   {
-    title: "Context before handoff",
-    text: "When the team joins, they should already know the product, size, delivery area, offer context, and buyer intent."
+    title: "Action over chat",
+    text: "Answering questions is step one. Recovering carts, clearing stock, and creating upsells is where AI actually drives revenue."
   },
   {
-    title: "Store workflows stay human",
-    text: "VoluChat handles the repetitive first layer. Your sales team keeps control of unusual questions, order confirmation, and payment."
+    title: "Guardrails over blind trust",
+    text: "Agents should act autonomously but within strict boundaries. Every action is logged, and sensitive decisions require your approval."
   }
 ];
 ---
 
-<Layout title="About VoluChat | Ecommerce sales team automation" description="VoluChat helps ecommerce sales teams answer repeated product questions faster across Instagram, Facebook Pages, and upcoming WhatsApp-native automation.">
+<Layout title="About VoluChat | AI Commerce Agents for Shopify" description="Learn why growing Shopify brands need commerce agents that act on store data, not just chat.">
   <Header />
 
-  <main class="animate-page-entry opacity-0">
-    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-24">
+  <main class="animate-page-entry opacity-0 pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
       <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_80%_16%,rgba(203,217,234,0.2),transparent_30%)]"></div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <div class="chip">Our story</div>
-            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl">
-              Built for teams losing sales to slow replies.
+            <div class="chip">Our Vision</div>
+            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl">
+              Commerce needs action, not just conversation.
             </h1>
             <p class="section-copy mt-6 max-w-xl">
-              VoluChat was created for product-heavy ecommerce sales teams that answer the same price, size, stock, delivery, and offer questions all day while buyers compare options elsewhere.
+              VoluChat was built because growing D2C brands have too much data and too little time. You don't need a smarter chatbot—you need an autonomous agent that acts on your store data to drive revenue.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="https://dashboard.voluchat.com/register" class="btn-primary">Start Free Setup</a>
+              <a href="/contact" class="btn-primary">Book a Demo</a>
               <a href="/features" class="btn-secondary">Explore features</a>
             </div>
           </div>
 
           <div class="solid-card p-3">
-            <img src="/about_hero.webp" alt="VoluChat workspace for ecommerce reply automation" class="h-full w-full rounded-xl object-cover" width="1024" height="1024" loading="eager" decoding="async" />
+            <img src="/about_hero.webp" alt="VoluChat workspace for commerce agents" class="h-full w-full rounded-xl object-cover" width="1024" height="1024" loading="eager" decoding="async" />
           </div>
         </div>
       </div>
@@ -54,18 +55,18 @@ const principles = [
       <div class="page-shell">
         <div class="mx-auto max-w-3xl text-center">
           <p class="section-eyebrow">What we believe</p>
-          <h2 class="section-title mt-4">Automation should remove repeated work, not control the sale.</h2>
+          <h2 class="section-title mt-4">AI should be a team member, not a tool.</h2>
           <p class="section-copy mx-auto mt-5 max-w-2xl">
-            We are building a focused reply layer for stores where every delayed answer, duplicate reply, or unclear handoff can become a missed sale.
+            We are building the operating layer for AI commerce agents. They detect opportunities, recommend actions, seek your approval, and execute workflows to grow your brand.
           </p>
         </div>
 
         <div class="mt-12 grid gap-5 md:grid-cols-3">
           {principles.map((item, index) => (
             <article class={`solid-card reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
-              <span class="grid h-10 w-10 place-items-center rounded-full bg-primary-800 font-mono text-xs font-semibold text-white">0{index + 1}</span>
-              <h3 class="mt-6 text-xl font-heading font-semibold text-stone-950">{item.title}</h3>
-              <p class="mt-4 text-sm font-semibold leading-relaxed text-stone-600">{item.text}</p>
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-teal-500 font-mono text-xs font-semibold text-white">0{index + 1}</span>
+              <h3 class="mt-6 text-xl font-heading font-semibold text-white">{item.title}</h3>
+              <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">{item.text}</p>
             </article>
           ))}
         </div>
@@ -76,22 +77,22 @@ const principles = [
       <div class="page-shell">
         <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div class="solid-card p-3">
-            <img src="/mission_collaboration.webp" alt="Team configuring ecommerce automation workflows" class="max-h-[500px] w-full rounded-xl object-cover" width="1024" height="1024" loading="lazy" decoding="async" />
+            <img src="/mission_collaboration.webp" alt="Configuring ecommerce agent workflows" class="max-h-[500px] w-full rounded-xl object-cover" width="1024" height="1024" loading="lazy" decoding="async" />
           </div>
 
           <div>
             <p class="section-eyebrow">Founder note</p>
-            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-stone-950 sm:text-5xl">
-              We are keeping the product narrow on purpose.
+            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white sm:text-5xl">
+              We are building the AI operating layer.
             </h2>
-            <p class="mt-5 text-base font-semibold leading-relaxed text-stone-600">
-              Broad chat platforms are useful, but growing stores need the repetitive product-question layer handled well before the inbox fills up. VoluChat focuses on that first: fast answers, catalog context, and clean handoffs for one owner or a 5-10 person sales team.
+            <p class="mt-5 text-base font-semibold leading-relaxed text-slate-300">
+              Chatbots wait for a customer to ask a question. Helpdesks wait for a ticket to be filed. Commerce agents proactively find ways to increase your revenue, whether that's recovering an abandoned cart or offering a bundle on slow-moving stock.
             </p>
-            <div class="mt-8 rounded-xl border border-primary-100 bg-primary-50/70 p-6">
-              <p class="text-lg font-semibold leading-relaxed text-stone-800">
-                "If five reps are typing the same answers every day, automation should handle that before the buyer leaves."
+            <div class="mt-8 rounded-xl border border-teal-300/20 bg-teal-300/10 p-6">
+              <p class="text-lg font-semibold leading-relaxed text-slate-200">
+                "Commerce brands don't need more dashboards to look at. They need agents that act on the data for them."
               </p>
-              <p class="mt-5 text-sm font-semibold text-primary-800">Vaibhav Goyal, Founder</p>
+              <p class="mt-5 text-sm font-semibold text-teal-200">Vaibhav Goyal, Founder</p>
             </div>
           </div>
         </div>
@@ -99,5 +100,6 @@ const principles = [
     </section>
   </main>
 
+  <FAQ />
   <Footer />
 </Layout>

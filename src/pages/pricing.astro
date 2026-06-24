@@ -1,222 +1,122 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/landing/Navbar.astro';
+import Footer from '../components/landing/Footer.astro';
 import FAQ from '../components/FAQ.astro';
 
-const seoTitle = "VoluChat pricing for Instagram buyer chats | VoluChat";
-const seoDescription = "Compare VoluChat pricing plans for Instagram stores, from 600 buyer chats per month to high-volume and custom sales plans.";
+const seoTitle = "Custom Pricing | AI Commerce Agents | VoluChat";
+const seoDescription = "VoluChat pricing is tailored for each Shopify store based on catalog complexity, agent workflows, integrations, approval needs, and expected automation volume.";
 
-const plans = [
+const pricingFactors = [
   {
-    name: "Starter",
-    audience: "Small stores",
-    price: "Rs. 2,999/month",
-    volume: "600 buyer chats/month",
-    daily: "around 20/day",
-    note: "For stores starting with repeated product questions.",
-    cta: "Start Free Setup",
+    title: "Store complexity",
+    text: "Catalog size, variants, inventory movement, fulfillment rules, and how many edge cases your agents need to understand."
   },
   {
-    name: "Growth",
-    audience: "Growing volume",
-    price: "Rs. 5,999/month",
-    volume: "1,500 buyer chats/month",
-    daily: "around 50/day",
-    note: "For regular reels, launches, offers, and busy DM days.",
-    cta: "Start Free Setup",
+    title: "Agent scope",
+    text: "Which agents you want live first: product assistant, cart recovery, upsells, customer follow-up, inventory clearance, or revenue leak detection."
   },
   {
-    name: "High Volume",
-    audience: "Recommended for stores near 100 buyer chats/day",
-    price: "Rs. 12,999/month",
-    volume: "3,000 buyer chats/month",
-    daily: "around 100/day",
-    note: "For stores that depend on Instagram DMs every day.",
-    cta: "Start Free Setup",
-    suggested: true,
+    title: "Workflow volume",
+    text: "Expected traffic, abandoned carts, campaign frequency, customer conversations, approval queues, and follow-up volume."
   },
   {
-    name: "Scale",
-    audience: "Custom usage",
-    price: "Contact sales",
-    volume: "Above 3,000 buyer chats/month",
-    daily: "custom daily volume",
-    note: "For multiple pages, larger teams, or campaign spikes.",
-    cta: "Contact sales",
+    title: "Integration depth",
+    text: "Shopify setup, customer data sources, marketing tools, support tools, analytics, exports, and custom operational rules."
   },
+  {
+    title: "Control model",
+    text: "Whether agents only recommend actions, ask for human approval, or execute specific workflows within strict guardrails."
+  },
+  {
+    title: "Launch support",
+    text: "How much hands-on setup, testing, brand voice tuning, rule design, and reporting support your team wants."
+  }
 ];
 
-const policyItems = [
-  "Assisted Launch available",
-  "No surprise charges",
-  "No coding required",
-  "30-day money-back guarantee",
+const includedItems = [
+  "Founder-led workflow review",
+  "Shopify catalog and operations audit",
+  "Agent rollout plan by revenue priority",
+  "Margin, discount, and brand-voice guardrails",
+  "Approval workflow design",
+  "Outcome reporting and attribution setup"
 ];
 
-const featureGroups = [
-  {
-    group: "Volume",
-    rows: [
-      ["Included buyer chats", "600/month", "1,500/month", "3,000/month", "Above 3,000/month"],
-      ["Daily workload guide", "around 20/day", "around 50/day", "around 100/day", "custom daily volume"],
-      ["Upgrade handling", "Before limit", "Before limit", "Before limit", "Custom reporting"],
-    ],
-  },
-  {
-    group: "Automation",
-    rows: [
-      ["Instagram and Facebook setup", "Included", "Included", "Included", "Included"],
-      ["WhatsApp order handoff", "Standard", "Tuned", "Advanced", "Custom workflow mapping"],
-      ["Catalog and product matching", "Basic catalog tuning", "Expanded catalog tuning", "Variant-heavy catalog tuning", "Custom catalog workflow"],
-      ["Policy and offer rules", "COD, delivery, offers", "More rules and exceptions", "Advanced workflow limits", "Custom exception routing"],
-    ],
-  },
-  {
-    group: "Support",
-    rows: [
-      ["Workflow setup service", "Assisted Launch", "Assisted Launch", "Assisted Launch", "Custom onboarding"],
-      ["Language and tone", "English + basic Hinglish", "Hindi, English, Hinglish", "Brand voice review", "Custom language review"],
-      ["Workflow review", "Launch checklist", "Priority launch support", "Founder-led workflow review", "Dedicated planning"],
-      ["Campaign surge planning", "Usage alerts", "Usage alerts", "Campaign surge planning", "Custom volume planning"],
-    ],
-  },
-  {
-    group: "Billing",
-    rows: [
-      ["Surprise charges", "None", "None", "None", "None"],
-      ["Billing model", "Flat monthly plan", "Flat monthly plan", "Flat monthly plan", "Custom contract"],
-      ["Next step", "Move to Growth", "Move to High Volume", "Move to Scale", "Contact sales"],
-    ],
-  },
-];
-
-const pricingAnswer = "Plans start at Rs. 2,999/month for 600 buyer chats/month. Growth is Rs. 5,999/month for 1,500 buyer chats/month, High Volume is Rs. 12,999/month for 3,000 buyer chats/month, and larger stores can contact sales. Assisted Launch is available for teams that want help configuring workflows before going live.";
+const pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs.";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="animate-page-entry opacity-0">
-    <section class="relative overflow-hidden pt-32 pb-12 sm:pt-36 lg:pb-16">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(83,111,159,0.12),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.94),rgba(247,249,252,0.88))]"></div>
+  <main class="animate-page-entry opacity-0 pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(45,212,191,0.12),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"></div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell text-center">
         <div class="mx-auto max-w-4xl">
-          <div class="chip">Pricing for Instagram buyer chats</div>
-          <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl lg:text-7xl">
-            Scale predictably.
+          <div class="chip">Custom pricing</div>
+          <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+            Pricing is tailored to how your store actually operates.
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-2xl">
-            Pay by buyer-chat volume, not technical usage units. Start small, move up when daily DMs grow, and talk to sales when campaigns need custom limits.
+            VoluChat is not sold as preset public packages. We price around the agents, workflows, data complexity, and control model your store needs.
           </p>
+          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <a href="/contact" class="btn-primary">Request a Pricing Review</a>
+            <a href="/features" class="btn-secondary">Explore Agents</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="plans" class="relative overflow-hidden pb-12 sm:pb-16">
+    <section class="relative overflow-hidden pb-16 sm:pb-20">
       <div class="page-shell">
-        <div class="mx-auto mb-8 max-w-3xl text-center">
-          <p class="section-eyebrow">Choose by buyer-chat volume</p>
-          <h2 class="section-title mt-4">Simple monthly plans for growing stores.</h2>
-          <p class="section-copy mx-auto mt-5 max-w-2xl">
-            High Volume fits stores near 100 buyer chats a day, but the page stays neutral: pick the plan that matches today and upgrade only when volume proves it.
-          </p>
-        </div>
+        <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+          <aside class="solid-card h-fit lg:sticky lg:top-32 lg:p-8">
+            <p class="section-eyebrow">How we quote</p>
+            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white">
+              A short review first. A clean proposal after.
+            </h2>
+            <p class="mt-5 text-base font-medium leading-relaxed text-slate-200">
+              We review your Shopify setup, identify the workflows with the highest revenue upside, and propose a rollout that fits your team’s appetite for automation.
+            </p>
+            <a href="/contact" class="btn-primary mt-8 w-full">Start Pricing Review</a>
+          </aside>
 
-        <div class="mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] border border-stone-200/80 bg-white/78 shadow-[0_28px_90px_rgba(28,25,23,0.075)]">
-          <div class="hidden border-b border-stone-200/80 bg-stone-50/72 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.16em] text-stone-500 sm:grid sm:grid-cols-4">
-            <span>Plan</span>
-            <span>Included volume</span>
-            <span>Daily guide</span>
-            <span>Best fit</span>
-          </div>
-
-          <div class="grid divide-y divide-stone-200/80 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-            {plans.map((plan) => (
-              <article class={`relative flex min-h-[23rem] flex-col p-5 sm:p-6 ${plan.suggested ? 'bg-primary-50/80' : 'bg-white/58'}`}>
-                {plan.suggested && <div class="absolute inset-x-0 top-0 h-1 bg-primary-800"></div>}
-                <p class={`text-[10px] font-bold uppercase tracking-[0.16em] ${plan.suggested ? 'text-primary-800' : 'text-stone-500'}`}>{plan.audience}</p>
-                <h3 class="mt-4 font-heading text-2xl font-semibold leading-tight text-stone-950">{plan.name}</h3>
-                <p class="mt-3 min-h-12 text-sm font-semibold leading-relaxed text-stone-600">{plan.note}</p>
-
-                <div class="mt-6 space-y-3">
-                  <div>
-                    <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-stone-400">Price</p>
-                    <p class="mt-1 font-heading text-2xl font-semibold leading-tight text-stone-950">{plan.price}</p>
-                  </div>
-                  <div class="grid gap-2 rounded-2xl bg-white/78 p-3 ring-1 ring-stone-200/75">
-                    <p class="text-sm font-semibold text-stone-950">{plan.volume}</p>
-                    <p class="text-xs font-bold uppercase tracking-[0.12em] text-stone-500">{plan.daily}</p>
-                  </div>
-                </div>
-
-                <a href={plan.cta === "Contact sales" ? "/contact" : "https://dashboard.voluchat.com/register"} class={`mt-auto inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:scale-[0.98] ${plan.suggested ? 'bg-primary-900 text-white shadow-[0_18px_44px_rgba(29,43,67,0.18)] hover:bg-primary-800' : 'border border-stone-200 bg-white text-stone-950 hover:border-primary-100 hover:bg-primary-50'}`}>
-                  {plan.cta}
-                </a>
+          <div class="grid gap-5 md:grid-cols-2">
+            {pricingFactors.map((factor) => (
+              <article class="solid-card md:p-7">
+                <h3 class="text-xl font-heading font-semibold text-white">{factor.title}</h3>
+                <p class="mt-4 text-base font-medium leading-relaxed text-slate-200">{factor.text}</p>
               </article>
             ))}
           </div>
         </div>
-
-        <div class="mx-auto mt-4 grid max-w-6xl gap-2 rounded-2xl border border-stone-200/80 bg-white/76 p-3 shadow-[0_16px_44px_rgba(28,25,23,0.055)] sm:grid-cols-2 lg:grid-cols-4">
-          {policyItems.map((item) => (
-            <div class="flex items-center gap-3 rounded-xl bg-stone-50/76 px-4 py-3">
-              <span class="h-2 w-2 shrink-0 rounded-full bg-primary-800"></span>
-              <span class="text-sm font-semibold leading-snug text-stone-700">{item}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
 
-    <section id="plan-comparison" class="relative overflow-hidden pb-16 sm:pb-20">
-      <div class="absolute inset-0 -z-10 pointer-events-none">
-        <div class="sect-grid opacity-12"></div>
-      </div>
-
+    <section class="section-band relative overflow-hidden py-20 lg:py-28">
       <div class="page-shell">
-        <div class="mx-auto mb-8 max-w-3xl text-center">
-          <p class="section-eyebrow">Compare all features</p>
-          <h2 class="section-title mt-4">See what changes as usage grows.</h2>
-          <p class="section-copy mx-auto mt-5 max-w-2xl">
-            The comparison stays compact on mobile with horizontal scroll, so buyers can scan the table without reading four repeated stacks.
-          </p>
-        </div>
+        <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div>
+            <p class="section-eyebrow">Included in every rollout</p>
+            <h2 class="section-title mt-4">A setup shaped around your store, not a generic package.</h2>
+            <p class="section-copy mt-6 max-w-2xl">
+              The proposal includes the agents to launch, the controls required, the integration work involved, and the success metrics we will track.
+            </p>
+          </div>
 
-        <div class="mx-auto max-w-6xl overflow-hidden rounded-[1.5rem] border border-stone-200/80 bg-white/80 shadow-[0_24px_74px_rgba(28,25,23,0.07)]">
-          <div class="overflow-x-auto">
-            <table class="min-w-[920px] w-full border-collapse text-left text-sm">
-              <thead>
-                <tr class="border-b border-stone-200/80 bg-stone-50/82 text-[10px] font-bold uppercase tracking-[0.16em] text-stone-500">
-                  <th class="w-[23%] px-5 py-4">Feature</th>
-                  {plans.map((plan) => (
-                    <th class={`px-5 py-4 ${plan.suggested ? 'bg-primary-900 text-white' : ''}`}>{plan.name}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {featureGroups.map((group) => (
-                  <>
-                    <tr>
-                      <td colspan="5" class="border-y border-stone-200/80 bg-stone-50/70 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.16em] text-primary-700">
-                        {group.group}
-                      </td>
-                    </tr>
-                    {group.rows.map((row) => (
-                      <tr class="border-b border-stone-200/70 last:border-b-0">
-                        {row.map((cell, index) => (
-                          <td class={`px-5 py-4 align-top font-semibold leading-relaxed ${index === 0 ? 'text-stone-950' : 'text-stone-650'} ${index === 3 ? 'bg-primary-50/72 text-primary-950' : ''}`}>
-                            {cell}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </>
-                ))}
-              </tbody>
-            </table>
+          <div class="solid-card p-5 sm:p-7">
+            <div class="grid gap-3">
+              {includedItems.map((item) => (
+                <div class="flex items-center gap-3 rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.04] px-4 py-3">
+                  <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-300"></span>
+                  <span class="text-base font-medium leading-snug text-slate-100">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,66 @@
+---
+import AgentDetailPage from '../../components/AgentDetailPage.astro';
+
+const workflow = [
+  {
+    title: "Identify recoverable carts",
+    text: "The agent distinguishes between casual browsing and high-intent abandonment by looking at cart value, product interest, customer history, timing, and prior questions."
+  },
+  {
+    title: "Handle the reason behind the drop-off",
+    text: "Instead of sending the same static reminder to everyone, it responds to likely objections such as shipping cost, delivery uncertainty, return policy, payment friction, or missing product information."
+  },
+  {
+    title: "Use approved incentives only when needed",
+    text: "If a recovery offer is allowed, the agent applies your margin rules and incentive limits before suggesting a discount, shipping upgrade, bundle, or human handoff."
+  }
+];
+
+const useCases = [
+  {
+    label: "Checkout drop-off",
+    title: "Recover high-value abandoned carts",
+    text: "Prioritizes carts where a timely answer or approved offer is likely to bring the shopper back."
+  },
+  {
+    label: "Objection handling",
+    title: "Answer doubts after the shopper leaves",
+    text: "Clarifies shipping, delivery timelines, returns, and payment questions in a conversational follow-up instead of a generic reminder email."
+  },
+  {
+    label: "Margin-safe offers",
+    title: "Protect profitability while recovering sales",
+    text: "Uses incentives only inside the boundaries you set, so revenue recovery does not turn into uncontrolled discounting."
+  }
+];
+
+const guardrails = [
+  "Frequency caps prevent aggressive or repetitive follow-ups.",
+  "Opt-outs and negative replies stop the workflow immediately.",
+  "Discounts and shipping incentives stay within approved margin rules.",
+  "Human review can be required for high-value carts or unusual customer situations."
+];
+
+const relatedLinks = [
+  { label: "Revenue Leak Detection", href: "/agents/revenue-leak-detection" },
+  { label: "Product Assistant", href: "/agents/product-assistant" },
+  { label: "Customer Follow-up Agent", href: "/agents/customer-follow-up" }
+];
+---
+
+<AgentDetailPage
+  seoTitle="AI Cart Recovery Agent for Shopify | VoluChat"
+  seoDescription="Recover abandoned carts with VoluChat's AI Cart Recovery Agent, built for conversational follow-up, objection handling, and margin-safe offers."
+  title="AI Cart Recovery Agent."
+  description="Recover abandoned carts with an agent that understands why shoppers hesitated, answers the blocker, and uses approved incentives only when the sale needs help."
+  heroSignal="A returning customer leaves a high-margin cart after asking whether delivery will arrive before the weekend."
+  heroDecision="Prioritize the cart, answer the delivery concern, and check whether an approved recovery incentive is available."
+  heroAction="Send a contextual recovery message with the right product and checkout link."
+  heroOutcome="Recovered revenue is attributed to the conversation and the incentive is logged against margin rules."
+  painTitle="Abandoned carts are not all the same problem."
+  painCopy="Most recovery tools treat every abandoned checkout like a timer. VoluChat treats it like an unfinished conversation. The agent looks at context, identifies the likely blocker, and follows up with a response that feels useful instead of automated."
+  workflow={workflow}
+  useCases={useCases}
+  guardrails={guardrails}
+  relatedLinks={relatedLinks}
+/>

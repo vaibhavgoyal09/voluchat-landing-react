@@ -11,6 +11,13 @@ const STATIC_ROUTES = [
   { path: '/security/', priority: '0.7' },
   { path: '/blog/', priority: '0.6' },
   { path: '/contact/', priority: '0.9' },
+  { path: '/agents/product-assistant/', priority: '0.8' },
+  { path: '/agents/cart-recovery/', priority: '0.8' },
+  { path: '/agents/upsell/', priority: '0.8' },
+  { path: '/agents/customer-follow-up/', priority: '0.8' },
+  { path: '/agents/inventory-clearance/', priority: '0.8' },
+  { path: '/agents/revenue-leak-detection/', priority: '0.8' },
+  { path: '/integrations/shopify/', priority: '0.8' },
 ];
 
 export async function GET({ site }) {

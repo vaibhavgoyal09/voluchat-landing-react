@@ -16,7 +16,7 @@ test("404 page uses shared layout and is excluded from search indexing", async (
 test("404 page gives users clear recovery paths", async () => {
   const page = await readNotFoundPage();
 
-  assert.match(page, /This page slipped out of the chat/);
+  assert.match(page, /This page seems to be missing/);
   assert.match(page, /href="\/"/);
   assert.match(page, /href="\/pricing"/);
   assert.match(page, /href: "\/contact"/);

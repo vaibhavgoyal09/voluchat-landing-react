@@ -1,0 +1,66 @@
+---
+import AgentDetailPage from '../../components/AgentDetailPage.astro';
+
+const workflow = [
+  {
+    title: "Trigger from real customer milestones",
+    text: "The agent uses order, fulfillment, delivery, and customer history signals so follow-ups happen at the right moment instead of on a generic delay."
+  },
+  {
+    title: "Separate happy customers from support risks",
+    text: "It asks for feedback, detects frustration or delivery issues, and routes unhappy customers toward support before asking for reviews or repeat purchases."
+  },
+  {
+    title: "Create the next useful action",
+    text: "Depending on the response, the agent can request a review, suggest replenishment, recommend a related product, or hand off to a human."
+  }
+];
+
+const useCases = [
+  {
+    label: "Post-delivery",
+    title: "Check satisfaction after the order arrives",
+    text: "Reaches out once delivery is complete, not while the customer is still waiting or dealing with fulfillment uncertainty."
+  },
+  {
+    label: "Retention",
+    title: "Prompt replenishment and repeat purchase",
+    text: "Uses product type and purchase timing to suggest the right next order when the customer is likely to need it."
+  },
+  {
+    label: "Review flow",
+    title: "Ask for advocacy at the right moment",
+    text: "Requests a review from happy customers while routing issues to support instead of creating a negative public touchpoint."
+  }
+];
+
+const guardrails = [
+  "Follow-ups are based on real fulfillment and delivery status.",
+  "Open support cases pause promotional messages automatically.",
+  "Negative sentiment escalates to a human instead of pushing an offer.",
+  "Repeat-purchase prompts follow your timing, frequency, and product eligibility rules."
+];
+
+const relatedLinks = [
+  { label: "Product Assistant", href: "/agents/product-assistant" },
+  { label: "Upsell & Bundle Agent", href: "/agents/upsell" },
+  { label: "Cart Recovery Agent", href: "/agents/cart-recovery" }
+];
+---
+
+<AgentDetailPage
+  seoTitle="AI Customer Follow-up Agent for Shopify | VoluChat"
+  seoDescription="Use VoluChat's Customer Follow-up Agent to automate post-purchase check-ins, reviews, replenishment prompts, and retention workflows."
+  title="Customer Follow-up Agent."
+  description="Turn post-purchase moments into retention workflows with an agent that checks in, detects problems, asks for reviews, and recommends the next useful purchase."
+  heroSignal="An order was delivered three days ago and the customer has no open support ticket."
+  heroDecision="Check product type, customer history, delivery timing, and whether a review or replenishment prompt is appropriate."
+  heroAction="Send a helpful check-in and branch based on satisfaction, issue, or repeat-purchase intent."
+  heroOutcome="Support risks are escalated, happy customers are guided toward reviews, and repeat revenue is attributed."
+  painTitle="Retention should not depend on manual follow-up."
+  painCopy="Most teams are busy chasing new orders while post-purchase moments are handled by generic emails. The Customer Follow-up Agent gives every buyer a timely, context-aware check-in that protects brand reputation and creates repeat-purchase opportunities."
+  workflow={workflow}
+  useCases={useCases}
+  guardrails={guardrails}
+  relatedLinks={relatedLinks}
+/>

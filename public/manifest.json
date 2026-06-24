@@ -1,7 +1,7 @@
 {
-  "name": "VoluChat - Turn More DMs Into Orders",
+  "name": "VoluChat - AI Commerce Agents for Shopify Brands",
   "short_name": "VoluChat",
-  "description": "AI DM automation for Instagram-led stores that answers product questions and prepares WhatsApp-ready order messages.",
+  "description": "VoluChat gives growing Shopify stores commerce agents that answer product questions, recover carts, suggest upsells, follow up with customers, and surface revenue leaks.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

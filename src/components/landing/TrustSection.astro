@@ -31,7 +31,7 @@ const trustCards = [
       </div>
       <h2 class="reveal-on-scroll section-title">
         AI recommends.<br class="hidden sm:inline" />
-        <span class="text-stone-500">You stay in control.</span>
+        <span class="text-slate-300">You stay in control.</span>
       </h2>
       <p class="reveal-on-scroll mt-6 section-copy text-center">
         VoluChat does not blindly spam customers. Sensitive actions go through approval, every recommendation is logged, and outcomes are tracked back to the original opportunity.
@@ -41,11 +41,11 @@ const trustCards = [
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {trustCards.map((card, index) => (
         <div class={`reveal-on-scroll solid-card-compact text-center reveal-delay-${(index % 4) * 100}`}>
-          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800/80 text-2xl border border-white/10 shadow-inner">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#1e293b] text-2xl border border-[rgba(148,163,184,0.18)] shadow-sm">
             {card.icon}
           </div>
           <h3 class="text-base font-bold text-white mb-2">{card.title}</h3>
-          <p class="text-sm font-medium leading-relaxed text-slate-400">
+          <p class="text-base font-medium leading-relaxed text-slate-300">
             {card.description}
           </p>
         </div>

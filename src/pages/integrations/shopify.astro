@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/landing/Navbar.astro';
+import Footer from '../../components/landing/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const seoTitle = "Shopify Integration for AI Chat | VoluChat";
+const seoDescription = "Connect your Shopify store to VoluChat instantly. Sync products, variants, inventory, and orders to power your AI sales assistants.";
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <Header />
+
+  <main class="animate-page-entry opacity-0">
+    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-24">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_82%_16%,rgba(203,217,234,0.2),transparent_30%)]"></div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="max-w-4xl">
+          <div class="chip">VoluChat Integrations</div>
+          <h1 class="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+            Shopify Integration.
+          </h1>
+          <p class="section-copy mt-6 max-w-2xl">
+            Seamlessly give your AI agents real-time access to your Shopify catalog, inventory, and customer data with a 1-click install.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="/contact" class="btn-primary">Book a Demo</a>
+            <a href="/contact" class="btn-secondary">Talk to sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative pb-24">
+      <div class="page-shell">
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-start">
+          <article class="solid-card md:p-8">
+            <p class="section-eyebrow">How it works</p>
+            <h2 class="mt-4 text-2xl font-heading font-semibold leading-[1.08] text-white">
+              Your store data, powering your chat
+            </h2>
+            <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
+              By connecting Shopify to VoluChat, your AI agents become experts on your specific catalog. They can instantly check real-time stock levels for variants, confirm pricing, and assist with order tracking. The sync happens automatically, meaning when you update a product in Shopify, your chat AI instantly knows about it.
+            </p>
+          </article>
+
+          <article class="solid-card md:p-8">
+            <p class="section-eyebrow">Guardrails & Control</p>
+            <h2 class="mt-4 text-2xl font-heading font-semibold leading-[1.08] text-white">
+              Secure and accurate
+            </h2>
+            <ul class="mt-5 space-y-3">
+              <li class="flex gap-3 text-base font-medium leading-relaxed text-slate-200">
+                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Requires strict read-only access to your catalog and order data.</span>
+              </li>
+              <li class="flex gap-3 text-base font-medium leading-relaxed text-slate-200">
+                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Eliminates AI hallucinations by grounding all answers in exact store data.</span>
+              </li>
+              <li class="flex gap-3 text-base font-medium leading-relaxed text-slate-200">
+                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span>Customer PII is handled securely and not used to train global models.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad relative overflow-hidden bg-[#08111f]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="section-title !text-white">Powered by Shopify</h2>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="/agents/product-assistant" class="chip hover:bg-slate-500 transition-colors">Product Assistant</a>
+            <a href="/agents/cart-recovery" class="chip hover:bg-slate-500 transition-colors">Cart Recovery</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>

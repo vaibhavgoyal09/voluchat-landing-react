@@ -3,18 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/landing/Navbar.astro';
 import Hero from '../components/landing/Hero.astro';
 import ProblemSection from '../components/landing/ProblemSection.astro';
-import ComparisonSection from '../components/landing/ComparisonSection.astro';
+import PlatformSection from '../components/landing/PlatformSection.astro';
+import UseCasesSection from '../components/landing/UseCasesSection.astro';
 import ProductLoopSection from '../components/landing/ProductLoopSection.astro';
-import FeatureGrid from '../components/landing/FeatureGrid.astro';
+import GuardrailsSection from '../components/landing/GuardrailsSection.astro';
 import DemoFlowSection from '../components/landing/DemoFlowSection.astro';
-import AudienceSection from '../components/landing/AudienceSection.astro';
 import TrustSection from '../components/landing/TrustSection.astro';
-import CTASection from '../components/landing/CTASection.astro';
+import FAQ from '../components/FAQ.astro';
 import Footer from '../components/landing/Footer.astro';
 
-const seoTitle = "VoluChat | AI Commerce Operations Platform for Shopify Brands";
-const seoDescription = "VoluChat gives growing Shopify stores AI agents that handle repetitive commerce operations — from product questions and cart recovery to upsells, follow-ups, and revenue leak detection.";
-const seoKeywords = "AI commerce platform, Shopify automation, Shopify AI agents, D2C automation layer, cart recovery, product recommendations, ecommerce operations, VoluChat";
+const seoTitle = "VoluChat | AI Commerce Agents for Shopify Brands";
+const seoDescription = "VoluChat gives growing Shopify stores commerce agents that answer product questions, recover carts, suggest upsells, follow up with customers, and surface revenue leaks.";
+const seoKeywords = "AI commerce agents, commerce agents, Shopify AI agents, ecommerce agents, cart recovery agent, product recommendation agent, D2C automation, Shopify automation, VoluChat";
 ---
 
 <Layout
@@ -27,13 +27,13 @@ const seoKeywords = "AI commerce platform, Shopify automation, Shopify AI agents
   <main class="animate-page-entry opacity-0 overflow-x-hidden">
     <Hero />
     <ProblemSection />
-    <ComparisonSection />
+    <PlatformSection />
+    <UseCasesSection />
     <ProductLoopSection />
-    <FeatureGrid />
+    <GuardrailsSection />
     <DemoFlowSection />
-    <AudienceSection />
     <TrustSection />
-    <CTASection />
+    <FAQ />
   </main>
 
   <Footer />

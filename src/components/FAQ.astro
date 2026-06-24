@@ -1,32 +1,32 @@
 ---
 const {
-  pricingAnswer = "Early access plans start at Rs. 2,999/month for 600 buyer chats/month. Growth is Rs. 5,999/month for 1,500 buyer chats/month, High Volume is Rs. 12,999/month for 3,000 buyer chats/month, and larger stores can contact sales. Assisted Launch is available for teams that want help configuring workflows before going live."
+  pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs."
 } = Astro.props;
 
 const faqs = [
   {
-    question: "How does VoluChat turn DMs into orders?",
-    answer: "VoluChat answers repeated product questions, recommends products from your catalog, collects cart and delivery details, and sends customers to WhatsApp with the order message already filled in.",
+    question: "What is an AI commerce agent?",
+    answer: "A commerce agent is an autonomous software program that acts on your Shopify store data. Unlike a chatbot that just replies to questions, an agent can detect a left cart, calculate a profitable discount, send an offer, and process the order without human intervention.",
   },
   {
-    question: "Does VoluChat sync with Shopify inventory?",
-    answer: "Yes. VoluChat syncs with your Shopify inventory so product, size, color, and stock changes can be reflected in replies without manual CSV uploads.",
+    question: "Does VoluChat sync with my Shopify inventory?",
+    answer: "Yes. VoluChat syncs with your Shopify catalog in real-time. Agents know exactly which variants, sizes, and colors are in stock, and can even identify slow-moving inventory to recommend clearance campaigns.",
   },
   {
-    question: "What happens when the customer is ready to order?",
-    answer: "VoluChat prepares the product, variant, quantity, delivery address, and phone details, then gives the customer a WhatsApp link with the order message prefilled for your store.",
+    question: "How does the Cart Recovery agent work?",
+    answer: "When a high-intent buyer abandons checkout, the agent follows up. Instead of just sending a static email, it engages in a conversation, handles objections (e.g., 'Is shipping free?'), and can offer dynamic, margin-safe discounts to close the sale.",
   },
   {
-    question: "Does VoluChat process payments or fully confirm orders?",
-    answer: "No. Your store still handles final confirmation and payment details. VoluChat prepares the WhatsApp-ready order so your team can close faster.",
+    question: "Can I review agent actions before they happen?",
+    answer: "Yes. You can run agents in 'recommend-only' mode. For example, if an agent wants to launch a clearance bundle, it will first send you an approval request. Once approved, the agent executes the campaign.",
   },
   {
-    question: "Will my team still control the final sale?",
-    answer: "Yes. VoluChat handles repeated replies and detail collection. Your team stays in control of confirmation, payment instructions, exceptions, and customer judgment.",
+    question: "Will agents offer discounts that hurt my margins?",
+    answer: "No. You set strict financial guardrails in the VoluChat dashboard. Agents are mathematically constrained and cannot offer a discount or bundle that violates your minimum margin rules.",
   },
   {
-    question: "Do I need technical knowledge to use it?",
-    answer: "No. You get help connecting Instagram and Facebook Pages, syncing Shopify inventory, tuning replies, and setting up WhatsApp order messages.",
+    question: "Do I need technical knowledge to set this up?",
+    answer: "No. You connect your Shopify store with one click. VoluChat's agents are pre-trained on commerce workflows, so you just configure your guardrails and turn them on.",
   },
   {
     question: "How much does VoluChat cost?",
@@ -44,41 +44,41 @@ const faqs = [
     <div class="mx-auto mb-10 max-w-2xl text-center">
       <p class="section-eyebrow">FAQ</p>
       <h2 class="section-title mt-4">
-        Last questions before setup.
+        Questions about commerce agents.
       </h2>
       <p class="section-copy mx-auto mt-5 max-w-xl">
-        The practical details store owners usually check before automating repeated DMs and WhatsApp order handoffs.
+        Common questions from D2C founders before deploying autonomous agents.
       </p>
     </div>
 
-    <div class="mx-auto max-w-3xl divide-y divide-stone-100 overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_18px_60px_rgba(28,25,23,0.07)]">
+    <div class="mx-auto max-w-3xl divide-y divide-[rgba(148,163,184,0.16)] overflow-hidden rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] shadow-[0_28px_86px_-54px_rgba(0,0,0,0.85)]">
       {faqs.slice(0, 7).map((faq, index) => (
         <div class="faq-item transition-all duration-300" data-index={index}>
-          <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-stone-50/70">
-            <span class="font-heading text-base sm:text-lg font-semibold leading-snug tracking-tight text-stone-950 transition-colors group-hover:text-primary-800">
+          <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-white/[0.045]">
+            <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-white transition-colors group-hover:text-teal-200">
               {faq.question}
             </span>
-            <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-stone-100 bg-white shadow-sm transition-all duration-300 group-hover:border-primary-100 group-hover:bg-primary-50">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron text-stone-400 transition-all duration-300 group-hover:text-primary-700">
+            <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.06] shadow-sm transition-all duration-300 group-hover:border-teal-300/30 group-hover:bg-teal-300/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron text-slate-300 transition-all duration-300 group-hover:text-teal-200">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </span>
           </button>
           <div class="faq-body max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
             <div class="px-6 pb-6 sm:px-8 sm:pb-8">
-              <p class="text-xs sm:text-sm font-semibold leading-relaxed text-stone-600">{faq.answer}</p>
+              <p class="text-base font-medium leading-relaxed text-slate-200">{faq.answer}</p>
             </div>
           </div>
         </div>
       ))}
     </div>
 
-    <div class="mx-auto mt-8 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-stone-200 bg-white px-5 py-5 text-center shadow-[0_18px_60px_rgba(28,25,23,0.06)] sm:flex-row sm:text-left">
-      <p class="text-sm font-semibold leading-relaxed text-stone-600">
-        Ready to see if your DM flow fits? Start setup and bring your products, policies, and WhatsApp close into one workflow.
+    <div class="mx-auto mt-8 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] px-5 py-5 text-center shadow-[0_18px_60px_rgba(0,0,0,0.28)] sm:flex-row sm:text-left">
+      <p class="text-base font-medium leading-relaxed text-slate-200">
+        Ready to see agents in action? Connect your store and see what they find.
       </p>
-      <a href="https://dashboard.voluchat.com/register" class="btn-primary shrink-0">
-        Start Free Setup
+      <a href="/contact" class="btn-primary shrink-0">
+        Book a Demo
       </a>
     </div>
   </div>
@@ -86,15 +86,15 @@ const faqs = [
 
 <style>
   .faq-item.active {
-    background-color: rgba(68, 64, 60, 0.035);
+    background-color: rgba(45, 212, 191, 0.055);
   }
   .faq-item.active .faq-chevron {
     transform: rotate(180deg);
-    color: #1c1917;
+    color: #99f6e4;
   }
   .faq-item.active .faq-icon-wrap {
-    background-color: #f5f5f4;
-    border-color: #e7e5e4;
+    background-color: rgba(45, 212, 191, 0.12);
+    border-color: rgba(94, 234, 212, 0.36);
   }
   .faq-item.active .faq-body {
     max-height: 420px;

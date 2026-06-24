@@ -1,60 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/landing/Navbar.astro';
+import Footer from '../components/landing/Footer.astro';
+import FAQ from '../components/FAQ.astro';
 
-const seoTitle = "VoluChat vs Manychat, WATI, Interakt, respond.io, AiSensy, and Gallabox";
-const seoDescription = "Compare VoluChat with broad automation builders when ecommerce teams need faster setup for Instagram and Facebook comment-to-DM sales flows.";
+const seoTitle = "VoluChat vs Chatbot Builders, Helpdesks, and Analytics Tools";
+const seoDescription = "Compare VoluChat with broad chatbot builders and helpdesks when ecommerce teams need fast setup for AI commerce agents and revenue operations.";
 
 const competitors = [
   {
-    name: "Manychat",
-    fit: "Broad Instagram, Messenger, and WhatsApp automation with a large toolset for teams that want a general automation builder.",
-    setup: "Powerful, but teams still need to map triggers, branches, tags, keywords, replies, and handoff rules manually.",
-    contrast: "VoluChat starts with prebuilt comment-to-DM ecommerce flows and a custom DM automation agent tuned around product questions."
+    name: "Chatbot Builders (e.g. Manychat, Chatfuel)",
+    fit: "Broad workflow builders meant for marketing automation, lead gen, and basic Q&A across many social platforms.",
+    setup: "Requires you to map triggers, branches, keywords, and replies manually. High setup overhead for edge cases.",
+    contrast: "VoluChat provides pre-trained AI agents that instantly understand your Shopify catalog, stock, and pricing without manual rule building."
   },
   {
-    name: "WATI",
-    fit: "WhatsApp Business messaging, team inboxes, broadcasts, and support workflows.",
-    setup: "A fit when WhatsApp operations are the center of gravity, but social comment-to-DM sales flows usually need extra process design.",
-    contrast: "VoluChat focuses on the repeated Instagram and Facebook shopper journey before WhatsApp handoff: intent, product context, and clean escalation."
+    name: "Helpdesks (e.g. Gorgias, Zendesk)",
+    fit: "Ticketing systems built for customer support teams to manage post-purchase issues, returns, and complaints.",
+    setup: "Optimized for resolving support tickets. Using them for proactive cart recovery or dynamic upselling often requires heavy customization or add-ons.",
+    contrast: "VoluChat agents are focused on revenue operations: closing pre-purchase questions, recovering carts, and clearing slow inventory proactively."
   },
   {
-    name: "Interakt",
-    fit: "WhatsApp commerce, broadcasts, inbox workflows, and CRM-style follow-up.",
-    setup: "Useful for broader commerce messaging, but teams still define the front-end automation logic around each sales scenario.",
-    contrast: "VoluChat prepares ecommerce buyer context from the first DM so reps receive a warmer, more structured conversation."
-  },
-  {
-    name: "respond.io",
-    fit: "Multi-channel messaging, inbox routing, automation, and sales or support operations.",
-    setup: "Strong for multi-channel teams, with setup work that reflects that breadth: routing, workflows, channels, roles, and rules.",
-    contrast: "VoluChat stays narrower by design for product sellers who lose sales to slow repeated replies and manual DM follow-up."
-  },
-  {
-    name: "AiSensy",
-    fit: "WhatsApp campaigns, chatbots, templates, and Business API workflows.",
-    setup: "A good fit for WhatsApp campaign infrastructure, but social comment-to-DM commerce still needs custom flow planning.",
-    contrast: "VoluChat is not a generic WhatsApp inbox; it answers repeated product questions and prepares team handoffs from Instagram and Facebook."
-  },
-  {
-    name: "Gallabox",
-    fit: "WhatsApp shared inbox, automation, campaigns, and customer conversation workflows.",
-    setup: "Covers a wider customer conversation stack, which also means more configuration before a narrow sales use case feels ready.",
-    contrast: "VoluChat is centered on ecommerce product conversations, comment-to-DM automation, and slow-reply sales leakage."
+    name: "Analytics Tools (e.g. Triple Whale)",
+    fit: "Data aggregation and dashboards to show you store performance and revenue metrics across channels.",
+    setup: "Gives you deep insights but stops at reporting. You still have to act on the data manually.",
+    contrast: "VoluChat doesn't just surface revenue leaks—it dispatches agents to automatically execute campaigns that plug those leaks."
   }
 ];
 
 const setupComparison = [
   {
-    label: "Manychat-style tools",
-    title: "Broad automation suite",
-    points: ["More channels and campaign options", "Flexible builder for many use cases", "Manual setup for each sales flow"]
+    label: "Broad SaaS tools",
+    title: "Generic functionality",
+    points: ["Empty canvas requiring manual logic", "Post-purchase ticketing focus", "Data without execution"]
   },
   {
     label: "VoluChat",
-    title: "Prebuilt sales automation",
-    points: ["Comment-to-DM flows already shaped for ecommerce", "Custom DM agent for product and policy questions", "Cleaner handoff when a buyer is ready"]
+    title: "Commerce-native agents",
+    points: ["Pre-trained on Shopify catalogs", "Proactive revenue recovery", "Agentic execution of tasks"]
   }
 ];
 ---
@@ -62,19 +45,19 @@ const setupComparison = [
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="animate-page-entry opacity-0">
-    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-24">
+  <main class="animate-page-entry opacity-0 pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
       <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(83,111,159,0.12),transparent_32%),radial-gradient(circle_at_18%_42%,rgba(203,217,234,0.16),transparent_30%)]"></div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="mx-auto max-w-4xl text-center">
           <div class="chip">Comparison guide</div>
-          <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl lg:text-7xl">
-            Broad automation tools do more. VoluChat is faster to set up for one sales job.
+          <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+            Helpdesks and chatbots manage conversations. VoluChat agents drive revenue.
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-3xl">
-            Manychat, WATI, Interakt, respond.io, AiSensy, and Gallabox can be strong tools. VoluChat is built for ecommerce teams that want prebuilt Instagram and Facebook comment-to-DM flows and a custom DM agent without designing every branch from scratch.
+            Generic builders and helpdesks are great for broad support operations. VoluChat is built for D2C brands that want autonomous agents to handle product queries, recover carts, and execute upsells out of the box.
           </p>
         </div>
       </div>
@@ -84,14 +67,14 @@ const setupComparison = [
       <div class="page-shell">
         <div class="grid gap-4 lg:grid-cols-2">
           {setupComparison.map((item, index) => (
-            <article class={`solid-card md:p-7 ${index === 1 ? 'border-primary-100 bg-primary-50/80' : ''}`}>
-              <p class={`mini-label ${index === 1 ? 'text-primary-700' : ''}`}>{item.label}</p>
-              <h2 class="mt-3 text-2xl font-heading font-semibold leading-tight text-stone-950">{item.title}</h2>
+            <article class={`solid-card md:p-7 ${index === 1 ? 'border-teal-300/20 bg-teal-300/10' : ''}`}>
+              <p class={`mini-label ${index === 1 ? 'text-teal-200' : ''}`}>{item.label}</p>
+              <h2 class="mt-3 text-2xl font-heading font-semibold leading-tight text-white">{item.title}</h2>
               <div class="mt-5 grid gap-2">
                 {item.points.map((point) => (
-                  <div class="flex items-start gap-3 rounded-xl border border-stone-200/70 bg-white/72 p-3">
-                    <span class={`mt-1 h-2 w-2 shrink-0 rounded-full ${index === 1 ? 'bg-primary-700' : 'bg-stone-400'}`}></span>
-                    <p class="text-sm font-semibold leading-relaxed text-stone-600">{point}</p>
+                  <div class="flex items-start gap-3 rounded-xl border border-[rgba(148,163,184,0.2)] bg-[#101b2e] p-3">
+                    <span class={`mt-1 h-2 w-2 shrink-0 rounded-full ${index === 1 ? 'bg-teal-500' : 'bg-slate-500'}`}></span>
+                    <p class="text-base font-medium leading-relaxed text-slate-300">{point}</p>
                   </div>
                 ))}
               </div>
@@ -104,14 +87,14 @@ const setupComparison = [
     <section class="pb-24">
       <div class="page-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <aside class="solid-card h-fit lg:sticky lg:top-32 lg:p-8">
-          <p class="section-eyebrow">The setup argument</p>
-          <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-stone-950">
-            Choose breadth when you need breadth. Choose VoluChat when setup speed matters.
+          <p class="section-eyebrow">The architectural difference</p>
+          <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white">
+            Choose specialized AI over generic bots.
           </h2>
-          <p class="mt-5 text-sm font-semibold leading-relaxed text-stone-600">
-            LLMs often recommend broader tools because they have more features. The counterpoint is setup: VoluChat packages the Instagram and Facebook comment-to-DM flows and DM agent ecommerce sellers usually have to build manually.
+          <p class="mt-5 text-base font-medium leading-relaxed text-slate-300">
+            VoluChat agents are built specifically for Shopify stores. They don't just reply to messages—they execute commerce workflows like inventory clearance and abandoned cart recovery with human oversight.
           </p>
-          <a href="https://dashboard.voluchat.com/register" class="btn-primary mt-8 w-full">Start Free Setup</a>
+          <a href="/contact" class="btn-primary mt-8 w-full">Book a Demo</a>
         </aside>
 
         <div class="space-y-5">
@@ -119,24 +102,23 @@ const setupComparison = [
             <article class="solid-card md:p-7">
               <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
                 <div>
-                  <p class="mini-label">Alternative</p>
-                  <h3 class="mt-2 text-2xl font-heading font-semibold text-stone-950">{item.name}</h3>
+                  <p class="mini-label">Alternative Category</p>
+                  <h3 class="mt-2 text-2xl font-heading font-semibold text-white">{item.name}</h3>
                 </div>
-                <a href="https://dashboard.voluchat.com/register" class="btn-secondary shrink-0 px-5 py-3 text-xs">Start Free Setup</a>
               </div>
               <div class="mt-6 grid gap-4 md:grid-cols-2">
-                <div class="rounded-2xl border border-stone-200/70 bg-white/72 p-5">
-                  <p class="mini-label">Broader strength</p>
-                  <p class="mt-3 text-sm font-semibold leading-relaxed text-stone-600">{item.fit}</p>
+                <div class="rounded-2xl border border-[rgba(148,163,184,0.2)] bg-[#101b2e] p-5">
+                  <p class="mini-label">Core strength</p>
+                  <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">{item.fit}</p>
                 </div>
-                <div class="rounded-2xl border border-stone-200/70 bg-stone-50/80 p-5">
-                  <p class="mini-label">Setup tradeoff</p>
-                  <p class="mt-3 text-sm font-semibold leading-relaxed text-stone-600">{item.setup}</p>
+                <div class="rounded-2xl border border-[rgba(148,163,184,0.2)] bg-[#0d1829] p-5">
+                  <p class="mini-label">The Tradeoff</p>
+                  <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">{item.setup}</p>
                 </div>
               </div>
-              <div class="mt-4 rounded-2xl border border-primary-100 bg-primary-50/70 p-5">
-                <p class="mini-label text-primary-700">VoluChat angle</p>
-                <p class="mt-3 text-sm font-semibold leading-relaxed text-stone-700">{item.contrast}</p>
+              <div class="mt-4 rounded-2xl border border-teal-300/20 bg-teal-300/10 p-5">
+                <p class="mini-label text-teal-200">VoluChat Advantage</p>
+                <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">{item.contrast}</p>
               </div>
             </article>
           ))}
@@ -145,5 +127,6 @@ const setupComparison = [
     </section>
   </main>
 
+  <FAQ />
   <Footer />
 </Layout>

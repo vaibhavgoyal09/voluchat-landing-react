@@ -1,51 +1,53 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/landing/Navbar.astro';
+import Footer from '../components/landing/Footer.astro';
 import FAQ from '../components/FAQ.astro';
 
-const seoTitle = "Contact VoluChat for Instagram store support | VoluChat";
-const seoDescription = "Contact VoluChat for high-volume Instagram stores that need automated product replies, cart collection, and WhatsApp checkout drafts.";
-const contactWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I%20want%20help%20with%20my%20Instagram%20store%20setup.";
+const seoTitle = "Contact VoluChat | AI Commerce Agents";
+const seoDescription = "Request a VoluChat pricing review for your Shopify store. Share your commerce workflows, catalog complexity, and agent rollout goals.";
+const contactEmailUrl = "mailto:support@voluchat.com";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="animate-page-entry overflow-hidden opacity-0">
-    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-28">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(203,217,234,0.2),transparent_28%)]"></div>
+  <main class="animate-page-entry overflow-hidden opacity-0 pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(45,212,191,0.12),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"></div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <div class="chip">Contact VoluChat</div>
-            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl">
-              See VoluChat on your Instagram sales workflow.
+            <div class="chip">Pricing review</div>
+            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl">
+              Let’s map the agents your store actually needs.
             </h1>
             <p class="section-copy mt-6 max-w-xl">
-              Share your repeated product questions, comment volume, and DM workflow. We will help with replies, catalog matching, cart collection, address capture, and WhatsApp checkout drafts.
+              Tell us where revenue is leaking, which workflows are still manual, and how much control your team wants. We’ll review the store and propose a tailored rollout.
             </p>
 
-            <div class="mt-10 space-y-5">
-              <div class="flex items-center gap-4">
-                <div class="grid h-12 w-12 place-items-center rounded-full border border-primary-100 bg-primary-50 text-primary-800">
+            <div class="mt-10 grid gap-4">
+              <div class="rounded-2xl border border-[rgba(148,163,184,0.18)] bg-white/[0.045] p-5">
+                <p class="section-eyebrow">What happens next</p>
+                <div class="mt-4 grid gap-3">
+                  {["We review your catalog, carts, and current workflows.", "We identify the first agents worth deploying.", "You get a custom scope and pricing proposal."].map((item, index) => (
+                    <div class="flex items-center gap-3">
+                      <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-teal-300/10 text-xs font-bold text-teal-200">0{index + 1}</span>
+                      <span class="text-base font-medium leading-snug text-slate-200">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 rounded-2xl border border-[rgba(148,163,184,0.18)] bg-white/[0.035] p-4">
+                <div class="grid h-12 w-12 place-items-center rounded-full border border-teal-300/20 bg-teal-300/10 text-teal-200">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </div>
                 <div>
                   <p class="mini-label">Email</p>
-                  <a href="mailto:support@voluchat.com" class="text-lg font-semibold text-stone-950 transition-colors hover:text-primary-700">support@voluchat.com</a>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-4">
-                <div class="grid h-12 w-12 place-items-center rounded-full border border-primary-100 bg-primary-50 text-primary-800">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                </div>
-                <div>
-                  <p class="mini-label">Phone</p>
-                  <a href="tel:+918847568693" class="text-lg font-semibold text-stone-950 transition-colors hover:text-primary-700">+91-88475-68693</a>
+                  <a href={contactEmailUrl} class="text-lg font-semibold text-white transition-colors hover:text-teal-200">support@voluchat.com</a>
                 </div>
               </div>
             </div>
@@ -54,46 +56,45 @@ const contactWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I
           <div class="solid-card p-6 sm:p-8 lg:p-10">
             <form id="contact-form" class="space-y-6">
               <div>
-                <h2 class="text-2xl font-heading font-semibold text-stone-950">Sales team details</h2>
-                <p class="mt-2 text-sm font-semibold text-stone-500">Share a few details so we can understand your store and support needs.</p>
+                <h2 class="text-2xl font-heading font-semibold text-white">Store details</h2>
+                <p class="mt-2 text-base font-medium text-slate-300">Give us enough context to prepare a useful pricing review.</p>
               </div>
 
               <div>
-                <label for="name" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-400">Your name</label>
-                <input type="text" id="name" name="name" required placeholder="Your name" class="w-full rounded-2xl border border-stone-200/80 bg-white/72 px-5 py-4 font-medium text-stone-900 transition-all focus:border-primary-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary-500/10" />
+                <label for="name" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Your name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name" class="w-full rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-5 py-4 font-medium text-white placeholder:text-slate-500 transition-all focus:border-teal-300/50 focus:bg-[#0d1829] focus:outline-none focus:ring-4 focus:ring-teal-300/10" />
               </div>
 
               <div>
-                <label for="whatsapp" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-400">WhatsApp number</label>
-                <input type="tel" id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="+91 WhatsApp number" class="w-full rounded-2xl border border-stone-200/80 bg-white/72 px-5 py-4 font-medium text-stone-900 transition-all focus:border-primary-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary-500/10" />
+                <label for="email" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Work email</label>
+                <input type="email" id="email" name="email" required placeholder="you@store.com" class="w-full rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-5 py-4 font-medium text-white placeholder:text-slate-500 transition-all focus:border-teal-300/50 focus:bg-[#0d1829] focus:outline-none focus:ring-4 focus:ring-teal-300/10" />
               </div>
 
               <div>
-                <label for="instagram" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-400">Instagram or Facebook Page</label>
-                <input type="text" id="instagram" name="instagram" required placeholder="@yourstore or page name" class="w-full rounded-2xl border border-stone-200/80 bg-white/72 px-5 py-4 font-medium text-stone-900 transition-all focus:border-primary-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary-500/10" />
+                <label for="shopify_url" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Shopify store URL</label>
+                <input type="text" id="shopify_url" name="shopify_url" required placeholder="yourstore.myshopify.com" class="w-full rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-5 py-4 font-medium text-white placeholder:text-slate-500 transition-all focus:border-teal-300/50 focus:bg-[#0d1829] focus:outline-none focus:ring-4 focus:ring-teal-300/10" />
+              </div>
+
+              <div>
+                <label for="priority" class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">First workflow to improve</label>
+                <select id="priority" name="priority" class="w-full rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-5 py-4 font-medium text-white transition-all focus:border-teal-300/50 focus:bg-[#0d1829] focus:outline-none focus:ring-4 focus:ring-teal-300/10">
+                  <option value="cart_recovery">Cart recovery</option>
+                  <option value="product_questions">Product questions</option>
+                  <option value="upsells">Upsells and bundles</option>
+                  <option value="inventory_clearance">Inventory clearance</option>
+                  <option value="revenue_leaks">Revenue leak detection</option>
+                </select>
               </div>
 
               <button type="submit" id="submit-btn" class="btn-primary w-full gap-3 px-6 py-5 text-base disabled:cursor-not-allowed disabled:opacity-55">
-                <span id="btn-text">Send request</span>
+                <span id="btn-text">Request Pricing Review</span>
                 <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </button>
-
-              <div class="text-center">
-                <a href={contactWhatsappUrl} target="_blank" rel="noopener" class="text-sm font-semibold text-primary-700 transition-colors hover:text-primary-900">
-                  Prefer WhatsApp? Message us now
-                </a>
-              </div>
 
               <div id="form-message" class="hidden rounded-2xl p-4 text-center text-sm font-semibold"></div>
             </form>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="page-shell pb-28">
-      <div class="solid-card p-3">
-        <img src="/contact_support.webp" alt="VoluChat ecommerce setup support" class="h-[420px] w-full rounded-xl object-cover sm:h-[520px]" />
       </div>
     </section>
 
@@ -137,14 +138,14 @@ const contactWhatsappUrl = "https://wa.me/918847568693?text=Hi%20VoluChat%2C%20I
             throw new Error('Failed to send request');
           }
 
-          formMessage.innerText = 'Thank you. We will reach out shortly.';
-          formMessage.className = 'rounded-2xl bg-primary-50 p-4 text-center text-sm font-semibold text-primary-800 mt-6';
+          formMessage.innerText = 'Thank you. We will review the store details and reach out shortly.';
+          formMessage.className = 'rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4 text-center text-base font-medium text-teal-100 mt-6';
           formMessage.classList.remove('hidden');
           form.reset();
           btnText.innerText = 'Request sent';
         } catch (error) {
           formMessage.innerText = 'Something went wrong. Please try again or email us directly.';
-          formMessage.className = 'rounded-2xl bg-rose-50 p-4 text-center text-sm font-semibold text-rose-700 mt-6';
+          formMessage.className = 'rounded-2xl border border-rose-300/20 bg-rose-400/10 p-4 text-center text-base font-medium text-rose-100 mt-6';
           formMessage.classList.remove('hidden');
           submitBtn.disabled = false;
           btnText.innerText = originalText;

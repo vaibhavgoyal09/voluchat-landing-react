@@ -2,22 +2,21 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
-const registerUrl = "https://dashboard.voluchat.com/register";
-
 const readSource = (path) => readFile(new URL(`../${path}`, import.meta.url), "utf8");
 
-test("primary acquisition CTAs send users to dashboard registration", async () => {
-  const sources = [
-    await readSource("src/components/Header.astro"),
-    await readSource("src/components/Hero.astro"),
-    await readSource("src/components/CTA.astro"),
-    await readSource("src/components/Pricing.astro"),
-    await readSource("src/pages/pricing.astro"),
-    await readSource("src/components/Testimonials.astro"),
-  ].join("\n");
+test("primary acquisition CTAs send users to book a demo or dashboard with correct hrefs", async () => {
+  const navbar = await readSource("src/components/landing/Navbar.astro");
+  const pricing = await readSource("src/pages/pricing.astro");
+  const about = await readSource("src/pages/about.astro");
+  const features = await readSource("src/pages/features.astro");
 
-  assert.match(sources, new RegExp(`href="${registerUrl}"`, "g"));
-  assert.match(sources, /Start Free Setup/);
-  assert.match(sources, /Watch Live Demo/);
-  assert.doesNotMatch(sources, /Book demo|Book Demo|demo call/i);
+  const sources = [navbar, pricing, about, features].join("\n");
+
+  // Verify that the text exists
+  assert.match(sources, /Book a Demo|Start Free Setup/);
+  
+  // Verify that the exact destination exists and is used in CTAs.
+  assert.match(sources, /href="\/contact"/);
+  assert.match(sources, /href:\s*"\/pricing"/);
+  assert.match(sources, /href:\s*"\/features"/);
 });

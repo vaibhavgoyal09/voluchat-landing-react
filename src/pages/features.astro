@@ -1,156 +1,276 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/landing/Navbar.astro';
+import Footer from '../components/landing/Footer.astro';
+import FAQ from '../components/FAQ.astro';
 
-const seoTitle = "Features for ecommerce sales teams | VoluChat";
-const seoDescription = "See how VoluChat gives ecommerce sales teams a shared AI reply layer for repeated product questions across Instagram, Facebook Pages, and WhatsApp handoffs.";
+const seoTitle = "AI Commerce Agents Explained | VoluChat Features";
+const seoDescription = "Learn how VoluChat commerce agents use Shopify data to detect revenue opportunities, recommend actions, ask for approval, and execute workflows with guardrails.";
 
-const featureDetails = [
+const operatingLoop = [
   {
-    eyebrow: "01 / Channel automation",
-    title: "Answer repeated questions where buyers ask",
-    description: "VoluChat helps sales teams reply across Instagram and Facebook Pages, with WhatsApp-native automation coming after Meta app review. Your team stops retyping the same answers all day.",
-    points: [
-      "Responds to common product questions before buyers lose interest.",
-      "Supports Instagram and Facebook Page conversations.",
-      "Keeps WhatsApp handoff context ready for the next channel expansion."
-    ],
-    visualTitle: "Buyer asks",
-    visualBody: "Is this sneaker available in UK 9?",
-    visualAction: "Reply prepared"
+    step: "Detect",
+    title: "Find the next revenue moment",
+    description: "Agents watch product views, carts, stock movement, checkout drop-offs, repeat questions, and customer intent signals."
   },
   {
-    eyebrow: "02 / Catalog context",
-    title: "Use product data before a rep steps in",
-    description: "Questions about price, stock, size, delivery, COD, variants, and offers can be checked against the details you already manage for your store.",
-    points: [
-      "Handles price, size, stock, delivery, and offer-code questions.",
-      "Matches buyer messages to product and variant context.",
-      "Reduces back-and-forth before a human joins the chat."
-    ],
-    visualTitle: "Catalog check",
-    visualBody: "Size, stock, price, delivery, offer rules",
-    visualAction: "Context saved"
+    step: "Decide",
+    title: "Choose the right action",
+    description: "Each recommendation is grounded in your catalog, policies, margins, and channel rules before anything reaches a customer."
   },
   {
-    eyebrow: "03 / Team handoff",
-    title: "Send cleaner conversations to your team",
-    description: "When a shopper needs help or is ready to buy, your sales team receives the product, size, delivery, and buyer intent context instead of opening every chat cold.",
-    points: [
-      "Summarizes buyer intent and product details.",
-      "Escalates unusual or high-intent messages.",
-      "Keeps final order confirmation and payment with your sales team."
-    ],
-    visualTitle: "Sales handoff",
-    visualBody: "Buyer intent, product, size, PIN code",
-    visualAction: "Ready for team"
+    step: "Approve",
+    title: "Keep sensitive actions gated",
+    description: "Discounts, escalations, campaigns, and recovery plays can require human review before an agent moves."
   },
   {
-    eyebrow: "04 / Guided setup",
-    title: "Configured around your store workflow",
-    description: "During setup, we help map your products, repeated questions, reply tone, and handoff rules so automation fits how your team already sells.",
-    points: [
-      "Map your most repeated questions before launch.",
-      "Tune replies for English, Hindi, or Hinglish conversations.",
-      "Review the live workflow before launch."
-    ],
-    visualTitle: "Trial setup",
-    visualBody: "Questions mapped, catalog connected, handoff tuned",
-    visualAction: "Launch with support"
+    step: "Execute",
+    title: "Run the workflow and attribute impact",
+    description: "VoluChat sends the message, updates the workflow, records the decision, and shows what revenue was influenced."
   }
+];
+
+const agentCards = [
+  {
+    name: "Product Assistant",
+    href: "/agents/product-assistant",
+    signal: "Repeated product questions",
+    action: "Answers sizing, stock, variant, delivery, and return questions from live Shopify data.",
+    bestFor: "Reducing support load before checkout"
+  },
+  {
+    name: "Cart Recovery",
+    href: "/agents/cart-recovery",
+    signal: "High-intent cart abandonment",
+    action: "Follows up with context, handles objections, and uses approved recovery offers when needed.",
+    bestFor: "Recovering checkout drop-offs"
+  },
+  {
+    name: "Upsell & Bundles",
+    href: "/agents/upsell",
+    signal: "Buyer intent or cart composition",
+    action: "Suggests relevant add-ons and bundles without turning the conversation into a hard sell.",
+    bestFor: "Increasing order value"
+  },
+  {
+    name: "Inventory Clearance",
+    href: "/agents/inventory-clearance",
+    signal: "Slow-moving stock",
+    action: "Identifies products that need movement and proposes campaigns with margin-aware guardrails.",
+    bestFor: "Freeing cash tied in inventory"
+  },
+  {
+    name: "Customer Follow-up",
+    href: "/agents/customer-follow-up",
+    signal: "Post-purchase or repeat-buyer moments",
+    action: "Reaches customers with useful next steps, replenishment prompts, and retention-focused messages.",
+    bestFor: "Turning one-time buyers into repeat buyers"
+  },
+  {
+    name: "Revenue Leak Detection",
+    href: "/agents/revenue-leak-detection",
+    signal: "Operational gaps across the store",
+    action: "Surfaces missed opportunities across carts, inventory, merchandising, and unanswered demand.",
+    bestFor: "Knowing what to fix first"
+  }
+];
+
+const guardrails = [
+  "Catalog-grounded answers, not generic chatbot guesses.",
+  "Margin rules for discounts, bundles, and clearance actions.",
+  "Approval queues for campaigns, escalations, and sensitive offers.",
+  "Audit trail showing the signal, recommendation, approval, and outcome.",
+  "Human handoff when the customer asks for something outside policy."
 ];
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="animate-page-entry opacity-0">
-    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-24">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_82%_16%,rgba(203,217,234,0.2),transparent_30%)]"></div>
+  <main class="animate-page-entry opacity-0 pt-20">
+    <section class="relative isolate overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_48%,#07111f_100%)]"></div>
+      <div class="absolute inset-x-0 top-0 -z-10 mx-auto h-[34rem] max-w-5xl bg-[radial-gradient(circle_at_50%_0%,rgba(45,212,191,0.18),transparent_58%)]"></div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
-        <div class="max-w-4xl">
-          <div class="chip">Product reply automation</div>
-          <h1 class="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] text-stone-950 sm:text-6xl lg:text-7xl">
-            Features for ecommerce sales teams.
-          </h1>
-          <p class="section-copy mt-6 max-w-2xl">
-            Give every rep the same AI reply layer for repeated buying questions across Instagram, Facebook Pages, and WhatsApp handoffs.
-          </p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="https://dashboard.voluchat.com/register" class="btn-primary">Start Free Setup</a>
-            <a href="/compare" class="btn-secondary">Compare tools</a>
+        <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div>
+            <div class="chip">Commerce agents, explained</div>
+            <h1 class="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+              AI agents that run commerce workflows, not just chats.
+            </h1>
+            <p class="section-copy mt-6 max-w-2xl">
+              VoluChat connects to your Shopify store, finds revenue opportunities, recommends the next best action, and executes approved workflows through conversational agents.
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="/contact" class="btn-primary">Request a pricing review</a>
+              <a href="/compare" class="btn-secondary">Compare tools</a>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -inset-4 rounded-[2rem] bg-teal-300/10 blur-3xl"></div>
+            <div class="relative rounded-[1.75rem] border border-white/10 bg-[#0d192b]/95 p-3 shadow-[0_32px_120px_-56px_rgba(45,212,191,0.55)]">
+              <div class="rounded-[1.35rem] border border-white/10 bg-[#07111f] p-5 sm:p-6">
+                <div class="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+                  <div>
+                    <p class="mini-label text-teal-200">Live agent room</p>
+                    <h2 class="mt-2 text-xl font-semibold text-white">Revenue opportunity detected</h2>
+                  </div>
+                  <span class="rounded-full border border-teal-300/25 bg-teal-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100">Active</span>
+                </div>
+
+                <div class="mt-5 space-y-3">
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                    <div class="flex items-center justify-between gap-4">
+                      <span class="text-sm font-bold text-slate-200">Signal</span>
+                      <span class="text-xs font-semibold text-slate-400">Checkout</span>
+                    </div>
+                    <p class="mt-3 text-base font-semibold leading-snug text-white">A repeat buyer abandoned a high-margin cart after asking about delivery time.</p>
+                  </div>
+
+                  <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                      <span class="text-sm font-bold text-slate-200">Agent decision</span>
+                      <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300">Answer delivery concern and offer the pre-approved express shipping incentive.</p>
+                    </div>
+                    <div class="rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4">
+                      <span class="text-sm font-bold text-teal-100">Control rule</span>
+                      <p class="mt-3 text-sm font-medium leading-relaxed text-slate-200">Offer is allowed because cart margin stays above your floor.</p>
+                    </div>
+                  </div>
+
+                  <div class="rounded-2xl border border-white/10 bg-[#101b2e] p-4">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <span class="text-sm font-bold text-slate-200">Recommended action</span>
+                        <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">Send recovery message and log attribution.</p>
+                      </div>
+                      <span class="inline-flex w-fit items-center rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950">Approve</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="relative pb-24">
+    <section class="relative border-y border-white/10 bg-[#081321] py-20 sm:py-24">
       <div class="page-shell">
-        <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
-          <aside class="solid-card h-fit lg:sticky lg:top-32 lg:p-8">
-            <p class="section-eyebrow">How it works</p>
-            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-stone-950">
-              From repeated question to sales-ready context.
+        <div class="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div>
+            <p class="section-eyebrow">What makes it an agent</p>
+            <h2 class="mt-4 max-w-xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl">
+              A workflow layer that can reason, ask, and act.
             </h2>
-            <p class="mt-5 text-sm font-semibold leading-relaxed text-stone-600">
-              VoluChat sits in the repetitive first layer: product questions, catalog checks, and handoff preparation. Your team keeps control of final sales conversations.
+            <p class="mt-5 max-w-xl text-lg font-medium leading-relaxed text-slate-300">
+              A chatbot waits for a customer to type. A commerce agent monitors your store, understands the operational context, and moves approved work forward.
             </p>
-            <div class="mt-6 space-y-3">
-              {["Buyer asks", "VoluChat checks context", "Sales team gets a cleaner handoff"].map((step, index) => (
-                <div class="flex items-center gap-3 rounded-xl border border-stone-200 bg-white p-3">
-                  <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-primary-800 font-mono text-xs font-semibold text-white">0{index + 1}</span>
-                  <span class="text-sm font-semibold text-stone-800">{step}</span>
-                </div>
-              ))}
-            </div>
-          </aside>
+          </div>
 
-          <div class="space-y-5">
-            {featureDetails.map((feature) => (
-              <article class="solid-card transition-all duration-500 hover:-translate-y-1 hover:border-primary-500/20 hover:shadow-2xl md:p-8">
-                <div class="grid gap-6 md:grid-cols-[1.08fr_0.92fr] md:items-center">
-                  <div>
-                    <p class="section-eyebrow">{feature.eyebrow}</p>
-                    <h3 class="mt-4 text-2xl font-heading font-semibold leading-[1.08] text-stone-950 sm:text-3xl">{feature.title}</h3>
-                    <p class="mt-4 text-sm font-semibold leading-relaxed text-stone-600">{feature.description}</p>
-                    <ul class="mt-5 space-y-3">
-                      {feature.points.map((point) => (
-                        <li class="flex gap-3 text-sm font-semibold leading-relaxed text-stone-700">
-                          <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary-50 text-primary-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                          </span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div class="rounded-xl border border-stone-200 bg-stone-50 p-4">
-                    <div class="rounded-lg border border-primary-100/80 bg-primary-50/75 p-4">
-                      <div class="flex items-center justify-between">
-                        <span class="mini-label">{feature.visualTitle}</span>
-                        <span class="h-2.5 w-2.5 rounded-full bg-primary-500 shadow-[0_0_12px_rgba(83,111,159,0.38)]"></span>
-                      </div>
-                      <p class="mt-5 text-lg font-semibold leading-snug text-stone-950">{feature.visualBody}</p>
-                      <div class="mt-5 flex items-center gap-3 rounded-full bg-primary-800 px-4 py-3 text-white">
-                        <span class="grid h-8 w-8 place-items-center rounded-full bg-white/12">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        </span>
-                        <span class="text-sm font-semibold">{feature.visualAction}</span>
-                      </div>
-                    </div>
-                  </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {operatingLoop.map((item, index) => (
+              <article class:list={[
+                "rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)]",
+                index === 1 || index === 2 ? "sm:translate-y-8" : ""
+              ]}>
+                <div class="flex items-center justify-between gap-4">
+                  <span class="rounded-full border border-teal-300/25 bg-teal-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100">{item.step}</span>
+                  <span class="font-mono text-sm font-semibold text-slate-500">0{index + 1}</span>
                 </div>
+                <h3 class="mt-6 text-xl font-semibold leading-tight text-white">{item.title}</h3>
+                <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">{item.description}</p>
               </article>
             ))}
           </div>
         </div>
       </div>
     </section>
+
+    <section class="relative overflow-hidden py-20 sm:py-28">
+      <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_52%,#07111f_100%)]"></div>
+      <div class="page-shell">
+        <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div>
+            <p class="section-eyebrow">Agent lineup</p>
+            <h2 class="mt-4 max-w-2xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl">
+              Specialized agents for the work your team keeps repeating.
+            </h2>
+          </div>
+          <p class="max-w-xl text-lg font-medium leading-relaxed text-slate-300">
+            Each agent can run independently, but the real leverage comes when they share the same Shopify context, approval rules, and revenue attribution.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {agentCards.map((agent) => (
+            <a href={agent.href} class="group rounded-[1.25rem] border border-white/10 bg-[#101b2e] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)] transition-all duration-500 hover:-translate-y-1 hover:border-teal-300/30 hover:bg-[#142238]">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="mini-label text-teal-200">{agent.signal}</p>
+                  <h3 class="mt-4 text-2xl font-semibold leading-tight text-white">{agent.name}</h3>
+                </div>
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.05] text-slate-200 transition group-hover:border-teal-300/35 group-hover:text-teal-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </span>
+              </div>
+              <p class="mt-5 min-h-[5.5rem] text-base font-medium leading-relaxed text-slate-300">{agent.action}</p>
+              <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Best for</p>
+                <p class="mt-2 text-base font-semibold text-slate-100">{agent.bestFor}</p>
+              </div>
+              <p class="mt-5 text-sm font-bold text-teal-200">Open agent page</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="relative pb-24">
+      <div class="page-shell">
+        <div class="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0d192b] shadow-[0_32px_100px_-70px_rgba(45,212,191,0.5)]">
+          <div class="grid lg:grid-cols-[0.95fr_1.05fr]">
+            <div class="border-b border-white/10 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+              <p class="section-eyebrow">Control model</p>
+              <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl">
+                Automation with approval where it matters.
+              </h2>
+              <p class="mt-5 text-lg font-medium leading-relaxed text-slate-300">
+                VoluChat is built for operators who want leverage without losing judgment. You decide which agents can act automatically, which actions need review, and when a human should take over.
+              </p>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href="/contact" class="btn-primary">Map your agent workflow</a>
+                <a href="/integrations/shopify" class="btn-secondary">See Shopify integration</a>
+              </div>
+            </div>
+
+            <div class="bg-[#07111f] p-6 sm:p-10">
+              <div class="rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-5">
+                <div class="flex items-center justify-between gap-4">
+                  <p class="mini-label text-teal-200">Guardrail stack</p>
+                  <span class="rounded-full bg-teal-300/10 px-3 py-1 text-xs font-bold text-teal-100">Always on</span>
+                </div>
+                <div class="mt-6 space-y-3">
+                  {guardrails.map((item) => (
+                    <div class="flex gap-3 rounded-2xl border border-white/10 bg-[#101b2e] p-4">
+                      <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                      <p class="text-base font-semibold leading-relaxed text-slate-200">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <FAQ />
   <Footer />
 </Layout>
