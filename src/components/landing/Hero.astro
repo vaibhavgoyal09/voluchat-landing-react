@@ -7,14 +7,14 @@
   
   <!-- Neural Automation/Robotics Background Diagram -->
   <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none select-none opacity-30">
-    <svg class="absolute left-1/2 top-1/2 h-[900px] w-[1400px] -translate-x-1/2 -translate-y-1/2 fill-none" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+    <svg class="absolute left-1/2 top-20 h-[600px] w-[950px] -translate-x-1/2 fill-none lg:top-1/2 lg:h-[900px] lg:w-[1400px] lg:-translate-y-1/2" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id="neural-glow-1" cx="30%" cy="40%" r="35%">
-          <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.2" />
+          <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.25" />
           <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
         </radialGradient>
         <radialGradient id="neural-glow-2" cx="70%" cy="50%" r="40%">
-          <stop offset="0%" stop-color="#0d9488" stop-opacity="0.15" />
+          <stop offset="0%" stop-color="#0d9488" stop-opacity="0.2" />
           <stop offset="100%" stop-color="#0d9488" stop-opacity="0" />
         </radialGradient>
       </defs>
@@ -22,6 +22,26 @@
       <!-- Ambient Glow Orbs -->
       <rect width="1400" height="900" fill="url(#neural-glow-1)" />
       <rect width="1400" height="900" fill="url(#neural-glow-2)" />
+      
+      <!-- Concentric Diagnostic Radar sweeps around brain center -->
+      <circle cx="740" cy="230" r="160" stroke="#2dd4bf" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="12 8" />
+      <circle cx="740" cy="230" r="280" stroke="#2dd4bf" stroke-opacity="0.04" stroke-width="1" />
+      
+      <!-- Technical Crosshair Ticks (Blueprint detail) -->
+      <!-- Left side ticks -->
+      <path d="M 150 250 L 160 250 M 155 245 L 155 255" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1" />
+      <path d="M 220 680 L 230 680 M 225 675 L 225 685" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1" />
+      <!-- Right side ticks -->
+      <path d="M 1050 180 L 1060 180 M 1055 175 L 1055 185" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1" />
+      <path d="M 1220 720 L 1230 720 M 1225 715 L 1225 725" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1" />
+      
+      <!-- Secondary Neural Networks (Distant Layer) -->
+      <path d="M -50 300 Q 150 400 300 250" stroke="#2dd4bf" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+      <path d="M 1000 650 Q 1150 500 1350 600" stroke="#2dd4bf" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+      
+      <!-- Left side Scanner Reticle -->
+      <circle cx="200" cy="150" r="25" stroke="#2dd4bf" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="3 3" />
+      <path d="M 185 150 L 215 150 M 200 135 L 200 165" stroke="#2dd4bf" stroke-opacity="0.15" stroke-width="1" />
       
       <!-- Stylized Robotic Face Profile Outline -->
       <path d="M 640 160 Q 540 180 520 280 L 480 340 L 520 360 Q 500 400 520 420 L 500 450 L 540 480 Q 540 540 600 560 L 620 680" stroke="#2dd4bf" stroke-opacity="0.35" stroke-width="2" />
@@ -116,6 +136,19 @@
         <text x="730" y="370">CTX_OK</text>
         <text x="790" y="460">ROUT_A</text>
         <text x="590" y="550">SHPFY_OK</text>
+      </g>
+      
+      <!-- Floating Binary Code Column Streams (Depth Detail) -->
+      <g fill="#2dd4bf" fill-opacity="0.12" font-family="monospace" font-size="8">
+        <text x="80" y="340">01</text>
+        <text x="80" y="360">10</text>
+        <text x="80" y="380">11</text>
+        <text x="80" y="400">00</text>
+        
+        <text x="1220" y="500">10</text>
+        <text x="1220" y="520">11</text>
+        <text x="1220" y="540">01</text>
+        <text x="1220" y="560">00</text>
       </g>
     </svg>
   </div>
