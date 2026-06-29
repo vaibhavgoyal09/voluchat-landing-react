@@ -23,29 +23,34 @@ const trustCards = [
 ];
 ---
 
-<section class="section-band-quiet py-24 lg:py-32">
+<section class="section-band-quiet py-24 lg:py-32 relative overflow-hidden">
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
   <div class="page-shell">
-    <div class="grid gap-8 lg:grid-cols-[0.8fr_1fr] lg:items-end">
-      <div>
-        <div class="reveal-on-scroll chip mb-6">
-          <span class="mini-label">Safe & Controlled</span>
-        </div>
-        <h2 class="reveal-on-scroll section-title">
-          AI recommends.<br class="hidden sm:inline" />
-          <span class="text-slate-300">You stay in control.</span>
-        </h2>
+    <!-- Stacked Header (Compliant with split-header ban) -->
+    <div class="max-w-3xl reveal-on-scroll">
+      <div class="chip mb-6">
+        <span class="mini-label">Safe & Controlled</span>
       </div>
-      <p class="reveal-on-scroll section-copy max-w-2xl text-slate-300">
+      <h2 class="section-title text-white">
+        AI recommends.<br class="hidden sm:inline" />
+        <span class="text-slate-300">You stay in control.</span>
+      </h2>
+      <p class="section-copy mt-6 max-w-2xl text-slate-300">
         VoluChat does not blindly spam customers. Sensitive actions go through approval, every recommendation is logged, and outcomes are tracked back to the original opportunity.
       </p>
     </div>
 
-    <div class="mt-14 grid gap-4 md:grid-cols-4">
+    <!-- Staggered Glassmorphic Card Layout -->
+    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       {trustCards.map((card, index) => (
-        <article class={`reveal-on-scroll rounded-[1.25rem] border border-white/10 bg-[#0f1b2b] p-6 ${index === 1 ? 'md:mt-10' : index === 2 ? 'md:mt-4' : ''} reveal-delay-${(index % 4) * 100}`}>
-          <span class="font-mono text-sm font-semibold text-slate-500">{card.code}</span>
-          <h3 class="mt-8 text-lg font-bold leading-tight text-white">{card.title}</h3>
-          <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
+        <article class={`reveal-on-scroll group rounded-[1.5rem] border border-white/10 bg-[#0d192b]/60 backdrop-blur-md p-6 hover:bg-[#142438]/80 hover:border-teal-500/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 ${index === 1 ? 'md:mt-10' : index === 2 ? 'md:mt-4' : ''} reveal-delay-${(index % 4) * 100} shadow-[0_20px_50px_-38px_rgba(0,0,0,0.8)]`}>
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-semibold text-slate-500">{card.code}</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-teal-300/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+          </div>
+          <h3 class="mt-8 text-lg font-bold leading-tight text-white font-heading">{card.title}</h3>
+          <p class="mt-4 text-sm font-medium leading-relaxed text-slate-300">
             {card.description}
           </p>
         </article>
