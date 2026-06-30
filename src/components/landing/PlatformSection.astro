@@ -29,11 +29,14 @@ const layers = [
 
 <section id="platform" class="relative overflow-hidden border-y border-white/10 bg-[#0a1726] py-24 sm:py-32">
   <div class="sect-grid"></div>
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div class="sect-orb animate-aurora absolute right-1/4 top-10 h-[300px] w-[300px] bg-teal-500/10 opacity-40"></div>
+  </div>
   
   <div class="page-shell relative z-10">
-    <div class="max-w-3xl reveal-on-scroll">
+    <div class="max-w-3xl reveal-on-scroll reveal-up">
       <span class="section-eyebrow">The Agent System</span>
-      <h2 class="section-title mt-4 text-white">One place for agents to understand the store before they act.</h2>
+      <h2 class="section-title mt-4 text-white">One place for agents to understand <span class="gradient-text-anim">the store</span> before they act.</h2>
       <p class="section-copy mt-6 max-w-2xl text-slate-300">
         VoluChat connects Shopify context, catalog rules, customer signals, and approval history so every recommendation is grounded before it reaches a buyer.
       </p>
@@ -43,7 +46,7 @@ const layers = [
       <!-- Left Column: Primitives Grid (Removed double-card nesting) -->
       <div class="grid gap-4 sm:grid-cols-2">
         {layers.map((layer, index) => (
-          <article class={`reveal-on-scroll group rounded-2xl border border-white/10 bg-[#0d192b]/60 backdrop-blur-md p-6 hover:bg-[#142438]/80 hover:border-teal-500/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 shadow-[0_20px_50px_-38px_rgba(0,0,0,0.8)] reveal-delay-${index * 75}`}>
+          <article class={`spotlight reveal-on-scroll reveal-scale group rounded-2xl border border-white/10 bg-[#0d192b]/60 backdrop-blur-md p-6 hover:bg-[#142438]/80 hover:border-teal-500/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 shadow-[0_20px_50px_-38px_rgba(0,0,0,0.8)] reveal-delay-${index * 75}`}>
             <div class="flex items-center justify-between gap-4">
               <span class="font-mono text-xs font-semibold text-slate-500">{layer.code}</span>
               <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-teal-200 group-hover:text-teal-100 transition-colors">{layer.tag}</span>

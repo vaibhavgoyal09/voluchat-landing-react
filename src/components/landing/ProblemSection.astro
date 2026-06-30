@@ -38,13 +38,13 @@ const painPoints = [
   
   <div class="page-shell">
     <!-- Stacked Header (Compliant with split-header ban) -->
-    <div class="max-w-3xl reveal-on-scroll">
+    <div class="max-w-3xl reveal-on-scroll reveal-up">
       <div class="chip mb-6">
         <span class="mini-label">The Growth Trap</span>
       </div>
       <h2 class="section-title text-white">
         Your store grows.<br class="hidden sm:inline" />
-        <span class="text-slate-300">Then the manual work grows faster.</span>
+        <span class="gradient-text-anim">Then the manual work grows faster.</span>
       </h2>
       <p class="section-copy mt-6 max-w-2xl text-slate-300">
         Every missed reply, abandoned cart, stale product, and late follow-up becomes a small leak. At scale, those leaks become a revenue system your team cannot manually hold together.
@@ -85,7 +85,7 @@ const painPoints = [
         }
 
         return (
-          <div class={`reveal-on-scroll flex flex-col justify-between rounded-3xl border border-white/10 ${cardBgClass} p-6 sm:p-8 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-slate-400/35 ${colClass} reveal-delay-${(index % 3) * 100} shadow-[0_24px_70px_-54px_rgba(0,0,0,0.85)]`}>
+          <div class={`spotlight reveal-on-scroll reveal-scale flex flex-col justify-between rounded-3xl border border-white/10 ${cardBgClass} p-6 sm:p-8 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-slate-400/35 ${colClass} reveal-delay-${(index % 3) * 100} shadow-[0_24px_70px_-54px_rgba(0,0,0,0.85)]`}>
             {index === 5 ? (
               // Custom layout for P06 (Leak Detection) with visual disconnect mockup
               <div class="grid gap-8 lg:grid-cols-[1.25fr_1fr] lg:items-center w-full">

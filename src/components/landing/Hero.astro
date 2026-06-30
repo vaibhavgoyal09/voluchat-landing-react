@@ -1,178 +1,47 @@
 ---
 ---
 
-<section id="hero" class="relative isolate overflow-hidden pt-[7.5rem] pb-24 sm:pt-[8.5rem] lg:pt-[9.5rem] lg:pb-32">
-  <div class="sect-grid opacity-45"></div>
-  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
-  
-  <!-- Neural Automation/Robotics Background Diagram -->
-  <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none select-none opacity-30">
-    <svg class="absolute left-1/2 top-20 h-[600px] w-[950px] -translate-x-1/2 fill-none lg:top-1/2 lg:h-[900px] lg:w-[1400px] lg:-translate-y-1/2" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="neural-glow-1" cx="30%" cy="40%" r="35%">
-          <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.25" />
-          <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient id="neural-glow-2" cx="70%" cy="50%" r="40%">
-          <stop offset="0%" stop-color="#0d9488" stop-opacity="0.2" />
-          <stop offset="100%" stop-color="#0d9488" stop-opacity="0" />
-        </radialGradient>
-      </defs>
-      
-      <!-- Ambient Glow Orbs -->
-      <rect width="1400" height="900" fill="url(#neural-glow-1)" />
-      <rect width="1400" height="900" fill="url(#neural-glow-2)" />
-      
-      <!-- Concentric Diagnostic Radar sweeps around brain center -->
-      <circle cx="740" cy="230" r="160" stroke="#2dd4bf" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="12 8" />
-      <circle cx="740" cy="230" r="280" stroke="#2dd4bf" stroke-opacity="0.04" stroke-width="1" />
-      
-      <!-- Technical Crosshair Ticks (Blueprint detail) -->
-      <!-- Left side ticks -->
-      <path d="M 150 250 L 160 250 M 155 245 L 155 255" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1" />
-      <path d="M 220 680 L 230 680 M 225 675 L 225 685" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1" />
-      <!-- Right side ticks -->
-      <path d="M 1050 180 L 1060 180 M 1055 175 L 1055 185" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1" />
-      <path d="M 1220 720 L 1230 720 M 1225 715 L 1225 725" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1" />
-      
-      <!-- Secondary Neural Networks (Distant Layer) -->
-      <path d="M -50 300 Q 150 400 300 250" stroke="#2dd4bf" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
-      <path d="M 1000 650 Q 1150 500 1350 600" stroke="#2dd4bf" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
-      
-      <!-- Left side Scanner Reticle -->
-      <circle cx="200" cy="150" r="25" stroke="#2dd4bf" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="3 3" />
-      <path d="M 185 150 L 215 150 M 200 135 L 200 165" stroke="#2dd4bf" stroke-opacity="0.15" stroke-width="1" />
-      
-      <!-- Stylized Robotic Face Profile Outline -->
-      <path d="M 640 160 Q 540 180 520 280 L 480 340 L 520 360 Q 500 400 520 420 L 500 450 L 540 480 Q 540 540 600 560 L 620 680" stroke="#2dd4bf" stroke-opacity="0.35" stroke-width="2" />
-            
-      <!-- Back of Head / Brain Boundary -->
-      <path d="M 640 160 Q 780 140 850 250 T 830 460 Q 760 520 600 560" stroke="#2dd4bf" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="5 5" />
-
-      <!-- Spine / Central Nervous System Circuit -->
-      <path d="M 620 680 L 620 850" stroke="#2dd4bf" stroke-opacity="0.25" stroke-width="3" />
-      <path d="M 620 720 L 580 760 L 450 760" stroke="#2dd4bf" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="3 3" />
-      <path d="M 620 770 L 660 810 L 780 810" stroke="#2dd4bf" stroke-opacity="0.15" stroke-width="1.5" />
-      
-      <!-- Artificial Brain Neural Network Connections -->
-      <g stroke="#2dd4bf" stroke-opacity="0.3" stroke-width="1">
-        <!-- Frontal Lobe Connections -->
-        <line x1="620" y1="240" x2="680" y2="210" />
-        <line x1="620" y1="240" x2="650" y2="290" />
-        <line x1="680" y1="210" x2="740" y2="230" />
-        <line x1="650" y1="290" x2="740" y2="230" />
-        
-        <!-- Parietal & Motor Cortex Connections -->
-        <line x1="740" y1="230" x2="780" y2="200" />
-        <line x1="740" y1="230" x2="770" y2="290" />
-        <line x1="780" y1="200" x2="840" y2="240" />
-        
-        <!-- Occipital Lobe Connections -->
-        <line x1="840" y1="240" x2="860" y2="330" />
-        <line x1="840" y1="240" x2="800" y2="340" />
-        <line x1="860" y1="330" x2="820" y2="420" />
-        
-        <!-- Temporal & Sensory Connections -->
-        <line x1="650" y1="290" x2="710" y2="340" />
-        <line x1="770" y1="290" x2="710" y2="340" />
-        <line x1="770" y1="290" x2="800" y2="340" />
-        <line x1="710" y1="340" x2="670" y2="400" />
-        <line x1="710" y1="340" x2="750" y2="410" />
-        <line x1="800" y1="340" x2="750" y2="410" />
-        <line x1="800" y1="340" x2="820" y2="420" />
-        
-        <!-- Cerebellum & Brain Stem Connections -->
-        <line x1="750" y1="410" x2="780" y2="480" />
-        <line x1="820" y1="420" x2="780" y2="480" />
-        <line x1="670" y1="400" x2="750" y2="410" />
-        <line x1="780" y1="480" x2="620" y2="520" />
-        <line x1="620" y1="520" x2="620" y2="680" stroke-width="2" stroke-opacity="0.4" />
-      </g>
-
-      <!-- Robotic Face Inner Circuits -->
-      <g stroke="#2dd4bf" stroke-opacity="0.25" stroke-width="1.5">
-        <!-- Robotic Eye Slot -->
-        <path d="M 540 310 L 590 310 L 610 330 L 560 330 Z" fill="#2dd4bf" fill-opacity="0.1" />
-        <circle cx="585" cy="320" r="3" fill="#2dd4bf" />
-        <circle cx="585" cy="320" r="8" stroke="#2dd4bf" stroke-opacity="0.5" stroke-width="1" class="animate-pulse" />
-        
-        <!-- Cheek circuit board pattern -->
-        <path d="M 570 380 L 610 380 L 630 410" />
-        <path d="M 590 440 L 630 440" />
-      </g>
-
-      <!-- Brain Nodes / Synapses -->
-      <g fill="#0d192b" stroke="#2dd4bf" stroke-width="2">
-        <circle cx="620" cy="240" r="4.5" />
-        <circle cx="680" cy="210" r="4.5" />
-        <circle cx="650" cy="290" r="4.5" />
-        <circle cx="740" cy="230" r="5" stroke="#2dd4bf" stroke-width="2.5" />
-        <circle cx="740" cy="230" r="12" stroke="#2dd4bf" stroke-opacity="0.4" stroke-width="1" class="animate-pulse" />
-        
-        <circle cx="780" cy="200" r="4.5" />
-        <circle cx="770" cy="290" r="4.5" />
-        <circle cx="840" cy="240" r="5" />
-        <circle cx="860" cy="330" r="5" />
-        <circle cx="800" cy="340" r="5" />
-        <circle cx="710" cy="340" r="4.5" />
-        
-        <circle cx="670" cy="400" r="5.5" stroke="#2dd4bf" stroke-width="2.5" />
-        <circle cx="670" cy="400" r="14" stroke="#2dd4bf" stroke-opacity="0.4" stroke-width="1" class="animate-pulse" style="animation-duration: 3s" />
-        
-        <circle cx="750" cy="410" r="4.5" />
-        <circle cx="820" cy="420" r="5" />
-        <circle cx="780" cy="480" r="5.5" stroke="#2dd4bf" stroke-width="2.5" />
-        <circle cx="780" cy="480" r="16" stroke="#2dd4bf" stroke-opacity="0.4" stroke-width="1" class="animate-pulse" style="animation-duration: 4.5s" />
-        
-        <circle cx="620" cy="520" r="5" />
-      </g>
-
-      <!-- Data Synapses Text Indicators -->
-      <g fill="#2dd4bf" fill-opacity="0.4" font-family="monospace" font-size="9" font-weight="bold">
-        <text x="690" y="190">SYS_ON</text>
-        <text x="800" y="180">0101</text>
-        <text x="870" y="280">1</text>
-        <text x="850" y="380">0</text>
-        <text x="730" y="370">CTX_OK</text>
-        <text x="790" y="460">ROUT_A</text>
-        <text x="590" y="550">SHPFY_OK</text>
-      </g>
-      
-      <!-- Floating Binary Code Column Streams (Depth Detail) -->
-      <g fill="#2dd4bf" fill-opacity="0.12" font-family="monospace" font-size="8">
-        <text x="80" y="340">01</text>
-        <text x="80" y="360">10</text>
-        <text x="80" y="380">11</text>
-        <text x="80" y="400">00</text>
-        
-        <text x="1220" y="500">10</text>
-        <text x="1220" y="520">11</text>
-        <text x="1220" y="540">01</text>
-        <text x="1220" y="560">00</text>
-      </g>
-    </svg>
+<section id="hero" class="hero-section relative isolate overflow-hidden pt-[7.5rem] pb-24 sm:pt-[8.5rem] lg:pt-[9.5rem] lg:pb-32">
+  <!-- Modern layered background (pure CSS, zero JS) -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-mesh"></div>
+    <div class="hero-bg-orb hero-bg-orb--teal"></div>
+    <div class="hero-bg-orb hero-bg-orb--emerald"></div>
+    <div class="hero-bg-orb hero-bg-orb--violet"></div>
+    <div class="hero-bg-scan"></div>
+    <div class="hero-bg-vignette"></div>
   </div>
-  
+
+  <!-- Localized Dynamic Core Shield Label -->
+  <div class="absolute bottom-6 right-8 sm:right-12 pointer-events-none select-none hidden lg:flex flex-col gap-1 items-end opacity-50 z-10">
+    <div class="flex items-center gap-1.5 text-[9px] font-mono tracking-widest uppercase text-teal-400 font-bold">
+      <span class="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse"></span>
+      Active Guardrail Core
+    </div>
+    <span class="text-[8px] font-mono text-slate-400">Scanning incoming shopper queries</span>
+  </div>
+
   <div class="page-shell relative z-10">
     <div class="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-      
+
       <!-- Copy Block -->
       <div class="text-center lg:text-left">
-        <div class="reveal-on-scroll inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-4 py-1.5 text-xs font-bold text-slate-200">
-          <span class="h-1.5 w-1.5 rounded-full bg-teal-300 animate-pulse"></span>
+        <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-4 py-1.5 text-xs font-bold text-slate-200 backdrop-blur-md">
+          <span class="h-1.5 w-1.5 rounded-full bg-teal-300 animate-pulse-ring"></span>
           Margin-safe AI agents for Shopify
         </div>
 
-        <h1 class="reveal-on-scroll reveal-delay-100 mt-6 text-[2.85rem] font-bold leading-[1.02] tracking-tight sm:text-[3.4rem] lg:text-[4rem] xl:text-[4.65rem] bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-400 font-heading">
-          Recover carts, answer buyers, and follow up faster without hiring another operator.
+        <h1 class="hero-title mt-6 text-[2.85rem] font-bold leading-[1.02] tracking-tight sm:text-[3.4rem] lg:text-[4rem] xl:text-[4.65rem] font-heading">
+          <span class="bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-400">Recover carts, answer buyers, and follow up faster without hiring another </span><span class="gradient-text-anim">operator.</span>
         </h1>
 
-        <p class="reveal-on-scroll reveal-delay-200 mt-6 max-w-xl text-base font-medium leading-relaxed text-slate-300 sm:text-lg lg:max-w-2xl">
+        <p class="hero-text mt-6 max-w-xl text-base font-medium leading-relaxed text-slate-300 sm:text-lg lg:max-w-2xl">
           VoluChat reviews your Shopify store, finds the revenue leaks worth fixing first, and deploys AI agents that act only inside your rules.
         </p>
 
-        <div class="reveal-on-scroll reveal-delay-200 mt-8 flex flex-col gap-3.5 sm:flex-row sm:justify-center lg:justify-start">
-          <a href="#demo" class="btn-primary">
+        <div class="hero-ctas mt-8 flex flex-col gap-3.5 sm:flex-row sm:justify-center lg:justify-start">
+          <a href="#demo" class="btn-primary btn-sheen hero-magnetic">
             Request an Agent Review
           </a>
           <a href="#demo-flow" class="btn-secondary">
@@ -182,11 +51,11 @@
       </div>
 
       <!-- Hero Visual -->
-      <div class="reveal-on-scroll reveal-delay-100 lg:hero-stage relative">
+      <div class="hero-mockup lg:hero-stage relative animate-float-slow">
         <!-- Ambient background glow behind the mockup window -->
         <div class="absolute -inset-4 rounded-[2rem] bg-teal-500/10 blur-3xl opacity-50"></div>
-        
-        <div class="relative rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-2.5 shadow-[0_45px_120px_-60px_rgba(0,0,0,0.95)] backdrop-blur-xl">
+
+        <div class="relative rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-2.5 shadow-[0_45px_120px_-60px_rgba(0,0,0,0.95)] backdrop-blur-xl border-glow-anim">
           <div class="relative rounded-[1.25rem] border border-white/10 bg-[#0d192b] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
             <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
               <div class="flex items-center gap-2.5">
@@ -197,9 +66,9 @@
             </div>
 
             <div class="space-y-4">
-              
+
               <!-- Segment 1: Repeated question (Product Assistant) -->
-              <div class="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.015] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:bg-white/[0.035]">
+              <div class="trace-segment spotlight tilt flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.015] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:bg-white/[0.035]" data-tilt-strength="4">
                 <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-white/10 bg-[#101b2b] font-mono text-xs font-bold text-slate-400">01</div>
                 <div class="space-y-3 w-full">
                   <div>
@@ -214,7 +83,7 @@
               </div>
 
               <!-- Segment 2: Abandoned Cart (Cart Recovery) -->
-              <div class="flex items-start gap-4 rounded-xl border border-amber-500/20 bg-gradient-to-br from-[#0d192b] to-[#452a0a]/10 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:to-[#452a0a]/20">
+              <div class="trace-segment spotlight tilt flex items-start gap-4 rounded-xl border border-amber-500/20 bg-gradient-to-br from-[#0d192b] to-[#452a0a]/10 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:to-[#452a0a]/20" data-tilt-strength="4">
                 <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-amber-500/20 bg-[#101b2b] font-mono text-xs font-bold text-amber-400">02</div>
                 <div class="space-y-3 w-full">
                   <div>
@@ -231,7 +100,7 @@
               </div>
 
               <!-- Segment 3: Human Approval (Control Plane) -->
-              <div class="flex items-center justify-between rounded-xl border border-teal-500/25 bg-teal-500/5 p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:bg-teal-500/10">
+              <div class="trace-segment spotlight tilt flex items-center justify-between rounded-xl border border-teal-500/25 bg-teal-500/5 p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:bg-teal-500/10" data-tilt-strength="4">
                 <div class="flex items-center gap-3">
                   <span class="flex h-7 w-7 items-center justify-center rounded-full border border-teal-500/25 bg-teal-500/10 font-mono text-[10px] font-bold text-teal-300">05</span>
                   <div>
@@ -245,12 +114,12 @@
               </div>
 
               <!-- Segment 4: Success Attribution (Revenue Recovery) -->
-              <div class="grid grid-cols-2 gap-3 font-mono">
-                <div class="rounded-xl border border-white/10 bg-white/[0.015] p-3 text-center transition-all hover:bg-white/[0.03]">
+              <div class="trace-segment grid grid-cols-2 gap-3 font-mono">
+                <div class="spotlight tilt rounded-xl border border-white/10 bg-white/[0.015] p-3 text-center transition-all hover:bg-white/[0.03]" data-tilt-strength="3">
                   <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">06. Action Sync</div>
                   <div class="text-xs font-bold text-white mt-1">Dispatched WhatsApp</div>
                 </div>
-                <div class="relative overflow-hidden rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3 text-center transition-all hover:bg-emerald-500/15">
+                <div class="relative overflow-hidden spotlight tilt rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3 text-center transition-all hover:bg-emerald-500/15" data-tilt-strength="3">
                   <div class="text-[9px] font-bold text-emerald-400 uppercase tracking-wider">07. Attribution Log</div>
                   <div class="text-xs font-extrabold text-emerald-300 mt-1">+Rs. 8,640 Recovered</div>
                 </div>
@@ -263,3 +132,91 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Lightweight, dependency-free hero interactions.
+  // Content is visible by default (no JS-gated LCP). These are progressive
+  // enhancements only — magnetic CTA + staggered entrance via CSS classes.
+  (() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+
+    const init = () => {
+      // 1. Staggered entrance (CSS-driven; JS only adds the trigger class).
+      const revealTargets = [
+        '.hero-eyebrow', '.hero-title', '.hero-text', '.hero-ctas', '.hero-mockup',
+      ];
+      const segments = document.querySelectorAll<HTMLElement>('.trace-segment');
+
+      if (prefersReduced) {
+        revealTargets.forEach(sel => {
+          document.querySelector<HTMLElement>(sel)?.classList.add('hero-in');
+        });
+        segments.forEach(s => s.classList.add('hero-in'));
+      } else {
+        revealTargets.forEach((sel, i) => {
+          const el = document.querySelector<HTMLElement>(sel);
+          if (el) {
+            el.style.setProperty('--hero-delay', `${i * 90}ms`);
+            // requestAnimationFrame ensures the initial (pre-animation) state paints first
+            requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('hero-in')));
+          }
+        });
+        segments.forEach((s, i) => {
+          s.style.setProperty('--hero-delay', `${300 + i * 120}ms`);
+          requestAnimationFrame(() => requestAnimationFrame(() => s.classList.add('hero-in')));
+        });
+      }
+
+      // 2. Magnetic CTA (pointer devices only).
+      const magneticBtn = document.querySelector<HTMLElement>('.hero-magnetic');
+      if (magneticBtn && !isCoarse && !prefersReduced) {
+        let rafId = 0;
+        let targetX = 0, targetY = 0, curX = 0, curY = 0;
+
+        magneticBtn.addEventListener('pointermove', (e) => {
+          const rect = magneticBtn.getBoundingClientRect();
+          targetX = (e.clientX - rect.left - rect.width / 2) * 0.35;
+          targetY = (e.clientY - rect.top - rect.height / 2) * 0.35;
+        });
+
+        magneticBtn.addEventListener('pointerleave', () => {
+          targetX = 0; targetY = 0;
+        });
+
+        const loop = () => {
+          curX += (targetX - curX) * 0.18;
+          curY += (targetY - curY) * 0.18;
+          magneticBtn.style.transform = `translate(${curX.toFixed(2)}px, ${curY.toFixed(2)}px)`;
+          rafId = requestAnimationFrame(loop);
+        };
+
+        // Only run the rAF loop while the pointer is over the button.
+        magneticBtn.addEventListener('pointerenter', () => {
+          if (!rafId) rafId = requestAnimationFrame(loop);
+        });
+        magneticBtn.addEventListener('pointerleave', () => {
+          // settle to 0 then stop
+          const stop = () => {
+            if (Math.abs(targetX - curX) < 0.5 && Math.abs(targetY - curY) < 0.5) {
+              cancelAnimationFrame(rafId);
+              rafId = 0;
+              magneticBtn.style.transform = '';
+              return;
+            }
+            rafId = requestAnimationFrame(stop);
+          };
+          cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(stop);
+        });
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init, { once: true });
+    } else {
+      init();
+    }
+  })();
+</script>
+

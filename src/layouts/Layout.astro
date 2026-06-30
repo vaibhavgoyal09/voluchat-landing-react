@@ -47,6 +47,18 @@ const structuredDataItems = Array.isArray(structuredData)
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		{/* No-FOUC + reduced-motion guard: only enable JS-driven reveal pre-hidden
+		    states when JS is actually available AND the user allows motion.
+		    Runs synchronously before first paint to avoid any flash. */}
+		<script is:inline>
+			(function () {
+				try {
+					if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+						document.documentElement.classList.add('js-reveal');
+					}
+				} catch (e) {}
+			})();
+		</script>
 		<meta name="description" content={description} />
 		{robots && <meta name="robots" content={robots} />}
 		{author && <meta name="author" content={author} />}
@@ -87,32 +99,117 @@ const structuredDataItems = Array.isArray(structuredData)
 		<a href="#hero" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-stone-950 focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white">
 			Skip to content
 		</a>
-		<div class="animate-page-fade opacity-0">
+		<div>
 			<slot />
 		</div>
 		<CookieConsent />
 
-		<!-- Intersection Observer scroll-revealer script -->
-		<script is:inline>
-			document.addEventListener('DOMContentLoaded', () => {
-				const observerOptions = {
-					root: null,
-					rootMargin: '0px 0px -60px 0px',
-					threshold: 0.06
-				};
+		<!-- Scroll-reveal + interaction enhancements.
+	     GSAP is loaded LAZILY after first paint so it never blocks LCP/FCP.
+	     Reveal-on-scroll content stays visible if JS is disabled or slow;
+	     reduced-motion users see it immediately. -->
+	<script>
+		(() => {
+			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			if (reduceMotion) {
+				document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+					el.style.opacity = '1';
+					el.style.transform = 'none';
+				});
+				return;
+			}
 
-				const observer = new IntersectionObserver((entries, obs) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							entry.target.classList.add('revealed');
-							obs.unobserve(entry.target);
-						}
+			const hasReveal = !!document.querySelector('.reveal-on-scroll');
+			const hasSpotlight = !!document.querySelector('.spotlight');
+			const hasTilt = !window.matchMedia('(pointer: coarse)').matches && !!document.querySelector('.tilt');
+			const hasCounter = !!document.querySelector('[data-counter]');
+			if (!hasReveal && !hasSpotlight && !hasTilt && !hasCounter) return;
+
+			// Defer the (relatively heavy) GSAP import until the browser is idle.
+			const schedule = (fn: () => void) => {
+				if ('requestIdleCallback' in window) {
+					(window as any).requestIdleCallback(fn, { timeout: 1800 });
+				} else {
+					setTimeout(fn, 200);
+				}
+			};
+
+			schedule(async () => {
+				const { gsap } = await import('gsap');
+				const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+				gsap.registerPlugin(ScrollTrigger);
+
+				// 1. GSAP ScrollTrigger Batch reveals for all sections
+				if (hasReveal) {
+					ScrollTrigger.batch('.reveal-on-scroll', {
+						onEnter: (batch) => {
+							gsap.to(batch, {
+								opacity: 1, y: 0, x: 0, scale: 1,
+								stagger: 0.08, duration: 0.8, ease: 'power3.out', overwrite: 'auto'
+							});
+						},
+						start: 'top 88%',
+						once: true
 					});
-				}, observerOptions);
+				}
 
-				const elements = document.querySelectorAll('.reveal-on-scroll');
-				elements.forEach(el => observer.observe(el));
+				// 2. Spotlight: mouse-tracked glow with dampening/inertia
+				if (hasSpotlight) {
+					document.querySelectorAll('.spotlight').forEach(card => {
+						card.addEventListener('pointermove', (e) => {
+							const rect = card.getBoundingClientRect();
+							const x = (((e as PointerEvent).clientX - rect.left) / rect.width) * 100;
+							const y = (((e as PointerEvent).clientY - rect.top) / rect.height) * 100;
+							gsap.to(card, {
+								'--mx': `${x}%`, '--my': `${y}%`,
+								duration: 0.4, ease: 'power2.out', overwrite: 'auto'
+							});
+						});
+					});
+				}
+
+				// 3. Tilt: 3D card tilt with smooth dampening/inertia (pointer devices only)
+				if (hasTilt) {
+					document.querySelectorAll('.tilt').forEach(el => {
+						const strength = parseFloat(el.getAttribute('data-tilt-strength') || '6');
+						el.addEventListener('pointermove', (e) => {
+							const rect = el.getBoundingClientRect();
+							const px = ((e as PointerEvent).clientX - rect.left) / rect.width - 0.5;
+							const py = ((e as PointerEvent).clientY - rect.top) / rect.height - 0.5;
+							gsap.to(el, {
+								'--ry': `${(px * strength).toFixed(2)}deg`,
+								'--rx': `${(-py * strength).toFixed(2)}deg`,
+								duration: 0.3, ease: 'power2.out', overwrite: 'auto'
+							});
+						});
+						el.addEventListener('pointerleave', () => {
+							gsap.to(el, {
+								'--ry': '0deg', '--rx': '0deg',
+								duration: 0.6, ease: 'power2.out', overwrite: 'auto'
+							});
+						});
+					});
+				}
+
+				// 4. Animated counters: smooth numeric transition
+				if (hasCounter) {
+					document.querySelectorAll('[data-counter]').forEach(el => {
+						const target = parseFloat(el.getAttribute('data-counter') || '0');
+						const prefix = el.getAttribute('data-prefix') || '';
+						const suffix = el.getAttribute('data-suffix') || '';
+						const counterObj = { value: 0 };
+						gsap.to(counterObj, {
+							value: target, duration: 1.6, ease: 'power2.out',
+							scrollTrigger: { trigger: el, start: 'top 86%', once: true },
+							onUpdate: () => {
+								el.textContent = prefix + Math.round(counterObj.value).toLocaleString('en-IN') + suffix;
+							}
+						});
+					});
+				}
 			});
-		</script>
+		})();
+	</script>
+
 	</body>
 </html>

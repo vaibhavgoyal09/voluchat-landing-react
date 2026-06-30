@@ -31,7 +31,7 @@ const demoHref = "/contact";
         {navigation.map((item) => (
           <a
             href={item.href}
-            class="rounded-full px-4 py-2 text-[13px] font-semibold text-slate-200 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/[0.09] hover:text-white"
+            class="nav-link relative rounded-full px-4 py-2 text-[13px] font-semibold text-slate-200 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/[0.09] hover:text-white"
           >
             {item.name}
           </a>
@@ -95,10 +95,30 @@ const demoHref = "/contact";
     transition: transform 0.3s ease;
   }
 
-  /* Optional: we can add a tiny border to the top of the header if we want, or just leave it transparent */
-  #lp-navbar.scrolled {
-    /* No solid background, keep it floating */
+  /* Scroll-aware shrink + lift with a soft glow */
+  #lp-navbar.scrolled .lp-nav-inner nav {
+    transform: translateY(-2px) scale(0.985);
+    border-color: rgba(94, 234, 212, 0.22);
+    box-shadow: 0 24px 72px -46px rgba(0,0,0,0.95), 0 0 0 1px rgba(45,212,191,0.06), 0 0 38px -12px rgba(45,212,191,0.18);
   }
+  .lp-nav-inner nav {
+    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), border-color 0.45s ease, box-shadow 0.45s ease;
+  }
+
+  /* Animated underline for desktop nav links */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 12px; right: 12px; bottom: 6px;
+    height: 1.5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2dd4bf, #5eeac9);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+    opacity: 0.85;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
 
   .lp-menu-line {
     display: block;

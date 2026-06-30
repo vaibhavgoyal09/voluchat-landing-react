@@ -50,9 +50,9 @@ const workflows = [
   <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
   
   <div class="page-shell relative z-10">
-    <div class="max-w-3xl reveal-on-scroll">
+    <div class="max-w-3xl reveal-on-scroll reveal-up">
       <span class="section-eyebrow">Revenue workflows</span>
-      <h2 class="section-title mt-4 text-white">Automate the work that moves revenue.</h2>
+      <h2 class="section-title mt-4 text-white">Automate the work that moves <span class="gradient-text-anim">revenue.</span></h2>
       <p class="section-copy mt-6 max-w-2xl text-slate-300">
         Deploy agent workflows that connect customer intent with catalog details, inventory pressure, approval rules, and measurable outcomes.
       </p>
@@ -89,7 +89,7 @@ const workflows = [
         }
 
         return (
-          <a href={workflow.href} class={`reveal-on-scroll group flex flex-col justify-between rounded-3xl border border-white/10 ${cardBgClass} p-6 sm:p-8 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-slate-400/30 ${colClass} reveal-delay-${(index % 3) * 100} shadow-[0_24px_70px_-54px_rgba(0,0,0,0.85)]`}>
+          <a href={workflow.href} class={`spotlight reveal-on-scroll reveal-scale group flex flex-col justify-between rounded-3xl border border-white/10 ${cardBgClass} p-6 sm:p-8 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-slate-400/30 ${colClass} reveal-delay-${(index % 3) * 100} shadow-[0_24px_70px_-54px_rgba(0,0,0,0.85)]`}>
             {index === 5 ? (
               // Specialized content layout for Leak Detection
               <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center w-full">
