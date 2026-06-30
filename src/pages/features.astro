@@ -1,33 +1,38 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import FAQ from '../components/FAQ.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
 
 const seoTitle = "Shopify AI Agents: Features and Workflows | VoluChat";
-const seoDescription = "See how VoluChat's Shopify AI agents detect revenue leaks, recover carts, answer product questions, recommend upsells, and run approved workflows.";
+const seoDescription =
+  "See how VoluChat's Shopify AI agents detect revenue leaks, recover carts, answer product questions, recommend upsells, and run approved workflows.";
 
 const operatingLoop = [
   {
     step: "Detect",
     title: "Find the next revenue moment",
-    description: "Agents watch product views, carts, stock movement, checkout drop-offs, repeat questions, and customer intent signals."
+    description:
+      "Agents watch product views, carts, stock movement, checkout drop-offs, repeat questions, and customer intent signals.",
   },
   {
     step: "Decide",
     title: "Choose the right action",
-    description: "Each recommendation is grounded in your catalog, policies, margins, and channel rules before anything reaches a customer."
+    description:
+      "Each recommendation is grounded in your catalog, policies, margins, and channel rules before anything reaches a customer.",
   },
   {
     step: "Approve",
     title: "Keep sensitive actions gated",
-    description: "Discounts, escalations, campaigns, and recovery plays can require human review before an agent moves."
+    description:
+      "Discounts, escalations, campaigns, and recovery plays can require human review before an agent moves.",
   },
   {
     step: "Execute",
     title: "Run the workflow and attribute impact",
-    description: "VoluChat sends the message, updates the workflow, records the decision, and shows what revenue was influenced."
-  }
+    description:
+      "VoluChat sends the message, updates the workflow, records the decision, and shows what revenue was influenced.",
+  },
 ];
 
 const agentCards = [
@@ -35,44 +40,50 @@ const agentCards = [
     name: "Product Assistant",
     href: "/agents/product-assistant",
     signal: "Repeated product questions",
-    action: "Answers sizing, stock, variant, delivery, and return questions from live Shopify data.",
-    bestFor: "Reducing support load before checkout"
+    action:
+      "Answers sizing, stock, variant, delivery, and return questions from live Shopify data.",
+    bestFor: "Reducing support load before checkout",
   },
   {
     name: "Cart Recovery",
     href: "/agents/cart-recovery",
     signal: "High-intent cart abandonment",
-    action: "Follows up with context, handles objections, and uses approved recovery offers when needed.",
-    bestFor: "Recovering checkout drop-offs"
+    action:
+      "Follows up with context, handles objections, and uses approved recovery offers when needed.",
+    bestFor: "Recovering checkout drop-offs",
   },
   {
     name: "Upsell & Bundles",
     href: "/agents/upsell",
     signal: "Buyer intent or cart composition",
-    action: "Suggests relevant add-ons and bundles without turning the conversation into a hard sell.",
-    bestFor: "Increasing order value"
+    action:
+      "Suggests relevant add-ons and bundles without turning the conversation into a hard sell.",
+    bestFor: "Increasing order value",
   },
   {
     name: "Inventory Clearance",
     href: "/agents/inventory-clearance",
     signal: "Slow-moving stock",
-    action: "Identifies products that need movement and proposes campaigns with margin-aware guardrails.",
-    bestFor: "Freeing cash tied in inventory"
+    action:
+      "Identifies products that need movement and proposes campaigns with margin-aware guardrails.",
+    bestFor: "Freeing cash tied in inventory",
   },
   {
     name: "Customer Follow-up",
     href: "/agents/customer-follow-up",
     signal: "Post-purchase or repeat-buyer moments",
-    action: "Reaches customers with useful next steps, replenishment prompts, and retention-focused messages.",
-    bestFor: "Turning one-time buyers into repeat buyers"
+    action:
+      "Reaches customers with useful next steps, replenishment prompts, and retention-focused messages.",
+    bestFor: "Turning one-time buyers into repeat buyers",
   },
   {
     name: "Revenue Leak Detection",
     href: "/agents/revenue-leak-detection",
     signal: "Operational gaps across the store",
-    action: "Surfaces missed opportunities across carts, inventory, merchandising, and unanswered demand.",
-    bestFor: "Knowing what to fix first"
-  }
+    action:
+      "Surfaces missed opportunities across carts, inventory, merchandising, and unanswered demand.",
+    bestFor: "Knowing what to fix first",
+  },
 ];
 
 const guardrails = [
@@ -80,7 +91,7 @@ const guardrails = [
   "Margin rules for discounts, bundles, and clearance actions.",
   "Approval queues for campaigns, escalations, and sensitive offers.",
   "Audit trail showing the signal, recommendation, approval, and outcome.",
-  "Human handoff when the customer asks for something outside policy."
+  "Human handoff when the customer asks for something outside policy.",
 ];
 ---
 
@@ -88,20 +99,32 @@ const guardrails = [
   <Header />
 
   <main class="animate-page-entry opacity-0 pt-20">
-    <section class="relative isolate overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
-      <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_48%,#07111f_100%)]"></div>
-      <div class="absolute inset-x-0 top-0 -z-10 mx-auto h-[34rem] max-w-5xl bg-[radial-gradient(circle_at_50%_0%,rgba(45,212,191,0.18),transparent_58%)]"></div>
+    <section
+      class="relative isolate overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24"
+    >
+      <div
+        class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_48%,#07111f_100%)]"
+      >
+      </div>
+      <div
+        class="absolute inset-x-0 top-0 -z-10 mx-auto h-[34rem] max-w-5xl bg-[radial-gradient(circle_at_50%_0%,rgba(45,212,191,0.18),transparent_58%)]"
+      >
+      </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <div class="chip">Commerce agents, explained</div>
-            <h1 class="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+            <h1
+              class="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+            >
               AI agents that run commerce workflows, not just chats.
             </h1>
             <p class="section-copy mt-6 max-w-2xl">
-              VoluChat connects to your Shopify store, finds revenue opportunities, recommends the next best action, and executes approved workflows through conversational agents.
+              VoluChat connects to your Shopify store, finds revenue
+              opportunities, recommends the next best action, and executes
+              approved workflows through conversational agents.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="/contact" class="btn-primary">Request Agent Review</a>
@@ -110,44 +133,100 @@ const guardrails = [
           </div>
 
           <div class="relative">
-            <div class="absolute -inset-4 rounded-[2rem] bg-teal-300/10 blur-3xl"></div>
-            <div class="relative rounded-[1.75rem] border border-white/10 bg-[#0d192b]/95 p-3 shadow-[0_32px_120px_-56px_rgba(45,212,191,0.55)]">
-              <div class="rounded-[1.35rem] border border-white/10 bg-[#07111f] p-5 sm:p-6">
-                <div class="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+            <div
+              class="absolute -inset-4 rounded-[2rem] bg-teal-300/10 blur-3xl"
+            >
+            </div>
+            <div
+              class="relative rounded-[1.75rem] border border-white/10 bg-[#0d192b]/95 p-3 shadow-[0_32px_120px_-56px_rgba(45,212,191,0.55)]"
+            >
+              <div
+                class="rounded-[1.35rem] border border-white/10 bg-[#07111f] p-5 sm:p-6"
+              >
+                <div
+                  class="flex items-center justify-between gap-4 border-b border-white/10 pb-5"
+                >
                   <div>
                     <p class="mini-label text-teal-200">Live agent room</p>
-                    <h2 class="mt-2 text-xl font-semibold text-white">Revenue opportunity detected</h2>
+                    <h2 class="mt-2 text-xl font-semibold text-white">
+                      Revenue opportunity detected
+                    </h2>
                   </div>
-                  <span class="rounded-full border border-teal-300/25 bg-teal-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100">Active</span>
+                  <span
+                    class="rounded-full border border-teal-300/25 bg-teal-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100"
+                    >Active</span
+                  >
                 </div>
 
                 <div class="mt-5 space-y-3">
-                  <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                  <div
+                    class="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                  >
                     <div class="flex items-center justify-between gap-4">
-                      <span class="text-sm font-bold text-slate-200">Signal</span>
-                      <span class="text-xs font-semibold text-slate-400">Checkout</span>
+                      <span class="text-sm font-bold text-slate-200"
+                        >Signal</span
+                      >
+                      <span class="text-xs font-semibold text-slate-400"
+                        >Checkout</span
+                      >
                     </div>
-                    <p class="mt-3 text-base font-semibold leading-snug text-white">A repeat buyer abandoned a high-margin cart after asking about delivery time.</p>
+                    <p
+                      class="mt-3 text-base font-semibold leading-snug text-white"
+                    >
+                      A repeat buyer abandoned a high-margin cart after asking
+                      about delivery time.
+                    </p>
                   </div>
 
                   <div class="grid gap-3 sm:grid-cols-2">
-                    <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                      <span class="text-sm font-bold text-slate-200">Agent decision</span>
-                      <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300">Answer delivery concern and offer the pre-approved express shipping incentive.</p>
+                    <div
+                      class="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                    >
+                      <span class="text-sm font-bold text-slate-200"
+                        >Agent decision</span
+                      >
+                      <p
+                        class="mt-3 text-sm font-medium leading-relaxed text-slate-300"
+                      >
+                        Answer delivery concern and offer the pre-approved
+                        express shipping incentive.
+                      </p>
                     </div>
-                    <div class="rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4">
-                      <span class="text-sm font-bold text-teal-100">Control rule</span>
-                      <p class="mt-3 text-sm font-medium leading-relaxed text-slate-200">Offer is allowed because cart margin stays above your floor.</p>
+                    <div
+                      class="rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4"
+                    >
+                      <span class="text-sm font-bold text-teal-100"
+                        >Control rule</span
+                      >
+                      <p
+                        class="mt-3 text-sm font-medium leading-relaxed text-slate-200"
+                      >
+                        Offer is allowed because cart margin stays above your
+                        floor.
+                      </p>
                     </div>
                   </div>
 
-                  <div class="rounded-2xl border border-white/10 bg-[#101b2e] p-4">
-                    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div
+                    class="rounded-2xl border border-white/10 bg-[#101b2e] p-4"
+                  >
+                    <div
+                      class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                    >
                       <div>
-                        <span class="text-sm font-bold text-slate-200">Recommended action</span>
-                        <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">Send recovery message and log attribution.</p>
+                        <span class="text-sm font-bold text-slate-200"
+                          >Recommended action</span
+                        >
+                        <p
+                          class="mt-2 text-sm font-medium leading-relaxed text-slate-300"
+                        >
+                          Send recovery message and log attribution.
+                        </p>
                       </div>
-                      <span class="inline-flex w-fit items-center rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950">Approve</span>
+                      <span
+                        class="inline-flex w-fit items-center rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950"
+                        >Approve</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -158,110 +237,206 @@ const guardrails = [
       </div>
     </section>
 
-    <section class="relative border-y border-white/10 bg-[#081321] py-20 sm:py-24">
+    <section
+      class="relative border-y border-white/10 bg-[#081321] py-20 sm:py-24"
+    >
       <div class="page-shell">
         <div class="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>
             <p class="section-eyebrow">What makes it an agent</p>
-            <h2 class="mt-4 max-w-xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl">
+            <h2
+              class="mt-4 max-w-xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl"
+            >
               A workflow layer that can reason, ask, and act.
             </h2>
-            <p class="mt-5 max-w-xl text-lg font-medium leading-relaxed text-slate-300">
-              A chatbot waits for a customer to type. A commerce agent monitors your store, understands the operational context, and moves approved work forward.
+            <p
+              class="mt-5 max-w-xl text-lg font-medium leading-relaxed text-slate-300"
+            >
+              A chatbot waits for a customer to type. A commerce agent monitors
+              your store, understands the operational context, and moves
+              approved work forward.
             </p>
           </div>
 
           <div class="grid gap-4 sm:grid-cols-2">
-            {operatingLoop.map((item, index) => (
-              <article class:list={[
-                "rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)]",
-                index === 1 || index === 2 ? "sm:translate-y-8" : ""
-              ]}>
-                <div class="flex items-center justify-between gap-4">
-                  <span class="rounded-full border border-teal-300/25 bg-teal-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100">{item.step}</span>
-                  <span class="font-mono text-sm font-semibold text-slate-500">0{index + 1}</span>
-                </div>
-                <h3 class="mt-6 text-xl font-semibold leading-tight text-white">{item.title}</h3>
-                <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">{item.description}</p>
-              </article>
-            ))}
+            {
+              operatingLoop.map((item, index) => (
+                <article
+                  class:list={[
+                    "rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)]",
+                    index === 1 || index === 2 ? "sm:translate-y-8" : "",
+                  ]}
+                >
+                  <div class="flex items-center justify-between gap-4">
+                    <span class="rounded-full border border-teal-300/25 bg-teal-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100">
+                      {item.step}
+                    </span>
+                    <span class="font-mono text-sm font-semibold text-slate-500">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <h3 class="mt-6 text-xl font-semibold leading-tight text-white">
+                    {item.title}
+                  </h3>
+                  <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                    {item.description}
+                  </p>
+                </article>
+              ))
+            }
           </div>
         </div>
       </div>
     </section>
 
     <section class="relative overflow-hidden py-20 sm:py-28">
-      <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_52%,#07111f_100%)]"></div>
+      <div
+        class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_52%,#07111f_100%)]"
+      >
+      </div>
       <div class="page-shell">
-        <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+        <div
+          class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"
+        >
           <div>
             <p class="section-eyebrow">Agent lineup</p>
-            <h2 class="mt-4 max-w-2xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl">
+            <h2
+              class="mt-4 max-w-2xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl"
+            >
               Specialized agents for the work your team keeps repeating.
             </h2>
           </div>
-          <p class="max-w-xl text-lg font-medium leading-relaxed text-slate-300">
-            Each agent can run independently, but the real leverage comes when they share the same Shopify context, approval rules, and revenue attribution.
+          <p
+            class="max-w-xl text-lg font-medium leading-relaxed text-slate-300"
+          >
+            Each agent can run independently, but the real leverage comes when
+            they share the same Shopify context, approval rules, and revenue
+            attribution.
           </p>
         </div>
 
         <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {agentCards.map((agent) => (
-            <a href={agent.href} class="group rounded-[1.25rem] border border-white/10 bg-[#101b2e] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)] transition-all duration-500 hover:-translate-y-1 hover:border-teal-300/30 hover:bg-[#142238]">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <p class="mini-label text-teal-200">{agent.signal}</p>
-                  <h3 class="mt-4 text-2xl font-semibold leading-tight text-white">{agent.name}</h3>
+          {
+            agentCards.map((agent) => (
+              <a
+                href={agent.href}
+                class="group rounded-[1.25rem] border border-white/10 bg-[#101b2e] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)] transition-all duration-500 hover:-translate-y-1 hover:border-teal-300/30 hover:bg-[#142238]"
+              >
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="mini-label text-teal-200">{agent.signal}</p>
+                    <h3 class="mt-4 text-2xl font-semibold leading-tight text-white">
+                      {agent.name}
+                    </h3>
+                  </div>
+                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.05] text-slate-200 transition group-hover:border-teal-300/35 group-hover:text-teal-100">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <>
+                        <path d="M7 17 17 7" />
+                        <path d="M7 7h10v10" />
+                      </>
+                    </svg>
+                  </span>
                 </div>
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.05] text-slate-200 transition group-hover:border-teal-300/35 group-hover:text-teal-100">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-                </span>
-              </div>
-              <p class="mt-5 min-h-[5.5rem] text-base font-medium leading-relaxed text-slate-300">{agent.action}</p>
-              <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Best for</p>
-                <p class="mt-2 text-base font-semibold text-slate-100">{agent.bestFor}</p>
-              </div>
-              <p class="mt-5 text-sm font-bold text-teal-200">Open agent page</p>
-            </a>
-          ))}
+                <p class="mt-5 min-h-[5.5rem] text-base font-medium leading-relaxed text-slate-300">
+                  {agent.action}
+                </p>
+                <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                  <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                    Best for
+                  </p>
+                  <p class="mt-2 text-base font-semibold text-slate-100">
+                    {agent.bestFor}
+                  </p>
+                </div>
+                <p class="mt-5 text-sm font-bold text-teal-200">
+                  Open agent page
+                </p>
+              </a>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <section class="relative pb-24">
       <div class="page-shell">
-        <div class="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0d192b] shadow-[0_32px_100px_-70px_rgba(45,212,191,0.5)]">
+        <div
+          class="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0d192b] shadow-[0_32px_100px_-70px_rgba(45,212,191,0.5)]"
+        >
           <div class="grid lg:grid-cols-[0.95fr_1.05fr]">
-            <div class="border-b border-white/10 p-6 sm:p-10 lg:border-b-0 lg:border-r">
+            <div
+              class="border-b border-white/10 p-6 sm:p-10 lg:border-b-0 lg:border-r"
+            >
               <p class="section-eyebrow">Control model</p>
-              <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl">
+              <h2
+                class="mt-4 text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl"
+              >
                 Automation with approval where it matters.
               </h2>
-              <p class="mt-5 text-lg font-medium leading-relaxed text-slate-300">
-                VoluChat is built for operators who want leverage without losing judgment. You decide which agents can act automatically, which actions need review, and when a human should take over.
+              <p
+                class="mt-5 text-lg font-medium leading-relaxed text-slate-300"
+              >
+                VoluChat is built for operators who want leverage without losing
+                judgment. You decide which agents can act automatically, which
+                actions need review, and when a human should take over.
               </p>
               <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="/contact" class="btn-primary">Map your agent workflow</a>
-                <a href="/integrations/shopify" class="btn-secondary">See Shopify integration</a>
+                <a href="/contact" class="btn-primary"
+                  >Map your agent workflow</a
+                >
+                <a href="/integrations/shopify" class="btn-secondary"
+                  >See Shopify integration</a
+                >
               </div>
             </div>
 
             <div class="bg-[#07111f] p-6 sm:p-10">
-              <div class="rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-5">
+              <div
+                class="rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-5"
+              >
                 <div class="flex items-center justify-between gap-4">
                   <p class="mini-label text-teal-200">Guardrail stack</p>
-                  <span class="rounded-full bg-teal-300/10 px-3 py-1 text-xs font-bold text-teal-100">Always on</span>
+                  <span
+                    class="rounded-full bg-teal-300/10 px-3 py-1 text-xs font-bold text-teal-100"
+                    >Always on</span
+                  >
                 </div>
                 <div class="mt-6 space-y-3">
-                  {guardrails.map((item) => (
-                    <div class="flex gap-3 rounded-2xl border border-white/10 bg-[#101b2e] p-4">
-                      <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                      </span>
-                      <p class="text-base font-semibold leading-relaxed text-slate-200">{item}</p>
-                    </div>
-                  ))}
+                  {
+                    guardrails.map((item) => (
+                      <div class="flex gap-3 rounded-2xl border border-white/10 bg-[#101b2e] p-4">
+                        <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-100">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
+                        <p class="text-base font-semibold leading-relaxed text-slate-200">
+                          {item}
+                        </p>
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </div>

@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
-const readSource = (path) => readFile(new URL(`../${path}`, import.meta.url), "utf8");
+const readSource = (path) =>
+  readFile(new URL(`../${path}`, import.meta.url), "utf8");
 
 test("homepage SEO matches the commerce agents positioning", async () => {
   const index = await readSource("src/pages/index.astro");
@@ -17,8 +18,14 @@ test("homepage SEO matches the commerce agents positioning", async () => {
 test("homepage layout uses the new commerce agent platform structure", async () => {
   const index = await readSource("src/pages/index.astro");
 
-  assert.match(index, /<Hero \/>\s*<ProblemSection \/>\s*<PlatformSection \/>\s*<UseCasesSection \/>\s*<ProductLoopSection \/>/);
-  assert.match(index, /<GuardrailsSection \/>\s*<DemoFlowSection \/>\s*<FounderNoteSection \/>\s*<TrustSection \/>\s*<FAQ \/>\s*<\/main>\s*<Footer \/>/);
+  assert.match(
+    index,
+    /<Hero \/>\s*<ProblemSection \/>\s*<PlatformSection \/>\s*<UseCasesSection \/>\s*<ProductLoopSection \/>/,
+  );
+  assert.match(
+    index,
+    /<GuardrailsSection \/>\s*<DemoFlowSection \/>\s*<FounderNoteSection \/>\s*<TrustSection \/>\s*<FAQ \/>\s*<\/main>\s*<Footer \/>/,
+  );
   assert.doesNotMatch(index, /CTASection/);
   assert.doesNotMatch(index, /import BestFor/);
   assert.doesNotMatch(index, /<BestFor \/>/);
@@ -27,7 +34,7 @@ test("homepage layout uses the new commerce agent platform structure", async () 
 test("homepage nav and footer wire to real sections and new pages", async () => {
   const navbar = await readSource("src/components/landing/Navbar.astro");
   const footer = await readSource("src/components/landing/Footer.astro");
-  
+
   assert.match(navbar, /homeHref\("#platform"\)/);
   assert.match(navbar, /href:\s*"\/features"/);
   assert.match(navbar, /href:\s*"\/pricing"/);
@@ -39,9 +46,15 @@ test("homepage nav and footer wire to real sections and new pages", async () => 
   assert.match(footer, /href="\/integrations\/shopify"/);
   assert.match(footer, /href="\/about"/);
 
-  const workflowsSection = await readSource("src/components/landing/UseCasesSection.astro");
-  const demoFlowSection = await readSource("src/components/landing/DemoFlowSection.astro");
-  const founderNote = await readSource("src/components/landing/FounderNoteSection.astro");
+  const workflowsSection = await readSource(
+    "src/components/landing/UseCasesSection.astro",
+  );
+  const demoFlowSection = await readSource(
+    "src/components/landing/DemoFlowSection.astro",
+  );
+  const founderNote = await readSource(
+    "src/components/landing/FounderNoteSection.astro",
+  );
 
   assert.match(workflowsSection, /id="workflows"/);
   assert.match(workflowsSection, /\/agents\/cart-recovery/);
@@ -56,5 +69,8 @@ test("pricing presents closed tailored pricing", async () => {
 
   assert.match(pricing, /Custom pricing/i);
   assert.match(pricing, /tailored pricing/);
-  assert.doesNotMatch(pricing, /Rs\.|Starter Agent|Growth Suite|Scale Platform/);
+  assert.doesNotMatch(
+    pricing,
+    /Rs\.|Starter Agent|Growth Suite|Scale Platform/,
+  );
 });

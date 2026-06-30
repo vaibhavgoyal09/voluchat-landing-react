@@ -1,37 +1,38 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import FAQ from '../components/FAQ.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
 
 const seoTitle = "Shopify AI Agent Pricing | VoluChat";
-const seoDescription = "Request VoluChat pricing for Shopify AI agents. Pricing is tailored by agent scope, catalog complexity, integrations, workflow volume, and guardrails.";
+const seoDescription =
+  "Request VoluChat pricing for Shopify AI agents. Pricing is tailored by agent scope, catalog complexity, integrations, workflow volume, and guardrails.";
 
 const pricingFactors = [
   {
     title: "Store complexity",
-    text: "Catalog size, variants, inventory movement, fulfillment rules, and how many edge cases your agents need to understand."
+    text: "Catalog size, variants, inventory movement, fulfillment rules, and how many edge cases your agents need to understand.",
   },
   {
     title: "Agent scope",
-    text: "Which agents you want live first: product assistant, cart recovery, upsells, customer follow-up, inventory clearance, or revenue leak detection."
+    text: "Which agents you want live first: product assistant, cart recovery, upsells, customer follow-up, inventory clearance, or revenue leak detection.",
   },
   {
     title: "Workflow volume",
-    text: "Expected traffic, abandoned carts, campaign frequency, customer conversations, approval queues, and follow-up volume."
+    text: "Expected traffic, abandoned carts, campaign frequency, customer conversations, approval queues, and follow-up volume.",
   },
   {
     title: "Integration depth",
-    text: "Shopify setup, customer data sources, marketing tools, support tools, analytics, exports, and custom operational rules."
+    text: "Shopify setup, customer data sources, marketing tools, support tools, analytics, exports, and custom operational rules.",
   },
   {
     title: "Control model",
-    text: "Whether agents only recommend actions, ask for human approval, or execute specific workflows within strict guardrails."
+    text: "Whether agents only recommend actions, ask for human approval, or execute specific workflows within strict guardrails.",
   },
   {
     title: "Launch support",
-    text: "How much hands-on setup, testing, brand voice tuning, rule design, and reporting support your team wants."
-  }
+    text: "How much hands-on setup, testing, brand voice tuning, rule design, and reporting support your team wants.",
+  },
 ];
 
 const includedItems = [
@@ -40,10 +41,11 @@ const includedItems = [
   "Agent rollout plan by revenue priority",
   "Margin, discount, and brand-voice guardrails",
   "Approval workflow design",
-  "Outcome reporting and attribution setup"
+  "Outcome reporting and attribution setup",
 ];
 
-const pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs.";
+const pricingAnswer =
+  "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs.";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
@@ -51,17 +53,24 @@ const pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each sto
 
   <main class="animate-page-entry opacity-0 pt-20">
     <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(45,212,191,0.12),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"></div>
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(45,212,191,0.12),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
+      >
+      </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell text-center">
         <div class="mx-auto max-w-4xl">
           <div class="chip">Custom pricing</div>
-          <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+          <h1
+            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+          >
             Pricing is tailored to how your store actually operates.
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-2xl">
-            VoluChat is not sold as preset public packages. We price around the agents, workflows, data complexity, and control model your store needs.
+            VoluChat is not sold as preset public packages. We price around the
+            agents, workflows, data complexity, and control model your store
+            needs.
           </p>
           <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a href="/contact" class="btn-primary">Request Agent Review</a>
@@ -76,22 +85,36 @@ const pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each sto
         <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
           <aside class="solid-card h-fit lg:sticky lg:top-32 lg:p-8">
             <p class="section-eyebrow">How we quote</p>
-            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white">
+            <h2
+              class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white"
+            >
               A short review first. A clean proposal after.
             </h2>
-            <p class="mt-5 text-base font-medium leading-relaxed text-slate-200">
-              We review your Shopify setup, identify the workflows with the highest revenue upside, and propose a rollout that fits your team’s appetite for automation.
+            <p
+              class="mt-5 text-base font-medium leading-relaxed text-slate-200"
+            >
+              We review your Shopify setup, identify the workflows with the
+              highest revenue upside, and propose a rollout that fits your
+              team’s appetite for automation.
             </p>
-            <a href="/contact" class="btn-primary mt-8 w-full">Start Agent Review</a>
+            <a href="/contact" class="btn-primary mt-8 w-full"
+              >Start Agent Review</a
+            >
           </aside>
 
           <div class="grid gap-5 md:grid-cols-2">
-            {pricingFactors.map((factor) => (
-              <article class="solid-card md:p-7">
-                <h3 class="text-xl font-heading font-semibold text-white">{factor.title}</h3>
-                <p class="mt-4 text-base font-medium leading-relaxed text-slate-200">{factor.text}</p>
-              </article>
-            ))}
+            {
+              pricingFactors.map((factor) => (
+                <article class="solid-card md:p-7">
+                  <h3 class="text-xl font-heading font-semibold text-white">
+                    {factor.title}
+                  </h3>
+                  <p class="mt-4 text-base font-medium leading-relaxed text-slate-200">
+                    {factor.text}
+                  </p>
+                </article>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -102,20 +125,28 @@ const pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each sto
         <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <p class="section-eyebrow">Included in every rollout</p>
-            <h2 class="section-title mt-4">A setup shaped around your store, not a generic package.</h2>
+            <h2 class="section-title mt-4">
+              A setup shaped around your store, not a generic package.
+            </h2>
             <p class="section-copy mt-6 max-w-2xl">
-              The proposal includes the agents to launch, the controls required, the integration work involved, and the success metrics we will track.
+              The proposal includes the agents to launch, the controls required,
+              the integration work involved, and the success metrics we will
+              track.
             </p>
           </div>
 
           <div class="solid-card p-5 sm:p-7">
             <div class="grid gap-3">
-              {includedItems.map((item) => (
-                <div class="flex items-center gap-3 rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.04] px-4 py-3">
-                  <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-300"></span>
-                  <span class="text-base font-medium leading-snug text-slate-100">{item}</span>
-                </div>
-              ))}
+              {
+                includedItems.map((item) => (
+                  <div class="flex items-center gap-3 rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.04] px-4 py-3">
+                    <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-300" />
+                    <span class="text-base font-medium leading-snug text-slate-100">
+                      {item}
+                    </span>
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>

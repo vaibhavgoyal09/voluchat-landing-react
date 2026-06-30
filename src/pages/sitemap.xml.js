@@ -1,24 +1,24 @@
-import { fetchPublishedBlogPosts, getBlogApiBaseUrl } from '../lib/blogApi.mjs';
+import { fetchPublishedBlogPosts, getBlogApiBaseUrl } from "../lib/blogApi.mjs";
 
-const DEFAULT_SITE_ORIGIN = 'https://www.voluchat.com';
+const DEFAULT_SITE_ORIGIN = "https://www.voluchat.com";
 const SITEMAP_BLOG_LIMIT = 100;
-const STATIC_LASTMOD = '2026-06-24';
+const STATIC_LASTMOD = "2026-06-24";
 const STATIC_ROUTES = [
-  { path: '/', priority: '1.0' },
-  { path: '/features/', priority: '0.8' },
-  { path: '/pricing/', priority: '0.8' },
-  { path: '/compare/', priority: '0.8' },
-  { path: '/about/', priority: '0.7' },
-  { path: '/security/', priority: '0.7' },
-  { path: '/blog/', priority: '0.6' },
-  { path: '/contact/', priority: '0.9' },
-  { path: '/agents/product-assistant/', priority: '0.8' },
-  { path: '/agents/cart-recovery/', priority: '0.8' },
-  { path: '/agents/upsell/', priority: '0.8' },
-  { path: '/agents/customer-follow-up/', priority: '0.8' },
-  { path: '/agents/inventory-clearance/', priority: '0.8' },
-  { path: '/agents/revenue-leak-detection/', priority: '0.8' },
-  { path: '/integrations/shopify/', priority: '0.8' },
+  { path: "/", priority: "1.0" },
+  { path: "/features/", priority: "0.8" },
+  { path: "/pricing/", priority: "0.8" },
+  { path: "/compare/", priority: "0.8" },
+  { path: "/about/", priority: "0.7" },
+  { path: "/security/", priority: "0.7" },
+  { path: "/blog/", priority: "0.6" },
+  { path: "/contact/", priority: "0.9" },
+  { path: "/agents/product-assistant/", priority: "0.8" },
+  { path: "/agents/cart-recovery/", priority: "0.8" },
+  { path: "/agents/upsell/", priority: "0.8" },
+  { path: "/agents/customer-follow-up/", priority: "0.8" },
+  { path: "/agents/inventory-clearance/", priority: "0.8" },
+  { path: "/agents/revenue-leak-detection/", priority: "0.8" },
+  { path: "/integrations/shopify/", priority: "0.8" },
 ];
 
 export async function GET({ site }) {
@@ -31,7 +31,7 @@ export async function GET({ site }) {
       limit: SITEMAP_BLOG_LIMIT,
     });
   } catch (error) {
-    console.error('[Server] Failed to fetch blog posts for sitemap:', error);
+    console.error("[Server] Failed to fetch blog posts for sitemap:", error);
   }
 
   const entries = [
@@ -43,26 +43,32 @@ export async function GET({ site }) {
     ...blogs.map((blog) => ({
       loc: absoluteUrl(blog.href, siteOrigin),
       lastmod: formatSitemapDate(blog.publishedAt || blog.createdAt),
-      priority: '0.6',
+      priority: "0.6",
     })),
   ];
 
   return new Response(buildSitemapXml(entries), {
     headers: {
-      'Content-Type': 'application/xml; charset=utf-8',
+      "Content-Type": "application/xml; charset=utf-8",
     },
   });
 }
 
 function buildSitemapXml(entries) {
-  const urls = entries.map((entry) => {
-    const lastmod = entry.lastmod ? `\n    <lastmod>${escapeXml(entry.lastmod)}</lastmod>` : '';
-    const priority = entry.priority ? `\n    <priority>${escapeXml(entry.priority)}</priority>` : '';
+  const urls = entries
+    .map((entry) => {
+      const lastmod = entry.lastmod
+        ? `\n    <lastmod>${escapeXml(entry.lastmod)}</lastmod>`
+        : "";
+      const priority = entry.priority
+        ? `\n    <priority>${escapeXml(entry.priority)}</priority>`
+        : "";
 
-    return `  <url>
+      return `  <url>
     <loc>${escapeXml(entry.loc)}</loc>${lastmod}${priority}
   </url>`;
-  }).join('\n');
+    })
+    .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -96,9 +102,9 @@ function formatSitemapDate(value) {
 
 function escapeXml(value) {
   return String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&apos;');
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
 }

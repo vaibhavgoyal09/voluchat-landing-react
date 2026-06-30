@@ -1,32 +1,38 @@
 ---
 const {
-  pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs."
+  pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs.",
 } = Astro.props;
 
 const faqs = [
   {
     question: "What is an AI commerce agent?",
-    answer: "A commerce agent uses your Shopify catalog, cart, customer, and policy data to recommend or execute a specific revenue workflow. Unlike a chatbot that only replies, it can detect a left cart, draft a margin-safe offer, route it for approval, and track the result.",
+    answer:
+      "A commerce agent uses your Shopify catalog, cart, customer, and policy data to recommend or execute a specific revenue workflow. Unlike a chatbot that only replies, it can detect a left cart, draft a margin-safe offer, route it for approval, and track the result.",
   },
   {
     question: "Does VoluChat sync with my Shopify inventory?",
-    answer: "Yes. VoluChat syncs with your Shopify catalog in real-time. Agents know exactly which variants, sizes, and colors are in stock, and can even identify slow-moving inventory to recommend clearance campaigns.",
+    answer:
+      "Yes. VoluChat syncs with your Shopify catalog in real-time. Agents know exactly which variants, sizes, and colors are in stock, and can even identify slow-moving inventory to recommend clearance campaigns.",
   },
   {
     question: "How does the Cart Recovery agent work?",
-    answer: "When a high-intent buyer abandons checkout, the agent follows up. Instead of just sending a static email, it engages in a conversation, handles objections (e.g., 'Is shipping free?'), and can offer dynamic, margin-safe discounts to close the sale.",
+    answer:
+      "When a high-intent buyer abandons checkout, the agent follows up. Instead of just sending a static email, it engages in a conversation, handles objections (e.g., 'Is shipping free?'), and can offer dynamic, margin-safe discounts to close the sale.",
   },
   {
     question: "Can I review agent actions before they happen?",
-    answer: "Yes. You can run agents in 'recommend-only' mode. For example, if an agent wants to launch a clearance bundle, it will first send you an approval request. Once approved, the agent executes the campaign.",
+    answer:
+      "Yes. You can run agents in 'recommend-only' mode. For example, if an agent wants to launch a clearance bundle, it will first send you an approval request. Once approved, the agent executes the campaign.",
   },
   {
     question: "Will agents offer discounts that hurt my margins?",
-    answer: "No. You set strict financial guardrails in the VoluChat dashboard. Agents are mathematically constrained and cannot offer a discount or bundle that violates your minimum margin rules.",
+    answer:
+      "No. You set strict financial guardrails in the VoluChat dashboard. Agents are mathematically constrained and cannot offer a discount or bundle that violates your minimum margin rules.",
   },
   {
     question: "Do I need technical knowledge to set this up?",
-    answer: "No. You connect your Shopify store with one click. VoluChat's agents are pre-trained on commerce workflows, so you just configure your guardrails and turn them on.",
+    answer:
+      "No. You connect your Shopify store with one click. VoluChat's agents are pre-trained on commerce workflows, so you just configure your guardrails and turn them on.",
   },
   {
     question: "How much does VoluChat cost?",
@@ -37,18 +43,21 @@ const faqs = [
 const faqStructuredData = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map((faq) => ({
+  mainEntity: faqs.map((faq) => ({
     "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
+    name: faq.question,
+    acceptedAnswer: {
       "@type": "Answer",
-      "text": faq.answer,
+      text: faq.answer,
     },
   })),
 };
 ---
 
-<section id="faq" class="section-pad section-band-quiet relative overflow-hidden">
+<section
+  id="faq"
+  class="section-pad section-band-quiet relative overflow-hidden"
+>
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-20"></div>
   </div>
@@ -56,48 +65,67 @@ const faqStructuredData = {
   <div class="page-shell">
     <div class="mx-auto mb-10 max-w-2xl text-center">
       <p class="section-eyebrow">FAQ</p>
-      <h2 class="section-title mt-4">
-        Questions about commerce agents.
-      </h2>
+      <h2 class="section-title mt-4">Questions about commerce agents.</h2>
       <p class="section-copy mx-auto mt-5 max-w-xl">
         Common questions from D2C founders before deploying autonomous agents.
       </p>
     </div>
 
-    <div class="mx-auto max-w-3xl divide-y divide-[rgba(148,163,184,0.16)] overflow-hidden rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] shadow-[0_28px_86px_-54px_rgba(0,0,0,0.85)]">
-      {faqs.slice(0, 7).map((faq, index) => (
-        <div class="faq-item transition-all duration-300" data-index={index}>
-          <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-white/[0.045]">
-            <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-white transition-colors group-hover:text-teal-200">
-              {faq.question}
-            </span>
-            <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.06] shadow-sm transition-all duration-300 group-hover:border-teal-300/30 group-hover:bg-teal-300/10">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron text-slate-300 transition-all duration-300 group-hover:text-teal-200">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-body max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <div class="px-6 pb-6 sm:px-8 sm:pb-8">
-              <p class="text-base font-medium leading-relaxed text-slate-200">{faq.answer}</p>
+    <div
+      class="mx-auto max-w-3xl divide-y divide-[rgba(148,163,184,0.16)] overflow-hidden rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] shadow-[0_28px_86px_-54px_rgba(0,0,0,0.85)]"
+    >
+      {
+        faqs.slice(0, 7).map((faq, index) => (
+          <div class="faq-item transition-all duration-300" data-index={index}>
+            <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-white/[0.045]">
+              <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-white transition-colors group-hover:text-teal-200">
+                {faq.question}
+              </span>
+              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.06] shadow-sm transition-all duration-300 group-hover:border-teal-300/30 group-hover:bg-teal-300/10">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="faq-chevron text-slate-300 transition-all duration-300 group-hover:text-teal-200"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-body max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+                <p class="text-base font-medium leading-relaxed text-slate-200">
+                  {faq.answer}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
-    <div class="mx-auto mt-8 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] px-5 py-5 text-center shadow-[0_18px_60px_rgba(0,0,0,0.28)] sm:flex-row sm:text-left">
+    <div
+      class="mx-auto mt-8 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] px-5 py-5 text-center shadow-[0_18px_60px_rgba(0,0,0,0.28)] sm:flex-row sm:text-left"
+    >
       <p class="text-base font-medium leading-relaxed text-slate-200">
-        Ready to see which agents are worth deploying first? Share your store details and get a workflow review.
+        Ready to see which agents are worth deploying first? Share your store
+        details and get a workflow review.
       </p>
-      <a href="/contact" class="btn-primary shrink-0">
-        Request Agent Review
-      </a>
+      <a href="/contact" class="btn-primary shrink-0"> Request Agent Review </a>
     </div>
   </div>
 </section>
 
-<script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(faqStructuredData)}
+/>
 
 <style>
   .faq-item.active {
@@ -117,12 +145,12 @@ const faqStructuredData = {
 </style>
 
 <script>
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    item.querySelector('.faq-toggle')?.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      faqItems.forEach(i => i.classList.remove('active'));
-      if (!isActive) item.classList.add('active');
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach((item) => {
+    item.querySelector(".faq-toggle")?.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+      faqItems.forEach((i) => i.classList.remove("active"));
+      if (!isActive) item.classList.add("active");
     });
   });
 </script>

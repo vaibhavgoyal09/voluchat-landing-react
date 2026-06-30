@@ -7,7 +7,7 @@ import compress from "@playform/compress";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.voluchat.com",
-  output: 'server',
+  output: "server",
   adapter: vercel(),
   integrations: [
     critters(),

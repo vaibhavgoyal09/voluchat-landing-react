@@ -26,11 +26,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": [
-    "business",
-    "productivity",
-    "social"
-  ],
+  "categories": ["business", "productivity", "social"],
   "lang": "en",
   "dir": "ltr"
 }

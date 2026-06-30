@@ -1,12 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 const recoveryLinks = [
   { label: "Platform", href: "/#platform", note: "See how our agents work" },
   { label: "Pricing", href: "/pricing", note: "See how custom pricing works" },
-  { label: "Contact", href: "/contact", note: "Get help finding the right page" },
+  {
+    label: "Contact",
+    href: "/contact",
+    note: "Get help finding the right page",
+  },
 ];
 ---
 
@@ -18,25 +22,38 @@ const recoveryLinks = [
   <Header />
 
   <main id="hero" class="animate-page-entry opacity-0 pt-20">
-    <section class="relative overflow-hidden px-4 pt-20 pb-18 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(83,111,159,0.16),transparent_30rem),radial-gradient(circle_at_82%_18%,rgba(203,217,234,0.22),transparent_28rem),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96)_48%,rgba(8,17,31,0.98))]"></div>
+    <section
+      class="relative overflow-hidden px-4 pt-20 pb-18 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28"
+    >
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(83,111,159,0.16),transparent_30rem),radial-gradient(circle_at_82%_18%,rgba(203,217,234,0.22),transparent_28rem),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96)_48%,rgba(8,17,31,0.98))]"
+      >
+      </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
-        <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.78fr)] lg:gap-14">
+        <div
+          class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.78fr)] lg:gap-14"
+        >
           <div class="max-w-3xl reveal-on-scroll">
             <div class="chip">404 - page not found</div>
-            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+            <h1
+              class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+            >
               This page seems to be missing.
             </h1>
             <p class="section-copy mt-6 max-w-2xl">
-              The link may be old, mistyped, or moved during a site update. Head back to the main VoluChat flow and keep exploring AI commerce agents for your Shopify store.
+              The link may be old, mistyped, or moved during a site update. Head
+              back to the main VoluChat flow and keep exploring AI commerce
+              agents for your Shopify store.
             </p>
 
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="/" class="btn-primary group min-h-12 px-5">
                 <span>Go home</span>
-                <span class="ml-3 grid h-7 w-7 place-items-center rounded-full bg-[#101b2e]/12 text-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5">
+                <span
+                  class="ml-3 grid h-7 w-7 place-items-center rounded-full bg-[#101b2e]/12 text-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5"
+                >
                   &rarr;
                 </span>
               </a>
@@ -47,47 +64,87 @@ const recoveryLinks = [
           </div>
 
           <div class="relative reveal-on-scroll">
-            <div class="absolute -left-5 top-8 h-28 w-28 rounded-full bg-teal-300/55 blur-3xl"></div>
-            <div class="absolute -right-4 bottom-10 h-32 w-32 rounded-full bg-coral-100/80 blur-3xl"></div>
+            <div
+              class="absolute -left-5 top-8 h-28 w-28 rounded-full bg-teal-300/55 blur-3xl"
+            >
+            </div>
+            <div
+              class="absolute -right-4 bottom-10 h-32 w-32 rounded-full bg-coral-100/80 blur-3xl"
+            >
+            </div>
 
-            <div class="relative rounded-[2rem] border border-white/80 bg-[#101b2e] p-2 shadow-[0_30px_90px_rgba(68,64,60,0.11)]">
-              <div class="overflow-hidden rounded-[1.55rem] border border-[rgba(148,163,184,0.22)] bg-[#101b2e] shadow-[inset_0_1px_0_rgba(255,255,255,0.95)]">
-                <div class="flex items-center justify-between border-b border-[rgba(148,163,184,0.22)]/75 bg-[#0d1829] px-4 py-3">
+            <div
+              class="relative rounded-[2rem] border border-white/80 bg-[#101b2e] p-2 shadow-[0_30px_90px_rgba(68,64,60,0.11)]"
+            >
+              <div
+                class="overflow-hidden rounded-[1.55rem] border border-[rgba(148,163,184,0.22)] bg-[#101b2e] shadow-[inset_0_1px_0_rgba(255,255,255,0.95)]"
+              >
+                <div
+                  class="flex items-center justify-between border-b border-[rgba(148,163,184,0.22)]/75 bg-[#0d1829] px-4 py-3"
+                >
                   <div class="flex items-center gap-2">
                     <span class="h-2.5 w-2.5 rounded-full bg-teal-500"></span>
                     <span class="h-2.5 w-2.5 rounded-full bg-teal-300"></span>
                     <span class="h-2.5 w-2.5 rounded-full bg-slate-500"></span>
                   </div>
-                  <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300">missing route</span>
+                  <span
+                    class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                    >missing route</span
+                  >
                 </div>
 
                 <div class="space-y-4 p-5 sm:p-6">
-                  <div class="rounded-2xl bg-teal-300/10 p-4 ring-1 ring-teal-300/20">
+                  <div
+                    class="rounded-2xl bg-teal-300/10 p-4 ring-1 ring-teal-300/20"
+                  >
                     <p class="mini-label text-teal-200">Customer path</p>
-                    <p class="mt-2 font-heading text-2xl font-semibold leading-tight text-teal-50">/old-page</p>
+                    <p
+                      class="mt-2 font-heading text-2xl font-semibold leading-tight text-teal-50"
+                    >
+                      /old-page
+                    </p>
                   </div>
 
                   <div class="grid gap-3">
-                    <div class="ml-auto max-w-[15rem] rounded-2xl rounded-tr-md bg-teal-500 px-4 py-3 text-white shadow-[0_14px_34px_rgba(29,43,67,0.18)]">
-                      <p class="text-base font-medium leading-relaxed">Can I still find VoluChat?</p>
+                    <div
+                      class="ml-auto max-w-[15rem] rounded-2xl rounded-tr-md bg-teal-500 px-4 py-3 text-white shadow-[0_14px_34px_rgba(29,43,67,0.18)]"
+                    >
+                      <p class="text-base font-medium leading-relaxed">
+                        Can I still find VoluChat?
+                      </p>
                     </div>
-                    <div class="max-w-[18rem] rounded-2xl rounded-tl-md border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-4 py-3">
-                      <p class="text-base font-medium leading-relaxed text-slate-200">Yes. Try the homepage or jump to the pages below.</p>
+                    <div
+                      class="max-w-[18rem] rounded-2xl rounded-tl-md border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-4 py-3"
+                    >
+                      <p
+                        class="text-base font-medium leading-relaxed text-slate-200"
+                      >
+                        Yes. Try the homepage or jump to the pages below.
+                      </p>
                     </div>
                   </div>
 
                   <div class="grid gap-2 pt-1">
-                    {recoveryLinks.map((link) => (
-                      <a href={link.href} class="group flex items-center justify-between rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-teal-300/20 hover:bg-teal-300/10">
-                        <span>
-                          <span class="block text-sm font-bold text-white">{link.label}</span>
-                          <span class="mt-0.5 block text-xs font-semibold text-slate-300">{link.note}</span>
-                        </span>
-                        <span class="grid h-8 w-8 place-items-center rounded-full bg-[#0d1829] text-sm font-bold text-teal-200 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 group-hover:bg-[#101b2e]">
-                          &rarr;
-                        </span>
-                      </a>
-                    ))}
+                    {
+                      recoveryLinks.map((link) => (
+                        <a
+                          href={link.href}
+                          class="group flex items-center justify-between rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-teal-300/20 hover:bg-teal-300/10"
+                        >
+                          <span>
+                            <span class="block text-sm font-bold text-white">
+                              {link.label}
+                            </span>
+                            <span class="mt-0.5 block text-xs font-semibold text-slate-300">
+                              {link.note}
+                            </span>
+                          </span>
+                          <span class="grid h-8 w-8 place-items-center rounded-full bg-[#0d1829] text-sm font-bold text-teal-200 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 group-hover:bg-[#101b2e]">
+                            &rarr;
+                          </span>
+                        </a>
+                      ))
+                    }
                   </div>
                 </div>
               </div>

@@ -4,103 +4,179 @@ const layers = [
     code: "01",
     title: "Customer context",
     text: "Cart activity, previous orders, questions, preferences, and lifecycle stage in one operating context.",
-    tag: "Buyer signal"
+    tag: "Buyer signal",
   },
   {
     code: "02",
     title: "Catalog awareness",
     text: "Live Shopify products, variants, stock, pricing, eligibility, and policy constraints before the agent answers.",
-    tag: "Store truth"
+    tag: "Store truth",
   },
   {
     code: "03",
     title: "Agent reasoning",
     text: "Product guidance, recovery timing, upsell fit, clearance logic, and handoff decisions happen against your rules.",
-    tag: "Decision layer"
+    tag: "Decision layer",
   },
   {
     code: "04",
     title: "Action history",
     text: "Every recommendation, approval, sent message, and attributed outcome is logged for operators to review.",
-    tag: "Control plane"
-  }
+    tag: "Control plane",
+  },
 ];
 ---
 
-<section id="platform" class="relative overflow-hidden border-y border-white/10 bg-[#0a1726] py-24 sm:py-32">
+<section
+  id="platform"
+  class="relative overflow-hidden border-y border-white/10 bg-[#0a1726] py-24 sm:py-32"
+>
   <div class="sect-grid"></div>
   <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-    <div class="sect-orb animate-aurora absolute right-1/4 top-10 h-[300px] w-[300px] bg-teal-500/10 opacity-40"></div>
+    <div
+      class="sect-orb animate-aurora absolute right-1/4 top-10 h-[300px] w-[300px] bg-teal-500/10 opacity-40"
+    >
+    </div>
   </div>
-  
+
   <div class="page-shell relative z-10">
     <div class="max-w-3xl reveal-on-scroll reveal-up">
       <span class="section-eyebrow">The Agent System</span>
-      <h2 class="section-title mt-4 text-white">One place for agents to understand <span class="gradient-text-anim">the store</span> before they act.</h2>
+      <h2 class="section-title mt-4 text-white">
+        One place for agents to understand <span class="gradient-text-anim"
+          >the store</span
+        > before they act.
+      </h2>
       <p class="section-copy mt-6 max-w-2xl text-slate-300">
-        VoluChat connects Shopify context, catalog rules, customer signals, and approval history so every recommendation is grounded before it reaches a buyer.
+        VoluChat connects Shopify context, catalog rules, customer signals, and
+        approval history so every recommendation is grounded before it reaches a
+        buyer.
       </p>
     </div>
 
     <div class="mt-16 grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
       <!-- Left Column: Primitives Grid (Removed double-card nesting) -->
       <div class="grid gap-4 sm:grid-cols-2">
-        {layers.map((layer, index) => (
-          <article class={`spotlight reveal-on-scroll reveal-scale group rounded-2xl border border-white/10 bg-[#0d192b]/60 backdrop-blur-md p-6 hover:bg-[#142438]/80 hover:border-teal-500/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 shadow-[0_20px_50px_-38px_rgba(0,0,0,0.8)] reveal-delay-${index * 75}`}>
-            <div class="flex items-center justify-between gap-4">
-              <span class="font-mono text-xs font-semibold text-slate-500">{layer.code}</span>
-              <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-teal-200 group-hover:text-teal-100 transition-colors">{layer.tag}</span>
-            </div>
-            <h3 class="mt-8 text-xl font-semibold leading-tight text-white font-heading">{layer.title}</h3>
-            <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300">{layer.text}</p>
-          </article>
-        ))}
+        {
+          layers.map((layer, index) => (
+            <article
+              class={`spotlight reveal-on-scroll reveal-scale group rounded-2xl border border-white/10 bg-[#0d192b]/60 backdrop-blur-md p-6 hover:bg-[#142438]/80 hover:border-teal-500/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 shadow-[0_20px_50px_-38px_rgba(0,0,0,0.8)] reveal-delay-${index * 75}`}
+            >
+              <div class="flex items-center justify-between gap-4">
+                <span class="font-mono text-xs font-semibold text-slate-500">
+                  {layer.code}
+                </span>
+                <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-teal-200 group-hover:text-teal-100 transition-colors">
+                  {layer.tag}
+                </span>
+              </div>
+              <h3 class="mt-8 text-xl font-semibold leading-tight text-white font-heading">
+                {layer.title}
+              </h3>
+              <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300">
+                {layer.text}
+              </p>
+            </article>
+          ))
+        }
       </div>
 
       <!-- Right Column: Interactive Dashboard Mockup -->
-      <aside class="reveal-on-scroll rounded-3xl border border-white/10 bg-[#0b1625]/90 p-6 sm:p-8 relative overflow-hidden shadow-2xl reveal-delay-200">
+      <aside
+        class="reveal-on-scroll rounded-3xl border border-white/10 bg-[#0b1625]/90 p-6 sm:p-8 relative overflow-hidden shadow-2xl reveal-delay-200"
+      >
         <!-- Accent Glow Inside Sidebar -->
-        <div class="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-teal-500/10 blur-3xl opacity-60"></div>
-        
-        <div class="flex items-center justify-between border-b border-white/10 pb-4 relative z-10">
+        <div
+          class="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-teal-500/10 blur-3xl opacity-60"
+        >
+        </div>
+
+        <div
+          class="flex items-center justify-between border-b border-white/10 pb-4 relative z-10"
+        >
           <div class="flex items-center gap-2">
             <span class="h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
-            <p class="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-slate-300">Live Operator View</p>
+            <p
+              class="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-slate-300"
+            >
+              Live Operator View
+            </p>
           </div>
-          <span class="rounded bg-teal-500/10 px-2 py-0.5 font-mono text-[9px] font-bold text-teal-300 border border-teal-500/20">Trace Active</span>
+          <span
+            class="rounded bg-teal-500/10 px-2 py-0.5 font-mono text-[9px] font-bold text-teal-300 border border-teal-500/20"
+            >Trace Active</span
+          >
         </div>
 
         <div class="mt-6 space-y-6 relative z-10">
           <div class="space-y-1">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Trigger Signal</span>
-            <p class="text-lg font-semibold text-white font-heading">High-intent cart abandoned</p>
-            <p class="text-xs text-slate-400">Buyer spent 4 mins on checkout page, then exited.</p>
+            <span
+              class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+              >Trigger Signal</span
+            >
+            <p class="text-lg font-semibold text-white font-heading">
+              High-intent cart abandoned
+            </p>
+            <p class="text-xs text-slate-400">
+              Buyer spent 4 mins on checkout page, then exited.
+            </p>
           </div>
-          
+
           <div class="h-px bg-white/5"></div>
-          
+
           <div class="space-y-3">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Proposed Action</span>
-            <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4 space-y-2">
+            <span
+              class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+              >Proposed Action</span
+            >
+            <div
+              class="rounded-xl border border-white/10 bg-white/[0.02] p-4 space-y-2"
+            >
               <div class="flex items-center justify-between">
-                <span class="text-sm font-bold text-teal-200">Cart Recovery Agent</span>
-                <span class="text-xs font-mono text-slate-400">98% confidence</span>
+                <span class="text-sm font-bold text-teal-200"
+                  >Cart Recovery Agent</span
+                >
+                <span class="text-xs font-mono text-slate-400"
+                  >98% confidence</span
+                >
               </div>
-              <p class="text-xs leading-relaxed text-slate-300">"Hey! Still thinking about the Aero Runners? I've saved your size 10 in our checkout."</p>
+              <p class="text-xs leading-relaxed text-slate-300">
+                "Hey! Still thinking about the Aero Runners? I've saved your
+                size 10 in our checkout."
+              </p>
             </div>
           </div>
-          
-          <div class="rounded-xl border border-teal-500/20 bg-teal-500/5 p-4 flex gap-3">
+
+          <div
+            class="rounded-xl border border-teal-500/20 bg-teal-500/5 p-4 flex gap-3"
+          >
             <span class="mt-0.5 text-teal-400 shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                <path d="M9 12h6"/>
-                <path d="M12 9v6"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                <path d="M9 12h6"></path>
+                <path d="M12 9v6"></path>
               </svg>
             </span>
             <div>
-              <span class="text-xs font-bold text-teal-200 uppercase tracking-wider">Guardrail Safe</span>
-              <p class="mt-1 text-[11px] font-medium leading-relaxed text-slate-300">Recommended recovery discount complies with catalog floor rules.</p>
+              <span
+                class="text-xs font-bold text-teal-200 uppercase tracking-wider"
+                >Guardrail Safe</span
+              >
+              <p
+                class="mt-1 text-[11px] font-medium leading-relaxed text-slate-300"
+              >
+                Recommended recovery discount complies with catalog floor rules.
+              </p>
             </div>
           </div>
         </div>

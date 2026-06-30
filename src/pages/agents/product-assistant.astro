@@ -1,50 +1,50 @@
 ---
-import AgentDetailPage from '../../components/AgentDetailPage.astro';
+import AgentDetailPage from "../../components/AgentDetailPage.astro";
 
 const workflow = [
   {
     title: "Ground every answer in live store data",
-    text: "The agent reads product details, variants, inventory status, price, policies, and collection context before replying. Buyers get answers that reflect what is actually available in Shopify."
+    text: "The agent reads product details, variants, inventory status, price, policies, and collection context before replying. Buyers get answers that reflect what is actually available in Shopify.",
   },
   {
     title: "Resolve pre-purchase hesitation",
-    text: "When shoppers ask about fit, sizing, compatibility, delivery, returns, or alternatives, the agent responds with the same context a trained sales associate would use."
+    text: "When shoppers ask about fit, sizing, compatibility, delivery, returns, or alternatives, the agent responds with the same context a trained sales associate would use.",
   },
   {
     title: "Escalate when judgment is needed",
-    text: "If a question falls outside policy, involves a complaint, or shows high purchase intent, the agent hands the conversation to your team with the relevant product and customer context attached."
-  }
+    text: "If a question falls outside policy, involves a complaint, or shows high purchase intent, the agent hands the conversation to your team with the relevant product and customer context attached.",
+  },
 ];
 
 const useCases = [
   {
     label: "Catalog Q&A",
     title: "Answer variant and stock questions",
-    text: "Handles the repetitive questions that usually slow down support: size availability, color options, restock status, material details, and price differences."
+    text: "Handles the repetitive questions that usually slow down support: size availability, color options, restock status, material details, and price differences.",
   },
   {
     label: "Buying guidance",
     title: "Help shoppers choose confidently",
-    text: "Compares products in the same category, explains tradeoffs, and points buyers toward the option that best matches their stated need."
+    text: "Compares products in the same category, explains tradeoffs, and points buyers toward the option that best matches their stated need.",
   },
   {
     label: "Policy support",
     title: "Reduce checkout anxiety",
-    text: "Explains delivery, returns, exchanges, warranties, and payment policies without forcing buyers to leave the product page."
-  }
+    text: "Explains delivery, returns, exchanges, warranties, and payment policies without forcing buyers to leave the product page.",
+  },
 ];
 
 const guardrails = [
   "Only answers from approved product, inventory, and policy sources.",
   "Avoids promising stock, delivery dates, or discounts that Shopify and your rules do not support.",
   "Routes uncertain or sensitive questions to your team instead of inventing an answer.",
-  "Keeps a record of the source context used for each recommendation."
+  "Keeps a record of the source context used for each recommendation.",
 ];
 
 const relatedLinks = [
   { label: "Cart Recovery Agent", href: "/agents/cart-recovery" },
   { label: "Upsell & Bundle Agent", href: "/agents/upsell" },
-  { label: "Shopify Integration", href: "/integrations/shopify" }
+  { label: "Shopify Integration", href: "/integrations/shopify" },
 ];
 ---
 

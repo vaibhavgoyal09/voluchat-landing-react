@@ -1,44 +1,59 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import FAQ from '../components/FAQ.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
 
 const seoTitle = "VoluChat vs Shopify Chatbots and Helpdesks";
-const seoDescription = "Compare VoluChat with Shopify chatbot builders, helpdesks, and analytics tools for cart recovery, product questions, upsells, and revenue workflows.";
+const seoDescription =
+  "Compare VoluChat with Shopify chatbot builders, helpdesks, and analytics tools for cart recovery, product questions, upsells, and revenue workflows.";
 
 const competitors = [
   {
     name: "Chatbot Builders (e.g. Manychat, Chatfuel)",
     fit: "Broad workflow builders meant for marketing automation, lead gen, and basic Q&A across many social platforms.",
-    setup: "Requires you to map triggers, branches, keywords, and replies manually. High setup overhead for edge cases.",
-    contrast: "VoluChat provides pre-trained AI agents that instantly understand your Shopify catalog, stock, and pricing without manual rule building."
+    setup:
+      "Requires you to map triggers, branches, keywords, and replies manually. High setup overhead for edge cases.",
+    contrast:
+      "VoluChat provides pre-trained AI agents that instantly understand your Shopify catalog, stock, and pricing without manual rule building.",
   },
   {
     name: "Helpdesks (e.g. Gorgias, Zendesk)",
     fit: "Ticketing systems built for customer support teams to manage post-purchase issues, returns, and complaints.",
-    setup: "Optimized for resolving support tickets. Using them for proactive cart recovery or dynamic upselling often requires heavy customization or add-ons.",
-    contrast: "VoluChat agents are focused on revenue operations: closing pre-purchase questions, recovering carts, and clearing slow inventory proactively."
+    setup:
+      "Optimized for resolving support tickets. Using them for proactive cart recovery or dynamic upselling often requires heavy customization or add-ons.",
+    contrast:
+      "VoluChat agents are focused on revenue operations: closing pre-purchase questions, recovering carts, and clearing slow inventory proactively.",
   },
   {
     name: "Analytics Tools (e.g. Triple Whale)",
     fit: "Data aggregation and dashboards to show you store performance and revenue metrics across channels.",
-    setup: "Gives you deep insights but stops at reporting. You still have to act on the data manually.",
-    contrast: "VoluChat doesn't just surface revenue leaks—it dispatches agents to automatically execute campaigns that plug those leaks."
-  }
+    setup:
+      "Gives you deep insights but stops at reporting. You still have to act on the data manually.",
+    contrast:
+      "VoluChat doesn't just surface revenue leaks—it dispatches agents to automatically execute campaigns that plug those leaks.",
+  },
 ];
 
 const setupComparison = [
   {
     label: "Broad SaaS tools",
     title: "Generic functionality",
-    points: ["Empty canvas requiring manual logic", "Post-purchase ticketing focus", "Data without execution"]
+    points: [
+      "Empty canvas requiring manual logic",
+      "Post-purchase ticketing focus",
+      "Data without execution",
+    ],
   },
   {
     label: "VoluChat",
     title: "Commerce-native agents",
-    points: ["Pre-trained on Shopify catalogs", "Proactive revenue recovery", "Agentic execution of tasks"]
-  }
+    points: [
+      "Pre-trained on Shopify catalogs",
+      "Proactive revenue recovery",
+      "Agentic execution of tasks",
+    ],
+  },
 ];
 ---
 
@@ -47,17 +62,26 @@ const setupComparison = [
 
   <main class="animate-page-entry opacity-0 pt-20">
     <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(83,111,159,0.12),transparent_32%),radial-gradient(circle_at_18%_42%,rgba(203,217,234,0.16),transparent_30%)]"></div>
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(83,111,159,0.12),transparent_32%),radial-gradient(circle_at_18%_42%,rgba(203,217,234,0.16),transparent_30%)]"
+      >
+      </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="mx-auto max-w-4xl text-center">
           <div class="chip">Comparison guide</div>
-          <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
-            Helpdesks and chatbots manage conversations. VoluChat agents drive revenue.
+          <h1
+            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+          >
+            Helpdesks and chatbots manage conversations. VoluChat agents drive
+            revenue.
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-3xl">
-            Generic builders and helpdesks are great for broad support operations. VoluChat is built for D2C brands that want autonomous agents to handle product queries, recover carts, and execute upsells out of the box.
+            Generic builders and helpdesks are great for broad support
+            operations. VoluChat is built for D2C brands that want autonomous
+            agents to handle product queries, recover carts, and execute upsells
+            out of the box.
           </p>
         </div>
       </div>
@@ -66,20 +90,32 @@ const setupComparison = [
     <section class="pb-10">
       <div class="page-shell">
         <div class="grid gap-4 lg:grid-cols-2">
-          {setupComparison.map((item, index) => (
-            <article class={`solid-card md:p-7 ${index === 1 ? 'border-teal-300/20 bg-teal-300/10' : ''}`}>
-              <p class={`mini-label ${index === 1 ? 'text-teal-200' : ''}`}>{item.label}</p>
-              <h2 class="mt-3 text-2xl font-heading font-semibold leading-tight text-white">{item.title}</h2>
-              <div class="mt-5 grid gap-2">
-                {item.points.map((point) => (
-                  <div class="flex items-start gap-3 rounded-xl border border-[rgba(148,163,184,0.2)] bg-[#101b2e] p-3">
-                    <span class={`mt-1 h-2 w-2 shrink-0 rounded-full ${index === 1 ? 'bg-teal-500' : 'bg-slate-500'}`}></span>
-                    <p class="text-base font-medium leading-relaxed text-slate-300">{point}</p>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ))}
+          {
+            setupComparison.map((item, index) => (
+              <article
+                class={`solid-card md:p-7 ${index === 1 ? "border-teal-300/20 bg-teal-300/10" : ""}`}
+              >
+                <p class={`mini-label ${index === 1 ? "text-teal-200" : ""}`}>
+                  {item.label}
+                </p>
+                <h2 class="mt-3 text-2xl font-heading font-semibold leading-tight text-white">
+                  {item.title}
+                </h2>
+                <div class="mt-5 grid gap-2">
+                  {item.points.map((point) => (
+                    <div class="flex items-start gap-3 rounded-xl border border-[rgba(148,163,184,0.2)] bg-[#101b2e] p-3">
+                      <span
+                        class={`mt-1 h-2 w-2 shrink-0 rounded-full ${index === 1 ? "bg-teal-500" : "bg-slate-500"}`}
+                      />
+                      <p class="text-base font-medium leading-relaxed text-slate-300">
+                        {point}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -88,40 +124,57 @@ const setupComparison = [
       <div class="page-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <aside class="solid-card h-fit lg:sticky lg:top-32 lg:p-8">
           <p class="section-eyebrow">The architectural difference</p>
-          <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white">
+          <h2
+            class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white"
+          >
             Choose specialized AI over generic bots.
           </h2>
           <p class="mt-5 text-base font-medium leading-relaxed text-slate-300">
-            VoluChat agents are built specifically for Shopify stores. They don't just reply to messages—they execute commerce workflows like inventory clearance and abandoned cart recovery with human oversight.
+            VoluChat agents are built specifically for Shopify stores. They
+            don't just reply to messages—they execute commerce workflows like
+            inventory clearance and abandoned cart recovery with human
+            oversight.
           </p>
-          <a href="/contact" class="btn-primary mt-8 w-full">Request Agent Review</a>
+          <a href="/contact" class="btn-primary mt-8 w-full"
+            >Request Agent Review</a
+          >
         </aside>
 
         <div class="space-y-5">
-          {competitors.map((item) => (
-            <article class="solid-card md:p-7">
-              <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-                <div>
-                  <p class="mini-label">Alternative Category</p>
-                  <h3 class="mt-2 text-2xl font-heading font-semibold text-white">{item.name}</h3>
+          {
+            competitors.map((item) => (
+              <article class="solid-card md:p-7">
+                <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <p class="mini-label">Alternative Category</p>
+                    <h3 class="mt-2 text-2xl font-heading font-semibold text-white">
+                      {item.name}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-              <div class="mt-6 grid gap-4 md:grid-cols-2">
-                <div class="rounded-2xl border border-[rgba(148,163,184,0.2)] bg-[#101b2e] p-5">
-                  <p class="mini-label">Core strength</p>
-                  <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">{item.fit}</p>
+                <div class="mt-6 grid gap-4 md:grid-cols-2">
+                  <div class="rounded-2xl border border-[rgba(148,163,184,0.2)] bg-[#101b2e] p-5">
+                    <p class="mini-label">Core strength</p>
+                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                      {item.fit}
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-[rgba(148,163,184,0.2)] bg-[#0d1829] p-5">
+                    <p class="mini-label">The Tradeoff</p>
+                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                      {item.setup}
+                    </p>
+                  </div>
                 </div>
-                <div class="rounded-2xl border border-[rgba(148,163,184,0.2)] bg-[#0d1829] p-5">
-                  <p class="mini-label">The Tradeoff</p>
-                  <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">{item.setup}</p>
+                <div class="mt-4 rounded-2xl border border-teal-300/20 bg-teal-300/10 p-5">
+                  <p class="mini-label text-teal-200">VoluChat Advantage</p>
+                  <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
+                    {item.contrast}
+                  </p>
                 </div>
-              </div>
-              <div class="mt-4 rounded-2xl border border-teal-300/20 bg-teal-300/10 p-5">
-                <p class="mini-label text-teal-200">VoluChat Advantage</p>
-                <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">{item.contrast}</p>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>

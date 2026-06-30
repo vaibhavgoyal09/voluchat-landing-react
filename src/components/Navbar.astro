@@ -1,6 +1,6 @@
 ---
 const isHome = Astro.url.pathname === "/";
-const homeHref = (hash) => isHome ? hash : `/${hash}`;
+const homeHref = (hash) => (isHome ? hash : `/${hash}`);
 
 const navigation = [
   { name: "Platform", href: homeHref("#platform") },
@@ -14,28 +14,45 @@ const navigation = [
 const demoHref = "/contact";
 ---
 
-<header id="lp-navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+<header
+  id="lp-navbar"
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+>
   <div class="lp-nav-inner mx-auto w-full max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
-    <nav class="flex h-16 items-center justify-between rounded-full border border-white/10 bg-[#08111f]/82 px-3 shadow-[0_24px_72px_-46px_rgba(0,0,0,0.95)] backdrop-blur-2xl sm:px-4" aria-label="Global">
+    <nav
+      class="flex h-16 items-center justify-between rounded-full border border-white/10 bg-[#08111f]/82 px-3 shadow-[0_24px_72px_-46px_rgba(0,0,0,0.95)] backdrop-blur-2xl sm:px-4"
+      aria-label="Global"
+    >
       <div class="flex lg:flex-1">
         <a href="/" class="-m-1.5 p-1.5 focus-visible:ring-offset-0">
           <span class="sr-only">VoluChat</span>
           <div class="flex items-center gap-2.5">
-            <img src="/voluchat_logo.svg" alt="VoluChat Logo" class="h-8 w-8 object-contain" />
-            <span class="font-heading text-[1.4rem] font-extrabold tracking-tight text-white">VoluChat</span>
+            <img
+              src="/voluchat_logo.svg"
+              alt="VoluChat Logo"
+              class="h-8 w-8 object-contain"
+            />
+            <span
+              class="font-heading text-[1.4rem] font-extrabold tracking-tight text-white"
+              >VoluChat</span
+            >
           </div>
         </a>
       </div>
 
-      <div class="hidden lg:flex lg:gap-x-1 rounded-full border border-[rgba(148,163,184,0.16)] bg-white/[0.045] px-1.5 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.055)]">
-        {navigation.map((item) => (
-          <a
-            href={item.href}
-            class="nav-link relative rounded-full px-4 py-2 text-[13px] font-semibold text-slate-200 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/[0.09] hover:text-white"
-          >
-            {item.name}
-          </a>
-        ))}
+      <div
+        class="hidden lg:flex lg:gap-x-1 rounded-full border border-[rgba(148,163,184,0.16)] bg-white/[0.045] px-1.5 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.055)]"
+      >
+        {
+          navigation.map((item) => (
+            <a
+              href={item.href}
+              class="nav-link relative rounded-full px-4 py-2 text-[13px] font-semibold text-slate-200 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/[0.09] hover:text-white"
+            >
+              {item.name}
+            </a>
+          ))
+        }
       </div>
 
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -55,8 +72,18 @@ const demoHref = "/contact";
           aria-expanded="false"
         >
           <span class="sr-only">Open menu</span>
-          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
@@ -64,22 +91,29 @@ const demoHref = "/contact";
   </div>
 
   <!-- Mobile Menu Dropdown -->
-  <div id="lp-mobile-backdrop" class="fixed inset-0 -z-10 bg-slate-950/60 backdrop-blur-sm lg:hidden" aria-hidden="true"></div>
-  <div 
+  <div
+    id="lp-mobile-backdrop"
+    class="fixed inset-0 -z-10 bg-slate-950/60 backdrop-blur-sm lg:hidden"
+    aria-hidden="true"
+  >
+  </div>
+  <div
     id="lp-mobile-menu"
     class="fixed left-1/2 top-24 z-40 w-[calc(100%-2.5rem)] max-w-[22rem] rounded-2xl border border-white/10 bg-[#08111f] p-5 shadow-[0_32px_90px_rgba(0,0,0,0.5)] lg:hidden"
     role="dialog"
     aria-modal="true"
   >
     <div class="flex flex-col gap-2">
-      {navigation.map((item) => (
-        <a
-          href={item.href}
-          class="lp-mobile-link rounded-xl border border-white/10 bg-white/[0.055] px-4 py-3 text-[15px] font-semibold text-white transition hover:bg-white/[0.095] hover:border-white/15"
-        >
-          {item.name}
-        </a>
-      ))}
+      {
+        navigation.map((item) => (
+          <a
+            href={item.href}
+            class="lp-mobile-link rounded-xl border border-white/10 bg-white/[0.055] px-4 py-3 text-[15px] font-semibold text-white transition hover:bg-white/[0.095] hover:border-white/15"
+          >
+            {item.name}
+          </a>
+        ))
+      }
       <a
         href={demoHref}
         class="lp-mobile-link mt-4 flex items-center justify-center rounded-xl bg-white px-4 py-3 text-[15px] font-bold text-slate-950 transition hover:bg-slate-200"
@@ -99,26 +133,36 @@ const demoHref = "/contact";
   #lp-navbar.scrolled .lp-nav-inner nav {
     transform: translateY(-2px) scale(0.985);
     border-color: rgba(94, 234, 212, 0.22);
-    box-shadow: 0 24px 72px -46px rgba(0,0,0,0.95), 0 0 0 1px rgba(45,212,191,0.06), 0 0 38px -12px rgba(45,212,191,0.18);
+    box-shadow:
+      0 24px 72px -46px rgba(0, 0, 0, 0.95),
+      0 0 0 1px rgba(45, 212, 191, 0.06),
+      0 0 38px -12px rgba(45, 212, 191, 0.18);
   }
   .lp-nav-inner nav {
-    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), border-color 0.45s ease, box-shadow 0.45s ease;
+    transition:
+      transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.45s ease,
+      box-shadow 0.45s ease;
   }
 
   /* Animated underline for desktop nav links */
   .nav-link::after {
     content: "";
     position: absolute;
-    left: 12px; right: 12px; bottom: 6px;
+    left: 12px;
+    right: 12px;
+    bottom: 6px;
     height: 1.5px;
     border-radius: 999px;
     background: linear-gradient(90deg, #2dd4bf, #5eeac9);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0.85;
   }
-  .nav-link:hover::after { transform: scaleX(1); }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
 
   .lp-menu-line {
     display: block;
@@ -127,17 +171,26 @@ const demoHref = "/contact";
     width: 17px;
     border-radius: 999px;
     background: currentColor;
-    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.32s ease;
+    transition:
+      transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.32s ease;
   }
 
-  .lp-menu-a { transform: translateY(-3.5px); }
-  .lp-menu-b { transform: translateY(3.5px); }
+  .lp-menu-a {
+    transform: translateY(-3.5px);
+  }
+  .lp-menu-b {
+    transform: translateY(3.5px);
+  }
 
   #lp-mobile-menu,
   #lp-mobile-backdrop {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s ease,
+      visibility 0.28s ease;
   }
 
   #lp-mobile-menu {
@@ -169,40 +222,45 @@ const demoHref = "/contact";
 
 <script>
   // Scroll behavior
-  const navbar = document.getElementById('lp-navbar');
+  const navbar = document.getElementById("lp-navbar");
   const onScroll = () => {
     if (window.scrollY > 20) {
-      navbar?.classList.add('scrolled');
+      navbar?.classList.add("scrolled");
     } else {
-      navbar?.classList.remove('scrolled');
+      navbar?.classList.remove("scrolled");
     }
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
   // Mobile menu
-  const toggle = document.getElementById('lp-mobile-menu-btn');
-  const menu = document.getElementById('lp-mobile-menu');
-  const backdrop = document.getElementById('lp-mobile-backdrop');
+  const toggle = document.getElementById("lp-mobile-menu-btn");
+  const menu = document.getElementById("lp-mobile-menu");
+  const backdrop = document.getElementById("lp-mobile-backdrop");
 
   const closeMenu = () => {
-    menu?.classList.remove('lp-menu-open');
-    backdrop?.classList.remove('lp-menu-open');
-    toggle?.classList.remove('lp-toggle-open');
-    toggle?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    menu?.classList.remove("lp-menu-open");
+    backdrop?.classList.remove("lp-menu-open");
+    toggle?.classList.remove("lp-toggle-open");
+    toggle?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   };
 
-  toggle?.addEventListener('click', () => {
-    const isOpen = menu?.classList.contains('lp-menu-open');
-    if (isOpen) { closeMenu(); return; }
-    menu?.classList.add('lp-menu-open');
-    backdrop?.classList.add('lp-menu-open');
-    toggle.classList.add('lp-toggle-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("lp-menu-open");
+    if (isOpen) {
+      closeMenu();
+      return;
+    }
+    menu?.classList.add("lp-menu-open");
+    backdrop?.classList.add("lp-menu-open");
+    toggle.classList.add("lp-toggle-open");
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
   });
 
-  backdrop?.addEventListener('click', closeMenu);
-  document.querySelectorAll('.lp-mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+  backdrop?.addEventListener("click", closeMenu);
+  document
+    .querySelectorAll(".lp-mobile-link")
+    .forEach((link) => link.addEventListener("click", closeMenu));
 </script>

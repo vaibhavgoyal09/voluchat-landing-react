@@ -1,50 +1,50 @@
 ---
-import AgentDetailPage from '../../components/AgentDetailPage.astro';
+import AgentDetailPage from "../../components/AgentDetailPage.astro";
 
 const workflow = [
   {
     title: "Trigger from real customer milestones",
-    text: "The agent uses order, fulfillment, delivery, and customer history signals so follow-ups happen at the right moment instead of on a generic delay."
+    text: "The agent uses order, fulfillment, delivery, and customer history signals so follow-ups happen at the right moment instead of on a generic delay.",
   },
   {
     title: "Separate happy customers from support risks",
-    text: "It asks for feedback, detects frustration or delivery issues, and routes unhappy customers toward support before asking for reviews or repeat purchases."
+    text: "It asks for feedback, detects frustration or delivery issues, and routes unhappy customers toward support before asking for reviews or repeat purchases.",
   },
   {
     title: "Create the next useful action",
-    text: "Depending on the response, the agent can request a review, suggest replenishment, recommend a related product, or hand off to a human."
-  }
+    text: "Depending on the response, the agent can request a review, suggest replenishment, recommend a related product, or hand off to a human.",
+  },
 ];
 
 const useCases = [
   {
     label: "Post-delivery",
     title: "Check satisfaction after the order arrives",
-    text: "Reaches out once delivery is complete, not while the customer is still waiting or dealing with fulfillment uncertainty."
+    text: "Reaches out once delivery is complete, not while the customer is still waiting or dealing with fulfillment uncertainty.",
   },
   {
     label: "Retention",
     title: "Prompt replenishment and repeat purchase",
-    text: "Uses product type and purchase timing to suggest the right next order when the customer is likely to need it."
+    text: "Uses product type and purchase timing to suggest the right next order when the customer is likely to need it.",
   },
   {
     label: "Review flow",
     title: "Ask for advocacy at the right moment",
-    text: "Requests a review from happy customers while routing issues to support instead of creating a negative public touchpoint."
-  }
+    text: "Requests a review from happy customers while routing issues to support instead of creating a negative public touchpoint.",
+  },
 ];
 
 const guardrails = [
   "Follow-ups are based on real fulfillment and delivery status.",
   "Open support cases pause promotional messages automatically.",
   "Negative sentiment escalates to a human instead of pushing an offer.",
-  "Repeat-purchase prompts follow your timing, frequency, and product eligibility rules."
+  "Repeat-purchase prompts follow your timing, frequency, and product eligibility rules.",
 ];
 
 const relatedLinks = [
   { label: "Product Assistant", href: "/agents/product-assistant" },
   { label: "Upsell & Bundle Agent", href: "/agents/upsell" },
-  { label: "Cart Recovery Agent", href: "/agents/cart-recovery" }
+  { label: "Cart Recovery Agent", href: "/agents/cart-recovery" },
 ];
 ---
 

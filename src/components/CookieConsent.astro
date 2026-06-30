@@ -12,13 +12,18 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
   <div class="flex items-start gap-3">
     <span class="cookie-mark mt-1 shrink-0" aria-hidden="true"></span>
     <div class="min-w-0">
-      <h2 class="text-base font-heading font-semibold leading-tight text-stone-950">
+      <h2
+        class="text-base font-heading font-semibold leading-tight text-stone-950"
+      >
         Analytics cookies
       </h2>
       <p class="mt-1.5 text-[13px] font-medium leading-relaxed text-stone-600">
         Help us improve VoluChat pages. Essential cookies stay on either way.
       </p>
-      <a href="/privacy" class="mt-2 inline-flex text-[13px] font-semibold text-primary-800 underline decoration-primary-300 underline-offset-4 transition hover:text-primary-900">
+      <a
+        href="/privacy"
+        class="mt-2 inline-flex text-[13px] font-semibold text-primary-800 underline decoration-primary-300 underline-offset-4 transition hover:text-primary-900"
+      >
         Privacy policy
       </a>
       <p class="mt-2 text-[11px] font-semibold leading-relaxed text-stone-500">
@@ -72,7 +77,9 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
       radial-gradient(circle at 35% 62%, #ffffff 0 1.5px, transparent 2px),
       radial-gradient(circle at 58% 74%, #ffffff 0 1px, transparent 1.5px),
       linear-gradient(135deg, #1d2b43, #536f9f);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.36), 0 6px 14px rgba(29, 43, 67, 0.16);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.36),
+      0 6px 14px rgba(29, 43, 67, 0.16);
   }
 
   .cookie-mark::after {
@@ -89,48 +96,56 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
 </style>
 
 <script>
-  const CONSENT_KEY = 'voluchat-cookie-consent';
-  const banner = document.getElementById('cookie-consent');
+  const CONSENT_KEY = "voluchat-cookie-consent";
+  const banner = document.getElementById("cookie-consent");
   const measurementId = banner?.dataset.gaMeasurementId;
-  const acceptButton = banner?.querySelector('[data-cookie-accept]');
-  const rejectButton = banner?.querySelector('[data-cookie-reject]');
+  const acceptButton = banner?.querySelector("[data-cookie-accept]");
+  const rejectButton = banner?.querySelector("[data-cookie-reject]");
   const HIDE_ANIMATION_MS = 500;
   const SCROLL_ACCEPT_THRESHOLD = 80;
   let initialScrollY = window.scrollY;
 
   const loadGoogleAnalytics = () => {
-    if (!measurementId || window.dataLayer || document.querySelector(`script[src*="${measurementId}"]`)) {
+    if (
+      !measurementId ||
+      window.dataLayer ||
+      document.querySelector(`script[src*="${measurementId}"]`)
+    ) {
       return;
     }
 
     window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);};
-    window.gtag('js', new Date());
-    window.gtag('config', measurementId);
+    window.gtag =
+      window.gtag ||
+      function gtag() {
+        window.dataLayer.push(arguments);
+      };
+    window.gtag("js", new Date());
+    window.gtag("config", measurementId);
 
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
     document.head.append(script);
   };
 
   const hideBanner = () => {
-    if (!banner || banner.classList.contains('is-hiding')) {
+    if (!banner || banner.classList.contains("is-hiding")) {
       return;
     }
 
-    banner.classList.add('is-hiding');
+    banner.classList.add("is-hiding");
     window.setTimeout(() => {
-      banner?.setAttribute('hidden', '');
-      banner?.classList.remove('is-hiding');
+      banner?.setAttribute("hidden", "");
+      banner?.classList.remove("is-hiding");
     }, HIDE_ANIMATION_MS);
   };
 
   const acceptConsent = () => {
-    localStorage.setItem(CONSENT_KEY, 'accepted');
+    localStorage.setItem(CONSENT_KEY, "accepted");
     loadGoogleAnalytics();
     hideBanner();
-    window.removeEventListener('scroll', handleScrollConsent);
+    window.removeEventListener("scroll", handleScrollConsent);
   };
 
   const handleScrollConsent = () => {
@@ -143,20 +158,20 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
 
   const savedConsent = localStorage.getItem(CONSENT_KEY);
 
-  if (savedConsent === 'accepted') {
+  if (savedConsent === "accepted") {
     loadGoogleAnalytics();
-  } else if (savedConsent !== 'rejected') {
+  } else if (savedConsent !== "rejected") {
     initialScrollY = window.scrollY;
-    banner?.classList.remove('is-hiding');
-    banner?.removeAttribute('hidden');
-    window.addEventListener('scroll', handleScrollConsent, { passive: true });
+    banner?.classList.remove("is-hiding");
+    banner?.removeAttribute("hidden");
+    window.addEventListener("scroll", handleScrollConsent, { passive: true });
   }
 
-  acceptButton?.addEventListener('click', acceptConsent);
+  acceptButton?.addEventListener("click", acceptConsent);
 
-  rejectButton?.addEventListener('click', () => {
-    localStorage.setItem(CONSENT_KEY, 'rejected');
-    window.removeEventListener('scroll', handleScrollConsent);
+  rejectButton?.addEventListener("click", () => {
+    localStorage.setItem(CONSENT_KEY, "rejected");
+    window.removeEventListener("scroll", handleScrollConsent);
     hideBanner();
   });
 </script>

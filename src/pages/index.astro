@@ -1,47 +1,49 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import ProblemSection from '../components/ProblemSection.astro';
-import PlatformSection from '../components/PlatformSection.astro';
-import UseCasesSection from '../components/UseCasesSection.astro';
-import ProductLoopSection from '../components/ProductLoopSection.astro';
-import GuardrailsSection from '../components/GuardrailsSection.astro';
-import DemoFlowSection from '../components/DemoFlowSection.astro';
-import FounderNoteSection from '../components/FounderNoteSection.astro';
-import TrustSection from '../components/TrustSection.astro';
-import FAQ from '../components/FAQ.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import ProblemSection from "../components/ProblemSection.astro";
+import PlatformSection from "../components/PlatformSection.astro";
+import UseCasesSection from "../components/UseCasesSection.astro";
+import ProductLoopSection from "../components/ProductLoopSection.astro";
+import GuardrailsSection from "../components/GuardrailsSection.astro";
+import DemoFlowSection from "../components/DemoFlowSection.astro";
+import FounderNoteSection from "../components/FounderNoteSection.astro";
+import TrustSection from "../components/TrustSection.astro";
+import FAQ from "../components/FAQ.astro";
+import Footer from "../components/Footer.astro";
 
 const seoTitle = "Shopify AI Agents for Revenue Recovery | VoluChat";
-const seoDescription = "Use VoluChat's Shopify AI agents to recover carts, answer product questions, recommend upsells, follow up with buyers, and control actions with guardrails.";
-const seoKeywords = "Shopify AI agents, AI cart recovery, ecommerce AI agents, Shopify automation, product question AI, revenue recovery agent, D2C automation, VoluChat";
+const seoDescription =
+  "Use VoluChat's Shopify AI agents to recover carts, answer product questions, recommend upsells, follow up with buyers, and control actions with guardrails.";
+const seoKeywords =
+  "Shopify AI agents, AI cart recovery, ecommerce AI agents, Shopify automation, product question AI, revenue recovery agent, D2C automation, VoluChat";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "VoluChat",
-    "url": siteUrl,
-    "logo": `${siteUrl}/voluchat_logo.svg`,
-    "sameAs": []
+    name: "VoluChat",
+    url: siteUrl,
+    logo: `${siteUrl}/voluchat_logo.svg`,
+    sameAs: [],
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "VoluChat",
-    "url": siteUrl,
-    "description": seoDescription
+    name: "VoluChat",
+    url: siteUrl,
+    description: seoDescription,
   },
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "VoluChat",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "url": siteUrl,
-    "description": seoDescription
-  }
+    name: "VoluChat",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    url: siteUrl,
+    description: seoDescription,
+  },
 ];
 ---
 
@@ -51,8 +53,8 @@ const structuredData = [
   keywords={seoKeywords}
   structuredData={structuredData}
 >
-    <Navbar />
-  
+  <Navbar />
+
   <main class="overflow-x-hidden">
     <Hero />
     <ProblemSection />

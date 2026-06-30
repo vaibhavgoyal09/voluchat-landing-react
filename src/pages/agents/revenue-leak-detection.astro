@@ -1,50 +1,50 @@
 ---
-import AgentDetailPage from '../../components/AgentDetailPage.astro';
+import AgentDetailPage from "../../components/AgentDetailPage.astro";
 
 const workflow = [
   {
     title: "Watch for patterns across the store",
-    text: "The agent looks at repeated unanswered questions, abandoned carts, slow inventory, product-page hesitation, offer performance, and drop-off reasons."
+    text: "The agent looks at repeated unanswered questions, abandoned carts, slow inventory, product-page hesitation, offer performance, and drop-off reasons.",
   },
   {
     title: "Turn signals into ranked opportunities",
-    text: "It separates noise from action by estimating where the leak is happening, what workflow could address it, and whether the fix needs approval."
+    text: "It separates noise from action by estimating where the leak is happening, what workflow could address it, and whether the fix needs approval.",
   },
   {
     title: "Route the fix to the right agent",
-    text: "Some leaks become product-answer improvements, some become recovery workflows, some become clearance campaigns, and some need a human operator."
-  }
+    text: "Some leaks become product-answer improvements, some become recovery workflows, some become clearance campaigns, and some need a human operator.",
+  },
 ];
 
 const useCases = [
   {
     label: "Conversion friction",
     title: "Find repeated reasons shoppers hesitate",
-    text: "Surfaces patterns such as delivery uncertainty, missing size guidance, unclear returns, or repeated price objections."
+    text: "Surfaces patterns such as delivery uncertainty, missing size guidance, unclear returns, or repeated price objections.",
   },
   {
     label: "Operational gaps",
     title: "Spot work that keeps falling through",
-    text: "Highlights carts, products, and categories where the store is creating demand but not converting it into revenue."
+    text: "Highlights carts, products, and categories where the store is creating demand but not converting it into revenue.",
   },
   {
     label: "Action routing",
     title: "Recommend the next workflow",
-    text: "Suggests whether to deploy a recovery message, update product guidance, launch a clearance offer, or escalate a pattern to the team."
-  }
+    text: "Suggests whether to deploy a recovery message, update product guidance, launch a clearance offer, or escalate a pattern to the team.",
+  },
 ];
 
 const guardrails = [
   "Can run in observe-only mode before any automated intervention is enabled.",
   "Separates insights from actions so operators can approve workflow changes.",
   "Logs the evidence behind each recommendation.",
-  "Escalates sensitive customer or policy patterns to a human reviewer."
+  "Escalates sensitive customer or policy patterns to a human reviewer.",
 ];
 
 const relatedLinks = [
   { label: "Cart Recovery Agent", href: "/agents/cart-recovery" },
   { label: "Inventory Clearance Agent", href: "/agents/inventory-clearance" },
-  { label: "Product Assistant", href: "/agents/product-assistant" }
+  { label: "Product Assistant", href: "/agents/product-assistant" },
 ];
 ---
 

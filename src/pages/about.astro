@@ -1,42 +1,52 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import FAQ from '../components/FAQ.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
 
 const principles = [
   {
     title: "Agents over automation",
-    text: "Rule-based chatbots break when buyers ask real questions. Commerce agents adapt, using your catalog and policies to solve problems."
+    text: "Rule-based chatbots break when buyers ask real questions. Commerce agents adapt, using your catalog and policies to solve problems.",
   },
   {
     title: "Action over chat",
-    text: "Answering questions is step one. Recovering carts, clearing stock, and creating upsells is where AI actually drives revenue."
+    text: "Answering questions is step one. Recovering carts, clearing stock, and creating upsells is where AI actually drives revenue.",
   },
   {
     title: "Guardrails over blind trust",
-    text: "Agents should act autonomously but within strict boundaries. Every action is logged, and sensitive decisions require your approval."
-  }
+    text: "Agents should act autonomously but within strict boundaries. Every action is logged, and sensitive decisions require your approval.",
+  },
 ];
 ---
 
-<Layout title="About VoluChat | Shopify AI Agents" description="Learn why VoluChat builds Shopify AI agents for cart recovery, product questions, upsells, inventory workflows, and revenue recovery.">
+<Layout
+  title="About VoluChat | Shopify AI Agents"
+  description="Learn why VoluChat builds Shopify AI agents for cart recovery, product questions, upsells, inventory workflows, and revenue recovery."
+>
   <Header />
 
   <main class="animate-page-entry opacity-0 pt-20">
     <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_80%_16%,rgba(203,217,234,0.2),transparent_30%)]"></div>
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_80%_16%,rgba(203,217,234,0.2),transparent_30%)]"
+      >
+      </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <div class="chip">Our Vision</div>
-            <h1 class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl">
+            <h1
+              class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl"
+            >
               Commerce needs action, not just conversation.
             </h1>
             <p class="section-copy mt-6 max-w-xl">
-              VoluChat was built because growing D2C brands have too much data and too little time. You don't need a smarter chatbot—you need an autonomous agent that acts on your store data to drive revenue.
+              VoluChat was built because growing D2C brands have too much data
+              and too little time. You don't need a smarter chatbot—you need an
+              autonomous agent that acts on your store data to drive revenue.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="/contact" class="btn-primary">Request Agent Review</a>
@@ -45,7 +55,15 @@ const principles = [
           </div>
 
           <div class="solid-card p-3">
-            <img src="/about_hero.webp" alt="VoluChat workspace for commerce agents" class="h-full w-full rounded-xl object-cover" width="1024" height="1024" loading="eager" decoding="async" />
+            <img
+              src="/about_hero.webp"
+              alt="VoluChat workspace for commerce agents"
+              class="h-full w-full rounded-xl object-cover"
+              width="1024"
+              height="1024"
+              loading="eager"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
@@ -55,20 +73,34 @@ const principles = [
       <div class="page-shell">
         <div class="mx-auto max-w-3xl text-center">
           <p class="section-eyebrow">What we believe</p>
-          <h2 class="section-title mt-4">AI should be a team member, not a tool.</h2>
+          <h2 class="section-title mt-4">
+            AI should be a team member, not a tool.
+          </h2>
           <p class="section-copy mx-auto mt-5 max-w-2xl">
-            We are building Shopify AI agents that detect opportunities, recommend actions, seek your approval, and execute workflows to recover revenue.
+            We are building Shopify AI agents that detect opportunities,
+            recommend actions, seek your approval, and execute workflows to
+            recover revenue.
           </p>
         </div>
 
         <div class="mt-12 grid gap-5 md:grid-cols-3">
-          {principles.map((item, index) => (
-            <article class={`solid-card reveal-on-scroll ${index === 1 ? 'reveal-delay-100' : index === 2 ? 'reveal-delay-200' : ''}`}>
-              <span class="grid h-10 w-10 place-items-center rounded-full bg-teal-500 font-mono text-xs font-semibold text-white">0{index + 1}</span>
-              <h3 class="mt-6 text-xl font-heading font-semibold text-white">{item.title}</h3>
-              <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">{item.text}</p>
-            </article>
-          ))}
+          {
+            principles.map((item, index) => (
+              <article
+                class={`solid-card reveal-on-scroll ${index === 1 ? "reveal-delay-100" : index === 2 ? "reveal-delay-200" : ""}`}
+              >
+                <span class="grid h-10 w-10 place-items-center rounded-full bg-teal-500 font-mono text-xs font-semibold text-white">
+                  0{index + 1}
+                </span>
+                <h3 class="mt-6 text-xl font-heading font-semibold text-white">
+                  {item.title}
+                </h3>
+                <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
+                  {item.text}
+                </p>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -77,22 +109,42 @@ const principles = [
       <div class="page-shell">
         <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div class="solid-card p-3">
-            <img src="/mission_collaboration.webp" alt="Configuring ecommerce agent workflows" class="max-h-[500px] w-full rounded-xl object-cover" width="1024" height="1024" loading="lazy" decoding="async" />
+            <img
+              src="/mission_collaboration.webp"
+              alt="Configuring ecommerce agent workflows"
+              class="max-h-[500px] w-full rounded-xl object-cover"
+              width="1024"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <div>
             <p class="section-eyebrow">Founder note</p>
-            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white sm:text-5xl">
+            <h2
+              class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white sm:text-5xl"
+            >
               We are building Shopify AI agents that act.
             </h2>
-            <p class="mt-5 text-base font-semibold leading-relaxed text-slate-300">
-              Chatbots wait for a customer to ask a question. Helpdesks wait for a ticket to be filed. Commerce agents proactively find ways to increase your revenue, whether that's recovering an abandoned cart or offering a bundle on slow-moving stock.
+            <p
+              class="mt-5 text-base font-semibold leading-relaxed text-slate-300"
+            >
+              Chatbots wait for a customer to ask a question. Helpdesks wait for
+              a ticket to be filed. Commerce agents proactively find ways to
+              increase your revenue, whether that's recovering an abandoned cart
+              or offering a bundle on slow-moving stock.
             </p>
-            <div class="mt-8 rounded-xl border border-teal-300/20 bg-teal-300/10 p-6">
+            <div
+              class="mt-8 rounded-xl border border-teal-300/20 bg-teal-300/10 p-6"
+            >
               <p class="text-lg font-semibold leading-relaxed text-slate-200">
-                "Commerce brands don't need more dashboards to look at. They need agents that act on the data for them."
+                "Commerce brands don't need more dashboards to look at. They
+                need agents that act on the data for them."
               </p>
-              <p class="mt-5 text-sm font-semibold text-teal-200">Vaibhav Goyal, Founder</p>
+              <p class="mt-5 text-sm font-semibold text-teal-200">
+                Vaibhav Goyal, Founder
+              </p>
             </div>
           </div>
         </div>

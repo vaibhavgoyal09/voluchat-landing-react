@@ -1,7 +1,7 @@
 ---
 const currentYear = new Date().getFullYear();
 const isHome = Astro.url.pathname === "/";
-const homeHref = (hash) => isHome ? hash : `/${hash}`;
+const homeHref = (hash) => (isHome ? hash : `/${hash}`);
 
 const footerSections = [
   {
@@ -46,15 +46,25 @@ const footerSections = [
 ];
 ---
 
-<footer class="relative overflow-hidden border-t border-[rgba(148,163,184,0.16)] bg-[#060d18] py-16">
+<footer
+  class="relative overflow-hidden border-t border-[rgba(148,163,184,0.16)] bg-[#060d18] py-16"
+>
   <div class="page-shell relative z-10">
-    <section id="demo" class="mb-16 rounded-[1.75rem] border border-teal-300/20 bg-[radial-gradient(circle_at_50%_0%,rgba(45,212,191,0.12),transparent_42%),rgba(16,27,46,0.86)] p-6 text-center shadow-[0_32px_90px_-56px_rgba(45,212,191,0.45)] sm:p-10">
+    <section
+      id="demo"
+      class="mb-16 rounded-[1.75rem] border border-teal-300/20 bg-[radial-gradient(circle_at_50%_0%,rgba(45,212,191,0.12),transparent_42%),rgba(16,27,46,0.86)] p-6 text-center shadow-[0_32px_90px_-56px_rgba(45,212,191,0.45)] sm:p-10"
+    >
       <p class="section-eyebrow">Ready for a working agent system?</p>
-      <h2 class="mx-auto mt-4 max-w-2xl text-3xl font-heading font-bold leading-tight text-white sm:text-5xl">
+      <h2
+        class="mx-auto mt-4 max-w-2xl text-3xl font-heading font-bold leading-tight text-white sm:text-5xl"
+      >
         Find the first revenue leak VoluChat should automate.
       </h2>
-      <p class="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-slate-200 sm:text-lg">
-        Share your store and priority workflow. We will review where agents can safely recover revenue first.
+      <p
+        class="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-slate-200 sm:text-lg"
+      >
+        Share your store and priority workflow. We will review where agents can
+        safely recover revenue first.
       </p>
       <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
         <a href="/contact" class="btn-primary">Request Agent Review</a>
@@ -63,46 +73,73 @@ const footerSections = [
     </section>
 
     <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_repeat(4,1fr)]">
-      
       <!-- Brand column -->
       <div class="flex flex-col gap-4">
-        <a href="/" class="flex items-center gap-2.5 rounded-xl pr-2 transition hover:opacity-85" aria-label="VoluChat home">
-          <img src="/voluchat_logo.svg" alt="VoluChat Logo" class="h-8 w-8 object-contain" />
-          <span class="font-heading text-xl font-bold text-white">VoluChat</span>
+        <a
+          href="/"
+          class="flex items-center gap-2.5 rounded-xl pr-2 transition hover:opacity-85"
+          aria-label="VoluChat home"
+        >
+          <img
+            src="/voluchat_logo.svg"
+            alt="VoluChat Logo"
+            class="h-8 w-8 object-contain"
+          />
+          <span class="font-heading text-xl font-bold text-white">VoluChat</span
+          >
         </a>
-        <p class="text-xs text-slate-300 font-medium leading-relaxed max-w-[24ch]">
+        <p
+          class="text-xs text-slate-300 font-medium leading-relaxed max-w-[24ch]"
+        >
           AI commerce agents for modern D2C and Shopify brands.
         </p>
       </div>
 
-      {footerSections.map((section) => (
-        <div>
-          <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">{section.title}</h4>
-          <ul class="mt-4 space-y-2">
-            {section.links.map((link) => (
-              <li>
-                <a href={link.href} class="text-xs text-slate-200 font-semibold hover:text-white transition">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-
+      {
+        footerSections.map((section) => (
+          <div>
+            <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-300">
+              {section.title}
+            </h4>
+            <ul class="mt-4 space-y-2">
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-xs text-slate-200 font-semibold hover:text-white transition"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
 
-    <div class="mt-16 pt-8 border-t border-[rgba(148,163,184,0.1)] flex flex-col items-center justify-between gap-6 sm:flex-row">
-      <p class="text-[11px] font-bold text-slate-300 uppercase tracking-widest text-center sm:text-left leading-relaxed">
-        © {currentYear} QubitNine Technologies Pvt Ltd. All rights reserved. <br />
+    <div
+      class="mt-16 pt-8 border-t border-[rgba(148,163,184,0.1)] flex flex-col items-center justify-between gap-6 sm:flex-row"
+    >
+      <p
+        class="text-[11px] font-bold text-slate-300 uppercase tracking-widest text-center sm:text-left leading-relaxed"
+      >
+        © {currentYear} QubitNine Technologies Pvt Ltd. All rights reserved. <br
+        />
         Built for serious Shopify brands requiring margin-safe automation.
       </p>
-      
-      <div class="flex gap-2.5 items-center px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 backdrop-blur-md">
-        <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
-        <span class="text-[9px] font-bold text-emerald-400 uppercase tracking-widest">Platform Operational</span>
+
+      <div
+        class="flex gap-2.5 items-center px-4 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 backdrop-blur-md"
+      >
+        <span
+          class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"
+        ></span>
+        <span
+          class="text-[9px] font-bold text-emerald-400 uppercase tracking-widest"
+          >Platform Operational</span
+        >
       </div>
     </div>
-
   </div>
 </footer>

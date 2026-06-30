@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
-const readNotFoundPage = () => readFile(new URL("../src/pages/404.astro", import.meta.url), "utf8");
+const readNotFoundPage = () =>
+  readFile(new URL("../src/pages/404.astro", import.meta.url), "utf8");
 
 test("404 page uses shared layout and is excluded from search indexing", async () => {
   const page = await readNotFoundPage();

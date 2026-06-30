@@ -1,50 +1,50 @@
 ---
-import AgentDetailPage from '../../components/AgentDetailPage.astro';
+import AgentDetailPage from "../../components/AgentDetailPage.astro";
 
 const workflow = [
   {
     title: "Understand the buying moment",
-    text: "The agent reads the active product, cart composition, price sensitivity, and customer intent before deciding whether an upsell belongs in the conversation."
+    text: "The agent reads the active product, cart composition, price sensitivity, and customer intent before deciding whether an upsell belongs in the conversation.",
   },
   {
     title: "Recommend what is genuinely relevant",
-    text: "It suggests add-ons, bundles, replenishment items, or upgrades based on catalog relationships and your merchandising rules, not random product pushes."
+    text: "It suggests add-ons, bundles, replenishment items, or upgrades based on catalog relationships and your merchandising rules, not random product pushes.",
   },
   {
     title: "Back off when the shopper says no",
-    text: "If the buyer declines or shows urgency, the agent moves the conversation toward checkout instead of continuing to pitch."
-  }
+    text: "If the buyer declines or shows urgency, the agent moves the conversation toward checkout instead of continuing to pitch.",
+  },
 ];
 
 const useCases = [
   {
     label: "Attach rate",
     title: "Suggest matching accessories",
-    text: "Recommends products that complete the purchase, such as care kits, refills, protective accessories, or companion SKUs."
+    text: "Recommends products that complete the purchase, such as care kits, refills, protective accessories, or companion SKUs.",
   },
   {
     label: "Bundles",
     title: "Create higher-value orders",
-    text: "Introduces approved bundles when the shopper's intent matches a package that improves value for both the customer and the store."
+    text: "Introduces approved bundles when the shopper's intent matches a package that improves value for both the customer and the store.",
   },
   {
     label: "Upgrade paths",
     title: "Explain better-fit alternatives",
-    text: "Compares premium options when the buyer asks for durability, performance, quantity, or a more complete solution."
-  }
+    text: "Compares premium options when the buyer asks for durability, performance, quantity, or a more complete solution.",
+  },
 ];
 
 const guardrails = [
   "Only recommends products allowed by your merchandising rules.",
   "Caps how often offers appear inside a single conversation.",
   "Respects a refusal immediately and returns to checkout assistance.",
-  "Keeps bundle and discount recommendations inside approved margin limits."
+  "Keeps bundle and discount recommendations inside approved margin limits.",
 ];
 
 const relatedLinks = [
   { label: "Product Assistant", href: "/agents/product-assistant" },
   { label: "Inventory Clearance Agent", href: "/agents/inventory-clearance" },
-  { label: "Cart Recovery Agent", href: "/agents/cart-recovery" }
+  { label: "Cart Recovery Agent", href: "/agents/cart-recovery" },
 ];
 ---
 
