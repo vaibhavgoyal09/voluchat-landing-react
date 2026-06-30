@@ -4,8 +4,9 @@ const workflows = [
     code: "CR",
     href: "/agents/cart-recovery",
     title: "Recover carts with context, not reminder spam",
-    text: "Detect checkout drop-off, identify the likely objection, and use approved recovery offers only when they make commercial sense.",
+    text: "Detect checkout drop-off, identify the likely objection, and use approved recovery offers only when margin rules allow it.",
     metric: "Cart recovery",
+    cta: "Recover this cart",
   },
   {
     code: "PA",
@@ -13,6 +14,7 @@ const workflows = [
     title: "Answer buying questions from live catalog data",
     text: "Handle sizing, stock, delivery, returns, and product-fit questions before the buyer leaves the product page.",
     metric: "Product confidence",
+    cta: "View assistant",
   },
   {
     code: "UB",
@@ -20,6 +22,7 @@ const workflows = [
     title: "Introduce relevant bundles at the right moment",
     text: "Suggest add-ons and upgrades when intent is clear, then back off cleanly when the buyer wants to checkout.",
     metric: "Order value",
+    cta: "View upsell flow",
   },
   {
     code: "IC",
@@ -27,6 +30,7 @@ const workflows = [
     title: "Move slow stock without store-wide discounting",
     text: "Turn aging inventory into targeted offers for shoppers already browsing related products or categories.",
     metric: "Stock velocity",
+    cta: "Move this stock",
   },
   {
     code: "CF",
@@ -34,6 +38,7 @@ const workflows = [
     title: "Turn delivery moments into retention workflows",
     text: "Check satisfaction, route issues to support, ask for reviews, and prompt repeat purchases when timing is right.",
     metric: "Repeat purchase",
+    cta: "View follow-up agent",
   },
   {
     code: "RL",
@@ -41,6 +46,7 @@ const workflows = [
     title: "Find the revenue leaks hiding between tools",
     text: "Rank operational gaps across unanswered demand, abandoned carts, slow inventory, and product-page hesitation.",
     metric: "Leak detection",
+    cta: "Audit revenue leaks",
   },
 ];
 ---
@@ -129,7 +135,7 @@ const workflows = [
                       {workflow.text}
                     </p>
                     <div class="mt-8 flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
-                      <span class="text-slate-400">Fix this leak</span>
+                      <span class="text-slate-400">{workflow.cta}</span>
                       <span class="text-teal-200 transition group-hover:translate-x-1">
                         View agent &rarr;
                       </span>
@@ -148,7 +154,7 @@ const workflows = [
                         Checkout Drop-off
                       </span>
                       <span class="text-red-400 font-bold">
-                        High Leak (-Rs.12k/day)
+                        High priority
                       </span>
                     </div>
                     <div class="flex items-center justify-between py-1.5 border-b border-white/5">
@@ -191,7 +197,7 @@ const workflows = [
                     </p>
                   </div>
                   <div class="mt-8 flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
-                    <span class="text-slate-400">Fix this leak</span>
+                    <span class="text-slate-400">{workflow.cta}</span>
                     <span class="text-teal-200 transition group-hover:translate-x-1">
                       View agent &rarr;
                     </span>

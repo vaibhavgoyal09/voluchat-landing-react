@@ -131,7 +131,7 @@
                 type="text"
                 id="hero-input"
                 class="hero-input flex-1 bg-transparent font-mono text-[13px] text-slate-100 placeholder:text-slate-600 outline-none"
-                placeholder="type a command — try 'help'"
+                placeholder="try 'recover', 'rules', or 'leaks'"
                 autocomplete="off"
                 spellcheck="false"
                 aria-label="Agent console command input"
@@ -314,12 +314,9 @@
     const COMMANDS: Record<string, string[]> = {
       help: [
         "# Available commands",
-        "  agents        List the deployed agent roster",
+        "  agents        List available agent modules",
         "  recover       Cart recovery agent",
         "  answer        Product assistant agent",
-        "  upsell        Upsell & bundles agent",
-        "  stock         Inventory clearance agent",
-        "  follow-up     Customer follow-up agent",
         "  leaks         Revenue leak detection",
         "  campaign      Approval-gated campaigns",
         "  rules         How guardrails work",
@@ -327,7 +324,7 @@
         "  clear         Clear the console",
       ],
       agents: [
-        "# Agent roster — 6 deployed",
+        "# Available agent modules",
         "",
         "  Cart Recovery",
         ">  /agents/cart-recovery",
@@ -342,13 +339,13 @@
         "  Revenue Leak Detection",
         ">  /agents/revenue-leak-detection",
         "",
-        "  Type any agent name (e.g. 'recover') for details.",
+        "  Type a command like 'recover' for details.",
       ],
       recover: [
         "# Cart Recovery Agent",
         "  Detects checkout drop-off, identifies the likely",
         "  objection, and uses approved recovery offers only",
-        "  when they make commercial sense.",
+        "  when margin rules allow it.",
         ">  /agents/cart-recovery",
       ],
       answer: [
@@ -471,7 +468,8 @@
       // Banner
       print([
         "# VoluChat Agent Console",
-        "  Type 'help' for available commands.",
+        "  Shopify agents for recovery, product answers, follow-up, and campaigns.",
+        "  Every action stays inside your margin and approval rules.",
         "",
       ]);
 
@@ -487,7 +485,6 @@
               setTimeout(() => {
                 run(intro);
                 input.value = "";
-                input.focus();
               }, 400);
             }
           }, 80);
