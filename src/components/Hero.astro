@@ -75,268 +75,476 @@
         </div>
       </div>
 
-      <!-- Hero Visual -->
-      <div class="hero-mockup lg:hero-stage relative animate-float-slow">
-        <!-- Ambient background glow behind the mockup window -->
+      <!-- Hero Visual: Interactive Agent Console -->
+      <div class="hero-mockup lg:hero-stage relative">
         <div
-          class="absolute -inset-4 rounded-[2rem] bg-teal-500/10 blur-3xl opacity-50"
+          class="absolute -inset-6 rounded-[2.5rem] bg-teal-500/10 blur-3xl opacity-40"
+          aria-hidden="true"
         >
         </div>
 
         <div
-          class="relative rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-2.5 shadow-[0_45px_120px_-60px_rgba(0,0,0,0.95)] backdrop-blur-xl border-glow-anim"
+          class="hero-console relative rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_50px_140px_-70px_rgba(0,0,0,0.95)] backdrop-blur-xl border-glow-anim"
         >
           <div
-            class="relative rounded-[1.25rem] border border-white/10 bg-[#0d192b] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
+            class="relative rounded-[1.1rem] border border-white/10 bg-[#080f1a] overflow-hidden"
           >
+            <!-- Title bar -->
             <div
-              class="flex items-center justify-between border-b border-white/10 pb-4 mb-5"
+              class="flex items-center justify-between border-b border-white/[0.06] px-5 py-3.5 bg-white/[0.015]"
             >
               <div class="flex items-center gap-2.5">
-                <span class="h-2 w-2 rounded-full bg-teal-400 animate-pulse"
+                <span class="hero-dot bg-rose-400/70"></span>
+                <span class="hero-dot bg-amber-400/70"></span>
+                <span class="hero-dot bg-teal-400/70"></span>
+                <span
+                  class="ml-2 font-mono text-[11px] font-bold uppercase tracking-wider text-slate-400"
+                  >voluchat · agent console</span
+                >
+              </div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse"
                 ></span>
                 <span
-                  class="font-mono text-xs font-bold uppercase tracking-wider text-slate-300"
-                  >Agent operating trace</span
+                  class="font-mono text-[10px] font-bold uppercase tracking-wider text-teal-300/80"
+                  >connected</span
                 >
               </div>
-              <span
-                class="rounded-md border border-teal-500/25 bg-teal-500/10 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-teal-300"
-                >Live View</span
-              >
             </div>
 
-            <div class="space-y-4">
-              <!-- Segment 1: Repeated question (Product Assistant) -->
-              <div
-                class="trace-segment spotlight tilt flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.015] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:bg-white/[0.035]"
-                data-tilt-strength="4"
-              >
-                <div
-                  class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-white/10 bg-[#101b2b] font-mono text-xs font-bold text-slate-400"
-                >
-                  01
-                </div>
-                <div class="space-y-3 w-full">
-                  <div>
-                    <div
-                      class="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono"
-                    >
-                      01. Query Detected
-                    </div>
-                    <div class="text-sm font-semibold text-white mt-0.5">
-                      "Do you have running shoes in size 10?"
-                    </div>
-                  </div>
-                  <div class="border-t border-white/5 pt-3">
-                    <div
-                      class="text-[10px] font-bold text-teal-300 uppercase tracking-wider font-mono"
-                    >
-                      02. Automated Response Drafted
-                    </div>
-                    <div class="text-sm font-semibold text-slate-200 mt-0.5">
-                      "Yes! The Aero Runners are in stock in size 10."
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <!-- Terminal body -->
+            <div
+              class="hero-term font-mono text-[13px] leading-relaxed p-5 h-[400px] sm:h-[440px] overflow-y-auto"
+              id="hero-output"
+            ></div>
 
-              <!-- Segment 2: Abandoned Cart (Cart Recovery) -->
-              <div
-                class="trace-segment spotlight tilt flex items-start gap-4 rounded-xl border border-amber-500/20 bg-gradient-to-br from-[#0d192b] to-[#452a0a]/10 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:to-[#452a0a]/20"
-                data-tilt-strength="4"
+            <!-- Input line -->
+            <div
+              class="flex items-center gap-3 border-t border-white/[0.06] px-5 py-4 bg-white/[0.015]"
+            >
+              <span
+                class="font-mono text-sm font-bold text-teal-300 select-none"
+                >›</span
               >
-                <div
-                  class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-amber-500/20 bg-[#101b2b] font-mono text-xs font-bold text-amber-400"
-                >
-                  02
-                </div>
-                <div class="space-y-3 w-full">
-                  <div>
-                    <div
-                      class="text-[10px] font-bold text-amber-400 uppercase tracking-wider font-mono"
-                    >
-                      03. High-Intent Cart Abandoned
-                    </div>
-                    <div class="text-sm font-bold text-white mt-0.5">
-                      Rs. 9,600 checkout left at recovery step.
-                    </div>
-                  </div>
-                  <div class="border-t border-amber-500/10 pt-3">
-                    <div
-                      class="text-[10px] font-bold text-amber-300 uppercase tracking-wider font-mono"
-                    >
-                      04. Margin-Safe Recovery Prepared
-                    </div>
-                    <div
-                      class="text-xs font-semibold text-slate-300 mt-0.5 bg-[#07111f]/60 p-2.5 rounded-lg border border-white/5"
-                    >
-                      "Still interested in Aero Runners? Sizing is locked. Use
-                      your link to checkout."
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Segment 3: Human Approval (Control Plane) -->
-              <div
-                class="trace-segment spotlight tilt flex items-center justify-between rounded-xl border border-teal-500/25 bg-teal-500/5 p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:bg-teal-500/10"
-                data-tilt-strength="4"
+              <input
+                type="text"
+                id="hero-input"
+                class="hero-input flex-1 bg-transparent font-mono text-[13px] text-slate-100 placeholder:text-slate-600 outline-none"
+                placeholder="type a command — try 'help'"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Agent console command input"
+              />
+              <button
+                id="hero-send"
+                class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-teal-300 transition-colors duration-300"
               >
-                <div class="flex items-center gap-3">
-                  <span
-                    class="flex h-7 w-7 items-center justify-center rounded-full border border-teal-500/25 bg-teal-500/10 font-mono text-[10px] font-bold text-teal-300"
-                    >05</span
-                  >
-                  <div>
-                    <div
-                      class="text-[10px] font-bold text-teal-300 uppercase tracking-wider font-mono"
-                    >
-                      05. Handoff Required
-                    </div>
-                    <div class="text-sm font-bold">
-                      Review 10% discount offer
-                    </div>
-                  </div>
-                </div>
-                <button
-                  class="rounded-lg bg-white px-4 py-2 text-xs font-bold text-slate-950 transition-all hover:bg-slate-200 active:scale-[0.98]"
-                >
-                  Approve
-                </button>
-              </div>
-
-              <!-- Segment 4: Success Attribution (Revenue Recovery) -->
-              <div class="trace-segment grid grid-cols-2 gap-3 font-mono">
-                <div
-                  class="spotlight tilt rounded-xl border border-white/10 bg-white/[0.015] p-3 text-center transition-all hover:bg-white/[0.03]"
-                  data-tilt-strength="3"
-                >
-                  <div
-                    class="text-[9px] font-bold text-slate-400 uppercase tracking-wider"
-                  >
-                    06. Action Sync
-                  </div>
-                  <div class="text-xs font-bold text-white mt-1">
-                    Dispatched WhatsApp
-                  </div>
-                </div>
-                <div
-                  class="relative overflow-hidden spotlight tilt rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3 text-center transition-all hover:bg-emerald-500/15"
-                  data-tilt-strength="3"
-                >
-                  <div
-                    class="text-[9px] font-bold text-emerald-400 uppercase tracking-wider"
-                  >
-                    07. Attribution Log
-                  </div>
-                  <div class="text-xs font-extrabold text-emerald-300 mt-1">
-                    +Rs. 8,640 Recovered
-                  </div>
-                </div>
-              </div>
+                ↵ send
+              </button>
             </div>
           </div>
+        </div>
+
+        <!-- Floating suggestion chips -->
+        <div
+          class="absolute -bottom-3 left-6 sm:left-10 flex items-center gap-2 rounded-full border border-white/10 bg-[#0b1521] px-4 py-2 shadow-xl"
+        >
+          <span
+            class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-400"
+            >try</span
+          >
+          <button
+            class="hero-suggest font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors cursor-pointer"
+            data-cmd="agents"
+          >
+            agents
+          </button>
+          <span class="text-slate-600">·</span>
+          <button
+            class="hero-suggest font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors cursor-pointer"
+            data-cmd="recover"
+          >
+            recover
+          </button>
+          <span class="text-slate-600">·</span>
+          <button
+            class="hero-suggest font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors cursor-pointer"
+            data-cmd="rules"
+          >
+            rules
+          </button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<style>
+  .hero-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 9999px;
+    display: inline-block;
+  }
+  .hero-term {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(45, 212, 191, 0.2) transparent;
+  }
+  .hero-term::-webkit-scrollbar {
+    width: 6px;
+  }
+  .hero-term::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .hero-term::-webkit-scrollbar-thumb {
+    background: rgba(45, 212, 191, 0.18);
+    border-radius: 9999px;
+  }
+  .hero-line {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .hero-line--prompt {
+    color: #e2e8f0;
+  }
+  .hero-line--prompt .hero-cmd {
+    color: #5eeac9;
+    font-weight: 700;
+  }
+  .hero-line--title {
+    color: #5eeac9;
+    font-weight: 700;
+    margin-top: 0.4rem;
+  }
+  .hero-line--body {
+    color: #94a3b8;
+  }
+  .hero-line--accent {
+    color: #34d399;
+    font-weight: 700;
+  }
+  .hero-line--blank {
+    height: 0.5rem;
+  }
+  .hero-input:focus {
+    caret-color: #5eeac9;
+  }
+</style>
+
 <script>
   // Lightweight, dependency-free hero interactions.
-  // Content is visible by default (no JS-gated LCP). These are progressive
-  // enhancements only — magnetic CTA + staggered entrance via CSS classes.
+  // Content is visible by default (no JS-gated LCP). Progressive enhancements
+  // only — staggered entrance, magnetic CTA, and the interactive agent console.
   (() => {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     const isCoarse = window.matchMedia("(pointer: coarse)").matches;
 
-    const init = () => {
-      // 1. Staggered entrance (CSS-driven; JS only adds the trigger class).
-      const revealTargets = [
+    /* 1. Staggered entrance (CSS-driven; JS only adds the trigger class) */
+    const initEntrance = () => {
+      const targets = [
         ".hero-eyebrow",
         ".hero-title",
         ".hero-text",
         ".hero-ctas",
         ".hero-mockup",
       ];
-      const segments = document.querySelectorAll<HTMLElement>(".trace-segment");
-
       if (prefersReduced) {
-        revealTargets.forEach((sel) => {
-          document.querySelector<HTMLElement>(sel)?.classList.add("hero-in");
-        });
-        segments.forEach((s) => s.classList.add("hero-in"));
+        targets.forEach((s) =>
+          document.querySelector(s)?.classList.add("hero-in"),
+        );
       } else {
-        revealTargets.forEach((sel, i) => {
-          const el = document.querySelector<HTMLElement>(sel);
+        targets.forEach((s, i) => {
+          const el = document.querySelector<HTMLElement>(s);
           if (el) {
             el.style.setProperty("--hero-delay", `${i * 90}ms`);
-            // requestAnimationFrame ensures the initial (pre-animation) state paints first
             requestAnimationFrame(() =>
               requestAnimationFrame(() => el.classList.add("hero-in")),
             );
           }
         });
-        segments.forEach((s, i) => {
-          s.style.setProperty("--hero-delay", `${300 + i * 120}ms`);
-          requestAnimationFrame(() =>
-            requestAnimationFrame(() => s.classList.add("hero-in")),
-          );
-        });
       }
+    };
 
-      // 2. Magnetic CTA (pointer devices only).
-      const magneticBtn = document.querySelector<HTMLElement>(".hero-magnetic");
-      if (magneticBtn && !isCoarse && !prefersReduced) {
-        let rafId = 0;
-        let targetX = 0,
-          targetY = 0,
-          curX = 0,
-          curY = 0;
-
-        magneticBtn.addEventListener("pointermove", (e) => {
-          const rect = magneticBtn.getBoundingClientRect();
-          targetX = (e.clientX - rect.left - rect.width / 2) * 0.35;
-          targetY = (e.clientY - rect.top - rect.height / 2) * 0.35;
-        });
-
-        magneticBtn.addEventListener("pointerleave", () => {
-          targetX = 0;
-          targetY = 0;
-        });
-
-        const loop = () => {
-          curX += (targetX - curX) * 0.18;
-          curY += (targetY - curY) * 0.18;
-          magneticBtn.style.transform = `translate(${curX.toFixed(2)}px, ${curY.toFixed(2)}px)`;
-          rafId = requestAnimationFrame(loop);
-        };
-
-        // Only run the rAF loop while the pointer is over the button.
-        magneticBtn.addEventListener("pointerenter", () => {
-          if (!rafId) rafId = requestAnimationFrame(loop);
-        });
-        magneticBtn.addEventListener("pointerleave", () => {
-          // settle to 0 then stop
-          const stop = () => {
-            if (
-              Math.abs(targetX - curX) < 0.5 &&
-              Math.abs(targetY - curY) < 0.5
-            ) {
-              cancelAnimationFrame(rafId);
-              rafId = 0;
-              magneticBtn.style.transform = "";
-              return;
-            }
-            rafId = requestAnimationFrame(stop);
-          };
-          cancelAnimationFrame(rafId);
+    /* 2. Magnetic CTA (pointer devices only) */
+    const initMagnetic = () => {
+      const btn = document.querySelector<HTMLElement>(".hero-magnetic");
+      if (!btn || isCoarse || prefersReduced) return;
+      let rafId = 0;
+      let tx = 0,
+        ty = 0,
+        cx = 0,
+        cy = 0;
+      btn.addEventListener("pointermove", (e) => {
+        const r = btn.getBoundingClientRect();
+        tx = (e.clientX - r.left - r.width / 2) * 0.35;
+        ty = (e.clientY - r.top - r.height / 2) * 0.35;
+      });
+      btn.addEventListener("pointerleave", () => {
+        tx = 0;
+        ty = 0;
+      });
+      const loop = () => {
+        cx += (tx - cx) * 0.18;
+        cy += (ty - cy) * 0.18;
+        btn.style.transform = `translate(${cx.toFixed(2)}px, ${cy.toFixed(2)}px)`;
+        rafId = requestAnimationFrame(loop);
+      };
+      btn.addEventListener("pointerenter", () => {
+        if (!rafId) rafId = requestAnimationFrame(loop);
+      });
+      btn.addEventListener("pointerleave", () => {
+        const stop = () => {
+          if (Math.abs(tx - cx) < 0.5 && Math.abs(ty - cy) < 0.5) {
+            cancelAnimationFrame(rafId);
+            rafId = 0;
+            btn.style.transform = "";
+            return;
+          }
           rafId = requestAnimationFrame(stop);
+        };
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(stop);
+      });
+    };
+
+    /* 3. Interactive Agent Console — real capabilities, no fake metrics */
+    const COMMANDS: Record<string, string[]> = {
+      help: [
+        "# Available commands",
+        "  agents        List the deployed agent roster",
+        "  recover       Cart recovery agent",
+        "  answer        Product assistant agent",
+        "  upsell        Upsell & bundles agent",
+        "  stock         Inventory clearance agent",
+        "  follow-up     Customer follow-up agent",
+        "  leaks         Revenue leak detection",
+        "  campaign      Approval-gated campaigns",
+        "  rules         How guardrails work",
+        "  about         What VoluChat is",
+        "  clear         Clear the console",
+      ],
+      agents: [
+        "# Agent roster — 6 deployed",
+        "",
+        "  Cart Recovery",
+        ">  /agents/cart-recovery",
+        "  Product Assistant",
+        ">  /agents/product-assistant",
+        "  Upsell & Bundles",
+        ">  /agents/upsell",
+        "  Inventory Clearance",
+        ">  /agents/inventory-clearance",
+        "  Customer Follow-Up",
+        ">  /agents/customer-follow-up",
+        "  Revenue Leak Detection",
+        ">  /agents/revenue-leak-detection",
+        "",
+        "  Type any agent name (e.g. 'recover') for details.",
+      ],
+      recover: [
+        "# Cart Recovery Agent",
+        "  Detects checkout drop-off, identifies the likely",
+        "  objection, and uses approved recovery offers only",
+        "  when they make commercial sense.",
+        ">  /agents/cart-recovery",
+      ],
+      answer: [
+        "# Product Assistant Agent",
+        "  Handles sizing, stock, delivery, returns, and",
+        "  product-fit questions from live catalog data before",
+        "  the buyer leaves the product page.",
+        ">  /agents/product-assistant",
+      ],
+      upsell: [
+        "# Upsell & Bundles Agent",
+        "  Suggests add-ons and upgrades when intent is clear,",
+        "  then backs off cleanly when the buyer wants to",
+        "  checkout.",
+        ">  /agents/upsell",
+      ],
+      stock: [
+        "# Inventory Clearance Agent",
+        "  Turns aging inventory into targeted offers for",
+        "  shoppers already browsing related products — no",
+        "  store-wide discounting.",
+        ">  /agents/inventory-clearance",
+      ],
+      "follow-up": [
+        "# Customer Follow-Up Agent",
+        "  Checks satisfaction, routes issues to support, asks",
+        "  for reviews, and prompts repeat purchases when",
+        "  timing is right.",
+        ">  /agents/customer-follow-up",
+      ],
+      leaks: [
+        "# Revenue Leak Detection",
+        "  Ranks operational gaps across unanswered demand,",
+        "  abandoned carts, slow inventory, and product-page",
+        "  hesitation — so you fix the biggest leak first.",
+        ">  /agents/revenue-leak-detection",
+      ],
+      campaign: [
+        "# Approval-Gated Campaigns",
+        "  Generates marketing campaigns for existing customers",
+        "  from shopper signals and catalog data — then waits",
+        "  for your approval before anything is sent.",
+      ],
+      rules: [
+        "# Guardrails & Control",
+        "  Every agent acts only inside your rules. Discounts,",
+        "  campaigns, and escalations can require human review",
+        "  before an agent moves. You approve, it executes.",
+      ],
+      about: [
+        "# VoluChat",
+        "  Margin-safe AI agents for Shopify. Reviews your store,",
+        "  finds the revenue leaks worth fixing first, and deploys",
+        "  agents that act only inside your rules.",
+      ],
+    };
+
+    const initConsole = () => {
+      const out = document.getElementById("hero-output");
+      const input = document.getElementById(
+        "hero-input",
+      ) as HTMLInputElement | null;
+      if (!out || !input) return;
+
+      const history: string[] = [];
+      let hi = -1;
+
+      const addLine = (text: string, cls: string) => {
+        const d = document.createElement("div");
+        d.className = `hero-line ${cls}`;
+        d.textContent = text;
+        out.appendChild(d);
+      };
+      const addPrompt = (cmd: string) => {
+        const d = document.createElement("div");
+        d.className = "hero-line hero-line--prompt";
+        d.innerHTML = `› <span class="hero-cmd">${cmd}</span>`;
+        out.appendChild(d);
+      };
+      const scroll = () => {
+        out.scrollTop = out.scrollHeight;
+      };
+      const print = (lines: string[]) => {
+        lines.forEach((l) => {
+          if (l === "") {
+            addLine("", "hero-line--blank");
+            return;
+          }
+          if (l.startsWith("#")) {
+            addLine(l.slice(2), "hero-line--title");
+            return;
+          }
+          if (l.startsWith(">")) {
+            addLine(l.slice(2), "hero-line--accent");
+            return;
+          }
+          addLine(l, "hero-line--body");
         });
+        scroll();
+      };
+      const run = (raw: string) => {
+        const cmd = raw.trim().toLowerCase();
+        if (!cmd) return;
+        addPrompt(cmd);
+        history.push(cmd);
+        hi = history.length;
+        if (cmd === "clear") {
+          out.innerHTML = "";
+          return;
+        }
+        const lines = COMMANDS[cmd];
+        print(
+          lines || [
+            `# command not found: ${cmd}`,
+            "  type 'help' for available commands.",
+          ],
+        );
+      };
+
+      // Banner
+      print([
+        "# VoluChat Agent Console",
+        "  Type 'help' for available commands.",
+        "",
+      ]);
+
+      // Auto-type intro (delayed until entrance animation completes)
+      const startConsole = () => {
+        if (!prefersReduced) {
+          const intro = "help";
+          let i = 0;
+          const t = setInterval(() => {
+            input.value = intro.slice(0, ++i);
+            if (i >= intro.length) {
+              clearInterval(t);
+              setTimeout(() => {
+                run(intro);
+                input.value = "";
+                input.focus();
+              }, 400);
+            }
+          }, 80);
+        } else {
+          run("help");
+        }
+      };
+
+      if (prefersReduced) {
+        startConsole();
+      } else {
+        setTimeout(startConsole, 900);
       }
+
+      // Keyboard: Enter to submit, ↑/↓ for history
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          run(input.value);
+          input.value = "";
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          if (hi > 0) input.value = history[--hi];
+        } else if (e.key === "ArrowDown") {
+          e.preventDefault();
+          if (hi < history.length - 1) input.value = history[++hi];
+          else {
+            hi = history.length;
+            input.value = "";
+          }
+        }
+      });
+
+      // Send button
+      document
+        .getElementById("hero-send")
+        ?.addEventListener("click", () => {
+          run(input.value);
+          input.value = "";
+          input.focus();
+        });
+
+      // Suggestion chips
+      document.querySelectorAll<HTMLElement>(".hero-suggest").forEach((b) => {
+        b.addEventListener("click", () => {
+          const c = b.getAttribute("data-cmd") || "";
+          run(c);
+          input.focus();
+        });
+      });
+    };
+
+    /* INIT */
+    const init = () => {
+      initEntrance();
+      initMagnetic();
+      initConsole();
     };
 
     if (document.readyState === "loading") {
