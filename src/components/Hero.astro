@@ -1,49 +1,221 @@
 ---
-import HeroAutomationScene from './HeroAutomationScene.astro';
 ---
 
-<section id="hero" class="relative isolate overflow-hidden pt-[5.5rem] pb-8 sm:pt-[6.5rem] lg:min-h-[calc(100dvh-4rem)] lg:pt-24 lg:pb-8">
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_18%,rgba(83,111,159,0.11),transparent_28%),radial-gradient(circle_at_82%_10%,rgba(203,217,234,0.16),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,249,252,0.86)_58%,rgba(255,255,255,0.96))]"></div>
-  <div class="ambient-noise"></div>
+<section id="hero" class="hero-section relative isolate overflow-hidden pt-[7.5rem] pb-24 sm:pt-[8.5rem] lg:pt-[9.5rem] lg:pb-32">
+  <!-- Modern layered background (pure CSS, zero JS) -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-mesh"></div>
+    <div class="hero-bg-orb hero-bg-orb--teal"></div>
+    <div class="hero-bg-orb hero-bg-orb--emerald"></div>
+    <div class="hero-bg-orb hero-bg-orb--violet"></div>
+    <div class="hero-bg-scan"></div>
+    <div class="hero-bg-vignette"></div>
+  </div>
 
-  <div class="page-shell relative z-10 w-full">
-    <div class="grid items-center gap-6 lg:grid-cols-[1.06fr_0.94fr] xl:gap-10">
-      <div class="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
-        <div id="hero-badge" class="chip mx-auto lg:mx-0">
-          For Instagram-led stores closing on WhatsApp
+  <!-- Localized Dynamic Core Shield Label -->
+  <div class="absolute bottom-6 right-8 sm:right-12 pointer-events-none select-none hidden lg:flex flex-col gap-1 items-end opacity-50 z-10">
+    <div class="flex items-center gap-1.5 text-[9px] font-mono tracking-widest uppercase text-teal-400 font-bold">
+      <span class="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse"></span>
+      Active Guardrail Core
+    </div>
+    <span class="text-[8px] font-mono text-slate-400">Scanning incoming shopper queries</span>
+  </div>
+
+  <div class="page-shell relative z-10">
+    <div class="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+
+      <!-- Copy Block -->
+      <div class="text-center lg:text-left">
+        <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-4 py-1.5 text-xs font-bold text-slate-200 backdrop-blur-md">
+          <span class="h-1.5 w-1.5 rounded-full bg-teal-300 animate-pulse-ring"></span>
+          Margin-safe AI agents for Shopify
         </div>
 
-        <h1 id="hero-title" class="mx-auto mt-3 max-w-[13ch] text-[2.65rem] font-semibold leading-[1.14] text-stone-950 sm:mt-4 sm:max-w-[13ch] sm:text-[2.9rem] sm:leading-[1.14] lg:mx-0 lg:mt-3 lg:max-w-[15ch] lg:text-[3.15rem] lg:leading-[1.1] xl:text-[3.55rem]">
-          <span class="sr-only">Stop losing Instagram buyers to slow replies</span>
-          <span aria-hidden="true" class="block">Stop losing</span>
-          <span aria-hidden="true" class="accent-gradient-text block py-1">Instagram buyers</span>
-          <span aria-hidden="true" class="block">to slow replies.</span>
+        <h1 class="hero-title mt-6 text-[2.85rem] font-bold leading-[1.02] tracking-tight sm:text-[3.4rem] lg:text-[4rem] xl:text-[4.65rem] font-heading">
+          <span class="bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-400">Recover carts, answer buyers, and follow up faster without hiring another </span><span class="gradient-text-anim">operator.</span>
         </h1>
 
-        <p id="hero-description" class="mx-auto mt-4 max-w-lg text-base font-medium leading-relaxed text-stone-600 sm:text-lg lg:mx-0">
-          VoluChat replies to repeated product DMs, captures the buyer's variant and delivery details, and prepares a WhatsApp order message your team can confirm.
+        <p class="hero-text mt-6 max-w-xl text-base font-medium leading-relaxed text-slate-300 sm:text-lg lg:max-w-2xl">
+          VoluChat reviews your Shopify store, finds the revenue leaks worth fixing first, and deploys AI agents that act only inside your rules.
         </p>
 
-        <p class="mx-auto mt-3 hidden max-w-lg text-sm font-semibold leading-relaxed text-stone-500 xl:block lg:mx-0">
-          Start with a founder-led setup. Your team keeps control of payment, confirmation, and exceptions.
-        </p>
-
-        <div id="hero-actions" class="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:justify-center lg:justify-start">
-          <a href="https://dashboard.voluchat.com/register" class="btn-primary">
-            Start Free Setup
+        <div class="hero-ctas mt-8 flex flex-col gap-3.5 sm:flex-row sm:justify-center lg:justify-start">
+          <a href="/contact" class="btn-primary btn-sheen hero-magnetic">
+            Request an Agent Review
           </a>
-          <a href="https://ig.me/m/airwalks.shoes" target="_blank" rel="noopener" class="btn-secondary">
-            Watch Live Demo
+          <a href="#demo-flow" class="btn-secondary">
+            See the Operating Loop
           </a>
         </div>
-
-        <p class="mx-auto mt-3 max-w-lg text-xs font-bold uppercase tracking-[0.13em] text-stone-400 lg:mx-0">
-          No coding required. 30-day money-back guarantee.
-        </p>
-
       </div>
 
-      <HeroAutomationScene />
+      <!-- Hero Visual -->
+      <div class="hero-mockup lg:hero-stage relative animate-float-slow">
+        <!-- Ambient background glow behind the mockup window -->
+        <div class="absolute -inset-4 rounded-[2rem] bg-teal-500/10 blur-3xl opacity-50"></div>
+
+        <div class="relative rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-2.5 shadow-[0_45px_120px_-60px_rgba(0,0,0,0.95)] backdrop-blur-xl border-glow-anim">
+          <div class="relative rounded-[1.25rem] border border-white/10 bg-[#0d192b] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+              <div class="flex items-center gap-2.5">
+                <span class="h-2 w-2 rounded-full bg-teal-400 animate-pulse"></span>
+                <span class="font-mono text-xs font-bold uppercase tracking-wider text-slate-300">Agent operating trace</span>
+              </div>
+              <span class="rounded-md border border-teal-500/25 bg-teal-500/10 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-teal-300">Live View</span>
+            </div>
+
+            <div class="space-y-4">
+
+              <!-- Segment 1: Repeated question (Product Assistant) -->
+              <div class="trace-segment spotlight tilt flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.015] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:bg-white/[0.035]" data-tilt-strength="4">
+                <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-white/10 bg-[#101b2b] font-mono text-xs font-bold text-slate-400">01</div>
+                <div class="space-y-3 w-full">
+                  <div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">01. Query Detected</div>
+                    <div class="text-sm font-semibold text-white mt-0.5">"Do you have running shoes in size 10?"</div>
+                  </div>
+                  <div class="border-t border-white/5 pt-3">
+                    <div class="text-[10px] font-bold text-teal-300 uppercase tracking-wider font-mono">02. Automated Response Drafted</div>
+                    <div class="text-sm font-semibold text-slate-200 mt-0.5">"Yes! The Aero Runners are in stock in size 10."</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Segment 2: Abandoned Cart (Cart Recovery) -->
+              <div class="trace-segment spotlight tilt flex items-start gap-4 rounded-xl border border-amber-500/20 bg-gradient-to-br from-[#0d192b] to-[#452a0a]/10 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:to-[#452a0a]/20" data-tilt-strength="4">
+                <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-amber-500/20 bg-[#101b2b] font-mono text-xs font-bold text-amber-400">02</div>
+                <div class="space-y-3 w-full">
+                  <div>
+                    <div class="text-[10px] font-bold text-amber-400 uppercase tracking-wider font-mono">03. High-Intent Cart Abandoned</div>
+                    <div class="text-sm font-bold text-white mt-0.5">Rs. 9,600 checkout left at recovery step.</div>
+                  </div>
+                  <div class="border-t border-amber-500/10 pt-3">
+                    <div class="text-[10px] font-bold text-amber-300 uppercase tracking-wider font-mono">04. Margin-Safe Recovery Prepared</div>
+                    <div class="text-xs font-semibold text-slate-300 mt-0.5 bg-[#07111f]/60 p-2.5 rounded-lg border border-white/5">
+                      "Still interested in Aero Runners? Sizing is locked. Use your link to checkout."
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Segment 3: Human Approval (Control Plane) -->
+              <div class="trace-segment spotlight tilt flex items-center justify-between rounded-xl border border-teal-500/25 bg-teal-500/5 p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] transition-all hover:bg-teal-500/10" data-tilt-strength="4">
+                <div class="flex items-center gap-3">
+                  <span class="flex h-7 w-7 items-center justify-center rounded-full border border-teal-500/25 bg-teal-500/10 font-mono text-[10px] font-bold text-teal-300">05</span>
+                  <div>
+                    <div class="text-[10px] font-bold text-teal-300 uppercase tracking-wider font-mono">05. Handoff Required</div>
+                    <div class="text-sm font-bold">Review 10% discount offer</div>
+                  </div>
+                </div>
+                <button class="rounded-lg bg-white px-4 py-2 text-xs font-bold text-slate-950 transition-all hover:bg-slate-200 active:scale-[0.98]">
+                  Approve
+                </button>
+              </div>
+
+              <!-- Segment 4: Success Attribution (Revenue Recovery) -->
+              <div class="trace-segment grid grid-cols-2 gap-3 font-mono">
+                <div class="spotlight tilt rounded-xl border border-white/10 bg-white/[0.015] p-3 text-center transition-all hover:bg-white/[0.03]" data-tilt-strength="3">
+                  <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">06. Action Sync</div>
+                  <div class="text-xs font-bold text-white mt-1">Dispatched WhatsApp</div>
+                </div>
+                <div class="relative overflow-hidden spotlight tilt rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3 text-center transition-all hover:bg-emerald-500/15" data-tilt-strength="3">
+                  <div class="text-[9px] font-bold text-emerald-400 uppercase tracking-wider">07. Attribution Log</div>
+                  <div class="text-xs font-extrabold text-emerald-300 mt-1">+Rs. 8,640 Recovered</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Lightweight, dependency-free hero interactions.
+  // Content is visible by default (no JS-gated LCP). These are progressive
+  // enhancements only — magnetic CTA + staggered entrance via CSS classes.
+  (() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+
+    const init = () => {
+      // 1. Staggered entrance (CSS-driven; JS only adds the trigger class).
+      const revealTargets = [
+        '.hero-eyebrow', '.hero-title', '.hero-text', '.hero-ctas', '.hero-mockup',
+      ];
+      const segments = document.querySelectorAll<HTMLElement>('.trace-segment');
+
+      if (prefersReduced) {
+        revealTargets.forEach(sel => {
+          document.querySelector<HTMLElement>(sel)?.classList.add('hero-in');
+        });
+        segments.forEach(s => s.classList.add('hero-in'));
+      } else {
+        revealTargets.forEach((sel, i) => {
+          const el = document.querySelector<HTMLElement>(sel);
+          if (el) {
+            el.style.setProperty('--hero-delay', `${i * 90}ms`);
+            // requestAnimationFrame ensures the initial (pre-animation) state paints first
+            requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('hero-in')));
+          }
+        });
+        segments.forEach((s, i) => {
+          s.style.setProperty('--hero-delay', `${300 + i * 120}ms`);
+          requestAnimationFrame(() => requestAnimationFrame(() => s.classList.add('hero-in')));
+        });
+      }
+
+      // 2. Magnetic CTA (pointer devices only).
+      const magneticBtn = document.querySelector<HTMLElement>('.hero-magnetic');
+      if (magneticBtn && !isCoarse && !prefersReduced) {
+        let rafId = 0;
+        let targetX = 0, targetY = 0, curX = 0, curY = 0;
+
+        magneticBtn.addEventListener('pointermove', (e) => {
+          const rect = magneticBtn.getBoundingClientRect();
+          targetX = (e.clientX - rect.left - rect.width / 2) * 0.35;
+          targetY = (e.clientY - rect.top - rect.height / 2) * 0.35;
+        });
+
+        magneticBtn.addEventListener('pointerleave', () => {
+          targetX = 0; targetY = 0;
+        });
+
+        const loop = () => {
+          curX += (targetX - curX) * 0.18;
+          curY += (targetY - curY) * 0.18;
+          magneticBtn.style.transform = `translate(${curX.toFixed(2)}px, ${curY.toFixed(2)}px)`;
+          rafId = requestAnimationFrame(loop);
+        };
+
+        // Only run the rAF loop while the pointer is over the button.
+        magneticBtn.addEventListener('pointerenter', () => {
+          if (!rafId) rafId = requestAnimationFrame(loop);
+        });
+        magneticBtn.addEventListener('pointerleave', () => {
+          // settle to 0 then stop
+          const stop = () => {
+            if (Math.abs(targetX - curX) < 0.5 && Math.abs(targetY - curY) < 0.5) {
+              cancelAnimationFrame(rafId);
+              rafId = 0;
+              magneticBtn.style.transform = '';
+              return;
+            }
+            rafId = requestAnimationFrame(stop);
+          };
+          cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(stop);
+        });
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init, { once: true });
+    } else {
+      init();
+    }
+  })();
+</script>

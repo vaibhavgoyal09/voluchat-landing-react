@@ -1,44 +1,90 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-const lastUpdated = "April 4, 2026";
+const lastUpdated = "June 30, 2026";
 
 const sections = [
   {
-    title: "1. Introduction",
-    body: "VoluChat respects your privacy and is committed to protecting information connected to your store, channels, products, and buyer conversations."
+    title: "1. Overview",
+    body: [
+      "VoluChat is operated by QubitNine Technologies Private Limited. We provide AI commerce agents for Shopify and D2C brands, including product-question handling, cart recovery, customer follow-up, inventory workflows, and revenue-leak review.",
+      "This Privacy Policy explains what information we collect, how we use it, how we protect it, and how merchants and customers can contact us about privacy requests."
+    ]
   },
   {
     title: "2. Information we collect",
-    body: "We may collect account details, connected Instagram or Facebook Page integration data, authorized access tokens, product catalog information, and conversation data needed to provide reply automation and handoff workflows."
+    body: [
+      "We collect only the information needed to provide, secure, support, and improve VoluChat. Depending on the features you enable, this may include:"
+    ],
+    bullets: [
+      "Merchant account details such as name, email address, company, store URL, and billing or plan information.",
+      "Shopify store data such as products, variants, inventory, collections, carts, checkouts, orders, fulfillments, discounts, and customer records when required for enabled workflows.",
+      "Protected customer data from Shopify, such as customer name, email, phone number, shipping or billing address, order history, and related order metadata, only when the merchant grants access and the workflow requires it.",
+      "Connected-channel data from services such as Instagram, Facebook Pages, WhatsApp, or email, including messages, comments, conversation context, page identifiers, access tokens, and handoff notes.",
+      "Usage, log, device, and technical data such as IP address, browser type, timestamps, error logs, API events, security logs, and feature usage."
+    ]
   },
   {
-    title: "3. How we use information",
-    body: "We use this information to operate VoluChat, answer repeated product questions, prepare buyer summaries, provide support, improve the service, and keep your authorized integrations working."
+    title: "3. Shopify protected customer data",
+    body: [
+      "For Shopify stores, VoluChat may request access to protected customer data only for approved commerce purposes, such as answering customer questions, preparing cart or order recovery workflows, helping merchants support buyers, attributing agent actions, or syncing Shopify context into merchant-approved agent workflows.",
+      "We do not sell protected customer data. We do not use protected customer data for unrelated advertising, profiling, or resale. Access is limited to the minimum data needed for the feature the merchant enables."
+    ]
   },
   {
-    title: "4. Data security",
-    body: "We use encryption, scoped access, secure infrastructure practices, and restricted internal access to protect store data and connected-channel credentials."
+    title: "4. How we use information",
+    body: [
+      "We use information to operate VoluChat, connect merchant-approved integrations, generate agent recommendations or response drafts, route workflows for human approval, provide customer support, monitor reliability, prevent abuse, comply with platform rules, and improve product quality.",
+      "Where VoluChat prepares messages or workflow recommendations, merchants remain responsible for their customer relationships, business rules, approvals, and final use of the output."
+    ]
   },
   {
-    title: "5. Third-party services",
-    body: "VoluChat integrates with Meta services such as Instagram and Facebook Pages. Your use of those channels is also subject to Meta's terms and privacy policies."
+    title: "5. Data sharing and subprocessors",
+    body: [
+      "We may share information with service providers that help us host infrastructure, store data, process logs, send communications, provide analytics, or deliver support. These providers are allowed to process information only for VoluChat-related services.",
+      "VoluChat also integrates with third-party platforms selected or authorized by merchants, including Shopify, Meta services, WhatsApp, and other commerce or communication tools. Data handled by those platforms is subject to their own terms and privacy policies."
+    ]
   },
   {
-    title: "6. Your rights",
-    body: "You can request access, correction, or deletion of personal information where applicable. You can also disconnect authorized channels to stop future collection through those integrations."
+    title: "6. Data retention and deletion",
+    body: [
+      "We retain merchant and customer data only for as long as needed to provide the service, comply with legal obligations, resolve disputes, maintain security, and support legitimate business records.",
+      "Merchants can disconnect integrations or request deletion of data associated with their account. When a Shopify store uninstalls VoluChat or requests deletion, we will delete or anonymize store and protected customer data unless retention is required for security, fraud prevention, legal compliance, or backup recovery windows."
+    ]
   },
   {
-    title: "7. Changes",
-    body: "We may update this policy as the product changes. Material changes will be reflected on this page or communicated through appropriate product or email notices."
+    title: "7. Security practices",
+    body: [
+      "We use administrative, technical, and organizational safeguards designed to protect merchant and customer data. These include encrypted transport, restricted internal access, scoped credentials, environment separation, access logging, backup controls, and operational monitoring.",
+      "No internet service can guarantee absolute security. If we become aware of a security incident that affects personal data, we will investigate and notify affected parties or regulators where required by law or platform policy."
+    ]
+  },
+  {
+    title: "8. Customer rights and merchant controls",
+    body: [
+      "Depending on applicable law, individuals may have rights to access, correct, delete, export, or restrict use of their personal information. Buyers should usually contact the merchant they purchased from first because the merchant controls the customer relationship.",
+      "Merchants can contact us for privacy requests, integration disconnection, data export, deletion, or questions about how VoluChat handles Shopify protected customer data."
+    ]
+  },
+  {
+    title: "9. International processing",
+    body: [
+      "VoluChat may process information in countries where we or our service providers operate. When information is transferred internationally, we use reasonable safeguards appropriate to the nature of the data and the service."
+    ]
+  },
+  {
+    title: "10. Changes to this policy",
+    body: [
+      "We may update this Privacy Policy as VoluChat, Shopify requirements, platform integrations, or legal obligations change. Material changes will be posted on this page or communicated through appropriate product or email notices."
+    ]
   }
 ];
 ---
 
 <Layout title="Privacy Policy | VoluChat" description="VoluChat privacy policy for ecommerce reply automation, connected social channels, and buyer conversation data.">
-  <Header />
+  <Navbar />
 
   <main class="relative overflow-hidden pt-36 pb-24 animate-page-entry opacity-0 sm:pt-40">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.1),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(203,217,234,0.18),transparent_30%)]"></div>
@@ -47,23 +93,34 @@ const sections = [
     <div class="mx-auto max-w-4xl px-6">
       <div class="mb-12">
         <div class="chip">Legal</div>
-        <h1 class="mt-6 text-4xl font-semibold text-stone-950 md:text-5xl">Privacy Policy</h1>
-        <p class="mt-4 font-medium text-stone-500">Last updated: {lastUpdated}</p>
+        <h1 class="mt-6 text-4xl font-semibold text-white md:text-5xl">Privacy Policy</h1>
+        <p class="mt-4 font-medium text-slate-300">Last updated: {lastUpdated}</p>
       </div>
 
-      <div class="solid-card text-stone-600 md:p-10">
+      <div class="rounded-[1.75rem] border border-white/10 bg-[#101b2e] p-6 sm:p-10 text-slate-200">
         <div class="space-y-8">
           {sections.map((section) => (
             <section>
-              <h2 class="mb-3 text-2xl font-heading font-semibold text-stone-950">{section.title}</h2>
-              <p class="leading-relaxed">{section.body}</p>
+              <h2 class="mb-3 text-2xl font-heading font-semibold text-white">{section.title}</h2>
+              <div class="space-y-4">
+                {section.body.map((paragraph) => (
+                  <p class="leading-relaxed">{paragraph}</p>
+                ))}
+                {section.bullets && (
+                  <ul class="list-disc space-y-2 pl-5 leading-relaxed">
+                    {section.bullets.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </section>
           ))}
 
           <section>
-            <h2 class="mb-3 text-2xl font-heading font-semibold text-stone-950">8. Contact information</h2>
+            <h2 class="mb-3 text-2xl font-heading font-semibold text-white">11. Contact information</h2>
             <p class="leading-relaxed">
-              To ask questions about this privacy policy, contact us at <a href="mailto:support@voluchat.com" class="font-semibold text-primary-700 hover:underline">support@voluchat.com</a>.
+              To ask questions about this privacy policy, contact us at <a href="mailto:support@voluchat.com" class="font-semibold text-teal-200 hover:underline">support@voluchat.com</a>.
             </p>
           </section>
         </div>

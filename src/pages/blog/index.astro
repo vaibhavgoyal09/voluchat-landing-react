@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
+import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { fetchPublishedBlogPosts, getBlogApiBaseUrl } from '../../lib/blogApi.mjs';
@@ -18,7 +18,7 @@ try {
 ---
 
 <Layout title="VoluChat Blog | Ecommerce sales team automation guides" description="Guides for ecommerce sales teams that want faster product replies across Instagram, Facebook Pages, and WhatsApp workflows.">
-  <Header />
+  <Navbar />
 
   <main class="relative min-h-screen overflow-hidden pt-36 pb-20 animate-page-entry opacity-0 sm:pt-40">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_10%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_10%_68%,rgba(203,217,234,0.22),transparent_28%)]"></div>
@@ -27,7 +27,7 @@ try {
     <div class="page-shell">
       <div class="mx-auto mb-16 max-w-3xl text-center">
         <div class="chip">Guides</div>
-        <h1 class="mt-6 text-4xl font-semibold leading-[1.03] text-stone-950 sm:text-6xl">
+        <h1 class="mt-6 text-4xl font-semibold leading-[1.03] text-white sm:text-6xl">
           Ecommerce sales team automation guides.
         </h1>
         <p class="section-copy mx-auto mt-5 max-w-2xl">
@@ -36,7 +36,7 @@ try {
       </div>
 
       {error && (
-        <div class="solid-card mb-12 text-center text-sm font-semibold text-stone-700">
+        <div class="mb-12 rounded-[1.75rem] border border-white/10 bg-[#101b2e] p-6 text-center text-sm font-semibold text-slate-200">
           {error}
         </div>
       )}
@@ -49,7 +49,7 @@ try {
 
       {blogs.length === 0 && (
         <div class="py-20 text-center">
-          <p class="font-medium text-stone-400">No blog posts found yet.</p>
+          <p class="font-medium text-slate-400">No blog posts found yet.</p>
         </div>
       )}
     </div>

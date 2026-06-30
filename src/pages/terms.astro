@@ -1,48 +1,110 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-const lastUpdated = "April 4, 2026";
+const lastUpdated = "June 30, 2026";
 
 const sections = [
   {
     title: "1. Acceptance of terms",
-    body: "By accessing or using VoluChat, you agree to these Terms and Conditions. If you do not agree, you may not use the service."
+    body: [
+      "By accessing or using VoluChat, you agree to these Terms and Conditions. If you use VoluChat for a company, store, or other organization, you represent that you have authority to bind that organization to these Terms.",
+      "If you do not agree to these Terms, you may not access or use VoluChat."
+    ]
   },
   {
     title: "2. Description of service",
-    body: "VoluChat provides ecommerce reply automation for repeated product questions, connected social channels, catalog context, and sales-team handoff workflows."
+    body: [
+      "VoluChat provides AI commerce agents and workflow tools for Shopify and D2C merchants. The service may include Shopify catalog and order context, product-question handling, cart recovery, customer follow-up, inventory clearance, upsell workflows, revenue-leak review, connected-channel messaging, and human approval flows.",
+      "VoluChat may generate drafts, recommendations, summaries, automations, or workflow actions. The merchant remains responsible for reviewing outputs, configuring guardrails, honoring customer requests, and deciding how the service is used."
+    ]
   },
   {
-    title: "3. User obligations",
-    body: "You are responsible for providing accurate account information, maintaining account security, reviewing automated responses, and using VoluChat in compliance with applicable laws and platform policies."
+    title: "3. Merchant responsibilities",
+    body: [
+      "You are responsible for your account, your store, your customer relationships, your products, your prices, your policies, and your use of VoluChat outputs.",
+      "You agree to provide accurate account information, maintain account security, review automated responses where appropriate, configure workflow rules carefully, and use VoluChat only in compliance with applicable laws, consumer-protection rules, messaging rules, privacy obligations, and platform policies."
+    ],
+    bullets: [
+      "You must not use VoluChat to send unlawful, deceptive, harmful, discriminatory, or unsolicited communications.",
+      "You must honor customer consent, opt-out, deletion, and data-access requests where applicable.",
+      "You must ensure your Shopify, Meta, WhatsApp, email, or other connected accounts are authorized for the data and workflows you enable.",
+      "You must not attempt to bypass platform limits, security controls, access restrictions, or approval requirements."
+    ]
   },
   {
-    title: "4. Data storage and usage",
-    body: "To provide the service, VoluChat may store authorized access tokens, product context, comments, messages, and handoff data needed to process replies and improve workflows."
+    title: "4. Shopify and connected platforms",
+    body: [
+      "If you connect Shopify, you authorize VoluChat to access and process store data needed for the workflows you enable. This may include protected customer data, order information, products, variants, carts, discounts, inventory, and related commerce events.",
+      "You are responsible for ensuring that your use of VoluChat with Shopify complies with Shopify terms, Shopify API rules, protected customer data requirements, and any commitments you make to your customers. You are also responsible for your use of Meta, WhatsApp, email, and other third-party integrations."
+    ]
   },
   {
-    title: "5. Disclaimer of warranties",
-    body: "The service is provided on an as-is and as-available basis. We do not guarantee uninterrupted operation, error-free automation, or any specific sales outcome."
+    title: "5. Data handling",
+    body: [
+      "To provide the service, VoluChat may store and process account data, authorized access tokens, product context, customer conversation data, Shopify store data, protected customer data, workflow logs, agent outputs, approvals, and handoff records.",
+      "Our handling of personal data is described in the Privacy Policy. You grant VoluChat permission to process this information as needed to provide, secure, support, and improve the service."
+    ]
   },
   {
-    title: "6. Limitation of liability",
-    body: "VoluChat, its directors, employees, and agents are not liable for indirect, incidental, special, consequential, or punitive damages resulting from access to or use of the service."
+    title: "6. AI output and workflow accuracy",
+    body: [
+      "AI-generated output may be incomplete, inaccurate, delayed, or unsuitable for a particular customer interaction. VoluChat does not replace merchant judgment, customer support review, legal review, or operational controls.",
+      "You are responsible for testing workflows before broad use, monitoring performance, reviewing sensitive actions, and maintaining fallback processes for support, refunds, discounts, fulfillment, and customer escalations."
+    ]
   },
   {
-    title: "7. Termination",
-    body: "We may suspend or terminate access if these terms are breached or if continued access creates operational, legal, or platform-policy risk."
+    title: "7. Fees, trials, and payments",
+    body: [
+      "Paid plans, trials, implementation fees, or usage-based charges may be described in an order form, pricing page, invoice, or written agreement. You agree to pay applicable charges for the plan or services you select.",
+      "Unless a separate written agreement says otherwise, fees are non-refundable except where required by law or expressly stated in the applicable offer."
+    ]
   },
   {
-    title: "8. Governing law",
-    body: "These terms are governed by the laws of India, without regard to conflict of law provisions."
+    title: "8. Suspension and termination",
+    body: [
+      "We may suspend or terminate access if you breach these Terms, fail to pay amounts due, create security risk, violate platform rules, misuse customer data, or use VoluChat in a way that may harm customers, merchants, third-party platforms, or VoluChat.",
+      "You may stop using VoluChat and disconnect integrations at any time. Certain records may be retained as described in the Privacy Policy."
+    ]
+  },
+  {
+    title: "9. Service changes and availability",
+    body: [
+      "We may update, add, remove, limit, or discontinue features as VoluChat evolves or as third-party platform requirements change. We do not guarantee uninterrupted operation, error-free automation, or any specific sales, revenue, recovery, ranking, or customer-support outcome."
+    ]
+  },
+  {
+    title: "10. Intellectual property",
+    body: [
+      "VoluChat, including its software, designs, workflows, documentation, models, prompts, interfaces, and brand assets, is owned by QubitNine Technologies Private Limited or its licensors. These Terms do not transfer ownership of VoluChat to you.",
+      "You retain ownership of your store data, customer data, product data, and content you provide, subject to the permissions needed for VoluChat to operate the service."
+    ]
+  },
+  {
+    title: "11. Disclaimer of warranties",
+    body: [
+      "The service is provided on an as-is and as-available basis. To the fullest extent permitted by law, we disclaim warranties of merchantability, fitness for a particular purpose, non-infringement, uninterrupted availability, and error-free operation."
+    ]
+  },
+  {
+    title: "12. Limitation of liability",
+    body: [
+      "To the fullest extent permitted by law, VoluChat, QubitNine Technologies Private Limited, and their directors, employees, contractors, and agents will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for lost profits, lost revenue, lost goodwill, lost data, or business interruption.",
+      "Our aggregate liability for claims relating to the service will not exceed the amounts paid by you to VoluChat for the service in the three months before the event giving rise to the claim, unless applicable law requires otherwise."
+    ]
+  },
+  {
+    title: "13. Governing law",
+    body: [
+      "These Terms are governed by the laws of India, without regard to conflict of law provisions. Courts located in India will have jurisdiction unless a separate written agreement states otherwise."
+    ]
   }
 ];
 ---
 
 <Layout title="Terms & Conditions | VoluChat" description="VoluChat terms for ecommerce reply automation, connected social channels, and product conversation workflows.">
-  <Header />
+  <Navbar />
 
   <main class="relative overflow-hidden pt-36 pb-24 animate-page-entry opacity-0 sm:pt-40">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_16%,rgba(83,111,159,0.1),transparent_30%),radial-gradient(circle_at_14%_70%,rgba(203,217,234,0.18),transparent_30%)]"></div>
@@ -51,23 +113,34 @@ const sections = [
     <div class="mx-auto max-w-4xl px-6">
       <div class="mb-12">
         <div class="chip">Legal</div>
-        <h1 class="mt-6 text-4xl font-semibold text-stone-950 md:text-5xl">Terms & Conditions</h1>
-        <p class="mt-4 font-medium text-stone-500">Last updated: {lastUpdated}</p>
+        <h1 class="mt-6 text-4xl font-semibold text-white md:text-5xl">Terms & Conditions</h1>
+        <p class="mt-4 font-medium text-slate-300">Last updated: {lastUpdated}</p>
       </div>
 
-      <div class="solid-card text-stone-600 md:p-10">
+      <div class="rounded-[1.75rem] border border-white/10 bg-[#101b2e] p-6 sm:p-10 text-slate-200">
         <div class="space-y-8">
           {sections.map((section) => (
             <section>
-              <h2 class="mb-3 text-2xl font-heading font-semibold text-stone-950">{section.title}</h2>
-              <p class="leading-relaxed">{section.body}</p>
+              <h2 class="mb-3 text-2xl font-heading font-semibold text-white">{section.title}</h2>
+              <div class="space-y-4">
+                {section.body.map((paragraph) => (
+                  <p class="leading-relaxed">{paragraph}</p>
+                ))}
+                {section.bullets && (
+                  <ul class="list-disc space-y-2 pl-5 leading-relaxed">
+                    {section.bullets.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </section>
           ))}
 
           <section>
-            <h2 class="mb-3 text-2xl font-heading font-semibold text-stone-950">9. Contact us</h2>
+            <h2 class="mb-3 text-2xl font-heading font-semibold text-white">14. Contact us</h2>
             <p class="leading-relaxed">
-              If you have questions about these Terms, contact us at <a href="mailto:support@voluchat.com" class="font-semibold text-primary-700 hover:underline">support@voluchat.com</a>.
+              If you have questions about these Terms, contact us at <a href="mailto:support@voluchat.com" class="font-semibold text-teal-200 hover:underline">support@voluchat.com</a>.
             </p>
           </section>
         </div>

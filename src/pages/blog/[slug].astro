@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
+import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import { fetchBlogPostBySlug, getBlogApiBaseUrl } from '../../lib/blogApi.mjs';
 import { renderMarkdownToHtml } from '../../lib/markdown.mjs';
@@ -125,7 +125,7 @@ const structuredData = blog ? [
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   )}
 
-  <Header />
+  <Navbar />
 
   <main id="hero" class="relative overflow-hidden pt-32 pb-20 animate-page-entry opacity-0 sm:pt-36">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_8%,rgba(83,111,159,0.08),transparent_30%),radial-gradient(circle_at_12%_72%,rgba(203,217,234,0.14),transparent_30%)]"></div>
@@ -134,7 +134,7 @@ const structuredData = blog ? [
     {blog ? (
       <article class="blog-article mx-auto max-w-5xl px-5 sm:px-6">
         <div class="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-          <a href="/blog" class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-primary-700 transition-colors hover:text-primary-900">
+          <a href="/blog" class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-200 transition-colors hover:text-teal-100">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             Back to blog
           </a>
@@ -147,36 +147,36 @@ const structuredData = blog ? [
             </div>
           )}
 
-          <h1 class="text-[2.55rem] font-semibold leading-[1.04] text-stone-950 sm:text-5xl lg:text-[3.65rem]">
+          <h1 class="text-[2.55rem] font-semibold leading-[1.04] text-white sm:text-5xl lg:text-[3.65rem]">
             {blog.title}
           </h1>
 
-          <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-stone-600">
+          <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             {blog.excerpt}
           </p>
 
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm text-stone-500">
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm text-slate-400">
             <div class="flex items-center gap-3">
               {blog.author.avatarUrl ? (
                 <img src={blog.author.avatarUrl} alt="" class="h-10 w-10 rounded-full object-cover" width="40" height="40" loading="lazy" decoding="async" />
               ) : (
-                <div class="grid h-10 w-10 place-items-center rounded-full bg-primary-50 font-semibold text-primary-700">V</div>
+                <div class="grid h-10 w-10 place-items-center rounded-full bg-teal-500/20 font-semibold text-teal-200">V</div>
               )}
-              <span class="font-semibold text-stone-900">{blog.author.name}</span>
+              <span class="font-semibold text-slate-100">{blog.author.name}</span>
             </div>
-            <span class="h-1 w-1 rounded-full bg-stone-300"></span>
+            <span class="h-1 w-1 rounded-full bg-slate-600"></span>
             <time class="font-medium" datetime={blog.publishedAt}>{blog.dateLabel}</time>
           </div>
         </div>
 
-        <div class="relative mx-auto mb-10 aspect-[16/8.5] max-w-4xl overflow-hidden rounded-[1.75rem] border border-stone-200/80 bg-white shadow-[0_22px_70px_rgba(28,25,23,0.08)] sm:mb-12 lg:aspect-[21/9]">
+        <div class="relative mx-auto mb-10 aspect-[16/8.5] max-w-4xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0d192b] shadow-[0_22px_70px_rgba(0,0,0,0.4)] sm:mb-12 lg:aspect-[21/9]">
           {blog.featuredImageUrl ? (
             <img src={blog.featuredImageUrl} alt={blog.featuredImageAlt} class="h-full w-full object-cover" loading="eager" decoding="async" />
           ) : (
             <div class="blog-cover-fallback">
               <div>
-                <span class="mini-label text-primary-700">VoluChat Field Notes</span>
-                <p class="mt-5 max-w-2xl text-2xl font-semibold leading-tight text-stone-950 sm:text-4xl">{blog.title}</p>
+                <span class="mini-label text-teal-200">VoluChat Field Notes</span>
+                <p class="mt-5 max-w-2xl text-2xl font-semibold leading-tight text-white sm:text-4xl">{blog.title}</p>
               </div>
               <div class="blog-cover-mark" aria-hidden="true">V</div>
             </div>
@@ -189,12 +189,12 @@ const structuredData = blog ? [
 
         {blog.faqs.length > 0 && (
           <section class="mx-auto mt-12 max-w-3xl sm:mt-14">
-            <h2 class="mb-6 text-3xl font-semibold text-stone-950">FAQs</h2>
+            <h2 class="mb-6 text-3xl font-semibold text-white">FAQs</h2>
             <div class="space-y-4">
               {blog.faqs.map((faq) => (
-                <details class="solid-card p-6">
-                  <summary class="cursor-pointer font-semibold text-stone-950">{faq.question}</summary>
-                  <p class="mt-4 leading-relaxed text-stone-600">{faq.answer}</p>
+                <details class="rounded-[1.75rem] border border-white/10 bg-[#101b2e] p-6">
+                  <summary class="cursor-pointer font-semibold text-white">{faq.question}</summary>
+                  <p class="mt-4 leading-relaxed text-slate-300">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -205,32 +205,25 @@ const structuredData = blog ? [
           <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p class="section-eyebrow">Related paths</p>
-              <h2 class="mt-3 text-3xl font-semibold text-stone-950">Keep exploring VoluChat</h2>
+              <h2 class="mt-3 text-3xl font-semibold text-white">Keep exploring VoluChat</h2>
             </div>
           </div>
           <div class="grid gap-4 md:grid-cols-3">
             {relatedLinks.map((link) => (
-              <a href={link.href} class="solid-card group p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-500/20">
+              <a href={link.href} class="rounded-[1.75rem] border border-white/10 bg-[#101b2e] group p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300/20 hover:bg-teal-300/[0.06]">
                 <span class="mini-label">{link.label}</span>
-                <h3 class="mt-3 text-lg font-semibold text-stone-950 transition-colors group-hover:text-primary-700">{link.title}</h3>
-                <p class="mt-3 text-sm font-medium leading-relaxed text-stone-600">{link.text}</p>
+                <h3 class="mt-3 text-lg font-semibold text-white transition-colors group-hover:text-teal-200">{link.title}</h3>
+                <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300">{link.text}</p>
               </a>
             ))}
           </div>
         </section>
 
-        <div class="mx-auto mt-20 max-w-4xl border-t border-white/55 pt-10">
-          <div class="solid-card p-8 text-center">
-            <h4 class="text-2xl font-heading font-semibold text-stone-950">See how VoluChat works for ecommerce stores</h4>
-            <p class="mx-auto mt-4 max-w-xl font-medium leading-relaxed text-stone-600">Start a workspace to see how repeated product questions can become faster replies and cleaner sales-team handoffs.</p>
-            <a href="https://dashboard.voluchat.com/register" class="btn-primary mt-8">Start Free Setup</a>
-          </div>
-        </div>
       </article>
     ) : (
       <div class="mx-auto max-w-3xl px-6 py-20 text-center">
-        <h1 class="mb-4 text-3xl font-semibold text-stone-950">Post not found</h1>
-        <p class="mb-8 text-stone-600">{error || "The blog post you're looking for doesn't exist or is currently unavailable."}</p>
+        <h1 class="mb-4 text-3xl font-semibold text-white">Post not found</h1>
+        <p class="mb-8 text-slate-300">{error || "The blog post you're looking for doesn't exist or is currently unavailable."}</p>
         <a href="/blog" class="btn-primary">Back to blog</a>
       </div>
     )}
