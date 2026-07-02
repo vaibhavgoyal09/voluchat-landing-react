@@ -50,20 +50,6 @@ const structuredDataItems = Array.isArray(structuredData)
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    {
-      /* No-FOUC + reduced-motion guard: only enable JS-driven reveal pre-hidden
-		    states when JS is actually available AND the user allows motion.
-		    Runs synchronously before first paint to avoid any flash. */
-    }
-    <script is:inline>
-      (function () {
-        try {
-          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            document.documentElement.classList.add("js-reveal");
-          }
-        } catch (e) {}
-      })();
-    </script>
     <meta name="description" content={description} />
     {robots && <meta name="robots" content={robots} />}
     {author && <meta name="author" content={author} />}

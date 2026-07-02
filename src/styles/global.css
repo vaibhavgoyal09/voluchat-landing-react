@@ -542,16 +542,13 @@
   animation: pageFadeOnly 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* ---------- Reveal system: directional + staggered ---------- */
-/* Pre-hidden state is ONLY applied when JS is available (html.js-reveal).
-   If JS is disabled/slow/fails, content is visible immediately — no LCP risk. */
-html.js-reveal .reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(22px);
+/* ---------- Reveal system: safe enhancement hooks ---------- */
+/* Content stays visible by default. JS may add .revealed for compatibility,
+   but page content must never depend on JS to paint. */
+.reveal-on-scroll {
   transition:
     opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
 }
 
 .reveal-on-scroll.revealed {
@@ -561,19 +558,19 @@ html.js-reveal .reveal-on-scroll {
 
 /* Directional reveal variants (applied alongside reveal-on-scroll) */
 .reveal-up {
-  transform: translateY(22px);
+  transform: none;
 }
 .reveal-down {
-  transform: translateY(-22px);
+  transform: none;
 }
 .reveal-left {
-  transform: translateX(40px);
+  transform: none;
 }
 .reveal-right {
-  transform: translateX(-40px);
+  transform: none;
 }
 .reveal-scale {
-  transform: scale(0.94);
+  transform: none;
 }
 
 .reveal-up.revealed,
