@@ -1,10 +1,7 @@
 @import "tailwindcss";
 
 @import "@fontsource/geist-sans/latin-400.css";
-@import "@fontsource/geist-sans/latin-500.css";
-@import "@fontsource/geist-sans/latin-600.css";
 @import "@fontsource/geist-sans/latin-700.css";
-@import "@fontsource/space-grotesk/latin-600.css";
 @import "@fontsource/space-grotesk/latin-700.css";
 
 @theme {
@@ -929,11 +926,8 @@ html.js-reveal .reveal-on-scroll {
 }
 
 /* ---------- Hero entrance: content visible by default, JS adds .hero-in ---------- */
-/* Pre-state only applied when motion is allowed; reduced-motion users see content immediately. */
+/* Keep above-fold text visible so the LCP paragraph is not gated by JS. */
 @media (prefers-reduced-motion: no-preference) {
-  .hero-eyebrow,
-  .hero-title,
-  .hero-text,
   .hero-ctas,
   .hero-mockup,
   .trace-segment {
@@ -947,9 +941,6 @@ html.js-reveal .reveal-on-scroll {
   .hero-mockup {
     transform: translateY(18px) scale(0.985);
   }
-  .hero-eyebrow.hero-in,
-  .hero-title.hero-in,
-  .hero-text.hero-in,
   .hero-ctas.hero-in,
   .hero-mockup.hero-in,
   .trace-segment.hero-in {

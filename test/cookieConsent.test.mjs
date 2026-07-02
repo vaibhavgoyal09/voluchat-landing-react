@@ -24,8 +24,8 @@ test("cookie consent persists accept and reject decisions", async () => {
   assert.match(component, /voluchat-cookie-consent/);
   assert.match(component, /data-cookie-accept/);
   assert.match(component, /data-cookie-reject/);
-  assert.match(component, /localStorage\.setItem\(CONSENT_KEY, 'accepted'\)/);
-  assert.match(component, /localStorage\.setItem\(CONSENT_KEY, 'rejected'\)/);
+  assert.match(component, /localStorage\.setItem\(CONSENT_KEY, "accepted"\)/);
+  assert.match(component, /localStorage\.setItem\(CONSENT_KEY, "rejected"\)/);
 });
 
 test("cookie consent accepts analytics when the visitor scrolls", async () => {
@@ -43,11 +43,11 @@ test("cookie consent accepts analytics when the visitor scrolls", async () => {
   );
   assert.match(
     component,
-    /window\.addEventListener\('scroll', handleScrollConsent/,
+    /window\.addEventListener\("scroll", handleScrollConsent/,
   );
   assert.match(
     component,
-    /window\.removeEventListener\('scroll', handleScrollConsent/,
+    /window\.removeEventListener\("scroll", handleScrollConsent/,
   );
 });
 
@@ -70,7 +70,8 @@ test("cookie consent animates out before it is hidden", async () => {
   );
 
   assert.match(component, /\.cookie-consent\.is-hiding/);
-  assert.match(component, /banner\.classList\.add\('is-hiding'\)/);
-  assert.match(component, /window\.setTimeout\(\(\) => \{/);
-  assert.match(component, /banner\?\.setAttribute\('hidden', ''\)/);
+  assert.match(component, /banner\.classList\.add\("is-hiding"\)/);
+  assert.match(component, /window\.setTimeout\(\(\) => {/);
+  assert.match(component, /banner\?\.setAttribute\("hidden", ""\)/);
 });
+

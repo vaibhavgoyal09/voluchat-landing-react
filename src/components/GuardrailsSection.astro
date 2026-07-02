@@ -327,8 +327,6 @@
 </section>
 
 <script>
-  import { gsap } from "gsap";
-
   document.addEventListener("DOMContentLoaded", () => {
     const scenarioBtns = document.querySelectorAll(".scenario-btn");
     const simChatArea = document.getElementById("sim-chat-area");
@@ -350,11 +348,17 @@
     if (!simChatArea || !simTraceEval || !simOutcome || !statusBadge) return;
 
     let isRunning = false;
+    let gsapPromise: Promise<typeof import("gsap").gsap> | null = null;
+    const getGsap = () => {
+      gsapPromise ??= import("gsap").then((module) => module.gsap);
+      return gsapPromise;
+    };
 
     // Trigger scenario
-    const runScenario = (scenarioType: string) => {
+    const runScenario = async (scenarioType: string) => {
       if (isRunning) return;
       isRunning = true;
+      const gsap = await getGsap();
 
       // Update status badge
       statusBadge.textContent = "RUNNING";

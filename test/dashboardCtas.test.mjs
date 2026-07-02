@@ -6,7 +6,7 @@ const readSource = (path) =>
   readFile(new URL(`../${path}`, import.meta.url), "utf8");
 
 test("primary acquisition CTAs send users to the agent review flow with correct hrefs", async () => {
-  const navbar = await readSource("src/components/landing/Navbar.astro");
+  const navbar = await readSource("src/components/Navbar.astro");
   const pricing = await readSource("src/pages/pricing.astro");
   const about = await readSource("src/pages/about.astro");
   const features = await readSource("src/pages/features.astro");

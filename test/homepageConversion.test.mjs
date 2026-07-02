@@ -32,8 +32,8 @@ test("homepage layout uses the new commerce agent platform structure", async () 
 });
 
 test("homepage nav and footer wire to real sections and new pages", async () => {
-  const navbar = await readSource("src/components/landing/Navbar.astro");
-  const footer = await readSource("src/components/landing/Footer.astro");
+  const navbar = await readSource("src/components/Navbar.astro");
+  const footer = await readSource("src/components/Footer.astro");
 
   assert.match(navbar, /homeHref\("#platform"\)/);
   assert.match(navbar, /href:\s*"\/features"/);
@@ -41,19 +41,19 @@ test("homepage nav and footer wire to real sections and new pages", async () => 
   assert.match(navbar, /href:\s*"\/compare"/);
   assert.match(navbar, /href:\s*"\/about"/);
 
-  assert.match(footer, /href="\/agents\/product-assistant"/);
-  assert.match(footer, /href="\/agents\/cart-recovery"/);
-  assert.match(footer, /href="\/integrations\/shopify"/);
-  assert.match(footer, /href="\/about"/);
+  assert.match(footer, /href: "\/agents\/product-assistant"/);
+  assert.match(footer, /href: "\/agents\/cart-recovery"/);
+  assert.match(footer, /href: "\/integrations\/shopify"/);
+  assert.match(footer, /href: "\/about"/);
 
   const workflowsSection = await readSource(
-    "src/components/landing/UseCasesSection.astro",
+    "src/components/UseCasesSection.astro",
   );
   const demoFlowSection = await readSource(
-    "src/components/landing/DemoFlowSection.astro",
+    "src/components/DemoFlowSection.astro",
   );
   const founderNote = await readSource(
-    "src/components/landing/FounderNoteSection.astro",
+    "src/components/FounderNoteSection.astro",
   );
 
   assert.match(workflowsSection, /id="workflows"/);
