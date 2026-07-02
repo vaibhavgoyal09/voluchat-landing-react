@@ -51,9 +51,7 @@
             class="bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-400"
             >Scale your store's operations
           </span>
-          <span class="gradient-text-anim block"
-            >without expanding your team.</span
-          >
+          <span class="block text-teal-100">without expanding your team.</span>
         </h1>
 
         <p
@@ -66,7 +64,7 @@
         <div
           class="hero-ctas mt-8 flex flex-col gap-3.5 sm:flex-row sm:justify-center lg:justify-start"
         >
-          <a href="/contact" class="btn-primary btn-sheen hero-magnetic">
+          <a href="/contact" class="btn-primary btn-sheen">
             Request an Agent Review
           </a>
           <a href="#demo-flow" class="btn-secondary">
@@ -131,7 +129,7 @@
               <div class="hero-line hero-line--blank"></div>
             </div>
 
-            <!-- Input line -->
+            <!-- Static prompt line -->
             <div
               class="flex items-center gap-3 border-t border-white/[0.06] px-5 py-4 bg-white/[0.015]"
             >
@@ -139,21 +137,15 @@
                 class="font-mono text-sm font-bold text-teal-300 select-none"
                 >›</span
               >
-              <input
-                type="text"
-                id="hero-input"
-                class="hero-input flex-1 bg-transparent font-mono text-[13px] text-slate-100 placeholder:text-slate-600 outline-none"
-                placeholder="try 'recover', 'rules', or 'leaks'"
-                autocomplete="off"
-                spellcheck="false"
-                aria-label="Agent console command input"
-              />
-              <button
-                id="hero-send"
+              <span class="flex-1 font-mono text-[13px] text-slate-500"
+                >review-first commerce agents</span
+              >
+              <a
+                href="/features"
                 class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-teal-300 transition-colors duration-300"
               >
-                ↵ send
-              </button>
+                explore
+              </a>
             </div>
           </div>
         </div>
@@ -166,26 +158,26 @@
             class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-400"
             >try</span
           >
-          <button
-            class="hero-suggest font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors cursor-pointer"
-            data-cmd="agents"
+          <a
+            href="/features"
+            class="font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
           >
             agents
-          </button>
+          </a>
           <span class="text-slate-600">·</span>
-          <button
-            class="hero-suggest font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors cursor-pointer"
-            data-cmd="recover"
+          <a
+            href="/agents/cart-recovery"
+            class="font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
           >
             recover
-          </button>
+          </a>
           <span class="text-slate-600">·</span>
-          <button
-            class="hero-suggest font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors cursor-pointer"
-            data-cmd="rules"
+          <a
+            href="/security"
+            class="font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
           >
             rules
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -239,328 +231,9 @@
   .hero-line--blank {
     height: 0.5rem;
   }
-  .hero-input:focus {
-    caret-color: #5eeac9;
+  .hero-title {
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
   }
 </style>
-
-<script>
-  // Lightweight, dependency-free hero interactions.
-  // Content is visible by default (no JS-gated LCP). Progressive enhancements
-  // only — staggered entrance, magnetic CTA, and the interactive agent console.
-  (() => {
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    const isCoarse = window.matchMedia("(pointer: coarse)").matches;
-    const scheduleIdle = (fn: () => void, timeout = 2200) => {
-      if ("requestIdleCallback" in window) {
-        (window as any).requestIdleCallback(fn, { timeout });
-      } else {
-        setTimeout(fn, Math.min(timeout, 600));
-      }
-    };
-
-    /* 1. Staggered entrance (CSS-driven; JS only adds the trigger class) */
-    const initEntrance = () => {
-      const targets = [
-        ".hero-eyebrow",
-        ".hero-title",
-        ".hero-text",
-        ".hero-ctas",
-        ".hero-mockup",
-      ];
-      if (prefersReduced) {
-        targets.forEach((s) =>
-          document.querySelector(s)?.classList.add("hero-in"),
-        );
-      } else {
-        targets.forEach((s, i) => {
-          const el = document.querySelector<HTMLElement>(s);
-          if (el) {
-            el.style.setProperty("--hero-delay", `${i * 90}ms`);
-            requestAnimationFrame(() =>
-              requestAnimationFrame(() => el.classList.add("hero-in")),
-            );
-          }
-        });
-      }
-    };
-
-    /* 2. Magnetic CTA (pointer devices only) */
-    const initMagnetic = () => {
-      const btn = document.querySelector<HTMLElement>(".hero-magnetic");
-      if (!btn || isCoarse || prefersReduced) return;
-      let rafId = 0;
-      let tx = 0,
-        ty = 0,
-        cx = 0,
-        cy = 0;
-      btn.addEventListener("pointermove", (e) => {
-        const r = btn.getBoundingClientRect();
-        tx = (e.clientX - r.left - r.width / 2) * 0.35;
-        ty = (e.clientY - r.top - r.height / 2) * 0.35;
-      });
-      btn.addEventListener("pointerleave", () => {
-        tx = 0;
-        ty = 0;
-      });
-      const loop = () => {
-        cx += (tx - cx) * 0.18;
-        cy += (ty - cy) * 0.18;
-        btn.style.transform = `translate(${cx.toFixed(2)}px, ${cy.toFixed(2)}px)`;
-        rafId = requestAnimationFrame(loop);
-      };
-      btn.addEventListener("pointerenter", () => {
-        if (!rafId) rafId = requestAnimationFrame(loop);
-      });
-      btn.addEventListener("pointerleave", () => {
-        const stop = () => {
-          if (Math.abs(tx - cx) < 0.5 && Math.abs(ty - cy) < 0.5) {
-            cancelAnimationFrame(rafId);
-            rafId = 0;
-            btn.style.transform = "";
-            return;
-          }
-          rafId = requestAnimationFrame(stop);
-        };
-        cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(stop);
-      });
-    };
-
-    /* 3. Interactive Agent Console — real capabilities, no fake metrics */
-    const COMMANDS: Record<string, string[]> = {
-      help: [
-        "# Available commands",
-        "  agents        List available agent modules",
-        "  recover       Cart recovery agent",
-        "  answer        Product assistant agent",
-        "  leaks         Revenue leak detection",
-        "  campaign      Approval-gated campaigns",
-        "  rules         How guardrails work",
-        "  about         What VoluChat is",
-        "  clear         Clear the console",
-      ],
-      agents: [
-        "# Available agent modules",
-        "",
-        "  Cart Recovery",
-        ">  /agents/cart-recovery",
-        "  Product Assistant",
-        ">  /agents/product-assistant",
-        "  Upsell & Bundles",
-        ">  /agents/upsell",
-        "  Inventory Clearance",
-        ">  /agents/inventory-clearance",
-        "  Customer Follow-Up",
-        ">  /agents/customer-follow-up",
-        "  Revenue Leak Detection",
-        ">  /agents/revenue-leak-detection",
-        "",
-        "  Type a command like 'recover' for details.",
-      ],
-      recover: [
-        "# Cart Recovery Agent",
-        "  Detects checkout drop-off, identifies the likely",
-        "  objection, and uses approved recovery offers only",
-        "  when margin rules allow it.",
-        ">  /agents/cart-recovery",
-      ],
-      answer: [
-        "# Product Assistant Agent",
-        "  Handles sizing, stock, delivery, returns, and",
-        "  product-fit questions from live catalog data before",
-        "  the buyer leaves the product page.",
-        ">  /agents/product-assistant",
-      ],
-      upsell: [
-        "# Upsell & Bundles Agent",
-        "  Suggests add-ons and upgrades when intent is clear,",
-        "  then backs off cleanly when the buyer wants to",
-        "  checkout.",
-        ">  /agents/upsell",
-      ],
-      stock: [
-        "# Inventory Clearance Agent",
-        "  Turns aging inventory into targeted offers for",
-        "  shoppers already browsing related products — no",
-        "  store-wide discounting.",
-        ">  /agents/inventory-clearance",
-      ],
-      "follow-up": [
-        "# Customer Follow-Up Agent",
-        "  Checks satisfaction, routes issues to support, asks",
-        "  for reviews, and prompts repeat purchases when",
-        "  timing is right.",
-        ">  /agents/customer-follow-up",
-      ],
-      leaks: [
-        "# Revenue Leak Detection",
-        "  Ranks operational gaps across unanswered demand,",
-        "  abandoned carts, slow inventory, and product-page",
-        "  hesitation — so you fix the biggest leak first.",
-        ">  /agents/revenue-leak-detection",
-      ],
-      campaign: [
-        "# Approval-Gated Campaigns",
-        "  Generates marketing campaigns for existing customers",
-        "  from shopper signals and catalog data — then waits",
-        "  for your approval before anything is sent.",
-      ],
-      rules: [
-        "# Guardrails & Control",
-        "  Every agent acts only inside your rules. Discounts,",
-        "  campaigns, and escalations can require human review",
-        "  before an agent moves. You approve, it executes.",
-      ],
-      about: [
-        "# VoluChat",
-        "  Margin-safe AI agents for Shopify. Reviews your store,",
-        "  finds the revenue leaks worth fixing first, and deploys",
-        "  agents that act only inside your rules.",
-      ],
-    };
-
-    const initConsole = () => {
-      const out = document.getElementById("hero-output");
-      const input = document.getElementById(
-        "hero-input",
-      ) as HTMLInputElement | null;
-      if (!out || !input) return;
-
-      const history: string[] = [];
-      let hi = -1;
-
-      const addLine = (text: string, cls: string) => {
-        const d = document.createElement("div");
-        d.className = `hero-line ${cls}`;
-        d.textContent = text;
-        out.appendChild(d);
-      };
-      const addPrompt = (cmd: string) => {
-        const d = document.createElement("div");
-        d.className = "hero-line hero-line--prompt";
-        d.innerHTML = `› <span class="hero-cmd">${cmd}</span>`;
-        out.appendChild(d);
-      };
-      const scroll = () => {
-        out.scrollTop = out.scrollHeight;
-      };
-      const print = (lines: string[]) => {
-        lines.forEach((l) => {
-          if (l === "") {
-            addLine("", "hero-line--blank");
-            return;
-          }
-          if (l.startsWith("#")) {
-            addLine(l.slice(2), "hero-line--title");
-            return;
-          }
-          if (l.startsWith(">")) {
-            addLine(l.slice(2), "hero-line--accent");
-            return;
-          }
-          addLine(l, "hero-line--body");
-        });
-        scroll();
-      };
-      const run = (raw: string) => {
-        const cmd = raw.trim().toLowerCase();
-        if (!cmd) return;
-        addPrompt(cmd);
-        history.push(cmd);
-        hi = history.length;
-        if (cmd === "clear") {
-          out.innerHTML = "";
-          return;
-        }
-        const lines = COMMANDS[cmd];
-        print(
-          lines || [
-            `# command not found: ${cmd}`,
-            "  type 'help' for available commands.",
-          ],
-        );
-      };
-
-      // Auto-type intro (delayed until entrance animation completes)
-      const startConsole = () => {
-        if (!prefersReduced) {
-          const intro = "help";
-          let i = 0;
-          const t = setInterval(() => {
-            input.value = intro.slice(0, ++i);
-            if (i >= intro.length) {
-              clearInterval(t);
-              setTimeout(() => {
-                run(intro);
-                input.value = "";
-              }, 400);
-            }
-          }, 80);
-        } else {
-          run("help");
-        }
-      };
-
-      if (prefersReduced) {
-        startConsole();
-      } else {
-        setTimeout(startConsole, 900);
-      }
-
-      // Keyboard: Enter to submit, ↑/↓ for history
-      input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          run(input.value);
-          input.value = "";
-        } else if (e.key === "ArrowUp") {
-          e.preventDefault();
-          if (hi > 0) input.value = history[--hi];
-        } else if (e.key === "ArrowDown") {
-          e.preventDefault();
-          if (hi < history.length - 1) input.value = history[++hi];
-          else {
-            hi = history.length;
-            input.value = "";
-          }
-        }
-      });
-
-      // Send button
-      document
-        .getElementById("hero-send")
-        ?.addEventListener("click", () => {
-          run(input.value);
-          input.value = "";
-          input.focus();
-        });
-
-      // Suggestion chips
-      document.querySelectorAll<HTMLElement>(".hero-suggest").forEach((b) => {
-        b.addEventListener("click", () => {
-          const c = b.getAttribute("data-cmd") || "";
-          run(c);
-          input.focus();
-        });
-      });
-    };
-
-    /* INIT */
-    const init = () => {
-      initEntrance();
-      scheduleIdle(() => {
-        initMagnetic();
-        initConsole();
-      });
-    };
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", init, { once: true });
-    } else {
-      init();
-    }
-  })();
-</script>

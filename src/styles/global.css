@@ -922,30 +922,6 @@
   }
 }
 
-/* ---------- Hero entrance: content visible by default, JS adds .hero-in ---------- */
-/* Keep above-fold text visible so the LCP paragraph is not gated by JS. */
-@media (prefers-reduced-motion: no-preference) {
-  .hero-ctas,
-  .hero-mockup,
-  .trace-segment {
-    opacity: 0;
-    transform: translateY(18px);
-    transition:
-      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--hero-delay, 0ms),
-      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--hero-delay, 0ms);
-    will-change: opacity, transform;
-  }
-  .hero-mockup {
-    transform: translateY(18px) scale(0.985);
-  }
-  .hero-ctas.hero-in,
-  .hero-mockup.hero-in,
-  .trace-segment.hero-in {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 /* Soften the hero background motion on small / low-power screens. */
 @media (max-width: 640px) {
   .hero-bg-orb {
