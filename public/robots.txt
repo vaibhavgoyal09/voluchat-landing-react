@@ -1,31 +1,5 @@
-Sitemap: https://www.voluchat.com/sitemap.xml
-
-User-agent: Googlebot
-Allow: /
-Disallow: /private/
-Disallow: /admin/
-
-User-agent: Bingbot
-Allow: /
-Disallow: /private/
-Disallow: /admin/
-
-User-agent: OAI-SearchBot
-Allow: /
-Disallow: /private/
-Disallow: /admin/
-
-User-agent: GPTBot
-Allow: /
-Disallow: /private/
-Disallow: /admin/
-
-User-agent: ChatGPT-User
-Allow: /
-Disallow: /private/
-Disallow: /admin/
-
 User-agent: *
-Allow: /
 Disallow: /private/
 Disallow: /admin/
+
+Sitemap: https://www.voluchat.com/sitemap.xml
