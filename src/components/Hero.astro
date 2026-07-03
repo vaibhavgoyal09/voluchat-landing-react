@@ -625,7 +625,7 @@
 
     const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
     const scrollDown = () => {
-      output.scrollTop = output.scrollHeight;
+      output.scrollTop = 1_000_000;
     };
 
     let gsapPromise: Promise<typeof import("gsap")["gsap"] | null> | null = null;
@@ -692,7 +692,7 @@
 
     const ACCENT_FIRST = new Set(["status", "recover", "upsell"]);
 
-    const setWorkflowState = (cmd: string) => {
+    const setWorkflowState = (cmd: string, animate = false) => {
       const state = WORKFLOW_STATES[cmd] ?? WORKFLOW_STATES.help;
       if (!state) return;
 
@@ -712,7 +712,7 @@
         button.setAttribute("aria-pressed", String(active));
       });
 
-      if (reduceMotion) return;
+      if (reduceMotion || !animate) return;
       getGsap().then((gsap) => {
         if (!gsap) return;
         if (consoleCard) {
@@ -748,7 +748,13 @@
 
     const initPointerDepth = () => {
       if (reduceMotion || !finePointer || !stage || !consoleCard) return;
-      getGsap().then((gsap) => {
+      let initialized = false;
+      stage.addEventListener(
+        "pointerenter",
+        () => {
+          if (initialized) return;
+          initialized = true;
+          getGsap().then((gsap) => {
         if (!gsap) return;
         const consoleX = gsap.quickTo(consoleCard, "x", {
           duration: 0.45,
@@ -784,15 +790,18 @@
           glowX?.(0);
           glowY?.(0);
         });
-      });
+          });
+        },
+        { passive: true },
+      );
     };
 
-    const runCommand = async (raw: string) => {
+    const runCommand = async (raw: string, animateState = true) => {
       const cmd = raw.trim().toLowerCase();
       input.value = "";
       const myToken = ++token;
       hideCursor();
-      setWorkflowState(cmd);
+      setWorkflowState(cmd, animateState);
 
       // Echo the prompt: "› " (light) + typed command (teal).
       const promptLine = makeLine("hero-line--prompt");
@@ -880,7 +889,7 @@
       await sleep(reduceMotion ? 0 : 220);
       if (myToken !== token) return;
 
-      await runCommand("help");
+      await runCommand("help", false);
     };
 
     // Arrow-key history (like a real terminal).

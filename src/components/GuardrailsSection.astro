@@ -409,7 +409,7 @@
       simChatArea.appendChild(shopperBubble);
 
       // Scroll to bottom
-      simChatArea.scrollTop = simChatArea.scrollHeight;
+      simChatArea.scrollTop = 1_000_000;
 
       // GSAP animate shopper message bubble entering
       gsap.to(shopperBubble, {
@@ -610,7 +610,7 @@
             simChatArea.appendChild(agentBubble);
 
             // Scroll to bottom
-            simChatArea.scrollTop = simChatArea.scrollHeight;
+            simChatArea.scrollTop = 1_000_000;
 
             // Animate agent response bubble
             gsap.to(agentBubble, {
