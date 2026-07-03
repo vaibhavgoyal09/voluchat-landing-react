@@ -13,7 +13,7 @@ test("hero exposes performant interactive workflow controls", async () => {
   assert.match(hero, /data-hero-command="rules"/);
   assert.match(hero, /id="hero-signal-feed"/);
   assert.match(hero, /id="hero-core-status"/);
-  assert.match(hero, /quickTo/);
+  assert.match(hero, /requestAnimationFrame/);
   assert.match(hero, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(hero, /mousemove/);
 });

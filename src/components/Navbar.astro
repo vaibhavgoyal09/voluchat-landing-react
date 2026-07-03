@@ -223,15 +223,15 @@ const demoHref = "/contact";
 <script>
   // Scroll behavior
   const navbar = document.getElementById("lp-navbar");
+  let navScrollFrame = 0;
   const onScroll = () => {
-    if (window.scrollY > 20) {
-      navbar?.classList.add("scrolled");
-    } else {
-      navbar?.classList.remove("scrolled");
-    }
+    if (navScrollFrame) return;
+    navScrollFrame = window.requestAnimationFrame(() => {
+      navScrollFrame = 0;
+      navbar?.classList.toggle("scrolled", window.scrollY > 20);
+    });
   };
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
 
   // Mobile menu
   const toggle = document.getElementById("lp-mobile-menu-btn");

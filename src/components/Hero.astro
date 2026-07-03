@@ -903,6 +903,17 @@
     // Delay boot so the typewriter never competes with first paint / LCP.
     setWorkflowState("help");
     initPointerDepth();
-    setTimeout(boot, reduceMotion ? 0 : 950);
+    const scheduleBoot = () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(() => boot(), { timeout: 2500 });
+      } else {
+        setTimeout(boot, 1800);
+      }
+    };
+    if (reduceMotion) {
+      boot();
+    } else {
+      setTimeout(scheduleBoot, 1200);
+    }
   })();
 </script>

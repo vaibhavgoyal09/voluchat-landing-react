@@ -103,7 +103,8 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
   const rejectButton = banner?.querySelector("[data-cookie-reject]");
   const HIDE_ANIMATION_MS = 500;
   const SCROLL_ACCEPT_THRESHOLD = 80;
-  let initialScrollY = window.scrollY;
+  let initialScrollY = 0;
+  let hasScrollBaseline = false;
 
   const loadGoogleAnalytics = () => {
     if (
@@ -149,6 +150,12 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
   };
 
   const handleScrollConsent = () => {
+    if (!hasScrollBaseline) {
+      initialScrollY = window.scrollY;
+      hasScrollBaseline = true;
+      return;
+    }
+
     if (Math.abs(window.scrollY - initialScrollY) < SCROLL_ACCEPT_THRESHOLD) {
       return;
     }
@@ -161,7 +168,6 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
   if (savedConsent === "accepted") {
     loadGoogleAnalytics();
   } else if (savedConsent !== "rejected") {
-    initialScrollY = window.scrollY;
     banner?.classList.remove("is-hiding");
     banner?.removeAttribute("hidden");
     window.addEventListener("scroll", handleScrollConsent, { passive: true });
