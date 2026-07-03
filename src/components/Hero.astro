@@ -628,15 +628,6 @@
       output.scrollTop = 1_000_000;
     };
 
-    let gsapPromise: Promise<typeof import("gsap")["gsap"] | null> | null = null;
-    const getGsap = () => {
-      if (reduceMotion) return Promise.resolve(null);
-      gsapPromise ??= import("gsap")
-        .then((mod) => mod.gsap)
-        .catch(() => null);
-      return gsapPromise;
-    };
-
     const makeLine = (cls: string) => {
       const div = document.createElement("div");
       div.className = `hero-line ${cls}`;
@@ -713,87 +704,67 @@
       });
 
       if (reduceMotion || !animate) return;
-      getGsap().then((gsap) => {
-        if (!gsap) return;
-        if (consoleCard) {
-          gsap.fromTo(
-            consoleCard,
-            { scale: 1 },
-            {
-              scale: 1.012,
-              duration: 0.18,
-              yoyo: true,
-              repeat: 1,
-              ease: "power1.out",
-              overwrite: "auto",
-            },
-          );
-        }
-        if (feedItems.length) {
-          gsap.fromTo(
-            feedItems.slice(0, state.accent + 1),
-            { x: 8, autoAlpha: 0.45 },
-            {
-              x: 0,
-              autoAlpha: 1,
-              duration: 0.28,
-              stagger: 0.035,
-              ease: "power2.out",
-              overwrite: "auto",
-            },
-          );
-        }
+      consoleCard?.animate(
+        [
+          { opacity: 1 },
+          { opacity: 0.96, offset: 0.5 },
+          { opacity: 1 },
+        ],
+        { duration: 360, easing: "ease-out" },
+      );
+      feedItems.slice(0, state.accent + 1).forEach((item, index) => {
+        item.animate(
+          [
+            { opacity: 0.45, transform: "translate3d(8px, 0, 0)" },
+            { opacity: 1, transform: "translate3d(0, 0, 0)" },
+          ],
+          {
+            duration: 280,
+            delay: index * 35,
+            easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+          },
+        );
       });
     };
 
     const initPointerDepth = () => {
       if (reduceMotion || !finePointer || !stage || !consoleCard) return;
-      let initialized = false;
+      let frame = 0;
+      let targetX = 0;
+      let targetY = 0;
+      let glowTargetX = 0;
+      let glowTargetY = 0;
+      const renderDepth = () => {
+        frame = 0;
+        consoleCard.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+        if (consoleGlow) {
+          consoleGlow.style.transform = `translate3d(${glowTargetX}px, ${glowTargetY}px, 0)`;
+        }
+      };
+      const scheduleDepth = () => {
+        if (!frame) frame = requestAnimationFrame(renderDepth);
+      };
       stage.addEventListener(
-        "pointerenter",
-        () => {
-          if (initialized) return;
-          initialized = true;
-          getGsap().then((gsap) => {
-        if (!gsap) return;
-        const consoleX = gsap.quickTo(consoleCard, "x", {
-          duration: 0.45,
-          ease: "power3.out",
-        });
-        const consoleY = gsap.quickTo(consoleCard, "y", {
-          duration: 0.45,
-          ease: "power3.out",
-        });
-        const glowX = consoleGlow
-          ? gsap.quickTo(consoleGlow, "x", { duration: 0.7, ease: "power3.out" })
-          : null;
-        const glowY = consoleGlow
-          ? gsap.quickTo(consoleGlow, "y", { duration: 0.7, ease: "power3.out" })
-          : null;
-
-        stage.addEventListener(
-          "pointermove",
-          (event) => {
-            const rect = stage.getBoundingClientRect();
-            const px = (event.clientX - rect.left) / rect.width - 0.5;
-            const py = (event.clientY - rect.top) / rect.height - 0.5;
-            consoleX(px * 10);
-            consoleY(py * 8);
-            glowX?.(px * 18);
-            glowY?.(py * 14);
-          },
-          { passive: true },
-        );
-        stage.addEventListener("pointerleave", () => {
-          consoleX(0);
-          consoleY(0);
-          glowX?.(0);
-          glowY?.(0);
-        });
-          });
+        "pointermove",
+        (event) => {
+          const rect = stage.getBoundingClientRect();
+          const px = (event.clientX - rect.left) / rect.width - 0.5;
+          const py = (event.clientY - rect.top) / rect.height - 0.5;
+          targetX = px * 10;
+          targetY = py * 8;
+          glowTargetX = px * 18;
+          glowTargetY = py * 14;
+          scheduleDepth();
         },
         { passive: true },
       );
+      stage.addEventListener("pointerleave", () => {
+        targetX = 0;
+        targetY = 0;
+        glowTargetX = 0;
+        glowTargetY = 0;
+        scheduleDepth();
+      });
     };
 
     const runCommand = async (raw: string, animateState = true) => {

@@ -348,17 +348,19 @@
     if (!simChatArea || !simTraceEval || !simOutcome || !statusBadge) return;
 
     let isRunning = false;
-    let gsapPromise: Promise<typeof import("gsap").gsap> | null = null;
-    const getGsap = () => {
-      gsapPromise ??= import("gsap").then((module) => module.gsap);
-      return gsapPromise;
+    const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+    const animateIn = (
+      el: HTMLElement,
+      keyframes: Keyframe[],
+      options: KeyframeAnimationOptions,
+    ) => {
+      el.animate(keyframes, options);
     };
 
     // Trigger scenario
     const runScenario = async (scenarioType: string) => {
       if (isRunning) return;
       isRunning = true;
-      const gsap = await getGsap();
 
       // Update status badge
       statusBadge.textContent = "RUNNING";
@@ -411,107 +413,91 @@
       // Scroll to bottom
       simChatArea.scrollTop = 1_000_000;
 
-      // GSAP animate shopper message bubble entering
-      gsap.to(shopperBubble, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.5,
-        ease: "back.out(1.5)",
-        onComplete: () => {
-          // Begin policy gates evaluations with staggers
-          const timeline = gsap.timeline();
+      animateIn(
+        shopperBubble,
+        [
+          { opacity: 0, transform: "translate3d(0, 1rem, 0) scale(0.98)" },
+          { opacity: 1, transform: "translate3d(0, 0, 0) scale(1)" },
+        ],
+        { duration: 500, easing: "cubic-bezier(0.34, 1.56, 0.64, 1)", fill: "forwards" },
+      );
 
-          // Step 1: Intent Analysis
-          timeline.add(
-            () => setStepStatus("eval-step-1", "Analyzing...", "loading"),
-            0.2,
-          );
-          timeline.add(
-            () => setStepStatus("eval-step-1", "Passed", "passed"),
-            0.8,
-          );
+      await sleep(200);
+      setStepStatus("eval-step-1", "Analyzing...", "loading");
+      await sleep(600);
+      setStepStatus("eval-step-1", "Passed", "passed");
 
-          // Step 2: Inventory Check
-          timeline.add(
-            () => setStepStatus("eval-step-2", "Checking...", "loading"),
-            1.0,
-          );
-          timeline.add(() => {
-            const active = checkInventory ? checkInventory.checked : false;
-            if (active && scenarioType === "stock") {
-              setStepStatus(
-                "eval-step-2",
-                "Blocked",
-                "blocked",
-                "Size 11 Sold Out",
-              );
-            } else if (!active) {
-              setStepStatus(
-                "eval-step-2",
-                "Bypassed",
-                "warning",
-                "Guardrail Disabled",
-              );
-            } else {
-              setStepStatus("eval-step-2", "Passed", "passed");
-            }
-          }, 1.6);
+      await sleep(200);
+      setStepStatus("eval-step-2", "Checking...", "loading");
+      await sleep(600);
+      const inventoryGateActive = checkInventory
+        ? checkInventory.checked
+        : false;
+      if (inventoryGateActive && scenarioType === "stock") {
+        setStepStatus(
+          "eval-step-2",
+          "Blocked",
+          "blocked",
+          "Size 11 Sold Out",
+        );
+      } else if (!inventoryGateActive) {
+        setStepStatus(
+          "eval-step-2",
+          "Bypassed",
+          "warning",
+          "Guardrail Disabled",
+        );
+      } else {
+        setStepStatus("eval-step-2", "Passed", "passed");
+      }
 
-          // Step 3: Discount Check
-          timeline.add(
-            () => setStepStatus("eval-step-3", "Checking...", "loading"),
-            1.8,
-          );
-          timeline.add(() => {
-            const active = checkDiscount ? checkDiscount.checked : false;
-            if (active && scenarioType === "discount") {
-              setStepStatus(
-                "eval-step-3",
-                "Blocked",
-                "blocked",
-                "Max Cap 15% Enforced",
-              );
-            } else if (!active) {
-              setStepStatus(
-                "eval-step-3",
-                "Bypassed",
-                "warning",
-                "Guardrail Disabled",
-              );
-            } else {
-              setStepStatus("eval-step-3", "Passed", "passed");
-            }
-          }, 2.4);
+      await sleep(200);
+      setStepStatus("eval-step-3", "Checking...", "loading");
+      await sleep(600);
+      const discountGateActive = checkDiscount ? checkDiscount.checked : false;
+      if (discountGateActive && scenarioType === "discount") {
+        setStepStatus(
+          "eval-step-3",
+          "Blocked",
+          "blocked",
+          "Max Cap 15% Enforced",
+        );
+      } else if (!discountGateActive) {
+        setStepStatus(
+          "eval-step-3",
+          "Bypassed",
+          "warning",
+          "Guardrail Disabled",
+        );
+      } else {
+        setStepStatus("eval-step-3", "Passed", "passed");
+      }
 
-          // Step 4: Sentiment Check
-          timeline.add(
-            () => setStepStatus("eval-step-4", "Checking...", "loading"),
-            2.6,
-          );
-          timeline.add(() => {
-            const active = checkSentiment ? checkSentiment.checked : false;
-            if (active && scenarioType === "anger") {
-              setStepStatus(
-                "eval-step-4",
-                "Blocked",
-                "blocked",
-                "Escalating Angry User",
-              );
-            } else if (!active) {
-              setStepStatus(
-                "eval-step-4",
-                "Bypassed",
-                "warning",
-                "Guardrail Disabled",
-              );
-            } else {
-              setStepStatus("eval-step-4", "Passed", "passed");
-            }
-          }, 3.2);
+      await sleep(200);
+      setStepStatus("eval-step-4", "Checking...", "loading");
+      await sleep(600);
+      const sentimentGateActive = checkSentiment
+        ? checkSentiment.checked
+        : false;
+      if (sentimentGateActive && scenarioType === "anger") {
+        setStepStatus(
+          "eval-step-4",
+          "Blocked",
+          "blocked",
+          "Escalating Angry User",
+        );
+      } else if (!sentimentGateActive) {
+        setStepStatus(
+          "eval-step-4",
+          "Bypassed",
+          "warning",
+          "Guardrail Disabled",
+        );
+      } else {
+        setStepStatus("eval-step-4", "Passed", "passed");
+      }
 
-          // Final: Output agent reply & attributed outcome
-          timeline.add(() => {
+      await sleep(300);
             let replyText = "";
             let isBlocked = false;
             let isWarning = false;
@@ -613,12 +599,14 @@
             simChatArea.scrollTop = 1_000_000;
 
             // Animate agent response bubble
-            gsap.to(agentBubble, {
-              opacity: 1,
-              y: 0,
-              duration: 0.5,
-              ease: "power3.out",
-            });
+            animateIn(
+              agentBubble,
+              [
+                { opacity: 0, transform: "translate3d(0, 1rem, 0)" },
+                { opacity: 1, transform: "translate3d(0, 0, 0)" },
+              ],
+              { duration: 500, easing: "cubic-bezier(0.16, 1, 0.3, 1)", fill: "forwards" },
+            );
 
             // Prepare outcome box content
             const outcomeLabel = document.getElementById("outcome-label");
@@ -638,16 +626,13 @@
             // Style outcome container
             simOutcome.className = `rounded-2xl p-4 border transition-all duration-300 relative overflow-hidden bg-black/20 border-white/5`;
             simOutcome.classList.remove("hidden");
-            gsap.fromTo(
+            animateIn(
               simOutcome,
-              { opacity: 0, scale: 0.95, y: 10 },
-              {
-                opacity: 1,
-                scale: 1,
-                y: 0,
-                duration: 0.5,
-                ease: "back.out(1.5)",
-              },
+              [
+                { opacity: 0, transform: "translate3d(0, 10px, 0) scale(0.95)" },
+                { opacity: 1, transform: "translate3d(0, 0, 0) scale(1)" },
+              ],
+              { duration: 500, easing: "cubic-bezier(0.34, 1.56, 0.64, 1)", fill: "forwards" },
             );
 
             // Trigger flying coin particles if successful compliant outcome!
@@ -663,9 +648,6 @@
             statusBadge.textContent = "COMPLETED";
             statusBadge.className =
               "rounded bg-emerald-500/10 px-2 py-0.5 font-mono text-[9px] font-bold text-emerald-300 border border-emerald-500/20";
-          }, 3.5);
-        },
-      });
     };
 
     // Helper to style checking items
@@ -725,26 +707,21 @@
         particle.style.top = "80%";
         parent.appendChild(particle);
 
-        gsap.fromTo(
-          particle,
-          {
-            y: 0,
-            x: 0,
-            scale: 0.5,
-            opacity: 1,
-          },
-          {
-            y: -(Math.random() * 60 + 50),
-            x: (Math.random() - 0.5) * 30,
-            scale: Math.random() * 0.8 + 0.8,
-            opacity: 0,
-            duration: 1.2,
-            ease: "power2.out",
-            onComplete: () => {
-              particle.remove();
+        particle
+          .animate(
+          [
+            { opacity: 1, transform: "translate3d(0, 0, 0) scale(0.5)" },
+            {
+              opacity: 0,
+              transform: `translate3d(${(Math.random() - 0.5) * 30}px, -${
+                Math.random() * 60 + 50
+              }px, 0) scale(${Math.random() * 0.8 + 0.8})`,
             },
-          },
-        );
+          ],
+          { duration: 1200, easing: "cubic-bezier(0.16, 1, 0.3, 1)", fill: "forwards" },
+        )
+          .finished.then(() => particle.remove())
+          .catch(() => particle.remove());
       }
     };
 
