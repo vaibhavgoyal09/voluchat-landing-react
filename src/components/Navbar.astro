@@ -23,7 +23,7 @@ const demoHref = "/contact";
       class="flex h-16 items-center justify-between rounded-full border border-white/10 bg-[#08111f]/82 px-3 shadow-[0_24px_72px_-46px_rgba(0,0,0,0.95)] backdrop-blur-2xl sm:px-4"
       aria-label="Global"
     >
-      <div class="flex lg:flex-1">
+      <div class="flex pl-1 lg:flex-1 lg:pl-0">
         <a href="/" class="-m-1.5 p-1.5 focus-visible:ring-offset-0">
           <span class="sr-only">VoluChat</span>
           <div class="flex items-center gap-2.5">
@@ -33,7 +33,7 @@ const demoHref = "/contact";
               class="h-8 w-8 object-contain"
             />
             <span
-              class="font-heading text-[1.4rem] font-extrabold tracking-tight text-white"
+              class="hidden font-heading text-[1.4rem] font-extrabold tracking-tight text-white sm:inline"
               >VoluChat</span
             >
           </div>
@@ -60,11 +60,17 @@ const demoHref = "/contact";
           href={demoHref}
           class="btn-primary px-6 py-2.5 text-[13px] shadow-[0_0_15px_rgba(255,255,255,0.2)]"
         >
-          Request Agent Review
+          Book Demo
         </a>
       </div>
 
-      <div class="flex lg:hidden">
+      <div class="flex items-center gap-2 lg:hidden">
+        <a
+          href={demoHref}
+          class="inline-flex h-11 items-center justify-center rounded-full bg-white px-4 text-[13px] font-bold text-slate-950 shadow-sm transition hover:bg-slate-200"
+        >
+          Book Demo
+        </a>
         <button
           type="button"
           id="lp-mobile-menu-btn"
@@ -114,12 +120,6 @@ const demoHref = "/contact";
           </a>
         ))
       }
-      <a
-        href={demoHref}
-        class="lp-mobile-link mt-4 flex items-center justify-center rounded-xl bg-white px-4 py-3 text-[15px] font-bold text-slate-950 transition hover:bg-slate-200"
-      >
-        Request Agent Review
-      </a>
     </div>
   </div>
 </header>

@@ -14,7 +14,7 @@ test("primary acquisition CTAs send users to the agent review flow with correct 
   const sources = [navbar, pricing, about, features].join("\n");
 
   // Verify that the text exists
-  assert.match(sources, /Request Agent Review|Start Agent Review/);
+  assert.match(sources, /Book Demo/);
 
   // Verify that the exact destination exists and is used in CTAs.
   assert.match(sources, /href="\/contact"/);

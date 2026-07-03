@@ -10,7 +10,7 @@ test("pricing page uses closed tailored pricing", async () => {
 
   assert.match(page, /Custom pricing/i);
   assert.match(page, /tailored to how your store actually operates/);
-  assert.match(page, /Request Agent Review/);
+  assert.match(page, /Book Demo/);
   assert.match(page, /How we quote/);
   assert.doesNotMatch(
     page,
