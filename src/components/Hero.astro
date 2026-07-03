@@ -9,6 +9,11 @@
   <!-- Modern layered background (pure CSS, zero JS) -->
   <div class="hero-bg" aria-hidden="true">
     <div class="hero-bg-grid"></div>
+    <div class="hero-bg-depth">
+      <span class="hero-bg-depth-plane hero-bg-depth-plane--near"></span>
+      <span class="hero-bg-depth-plane hero-bg-depth-plane--mid"></span>
+      <span class="hero-bg-depth-plane hero-bg-depth-plane--far"></span>
+    </div>
     <div class="hero-bg-mesh"></div>
     <div class="hero-bg-orb hero-bg-orb--teal"></div>
     <div class="hero-bg-orb hero-bg-orb--emerald"></div>
@@ -22,12 +27,14 @@
     class="absolute bottom-6 right-8 sm:right-12 pointer-events-none select-none hidden lg:flex flex-col gap-1 items-end opacity-50 z-10"
   >
     <div
+      id="hero-core-status"
       class="flex items-center gap-1.5 text-[9px] font-mono tracking-widest uppercase text-teal-400 font-bold"
+      data-state="idle"
     >
       <span class="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse"></span>
-      Active Guardrail Core
+      <span id="hero-core-status-label">Active Guardrail Core</span>
     </div>
-    <span class="text-[8px] font-mono text-slate-400"
+    <span id="hero-core-status-copy" class="text-[8px] font-mono text-slate-400"
       >Scanning incoming shopper queries</span
     >
   </div>
@@ -74,15 +81,48 @@
       </div>
 
       <!-- Hero Visual: Interactive Agent Console -->
-      <div class="hero-mockup lg:hero-stage relative">
+      <div class="hero-mockup lg:hero-stage relative" data-hero-stage>
         <div
-          class="absolute -inset-6 rounded-[2.5rem] bg-teal-500/10 blur-3xl opacity-40"
+          class="hero-console-glow absolute -inset-6 rounded-[2.5rem] bg-teal-500/10 blur-3xl opacity-40"
+          data-hero-glow
           aria-hidden="true"
         >
         </div>
 
         <div
+          id="hero-signal-feed"
+          class="hero-signal-feed pointer-events-none absolute -right-5 top-16 z-20 hidden w-56 rounded-2xl border border-white/10 bg-[#08111d]/90 p-3 shadow-2xl backdrop-blur-xl xl:block"
+          aria-hidden="true"
+        >
+          <div
+            class="mb-2 flex items-center justify-between font-mono text-[9px] font-bold uppercase tracking-widest text-slate-500"
+          >
+            <span>Signal Feed</span>
+            <span class="text-teal-300">live</span>
+          </div>
+          <div class="space-y-1.5">
+            <div class="hero-feed-item is-active" data-feed-item>
+              <span class="hero-feed-dot"></span>
+              <span data-feed-text>Cart idle: 14m</span>
+            </div>
+            <div class="hero-feed-item" data-feed-item>
+              <span class="hero-feed-dot"></span>
+              <span data-feed-text>SKU in stock</span>
+            </div>
+            <div class="hero-feed-item" data-feed-item>
+              <span class="hero-feed-dot"></span>
+              <span data-feed-text>Margin +31%</span>
+            </div>
+            <div class="hero-feed-item" data-feed-item>
+              <span class="hero-feed-dot"></span>
+              <span data-feed-text>Approval required</span>
+            </div>
+          </div>
+        </div>
+
+        <div
           class="hero-console relative rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_50px_140px_-70px_rgba(0,0,0,0.95)] backdrop-blur-xl border-glow-anim"
+          data-hero-console
         >
           <div
             class="relative rounded-[1.1rem] border border-white/10 bg-[#080f1a] overflow-hidden"
@@ -129,7 +169,7 @@
               <div class="hero-line hero-line--blank"></div>
             </div>
 
-            <!-- Static prompt line -->
+            <!-- Interactive prompt line -->
             <div
               class="flex items-center gap-3 border-t border-white/[0.06] px-5 py-4 bg-white/[0.015]"
             >
@@ -137,9 +177,15 @@
                 class="font-mono text-sm font-bold text-teal-300 select-none"
                 >›</span
               >
-              <span class="flex-1 font-mono text-[13px] text-slate-500"
-                >review-first commerce agents</span
-              >
+              <input
+                id="hero-input"
+                type="text"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Agent console command line"
+                placeholder="type a command — try: help, recover, agents, rules"
+                class="hero-input flex-1 bg-transparent font-mono text-[13px] text-slate-200 placeholder:text-slate-600 outline-none"
+              />
               <a
                 href="/features"
                 class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-teal-300 transition-colors duration-300"
@@ -152,32 +198,43 @@
 
         <!-- Floating suggestion chips -->
         <div
-          class="absolute -bottom-3 left-6 sm:left-10 flex items-center gap-2 rounded-full border border-white/10 bg-[#0b1521] px-4 py-2 shadow-xl"
+          class="absolute -bottom-3 left-6 right-6 sm:left-10 sm:right-auto flex flex-wrap items-center gap-2 rounded-2xl sm:rounded-full border border-white/10 bg-[#0b1521] px-4 py-2 shadow-xl"
         >
           <span
             class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-400"
             >try</span
           >
-          <a
-            href="/features"
-            class="font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
+          <button
+            type="button"
+            data-hero-command="agents"
+            class="hero-command-chip font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
           >
             agents
-          </a>
+          </button>
           <span class="text-slate-600">·</span>
-          <a
-            href="/agents/cart-recovery"
-            class="font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
+          <button
+            type="button"
+            data-hero-command="recover"
+            class="hero-command-chip font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
           >
             recover
-          </a>
+          </button>
           <span class="text-slate-600">·</span>
-          <a
-            href="/security"
-            class="font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
+          <button
+            type="button"
+            data-hero-command="upsell"
+            class="hero-command-chip font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
+          >
+            upsell
+          </button>
+          <span class="text-slate-600">·</span>
+          <button
+            type="button"
+            data-hero-command="rules"
+            class="hero-command-chip font-mono text-[11px] font-bold text-teal-300 hover:text-teal-200 transition-colors"
           >
             rules
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -185,6 +242,91 @@
 </section>
 
 <style>
+  .hero-bg-depth {
+    position: absolute;
+    inset: -14% -8% -22%;
+    overflow: hidden;
+    perspective: 900px;
+    transform-style: preserve-3d;
+    opacity: 0.42;
+    -webkit-mask-image: radial-gradient(
+      ellipse at 62% 44%,
+      #000 0%,
+      rgba(0, 0, 0, 0.86) 34%,
+      transparent 76%
+    );
+    mask-image: radial-gradient(
+      ellipse at 62% 44%,
+      #000 0%,
+      rgba(0, 0, 0, 0.86) 34%,
+      transparent 76%
+    );
+  }
+  .hero-bg-depth-plane {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: min(82rem, 128vw);
+    height: min(44rem, 72vw);
+    border: 1px solid rgba(94, 234, 201, 0.1);
+    background-image:
+      linear-gradient(rgba(94, 234, 201, 0.11) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(94, 234, 201, 0.09) 1px, transparent 1px),
+      radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.12), transparent 58%);
+    background-size:
+      82px 82px,
+      82px 82px,
+      100% 100%;
+    border-radius: 9999px;
+    transform-origin: center;
+    will-change: transform, opacity;
+    animation: heroDepthDrift 18s ease-in-out infinite alternate;
+  }
+  .hero-bg-depth-plane--near {
+    transform: translate3d(-38%, -36%, 100px) rotateX(64deg) rotateZ(-13deg);
+    opacity: 0.72;
+  }
+  .hero-bg-depth-plane--mid {
+    width: min(74rem, 116vw);
+    height: min(38rem, 64vw);
+    background-size:
+      68px 68px,
+      68px 68px,
+      100% 100%;
+    transform: translate3d(-54%, -48%, -20px) rotateX(67deg) rotateZ(11deg);
+    opacity: 0.42;
+    animation-duration: 22s;
+    animation-delay: -6s;
+  }
+  .hero-bg-depth-plane--far {
+    width: min(66rem, 108vw);
+    height: min(32rem, 58vw);
+    background-size:
+      54px 54px,
+      54px 54px,
+      100% 100%;
+    transform: translate3d(-30%, -58%, -120px) rotateX(70deg) rotateZ(-24deg);
+    opacity: 0.24;
+    animation-duration: 28s;
+    animation-delay: -12s;
+  }
+  @keyframes heroDepthDrift {
+    from {
+      translate: 0 0;
+      scale: 1;
+    }
+    to {
+      translate: 1.8rem -1rem;
+      scale: 1.035;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg-depth-plane {
+      animation: none;
+      will-change: auto;
+    }
+  }
   .hero-dot {
     width: 0.6rem;
     height: 0.6rem;
@@ -236,4 +378,551 @@
       ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       sans-serif;
   }
+  .hero-input {
+    caret-color: #5eeac9;
+  }
+  .hero-input::placeholder {
+    color: #475569;
+  }
+  .hero-console,
+  .hero-console-glow,
+  .hero-signal-feed {
+    will-change: transform, opacity;
+  }
+  .hero-command-chip {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+  .hero-command-chip:focus-visible {
+    outline: 2px solid rgba(94, 234, 201, 0.8);
+    outline-offset: 3px;
+    border-radius: 9999px;
+  }
+  .hero-command-chip.is-active {
+    color: #ccfbf1;
+    text-shadow: 0 0 18px rgba(45, 212, 191, 0.45);
+  }
+  .hero-feed-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.025);
+    padding: 0.4rem 0.5rem;
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    transform: translate3d(0, 0, 0);
+    transition:
+      color 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease,
+      opacity 180ms ease;
+  }
+  .hero-feed-dot {
+    width: 0.35rem;
+    height: 0.35rem;
+    flex: 0 0 auto;
+    border-radius: 9999px;
+    background: #334155;
+  }
+  .hero-feed-item.is-active {
+    border-color: rgba(45, 212, 191, 0.28);
+    background: rgba(20, 184, 166, 0.075);
+    color: #ccfbf1;
+  }
+  .hero-feed-item.is-active .hero-feed-dot {
+    background: #5eeac9;
+    box-shadow: 0 0 16px rgba(45, 212, 191, 0.65);
+  }
+  .hero-cursor {
+    display: inline-block;
+    width: 0.55ch;
+    height: 1.05em;
+    margin-left: 1px;
+    background: #5eeac9;
+    transform: translateY(0.18em);
+    animation: heroBlink 1.05s steps(1) infinite;
+  }
+  @keyframes heroBlink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    50.01%,
+    100% {
+      opacity: 0;
+    }
+  }
 </style>
+
+<script>
+  (() => {
+    const output = document.getElementById("hero-output");
+    const input = document.getElementById("hero-input") as HTMLInputElement | null;
+    if (!output || !input) return;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+
+    const stage = document.querySelector<HTMLElement>("[data-hero-stage]");
+    const consoleCard = document.querySelector<HTMLElement>("[data-hero-console]");
+    const consoleGlow = document.querySelector<HTMLElement>("[data-hero-glow]");
+    const commandButtons = Array.from(
+      document.querySelectorAll<HTMLButtonElement>("[data-hero-command]"),
+    );
+    const coreStatus = document.getElementById("hero-core-status");
+    const coreStatusLabel = document.getElementById("hero-core-status-label");
+    const coreStatusCopy = document.getElementById("hero-core-status-copy");
+    const feedItems = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-feed-item]"),
+    );
+    const feedTexts = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-feed-text]"),
+    );
+
+    // Static command catalog. Output is built with DOM nodes (never innerHTML
+    // for text) so it stays XSS-safe even though input is fixed to this map.
+    const COMMANDS: Record<string, string[]> = {
+      help: [
+        "available commands:",
+        "  status   — live agent system snapshot",
+        "  recover  — cart recovery workflow",
+        "  agents   — list active commerce agents",
+        "  upsell   — bundle / upsell workflow",
+        "  rules    — guardrail policy summary",
+        "  clear    — clear the console",
+        "→ explore the full platform",
+      ],
+      status: [
+        "● 3 agents active    ● 2 signals queued",
+        "guardrails: ON   margin floor: +25%   offer cap: 35%",
+        'type "recover" to see a live workflow →',
+      ],
+      recover: [
+        "signal: cart idle 14m · 2 units · $84.00",
+        "check  ▸ sku in stock?   yes",
+        "check  ▸ margin floor?   pass (+31%)",
+        "check  ▸ offer cap?      pass (15%)",
+        "action ▸ sending recovery offer — pending approval",
+        "→ open the cart recovery agent",
+      ],
+      agents: [
+        "active commerce agents:",
+        "  • product-assistant   · answers buyer questions",
+        "  • cart-recovery       · recovers abandoned carts",
+        "  • upsell              · margin-safe bundles",
+        "  • customer-follow-up  · post-purchase nurture",
+        "→ browse all agents",
+      ],
+      upsell: [
+        "shopper viewed Aero Runners · in-stock companion: Pro Socks",
+        "check  ▸ bundle margin?   pass (+27%)",
+        "check  ▸ brand voice?     pass",
+        "action ▸ propose bundle — $112 (save $18)",
+        "→ open the upsell agent",
+      ],
+      rules: [
+        "guardrail policy (active):",
+        "  • inventory filter — never offer out-of-stock items",
+        "  • margin floor     — block offers below cost + 25%",
+        "  • offer cap        — cap discounts at 35%",
+        "  • brand voice      — sentiment + tone enforced",
+        "→ read the guardrails model",
+      ],
+      clear: [],
+    };
+
+    const WORKFLOW_STATES: Record<
+      string,
+      { label: string; copy: string; feed: string[]; accent: number }
+    > = {
+      help: {
+        label: "Active Guardrail Core",
+        copy: "Scanning incoming shopper queries",
+        feed: [
+          "Cart idle: 14m",
+          "Buyer asked sizing",
+          "Bundle intent seen",
+          "Two signals queued",
+        ],
+        accent: 0,
+      },
+      status: {
+        label: "System Snapshot",
+        copy: "3 agents active · 2 signals queued",
+        feed: [
+          "Cart idle: 14m",
+          "Question open: 2m",
+          "Upsell ready",
+          "Guardrails online",
+        ],
+        accent: 3,
+      },
+      recover: {
+        label: "Recovery Scan Passed",
+        copy: "Inventory, margin, and offer cap cleared",
+        feed: [
+          "Cart idle: 14m",
+          "SKU in stock",
+          "Margin +31%",
+          "Approval required",
+        ],
+        accent: 2,
+      },
+      agents: {
+        label: "Agent Roster Live",
+        copy: "Recovery, product, upsell, and follow-up agents active",
+        feed: [
+          "Product assistant ready",
+          "Cart recovery ready",
+          "Upsell agent ready",
+          "Follow-up agent ready",
+        ],
+        accent: 1,
+      },
+      upsell: {
+        label: "Bundle Guardrails Passed",
+        copy: "Companion SKU and margin floor confirmed",
+        feed: [
+          "Aero Runners viewed",
+          "Pro Socks in stock",
+          "Bundle margin +27%",
+          "Offer queued",
+        ],
+        accent: 2,
+      },
+      rules: {
+        label: "Policy Layer Active",
+        copy: "Inventory, margin, discount, and tone rules enforced",
+        feed: [
+          "Inventory filter on",
+          "Margin floor +25%",
+          "Discount cap 35%",
+          "Brand voice locked",
+        ],
+        accent: 3,
+      },
+    };
+
+    // Last "→ …" line of a command becomes a real deep link.
+    const CMD_LINKS: Record<string, string> = {
+      help: "/features",
+      recover: "/agents/cart-recovery",
+      agents: "/features",
+      upsell: "/agents/upsell",
+      rules: "/security",
+    };
+
+    const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    const scrollDown = () => {
+      output.scrollTop = output.scrollHeight;
+    };
+
+    let gsapPromise: Promise<typeof import("gsap")["gsap"] | null> | null = null;
+    const getGsap = () => {
+      if (reduceMotion) return Promise.resolve(null);
+      gsapPromise ??= import("gsap")
+        .then((mod) => mod.gsap)
+        .catch(() => null);
+      return gsapPromise;
+    };
+
+    const makeLine = (cls: string) => {
+      const div = document.createElement("div");
+      div.className = `hero-line ${cls}`;
+      return div;
+    };
+
+    let cursor: HTMLSpanElement | null = null;
+    const showCursor = () => {
+      if (cursor || reduceMotion) return;
+      cursor = document.createElement("span");
+      cursor.className = "hero-cursor";
+      output.appendChild(cursor);
+      scrollDown();
+    };
+    const hideCursor = () => {
+      if (cursor && cursor.parentNode) cursor.parentNode.removeChild(cursor);
+      cursor = null;
+    };
+
+    // Cancellation token: starting a new command aborts in-flight typing.
+    let token = 0;
+
+    const typeInto = async (
+      el: HTMLElement,
+      text: string,
+      speed: number,
+      myToken: number,
+    ) => {
+      if (reduceMotion || speed <= 0) {
+        el.textContent = text;
+        scrollDown();
+        return;
+      }
+      for (let i = 0; i < text.length; i++) {
+        if (myToken !== token) return;
+        el.textContent += text[i];
+        if (i % 2 === 0) scrollDown();
+        await sleep(speed);
+      }
+      scrollDown();
+    };
+    const appendLinkLine = (label: string, href: string) => {
+      const div = makeLine("hero-line--body");
+      const a = document.createElement("a");
+      a.href = href;
+      a.textContent = label;
+      a.className =
+        "font-mono text-[12px] font-bold text-teal-300 hover:text-teal-200 transition-colors underline-offset-4 hover:underline";
+      div.appendChild(a);
+      output.appendChild(div);
+      scrollDown();
+    };
+
+    const ACCENT_FIRST = new Set(["status", "recover", "upsell"]);
+
+    const setWorkflowState = (cmd: string) => {
+      const state = WORKFLOW_STATES[cmd] ?? WORKFLOW_STATES.help;
+      if (!state) return;
+
+      if (coreStatus) coreStatus.dataset.state = cmd;
+      if (coreStatusLabel) coreStatusLabel.textContent = state.label;
+      if (coreStatusCopy) coreStatusCopy.textContent = state.copy;
+
+      feedTexts.forEach((text, index) => {
+        text.textContent = state.feed[index] ?? "";
+      });
+      feedItems.forEach((item, index) => {
+        item.classList.toggle("is-active", index <= state.accent);
+      });
+      commandButtons.forEach((button) => {
+        const active = button.dataset.heroCommand === cmd;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+
+      if (reduceMotion) return;
+      getGsap().then((gsap) => {
+        if (!gsap) return;
+        if (consoleCard) {
+          gsap.fromTo(
+            consoleCard,
+            { scale: 1 },
+            {
+              scale: 1.012,
+              duration: 0.18,
+              yoyo: true,
+              repeat: 1,
+              ease: "power1.out",
+              overwrite: "auto",
+            },
+          );
+        }
+        if (feedItems.length) {
+          gsap.fromTo(
+            feedItems.slice(0, state.accent + 1),
+            { x: 8, autoAlpha: 0.45 },
+            {
+              x: 0,
+              autoAlpha: 1,
+              duration: 0.28,
+              stagger: 0.035,
+              ease: "power2.out",
+              overwrite: "auto",
+            },
+          );
+        }
+      });
+    };
+
+    const initPointerDepth = () => {
+      if (reduceMotion || !finePointer || !stage || !consoleCard) return;
+      getGsap().then((gsap) => {
+        if (!gsap) return;
+        const consoleX = gsap.quickTo(consoleCard, "x", {
+          duration: 0.45,
+          ease: "power3.out",
+        });
+        const consoleY = gsap.quickTo(consoleCard, "y", {
+          duration: 0.45,
+          ease: "power3.out",
+        });
+        const glowX = consoleGlow
+          ? gsap.quickTo(consoleGlow, "x", { duration: 0.7, ease: "power3.out" })
+          : null;
+        const glowY = consoleGlow
+          ? gsap.quickTo(consoleGlow, "y", { duration: 0.7, ease: "power3.out" })
+          : null;
+
+        stage.addEventListener(
+          "pointermove",
+          (event) => {
+            const rect = stage.getBoundingClientRect();
+            const px = (event.clientX - rect.left) / rect.width - 0.5;
+            const py = (event.clientY - rect.top) / rect.height - 0.5;
+            consoleX(px * 10);
+            consoleY(py * 8);
+            glowX?.(px * 18);
+            glowY?.(py * 14);
+          },
+          { passive: true },
+        );
+        stage.addEventListener("pointerleave", () => {
+          consoleX(0);
+          consoleY(0);
+          glowX?.(0);
+          glowY?.(0);
+        });
+      });
+    };
+
+    const runCommand = async (raw: string) => {
+      const cmd = raw.trim().toLowerCase();
+      input.value = "";
+      const myToken = ++token;
+      hideCursor();
+      setWorkflowState(cmd);
+
+      // Echo the prompt: "› " (light) + typed command (teal).
+      const promptLine = makeLine("hero-line--prompt");
+      promptLine.textContent = "› ";
+      const promptCmd = document.createElement("span");
+      promptCmd.className = "hero-cmd";
+      promptLine.appendChild(promptCmd);
+      output.appendChild(promptLine);
+      await typeInto(promptCmd, cmd, reduceMotion ? 0 : 14, myToken);
+      if (myToken !== token) return;
+      await sleep(reduceMotion ? 0 : 90);
+      if (myToken !== token) return;
+
+      if (cmd === "clear") {
+        output.innerHTML = "";
+      } else if (COMMANDS[cmd]) {
+        const lines = COMMANDS[cmd];
+        const link = CMD_LINKS[cmd];
+        for (let i = 0; i < lines.length; i++) {
+          if (myToken !== token) return;
+          const isLink = i === lines.length - 1 && !!link;
+          if (isLink) {
+            appendLinkLine(lines[i], link as string);
+          } else {
+            const cls =
+              i === 0 && ACCENT_FIRST.has(cmd)
+                ? "hero-line--accent"
+                : "hero-line--body";
+            const line = makeLine(cls);
+            output.appendChild(line);
+            await typeInto(line, lines[i], reduceMotion ? 0 : 10, myToken);
+          }
+          if (myToken !== token) return;
+          await sleep(reduceMotion ? 0 : 45);
+        }
+      } else if (cmd !== "") {
+        const line = makeLine("hero-line--body");
+        line.textContent = `command not found: ${cmd} — type "help"`;
+        output.appendChild(line);
+        scrollDown();
+      }
+
+      if (myToken !== token) return;
+      showCursor();
+    };
+
+    // Boot: re-type the welcome banner, then auto-run "help" so the console
+    // feels alive on load. SSR keeps the static banner for no-JS users.
+    const boot = async () => {
+      const myToken = ++token;
+      output.innerHTML = "";
+      hideCursor();
+
+      const title = makeLine("hero-line--title");
+      output.appendChild(title);
+      await typeInto(
+        title,
+        "VoluChat Agent Console",
+        reduceMotion ? 0 : 22,
+        myToken,
+      );
+      if (myToken !== token) return;
+
+      const body1 = makeLine("hero-line--body");
+      output.appendChild(body1);
+      await typeInto(
+        body1,
+        "Shopify agents for recovery, product answers, follow-up, and campaigns.",
+        reduceMotion ? 0 : 14,
+        myToken,
+      );
+      if (myToken !== token) return;
+
+      const body2 = makeLine("hero-line--body");
+      output.appendChild(body2);
+      await typeInto(
+        body2,
+        "Every action stays inside your margin and approval rules.",
+        reduceMotion ? 0 : 14,
+        myToken,
+      );
+      if (myToken !== token) return;
+
+      output.appendChild(makeLine("hero-line--blank"));
+      await sleep(reduceMotion ? 0 : 220);
+      if (myToken !== token) return;
+
+      await runCommand("help");
+    };
+
+    // Arrow-key history (like a real terminal).
+    const history: string[] = [];
+    let histIndex = -1;
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const value = input.value.trim();
+        if (!value) return;
+        history.push(value);
+        histIndex = history.length;
+        e.preventDefault();
+        runCommand(value);
+      } else if (e.key === "ArrowUp") {
+        if (!history.length) return;
+        e.preventDefault();
+        histIndex = Math.max(0, histIndex - 1);
+        input.value = history[histIndex] ?? "";
+        input.setSelectionRange(input.value.length, input.value.length);
+      } else if (e.key === "ArrowDown") {
+        if (!history.length) return;
+        e.preventDefault();
+        histIndex = Math.min(history.length, histIndex + 1);
+        input.value = history[histIndex] ?? "";
+        input.setSelectionRange(input.value.length, input.value.length);
+      }
+    });
+
+    commandButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", () => {
+        const cmd = button.dataset.heroCommand;
+        if (!cmd) return;
+        runCommand(cmd);
+        input.focus({ preventScroll: true });
+      });
+    });
+
+    // Delay boot so the typewriter never competes with first paint / LCP.
+    setWorkflowState("help");
+    initPointerDepth();
+    setTimeout(boot, reduceMotion ? 0 : 950);
+  })();
+</script>
