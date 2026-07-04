@@ -60,7 +60,7 @@ const setupComparison = [
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="animate-page-entry opacity-0 pt-20">
+  <main class="pt-20">
     <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
       <div
         class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(83,111,159,0.12),transparent_32%),radial-gradient(circle_at_18%_42%,rgba(203,217,234,0.16),transparent_30%)]"
@@ -69,7 +69,7 @@ const setupComparison = [
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl text-center">
+        <div class="compare-hero-text opacity-0 mx-auto max-w-4xl text-center">
           <div class="chip">Comparison guide</div>
           <h1
             class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
@@ -93,7 +93,7 @@ const setupComparison = [
           {
             setupComparison.map((item, index) => (
               <article
-                class={`solid-card md:p-7 ${index === 1 ? "border-teal-300/20 bg-teal-300/10" : ""}`}
+                class={`compare-setup-card opacity-0 solid-card md:p-7 ${index === 1 ? "border-teal-300/20 bg-teal-300/10" : ""}`}
               >
                 <p class={`mini-label ${index === 1 ? "text-teal-200" : ""}`}>
                   {item.label}
@@ -120,9 +120,9 @@ const setupComparison = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="compare-comp-section pb-24">
       <div class="page-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-        <aside class="solid-card h-fit lg:sticky lg:top-32 lg:p-8">
+        <aside class="compare-aside opacity-0 solid-card h-fit lg:sticky lg:top-32 lg:p-8">
           <p class="section-eyebrow">The architectural difference</p>
           <h2
             class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white"
@@ -143,7 +143,7 @@ const setupComparison = [
         <div class="space-y-5">
           {
             competitors.map((item) => (
-              <article class="solid-card md:p-7">
+              <article class="compare-comp-card opacity-0 solid-card md:p-7">
                 <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
                   <div>
                     <p class="mini-label">Alternative Category</p>
@@ -183,3 +183,51 @@ const setupComparison = [
   <FAQ />
   <Footer />
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    // Hero
+    gsap.fromTo(".compare-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+
+    // Setup Section
+    gsap.fromTo(".compare-setup-card",
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.2, ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".compare-setup-card",
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Competitors Section
+    const compTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".compare-comp-section",
+        start: "top 75%",
+        toggleActions: "play none none reverse"
+      }
+    });
+    
+    compTl.fromTo(".compare-aside",
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+    ).fromTo(".compare-comp-card",
+      { opacity: 0, y: 40, rotateX: -5 },
+      { opacity: 1, y: 0, rotateX: 0, duration: 0.7, stagger: 0.15, ease: "back.out(1.2)" },
+      "-=0.5"
+    );
+  });
+</script>

@@ -13,7 +13,7 @@ const contactEmailUrl = "mailto:support@voluchat.com";
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="animate-page-entry overflow-hidden opacity-0 pt-20">
+  <main class="overflow-hidden pt-20">
     <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
       <div
         class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(45,212,191,0.12),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
@@ -23,7 +23,7 @@ const contactEmailUrl = "mailto:support@voluchat.com";
 
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
+          <div class="contact-hero-text opacity-0">
             <div class="chip">Revenue leak review</div>
             <h1
               class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl"
@@ -94,7 +94,7 @@ const contactEmailUrl = "mailto:support@voluchat.com";
             </div>
           </div>
 
-          <div class="solid-card p-6 sm:p-8 lg:p-10">
+          <div class="contact-form-card opacity-0 solid-card p-6 sm:p-8 lg:p-10">
             <form id="contact-form" class="space-y-6">
               <div>
                 <h2 class="text-2xl font-heading font-semibold text-white">
@@ -211,6 +211,25 @@ const contactEmailUrl = "mailto:support@voluchat.com";
   </main>
 
   <Footer />
+
+  <script>
+    import { gsap } from "gsap";
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+  
+      const tl = gsap.timeline();
+      tl.fromTo(".contact-hero-text",
+        { opacity: 0, x: -30 },
+        { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+      ).fromTo(".contact-form-card",
+        { opacity: 0, x: 40, rotateY: -10 },
+        { opacity: 1, x: 0, rotateY: 0, duration: 1, ease: "power3.out" },
+        "-=0.6"
+      );
+    });
+  </script>
 
   <script
     is:inline

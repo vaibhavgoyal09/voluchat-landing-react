@@ -27,7 +27,7 @@ try {
   <Navbar />
 
   <main
-    class="relative min-h-screen overflow-hidden pt-36 pb-20 animate-page-entry opacity-0 sm:pt-40"
+    class="relative min-h-screen overflow-hidden pt-36 pb-20 sm:pt-40"
   >
     <div
       class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_10%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_10%_68%,rgba(203,217,234,0.22),transparent_28%)]"
@@ -36,7 +36,7 @@ try {
     <div class="ambient-noise"></div>
 
     <div class="page-shell">
-      <div class="mx-auto mb-16 max-w-3xl text-center">
+      <div class="blog-hero-text opacity-0 mx-auto mb-16 max-w-3xl text-center">
         <div class="chip">Guides</div>
         <h1
           class="mt-6 text-4xl font-semibold leading-[1.03] text-white sm:text-6xl"
@@ -58,7 +58,7 @@ try {
         )
       }
 
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="blog-grid opacity-0 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {blogs.map((blog: any) => <BlogCard blog={blog} />)}
       </div>
 
@@ -74,3 +74,22 @@ try {
 
   <Footer />
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const tl = gsap.timeline();
+    tl.fromTo(".blog-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    ).fromTo(".blog-grid",
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+      "-=0.5"
+    );
+  });
+</script>

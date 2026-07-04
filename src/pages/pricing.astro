@@ -51,7 +51,7 @@ const pricingAnswer =
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="animate-page-entry opacity-0 pt-20">
+  <main class="pt-20">
     <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
       <div
         class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(45,212,191,0.12),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
@@ -60,7 +60,7 @@ const pricingAnswer =
       <div class="ambient-noise"></div>
 
       <div class="page-shell text-center">
-        <div class="mx-auto max-w-4xl">
+        <div class="pricing-hero-text opacity-0 mx-auto max-w-4xl">
           <div class="chip">Custom pricing</div>
           <h1
             class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
@@ -80,10 +80,10 @@ const pricingAnswer =
       </div>
     </section>
 
-    <section class="relative overflow-hidden pb-16 sm:pb-20">
+    <section class="pricing-factors-section relative overflow-hidden pb-16 sm:pb-20">
       <div class="page-shell">
         <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
-          <aside class="solid-card h-fit lg:sticky lg:top-32 lg:p-8">
+          <aside class="pricing-aside opacity-0 solid-card h-fit lg:sticky lg:top-32 lg:p-8">
             <p class="section-eyebrow">How we quote</p>
             <h2
               class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white"
@@ -105,7 +105,7 @@ const pricingAnswer =
           <div class="grid gap-5 md:grid-cols-2">
             {
               pricingFactors.map((factor) => (
-                <article class="solid-card md:p-7">
+                <article class="pricing-factor-card opacity-0 solid-card md:p-7">
                   <h3 class="text-xl font-heading font-semibold text-white">
                     {factor.title}
                   </h3>
@@ -120,10 +120,10 @@ const pricingAnswer =
       </div>
     </section>
 
-    <section class="section-band relative overflow-hidden py-20 lg:py-28">
+    <section class="pricing-included-section section-band relative overflow-hidden py-20 lg:py-28">
       <div class="page-shell">
         <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
+          <div class="pricing-included-text opacity-0">
             <p class="section-eyebrow">Included in every rollout</p>
             <h2 class="section-title mt-4">
               A setup shaped around your store, not a generic package.
@@ -135,11 +135,11 @@ const pricingAnswer =
             </p>
           </div>
 
-          <div class="solid-card p-5 sm:p-7">
+          <div class="pricing-included-card opacity-0 solid-card p-5 sm:p-7">
             <div class="grid gap-3">
               {
                 includedItems.map((item) => (
-                  <div class="flex items-center gap-3 rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.04] px-4 py-3">
+                  <div class="pricing-included-item opacity-0 flex items-center gap-3 rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.04] px-4 py-3">
                     <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-300" />
                     <span class="text-base font-medium leading-snug text-slate-100">
                       {item}
@@ -158,3 +158,59 @@ const pricingAnswer =
 
   <Footer />
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    // Hero
+    gsap.fromTo(".pricing-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+
+    // Factors Section
+    const factorsTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".pricing-factors-section",
+        start: "top 75%",
+        toggleActions: "play none none reverse"
+      }
+    });
+    factorsTl.fromTo(".pricing-aside",
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+    ).fromTo(".pricing-factor-card",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.1, ease: "back.out(1.2)" },
+      "-=0.5"
+    );
+
+    // Included Section
+    const includedTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".pricing-included-section",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    });
+    includedTl.fromTo(".pricing-included-text",
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.7, ease: "power2.out" }
+    ).fromTo(".pricing-included-card",
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" },
+      "-=0.4"
+    ).fromTo(".pricing-included-item",
+      { opacity: 0, x: -20 },
+      { opacity: 1, x: 0, duration: 0.4, stagger: 0.08, ease: "power2.out" },
+      "-=0.3"
+    );
+  });
+</script>

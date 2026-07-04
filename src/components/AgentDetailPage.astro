@@ -26,7 +26,7 @@ const {
 <Layout title={seoTitle} description={seoDescription}>
   <Header />
 
-  <main class="animate-page-entry opacity-0 pt-20">
+  <main class="pt-20">
     <section
       class="relative isolate overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24"
     >
@@ -41,8 +41,8 @@ const {
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
-        <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
+        <div class="agent-hero grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div class="agent-hero-text opacity-0">
             <div class="chip">{eyebrow}</div>
             <h1
               class="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
@@ -60,7 +60,7 @@ const {
             </div>
           </div>
 
-          <div class="relative">
+          <div class="agent-hero-mockup relative opacity-0">
             <div
               class="absolute -inset-4 rounded-[2rem] bg-teal-300/10 blur-3xl"
             >
@@ -146,11 +146,11 @@ const {
     </section>
 
     <section
-      class="relative border-y border-white/10 bg-[#081321] py-20 sm:py-24"
+      class="agent-why-section relative border-y border-white/10 bg-[#081321] py-20 sm:py-24"
     >
       <div class="page-shell">
         <div class="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
-          <div>
+          <div class="agent-why-text opacity-0">
             <p class="section-eyebrow">Why this agent exists</p>
             <h2
               class="mt-4 max-w-xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl"
@@ -167,7 +167,7 @@ const {
           <div class="grid gap-4">
             {
               workflow.map((item, index) => (
-                <article class="rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-5 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)] sm:p-6">
+                <article class="agent-why-card opacity-0 rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-5 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)] sm:p-6">
                   <div class="flex flex-col gap-4 sm:flex-row sm:items-start">
                     <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-teal-300/10 font-mono text-sm font-bold text-teal-100">
                       0{index + 1}
@@ -189,14 +189,14 @@ const {
       </div>
     </section>
 
-    <section class="relative overflow-hidden py-20 sm:py-28">
+    <section class="agent-where-section relative overflow-hidden py-20 sm:py-28">
       <div
         class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_52%,#07111f_100%)]"
       >
       </div>
       <div class="page-shell">
         <div
-          class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"
+          class="agent-where-text opacity-0 flex flex-col justify-between gap-6 lg:flex-row lg:items-end"
         >
           <div>
             <p class="section-eyebrow">Where it helps</p>
@@ -217,7 +217,7 @@ const {
         <div class="mt-12 grid gap-4 md:grid-cols-3">
           {
             useCases.map((item) => (
-              <article class="rounded-[1.25rem] border border-white/10 bg-[#101b2e] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)]">
+              <article class="agent-where-card opacity-0 rounded-[1.25rem] border border-white/10 bg-[#101b2e] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)]">
                 <p class="mini-label text-teal-200">{item.label}</p>
                 <h3 class="mt-4 text-xl font-semibold leading-tight text-white">
                   {item.title}
@@ -232,11 +232,11 @@ const {
       </div>
     </section>
 
-    <section class="relative pb-24">
+    <section class="agent-guard-section relative pb-24">
       <div class="page-shell">
         <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div
-            class="rounded-[1.75rem] border border-white/10 bg-[#0d192b] p-6 shadow-[0_32px_100px_-70px_rgba(45,212,191,0.5)] sm:p-10"
+            class="agent-guard-left opacity-0 rounded-[1.75rem] border border-white/10 bg-[#0d192b] p-6 shadow-[0_32px_100px_-70px_rgba(45,212,191,0.5)] sm:p-10"
           >
             <p class="section-eyebrow">Guardrails</p>
             <h2
@@ -278,7 +278,7 @@ const {
           </div>
 
           <aside
-            class="rounded-[1.75rem] border border-white/10 bg-[#07111f] p-6 sm:p-8"
+            class="agent-guard-right opacity-0 rounded-[1.75rem] border border-white/10 bg-[#07111f] p-6 sm:p-8"
           >
             <p class="section-eyebrow">Related agents</p>
             <h2
@@ -315,3 +315,77 @@ const {
   <FAQ />
   <Footer />
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    // Hero
+    const heroTl = gsap.timeline();
+    heroTl.fromTo(".agent-hero-text",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+    ).fromTo(".agent-hero-mockup",
+      { opacity: 0, scale: 0.95, rotateY: 10 },
+      { opacity: 1, scale: 1, rotateY: 0, duration: 1, ease: "power4.out" },
+      "-=0.6"
+    );
+
+    // Why section
+    const whyTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".agent-why-section",
+        start: "top 75%",
+        toggleActions: "play none none reverse"
+      }
+    });
+    whyTl.fromTo(".agent-why-text",
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+    ).fromTo(".agent-why-card",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" },
+      "-=0.5"
+    );
+
+    // Where section
+    const whereTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".agent-where-section",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    });
+    whereTl.fromTo(".agent-where-text",
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }
+    ).fromTo(".agent-where-card",
+      { opacity: 0, y: 40, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: { amount: 0.4, from: "start" }, ease: "back.out(1.2)" },
+      "-=0.5"
+    );
+
+    // Guardrails section
+    const guardTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".agent-guard-section",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    });
+    guardTl.fromTo(".agent-guard-left",
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+    ).fromTo(".agent-guard-right",
+      { opacity: 0, x: 30 },
+      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" },
+      "-=0.6"
+    );
+  });
+</script>

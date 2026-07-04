@@ -9,6 +9,7 @@ import GuardrailsSection from "../components/GuardrailsSection.astro";
 import TrustSection from "../components/TrustSection.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
+import FounderNoteSection from "../components/FounderNoteSection.astro";
 
 export const prerender = true;
 
@@ -86,10 +87,11 @@ const structuredData = [
 
   <main class="overflow-x-hidden">
     <Hero />
-    <GuardrailsSection />
-    <UseCasesSection />
     <ProblemSection />
+    <UseCasesSection />
     <ProductLoopSection />
+    <GuardrailsSection />
+    <FounderNoteSection />
     <TrustSection />
     <FAQ />
   </main>

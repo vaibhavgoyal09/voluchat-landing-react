@@ -151,7 +151,7 @@ const structuredData = blog
 
   <main
     id="hero"
-    class="relative overflow-hidden pt-32 pb-20 animate-page-entry opacity-0 sm:pt-36"
+    class="relative overflow-hidden pt-32 pb-20 sm:pt-36"
   >
     <div
       class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_8%,rgba(83,111,159,0.08),transparent_30%),radial-gradient(circle_at_12%_72%,rgba(203,217,234,0.14),transparent_30%)]"
@@ -162,7 +162,7 @@ const structuredData = blog
     {
       blog ? (
         <article class="blog-article mx-auto max-w-5xl px-5 sm:px-6">
-          <div class="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+          <div class="blog-post-header opacity-0 mx-auto mb-10 max-w-3xl text-center sm:mb-12">
             <a
               href="/blog"
               class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-200 transition-colors hover:text-teal-100"
@@ -230,7 +230,7 @@ const structuredData = blog
             </div>
           </div>
 
-          <div class="relative mx-auto mb-10 aspect-[16/8.5] max-w-4xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0d192b] shadow-[0_22px_70px_rgba(0,0,0,0.4)] sm:mb-12 lg:aspect-[21/9]">
+          <div class="blog-post-image opacity-0 relative mx-auto mb-10 aspect-[16/8.5] max-w-4xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0d192b] shadow-[0_22px_70px_rgba(0,0,0,0.4)] sm:mb-12 lg:aspect-[21/9]">
             {blog.featuredImageUrl ? (
               <img
                 src={blog.featuredImageUrl}
@@ -256,7 +256,7 @@ const structuredData = blog
             )}
           </div>
 
-          <div class="blog-prose-shell">
+          <div class="blog-prose-shell opacity-0">
             <div class="blog-prose" set:html={renderedContentHtml} />
           </div>
 
@@ -322,3 +322,26 @@ const structuredData = blog
 
   <Footer />
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const tl = gsap.timeline();
+    tl.fromTo(".blog-post-header",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+    ).fromTo(".blog-post-image",
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 1, ease: "power3.out" },
+      "-=0.5"
+    ).fromTo(".blog-prose-shell",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+      "-=0.6"
+    );
+  });
+</script>
