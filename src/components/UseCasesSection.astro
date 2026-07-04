@@ -43,7 +43,7 @@ const workflows = [
   class="relative bg-[#050b14] py-20 sm:py-24"
 >
   <div class="page-shell relative z-10">
-    <div class="mb-12 max-w-2xl reveal-on-scroll reveal-up">
+    <div class="usecases-header mb-12 max-w-2xl opacity-0">
       <h2 class="section-title text-white">
         Workflows that <span class="gradient-text-anim">drive revenue.</span>
       </h2>
@@ -57,7 +57,7 @@ const workflows = [
         workflows.map((workflow, i) => {
           return (
             <article
-              class={`group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0c1627] p-6 shadow-[0_24px_70px_-46px_rgba(0,0,0,0.88)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-300/30 hover:bg-[#101b2f] sm:p-7 ${i === workflows.length - 1 ? "md:col-span-2" : ""}`}
+              class={`usecase-card group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0c1627] p-6 shadow-[0_24px_70px_-46px_rgba(0,0,0,0.88)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-300/30 hover:bg-[#101b2f] sm:p-7 opacity-0 ${i === workflows.length - 1 ? "md:col-span-2" : ""}`}
             >
               <div class="absolute inset-0 bg-gradient-to-br from-teal-500/6 to-transparent pointer-events-none" />
 
@@ -96,3 +96,36 @@ const workflows = [
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    // Unique animation for UseCasesSection: Staggered pop-in from center
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#workflows",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play reverse play reverse"
+      }
+    });
+
+    tl.fromTo(".usecases-header", 
+      { opacity: 0, scale: 0.9, y: 30 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.5)" }
+    );
+
+    tl.fromTo(".usecase-card",
+      { opacity: 0, y: 50, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: { amount: 0.5, from: "start" }, ease: "power2.out" },
+      "-=0.4"
+    );
+  });
+</script>

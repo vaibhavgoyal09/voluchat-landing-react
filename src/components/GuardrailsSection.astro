@@ -7,7 +7,7 @@
   <div class="sect-orb absolute top-10 left-1/3 h-[350px] w-[350px] bg-amber-500/10 opacity-30"></div>
 
   <div class="page-shell relative z-10">
-    <div class="max-w-3xl reveal-on-scroll reveal-up">
+    <div class="guardrails-header max-w-3xl opacity-0">
       <span class="section-eyebrow text-amber-400 font-bold uppercase tracking-wider text-xs">Agent Guardrails</span>
       <h2 class="section-title mt-4 text-white">
         See the AI’s reasoning before anything happens
@@ -21,10 +21,10 @@
     </div>
 
     <!-- Interactive Guardrails Simulator -->
-    <div class="mt-16 grid gap-6 md:grid-cols-12 lg:items-stretch reveal-on-scroll reveal-up reveal-delay-100">
+    <div class="mt-16 grid gap-6 md:grid-cols-12 lg:items-stretch">
       
       <!-- Controls Side (5 cols) -->
-      <div class="col-span-full md:col-span-5 flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0d192b]/60 p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+      <div class="guardrails-panel-left opacity-0 col-span-full md:col-span-5 flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0d192b]/60 p-6 sm:p-8 backdrop-blur-xl shadow-xl">
         <div>
           <h3 class="font-heading text-xs font-bold text-white uppercase tracking-wider">
             Set the rules your AI must follow
@@ -101,7 +101,7 @@
       </div>
 
       <!-- Right Side: Live Simulator Trace Display (7 cols) -->
-      <div class="col-span-full md:col-span-7 flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0b1625]/90 overflow-hidden shadow-2xl relative min-h-[460px]">
+      <div class="guardrails-panel-right opacity-0 col-span-full md:col-span-7 flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0b1625]/90 overflow-hidden shadow-2xl relative min-h-[460px]">
         <div class="flex items-center justify-between border-b border-white/10 px-5 py-4 bg-black/20">
           <div class="flex items-center gap-2">
             <span class="h-2 w-2 rounded-full bg-teal-400 animate-pulse" id="sim-status-dot"></span>
@@ -125,7 +125,42 @@
 </section>
 
 <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
   document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#guardrails",
+          start: "top 75%",
+          end: "bottom 25%",
+          toggleActions: "play reverse play reverse"
+        }
+      });
+
+      tl.fromTo(".guardrails-header", 
+        { opacity: 0, y: -30 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+      );
+
+      // Book-like fold in
+      tl.fromTo(".guardrails-panel-left",
+        { opacity: 0, x: -50, rotateY: 15 },
+        { opacity: 1, x: 0, rotateY: 0, duration: 0.8, ease: "power3.out" },
+        "-=0.5"
+      );
+
+      tl.fromTo(".guardrails-panel-right",
+        { opacity: 0, x: 50, rotateY: -15 },
+        { opacity: 1, x: 0, rotateY: 0, duration: 0.8, ease: "power3.out" },
+        "-=0.6"
+      );
+    }
+
     const scenarioBtns = document.querySelectorAll(".scenario-btn");
     const simContent = document.getElementById("sim-content");
     const simOutcomeBar = document.getElementById("sim-outcome-bar");

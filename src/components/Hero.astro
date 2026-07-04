@@ -207,3 +207,28 @@
 
 <style>
 </style>
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    // We wait a tiny bit to ensure tilt scripts have initialized
+    setTimeout(() => {
+      const tl = gsap.timeline();
+
+      tl.fromTo([".hero-eyebrow", ".hero-title", ".hero-text", ".hero-ctas"],
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out" }
+      );
+
+      tl.fromTo(".hero-mockup",
+        { opacity: 0, y: 40, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power4.out" },
+        "-=0.6"
+      );
+    }, 50);
+  });
+</script>
