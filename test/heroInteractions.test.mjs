@@ -5,15 +5,16 @@ import { test } from "node:test";
 const readSource = (path) =>
   readFile(new URL(`../${path}`, import.meta.url), "utf8");
 
-test("hero exposes performant interactive workflow controls", async () => {
+test("hero exposes the approval-focused workflow mockup", async () => {
   const hero = await readSource("src/components/Hero.astro");
 
-  assert.match(hero, /data-hero-command="recover"/);
-  assert.match(hero, /data-hero-command="upsell"/);
-  assert.match(hero, /data-hero-command="rules"/);
-  assert.match(hero, /id="hero-signal-feed"/);
+  assert.match(hero, /href="#workflows"/);
+  assert.match(hero, /View example workflows/);
   assert.match(hero, /id="hero-core-status"/);
-  assert.match(hero, /requestAnimationFrame/);
+  assert.match(hero, /AI Recommendation/);
+  assert.match(hero, /Discounted recovery message needs approval/);
+  assert.match(hero, /Approve Offer/);
+  assert.match(hero, /flex-col sm:flex-row/);
   assert.match(hero, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(hero, /mousemove/);
 });

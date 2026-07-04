@@ -20,22 +20,26 @@ test("homepage layout uses the new commerce agent platform structure", async () 
 
   assert.match(
     index,
-    /<Hero \/>\s*<ProblemSection \/>\s*<PlatformSection \/>\s*<UseCasesSection \/>\s*<ProductLoopSection \/>/,
+    /<Hero \/>\s*<GuardrailsSection \/>\s*<UseCasesSection \/>\s*<ProblemSection \/>\s*<ProductLoopSection \/>/,
   );
   assert.match(
     index,
-    /<GuardrailsSection \/>\s*<DemoFlowSection \/>\s*<FounderNoteSection \/>\s*<TrustSection \/>\s*<FAQ \/>\s*<\/main>\s*<Footer \/>/,
+    /<ProductLoopSection \/>\s*<TrustSection \/>\s*<FAQ \/>\s*<\/main>\s*<Footer \/>/,
   );
   assert.doesNotMatch(index, /CTASection/);
   assert.doesNotMatch(index, /import BestFor/);
   assert.doesNotMatch(index, /<BestFor \/>/);
+  assert.doesNotMatch(index, /DemoFlowSection/);
+  assert.doesNotMatch(index, /FounderNoteSection/);
+  assert.doesNotMatch(index, /PlatformSection/);
 });
 
 test("homepage nav and footer wire to real sections and new pages", async () => {
   const navbar = await readSource("src/components/Navbar.astro");
   const footer = await readSource("src/components/Footer.astro");
 
-  assert.match(navbar, /homeHref\("#platform"\)/);
+  assert.doesNotMatch(navbar, /name:\s*"Platform"/);
+  assert.doesNotMatch(navbar, /homeHref\("#platform"\)/);
   assert.match(navbar, /href:\s*"\/features"/);
   assert.match(navbar, /href:\s*"\/pricing"/);
   assert.match(navbar, /href:\s*"\/compare"/);
@@ -49,19 +53,10 @@ test("homepage nav and footer wire to real sections and new pages", async () => 
   const workflowsSection = await readSource(
     "src/components/UseCasesSection.astro",
   );
-  const demoFlowSection = await readSource(
-    "src/components/DemoFlowSection.astro",
-  );
-  const founderNote = await readSource(
-    "src/components/FounderNoteSection.astro",
-  );
 
   assert.match(workflowsSection, /id="workflows"/);
   assert.match(workflowsSection, /\/agents\/cart-recovery/);
-  assert.match(workflowsSection, /\/agents\/product-assistant/);
-  assert.match(founderNote, /Founder note/);
   assert.match(footer, /id="demo"/);
-  assert.match(demoFlowSection, /id="demo-flow"/);
 });
 
 test("pricing presents closed tailored pricing", async () => {

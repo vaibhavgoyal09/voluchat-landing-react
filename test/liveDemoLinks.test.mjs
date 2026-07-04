@@ -12,11 +12,11 @@ test("homepage revenue leak CTAs navigate to the conversion sections", async () 
     "utf8",
   );
 
-  assert.match(hero, /href="#demo-flow"/);
-  assert.match(hero, /Book Demo/);
+  assert.match(hero, /href="#workflows"/);
+  assert.match(hero, /View example workflows/);
   assert.match(footer, /id="demo"/);
   assert.match(footer, /href="\/contact"/);
-  assert.match(footer, /Book Demo/);
+  assert.match(footer, /Book a workflow demo/);
   assert.doesNotMatch(hero, /ig\.me/);
   assert.doesNotMatch(footer, /ig\.me/);
 });

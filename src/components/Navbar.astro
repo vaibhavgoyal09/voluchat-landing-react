@@ -3,7 +3,6 @@ const isHome = Astro.url.pathname === "/";
 const homeHref = (hash) => (isHome ? hash : `/${hash}`);
 
 const navigation = [
-  { name: "Platform", href: homeHref("#platform") },
   { name: "Agents", href: "/features" },
   { name: "Pricing", href: "/pricing" },
   { name: "Compare", href: "/compare" },
