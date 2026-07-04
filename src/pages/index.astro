@@ -43,6 +43,36 @@ const structuredData = [
     url: siteUrl,
     description: seoDescription,
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [
+      {
+        "@type": "SiteNavigationElement",
+        position: 1,
+        name: "Agents",
+        url: `${siteUrl}/features`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 2,
+        name: "Pricing",
+        url: `${siteUrl}/pricing`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 3,
+        name: "Compare",
+        url: `${siteUrl}/compare`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 4,
+        name: "About",
+        url: `${siteUrl}/about`,
+      },
+    ],
+  },
 ];
 ---
 
