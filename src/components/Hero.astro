@@ -9,11 +9,6 @@
   <!-- Modern layered background (pure CSS, zero JS) -->
   <div class="hero-bg" aria-hidden="true">
     <div class="hero-bg-grid"></div>
-    <div class="hero-bg-depth">
-      <span class="hero-bg-depth-plane hero-bg-depth-plane--near"></span>
-      <span class="hero-bg-depth-plane hero-bg-depth-plane--mid"></span>
-      <span class="hero-bg-depth-plane hero-bg-depth-plane--far"></span>
-    </div>
     <div class="hero-bg-mesh"></div>
     <div class="hero-bg-orb hero-bg-orb--teal"></div>
     <div class="hero-bg-orb hero-bg-orb--emerald"></div>
@@ -58,7 +53,7 @@
             class="bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-400"
             >AI agents for Shopify operations —
           </span>
-          <span class="block text-teal-100">with human approval built in.</span>
+          <span class="block gradient-text-anim">with human approval built in.</span>
         </h1>
 
         <p
@@ -211,88 +206,4 @@
 </section>
 
 <style>
-  .hero-bg-depth {
-    position: absolute;
-    inset: -14% -8% -22%;
-    overflow: hidden;
-    perspective: 900px;
-    transform-style: preserve-3d;
-    opacity: 0.42;
-    -webkit-mask-image: radial-gradient(
-      ellipse at 62% 44%,
-      #000 0%,
-      rgba(0, 0, 0, 0.86) 34%,
-      transparent 76%
-    );
-    mask-image: radial-gradient(
-      ellipse at 62% 44%,
-      #000 0%,
-      rgba(0, 0, 0, 0.86) 34%,
-      transparent 76%
-    );
-  }
-  .hero-bg-depth-plane {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    display: block;
-    width: min(82rem, 128vw);
-    height: min(44rem, 72vw);
-    border: 1px solid rgba(94, 234, 201, 0.1);
-    background-image:
-      linear-gradient(rgba(94, 234, 201, 0.11) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(94, 234, 201, 0.09) 1px, transparent 1px),
-      radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.12), transparent 58%);
-    background-size:
-      82px 82px,
-      82px 82px,
-      100% 100%;
-    border-radius: 9999px;
-    transform-origin: center;
-    will-change: transform, opacity;
-    animation: heroDepthDrift 18s ease-in-out infinite alternate;
-  }
-  .hero-bg-depth-plane--near {
-    transform: translate3d(-38%, -36%, 100px) rotateX(64deg) rotateZ(-13deg);
-    opacity: 0.72;
-  }
-  .hero-bg-depth-plane--mid {
-    width: min(74rem, 116vw);
-    height: min(38rem, 64vw);
-    background-size:
-      68px 68px,
-      68px 68px,
-      100% 100%;
-    transform: translate3d(-54%, -48%, -20px) rotateX(67deg) rotateZ(11deg);
-    opacity: 0.42;
-    animation-duration: 22s;
-    animation-delay: -6s;
-  }
-  .hero-bg-depth-plane--far {
-    width: min(66rem, 108vw);
-    height: min(32rem, 58vw);
-    background-size:
-      54px 54px,
-      54px 54px,
-      100% 100%;
-    transform: translate3d(-30%, -58%, -120px) rotateX(70deg) rotateZ(-24deg);
-    opacity: 0.24;
-    animation-duration: 28s;
-    animation-delay: -12s;
-  }
-  @keyframes heroDepthDrift {
-    from {
-      translate: 0 0;
-      scale: 1;
-    }
-    to {
-      translate: 1.8rem -1rem;
-      scale: 1.035;
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-bg-depth-plane {
-      animation: none;
-      will-change: auto;
-    }
-  }
+</style>

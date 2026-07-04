@@ -4,12 +4,12 @@ import Header from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 const recoveryLinks = [
-  { label: "Platform", href: "/#platform", note: "See how our agents work" },
-  { label: "Pricing", href: "/pricing", note: "See how custom pricing works" },
+  { label: "Platform Overview", href: "/#platform", note: "See how our agents integrate" },
+  { label: "Pricing Approach", href: "/pricing", note: "Learn about custom ROI pricing" },
   {
-    label: "Contact",
+    label: "Contact Support",
     href: "/contact",
-    note: "Get help finding the right page",
+    note: "Get help finding what you need",
   },
 ];
 ---
@@ -21,138 +21,121 @@ const recoveryLinks = [
 >
   <Header />
 
-  <main id="hero" class="animate-page-entry opacity-0 pt-20">
-    <section
-      class="relative overflow-hidden px-4 pt-20 pb-18 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28"
-    >
-      <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,rgba(83,111,159,0.16),transparent_30rem),radial-gradient(circle_at_82%_18%,rgba(203,217,234,0.22),transparent_28rem),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96)_48%,rgba(8,17,31,0.98))]"
-      >
-      </div>
-      <div class="ambient-noise"></div>
+  <main id="error-404" class="relative isolate overflow-hidden pt-[8.5rem] pb-24 lg:pt-[10.5rem] lg:pb-32 min-h-[95vh] flex flex-col justify-center">
+    
+    <!-- Premium layered background -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-grid opacity-60"></div>
+      <div class="hero-bg-mesh opacity-80"></div>
+      <div class="hero-bg-orb hero-bg-orb--teal" style="top: 10%; left: 60%; width: 50vw; height: 50vw;"></div>
+      <div class="hero-bg-orb hero-bg-orb--violet" style="top: 60%; left: 20%; width: 40vw; height: 40vw; opacity: 0.5"></div>
+      <!-- Add a specific coral orb for the error theme -->
+      <div class="hero-bg-orb animate-float-slow" style="top: 30%; right: 10%; width: 35vw; height: 35vw; background-color: rgba(244,63,94,0.15); filter: blur(120px);"></div>
+      <div class="hero-bg-scan"></div>
+      <div class="hero-bg-vignette"></div>
+    </div>
 
-      <div class="page-shell">
-        <div
-          class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.78fr)] lg:gap-14"
-        >
-          <div class="max-w-3xl reveal-on-scroll">
-            <div class="chip">404 - page not found</div>
-            <h1
-              class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
-            >
-              This page seems to be missing.
-            </h1>
-            <p class="section-copy mt-6 max-w-2xl">
-              The link may be old, mistyped, or moved during a site update. Head
-              back to the main VoluChat flow and keep exploring AI commerce
-              agents for your Shopify store.
-            </p>
-
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/" class="btn-primary group min-h-12 px-5">
-                <span>Go home</span>
-                <span
-                  class="ml-3 grid h-7 w-7 place-items-center rounded-full bg-[#101b2e]/12 text-sm transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5"
-                >
-                  &rarr;
-                </span>
-              </a>
-              <a href="/pricing" class="btn-secondary min-h-12 px-5">
-                View pricing approach
-              </a>
-            </div>
+    <div class="page-shell relative z-10 w-full">
+      <div class="grid items-center gap-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
+        
+        <!-- Left: Copy Block -->
+        <div class="reveal-on-scroll">
+          <div class="chip border-coral-500/30 text-coral-400 bg-coral-500/10 shadow-[0_0_15px_rgba(244,63,94,0.15)]">
+            <span class="h-1.5 w-1.5 rounded-full bg-coral-400 animate-pulse mr-2"></span>
+            Error 404
           </div>
+          
+          <h1 class="mt-6 font-heading text-[3.5rem] font-bold leading-[1.05] tracking-tight text-white sm:text-[4.5rem] lg:text-[5rem]">
+            Signal <span class="text-slate-600 line-through decoration-coral-500/50 decoration-4">lost.</span><br/>
+            <span class="gradient-text-anim">Route unknown.</span>
+          </h1>
+          
+          <p class="section-copy mt-6 max-w-xl text-slate-300">
+            The link you followed may be broken, or the page has been moved. No worries — you can head back to the command center or explore our core systems below.
+          </p>
 
-          <div class="relative reveal-on-scroll">
-            <div
-              class="absolute -left-5 top-8 h-28 w-28 rounded-full bg-teal-300/55 blur-3xl"
-            >
-            </div>
-            <div
-              class="absolute -right-4 bottom-10 h-32 w-32 rounded-full bg-coral-100/80 blur-3xl"
-            >
-            </div>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a href="/" class="btn-primary btn-sheen">
+              Return to Homepage
+            </a>
+            <a href="/features" class="btn-secondary">
+              Explore Platform
+            </a>
+          </div>
+        </div>
 
-            <div
-              class="relative rounded-[2rem] border border-white/80 bg-[#101b2e] p-2 shadow-[0_30px_90px_rgba(68,64,60,0.11)]"
-            >
-              <div
-                class="overflow-hidden rounded-[1.55rem] border border-[rgba(148,163,184,0.22)] bg-[#101b2e] shadow-[inset_0_1px_0_rgba(255,255,255,0.95)]"
-              >
-                <div
-                  class="flex items-center justify-between border-b border-[rgba(148,163,184,0.22)]/75 bg-[#0d1829] px-4 py-3"
-                >
-                  <div class="flex items-center gap-2">
-                    <span class="h-2.5 w-2.5 rounded-full bg-teal-500"></span>
-                    <span class="h-2.5 w-2.5 rounded-full bg-teal-300"></span>
-                    <span class="h-2.5 w-2.5 rounded-full bg-slate-500"></span>
+        <!-- Right: Diagnostic Console Graphic -->
+        <div class="relative reveal-on-scroll reveal-delay-200 tilt" data-tilt-strength="3">
+          <div class="absolute -inset-10 rounded-[3rem] bg-coral-500/10 blur-[80px] opacity-60 mix-blend-screen animate-pulse-ring"></div>
+          
+          <div class="relative glass-panel-premium p-1.5 overflow-hidden">
+            <div class="rounded-[14px] bg-[#070e17] border border-white/5 overflow-hidden flex flex-col h-full shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+              
+              <!-- Top bar -->
+              <div class="flex items-center justify-between border-b border-white/[0.06] bg-black/40 px-5 py-3.5">
+                <div class="flex items-center gap-3">
+                  <div class="flex gap-1.5">
+                    <span class="h-2.5 w-2.5 rounded-full bg-slate-700/80"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-slate-700/80"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-coral-500 shadow-[0_0_10px_rgba(244,63,94,0.6)]"></span>
                   </div>
-                  <span
-                    class="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300"
-                    >missing route</span
-                  >
+                  <span class="ml-2 font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">Diagnostic Protocol</span>
+                </div>
+                <div class="text-[10px] font-bold text-coral-400/80 font-mono bg-coral-400/10 px-2 py-1 rounded border border-coral-400/20">SYS_ERR_404</div>
+              </div>
+
+              <!-- Body -->
+              <div class="p-6 sm:p-8 flex flex-col gap-6">
+                <!-- Alert Box -->
+                <div class="rounded-xl bg-gradient-to-br from-coral-500/10 to-transparent border border-coral-500/20 p-5 relative overflow-hidden">
+                  <div class="absolute right-0 top-0 w-32 h-32 bg-coral-500/10 blur-2xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                  <div class="flex items-start gap-4 relative z-10">
+                    <div class="shrink-0 mt-0.5 bg-coral-500/20 p-2 rounded-lg border border-coral-500/30">
+                      <svg class="w-5 h-5 text-coral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="text-sm font-bold text-coral-200">Target path unresolved</h3>
+                      <p class="text-[13px] text-slate-400 mt-1.5 leading-relaxed">
+                        The requested resource could not be located in the environment graph. Attempting recovery routing.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="space-y-4 p-5 sm:p-6">
-                  <div
-                    class="rounded-2xl bg-teal-300/10 p-4 ring-1 ring-teal-300/20"
-                  >
-                    <p class="mini-label text-teal-200">Customer path</p>
-                    <p
-                      class="mt-2 font-heading text-2xl font-semibold leading-tight text-teal-50"
-                    >
-                      /old-page
-                    </p>
+                <!-- Recovery Actions -->
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-slate-500 text-center">Available Routes</div>
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
                   </div>
-
+                  
                   <div class="grid gap-3">
-                    <div
-                      class="ml-auto max-w-[15rem] rounded-2xl rounded-tr-md bg-teal-500 px-4 py-3 text-white shadow-[0_14px_34px_rgba(29,43,67,0.18)]"
-                    >
-                      <p class="text-base font-medium leading-relaxed">
-                        Can I still find VoluChat?
-                      </p>
-                    </div>
-                    <div
-                      class="max-w-[18rem] rounded-2xl rounded-tl-md border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-4 py-3"
-                    >
-                      <p
-                        class="text-base font-medium leading-relaxed text-slate-200"
-                      >
-                        Yes. Try the homepage or jump to the pages below.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="grid gap-2 pt-1">
-                    {
-                      recoveryLinks.map((link) => (
-                        <a
-                          href={link.href}
-                          class="group flex items-center justify-between rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#101b2e] p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-teal-300/20 hover:bg-teal-300/10"
-                        >
-                          <span>
-                            <span class="block text-sm font-bold text-white">
-                              {link.label}
-                            </span>
-                            <span class="mt-0.5 block text-xs font-semibold text-slate-300">
-                              {link.note}
-                            </span>
-                          </span>
-                          <span class="grid h-8 w-8 place-items-center rounded-full bg-[#0d1829] text-sm font-bold text-teal-200 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 group-hover:bg-[#101b2e]">
-                            &rarr;
-                          </span>
-                        </a>
-                      ))
-                    }
+                    {recoveryLinks.map(link => (
+                      <a href={link.href} class="spotlight group flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 transition-all duration-300 hover:border-teal-500/30 hover:bg-teal-500/[0.04]">
+                        <div>
+                          <div class="text-[15px] font-bold text-slate-200 group-hover:text-white transition-colors">{link.label}</div>
+                          <div class="text-xs text-slate-400 mt-1">{link.note}</div>
+                        </div>
+                        <div class="h-10 w-10 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-teal-500 group-hover:bg-teal-400 group-hover:text-[#070e17] group-hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] transition-all duration-300 transform group-hover:scale-105 group-hover:translate-x-1">
+                          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                          </svg>
+                        </div>
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
+
       </div>
-    </section>
+    </div>
   </main>
 
   <Footer />
