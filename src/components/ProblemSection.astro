@@ -104,24 +104,26 @@ const painPoints = [
             >
               {index === 5 ? (
                 // Custom layout for P06 (Leak Detection) with visual disconnect mockup
-                <div class="grid gap-8 lg:grid-cols-[1.25fr_1fr] lg:items-center w-full">
-                  <div>
-                    <div class="mb-5 flex items-center justify-between">
-                      <span
-                        class={`font-mono text-xs font-semibold ${codeColor}`}
-                      >
-                        {point.code}
-                      </span>
-                      <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-red-300">
-                        The Ultimate Leak
-                      </span>
+                <div class="grid gap-8 lg:grid-cols-[1.25fr_1fr] lg:items-center w-full h-full">
+                  <div class="flex flex-col justify-between h-full">
+                    <div>
+                      <div class="mb-5 flex items-center justify-between">
+                        <span
+                          class={`font-mono text-xs font-semibold ${codeColor}`}
+                        >
+                          {point.code}
+                        </span>
+                        <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-red-300">
+                          The Ultimate Leak
+                        </span>
+                      </div>
+                      <h3 class="mb-3 text-2xl font-bold text-white font-heading">
+                        {point.title}
+                      </h3>
+                      <p class="text-base font-medium leading-relaxed text-slate-300">
+                        {point.description}
+                      </p>
                     </div>
-                    <h3 class="mb-3 text-2xl font-bold text-white font-heading">
-                      {point.title}
-                    </h3>
-                    <p class="text-base font-medium leading-relaxed text-slate-300">
-                      {point.description}
-                    </p>
                   </div>
 
                   {/* Visual disconnect table */}
@@ -157,23 +159,61 @@ const painPoints = [
                   </div>
                 </div>
               ) : (
-                // Standard layout
-                <>
-                  <div class="mb-6 flex items-center justify-between">
-                    <span
-                      class={`font-mono text-xs font-semibold ${codeColor}`}
-                    >
-                      {point.code}
-                    </span>
-                    <span class="h-px w-12 bg-white/10" />
+                // Standard layout for other cards
+                <div class="flex flex-col h-full justify-between">
+                  <div>
+                    <div class="mb-6 flex items-center justify-between">
+                      <span
+                        class={`font-mono text-xs font-semibold ${codeColor}`}
+                      >
+                        {point.code}
+                      </span>
+                      {index === 0 && <span class="rounded bg-rose-500/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-rose-300 border border-rose-500/20">Time Drain</span>}
+                      {index === 1 && <span class="rounded bg-amber-500/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-amber-300 border border-amber-500/20">Revenue Loss</span>}
+                      {index > 1 && <span class="h-px w-12 bg-white/10" />}
+                    </div>
+                    
+                    {index === 0 && (
+                      <div class="mb-6 flex flex-col gap-2 rounded-xl bg-black/20 p-4 border border-white/5">
+                        <div class="w-3/4 rounded-lg rounded-tl-none bg-[#1e293b]/80 p-2 text-[10px] text-slate-300">Are the matching joggers in stock?</div>
+                        <div class="w-3/4 rounded-lg rounded-tl-none bg-[#1e293b]/80 p-2 text-[10px] text-slate-300">Do you ship to Toronto?</div>
+                        <div class="w-3/4 rounded-lg rounded-tl-none bg-[#1e293b]/80 p-2 text-[10px] text-slate-300">How do I return this?</div>
+                        <div class="w-full text-right mt-1"><span class="text-[9px] text-rose-400 uppercase tracking-widest font-bold animate-pulse">Waiting for reply...</span></div>
+                      </div>
+                    )}
+
+                    {index === 1 && (
+                      <div class="mb-6 flex items-end gap-2 h-20 border-b border-white/10 pb-2">
+                        <div class="w-1/4 bg-amber-500/80 rounded-t h-full"></div>
+                        <div class="w-1/4 bg-amber-500/60 rounded-t h-4/5"></div>
+                        <div class="w-1/4 bg-amber-500/40 rounded-t h-2/5 relative">
+                          <div class="absolute -top-6 -right-4 text-xs font-bold text-amber-400 bg-amber-950/80 px-2 py-0.5 rounded shadow-lg border border-amber-500/30 whitespace-nowrap">-68% Drop-off</div>
+                        </div>
+                        <div class="w-1/4 bg-amber-500/20 rounded-t h-1/5"></div>
+                      </div>
+                    )}
+
+                    {index === 3 && (
+                      <div class="mb-6 flex items-center gap-4 rounded-xl bg-black/20 p-3 border border-white/5">
+                        <div class="h-12 w-12 rounded bg-slate-800 border border-white/10 overflow-hidden">
+                          <img src="/about_hero.webp" alt="Product" class="w-full h-full object-cover opacity-60" />
+                        </div>
+                        <div>
+                          <div class="text-[10px] text-teal-400 uppercase font-bold tracking-widest mb-1">Missed Add-on</div>
+                          <div class="text-xs text-white">Matching Leather Strap</div>
+                          <div class="text-xs text-slate-400 mt-0.5">+ ₹2,499 value</div>
+                        </div>
+                      </div>
+                    )}
+
+                    <h3 class="mb-3 text-lg font-bold text-white font-heading">
+                      {point.title}
+                    </h3>
+                    <p class="text-sm font-medium leading-relaxed text-slate-300">
+                      {point.description}
+                    </p>
                   </div>
-                  <h3 class="mb-3 text-lg font-bold text-white font-heading">
-                    {point.title}
-                  </h3>
-                  <p class="text-sm font-medium leading-relaxed text-slate-300">
-                    {point.description}
-                  </p>
-                </>
+                </div>
               )}
             </div>
           );

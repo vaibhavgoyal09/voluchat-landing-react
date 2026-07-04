@@ -1,213 +1,143 @@
 ---
 const workflows = [
   {
-    code: "OS",
-    href: "/features",
-    title: "Order status questions",
-    text: "Automatically provide real-time updates on order processing and shipping without manual support intervention.",
-    metric: "Customer Support",
-    cta: "View workflow",
+    code: "WF-01",
+    title: "Cart Recovery",
+    text: "Automatically detect abandoned carts and prepare personalized recovery offers with precise margin checks.",
+    metric: "Revenue Protection",
+    href: "/agents/cart-recovery",
   },
   {
-    code: "DS",
-    href: "/features",
-    title: "Delayed shipment follow-ups",
-    text: "Proactively notify customers about shipping delays with context-aware updates before they ask.",
-    metric: "Proactive Outreach",
-    cta: "View workflow",
+    code: "WF-02",
+    title: "Clearance & Stock",
+    text: "Identify slow-moving inventory and launch targeted clearance recommendations to free up warehouse space.",
+    metric: "Capital Efficiency",
+    href: "/agents/inventory-clearance",
   },
   {
-    code: "RR",
-    href: "/features",
-    title: "Refund request routing",
-    text: "Capture refund requests, verify return policies, and route approved refunds for final team sign-off.",
-    metric: "Returns Management",
-    cta: "View workflow",
+    code: "WF-03",
+    title: "Contextual Upsell",
+    text: "Suggest the perfect matching accessory right when the customer intent is highest, fully aware of live stock.",
+    metric: "Average Order Value",
+    href: "/agents/upsell",
   },
   {
-    code: "VC",
-    href: "/features",
-    title: "VIP customer escalation",
-    text: "Detect high-value shoppers and instantly route their inquiries to prioritized queues or specific team members.",
+    code: "WF-04",
+    title: "VIP Follow-ups",
+    text: "Check in on high-value customers after delivery, gather feedback, and recommend timely add-ons.",
     metric: "Customer Retention",
-    cta: "View workflow",
+    href: "/agents/customer-follow-up",
   },
   {
-    code: "PF",
-    href: "/features",
-    title: "Post-purchase follow-ups",
-    text: "Check in after delivery, gather feedback, and recommend relevant add-ons when the timing is right.",
-    metric: "Repeat Purchase",
-    cta: "View workflow",
-  },
-  {
-    code: "IQ",
-    href: "/features",
-    title: "Inventory or product availability questions",
-    text: "Answer stock inquiries accurately using live Shopify data and suggest alternatives for out-of-stock items.",
-    metric: "Sales Conversion",
-    cta: "View workflow",
+    code: "WF-05",
+    title: "Leak Detection",
+    text: "Continuously scan your store's operations to find hidden revenue leaks across the entire customer journey.",
+    metric: "Growth Margin",
+    href: "/agents/revenue-leak-detection",
   },
 ];
 ---
 
 <section
   id="workflows"
-  class="relative overflow-hidden bg-[#07111f] py-28 sm:py-36"
+  class="relative bg-[#050b14] py-24 sm:py-32"
 >
-  <div
-    class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
-  >
-  </div>
-  <div
-    class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
-  >
-  </div>
-
   <div class="page-shell relative z-10">
-    <div class="max-w-3xl reveal-on-scroll reveal-up">
-      <span class="section-eyebrow">Revenue workflows</span>
-      <h2 class="section-title mt-4 text-white">
-        Workflows VoluChat can <span class="gradient-text-anim"
-          >help automate.</span
-        >
+    <div class="max-w-2xl reveal-on-scroll reveal-up mb-24">
+      <h2 class="section-title text-white">
+        Workflows that <span class="gradient-text-anim">drive revenue.</span>
       </h2>
-      <p class="section-copy mt-6 max-w-2xl text-slate-300">
-        Deploy agent workflows that connect customer intent with catalog
-        details, inventory pressure, approval rules, and measurable outcomes.
+      <p class="section-copy mt-6 text-slate-400">
+        Deploy agent workflows that connect customer intent with catalog details, inventory pressure, and measurable outcomes.
       </p>
     </div>
 
-    <div class="mt-16 grid gap-6 grid-cols-1 md:grid-cols-12">
+    <!-- Sticky Stack Container -->
+    <div id="sticky-stack-container" class="relative">
       {
-        workflows.map((workflow, index) => {
-          // Asymmetric grid layout mapping for 12 columns
-          let colClass = "col-span-full";
-          let cardBgClass = "bg-[#101b2b]/90 hover:bg-[#142438]";
-          let metricColor = "text-teal-200";
-
-          if (index === 0) {
-            // Cart Recovery (Row 1 Left) - Gradient and accent border
-            colClass = "col-span-full md:col-span-6 lg:col-span-7";
-            cardBgClass =
-              "bg-gradient-to-br from-[#101b2b] to-[#0f3b37]/35 border border-teal-500/20 hover:border-teal-400/35";
-          } else if (index === 1) {
-            // Product Assistant (Row 1 Right)
-            colClass = "col-span-full md:col-span-6 lg:col-span-5";
-          } else if (index === 2) {
-            // Upsell (Row 2 Left)
-            colClass = "col-span-full md:col-span-6 lg:col-span-4";
-          } else if (index === 3) {
-            // Inventory Clearance (Row 2 Middle) - Amber themed gradient
-            colClass = "col-span-full md:col-span-6 lg:col-span-4";
-            cardBgClass =
-              "bg-gradient-to-br from-[#101b2b] to-[#451a03]/15 border border-amber-500/10 hover:border-amber-400/25";
-            metricColor = "text-amber-300";
-          } else if (index === 4) {
-            // Customer Follow-up (Row 2 Right)
-            colClass = "col-span-full md:col-span-12 lg:col-span-4";
-          } else if (index === 5) {
-            // Leak Detection (Row 3 Full Width with embedded visual check panel)
-            colClass = "col-span-full";
-          }
-
+        workflows.map((workflow, i) => {
           return (
-            <a
-              href={workflow.href}
-              class={`spotlight reveal-on-scroll reveal-scale group flex flex-col justify-between rounded-3xl border border-white/10 ${cardBgClass} p-6 sm:p-8 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-slate-400/30 ${colClass} reveal-delay-${(index % 3) * 100} shadow-[0_24px_70px_-54px_rgba(0,0,0,0.85)]`}
+            <div
+              class="stack-card sticky top-32 lg:top-40 flex flex-col justify-center mb-[15vh] last:mb-0"
+              style={{ zIndex: i + 10 }}
             >
-              {index === 5 ? (
-                // Specialized content layout for Leak Detection
-                <div class="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center w-full">
+              <article class="w-full max-w-4xl mx-auto rounded-[2rem] border border-white/10 bg-[#0c1627] p-8 md:p-12 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9)] overflow-hidden relative">
+                <!-- Card Inner Glow -->
+                <div class="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent pointer-events-none" />
+                
+                <div class="relative z-10 grid gap-8 md:grid-cols-[1fr_200px] md:items-end">
                   <div>
-                    <div class="flex items-center justify-between gap-4">
-                      <span class="font-mono text-sm font-semibold text-slate-500">
+                    <div class="flex items-center gap-4 mb-8">
+                      <span class="font-mono text-sm font-bold text-teal-400">
                         {workflow.code}
                       </span>
-                      <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-red-300">
-                        Revenue leak audit
-                      </span>
-                    </div>
-                    <h3 class="mt-8 text-2xl font-semibold leading-tight text-white font-heading">
-                      {workflow.title}
-                    </h3>
-                    <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
-                      {workflow.text}
-                    </p>
-                    <div class="mt-8 flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
-                      <span class="text-slate-400">{workflow.cta}</span>
-                      <span class="text-teal-200 transition group-hover:translate-x-1">
-                        View agent &rarr;
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Visual diagnostic report mockup */}
-                  <div class="rounded-2xl border border-white/10 bg-black/25 p-5 font-mono text-xs text-slate-300 space-y-3 shadow-inner">
-                    <div class="flex items-center justify-between border-b border-white/5 pb-2.5 text-[10px] uppercase tracking-wider text-slate-400 font-bold">
-                      <span>Audit Surface</span>
-                      <span>Risk Status</span>
-                    </div>
-                    <div class="flex items-center justify-between py-1.5 border-b border-white/5">
-                      <span class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" />
-                        Checkout Drop-off
-                      </span>
-                      <span class="text-red-400 font-bold">
-                        High priority
-                      </span>
-                    </div>
-                    <div class="flex items-center justify-between py-1.5 border-b border-white/5">
-                      <span class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-amber-400" />
-                        Unanswered DMs
-                      </span>
-                      <span class="text-amber-400 font-bold font-semibold">
-                        Medium Risk
-                      </span>
-                    </div>
-                    <div class="flex items-center justify-between py-1.5">
-                      <span class="flex items-center gap-2">
-                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                        Stock Availability
-                      </span>
-                      <span class="text-emerald-400 font-bold">Monitored</span>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                // Standard layout for other cards
-                <>
-                  <div>
-                    <div class="flex items-center justify-between gap-4">
-                      <span class="font-mono text-sm font-semibold text-slate-500">
-                        {workflow.code}
-                      </span>
-                      <span
-                        class={`text-[11px] font-bold uppercase tracking-[0.16em] ${metricColor}`}
-                      >
+                      <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
                         {workflow.metric}
                       </span>
                     </div>
-                    <h3 class="mt-8 text-xl font-semibold leading-tight text-white font-heading">
+                    <h3 class="text-3xl md:text-5xl font-bold text-white font-heading tracking-tight mb-6">
                       {workflow.title}
                     </h3>
-                    <p class="mt-4 text-[15px] font-medium leading-relaxed text-slate-300">
+                    <p class="text-lg text-slate-300 max-w-xl leading-relaxed">
                       {workflow.text}
                     </p>
                   </div>
-                  <div class="mt-8 flex items-center justify-between border-t border-white/10 pt-4 text-sm font-bold">
-                    <span class="text-slate-400">{workflow.cta}</span>
-                    <span class="text-teal-200 transition group-hover:translate-x-1">
-                      View agent &rarr;
-                    </span>
+                  
+                  <div class="flex md:justify-end">
+                    <a
+                      href={workflow.href}
+                      class="btn-secondary rounded-full px-6 py-3 border border-white/20 hover:border-teal-400/50 hover:bg-teal-500/10 hover:text-teal-200 transition-all text-sm font-bold"
+                    >
+                      Explore agent &rarr;
+                    </a>
                   </div>
-                </>
-              )}
-            </a>
+                </div>
+              </article>
+            </div>
           );
         })
       }
     </div>
   </div>
 </section>
+
+<script>
+  // Wait for the main Layout GSAP initialization
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReduced) return;
+
+    // Wait a brief moment to ensure global GSAP has initialized
+    setTimeout(() => {
+      // @ts-ignore
+      if (window.gsap && window.ScrollTrigger) {
+        // @ts-ignore
+        const gsap = window.gsap;
+        // @ts-ignore
+        const ScrollTrigger = window.ScrollTrigger;
+
+        const cardEls = gsap.utils.toArray(".stack-card");
+        
+        cardEls.forEach((card: any, i: number) => {
+          if (i === cardEls.length - 1) return; // Skip last card
+
+          // The card scales down and fades out slightly as the next one arrives
+          gsap.to(card, {
+            scale: 0.92,
+            opacity: 0.4,
+            filter: "blur(4px)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: cardEls[i + 1],
+              start: "top 85%", // When the next card enters the bottom 15% of the screen
+              end: "top 25%",   // When the next card reaches its sticky position
+              scrub: true,
+            },
+          });
+        });
+      }
+    }, 100);
+  });
+</script>
