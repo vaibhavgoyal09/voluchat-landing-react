@@ -78,126 +78,26 @@
         </div>
       </div>
 
-      <!-- Hero Visual: Ecommerce Operator View -->
+      <!-- Hero Visual: Ecommerce Operator View (Redesigned visual-heavy panel) -->
       <div class="hero-mockup lg:hero-stage relative tilt lg:mt-14" data-tilt-strength="2">
-        <div class="absolute -inset-6 rounded-[2.5rem] bg-teal-500/10 blur-3xl opacity-40"></div>
+        <div class="absolute -inset-6 rounded-[2.5rem] bg-teal-500/15 blur-3xl opacity-50 animate-pulse"></div>
 
-        <div class="relative rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_50px_140px_-70px_rgba(0,0,0,0.95)] backdrop-blur-xl">
-          <div class="relative rounded-[1.1rem] border border-white/10 bg-[#0b1625] overflow-hidden flex flex-col h-auto sm:h-[440px]">
-            
-            <!-- Top nav bar -->
-            <div class="flex items-center justify-between border-b border-white/[0.06] px-5 py-3.5 bg-black/20">
-              <div class="flex items-center gap-3">
-                <div class="h-2 w-2 rounded-full bg-teal-400 animate-pulse"></div>
-                <span class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-300">VoluChat Inbox</span>
-              </div>
-              <div class="flex items-center gap-2 text-[10px] font-bold text-slate-500">
-                 Cart recovery • Approval required
-              </div>
-            </div>
-
-            <!-- Main body split -->
-            <div class="flex flex-1 overflow-hidden flex-col sm:flex-row bg-[#0b1625]">
-              
-              <!-- Left Column: Request & Context -->
-              <div class="w-full sm:w-[48%] border-b sm:border-b-0 sm:border-r border-white/5 flex flex-col p-4 sm:p-5 overflow-y-auto">
-                
-                <!-- Step 1: Customer Request -->
-                <div class="mb-5 relative">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="flex h-4 w-4 items-center justify-center rounded-full bg-slate-800 text-[9px] font-bold text-slate-300">1</span>
-                    <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Incoming Request</span>
-                  </div>
-                  <div class="flex items-start gap-2.5">
-                    <div class="h-7 w-7 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold text-[10px] shrink-0">RJ</div>
-                    <div>
-                      <div class="text-[11px] font-bold text-slate-200">Rahul Jenkins</div>
-                      <div class="text-[9px] text-slate-500 mb-1.5">Cart inactive for 42 min</div>
-                      <div class="text-[11px] text-slate-300 bg-white/5 border border-white/10 p-2.5 rounded-lg rounded-tl-none leading-relaxed">
-                        "I like these, but the total is a little higher than I expected."
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Step 2: Shopify Context -->
-                <div class="mt-auto relative pt-4 border-t border-white/5">
-                  <div class="flex items-center gap-2 mb-2.5">
-                    <span class="flex h-4 w-4 items-center justify-center rounded-full bg-slate-800 text-[9px] font-bold text-slate-300">2</span>
-                    <span class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Shopify Context</span>
-                  </div>
-                  <div class="bg-black/20 rounded-lg p-2.5 border border-white/5 flex gap-3 items-center">
-                    <img src="/aero_runners_thumbnail.jpg" alt="Aero Runners" class="h-10 w-10 shrink-0 rounded object-cover border border-white/10" />
-                    <div class="flex-1 min-w-0">
-                      <div class="flex items-center justify-between mb-0.5">
-                        <div class="text-[11px] font-bold text-slate-200 truncate">Aero Runners (Sz 8)</div>
-                        <div class="text-[9px] font-bold text-emerald-400 bg-emerald-400/10 px-1.5 py-0.5 rounded">Delivered</div>
-                      </div>
-                      <div class="text-[10px] text-slate-400 flex items-center gap-1 mb-1.5">
-                        ₹9,999 <span class="text-white/20">•</span> 3 units left
-                      </div>
-                      <div class="flex flex-wrap gap-1">
-                        <span class="text-[8px] font-bold text-teal-300 bg-teal-400/10 px-1.5 py-0.5 rounded border border-teal-400/20">Margin OK</span>
-                        <span class="text-[8px] font-bold text-indigo-300 bg-indigo-400/10 px-1.5 py-0.5 rounded border border-indigo-400/20">Discount capped</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: AI & Action -->
-              <div class="w-full sm:w-[52%] bg-[#08111d] p-4 sm:p-5 flex flex-col relative overflow-hidden">
-                <div class="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-teal-500/10 blur-3xl opacity-60"></div>
-                
-                <!-- Step 3: AI Recommendation -->
-                <div class="flex-1 relative z-10 flex flex-col">
-                  <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center gap-2">
-                      <span class="flex h-4 w-4 items-center justify-center rounded-full bg-teal-500/20 text-[9px] font-bold text-teal-400">3</span>
-                      <span class="text-[10px] font-bold uppercase tracking-wider text-teal-400">AI Recommendation</span>
-                    </div>
-                    <div class="text-[8px] font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-1.5 py-0.5 rounded flex items-center gap-1">
-                      <span class="h-1 w-1 rounded-full bg-emerald-400 animate-pulse"></span>
-                      Response Ready
-                    </div>
-                  </div>
-                  
-                  <div class="bg-teal-500/5 border border-teal-500/20 rounded-xl p-3 mb-auto">
-                    <div class="text-[11px] font-bold text-white mb-2 flex items-center gap-1.5">
-                      <svg class="w-3.5 h-3.5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                      Send a 10% recovery offer
-                    </div>
-                    
-                    <div class="text-[9px] uppercase font-bold text-slate-500 mb-1">Reasoning</div>
-                    <div class="text-[10px] text-slate-300 leading-relaxed mb-3 pl-2 border-l-2 border-slate-700">
-                      Cart value is above the recovery threshold. Inventory is available. A 10% offer stays within the approved margin floor.
-                    </div>
-                    
-                    <div class="bg-black/40 border border-white/5 p-2.5 rounded-lg group">
-                       <div class="flex justify-between items-center mb-1.5">
-                         <div class="text-[8px] text-slate-500 uppercase font-bold">Draft Reply</div>
-                         <div class="text-[8px] text-slate-500 hover:text-slate-300 cursor-pointer transition">Edit</div>
-                       </div>
-                       <div class="text-[10px] text-slate-300 italic leading-relaxed">
-                         "Hi Rahul, your Aero Runners are still available. I can apply 10% off if you complete the order today."
-                       </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Step 4: Approval -->
-                <div class="mt-4 relative z-10 pt-3 border-t border-white/10">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="flex h-4 w-4 items-center justify-center rounded-full bg-slate-800 text-[9px] font-bold text-slate-300">4</span>
-                    <span class="text-[9px] text-slate-400 font-medium">Discounted recovery message needs approval.</span>
-                  </div>
-                  <div class="flex gap-2">
-                    <button type="button" class="w-[30%] bg-white/5 hover:bg-white/10 text-slate-300 text-[11px] font-bold py-2.5 rounded-lg border border-white/10 transition">Reject</button>
-                    <button type="button" class="w-[70%] bg-teal-500 hover:bg-teal-400 text-[#042f2e] text-[11px] font-bold py-2.5 rounded-lg transition shadow-[0_0_15px_rgba(20,184,166,0.2)]">Approve Offer</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="relative rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_50px_140px_-70px_rgba(0,0,0,0.95)] backdrop-blur-xl group overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-teal-500/10 via-transparent to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+          <img
+            src="/shopify_ai_agent_dashboard.jpg"
+            alt="VoluChat Shopify AI Agent Operator Dashboard"
+            class="w-full h-auto rounded-[1.1rem] border border-white/10 object-cover transform transition-transform duration-700 group-hover:scale-[1.02]"
+            decoding="async"
+          />
+          
+          <!-- Interactive overlay badge indicating live workflow -->
+          <div class="absolute bottom-6 left-6 bg-slate-900/90 backdrop-blur-md border border-white/10 px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-lg">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-[10px] font-mono font-bold tracking-wider text-slate-200 uppercase">Live Workspace Active</span>
           </div>
         </div>
       </div>
