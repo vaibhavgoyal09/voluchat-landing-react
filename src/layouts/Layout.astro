@@ -19,7 +19,7 @@ interface Props {
 
 const {
   title,
-  description = "VoluChat finds Shopify revenue leaks and deploys controlled AI agents for cart recovery, product questions, upsells, follow-ups, inventory, and revenue workflows.",
+  description = "Turn Instagram DMs and WhatsApp chats into 24/7 automated revenue. VoluChat's AI sales agent answers product questions, checks stock, and closes orders directly inside WhatsApp.",
   keywords,
   image = "/og-image.webp",
   type = "website",
@@ -52,8 +52,6 @@ const structuredDataItems = Array.isArray(structuredData)
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     {robots && <meta name="robots" content={robots} />}
-    {author && <meta name="author" content={author} />}
-    <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {keywords && <meta name="keywords" content={keywords} />}
     <link rel="icon" type="image/svg+xml" href="/voluchat_logo.svg" />

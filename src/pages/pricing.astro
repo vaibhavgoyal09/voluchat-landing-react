@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "Shopify AI Agent Pricing | VoluChat";
+const seoTitle = "Pilot Cohort Pricing & Setup Scope | VoluChat";
 const seoDescription =
-  "Request VoluChat pricing for Shopify AI agents. Pricing is tailored by agent scope, catalog complexity, integrations, workflow volume, and guardrails.";
+  "Join the 10-store private pilot cohort for VoluChat. 100% done-for-you WhatsApp & Instagram setup, Shopify catalog syncing, and guaranteed 10x ROI standard.";
 const seoKeywords =
-  "Shopify AI agent pricing, custom AI pricing, commerce agent cost, Shopify automation pricing, AI agent ROI";
+  "VoluChat pilot pricing, WhatsApp AI agent cost, done for you ecommerce automation, Instagram DM sales agent setup";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
@@ -19,44 +19,35 @@ const structuredData = {
   url: siteUrl,
 };
 
-const pricingFactors = [
+const pilotIncludes = [
   {
-    title: "Store complexity",
-    text: "Catalog size, variants, inventory movement, fulfillment rules, and how many edge cases your agents need to understand.",
+    title: "Official Meta & WhatsApp Cloud API Setup",
+    text: "Zero developer work needed from you. We configure your official Meta verified number, webhooks, and catalog permissions directly.",
   },
   {
-    title: "Agent scope",
-    text: "Which agents you want live first: product assistant, cart recovery, upsells, customer follow-up, inventory clearance, or revenue leak detection.",
+    title: "Full Shopify Catalog & Live Stock Sync",
+    text: "Real-time variant stock reading, SKU pricing rules, and automatic Shopify draft order creation with tracking sync.",
   },
   {
-    title: "Workflow volume",
-    text: "Expected traffic, abandoned carts, campaign frequency, customer conversations, approval queues, and follow-up volume.",
+    title: "Instagram Comment-to-DM Trigger Engine",
+    text: "Automated 2-second personalized DM responses for comments across your viral Instagram Reels and Meta Ads.",
   },
   {
-    title: "Integration depth",
-    text: "Shopify setup, customer data sources, marketing tools, support tools, analytics, exports, and custom operational rules.",
+    title: "Native In-Chat UPI & 1-Click Payment Link",
+    text: "Enables customers to complete prepaid purchases directly inside WhatsApp without bouncing to an external browser checkout.",
   },
   {
-    title: "Control model",
-    text: "Whether agents only recommend actions, ask for human approval, or execute specific workflows within strict guardrails.",
+    title: "Strict Brand Voice & Margin Guardrails",
+    text: "Pre-set maximum discount ceilings, COD verification rules, and automated human handoff triggers for bridal/custom orders.",
   },
   {
-    title: "Launch support",
-    text: "How much hands-on setup, testing, brand voice tuning, rule design, and reporting support your team wants.",
+    title: "Direct Founder Engineering Support",
+    text: "Direct WhatsApp group with the founder and core engineers to tune and optimize your conversion rates weekly.",
   },
-];
-
-const includedItems = [
-  "Founder-led workflow review",
-  "Shopify catalog and operations audit",
-  "Agent rollout plan by revenue priority",
-  "Margin, discount, and brand-voice guardrails",
-  "Approval workflow design",
-  "Outcome reporting and attribution setup",
 ];
 
 const pricingAnswer =
-  "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs.";
+  "VoluChat is currently accepting 10 pilot stores for our private founder cohort. Pricing is structured as a transparent, high-ROI setup & performance package with a personal 10x value guarantee.";
 ---
 
 <Layout
@@ -71,100 +62,67 @@ const pricingAnswer =
   <main class="pt-20">
     <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
       <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(45,212,191,0.12),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(16,185,129,0.15),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
       >
       </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell text-center">
         <div class="pricing-hero-text opacity-0 mx-auto max-w-4xl">
-          <div class="chip">Custom pricing</div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Private Founder Cohort &bull; 10 Brands
+          </div>
           <h1
-            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+            class="text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
           >
-            Pricing is tailored to how your store actually operates.
+            100% White-Glove Setup.<br />
+            <span class="gradient-text-anim">Guaranteed 10x ROI Standard.</span>
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-2xl">
-            VoluChat is not sold as preset public packages. We price around the
-            agents, workflows, data complexity, and control model your store
-            needs.
+          <p class="section-copy mx-auto mt-6 max-w-2xl text-slate-300">
+            We don't sell self-serve software that sits empty. For our first 10 pilot stores, our engineering team builds, integrates, and tunes your autonomous sales agent end-to-end.
           </p>
-          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href="/contact" class="btn-primary">Book Demo</a>
-            <a href="/features" class="btn-secondary">Explore Agents</a>
+          <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/contact" class="btn-primary">Apply for Pilot Store Setup &rarr;</a>
+            <a href="/#how-it-works" class="btn-secondary">Explore the 4 Pillars</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pricing-factors-section relative overflow-hidden pb-16 sm:pb-20">
+    <section class="pricing-factors-section relative overflow-hidden pb-16 sm:pb-24">
       <div class="page-shell">
         <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
-          <aside class="pricing-aside opacity-0 solid-card h-fit lg:sticky lg:top-32 lg:p-8">
-            <p class="section-eyebrow">How we quote</p>
+          <aside class="pricing-aside opacity-0 solid-card h-fit lg:sticky lg:top-32 lg:p-8 border-emerald-500/20 bg-[#0c1626]">
+            <p class="section-eyebrow text-emerald-400">Our Value Standard</p>
             <h2
               class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white"
             >
-              A short review first. A clean proposal after.
+              "Anything less than 10x value is unacceptable."
             </h2>
             <p
-              class="mt-5 text-base font-medium leading-relaxed text-slate-200"
+              class="mt-5 text-sm font-medium leading-relaxed text-slate-300"
             >
-              We review your Shopify setup, identify the workflows with the
-              highest revenue upside, and propose a rollout that fits your
-              team’s appetite for automation.
+              If your store spends lakhs on Meta Ads, we make sure you stop losing 50%+ of your customer inquiries at night. We personally monitor your chat conversion rates daily.
             </p>
             <a href="/contact" class="btn-primary mt-8 w-full"
-                  >Book Demo</a
+                  >Apply for Cohort &rarr;</a
             >
           </aside>
 
-          <div class="grid gap-5 md:grid-cols-2">
+          <div class="grid gap-4 sm:grid-cols-2">
             {
-              pricingFactors.map((factor) => (
-                <article class="pricing-factor-card opacity-0 solid-card md:p-7">
-                  <h3 class="text-xl font-heading font-semibold text-white">
+              pilotIncludes.map((factor) => (
+                <article class="pricing-factor-card opacity-0 rounded-2xl border border-white/10 bg-[#09131f] p-6">
+                  <h3 class="text-base font-heading font-bold text-white">
                     {factor.title}
                   </h3>
-                  <p class="mt-4 text-base font-medium leading-relaxed text-slate-200">
+                  <p class="mt-3 text-xs font-medium leading-relaxed text-slate-300">
                     {factor.text}
                   </p>
                 </article>
               ))
             }
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pricing-included-section section-band relative overflow-hidden py-20 lg:py-28">
-      <div class="page-shell">
-        <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div class="pricing-included-text opacity-0">
-            <p class="section-eyebrow">Included in every rollout</p>
-            <h2 class="section-title mt-4">
-              A setup shaped around your store, not a generic package.
-            </h2>
-            <p class="section-copy mt-6 max-w-2xl">
-              The proposal includes the agents to launch, the controls required,
-              the integration work involved, and the success metrics we will
-              track.
-            </p>
-          </div>
-
-          <div class="pricing-included-card opacity-0 solid-card p-5 sm:p-7">
-            <div class="grid gap-3">
-              {
-                includedItems.map((item) => (
-                  <div class="pricing-included-item opacity-0 flex items-center gap-3 rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.04] px-4 py-3">
-                    <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-teal-300" />
-                    <span class="text-base font-medium leading-snug text-slate-100">
-                      {item}
-                    </span>
-                  </div>
-                ))
-              }
-            </div>
           </div>
         </div>
       </div>
