@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "Book Demo | VoluChat";
+const seoTitle = "Apply for 1 of 10 Pilot Spots | VoluChat";
 const seoDescription =
-  "Find the revenue leaks in your Shopify store. Share your catalog, revenue workflows, and guardrail needs so we can identify the first agents worth deploying.";
+  "Join the private pilot cohort for VoluChat. We build, deploy, and manage your autonomous Instagram & WhatsApp sales agent with 100% white-glove setup.";
 const seoKeywords =
-  "Shopify AI demo, book demo, VoluChat contact, Shopify agent review, revenue workflow demo";
+  "VoluChat pilot application, WhatsApp sales agent setup, Instagram DM automation, D2C commerce agent cohort";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
@@ -32,7 +32,7 @@ const structuredData = {
   <main class="overflow-hidden pt-20">
     <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
       <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(45,212,191,0.12),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
       >
       </div>
       <div class="ambient-noise"></div>
@@ -40,35 +40,38 @@ const structuredData = {
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div class="contact-hero-text opacity-0">
-            <div class="chip">Revenue leak review</div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Private Founder Cohort
+            </div>
             <h1
-              class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl"
+              class="text-4xl font-semibold leading-[1.04] text-white sm:text-5xl lg:text-6xl font-heading"
             >
-              Find the revenue workflows worth automating first.
+              Apply for 1 of 10 Pilot Store Deployments.
             </h1>
-            <p class="section-copy mt-6 max-w-xl">
-              Share your Shopify store, the workflow that hurts most, and how
-              much control your team needs. We will review the store and
-              recommend the first agent rollout to scope.
+            <p class="section-copy mt-6 max-w-xl text-slate-300">
+              We are selecting 10 ambitious online D2C brands. Our engineering team handles 100% of the Meta API configuration, Shopify syncing, and AI closer tuning.
             </p>
 
             <div class="mt-10 grid gap-4">
               <div
-                class="rounded-2xl border border-[rgba(148,163,184,0.18)] bg-white/[0.045] p-5"
+                class="rounded-2xl border border-white/10 bg-[#0c1626]/90 p-6"
               >
-                <p class="section-eyebrow">What happens next</p>
-                <div class="mt-4 grid gap-3">
+                <p class="section-eyebrow text-emerald-400">What is included in the pilot</p>
+                <div class="mt-4 grid gap-3.5">
                   {
                     [
-                      "We review your catalog, carts, and current workflows.",
-                      "We identify the highest-upside agent to deploy first.",
-                      "You get a rollout scope, guardrails, and pricing proposal.",
+                      "Done-For-You Meta API & WhatsApp Business API Setup",
+                      "Full Shopify Product Catalog & Live Stock Syncing",
+                      "Automated Instagram Comment-to-DM Lead Engine",
+                      "In-DM Native WhatsApp UPI / 1-Click Draft Order Checkout",
+                      "Direct Founder Support on WhatsApp with 10x ROI Guarantee",
                     ].map((item, index) => (
                       <div class="flex items-center gap-3">
-                        <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-teal-300/10 text-xs font-bold text-teal-200">
-                          0{index + 1}
+                        <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-emerald-500/15 font-mono text-xs font-bold text-emerald-300">
+                          ✓
                         </span>
-                        <span class="text-base font-medium leading-snug text-slate-200">
+                        <span class="text-sm font-medium leading-snug text-slate-200">
                           {item}
                         </span>
                       </div>
@@ -78,15 +81,15 @@ const structuredData = {
               </div>
 
               <div
-                class="flex items-center gap-4 rounded-2xl border border-[rgba(148,163,184,0.18)] bg-white/[0.035] p-4"
+                class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4"
               >
                 <div
-                  class="grid h-12 w-12 place-items-center rounded-full border border-teal-300/20 bg-teal-300/10 text-teal-200"
+                  class="grid h-10 w-10 place-items-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-300"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
+                    width="18"
+                    height="18"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -99,10 +102,10 @@ const structuredData = {
                   >
                 </div>
                 <div>
-                  <p class="mini-label">Email</p>
+                  <p class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Direct Founder Desk</p>
                   <a
-                    href={contactEmailUrl}
-                    class="text-lg font-semibold text-white transition-colors hover:text-teal-200"
+                    href="mailto:support@voluchat.com"
+                    class="text-sm font-semibold text-white transition-colors hover:text-emerald-300"
                     >support@voluchat.com</a
                   >
                 </div>
@@ -110,111 +113,94 @@ const structuredData = {
             </div>
           </div>
 
-          <div class="contact-form-card opacity-0 solid-card p-6 sm:p-8 lg:p-10">
-            <form id="contact-form" class="space-y-6">
+          <div class="contact-form-card opacity-0 solid-card p-6 sm:p-8 lg:p-10 border-emerald-500/20 bg-[#0c1524]">
+            <form id="contact-form" class="space-y-5">
               <div>
                 <h2 class="text-2xl font-heading font-semibold text-white">
-                  Book your demo
+                  Pilot Qualification Form
                 </h2>
-                <p class="mt-2 text-base font-medium text-slate-300">
-                  Four fields. Enough context to avoid a generic demo call.
+                <p class="mt-1.5 text-sm font-medium text-slate-300">
+                  Takes 60 seconds. We review and respond within 12 hours.
                 </p>
               </div>
 
               <div>
                 <label
                   for="name"
-                  class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
-                  >Your name</label
+                  class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                  >Your Name / Role</label
                 >
                 <input
                   type="text"
                   id="name"
                   name="name"
                   required
-                  placeholder="Your name"
-                  class="w-full rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-5 py-4 font-medium text-white placeholder:text-slate-500 transition-all focus:border-teal-300/50 focus:bg-[#0d1829] focus:outline-none focus:ring-4 focus:ring-teal-300/10"
+                  placeholder="e.g. Vaibhav (Founder)"
+                  class="w-full rounded-xl border border-white/10 bg-[#070e17] px-4 py-3.5 text-sm font-medium text-white placeholder:text-slate-500 transition-all focus:border-emerald-400 focus:bg-[#0b1624] focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
                 />
               </div>
 
               <div>
                 <label
                   for="email"
-                  class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
-                  >Work email</label
+                  class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                  >Work Email / WhatsApp No.</label
                 >
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   name="email"
                   required
-                  placeholder="you@store.com"
-                  class="w-full rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-5 py-4 font-medium text-white placeholder:text-slate-500 transition-all focus:border-teal-300/50 focus:bg-[#0d1829] focus:outline-none focus:ring-4 focus:ring-teal-300/10"
+                  placeholder="you@store.com or +91 98765..."
+                  class="w-full rounded-xl border border-white/10 bg-[#070e17] px-4 py-3.5 text-sm font-medium text-white placeholder:text-slate-500 transition-all focus:border-emerald-400 focus:bg-[#0b1624] focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
                 />
               </div>
 
               <div>
                 <label
                   for="shopify_url"
-                  class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
-                  >Store URL</label
+                  class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                  >Instagram Handle or Store URL</label
                 >
                 <input
                   type="text"
                   id="shopify_url"
                   name="shopify_url"
                   required
-                  placeholder="yourstore.com or yourstore.myshopify.com"
-                  class="w-full rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-5 py-4 font-medium text-white placeholder:text-slate-500 transition-all focus:border-teal-300/50 focus:bg-[#0d1829] focus:outline-none focus:ring-4 focus:ring-teal-300/10"
+                  placeholder="@yourbrand.in or yourstore.com"
+                  class="w-full rounded-xl border border-white/10 bg-[#070e17] px-4 py-3.5 text-sm font-medium text-white placeholder:text-slate-500 transition-all focus:border-emerald-400 focus:bg-[#0b1624] focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
                 />
               </div>
 
               <div>
                 <label
                   for="priority"
-                  class="mb-2.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
-                  >First workflow to improve</label
+                  class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                  >Estimated Daily DM & Chat Volume</label
                 >
                 <select
                   id="priority"
                   name="priority"
-                  class="w-full rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#08111f] px-5 py-4 font-medium text-white transition-all focus:border-teal-300/50 focus:bg-[#0d1829] focus:outline-none focus:ring-4 focus:ring-teal-300/10"
+                  class="w-full rounded-xl border border-white/10 bg-[#070e17] px-4 py-3.5 text-sm font-medium text-white transition-all focus:border-emerald-400 focus:bg-[#0b1624] focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
                 >
-                  <option value="cart_recovery">Cart recovery</option>
-                  <option value="product_questions">Product questions</option>
-                  <option value="upsells">Upsells and bundles</option>
-                  <option value="inventory_clearance"
-                    >Inventory clearance</option
-                  >
-                  <option value="revenue_leaks">Revenue leak detection</option>
+                  <option value="10-50">10 – 50 inquiries / day</option>
+                  <option value="50-200">50 – 200 inquiries / day</option>
+                  <option value="200+">200+ inquiries / day (High Volume)</option>
+                  <option value="starting">Just starting with Ads & Reels</option>
                 </select>
               </div>
 
               <button
                 type="submit"
                 id="submit-btn"
-                class="btn-primary w-full gap-3 px-6 py-5 text-base disabled:cursor-not-allowed disabled:opacity-55"
+                class="btn-primary w-full gap-3 px-6 py-4 text-sm font-bold bg-white text-slate-950 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-55"
               >
-                <span id="btn-text">Book Demo</span>
-                <svg
-                  id="btn-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
-                  ></path></svg
-                >
+                <span id="btn-text">Submit Pilot Application &rarr;</span>
               </button>
 
               <div
                 id="form-message"
-                class="hidden rounded-2xl p-4 text-center text-sm font-semibold"
+                class="hidden rounded-xl p-3 text-center text-xs font-semibold"
               >
               </div>
             </form>

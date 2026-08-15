@@ -5,39 +5,35 @@ const homeHref = (hash) => (isHome ? hash : `/${hash}`);
 
 const footerSections = [
   {
-    title: "Platform",
+    title: "Product",
     links: [
-      { label: "Overview", href: homeHref("#platform") },
-      { label: "Features", href: "/features" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Compare", href: "/compare" },
-      { label: "Shopify Integration", href: "/integrations/shopify" },
+      { label: "Comment-to-DM Engine", href: homeHref("#how-it-works") },
+      { label: "WhatsApp Sales Closer", href: homeHref("#how-it-works") },
+      { label: "90-Second Revenue Loop", href: homeHref("#revenue-loop") },
+      { label: "Guardrails & Safety", href: homeHref("#guardrails") },
     ],
   },
   {
-    title: "Agents",
+    title: "Pilot Cohort",
     links: [
-      { label: "Product Assistant", href: "/agents/product-assistant" },
-      { label: "Cart Recovery", href: "/agents/cart-recovery" },
-      { label: "Upsell Agent", href: "/agents/upsell" },
-      { label: "Customer Follow-Up", href: "/agents/customer-follow-up" },
-      { label: "Inventory Clearance", href: "/agents/inventory-clearance" },
-      { label: "Revenue Leaks", href: "/agents/revenue-leak-detection" },
+      { label: "Apply for Pilot (10 Stores)", href: "/contact" },
+      { label: "White-Glove Setup Scope", href: "/contact" },
+      { label: "Founder Desk Support", href: "mailto:support@voluchat.com" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "/about" },
+      { label: "About VoluChat", href: "/about" },
+      { label: "Founder Story", href: "/about" },
       { label: "Blog", href: "/blog" },
-      { label: "Contact", href: "/contact" },
-      { label: "Book Demo", href: "/contact" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Security", href: "/security" },
+      { label: "Security & Guardrails", href: "/security" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms & Conditions", href: "/terms" },
     ],
@@ -51,22 +47,25 @@ const footerSections = [
   <div class="page-shell relative z-10">
     <section
       id="demo"
-      class="mb-16 rounded-[1.75rem] border border-teal-300/20 bg-[radial-gradient(circle_at_50%_0%,rgba(45,212,191,0.12),transparent_42%),rgba(16,27,46,0.86)] p-6 text-center shadow-[0_32px_90px_-56px_rgba(45,212,191,0.45)] sm:p-10"
+      class="mb-16 rounded-[1.75rem] border border-emerald-500/25 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.15),transparent_48%),rgba(10,21,35,0.95)] p-8 text-center shadow-[0_32px_90px_-56px_rgba(16,185,129,0.4)] sm:p-12"
     >
-      <p class="section-eyebrow">Ready for a working agent system?</p>
+      <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-4">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        Limited Pilot Cohort &bull; 10 Brands
+      </div>
       <h2
-        class="mx-auto mt-4 max-w-2xl text-3xl font-heading font-bold leading-tight text-white sm:text-5xl"
+        class="mx-auto max-w-2xl text-3xl font-heading font-bold leading-tight text-white sm:text-5xl"
       >
-        Find the first workflow VoluChat should automate.
+        Turn your Instagram DMs & WhatsApp into 24/7 revenue.
       </h2>
       <p
         class="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-slate-200 sm:text-lg"
       >
-        See how VoluChat can help your team turn repetitive store operations into approved AI workflows.
+        We build, configure, and manage your autonomous sales agent end-to-end with 100% white-glove setup.
       </p>
-      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-        <a href="/contact" class="btn-primary">Book a workflow demo</a>
-        <a href="#workflows" class="btn-secondary">View example workflows</a>
+      <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
+        <a href="/contact" class="btn-primary btn-sheen">Apply for Pilot Store Deployment &rarr;</a>
+        <a href="#how-it-works" class="btn-secondary">See How It Works</a>
       </div>
     </section>
 
@@ -89,7 +88,7 @@ const footerSections = [
         <p
           class="text-xs text-slate-300 font-medium leading-relaxed max-w-[24ch]"
         >
-          AI commerce agents for modern D2C and Shopify brands.
+          Autonomous WhatsApp & Instagram sales agents for modern D2C brands.
         </p>
       </div>
 
@@ -124,7 +123,7 @@ const footerSections = [
       >
         © {currentYear} QubitNine Technologies Pvt Ltd. All rights reserved. <br
         />
-        Built for serious Shopify brands requiring margin-safe automation.
+        Autonomous social commerce agent platform.
       </p>
 
       <div
@@ -135,7 +134,7 @@ const footerSections = [
         ></span>
         <span
           class="text-[9px] font-bold text-emerald-400 uppercase tracking-widest"
-          >Platform Operational</span
+          >Agent Engine Active</span
         >
       </div>
     </div>

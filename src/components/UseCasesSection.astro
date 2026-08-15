@@ -1,97 +1,95 @@
 ---
-const workflows = [
+const pillars = [
   {
-    code: "WF-01",
-    title: "Cart Recovery",
-    text: "Automatically detect abandoned carts and prepare personalized recovery offers with precise margin checks.",
-    metric: "Revenue Protection",
-    href: "/agents/cart-recovery",
+    code: "PILLAR 01",
+    title: "Instagram Comment-to-DM Accelerator",
+    text: "When a reel goes viral, VoluChat auto-replies to comments in 2 seconds and instantly slides into DMs with exact pricing, photos, and sizing options before interest drops.",
+    metric: "100% Lead Capture",
+    badge: "Top of Funnel",
+    color: "from-rose-500/10 border-rose-500/20 text-rose-300",
   },
   {
-    code: "WF-02",
-    title: "Clearance & Stock",
-    text: "Identify slow-moving inventory and launch targeted clearance recommendations to free up warehouse space.",
-    metric: "Capital Efficiency",
-    href: "/agents/inventory-clearance",
+    code: "PILLAR 02",
+    title: "Deep Catalog & Sizing Intelligence",
+    text: "Trained on your Shopify catalog. Answers complex buyer queries: fabric care, matching combinations, size charts, and real-time variant stock availability.",
+    metric: "0% Hallucination",
+    badge: "Product Advisory",
+    color: "from-teal-500/10 border-teal-500/20 text-teal-300",
   },
   {
-    code: "WF-03",
-    title: "Contextual Upsell",
-    text: "Suggest the perfect matching accessory right when the customer intent is highest, fully aware of live stock.",
-    metric: "Average Order Value",
-    href: "/agents/upsell",
+    code: "PILLAR 03",
+    title: "WhatsApp Autonomous Sales Closer",
+    text: "Moves qualified buyers to your official WhatsApp Business number. Replaces human reps by negotiating, addressing delivery timelines, and building trust naturally.",
+    metric: "24/7 Closing Rate",
+    badge: "Bottom of Funnel",
+    color: "from-emerald-500/10 border-emerald-500/20 text-emerald-300",
   },
   {
-    code: "WF-04",
-    title: "VIP Follow-ups",
-    text: "Check in on high-value customers after delivery, gather feedback, and recommend timely add-ons.",
-    metric: "Customer Retention",
-    href: "/agents/customer-follow-up",
-  },
-  {
-    code: "WF-05",
-    title: "Leak Detection",
-    text: "Continuously scan your store's operations to find hidden revenue leaks across the entire customer journey.",
-    metric: "Growth Margin",
-    href: "/agents/revenue-leak-detection",
+    code: "PILLAR 04",
+    title: "Native In-DM 1-Click Payment & COD Guard",
+    text: "Generates native WhatsApp catalog checkouts or instant UPI / Razorpay payment links. Validates pincodes and verifies COD orders to eliminate delivery returns.",
+    metric: "Sub-90s Checkout",
+    badge: "Transaction Layer",
+    color: "from-indigo-500/10 border-indigo-500/20 text-indigo-300",
   },
 ];
 ---
 
 <section
-  id="workflows"
-  class="relative bg-[#050b14] py-20 sm:py-24"
+  id="how-it-works"
+  class="relative bg-[#050b14] py-20 sm:py-28"
 >
   <div class="page-shell relative z-10">
-    <div class="usecases-header mb-12 max-w-2xl opacity-0">
+    <div class="usecases-header mb-14 max-w-3xl opacity-0">
+      <div class="chip mb-4">
+        <span class="mini-label">The Autonomous Commerce Engine</span>
+      </div>
       <h2 class="section-title text-white">
-        Workflows that <span class="gradient-text-anim">drive revenue.</span>
+        Built to close sales where <span class="gradient-text-anim">customers actually buy.</span>
       </h2>
-      <p class="section-copy mt-6 text-slate-400">
-        Deploy agent workflows that connect customer intent with catalog details, inventory pressure, and measurable outcomes.
+      <p class="section-copy mt-6 text-slate-300">
+        From the moment a customer comments on a Reel to the second their UPI payment clears inside WhatsApp — VoluChat manages the entire revenue journey without human intervention.
       </p>
     </div>
 
-    <div class="grid gap-5 md:grid-cols-2">
+    <div class="grid gap-6 md:grid-cols-2">
       {
-        workflows.map((workflow, i) => {
-          return (
-            <article
-              class={`usecase-card group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0c1627] p-6 shadow-[0_24px_70px_-46px_rgba(0,0,0,0.88)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-300/30 hover:bg-[#101b2f] sm:p-7 opacity-0 ${i === workflows.length - 1 ? "md:col-span-2" : ""}`}
-            >
-              <div class="absolute inset-0 bg-gradient-to-br from-teal-500/6 to-transparent pointer-events-none" />
+        pillars.map((pillar) => (
+          <article
+            class={`usecase-card group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0c1627]/90 p-7 sm:p-8 shadow-[0_24px_70px_-46px_rgba(0,0,0,0.88)] transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:bg-[#101e33] opacity-0`}
+          >
+            <div class={`absolute inset-0 bg-gradient-to-br ${pillar.color} pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity`} />
 
-              <div class="relative z-10 flex h-full flex-col">
-                <div class="mb-7 flex items-center gap-4">
-                  <span class="font-mono text-xs font-bold text-teal-400">
-                    {workflow.code}
+            <div class="relative z-10 flex h-full flex-col justify-between">
+              <div>
+                <div class="mb-6 flex items-center justify-between gap-4">
+                  <span class="font-mono text-xs font-bold text-emerald-400">
+                    {pillar.code}
                   </span>
-                  <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
-                    {workflow.metric}
+                  <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-300">
+                    {pillar.badge}
                   </span>
                 </div>
 
-                <div class={i === workflows.length - 1 ? "grid gap-6 md:grid-cols-[1fr_auto] md:items-end" : ""}>
-                  <div>
-                    <h3 class="text-2xl font-bold text-white font-heading tracking-tight md:text-3xl">
-                      {workflow.title}
-                    </h3>
-                    <p class="mt-4 max-w-xl text-sm font-medium leading-relaxed text-slate-300 sm:text-base">
-                      {workflow.text}
-                    </p>
-                  </div>
-
-                  <a
-                     href={workflow.href}
-                     class="mt-7 inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-bold text-slate-100 transition-all hover:border-teal-400/50 hover:bg-teal-500/10 hover:text-teal-200 md:mt-0"
-                   >
-                     View {workflow.title} agent &rarr;
-                   </a>
-                </div>
+                <h3 class="text-2xl font-bold text-white font-heading tracking-tight sm:text-3xl">
+                  {pillar.title}
+                </h3>
+                <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
+                  {pillar.text}
+                </p>
               </div>
-            </article>
-          );
-        })
+
+              <div class="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
+                <span class="text-xs font-mono font-bold text-emerald-300">
+                  ✓ {pillar.metric}
+                </span>
+                <span class="text-xs font-semibold text-slate-400 group-hover:text-white transition-colors">
+                  Autonomous Layer &rarr;
+                </span>
+              </div>
+            </div>
+          </article>
+        ))
       }
     </div>
   </div>
@@ -107,25 +105,34 @@ const workflows = [
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 
-    // Unique animation for UseCasesSection: Staggered pop-in from center
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#workflows",
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
+        trigger: "#how-it-works",
+        start: "top 75%",
       }
     });
 
-    tl.fromTo(".usecases-header", 
-      { opacity: 0, scale: 0.9, y: 30 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.5)" }
+    tl.fromTo(
+      ".usecases-header",
+      { opacity: 0, y: 25 },
+      { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }
     );
 
-    tl.fromTo(".usecase-card",
-      { opacity: 0, y: 50, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: { amount: 0.5, from: "start" }, ease: "power2.out" },
-      "-=0.4"
-    );
+    // Architectural expansion: cards slide and unroll into place with depth
+    const cards = gsap.utils.toArray<HTMLElement>(".usecase-card");
+    if (cards.length === 4) {
+      tl.fromTo(
+        [cards[0], cards[2]], // Left column
+        { opacity: 0, x: -35, y: 15 },
+        { opacity: 1, x: 0, y: 0, duration: 0.55, stagger: 0.12, ease: "power3.out" },
+        "-=0.25"
+      );
+      tl.fromTo(
+        [cards[1], cards[3]], // Right column
+        { opacity: 0, x: 35, y: 15 },
+        { opacity: 1, x: 0, y: 0, duration: 0.55, stagger: 0.12, ease: "power3.out" },
+        "-=0.55"
+      );
+    }
   });
 </script>

@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "Shopify AI Agents: Features and Workflows | VoluChat";
+const seoTitle = "Social Commerce AI Features & Operating Engine | VoluChat";
 const seoDescription =
-  "See how VoluChat's Shopify AI agents detect revenue leaks, recover carts, answer product questions, recommend upsells, and run approved workflows.";
+  "Discover how VoluChat's Autonomous Sales Agent turns Instagram comments into direct WhatsApp orders with instant stock checks, sizing guidance, and native UPI checkout.";
 const seoKeywords =
-  "Shopify AI agent features, commerce agent workflows, cart recovery, product assistant, upsell agent, Shopify automation features";
+  "WhatsApp AI agent features, Instagram DM automation, social commerce operating loop, WhatsApp checkout bot, Shopify D2C AI closer";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
@@ -21,88 +21,29 @@ const structuredData = {
 
 const operatingLoop = [
   {
-    step: "Detect",
-    title: "Find the next revenue moment",
+    step: "01 Capture",
+    title: "Instagram Comment-to-DM Engine",
     description:
-      "Agents watch product views, carts, stock movement, checkout drop-offs, repeat questions, and customer intent signals.",
+      "When a shopper comments 'Price?' or 'Available in M?' on your Reels or Ads, VoluChat auto-replies in 2 seconds and slides into DMs with exact pricing.",
   },
   {
-    step: "Decide",
-    title: "Choose the right action",
+    step: "02 Qualify",
+    title: "Deep Catalog & Sizing Intelligence",
     description:
-      "Each recommendation is grounded in your catalog, policies, margins, and channel rules before anything reaches a customer.",
+      "Trained on your Shopify catalog. Answers fabric doubts, matching combos, and verifies real-time variant stock before sending the checkout link.",
   },
   {
-    step: "Approve",
-    title: "Keep sensitive actions gated",
+    step: "03 Close",
+    title: "WhatsApp Autonomous Closer",
     description:
-      "Discounts, escalations, campaigns, and recovery plays can require human review before an agent moves.",
+      "Transitions the qualified buyer into your official WhatsApp chat, negotiates pre-approved prepaid incentives, and confirms pincode delivery timelines.",
   },
   {
-    step: "Execute",
-    title: "Run the workflow and attribute impact",
+    step: "04 Settle",
+    title: "In-DM UPI Checkout & Shopify Sync",
     description:
-      "VoluChat sends the message, updates the workflow, records the decision, and shows what revenue was influenced.",
+      "Generates a 1-click UPI / draft order payment link. Upon settlement, automatically syncs with your Shopify admin and sends tracking directly in WhatsApp.",
   },
-];
-
-const agentCards = [
-  {
-    name: "Product Assistant",
-    href: "/agents/product-assistant",
-    signal: "Repeated product questions",
-    action:
-      "Answers sizing, stock, variant, delivery, and return questions from live Shopify data.",
-    bestFor: "Reducing support load before checkout",
-  },
-  {
-    name: "Cart Recovery",
-    href: "/agents/cart-recovery",
-    signal: "High-intent cart abandonment",
-    action:
-      "Follows up with context, handles objections, and uses approved recovery offers when needed.",
-    bestFor: "Recovering checkout drop-offs",
-  },
-  {
-    name: "Upsell & Bundles",
-    href: "/agents/upsell",
-    signal: "Buyer intent or cart composition",
-    action:
-      "Suggests relevant add-ons and bundles without turning the conversation into a hard sell.",
-    bestFor: "Increasing order value",
-  },
-  {
-    name: "Inventory Clearance",
-    href: "/agents/inventory-clearance",
-    signal: "Slow-moving stock",
-    action:
-      "Identifies products that need movement and proposes campaigns with margin-aware guardrails.",
-    bestFor: "Freeing cash tied in inventory",
-  },
-  {
-    name: "Customer Follow-up",
-    href: "/agents/customer-follow-up",
-    signal: "Post-purchase or repeat-buyer moments",
-    action:
-      "Reaches customers with useful next steps, replenishment prompts, and retention-focused messages.",
-    bestFor: "Turning one-time buyers into repeat buyers",
-  },
-  {
-    name: "Revenue Leak Detection",
-    href: "/agents/revenue-leak-detection",
-    signal: "Operational gaps across the store",
-    action:
-      "Surfaces missed opportunities across carts, inventory, merchandising, and unanswered demand.",
-    bestFor: "Knowing what to fix first",
-  },
-];
-
-const guardrails = [
-  "Catalog-grounded answers, not generic chatbot guesses.",
-  "Margin rules for discounts, bundles, and clearance actions.",
-  "Approval queues for campaigns, escalations, and sensitive offers.",
-  "Audit trail showing the signal, recommendation, approval, and outcome.",
-  "Human handoff when the customer asks for something outside policy.",
 ];
 ---
 
@@ -124,7 +65,7 @@ const guardrails = [
       >
       </div>
       <div
-        class="absolute inset-x-0 top-0 -z-10 mx-auto h-[34rem] max-w-5xl bg-[radial-gradient(circle_at_50%_0%,rgba(45,212,191,0.18),transparent_58%)]"
+        class="absolute inset-x-0 top-0 -z-10 mx-auto h-[34rem] max-w-5xl bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.18),transparent_58%)]"
       >
       </div>
       <div class="ambient-noise"></div>
@@ -132,20 +73,21 @@ const guardrails = [
       <div class="page-shell">
         <div class="feat-hero grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div class="feat-hero-text opacity-0">
-            <div class="chip">Commerce agents, explained</div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              Autonomous Commerce Architecture
+            </div>
             <h1
-              class="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+              class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
             >
-              AI agents that run commerce workflows, not just chats.
+              The 24/7 AI closer for Instagram & WhatsApp.
             </h1>
-            <p class="section-copy mt-6 max-w-2xl">
-              VoluChat connects to your Shopify store, finds revenue
-              opportunities, recommends the next best action, and executes
-              approved workflows through conversational agents.
+            <p class="section-copy mt-6 max-w-2xl text-slate-300">
+              Stop letting 50%+ of social buyers abandon their carts. VoluChat turns comments into instant DMs, qualifies sizing, and collects native in-chat UPI payments in 90 seconds.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/contact" class="btn-primary">Book Demo</a>
-              <a href="/compare" class="btn-secondary">Compare with chatbots and helpdesks</a>
+              <a href="/contact" class="btn-primary">Apply for Pilot Store Setup &rarr;</a>
+              <a href="/compare" class="btn-secondary">Compare vs Wati / Manychat</a>
             </div>
           </div>
 

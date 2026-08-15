@@ -1,126 +1,88 @@
 ---
-
+const guardrailRules = [
+  {
+    icon: "🏷️",
+    title: "Strict Margin & Price Protection",
+    desc: "The AI agent can only offer pre-approved discounts (e.g. max 10% for prepaid UPI). It will never drop prices below your cost margin.",
+    badge: "Margin Safe",
+    highlight: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
+  },
+  {
+    icon: "📦",
+    title: "Zero Out-of-Stock Promises",
+    desc: "Real-time Shopify inventory checks prevent the AI from ever selling unavailable variants, preventing dead checkouts and refunds.",
+    badge: "Live Stock",
+    highlight: "text-teal-400 border-teal-500/20 bg-teal-500/10",
+  },
+  {
+    icon: "🛡️",
+    title: "Instant Human Escalation",
+    desc: "Custom orders, bridal alterations, or complex customer queries automatically alert your human team on WhatsApp for a 1-click takeover.",
+    badge: "Human Control",
+    highlight: "text-amber-400 border-amber-500/20 bg-amber-500/10",
+  },
+  {
+    icon: "⚡",
+    title: "Anti-Spam & Brand Voice Tuning",
+    desc: "Trained exclusively on your brand's tone. Caps follow-up frequency so customers feel assisted rather than spammed.",
+    badge: "Brand Voice",
+    highlight: "text-indigo-400 border-indigo-500/20 bg-indigo-500/10",
+  },
+];
 ---
 
-<section id="guardrails" class="relative overflow-hidden py-20 sm:py-24 border-y border-white/5">
+<section id="guardrails" class="relative overflow-hidden py-20 sm:py-28 border-y border-white/5 bg-[#060c15]">
   <div class="sect-grid"></div>
-  <div class="sect-orb absolute top-10 left-1/3 h-[350px] w-[350px] bg-amber-500/10 opacity-30"></div>
 
   <div class="page-shell relative z-10">
-    <div class="guardrails-header max-w-3xl opacity-0">
-      <span class="section-eyebrow text-amber-400 font-bold uppercase tracking-wider text-xs">Agent Guardrails</span>
-      <h2 class="section-title mt-4 text-white">
-        See the AI’s reasoning before anything happens
+    <div class="guardrails-header max-w-3xl mx-auto text-center opacity-0 mb-16">
+      <div class="chip mb-4 border-emerald-500/20 bg-emerald-500/10">
+        <span class="mini-label text-emerald-300">Safety & Guardrails</span>
+      </div>
+      <h2 class="section-title text-white font-heading">
+        AI sales with <span class="gradient-text-anim">ironclad brand safety.</span>
       </h2>
-      <p class="section-copy mt-6 text-lg text-slate-300 max-w-2xl leading-relaxed">
-        <span class="text-white font-semibold">Not generic AI autopilot. Controlled AI for real ecommerce operations.</span><br/><br/>
-        Generative AI becomes a liability when it can discount, recommend, or
-        message customers without rules. VoluChat wraps every agent action in
-        store-specific limits before it reaches a buyer.
+      <p class="section-copy mt-5 text-slate-300 max-w-2xl mx-auto">
+        Never worry about AI hallucinations or unauthorized discounts. VoluChat operates strictly within the rules and margin floors you define.
       </p>
     </div>
 
-    <!-- Interactive Guardrails Simulator -->
-    <div class="mt-16 grid gap-6 md:grid-cols-12 lg:items-stretch">
-      
-      <!-- Controls Side (5 cols) -->
-      <div class="guardrails-panel-left opacity-0 col-span-full md:col-span-5 flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0d192b]/60 p-6 sm:p-8 backdrop-blur-xl shadow-xl">
-        <div>
-          <h3 class="font-heading text-xs font-bold text-white uppercase tracking-wider">
-            Set the rules your AI must follow
-          </h3>
-          <p class="text-[11px] text-slate-400 mt-1">
-            Keep discounts, inventory promises, and escalations aligned with your store policies.
-          </p>
+    <!-- Clean 4-Grid Guardrail Cards -->
+    <div class="grid gap-6 sm:grid-cols-2 max-w-5xl mx-auto">
+      {
+        guardrailRules.map((rule) => (
+          <div class="guardrail-card opacity-0 rounded-2xl border border-white/10 bg-[#0a1422]/90 p-6 sm:p-7 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.8)] backdrop-blur-md hover:border-emerald-500/30 transition duration-300 hover:-translate-y-1">
+            <div class="flex items-center justify-between mb-5">
+              <span class="text-2xl">{rule.icon}</span>
+              <span class={`rounded-full border px-3 py-1 text-[10px] font-bold font-mono uppercase tracking-wider ${rule.highlight}`}>
+                {rule.badge}
+              </span>
+            </div>
 
-          <div class="mt-6 space-y-3.5">
-            <!-- Toggle 1 -->
-            <label class="flex items-center justify-between p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] cursor-pointer transition select-none group">
-              <div class="flex gap-3 items-center">
-                <span class="text-base text-teal-300 group-hover:scale-110 transition duration-300">📦</span>
-                <div>
-                  <div class="text-xs font-bold text-white tracking-wide">Never promote sold-out items</div>
-                </div>
-              </div>
-              <div class="relative w-8 h-4 shrink-0">
-                <input type="checkbox" id="guard-inventory" class="sr-only peer" checked />
-                <div class="w-8 h-4 bg-slate-800 rounded-full peer peer-focus:ring-1 peer-focus:ring-teal-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-teal-500"></div>
-              </div>
-            </label>
-
-            <!-- Toggle 2 -->
-            <label class="flex items-center justify-between p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] cursor-pointer transition select-none group">
-              <div class="flex gap-3 items-center">
-                <span class="text-base text-amber-300 group-hover:scale-110 transition duration-300">🏷️</span>
-                <div>
-                  <div class="text-xs font-bold text-white tracking-wide">Limit recovery discounts</div>
-                </div>
-              </div>
-              <div class="relative w-8 h-4 shrink-0">
-                <input type="checkbox" id="guard-discount" class="sr-only peer" checked />
-                <div class="w-8 h-4 bg-slate-800 rounded-full peer peer-focus:ring-1 peer-focus:ring-teal-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-teal-500"></div>
-              </div>
-            </label>
-
-            <!-- Toggle 3 -->
-            <label class="flex items-center justify-between p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] cursor-pointer transition select-none group">
-              <div class="flex gap-3 items-center">
-                <span class="text-base text-rose-300 group-hover:scale-110 transition duration-300">🛡️</span>
-                <div>
-                  <div class="text-xs font-bold text-white tracking-wide">Escalate angry customers</div>
-                </div>
-              </div>
-              <div class="relative w-8 h-4 shrink-0">
-                <input type="checkbox" id="guard-sentiment" class="sr-only peer" checked />
-                <div class="w-8 h-4 bg-slate-800 rounded-full peer peer-focus:ring-1 peer-focus:ring-teal-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-teal-500"></div>
-              </div>
-            </label>
+            <h3 class="text-xl font-bold text-white font-heading">
+              {rule.title}
+            </h3>
+            <p class="mt-3 text-sm text-slate-300 font-medium leading-relaxed">
+              {rule.desc}
+            </p>
           </div>
-        </div>
-
-        <!-- Scenarios Selector -->
-        <div class="mt-6 border-t border-white/5 pt-6">
-          <h4 class="font-heading text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">
-            Test a real store scenario
-          </h4>
-          <div class="flex flex-col gap-2.5">
-            <button class="scenario-btn active-scenario text-left text-xs font-semibold px-4 py-2.5 rounded-xl border border-teal-500/30 bg-[#101b2b] text-white transition duration-300 cursor-pointer flex justify-between items-center" data-scenario="discount">
-              <span>"Give me 40% off on Aero Runners"</span>
-              <span class="text-[10px] text-teal-400 font-mono">Discount recovery</span>
-            </button>
-            <button class="scenario-btn text-left text-xs font-semibold px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-slate-200 hover:bg-[#101b2b] hover:border-teal-500/30 hover:text-white transition duration-300 cursor-pointer flex justify-between items-center group" data-scenario="stock">
-              <span>"Is size 11 in stock? Buying now."</span>
-              <span class="text-[10px] text-slate-500 font-mono group-hover:text-teal-400 transition">Inventory check</span>
-            </button>
-            <button class="scenario-btn text-left text-xs font-semibold px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-slate-200 hover:bg-[#101b2b] hover:border-teal-500/30 hover:text-white transition duration-300 cursor-pointer flex justify-between items-center group" data-scenario="anger">
-              <span>"Refund me now or I'll sue!"</span>
-              <span class="text-[10px] text-slate-500 font-mono group-hover:text-teal-400 transition">Human escalation</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Side: Live Simulator Trace Display (7 cols) -->
-      <div class="guardrails-panel-right opacity-0 col-span-full md:col-span-7 flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0b1625]/90 overflow-hidden shadow-2xl relative min-h-[460px]">
-        <div class="flex items-center justify-between border-b border-white/10 px-5 py-4 bg-black/20">
-          <div class="flex items-center gap-2">
-            <span class="h-2 w-2 rounded-full bg-teal-400 animate-pulse" id="sim-status-dot"></span>
-            <span class="font-mono text-[10px] font-bold uppercase tracking-wider text-slate-300">Live decision preview</span>
-          </div>
-        </div>
-        
-        <div id="sim-content" class="flex-1 p-5 flex flex-col gap-4 overflow-y-auto">
-          <!-- JS injects scenario content here, but we start with a default state -->
-        </div>
-
-        <div id="sim-outcome-bar" class="bg-teal-500/10 border-t border-teal-500/20 px-5 py-3 relative">
-          <div id="sim-outcome-text" class="text-[10px] font-mono text-teal-300 font-semibold">
-             Result: 40% discount blocked · 15% recovery offer prepared · Approval required before sending
-          </div>
-        </div>
-
-      </div>
+        ))
+      }
     </div>
+
+    <!-- Human-in-the-loop guarantee banner -->
+    <div class="mt-10 max-w-5xl mx-auto rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3 text-center sm:text-left">
+        <span class="h-3 w-3 rounded-full bg-emerald-400 shrink-0"></span>
+        <p class="text-sm font-medium text-slate-200">
+          <strong class="text-white">Human Oversight Guarantee:</strong> Your team can review chat logs, modify responses, or pause the AI on any customer thread with a single tap.
+        </p>
+      </div>
+      <a href="/contact" class="btn-secondary text-xs shrink-0 py-2.5 px-5">
+        Test Guardrails &rarr;
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -132,265 +94,23 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReduced) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#guardrails",
-          start: "top 75%",
-          end: "bottom 25%",
-          toggleActions: "play none none reverse"
-        }
-      });
+    if (prefersReduced) return;
 
-      tl.fromTo(".guardrails-header", 
-        { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
-      );
+    gsap.fromTo(".guardrails-header", 
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", scrollTrigger: { trigger: "#guardrails", start: "top 85%" } }
+    );
 
-      // Book-like fold in
-      tl.fromTo(".guardrails-panel-left",
-        { opacity: 0, x: -50, rotateY: 15 },
-        { opacity: 1, x: 0, rotateY: 0, duration: 0.8, ease: "power3.out" },
-        "-=0.5"
-      );
-
-      tl.fromTo(".guardrails-panel-right",
-        { opacity: 0, x: 50, rotateY: -15 },
-        { opacity: 1, x: 0, rotateY: 0, duration: 0.8, ease: "power3.out" },
-        "-=0.6"
-      );
-    }
-
-    const scenarioBtns = document.querySelectorAll(".scenario-btn");
-    const simContent = document.getElementById("sim-content");
-    const simOutcomeBar = document.getElementById("sim-outcome-bar");
-    const simOutcomeText = document.getElementById("sim-outcome-text");
-    const simStatusDot = document.getElementById("sim-status-dot");
-
-    const checkInventory = document.getElementById("guard-inventory") as HTMLInputElement | null;
-    const checkDiscount = document.getElementById("guard-discount") as HTMLInputElement | null;
-    const checkSentiment = document.getElementById("guard-sentiment") as HTMLInputElement | null;
-
-    if (!simContent || !simOutcomeBar || !simOutcomeText) return;
-
-    let isRunning = false;
-    const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    const animateIn = (el: HTMLElement, keyframes: Keyframe[], options: KeyframeAnimationOptions) => {
-      el.animate(keyframes, options);
-    };
-
-    // Data for scenarios
-    const scenariosData = {
-      discount: {
-        msg: '"Give me 40% off on Aero Runners"',
-        ruleActive: 'Maximum recovery discount: 15%',
-        ruleDisabled: 'No discount limit enforced',
-        recActive: 'Offer 15% recovery code instead of 40%.',
-        recDisabled: 'Offer 40% discount code as requested.',
-        whyActive: 'Requested discount exceeds store policy. Product is eligible for recovery offer. Customer intent shows purchase interest.',
-        whyDisabled: 'Customer intent shows purchase interest. Discount limit guardrail is currently disabled.',
-        replyActive: '"Thanks for reaching out — I can offer you 15% off Aero Runners today."',
-        replyDisabled: '"Sure! Here is your 40% discount code: SAVE40. Tap this link to checkout."',
-        resultActive: 'Result: 40% discount blocked · 15% recovery offer prepared · Approval required before sending',
-        resultDisabled: 'Warning: Margin risk. 40% discount prepared because guardrail is disabled.',
-        colorActive: 'teal',
-        colorDisabled: 'amber'
-      },
-      stock: {
-        msg: '"Is size 11 in stock? Buying now."',
-        ruleActive: 'Inventory policy: Never sell out of stock',
-        ruleDisabled: 'No inventory filter enforced',
-        recActive: 'Block sale. Suggest in-stock size (10.5).',
-        recDisabled: 'Allow sale for size 11.',
-        whyActive: 'Size 11 is currently out of stock. Size 10.5 is available. Must avoid dead checkout.',
-        whyDisabled: 'Customer requested size 11. Inventory filter guardrail is currently disabled.',
-        replyActive: '"Aero Runners size 11 is currently sold out, but size 10.5 is in stock. I can also notify you immediately when size 11 returns!"',
-        replyDisabled: '"Yes, size 11 is in stock. Here is the checkout link!"',
-        resultActive: 'Result: Out-of-stock sale blocked · Alternative size recommended · Approval required',
-        resultDisabled: 'Warning: Dead checkout risk. Sold-out item promoted because guardrail is disabled.',
-        colorActive: 'teal',
-        colorDisabled: 'rose'
-      },
-      anger: {
-        msg: '"Refund me now or I\'ll sue!"',
-        ruleActive: 'Escalation trigger: High anger/legal threat',
-        ruleDisabled: 'No escalation trigger enforced',
-        recActive: 'Halt AI response. Escalate to human manager.',
-        recDisabled: 'Reply with generic policy.',
-        whyActive: 'Message contains high negative sentiment and legal threat. Automated responses disabled for this intent.',
-        whyDisabled: 'Customer requested a refund. Sentiment guardrail is currently disabled.',
-        replyActive: '"I understand your frustration. I am handing this conversation over to a human manager immediately to review your refund."',
-        replyDisabled: '"We apologize for the inconvenience. As an AI assistant, I do not have permission to refund orders."',
-        resultActive: 'Result: AI halted · Human operator alerted · SLA timer started',
-        resultDisabled: 'Warning: Retention risk. Generic AI response prepared for angry customer.',
-        colorActive: 'teal',
-        colorDisabled: 'rose'
+    gsap.fromTo(".guardrail-card",
+      { opacity: 0, y: 20, scale: 0.98 },
+      { 
+        opacity: 1, y: 0, scale: 1, 
+        duration: 0.4, 
+        stagger: 0.06, 
+        ease: "power2.out",
+        scrollTrigger: { trigger: ".guardrail-card", start: "top 90%" }
       }
-    };
-
-    const renderScenario = (type: keyof typeof scenariosData, animate = true) => {
-      const data = scenariosData[type];
-      
-      let isActive = true;
-      if (type === 'discount' && checkDiscount && !checkDiscount.checked) isActive = false;
-      if (type === 'stock' && checkInventory && !checkInventory.checked) isActive = false;
-      if (type === 'anger' && checkSentiment && !checkSentiment.checked) isActive = false;
-
-      const ruleText = isActive ? data.ruleActive : data.ruleDisabled;
-      const recText = isActive ? data.recActive : data.recDisabled;
-      const whyText = isActive ? data.whyActive : data.whyDisabled;
-      const replyText = isActive ? data.replyActive : data.replyDisabled;
-      const resultText = isActive ? data.resultActive : data.resultDisabled;
-      const color = isActive ? data.colorActive : data.colorDisabled;
-
-      // Color classes mapping
-      let ruleColorClass = 'text-amber-300';
-      if (color === 'rose') ruleColorClass = 'text-rose-400';
-      if (!isActive) ruleColorClass = 'text-slate-400';
-
-      let recTitleClass = isActive ? 'text-white' : (color === 'amber' ? 'text-amber-300' : 'text-rose-300');
-      let barBgClass = isActive ? 'bg-teal-500/10 border-teal-500/20' : (color === 'amber' ? 'bg-amber-500/10 border-amber-500/20' : 'bg-rose-500/10 border-rose-500/20');
-      let barTextClass = isActive ? 'text-teal-300' : (color === 'amber' ? 'text-amber-300' : 'text-rose-300');
-
-      const htmlContent = `
-          <div class="border-b border-white/5 pb-4 fade-stagger" style="opacity: ${animate ? 0 : 1}">
-             <div class="text-[10px] uppercase font-bold text-slate-500 mb-2">Incoming message</div>
-             <div class="text-xs font-medium text-slate-200">${data.msg}</div>
-          </div>
-          
-          <div class="border-b border-white/5 pb-4 fade-stagger" style="opacity: ${animate ? 0 : 1}">
-             <div class="text-[10px] uppercase font-bold text-slate-500 mb-2">Store rule matched</div>
-             <div class="text-xs font-medium ${ruleColorClass}">${ruleText}</div>
-          </div>
-          
-          <div class="border-b border-white/5 pb-4 fade-stagger" style="opacity: ${animate ? 0 : 1}">
-             <div class="text-[10px] uppercase font-bold text-slate-500 mb-2">AI recommendation</div>
-             <div class="text-[11px] font-bold ${recTitleClass} mb-2">${recText}</div>
-             <div class="text-[10px] uppercase font-bold text-slate-500 mb-1">Why</div>
-             <div class="text-[10px] text-slate-300 leading-relaxed mb-3">${whyText}</div>
-             <div class="bg-black/40 border border-white/5 p-3 rounded-lg">
-                <div class="text-[9px] text-slate-500 uppercase font-bold mb-1.5">Draft reply</div>
-                <div class="text-[10px] text-slate-300 italic">${replyText}</div>
-             </div>
-          </div>
-          
-          <div class="mt-auto flex gap-2 fade-stagger" style="opacity: ${animate ? 0 : 1}">
-            <button class="w-[30%] bg-white/5 hover:bg-white/10 text-slate-300 text-[11px] font-bold py-2.5 rounded-lg border border-white/10 transition">Reject</button>
-            <button class="w-[30%] bg-white/5 hover:bg-white/10 text-slate-300 text-[11px] font-bold py-2.5 rounded-lg border border-white/10 transition">Edit reply</button>
-            <button class="w-[40%] bg-teal-500 hover:bg-teal-400 text-[#042f2e] text-[11px] font-bold py-2.5 rounded-lg transition shadow-[0_0_15px_rgba(20,184,166,0.2)]">Approve</button>
-          </div>
-      `;
-
-      simContent.innerHTML = htmlContent;
-      simOutcomeBar.className = `border-t px-5 py-3 transition-colors duration-300 ${barBgClass}`;
-      simOutcomeText.className = `text-[10px] font-mono font-semibold transition-colors duration-300 ${barTextClass}`;
-      simOutcomeText.textContent = resultText;
-
-      if (animate) {
-        const elements = simContent.querySelectorAll('.fade-stagger');
-        elements.forEach((el, index) => {
-          setTimeout(() => {
-             animateIn(
-              el as HTMLElement,
-              [
-                { opacity: 0, transform: "translate3d(0, 10px, 0)" },
-                { opacity: 1, transform: "translate3d(0, 0, 0)" },
-              ],
-              { duration: 400, easing: "cubic-bezier(0.16, 1, 0.3, 1)", fill: "forwards" },
-            );
-          }, index * 150);
-        });
-      }
-    };
-
-    const runScenario = async (scenarioType: keyof typeof scenariosData, btnElement: Element) => {
-      if (isRunning) return;
-      isRunning = true;
-
-      // Update active button state
-      scenarioBtns.forEach(b => {
-        b.className = "scenario-btn group text-left text-xs font-semibold px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-slate-200 hover:bg-[#101b2b] hover:border-teal-500/30 hover:text-white transition duration-300 cursor-pointer flex justify-between items-center";
-        const span = b.querySelector('span:last-child');
-        if(span) span.className = "text-[10px] text-slate-500 font-mono group-hover:text-teal-400 transition";
-      });
-      btnElement.className = "scenario-btn active-scenario text-left text-xs font-semibold px-4 py-2.5 rounded-xl border border-teal-500/30 bg-[#101b2b] text-white transition duration-300 cursor-pointer flex justify-between items-center";
-      const activeSpan = btnElement.querySelector('span:last-child');
-      if(activeSpan) activeSpan.className = "text-[10px] text-teal-400 font-mono";
-
-      if(simStatusDot) simStatusDot.className = "h-2 w-2 rounded-full bg-slate-400 animate-pulse";
-      
-      // Clear content for loading effect
-      simContent.innerHTML = `<div class="flex items-center justify-center h-full text-slate-500 text-xs font-mono uppercase tracking-widest animate-pulse">Evaluating scenario...</div>`;
-      simOutcomeText.textContent = "Processing...";
-      simOutcomeBar.className = "bg-black/20 border-t border-white/5 px-5 py-3 transition-colors duration-300";
-
-      await sleep(600);
-      
-      if(simStatusDot) simStatusDot.className = "h-2 w-2 rounded-full bg-teal-400 animate-pulse";
-      renderScenario(scenarioType, true);
-
-      // Trigger flying coin particles if successful compliant outcome!
-      let isActive = true;
-      if (scenarioType === 'discount' && checkDiscount && !checkDiscount.checked) isActive = false;
-      if (scenarioType === 'stock' && checkInventory && !checkInventory.checked) isActive = false;
-      if (scenarioType === 'anger' && checkSentiment && !checkSentiment.checked) isActive = false;
-
-      if (isActive && (scenarioType === "discount" || scenarioType === "stock")) {
-        spawnAttributionParticles(simOutcomeBar);
-      }
-
-      isRunning = false;
-    };
-
-    // Dynamic particle generator using GSAP/Vanilla
-    const spawnAttributionParticles = (parent: HTMLElement) => {
-      const count = 7;
-      for (let i = 0; i < count; i++) {
-        const particle = document.createElement("div");
-        particle.className = "absolute pointer-events-none select-none font-sans font-bold text-xs text-teal-400";
-        particle.textContent = Math.random() > 0.5 ? "✓" : "+";
-        particle.style.left = `${Math.random() * 60 + 20}%`;
-        particle.style.top = "10px";
-        parent.appendChild(particle);
-
-        particle
-          .animate(
-          [
-            { opacity: 1, transform: "translate3d(0, 0, 0) scale(0.5)" },
-            {
-              opacity: 0,
-              transform: `translate3d(${(Math.random() - 0.5) * 40}px, -${Math.random() * 40 + 30}px, 0) scale(${Math.random() * 0.8 + 0.8})`,
-            },
-          ],
-          { duration: 1000, easing: "cubic-bezier(0.16, 1, 0.3, 1)", fill: "forwards" },
-        ).finished.then(() => particle.remove()).catch(() => particle.remove());
-      }
-    };
-
-    // Initial Render
-    renderScenario('discount', false);
-
-    // Attach listeners
-    scenarioBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const type = btn.getAttribute("data-scenario") as keyof typeof scenariosData;
-        if (type) runScenario(type, btn);
-      });
-    });
-
-    [checkInventory, checkDiscount, checkSentiment].forEach(checkbox => {
-      if(checkbox) {
-        checkbox.addEventListener('change', () => {
-          // Re-render current active scenario
-          const activeBtn = document.querySelector('.active-scenario');
-          if(activeBtn) {
-            const type = activeBtn.getAttribute("data-scenario") as keyof typeof scenariosData;
-            if(type) renderScenario(type, false);
-          }
-        });
-      }
-    });
-
+    );
   });
 </script>
 

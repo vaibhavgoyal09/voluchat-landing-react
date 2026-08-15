@@ -4,7 +4,7 @@
 
 <section
   id="hero"
-  class="hero-section relative isolate overflow-hidden pt-[7.5rem] pb-24 sm:pt-[8.5rem] lg:pt-[9.5rem] lg:pb-32"
+  class="hero-section relative isolate overflow-hidden pt-[7.5rem] pb-20 sm:pt-[8.5rem] lg:pt-[9.5rem] lg:pb-28"
 >
   <!-- Modern layered background (pure CSS, zero JS) -->
   <div class="hero-bg" aria-hidden="true">
@@ -17,96 +17,156 @@
     <div class="hero-bg-vignette"></div>
   </div>
 
-  <!-- Localized Dynamic Core Shield Label -->
-  <div
-    class="absolute bottom-6 right-8 sm:right-12 pointer-events-none select-none hidden lg:flex flex-col gap-1 items-end opacity-50 z-10"
-  >
-    <div
-      id="hero-core-status"
-      class="flex items-center gap-1.5 text-[9px] font-mono tracking-widest uppercase text-teal-400 font-bold"
-      data-state="idle"
-    >
-      <span class="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse"></span>
-      <span id="hero-core-status-label">Active Guardrail Core</span>
-    </div>
-    <span id="hero-core-status-copy" class="text-[8px] font-mono text-slate-400"
-      >Scanning incoming shopper queries</span
-    >
-  </div>
-
   <div class="page-shell relative z-10">
-    <div class="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:items-start">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_1.15fr] lg:gap-14 lg:items-center">
       <!-- Copy Block -->
       <div class="text-center lg:text-left">
-        <div
-          class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-4 py-1.5 text-xs font-bold text-slate-200 backdrop-blur-md"
-        >
-          <span class="h-1.5 w-1.5 rounded-full bg-teal-300 animate-pulse-ring"
-          ></span>
-          Margin-safe AI agents for Shopify
+        <!-- Private Pilot Badge -->
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-4 py-1.5 text-xs font-semibold text-emerald-300 backdrop-blur-md shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Private Founder Cohort: <strong>Limited to 10 Stores</strong></span>
         </div>
 
         <h1
-          class="hero-title mt-6 text-[2.5rem] font-bold leading-[1.02] tracking-tight sm:text-[2.75rem] lg:text-[3.15rem] xl:text-[3.8rem] font-heading"
+          class="hero-title mt-6 text-[2.5rem] font-bold leading-[1.04] tracking-tight sm:text-[3rem] lg:text-[3.35rem] xl:text-[3.85rem] font-heading"
         >
-          <span
-            class="bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-400"
-            >AI agents for Shopify operations —
+          <span class="bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-300">
+            Turn Instagram DMs & WhatsApp Chats into
           </span>
-          <span class="block gradient-text-anim">with human approval built in.</span>
+          <span class="block gradient-text-anim">24/7 Automated Revenue.</span>
         </h1>
 
         <p
           class="hero-text mt-6 max-w-xl text-[1.05rem] font-medium leading-relaxed text-slate-300 sm:text-lg lg:max-w-2xl"
         >
-          VoluChat helps Shopify teams turn customer messages, order issues, and repetitive follow-ups into AI-recommended workflows your team can approve before anything happens.
+          Stop losing 50%+ of your DM buyers when your sales team is offline. VoluChat's Autonomous AI Agent answers sizing doubts, checks live stock, and completes native WhatsApp orders 24/7.
         </p>
 
         <div
           class="hero-ctas mt-8 flex flex-col gap-3.5 sm:flex-row sm:justify-center lg:justify-start"
         >
           <a href="/contact" class="btn-primary btn-sheen">
-            See VoluChat in action
+            Apply for 1 of 10 Pilot Spots &rarr;
           </a>
-          <a href="#workflows" class="btn-secondary">
-            View example workflows
+          <a href="#how-it-works" class="btn-secondary">
+            See the 4-Step Revenue Flow
           </a>
         </div>
 
-        <div class="mt-8 text-sm text-slate-400 max-w-md text-center lg:text-left">
-          Built for lean Shopify teams handling support, order follow-ups, customer updates, and operational tasks manually.
+        <!-- Trust Features Strip -->
+        <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-6 text-xs font-medium text-slate-400">
+          <div class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Zero flowcharts / rigid buttons</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Native In-DM UPI / Draft Orders</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>100% Done-For-You Setup</span>
+          </div>
         </div>
       </div>
 
-      <!-- Hero Visual: Ecommerce Operator View (Redesigned visual-heavy panel) -->
-      <div class="hero-mockup lg:hero-stage relative tilt lg:mt-14" data-tilt-strength="2">
-        <div class="absolute -inset-6 rounded-[2.5rem] bg-teal-500/15 blur-3xl opacity-50 animate-pulse"></div>
+      <!-- Hero Visual: Clean & Focused Social Commerce Phone Mockup with Live Narrative Animation -->
+      <div class="hero-mockup lg:hero-stage relative" data-tilt-strength="2">
+        <div class="absolute -inset-4 rounded-[2.5rem] bg-emerald-500/15 blur-3xl opacity-60 animate-pulse"></div>
 
-        <div class="relative rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-2 shadow-[0_50px_140px_-70px_rgba(0,0,0,0.95)] backdrop-blur-xl group overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-tr from-teal-500/10 via-transparent to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-          <img
-            src="/hero_image_dashboard.webp"
-            alt="VoluChat Shopify AI Agent Operator Dashboard"
-            class="w-full h-auto rounded-[1.1rem] border border-white/10 object-cover transform transition-transform duration-700 group-hover:scale-[1.02]"
-            decoding="async"
-          />
+        <div class="relative rounded-[2rem] border border-white/12 bg-[#09131f]/95 p-4 sm:p-6 shadow-[0_40px_120px_-60px_rgba(0,0,0,0.95)] backdrop-blur-2xl max-w-lg mx-auto">
           
-          <!-- Interactive overlay badge indicating live workflow -->
-          <div class="absolute bottom-6 left-6 bg-slate-900/90 backdrop-blur-md border border-white/10 px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-lg">
-            <span class="flex h-2 w-2 relative">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span class="text-[10px] font-mono font-bold tracking-wider text-slate-200 uppercase">Live Workspace Active</span>
+          <!-- Mockup Header -->
+          <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-9 rounded-full bg-[#25D366] flex items-center justify-center text-slate-950 font-bold text-sm shadow-md">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-sm font-bold text-white">Your Brand Store</span>
+                  <span class="text-[10px] text-emerald-400 font-mono font-bold">✓ Verified</span>
+                </div>
+                <p class="text-[11px] text-slate-400 font-mono">VoluChat Sales Agent Active</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-[10px] font-mono font-bold text-emerald-400">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              2s Response Time
+            </div>
           </div>
+
+          <!-- Clean Conversation Flow with purposeful stagger targets -->
+          <div class="space-y-3.5 text-xs">
+            
+            <!-- Lead Source Badge -->
+            <div class="hero-chat-step flex items-center justify-center opacity-0">
+              <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-[10px] font-mono text-slate-400">
+                Incoming from Instagram Reel Comment &bull; 11:42 PM
+              </span>
+            </div>
+
+            <!-- Customer Bubble -->
+            <div class="hero-chat-step flex justify-end opacity-0">
+              <div class="rounded-2xl rounded-tr-sm bg-slate-800 text-slate-100 p-3.5 max-w-[85%] border border-white/10 shadow-sm">
+                <p class="text-[13px] leading-relaxed">
+                  "Hey! Loved your reel. Do you have the Emerald Velvet Kurta in Size L? Can you deliver to Delhi by Friday?"
+                </p>
+              </div>
+            </div>
+
+            <!-- Agent AI Bubble -->
+            <div class="hero-chat-step flex justify-start opacity-0">
+              <div class="rounded-2xl rounded-tl-sm bg-[#0d2226] text-emerald-100 p-4 max-w-[92%] border border-emerald-500/25 shadow-lg">
+                <div class="flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 mb-1.5 font-mono">
+                  <span>⚡ AI Sales Agent</span>
+                  <span class="text-slate-400 font-normal">&bull; Instant reply</span>
+                </div>
+                
+                <p class="text-[13px] text-slate-200 leading-relaxed mb-3">
+                  "Hey! Yes, we have <strong>2 units left in Size L</strong>. Express delivery to Delhi arrives in 48 hours (Thursday)! ✨"
+                </p>
+
+                <!-- In-Chat 1-Click Order Card -->
+                <div class="hero-pay-card rounded-xl bg-slate-950/80 p-3 border border-emerald-500/30 flex items-center justify-between gap-3 shadow-inner">
+                  <div>
+                    <p class="font-bold text-white text-xs">Emerald Velvet Kurta (L)</p>
+                    <p class="text-[11px] text-emerald-400 font-mono font-semibold">₹2,899 &bull; Free Express Delivery</p>
+                  </div>
+                  <div class="rounded-lg bg-[#25D366] text-slate-950 px-3 py-2 text-xs font-bold shrink-0 shadow-[0_0_15px_rgba(37,211,102,0.3)]">
+                    Pay ₹2,899 &rarr;
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conversion Success Badge -->
+            <div class="hero-chat-step hero-success-badge rounded-xl bg-emerald-500/10 border border-emerald-500/20 p-2.5 flex items-center justify-between text-[11px] font-mono opacity-0">
+              <div class="flex items-center gap-2 text-emerald-300 font-semibold">
+                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                <span>Payment Received via UPI</span>
+              </div>
+              <span class="text-slate-400">Closed in 85s</span>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-</style>
 
 <script>
   import { gsap } from "gsap";
@@ -115,20 +175,34 @@
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 
-    // We wait a tiny bit to ensure tilt scripts have initialized
-    setTimeout(() => {
-      const tl = gsap.timeline();
+    // 1. Text & CTAs pop in fast and crisp (no floaty lag)
+    const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.fromTo([".hero-eyebrow", ".hero-title", ".hero-text", ".hero-ctas"],
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out" }
-      );
+    heroTl
+      .fromTo(".hero-title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 })
+      .fromTo(".hero-text", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.35")
+      .fromTo(".hero-ctas", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.3")
+      .fromTo(".hero-mockup", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4");
 
-      tl.fromTo(".hero-mockup",
-        { opacity: 0, y: 40, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power4.out" },
-        "-=0.6"
+    // 2. Purposeful Chat Stagger showing the real 90-second sale story
+    const chatSteps = gsap.utils.toArray<HTMLElement>(".hero-chat-step");
+    if (chatSteps.length > 0) {
+      chatSteps.forEach((step, idx) => {
+        heroTl.fromTo(
+          step,
+          { opacity: 0, y: 15, scale: 0.97 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" },
+          `+=${idx === 0 ? 0.1 : 0.25}`
+        );
+      });
+
+      // Subtle pulse on the completed payment card to draw the eye to the closed sale
+      heroTl.fromTo(
+        ".hero-success-badge",
+        { boxShadow: "0 0 0 0 rgba(16, 185, 129, 0.4)" },
+        { boxShadow: "0 0 20px 4px rgba(16, 185, 129, 0.25)", duration: 0.8, yoyo: true, repeat: 1, ease: "sine.inOut" }
       );
-    }, 50);
+    }
   });
 </script>
+

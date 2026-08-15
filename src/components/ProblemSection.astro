@@ -1,47 +1,47 @@
 ---
 const painPoints = [
   {
-    code: "P01",
-    title: "Stock questions wait",
-    description: "Shoppers need sizing, material, or availability answers before they buy.",
-    tone: "text-rose-300 border-rose-500/15 bg-rose-500/8",
+    code: "LEAK 01",
+    title: "11 PM DM Leads Go Cold",
+    description: "40%+ of social shopping happens at night. By the time human reps reply the next morning, impulse buyers have already purchased elsewhere.",
+    tone: "text-rose-400 border-rose-500/20 bg-rose-500/10",
   },
   {
-    code: "P02",
-    title: "Cart follow-ups lag",
-    description: "High-intent buyers leave while the team is still catching up.",
-    tone: "text-amber-300 border-amber-500/15 bg-amber-500/8",
+    code: "LEAK 02",
+    title: "Viral Reel Comment Backlog",
+    description: "A reel hits 50k views and generates 400 'Price please' comments. Manual teams take 8 hours to DM them, losing 85% of warm intent.",
+    tone: "text-amber-400 border-amber-500/20 bg-amber-500/10",
   },
   {
-    code: "P03",
-    title: "Old stock stays idle",
-    description: "Clearance ideas exist, but campaign setup keeps getting delayed.",
-    tone: "text-slate-300 border-white/10 bg-white/[0.035]",
+    code: "LEAK 03",
+    title: "Rigid Flowchart Chatbot Fatigue",
+    description: "Tools like Wati force buyers through robotic 'Press 1' menus. Shoppers want to ask about sizing, custom colors, and delivery timelines.",
+    tone: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
   },
   {
-    code: "P04",
-    title: "Upsells get missed",
-    description: "The right add-on is obvious only after the moment has passed.",
-    tone: "text-teal-300 border-teal-500/15 bg-teal-500/8",
+    code: "LEAK 04",
+    title: "Drop-off at External Checkout Links",
+    description: "Sending customers a website link breaks the conversational vibe. 70% of shoppers drop off rather than navigating a browser checkout.",
+    tone: "text-indigo-400 border-indigo-500/20 bg-indigo-500/10",
   },
   {
-    code: "P05",
-    title: "Campaigns need prep",
-    description: "Useful follow-ups still depend on exports, filters, and manual checks.",
-    tone: "text-indigo-300 border-indigo-500/15 bg-indigo-500/8",
+    code: "LEAK 05",
+    title: "Expensive Rep Churn & Errors",
+    description: "Hiring 2-3 chat reps means endless training, manual bank detail errors, and missed upsells when chat queues spike.",
+    tone: "text-teal-400 border-teal-500/20 bg-teal-500/10",
   },
   {
-    code: "P06",
-    title: "Leaks stay hidden",
-    description: "Teams see missed revenue later, not when there is still time to act.",
-    tone: "text-red-300 border-red-500/15 bg-red-500/8",
+    code: "LEAK 06",
+    title: "High COD Return Rates (RTO)",
+    description: "Orders placed without real-time address validation or conversational confirmation result in 30%+ failed delivery returns.",
+    tone: "text-red-400 border-red-500/20 bg-red-500/10",
   },
 ];
 ---
 
 <section
   id="problem"
-  class="section-band-quiet relative overflow-hidden py-20 lg:py-24"
+  class="section-band-quiet relative overflow-hidden py-20 lg:py-28"
 >
   <div
     class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
@@ -51,31 +51,30 @@ const painPoints = [
   <div class="page-shell">
     <div class="problem-header max-w-3xl opacity-0">
       <div class="chip mb-5">
-        <span class="mini-label">The Growth Trap</span>
+        <span class="mini-label">The Social Commerce Trap</span>
       </div>
       <h2 class="section-title text-white">
-        Growing stores hit an <span class="gradient-text-anim">operations wall</span>
+        Where D2C brands <span class="gradient-text-anim">lose 50%+ of social revenue</span>
       </h2>
       <p class="section-copy mt-5 max-w-2xl text-slate-300">
-        More shoppers. More edge cases. More missed follow-ups. Eventually, the
-        team cannot act fast enough without adding more people.
+        You spend lakhs driving Instagram traffic, but your manual chat reps and rigid button chatbots cannot close buyers in the exact moment they want to purchase.
       </p>
     </div>
 
-    <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {
-        painPoints.map((point, index) => (
+        painPoints.map((point) => (
           <article
-            class={`problem-card spotlight rounded-2xl border border-white/10 bg-[#101b2b]/78 p-5 shadow-[0_20px_60px_-48px_rgba(0,0,0,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-slate-400/25 opacity-0`}
+            class={`problem-card spotlight rounded-2xl border border-white/10 bg-[#0c1524]/85 p-6 shadow-[0_20px_60px_-48px_rgba(0,0,0,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/30 opacity-0`}
           >
             <div class="mb-5 flex items-center justify-between gap-4">
-              <span class="font-mono text-xs font-semibold text-slate-500">
+              <span class="font-mono text-xs font-bold text-slate-400">
                 {point.code}
               </span>
               <span
                 class={`rounded border px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em] ${point.tone}`}
               >
-                Signal
+                Revenue Leak
               </span>
             </div>
 
@@ -102,25 +101,34 @@ const painPoints = [
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 
-    // Unique animation for ProblemSection: Staggered rotateX and Y slide
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#problem",
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play reverse play reverse"
+        start: "top 78%",
       }
     });
 
-    tl.fromTo(".problem-header", 
-      { opacity: 0, y: 50, rotateX: -15 },
-      { opacity: 1, y: 0, rotateX: 0, duration: 0.8, ease: "power3.out" }
-    );
-
-    tl.fromTo(".problem-card",
-      { opacity: 0, y: 40, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1, ease: "back.out(1.2)" },
-      "-=0.4"
+    tl.fromTo(
+      ".problem-header",
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }
+    )
+    .fromTo(
+      ".problem-card",
+      { opacity: 0, y: 30, filter: "blur(4px)" },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 0.5,
+        stagger: {
+          grid: [2, 3],
+          from: "start",
+          amount: 0.35,
+        },
+        ease: "power2.out",
+      },
+      "-=0.3"
     );
   });
 </script>

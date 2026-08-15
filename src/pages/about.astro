@@ -55,24 +55,25 @@ const principles = [
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div class="abt-hero-text opacity-0">
-            <div class="chip">Our Vision</div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              Our Mission
+            </div>
             <h1
-              class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl"
+              class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl font-heading"
             >
-              Shopify teams need AI that knows when to ask first.
+              Building the autonomous closer for social commerce.
             </h1>
-            <p class="section-copy mt-6 max-w-xl">
-              VoluChat helps growing Shopify brands turn repeated product
-              questions, abandoned carts, stock pressure, and customer
-              follow-ups into AI-recommended workflows your team can approve.
+            <p class="section-copy mt-6 max-w-xl text-slate-300">
+              Online shopping in India and global D2C has moved to Instagram and WhatsApp. VoluChat provides the 24/7 intelligent sales agent that ensures no buyer inquiry goes unanswered and every warm lead is closed into a paid order.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/contact" class="btn-primary">Book a workflow demo</a>
-              <a href="/features" class="btn-secondary">Explore features</a>
+              <a href="/contact" class="btn-primary">Apply for Pilot Cohort &rarr;</a>
+              <a href="/#how-it-works" class="btn-secondary">Explore the Engine</a>
             </div>
           </div>
 
-          <div class="abt-hero-image opacity-0 solid-card p-3">
+          <div class="abt-hero-image opacity-0 solid-card p-3 border-emerald-500/20 bg-[#09131f]">
             <img
               src="/about_hero.webp"
               alt="VoluChat workspace for commerce agents"
@@ -90,30 +91,41 @@ const principles = [
     <section class="abt-believe-section section-pad relative overflow-hidden">
       <div class="page-shell">
         <div class="abt-believe-text opacity-0 mx-auto max-w-3xl text-center">
-          <p class="section-eyebrow">What we believe</p>
-          <h2 class="section-title mt-4">
-            AI should help operators move faster, not take judgment away.
+          <p class="section-eyebrow text-emerald-400">What we believe</p>
+          <h2 class="section-title mt-4 text-white font-heading">
+            Speed and conversational depth close sales. Not rigid bot menus.
           </h2>
-          <p class="section-copy mx-auto mt-5 max-w-2xl">
-            The best use of AI in commerce is not a chatbot that sounds clever.
-            It is a system that spots the next useful action, explains the
-            reasoning, and keeps the team in control.
+          <p class="section-copy mx-auto mt-5 max-w-2xl text-slate-300">
+            Social shoppers buy on impulse. When they ask about sizing, custom delivery dates, or COD at 11 PM, an instant intelligent answer is the difference between a ₹3,000 checkout and a lost customer.
           </p>
         </div>
 
         <div class="mt-12 grid gap-5 md:grid-cols-3">
           {
-            principles.map((item, index) => (
+            [
+              {
+                title: "Speed is Conversion",
+                text: "Replying to an Instagram Reel comment in 2 seconds delivers 8x higher conversion than replying the next morning.",
+              },
+              {
+                title: "Zero Bot Hallucinations",
+                text: "The AI understands live Shopify variant stock, accurate delivery pincodes, and strict margin rules without making false promises.",
+              },
+              {
+                title: "10x Value Standard",
+                text: "We don't charge for software that sits idle. We provide white-glove setup and guarantee measurable revenue lift for every store.",
+              },
+            ].map((item, index) => (
               <article
-                class="abt-believe-card opacity-0 solid-card"
+                class="abt-believe-card opacity-0 solid-card border-white/10 bg-[#0c1626]/90 p-7"
               >
-                <span class="grid h-10 w-10 place-items-center rounded-full bg-teal-500 font-mono text-xs font-semibold text-white">
+                <span class="grid h-10 w-10 place-items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 font-mono text-xs font-bold text-emerald-300">
                   0{index + 1}
                 </span>
                 <h3 class="mt-6 text-xl font-heading font-semibold text-white">
                   {item.title}
                 </h3>
-                <p class="mt-4 text-base font-medium leading-relaxed text-slate-300">
+                <p class="mt-4 text-sm font-medium leading-relaxed text-slate-300">
                   {item.text}
                 </p>
               </article>
@@ -126,7 +138,7 @@ const principles = [
     <section class="abt-founder-section relative pb-28">
       <div class="page-shell">
         <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div class="abt-founder-image opacity-0 solid-card p-3">
+          <div class="abt-founder-image opacity-0 solid-card p-3 border-emerald-500/20 bg-[#09131f]">
             <img
               src="/mission_collaboration.webp"
               alt="Configuring ecommerce agent workflows"
@@ -139,31 +151,25 @@ const principles = [
           </div>
 
           <div class="abt-founder-text opacity-0">
-            <p class="section-eyebrow">Founder note</p>
+            <p class="section-eyebrow text-emerald-400">Founder commitment</p>
             <h2
               class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white sm:text-5xl"
             >
-              We are building for the work that happens between tools.
+              "I will deliver 10x the value of what we charge. Anything less is unacceptable."
             </h2>
             <p
-              class="mt-5 text-base font-semibold leading-relaxed text-slate-300"
+              class="mt-5 text-base font-medium leading-relaxed text-slate-300"
             >
-              Most revenue leaks are not dramatic. They happen when a shopper
-              waits too long for an answer, a cart follow-up never goes out, or
-              old inventory needs attention but nobody has time to build the
-              campaign. VoluChat exists to catch those moments and turn them
-              into clear, approved next steps.
+              As a founder, I saw merchants spending lakhs on Meta ads, only to watch 50%+ of their customer intent leak away because manual sales reps were offline or overwhelmed. VoluChat exists to turn social media DMs into a 24/7 autonomous cash-register.
             </p>
             <div
-              class="mt-8 rounded-xl border border-teal-300/20 bg-teal-300/10 p-6"
+              class="mt-8 rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-6"
             >
-              <p class="text-lg font-semibold leading-relaxed text-slate-200">
-                "Commerce teams do not need AI making unchecked decisions. They
-                need AI that can read the store context, recommend the right
-                action, and show why it is safe to approve."
+              <p class="text-base font-semibold leading-relaxed text-slate-200">
+                "For our initial 10 pilot stores, my team and I personally handle 100% of the Meta setup, catalog synchronization, and live closer tuning."
               </p>
-              <p class="mt-5 text-sm font-semibold text-teal-200">
-                Vaibhav Goyal, Founder
+              <p class="mt-4 text-sm font-bold text-emerald-300 font-mono">
+                Vaibhav Goyal &bull; Founder, VoluChat
               </p>
             </div>
           </div>
