@@ -1,5 +1,6 @@
 ---
 import AgentDetailPage from "../../components/AgentDetailPage.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
 const workflow = [
   {
@@ -46,11 +47,26 @@ const relatedLinks = [
   { label: "Upsell & Bundle Agent", href: "/agents/upsell" },
   { label: "Cart Recovery Agent", href: "/agents/cart-recovery" },
 ];
+const siteUrl = "https://www.voluchat.com";
+const agentStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Customer Follow-up Agent",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: new URL("/agents/customer-follow-up/", siteUrl).toString(),
+  description:
+    "Use VoluChat's Customer Follow-up Agent to automate post-purchase check-ins, reviews, replenishment prompts, and retention workflows.",
+};
 ---
 
 <AgentDetailPage
   seoTitle="AI Customer Follow-up Agent for Shopify | VoluChat"
   seoDescription="Use VoluChat's Customer Follow-up Agent to automate post-purchase check-ins, reviews, replenishment prompts, and retention workflows."
+  keywords="Shopify customer follow-up, post-purchase automation, customer retention agent, Shopify review agent, repeat purchase"
+  canonical={new URL("/agents/customer-follow-up", siteUrl).toString()}
+  structuredData={agentStructuredData}
+  faqSchema={getFaqSchema()}
   title="Customer Follow-up Agent."
   description="Turn post-purchase moments into retention workflows with an agent that checks in, detects problems, asks for reviews, and recommends the next useful purchase."
   heroSignal="An order was delivered three days ago and the customer has no open support ticket."

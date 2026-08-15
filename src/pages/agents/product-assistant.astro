@@ -1,5 +1,6 @@
 ---
 import AgentDetailPage from "../../components/AgentDetailPage.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
 const workflow = [
   {
@@ -46,11 +47,26 @@ const relatedLinks = [
   { label: "Upsell & Bundle Agent", href: "/agents/upsell" },
   { label: "Shopify Integration", href: "/integrations/shopify" },
 ];
+const siteUrl = "https://www.voluchat.com";
+const agentStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Product Assistant",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: new URL("/agents/product-assistant/", siteUrl).toString(),
+  description:
+    "Use VoluChat's AI Product Assistant to answer sizing, stock, pricing, policy, and buying questions from live Shopify data.",
+};
 ---
 
 <AgentDetailPage
   seoTitle="AI Product Assistant for Ecommerce | VoluChat"
   seoDescription="Use VoluChat's AI Product Assistant to answer sizing, stock, pricing, policy, and buying questions from live Shopify data."
+  keywords="Shopify product assistant, AI product questions, ecommerce product assistant, Shopify catalog AI, product Q&A agent"
+  canonical={new URL("/agents/product-assistant", siteUrl).toString()}
+  structuredData={agentStructuredData}
+  faqSchema={getFaqSchema()}
   title="AI Product Assistant."
   description="Give every shopper a catalog-aware sales assistant that can answer product questions, compare options, reduce buying hesitation, and escalate the right conversations to your team."
   heroSignal="A shopper is comparing two variants and asks if the larger size is available for delivery this week."

@@ -4,6 +4,14 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 const lastUpdated = "June 30, 2026";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Terms & Conditions | VoluChat",
+  description: "VoluChat terms for ecommerce reply automation, connected social channels, and product conversation workflows.",
+  url: siteUrl,
+};
 
 const sections = [
   {
@@ -106,6 +114,9 @@ const sections = [
 <Layout
   title="Terms & Conditions | VoluChat"
   description="VoluChat terms for ecommerce reply automation, connected social channels, and product conversation workflows."
+  keywords="VoluChat terms, Shopify AI terms, commerce agent terms, AI service terms, merchant responsibilities"
+  canonical={new URL("/terms", siteUrl).toString()}
+  structuredData={structuredData}
 >
   <Navbar />
 

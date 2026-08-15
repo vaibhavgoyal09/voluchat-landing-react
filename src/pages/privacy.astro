@@ -4,6 +4,14 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 const lastUpdated = "June 30, 2026";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Privacy Policy | VoluChat",
+  description: "VoluChat privacy policy for ecommerce reply automation, connected social channels, and buyer conversation data.",
+  url: siteUrl,
+};
 
 const sections = [
   {
@@ -86,6 +94,9 @@ const sections = [
 <Layout
   title="Privacy Policy | VoluChat"
   description="VoluChat privacy policy for ecommerce reply automation, connected social channels, and buyer conversation data."
+  keywords="VoluChat privacy, Shopify privacy policy, AI privacy, ecommerce data privacy, customer data protection"
+  canonical={new URL("/privacy", siteUrl).toString()}
+  structuredData={structuredData}
 >
   <Navbar />
 

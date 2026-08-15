@@ -20,10 +20,23 @@ const {
   useCases = [],
   guardrails = [],
   relatedLinks = [],
+  keywords,
+  canonical,
+  structuredData,
+  faqSchema,
 } = Astro.props;
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={keywords}
+  canonical={canonical}
+  structuredData={[
+    ...(Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : []),
+    ...(faqSchema ? [faqSchema] : []),
+  ]}
+>
   <Header />
 
   <main class="pt-20">

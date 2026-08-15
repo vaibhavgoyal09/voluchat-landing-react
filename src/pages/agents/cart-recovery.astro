@@ -1,5 +1,6 @@
 ---
 import AgentDetailPage from "../../components/AgentDetailPage.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
 const workflow = [
   {
@@ -46,11 +47,26 @@ const relatedLinks = [
   { label: "Product Assistant", href: "/agents/product-assistant" },
   { label: "Customer Follow-up Agent", href: "/agents/customer-follow-up" },
 ];
+const siteUrl = "https://www.voluchat.com";
+const agentStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Cart Recovery Agent",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: new URL("/agents/cart-recovery/", siteUrl).toString(),
+  description:
+    "Recover abandoned carts with VoluChat's AI Cart Recovery Agent, built for conversational follow-up, objection handling, and margin-safe offers.",
+};
 ---
 
 <AgentDetailPage
   seoTitle="AI Cart Recovery Agent for Shopify | VoluChat"
   seoDescription="Recover abandoned carts with VoluChat's AI Cart Recovery Agent, built for conversational follow-up, objection handling, and margin-safe offers."
+  keywords="Shopify cart recovery, AI cart recovery, abandoned cart agent, Shopify checkout recovery, revenue recovery"
+  canonical={new URL("/agents/cart-recovery", siteUrl).toString()}
+  structuredData={agentStructuredData}
+  faqSchema={getFaqSchema()}
   title="AI Cart Recovery Agent."
   description="Recover abandoned carts with an agent that understands why shoppers hesitated, answers the blocker, and uses approved incentives only when the sale needs help."
   heroSignal="A returning customer leaves a high-margin cart after asking whether delivery will arrive before the weekend."

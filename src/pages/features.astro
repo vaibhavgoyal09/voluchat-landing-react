@@ -3,10 +3,21 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
 
 const seoTitle = "Shopify AI Agents: Features and Workflows | VoluChat";
 const seoDescription =
   "See how VoluChat's Shopify AI agents detect revenue leaks, recover carts, answer product questions, recommend upsells, and run approved workflows.";
+const seoKeywords =
+  "Shopify AI agent features, commerce agent workflows, cart recovery, product assistant, upsell agent, Shopify automation features";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: siteUrl,
+};
 
 const operatingLoop = [
   {
@@ -95,7 +106,13 @@ const guardrails = [
 ];
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/features", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
   <Header />
 
   <main class="pt-20">
@@ -127,8 +144,8 @@ const guardrails = [
               approved workflows through conversational agents.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <a href="/contact" class="btn-primary">Book Demo</a>
-              <a href="/compare" class="btn-secondary">Compare tools</a>
+              <a href="/contact" class="btn-primary">Book Demo</a>
+              <a href="/compare" class="btn-secondary">Compare with chatbots and helpdesks</a>
             </div>
           </div>
 

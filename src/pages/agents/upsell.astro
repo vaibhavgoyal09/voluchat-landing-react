@@ -1,5 +1,6 @@
 ---
 import AgentDetailPage from "../../components/AgentDetailPage.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
 const workflow = [
   {
@@ -46,11 +47,26 @@ const relatedLinks = [
   { label: "Inventory Clearance Agent", href: "/agents/inventory-clearance" },
   { label: "Cart Recovery Agent", href: "/agents/cart-recovery" },
 ];
+const siteUrl = "https://www.voluchat.com";
+const agentStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Upsell & Bundle Agent",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: new URL("/agents/upsell/", siteUrl).toString(),
+  description:
+    "Increase average order value with VoluChat's AI Upsell Agent, built for relevant add-ons, bundles, and upgrade recommendations in chat.",
+};
 ---
 
 <AgentDetailPage
   seoTitle="AI Upsell and Bundle Agent for Shopify | VoluChat"
   seoDescription="Increase average order value with VoluChat's AI Upsell Agent, built for relevant add-ons, bundles, and upgrade recommendations in chat."
+  keywords="Shopify upsell agent, AI bundles, conversational upsell, Shopify AOV, order value optimization"
+  canonical={new URL("/agents/upsell", siteUrl).toString()}
+  structuredData={agentStructuredData}
+  faqSchema={getFaqSchema()}
   title="Conversational Upsell Agent."
   description="Increase order value with recommendations that feel like useful buying guidance, not a generic pop-up or forced post-purchase offer."
   heroSignal="A shopper is buying a skincare product and asks how long the bottle usually lasts."

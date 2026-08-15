@@ -8,6 +8,19 @@ import {
   getBlogApiBaseUrl,
 } from "../../lib/blogApi.mjs";
 
+const seoTitle = "VoluChat Blog | Ecommerce sales team automation guides";
+const seoDescription =
+  "Guides for ecommerce sales teams that want faster product replies across Instagram, Facebook Pages, and WhatsApp workflows.";
+const seoKeywords =
+  "Shopify AI blog, ecommerce automation guides, sales team automation, Shopify product replies, AI commerce guides";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: siteUrl,
+};
 const apiUrl = getBlogApiBaseUrl(import.meta.env);
 let blogs: any = [];
 let error: string | null = null;
@@ -21,8 +34,11 @@ try {
 ---
 
 <Layout
-  title="VoluChat Blog | Ecommerce sales team automation guides"
-  description="Guides for ecommerce sales teams that want faster product replies across Instagram, Facebook Pages, and WhatsApp workflows."
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/blog", siteUrl).toString()}
+  structuredData={structuredData}
 >
   <Navbar />
 

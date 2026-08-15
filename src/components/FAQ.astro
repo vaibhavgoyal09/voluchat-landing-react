@@ -1,4 +1,6 @@
 ---
+import { getFaqSchema } from "../lib/faqSchema.mjs";
+
 const {
   pricingAnswer = "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs.",
 } = Astro.props;
@@ -35,19 +37,8 @@ const faqs = [
   },
 ];
 
-const faqStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
 ---
+
 
 <section
   id="faq"
@@ -108,11 +99,6 @@ const faqStructuredData = {
 
   </div>
 </section>
-
-<script
-  type="application/ld+json"
-  set:html={JSON.stringify(faqStructuredData)}
-/>
 
 <style>
   .faq-item.active {

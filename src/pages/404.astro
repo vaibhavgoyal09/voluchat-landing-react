@@ -18,6 +18,14 @@ const recoveryLinks = [
   title="Page not found | VoluChat"
   description="The VoluChat page you opened is missing or has moved. Return home, compare pricing, or contact support."
   robots="noindex, follow"
+  canonical={new URL("/404", siteUrl).toString()}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Page not found | VoluChat",
+    description: "The VoluChat page you opened is missing or has moved.",
+    url: siteUrl,
+  }}
 >
   <Header />
 

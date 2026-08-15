@@ -2,23 +2,25 @@ import { fetchPublishedBlogPosts, getBlogApiBaseUrl } from "../lib/blogApi.mjs";
 
 const DEFAULT_SITE_ORIGIN = "https://www.voluchat.com";
 const SITEMAP_BLOG_LIMIT = 100;
-const STATIC_LASTMOD = "2026-06-24";
+const STATIC_LASTMOD = new Date().toISOString().split("T")[0];
 const STATIC_ROUTES = [
   { path: "/", priority: "1.0" },
-  { path: "/features/", priority: "0.8" },
-  { path: "/pricing/", priority: "0.8" },
-  { path: "/compare/", priority: "0.8" },
-  { path: "/about/", priority: "0.7" },
-  { path: "/security/", priority: "0.7" },
-  { path: "/blog/", priority: "0.6" },
-  { path: "/contact/", priority: "0.9" },
-  { path: "/agents/product-assistant/", priority: "0.8" },
-  { path: "/agents/cart-recovery/", priority: "0.8" },
-  { path: "/agents/upsell/", priority: "0.8" },
-  { path: "/agents/customer-follow-up/", priority: "0.8" },
-  { path: "/agents/inventory-clearance/", priority: "0.8" },
-  { path: "/agents/revenue-leak-detection/", priority: "0.8" },
-  { path: "/integrations/shopify/", priority: "0.8" },
+  { path: "/features", priority: "0.8" },
+  { path: "/pricing", priority: "0.8" },
+  { path: "/compare", priority: "0.8" },
+  { path: "/about", priority: "0.7" },
+  { path: "/security", priority: "0.7" },
+  { path: "/blog", priority: "0.6" },
+  { path: "/contact", priority: "0.9" },
+  { path: "/privacy", priority: "0.5" },
+  { path: "/terms", priority: "0.5" },
+  { path: "/agents/product-assistant", priority: "0.8" },
+  { path: "/agents/cart-recovery", priority: "0.8" },
+  { path: "/agents/upsell", priority: "0.8" },
+  { path: "/agents/customer-follow-up", priority: "0.8" },
+  { path: "/agents/inventory-clearance", priority: "0.8" },
+  { path: "/agents/revenue-leak-detection", priority: "0.8" },
+  { path: "/integrations/shopify", priority: "0.8" },
 ];
 
 export async function GET({ site }) {

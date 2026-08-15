@@ -3,10 +3,21 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
 
 const seoTitle = "Shopify AI Agent Pricing | VoluChat";
 const seoDescription =
   "Request VoluChat pricing for Shopify AI agents. Pricing is tailored by agent scope, catalog complexity, integrations, workflow volume, and guardrails.";
+const seoKeywords =
+  "Shopify AI agent pricing, custom AI pricing, commerce agent cost, Shopify automation pricing, AI agent ROI";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: siteUrl,
+};
 
 const pricingFactors = [
   {
@@ -48,7 +59,13 @@ const pricingAnswer =
   "VoluChat uses closed, tailored pricing. We quote each store after reviewing catalog complexity, agent scope, integrations, expected workflow volume, guardrail requirements, and launch support needs.";
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/pricing", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema(pricingAnswer)]}
+>
   <Header />
 
   <main class="pt-20">

@@ -10,6 +10,7 @@ import TrustSection from "../components/TrustSection.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
 import FounderNoteSection from "../components/FounderNoteSection.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
 
 export const prerender = true;
 
@@ -81,7 +82,8 @@ const structuredData = [
   title={seoTitle}
   description={seoDescription}
   keywords={seoKeywords}
-  structuredData={structuredData}
+  canonical={new URL("/", siteUrl).toString()}
+  structuredData={[...structuredData, getFaqSchema()]}
 >
   <Navbar />
 

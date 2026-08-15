@@ -3,6 +3,21 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
+
+const seoTitle = "About VoluChat | Shopify AI Agents";
+const seoDescription =
+  "Learn why VoluChat builds Shopify AI agents for cart recovery, product questions, upsells, inventory workflows, and revenue recovery.";
+const seoKeywords =
+  "VoluChat about, Shopify AI company, commerce agents founder, AI automation team, Shopify AI agents";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: siteUrl,
+};
 
 const principles = [
   {
@@ -21,8 +36,11 @@ const principles = [
 ---
 
 <Layout
-  title="About VoluChat | Shopify AI Agents"
-  description="Learn why VoluChat builds Shopify AI agents for cart recovery, product questions, upsells, inventory workflows, and revenue recovery."
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/about", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
 >
   <Header />
 

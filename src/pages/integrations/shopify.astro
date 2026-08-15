@@ -3,13 +3,30 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
 const seoTitle = "Shopify AI Agent Integration | VoluChat";
 const seoDescription =
   "Connect Shopify to VoluChat so AI agents can use product, variant, inventory, cart, and order data for accurate revenue workflows.";
+const seoKeywords =
+  "Shopify AI integration, Shopify AI agents, Shopify automation, commerce agent integration, Shopify catalog AI";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: siteUrl,
+};
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/integrations/shopify", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
   <Header />
 
   <main class="overflow-hidden">

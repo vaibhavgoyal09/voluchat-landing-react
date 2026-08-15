@@ -1,5 +1,6 @@
 ---
 import AgentDetailPage from "../../components/AgentDetailPage.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
 const workflow = [
   {
@@ -46,11 +47,26 @@ const relatedLinks = [
   { label: "Upsell & Bundle Agent", href: "/agents/upsell" },
   { label: "Shopify Integration", href: "/integrations/shopify" },
 ];
+const siteUrl = "https://www.voluchat.com";
+const agentStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Inventory Clearance Agent",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: new URL("/agents/inventory-clearance/", siteUrl).toString(),
+  description:
+    "Move slow inventory with VoluChat's AI Inventory Clearance Agent using targeted offers, margin rules, and Shopify stock context.",
+};
 ---
 
 <AgentDetailPage
   seoTitle="AI Inventory Clearance Agent for Shopify | VoluChat"
   seoDescription="Move slow inventory with VoluChat's AI Inventory Clearance Agent using targeted offers, margin rules, and Shopify stock context."
+  keywords="Shopify inventory clearance, slow stock agent, inventory agent, Shopify stock management, clearance automation"
+  canonical={new URL("/agents/inventory-clearance", siteUrl).toString()}
+  structuredData={agentStructuredData}
+  faqSchema={getFaqSchema()}
   title="Inventory Clearance Agent."
   description="Turn slow stock into targeted, controlled offers that reach the right shoppers without making your whole store feel permanently discounted."
   heroSignal="A jacket variant has aged past your stock threshold while shoppers keep browsing similar products."

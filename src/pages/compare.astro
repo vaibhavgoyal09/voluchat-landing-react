@@ -3,10 +3,21 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
 
 const seoTitle = "VoluChat vs Shopify Chatbots and Helpdesks";
 const seoDescription =
   "Compare VoluChat with Shopify chatbot builders, helpdesks, and analytics tools for cart recovery, product questions, upsells, and revenue workflows.";
+const seoKeywords =
+  "VoluChat comparison, Shopify chatbot vs agent, helpdesk alternative, commerce AI comparison, Shopify automation tools";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: siteUrl,
+};
 
 const competitors = [
   {
@@ -57,7 +68,13 @@ const setupComparison = [
 ];
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
   <Header />
 
   <main class="pt-20">

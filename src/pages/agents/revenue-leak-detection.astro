@@ -1,5 +1,6 @@
 ---
 import AgentDetailPage from "../../components/AgentDetailPage.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
 const workflow = [
   {
@@ -46,11 +47,26 @@ const relatedLinks = [
   { label: "Inventory Clearance Agent", href: "/agents/inventory-clearance" },
   { label: "Product Assistant", href: "/agents/product-assistant" },
 ];
+const siteUrl = "https://www.voluchat.com";
+const agentStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Revenue Leak Detection Agent",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: new URL("/agents/revenue-leak-detection/", siteUrl).toString(),
+  description:
+    "Find and fix ecommerce revenue leaks with VoluChat's agent for abandoned carts, unanswered demand, slow inventory, and operational gaps.",
+};
 ---
 
 <AgentDetailPage
   seoTitle="Revenue Leak Detection Agent for Shopify | VoluChat"
   seoDescription="Find and fix ecommerce revenue leaks with VoluChat's agent for abandoned carts, unanswered demand, slow inventory, and operational gaps."
+  keywords="revenue leak detection, Shopify revenue leaks, ecommerce revenue gaps, cart abandonment analysis, inventory gaps"
+  canonical={new URL("/agents/revenue-leak-detection", siteUrl).toString()}
+  structuredData={agentStructuredData}
+  faqSchema={getFaqSchema()}
   title="Revenue Leak Detection Agent."
   description="Find the places where your store is already creating demand but losing revenue, then route each opportunity to the right agent workflow."
   heroSignal="Multiple shoppers ask about delivery and leave carts in the same product category."

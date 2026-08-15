@@ -3,8 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const lastUpdated = "June 24, 2026";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Security & Guardrails | VoluChat AI Commerce Agents",
+  description: "See how VoluChat gives Shopify brands control over AI commerce agents with scoped access, approval workflows, margin rules, and reviewable action history.",
+  url: siteUrl,
+};
 
 const safeguards = [
   {
@@ -30,6 +38,8 @@ const safeguards = [
   title="Security & Guardrails | VoluChat AI Commerce Agents"
   description="See how VoluChat gives Shopify brands control over AI commerce agents with scoped access, approval workflows, margin rules, and reviewable action history."
   keywords="commerce agent security, AI guardrails, Shopify data security, human-in-the-loop AI, AI approval workflows"
+  canonical={new URL("/security", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
 >
   <Header />
 

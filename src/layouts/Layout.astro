@@ -20,7 +20,7 @@ interface Props {
 const {
   title,
   description = "VoluChat finds Shopify revenue leaks and deploys controlled AI agents for cart recovery, product questions, upsells, follow-ups, inventory, and revenue workflows.",
-  keywords = "AI commerce agents, commerce agents, Shopify AI agents, ecommerce automation, cart recovery agent, product recommendation agent, customer follow-up agent, VoluChat",
+  keywords,
   image = "/og-image.webp",
   type = "website",
   robots,
@@ -55,6 +55,7 @@ const structuredDataItems = Array.isArray(structuredData)
     {author && <meta name="author" content={author} />}
     <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {keywords && <meta name="keywords" content={keywords} />}
     <link rel="icon" type="image/svg+xml" href="/voluchat_logo.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/voluchat_logo_16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/voluchat_logo_32x32.png" />
@@ -104,7 +105,11 @@ const structuredDataItems = Array.isArray(structuredData)
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:site" content="@voluchat" />
+    <meta name="twitter:creator" content="@voluchat" />
     <meta name="theme-color" content="#0f172a" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     {
       structuredDataItems.map((item) => (
         <script type="application/ld+json" set:html={JSON.stringify(item)} />

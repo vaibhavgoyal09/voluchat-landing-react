@@ -3,14 +3,30 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
 
 const seoTitle = "Book Demo | VoluChat";
 const seoDescription =
   "Find the revenue leaks in your Shopify store. Share your catalog, revenue workflows, and guardrail needs so we can identify the first agents worth deploying.";
-const contactEmailUrl = "mailto:support@voluchat.com";
+const seoKeywords =
+  "Shopify AI demo, book demo, VoluChat contact, Shopify agent review, revenue workflow demo";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: siteUrl,
+};
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/contact", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
   <Header />
 
   <main class="overflow-hidden pt-20">
