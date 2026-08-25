@@ -1,48 +1,158 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Navbar.astro";
+import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "Social Commerce AI Features & Operating Engine | VoluChat";
+const seoTitle = "VoluChat Features | Autonomous Social Commerce & Sales Agent Architecture";
 const seoDescription =
-  "Discover how VoluChat's Autonomous Sales Agent turns Instagram comments into direct WhatsApp orders with instant stock checks, sizing guidance, and native UPI checkout.";
+  "Explore all core features of VoluChat: Comment-to-DM engine, catalog intelligence, autonomous WhatsApp closer, in-chat checkout, and safety guardrails.";
 const seoKeywords =
-  "WhatsApp AI agent features, Instagram DM automation, social commerce operating loop, WhatsApp checkout bot, Shopify D2C AI closer";
+  "VoluChat features, WhatsApp AI sales closer, Instagram DM automation features, Shopify social commerce features, AI sales agent capabilities";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: seoTitle,
   description: seoDescription,
-  url: siteUrl,
+  url: `${siteUrl}/features`,
 };
 
-const operatingLoop = [
+const featureCategories = [
   {
-    step: "01 Capture",
-    title: "Instagram Comment-to-DM Engine",
-    description:
-      "When a shopper comments 'Price?' or 'Available in M?' on your Reels or Ads, VoluChat auto-replies in 2 seconds and slides into DMs with exact pricing.",
+    category: "01 / Lead Capture & Top-of-Funnel",
+    title: "Comment-to-DM & Instant Outreach",
+    desc: "Capture active buyer intent within seconds of public interaction across Instagram and Meta ads.",
+    badge: "Top of Funnel",
+    features: [
+      {
+        icon: "⚡",
+        title: "2-Second Auto DM Dispatch",
+        desc: "Instantly detects buyer comments ('Price?', 'Available?', 'Size M?') on Reels and ads, triggering a direct message before the shopper scrolls away.",
+      },
+      {
+        icon: "🎯",
+        title: "Post & Reel Context Mapping",
+        desc: "The agent understands the exact product SKU, variant, and pricing shown in the specific video or post the shopper commented on.",
+      },
+      {
+        icon: "🔗",
+        title: "Seamless WhatsApp Handoff",
+        desc: "Moves qualified buyers from Instagram DMs directly into your official WhatsApp chat with conversation history preserved.",
+      },
+    ],
   },
   {
-    step: "02 Qualify",
-    title: "Deep Catalog & Sizing Intelligence",
-    description:
-      "Trained on your Shopify catalog. Answers fabric doubts, matching combos, and verifies real-time variant stock before sending the checkout link.",
+    category: "02 / Catalog & Product Advisory",
+    title: "Catalog Intelligence & Sizing Advisory",
+    desc: "Provide real-time product answers grounded in your live Shopify catalog with zero guesswork or hallucinations.",
+    badge: "Catalog Brain",
+    features: [
+      {
+        icon: "📦",
+        title: "Real-Time Shopify Stock Check",
+        desc: "Verifies live variant stock counts before confirming availability. Never sells an out-of-stock size or backordered variant.",
+      },
+      {
+        icon: "📏",
+        title: "Conversational Sizing Guidance",
+        desc: "Answers complex buyer sizing questions, recommends sizing based on height/fit preferences, and shares accurate size charts in-chat.",
+      },
+      {
+        icon: "🧵",
+        title: "Fabric, Care & Styling Advice",
+        desc: "Trained on your product specifications to explain material composition, wash instructions, styling tips, and matching accessories.",
+      },
+    ],
   },
   {
-    step: "03 Close",
-    title: "WhatsApp Autonomous Closer",
-    description:
-      "Transitions the qualified buyer into your official WhatsApp chat, negotiates pre-approved prepaid incentives, and confirms pincode delivery timelines.",
+    category: "03 / Autonomous Closer & Negotiation",
+    title: "WhatsApp Sales Closer Engine",
+    desc: "Autonomous conversational closing that addresses buyer hesitations and seals orders 24/7.",
+    badge: "Sales Closer",
+    features: [
+      {
+        icon: "🌙",
+        title: "24/7 Night-Shift Sales Closer",
+        desc: "Captures and closes the 40%+ of social purchases that happen between 10 PM and 8 AM when human teams are offline.",
+      },
+      {
+        icon: "🏷️",
+        title: "Margin-Safe Incentive Engine",
+        desc: "Strategically offers pre-approved prepaid discounts (e.g. 5–10% off for instant UPI) to incentivize upfront payment and stop abandoned chats.",
+      },
+      {
+        icon: "🚚",
+        title: "Pincode SLA & Delivery Confirmation",
+        desc: "Instantly checks courier delivery feasibility and confirms realistic transit timelines before the customer asks.",
+      },
+    ],
   },
   {
-    step: "04 Settle",
-    title: "In-DM UPI Checkout & Shopify Sync",
-    description:
-      "Generates a 1-click UPI / draft order payment link. Upon settlement, automatically syncs with your Shopify admin and sends tracking directly in WhatsApp.",
+    category: "04 / In-Chat Checkout & Fulfillment",
+    title: "Native Payment & Order Settlement",
+    desc: "Frictionless checkout experience without sending shoppers to external website browsers.",
+    badge: "Checkout & Sync",
+    features: [
+      {
+        icon: "💳",
+        title: "1-Click UPI & Instant Payment Link",
+        desc: "Generates quick UPI / payment links directly inside WhatsApp, allowing buyers to pay in under 90 seconds.",
+      },
+      {
+        icon: "🔄",
+        title: "Automatic Shopify Admin Sync",
+        desc: "Creates paid orders or draft orders in Shopify with customer address and SKU details pre-populated instantly upon settlement.",
+      },
+      {
+        icon: "📍",
+        title: "Automated Tracking & Status Updates",
+        desc: "Pushes real-time order confirmation and courier tracking links directly to the customer's WhatsApp thread.",
+      },
+    ],
+  },
+  {
+    category: "05 / Safety, Control & Analytics",
+    title: "Guardrails & Human-in-the-Loop",
+    desc: "Complete operational control, margin protection, and revenue tracking across every conversation.",
+    badge: "Brand Safety",
+    features: [
+      {
+        icon: "🛡️",
+        title: "Strict Margin Floors & Ceilings",
+        desc: "Hardcoded limits ensure the agent never offers discounts exceeding your predefined maximum margin threshold.",
+      },
+      {
+        icon: "🙋",
+        title: "1-Click Human Handoff",
+        desc: "Detects custom requests, bridal inquiries, or sensitive escalations and immediately alerts human sales reps on WhatsApp.",
+      },
+      {
+        icon: "📊",
+        title: "Direct Revenue Attribution",
+        desc: "Tracks every rupee earned back to the exact Reel, comment, and chat thread that generated the order.",
+      },
+    ],
+  },
+];
+
+const technicalSpecs = [
+  {
+    title: "Meta Cloud API Integration",
+    detail: "Official Meta & WhatsApp Business Cloud API — 100% compliant, zero scraping, no account ban risks.",
+  },
+  {
+    title: "Shopify Webhooks & GraphQL Sync",
+    detail: "Sub-second bidirectional synchronization with Shopify inventory, pricing, variant metadata, and order creation.",
+  },
+  {
+    title: "Sub-2s Response Latency",
+    detail: "High-performance inference pipeline delivers conversational responses in under 2 seconds to maximize buyer impulse.",
+  },
+  {
+    title: "Multi-Agent Workflow Architecture",
+    detail: "Modular agents specialized in capture, sizing advisory, negotiation, and settlement working as a single unified engine.",
   },
 ];
 ---
@@ -54,352 +164,117 @@ const operatingLoop = [
   canonical={new URL("/features", siteUrl).toString()}
   structuredData={[structuredData, getFaqSchema()]}
 >
-  <Header />
+  <Navbar />
 
   <main class="pt-20">
-    <section
-      class="relative isolate overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24"
-    >
+    <!-- Clean Features Header -->
+    <section class="relative overflow-hidden pt-20 pb-14 sm:pt-24 lg:pb-20">
       <div
-        class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_48%,#07111f_100%)]"
-      >
-      </div>
-      <div
-        class="absolute inset-x-0 top-0 -z-10 mx-auto h-[34rem] max-w-5xl bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.18),transparent_58%)]"
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(16,185,129,0.12),transparent_35%),linear-gradient(180deg,rgba(7,18,29,0.98),rgba(6,12,21,0.98))]"
       >
       </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
-        <div class="feat-hero grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div class="feat-hero-text opacity-0">
-            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-              Autonomous Commerce Architecture
-            </div>
-            <h1
-              class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
-            >
-              The 24/7 AI closer for Instagram & WhatsApp.
-            </h1>
-            <p class="section-copy mt-6 max-w-2xl text-slate-300">
-              Stop letting 50%+ of social buyers abandon their carts. VoluChat turns comments into instant DMs, qualifies sizing, and collects native in-chat UPI payments in 90 seconds.
-            </p>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/contact" class="btn-primary">Apply for Pilot Store Setup &rarr;</a>
-              <a href="/compare" class="btn-secondary">Compare vs Wati / Manychat</a>
-            </div>
+        <div class="features-hero-text opacity-0 mx-auto max-w-4xl text-center">
+          <div class="chip mb-4">
+            <span class="mini-label">Platform Capabilities</span>
           </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
+          >
+            Everything you need to <br />
+            <span class="gradient-text-anim">automate social sales.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-2xl text-slate-300">
+            A comprehensive breakdown of VoluChat's autonomous commerce features — from viral comment capture to 90-second WhatsApp checkout and Shopify fulfillment.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="/contact" class="btn-primary">Book a Live Demo &rarr;</a>
+            <a href="/compare" class="btn-secondary">Compare vs Wati / Manychat</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="relative feat-hero-mockup opacity-0">
-            <div
-              class="absolute -inset-4 rounded-[2rem] bg-teal-300/10 blur-3xl"
-            >
-            </div>
-            <div
-              class="relative rounded-[1.75rem] border border-white/10 bg-[#0d192b]/95 p-3 shadow-[0_32px_120px_-56px_rgba(45,212,191,0.55)]"
-            >
-              <div
-                class="rounded-[1.35rem] border border-white/10 bg-[#07111f] p-5 sm:p-6"
-              >
-                <div
-                  class="flex items-center justify-between gap-4 border-b border-white/10 pb-5"
-                >
-                  <div>
-                    <p class="mini-label text-teal-200">Live agent room</p>
-                    <h2 class="mt-2 text-xl font-semibold text-white">
-                      Revenue opportunity detected
-                    </h2>
-                  </div>
-                  <span
-                    class="rounded-full border border-teal-300/25 bg-teal-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100"
-                    >Active</span
-                  >
+    <!-- Feature Categories Breakdown -->
+    <section class="features-list-section relative pb-20 sm:pb-28">
+      <div class="page-shell space-y-14 sm:space-y-20">
+        {
+          featureCategories.map((group) => (
+            <div class="feature-group opacity-0 rounded-[1.75rem] border border-white/10 bg-[#0a1424]/90 p-6 sm:p-10 shadow-[0_24px_80px_-50px_rgba(0,0,0,0.85)] backdrop-blur-md">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-white/10 pb-6 mb-8">
+                <div>
+                  <span class="font-mono text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-1.5">
+                    {group.category}
+                  </span>
+                  <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">
+                    {group.title}
+                  </h2>
                 </div>
+                <span class="w-fit rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1 text-xs font-mono font-bold text-emerald-300">
+                  {group.badge}
+                </span>
+              </div>
 
-                <div class="mt-5 space-y-3">
-                  <div
-                    class="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                  >
-                    <div class="flex items-center justify-between gap-4">
-                      <span class="text-sm font-bold text-slate-200"
-                        >Signal</span
-                      >
-                      <span class="text-xs font-semibold text-slate-400"
-                        >Checkout</span
-                      >
-                    </div>
-                    <p
-                      class="mt-3 text-base font-semibold leading-snug text-white"
-                    >
-                      A repeat buyer abandoned a high-margin cart after asking
-                      about delivery time.
-                    </p>
-                  </div>
+              <p class="text-sm sm:text-base text-slate-300 font-medium mb-8 max-w-3xl">
+                {group.desc}
+              </p>
 
-                  <div class="grid gap-3 sm:grid-cols-2">
-                    <div
-                      class="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                    >
-                      <span class="text-sm font-bold text-slate-200"
-                        >Agent decision</span
-                      >
-                      <p
-                        class="mt-3 text-sm font-medium leading-relaxed text-slate-300"
-                      >
-                        Answer delivery concern and offer the pre-approved
-                        express shipping incentive.
-                      </p>
-                    </div>
-                    <div
-                      class="rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4"
-                    >
-                      <span class="text-sm font-bold text-teal-100"
-                        >Control rule</span
-                      >
-                      <p
-                        class="mt-3 text-sm font-medium leading-relaxed text-slate-200"
-                      >
-                        Offer is allowed because cart margin stays above your
-                        floor.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div
-                    class="rounded-2xl border border-white/10 bg-[#101b2e] p-4"
-                  >
-                    <div
-                      class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
-                    >
-                      <div>
-                        <span class="text-sm font-bold text-slate-200"
-                          >Recommended action</span
-                        >
-                        <p
-                          class="mt-2 text-sm font-medium leading-relaxed text-slate-300"
-                        >
-                          Send recovery message and log attribution.
-                        </p>
+              <div class="grid gap-5 md:grid-cols-3">
+                {group.features.map((feat) => (
+                  <article class="feature-card rounded-2xl border border-white/10 bg-[#07111f] p-6 hover:border-emerald-500/40 hover:bg-[#0d1c2e] transition duration-300 flex flex-col justify-between">
+                    <div>
+                      <div class="h-10 w-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-xl mb-4">
+                        {feat.icon}
                       </div>
-                      <span
-                        class="inline-flex w-fit items-center rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-950"
-                        >Approve</span
-                      >
+                      <h3 class="text-lg font-heading font-bold text-white">
+                        {feat.title}
+                      </h3>
+                      <p class="mt-2.5 text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
+                        {feat.desc}
+                      </p>
                     </div>
-                  </div>
-                </div>
+                  </article>
+                ))}
               </div>
             </div>
-          </div>
-        </div>
+          ))
+        }
       </div>
     </section>
 
-    <section
-      class="feat-loop relative border-y border-white/10 bg-[#081321] py-20 sm:py-24"
-    >
+    <!-- Technical Architecture Strip -->
+    <section class="tech-specs-section relative border-y border-white/10 bg-[#060e1a] py-16 sm:py-24">
       <div class="page-shell">
-        <div class="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-          <div class="feat-loop-text opacity-0">
-            <p class="section-eyebrow">What makes it an agent</p>
-            <h2
-              class="mt-4 max-w-xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl"
-            >
-              A workflow layer that can reason, ask, and act.
-            </h2>
-            <p
-              class="mt-5 max-w-xl text-lg font-medium leading-relaxed text-slate-300"
-            >
-              A chatbot waits for a customer to type. A commerce agent monitors
-              your store, understands the operational context, and moves
-              approved work forward.
-            </p>
+        <div class="tech-header opacity-0 max-w-3xl mb-12">
+          <div class="chip mb-3">
+            <span class="mini-label">Under the Hood</span>
           </div>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            {
-              operatingLoop.map((item, index) => (
-                <article
-                  class:list={[
-                    "feat-loop-card opacity-0 rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)]",
-                    index === 1 || index === 2 ? "sm:translate-y-8" : "",
-                  ]}
-                >
-                  <div class="flex items-center justify-between gap-4">
-                    <span class="rounded-full border border-teal-300/25 bg-teal-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-100">
-                      {item.step}
-                    </span>
-                    <span class="font-mono text-sm font-semibold text-slate-500">
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <h3 class="mt-6 text-xl font-semibold leading-tight text-white">
-                    {item.title}
-                  </h3>
-                  <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
-                    {item.description}
-                  </p>
-                </article>
-              ))
-            }
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="feat-agents relative overflow-hidden py-20 sm:py-28">
-      <div
-        class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#07111f_0%,#0b1728_52%,#07111f_100%)]"
-      >
-      </div>
-      <div class="page-shell">
-        <div
-          class="feat-agents-text opacity-0 flex flex-col justify-between gap-6 lg:flex-row lg:items-end"
-        >
-          <div>
-            <p class="section-eyebrow">Agent lineup</p>
-            <h2
-              class="mt-4 max-w-2xl text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl"
-            >
-              Specialized agents for the work your team keeps repeating.
-            </h2>
-          </div>
-          <p
-            class="max-w-xl text-lg font-medium leading-relaxed text-slate-300"
-          >
-            Each agent can run independently, but the real leverage comes when
-            they share the same Shopify context, approval rules, and revenue
-            attribution.
+          <h2 class="section-title text-white font-heading">
+            Enterprise-grade infrastructure.
+          </h2>
+          <p class="section-copy mt-4 text-slate-300">
+            Engineered for high-volume D2C brands that require sub-second speeds, zero downtime, and total security.
           </p>
         </div>
 
-        <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {
-            agentCards.map((agent) => (
-              <a
-                href={agent.href}
-                class="feat-agent-card opacity-0 group rounded-[1.25rem] border border-white/10 bg-[#101b2e] p-6 shadow-[0_24px_70px_-54px_rgba(0,0,0,0.95)] transition-all duration-500 hover:-translate-y-1 hover:border-teal-300/30 hover:bg-[#142238]"
-              >
-                <div class="flex items-start justify-between gap-4">
-                  <div>
-                    <p class="mini-label text-teal-200">{agent.signal}</p>
-                    <h3 class="mt-4 text-2xl font-semibold leading-tight text-white">
-                      {agent.name}
-                    </h3>
-                  </div>
-                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.05] text-slate-200 transition group-hover:border-teal-300/35 group-hover:text-teal-100">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <>
-                        <path d="M7 17 17 7" />
-                        <path d="M7 7h10v10" />
-                      </>
-                    </svg>
-                  </span>
-                </div>
-                <p class="mt-5 min-h-[5.5rem] text-base font-medium leading-relaxed text-slate-300">
-                  {agent.action}
+            technicalSpecs.map((spec, idx) => (
+              <div class="tech-card opacity-0 rounded-2xl border border-white/10 bg-[#0a1526]/80 p-6">
+                <span class="font-mono text-xs font-bold text-emerald-400">
+                  0{idx + 1}
+                </span>
+                <h3 class="mt-3 text-base font-heading font-bold text-white">
+                  {spec.title}
+                </h3>
+                <p class="mt-2 text-xs text-slate-300 font-medium leading-relaxed">
+                  {spec.detail}
                 </p>
-                <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                  <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
-                    Best for
-                  </p>
-                  <p class="mt-2 text-base font-semibold text-slate-100">
-                    {agent.bestFor}
-                  </p>
-                </div>
-                <p class="mt-5 text-sm font-bold text-teal-200">
-                  Open agent page
-                </p>
-              </a>
+              </div>
             ))
           }
-        </div>
-      </div>
-    </section>
-
-    <section class="feat-control relative pb-24">
-      <div class="page-shell">
-        <div
-          class="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0d192b] shadow-[0_32px_100px_-70px_rgba(45,212,191,0.5)]"
-        >
-          <div class="grid lg:grid-cols-[0.95fr_1.05fr]">
-            <div
-              class="feat-control-left opacity-0 border-b border-white/10 p-6 sm:p-10 lg:border-b-0 lg:border-r"
-            >
-              <p class="section-eyebrow">Control model</p>
-              <h2
-                class="mt-4 text-3xl font-heading font-semibold leading-[1.04] text-white sm:text-5xl"
-              >
-                Automation with approval where it matters.
-              </h2>
-              <p
-                class="mt-5 text-lg font-medium leading-relaxed text-slate-300"
-              >
-                VoluChat is built for operators who want leverage without losing
-                judgment. You decide which agents can act automatically, which
-                actions need review, and when a human should take over.
-              </p>
-              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="/contact" class="btn-primary"
-                  >Map your agent workflow</a
-                >
-                <a href="/integrations/shopify" class="btn-secondary"
-                  >See Shopify integration</a
-                >
-              </div>
-            </div>
-
-            <div class="feat-control-right opacity-0 bg-[#07111f] p-6 sm:p-10">
-              <div
-                class="rounded-[1.25rem] border border-white/10 bg-white/[0.045] p-5"
-              >
-                <div class="flex items-center justify-between gap-4">
-                  <p class="mini-label text-teal-200">Guardrail stack</p>
-                  <span
-                    class="rounded-full bg-teal-300/10 px-3 py-1 text-xs font-bold text-teal-100"
-                    >Always on</span
-                  >
-                </div>
-                <div class="mt-6 space-y-3">
-                  {
-                    guardrails.map((item) => (
-                      <div class="flex gap-3 rounded-2xl border border-white/10 bg-[#101b2e] p-4">
-                        <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-100">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="13"
-                            height="13"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                        </span>
-                        <p class="text-base font-semibold leading-relaxed text-slate-200">
-                          {item}
-                        </p>
-                      </div>
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -420,65 +295,46 @@ const operatingLoop = [
     if (prefersReduced) return;
 
     // Hero
-    const heroTl = gsap.timeline();
-    heroTl.fromTo(".feat-hero-text",
-      { opacity: 0, x: -40 },
-      { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
-    ).fromTo(".feat-hero-mockup",
-      { opacity: 0, scale: 0.9, rotateY: 15 },
-      { opacity: 1, scale: 1, rotateY: 0, duration: 1, ease: "power4.out" },
-      "-=0.6"
+    gsap.fromTo(".features-hero-text",
+      { opacity: 0, y: 25 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
     );
 
-    // Operating Loop
-    const loopTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".feat-loop",
-        start: "top 75%",
-        toggleActions: "play none none reverse"
-      }
+    // Feature Groups
+    const groups = gsap.utils.toArray<HTMLElement>(".feature-group");
+    groups.forEach((group) => {
+      gsap.fromTo(group,
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: group,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
     });
-    loopTl.fromTo(".feat-loop-text",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }
-    ).fromTo(".feat-loop-card",
-      { opacity: 0, y: 50, rotateX: 10 },
-      { opacity: 1, y: 0, rotateX: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" },
-      "-=0.4"
-    );
 
-    // Agents
-    const agentsTl = gsap.timeline({
+    // Tech Specs
+    const techTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".feat-agents",
-        start: "top 75%",
-        toggleActions: "play none none reverse"
-      }
-    });
-    agentsTl.fromTo(".feat-agents-text",
-      { opacity: 0, scale: 0.95 },
-      { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }
-    ).fromTo(".feat-agent-card",
-      { opacity: 0, y: 40, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: { amount: 0.6, from: "start" }, ease: "power2.out" },
-      "-=0.5"
-    );
-
-    // Control
-    const controlTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".feat-control",
+        trigger: ".tech-specs-section",
         start: "top 80%",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     });
-    controlTl.fromTo(".feat-control-left",
-      { opacity: 0, x: -30 },
-      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
-    ).fromTo(".feat-control-right",
-      { opacity: 0, x: 30 },
-      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" },
-      "-=0.6"
+
+    techTl.fromTo(".tech-header",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+    ).fromTo(".tech-card",
+      { opacity: 0, y: 25, scale: 0.98 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.4, stagger: 0.08, ease: "power2.out" },
+      "-=0.3"
     );
   });
 </script>
