@@ -23,7 +23,7 @@ const {
   keywords,
   image = "/og-image.webp",
   type = "website",
-  robots,
+  robots = "index, follow",
   canonical,
   author,
   publishedTime,
@@ -52,6 +52,7 @@ const structuredDataItems = Array.isArray(structuredData)
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     {robots && <meta name="robots" content={robots} />}
+    {robots && <meta name="googlebot" content={robots} />}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {keywords && <meta name="keywords" content={keywords} />}
     <link rel="icon" type="image/svg+xml" href="/voluchat_logo.svg" />
