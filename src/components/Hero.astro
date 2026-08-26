@@ -4,7 +4,7 @@
 
 <section
   id="hero"
-  class="hero-section relative isolate overflow-hidden pt-[7.5rem] pb-20 sm:pt-[8.5rem] lg:pt-[9.5rem] lg:pb-28"
+  class="hero-section relative isolate overflow-hidden pt-[7rem] pb-14 sm:pt-[8rem] lg:pt-[8.5rem] lg:pb-20"
 >
   <!-- Modern layered background (pure CSS, zero JS) -->
   <div class="hero-bg" aria-hidden="true">
@@ -31,7 +31,7 @@
         </div>
 
         <h1
-          class="hero-title mt-6 text-[2.5rem] font-bold leading-[1.04] tracking-tight sm:text-[3rem] lg:text-[3.35rem] xl:text-[3.85rem] font-heading"
+          class="hero-title mt-5 text-[2.25rem] font-bold leading-[1.06] tracking-tight sm:text-[2.6rem] lg:text-[2.9rem] xl:text-[3.25rem] font-heading"
         >
           <span class="bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-300">
             Turn Instagram DMs & WhatsApp Chats into
@@ -79,89 +79,24 @@
         </div>
       </div>
 
-      <!-- Hero Visual: Clean & Focused Social Commerce Phone Mockup with Live Narrative Animation -->
-      <div class="hero-mockup lg:hero-stage relative" data-tilt-strength="2">
-        <div class="absolute -inset-4 rounded-[2.5rem] bg-emerald-500/15 blur-3xl opacity-60 animate-pulse"></div>
+      <!-- Hero Visual: Mobile Frame with Demo Video -->
+      <div class="hero-mockup lg:hero-stage relative w-full max-w-[220px] sm:max-w-[240px] mx-auto lg:mx-0 lg:ml-32 xl:ml-48 lg:mt-4" data-tilt-strength="2">
+        <!-- Glowing background behind the phone -->
+        <div class="absolute -inset-4 rounded-[3rem] bg-emerald-500/20 blur-3xl opacity-50 animate-pulse"></div>
 
-        <div class="relative rounded-[2rem] border border-white/12 bg-[#09131f]/95 p-4 sm:p-6 shadow-[0_40px_120px_-60px_rgba(0,0,0,0.95)] backdrop-blur-2xl max-w-lg mx-auto">
+        <!-- Phone Frame -->
+        <div class="relative rounded-[2.5rem] border-[5px] border-slate-800 bg-slate-950 shadow-[0_40px_120px_-40px_rgba(16,185,129,0.3)] overflow-hidden">
+          <!-- Dynamic Island / Notch -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 h-5 w-28 bg-slate-800 rounded-b-xl z-20"></div>
           
-          <!-- Mockup Header -->
-          <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-            <div class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-full bg-[#25D366] flex items-center justify-center text-slate-950 font-bold text-sm shadow-md">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="flex items-center gap-1.5">
-                  <span class="text-sm font-bold text-white">Your Brand Store</span>
-                  <span class="text-[10px] text-emerald-400 font-mono font-bold">✓ Verified</span>
-                </div>
-                <p class="text-[11px] text-slate-400 font-mono">VoluChat Sales Agent Active</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-[10px] font-mono font-bold text-emerald-400">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              2s Response Time
-            </div>
-          </div>
-
-          <!-- Clean Conversation Flow with purposeful stagger targets -->
-          <div class="space-y-3.5 text-xs">
-            
-            <!-- Lead Source Badge -->
-            <div class="hero-chat-step flex items-center justify-center opacity-0">
-              <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-[10px] font-mono text-slate-400">
-                Incoming from Instagram Reel Comment &bull; 11:42 PM
-              </span>
-            </div>
-
-            <!-- Customer Bubble -->
-            <div class="hero-chat-step flex justify-end opacity-0">
-              <div class="rounded-2xl rounded-tr-sm bg-slate-800 text-slate-100 p-3.5 max-w-[85%] border border-white/10 shadow-sm">
-                <p class="text-[13px] leading-relaxed">
-                  "Hey! Loved your reel. Do you have the Emerald Velvet Kurta in Size L? Can you deliver to Delhi by Friday?"
-                </p>
-              </div>
-            </div>
-
-            <!-- Agent AI Bubble -->
-            <div class="hero-chat-step flex justify-start opacity-0">
-              <div class="rounded-2xl rounded-tl-sm bg-[#0d2226] text-emerald-100 p-4 max-w-[92%] border border-emerald-500/25 shadow-lg">
-                <div class="flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 mb-1.5 font-mono">
-                  <span>⚡ AI Sales Agent</span>
-                  <span class="text-slate-400 font-normal">&bull; Instant reply</span>
-                </div>
-                
-                <p class="text-[13px] text-slate-200 leading-relaxed mb-3">
-                  "Hey! Yes, we have <strong>2 units left in Size L</strong>. Express delivery to Delhi arrives in 48 hours (Thursday)! ✨"
-                </p>
-
-                <!-- In-Chat 1-Click Order Card -->
-                <div class="hero-pay-card rounded-xl bg-slate-950/80 p-3 border border-emerald-500/30 flex items-center justify-between gap-3 shadow-inner">
-                  <div>
-                    <p class="font-bold text-white text-xs">Emerald Velvet Kurta (L)</p>
-                    <p class="text-[11px] text-emerald-400 font-mono font-semibold">₹2,899 &bull; Free Express Delivery</p>
-                  </div>
-                  <div class="rounded-lg bg-[#25D366] text-slate-950 px-3 py-2 text-xs font-bold shrink-0 shadow-[0_0_15px_rgba(37,211,102,0.3)]">
-                    Pay ₹2,899 &rarr;
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Conversion Success Badge -->
-            <div class="hero-chat-step hero-success-badge rounded-xl bg-emerald-500/10 border border-emerald-500/20 p-2.5 flex items-center justify-between text-[11px] font-mono opacity-0">
-              <div class="flex items-center gap-2 text-emerald-300 font-semibold">
-                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                <span>Payment Received via UPI</span>
-              </div>
-              <span class="text-slate-400">Closed in 85s</span>
-            </div>
-
-          </div>
-
+          <video 
+            src="/voluchat_demo_optimized.mp4" 
+            class="w-full h-auto block object-cover" 
+            autoplay 
+            loop 
+            muted 
+            playsinline>
+          </video>
         </div>
       </div>
     </div>
@@ -173,9 +108,8 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
 
-    // 1. Text & CTAs pop in fast and crisp (no floaty lag)
+    // 1. Text & CTAs pop in fast and crisp
     const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     heroTl
@@ -183,26 +117,6 @@
       .fromTo(".hero-text", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.35")
       .fromTo(".hero-ctas", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.3")
       .fromTo(".hero-mockup", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4");
-
-    // 2. Purposeful Chat Stagger showing the real 90-second sale story
-    const chatSteps = gsap.utils.toArray<HTMLElement>(".hero-chat-step");
-    if (chatSteps.length > 0) {
-      chatSteps.forEach((step, idx) => {
-        heroTl.fromTo(
-          step,
-          { opacity: 0, y: 15, scale: 0.97 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)" },
-          `+=${idx === 0 ? 0.1 : 0.25}`
-        );
-      });
-
-      // Subtle pulse on the completed payment card to draw the eye to the closed sale
-      heroTl.fromTo(
-        ".hero-success-badge",
-        { boxShadow: "0 0 0 0 rgba(16, 185, 129, 0.4)" },
-        { boxShadow: "0 0 20px 4px rgba(16, 185, 129, 0.25)", duration: 0.8, yoyo: true, repeat: 1, ease: "sine.inOut" }
-      );
-    }
   });
 </script>
 

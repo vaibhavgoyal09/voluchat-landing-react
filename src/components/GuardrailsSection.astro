@@ -2,40 +2,54 @@
 const guardrailRules = [
   {
     icon: "🏷️",
-    title: "Strict Margin & Price Protection",
-    desc: "The AI agent can only offer pre-approved discounts (e.g. max 10% for prepaid UPI). It will never drop prices below your cost margin.",
+    title: "Strict Price Guardrails",
+    desc: "The AI agent can only offer pre-approved discounts (e.g. max 10% for prepaid UPI). It never drops prices below your cost margin.",
     badge: "Margin Safe",
     highlight: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
   },
   {
     icon: "📦",
     title: "Zero Out-of-Stock Promises",
-    desc: "Real-time Shopify inventory checks prevent the AI from ever selling unavailable variants, preventing dead checkouts and refunds.",
+    desc: "Real-time Shopify inventory checks prevent the AI from ever selling unavailable variants, avoiding dead checkouts.",
     badge: "Live Stock",
     highlight: "text-teal-400 border-teal-500/20 bg-teal-500/10",
   },
   {
-    icon: "🛡️",
-    title: "Instant Human Escalation",
-    desc: "Custom orders, bridal alterations, or complex customer queries automatically alert your human team on WhatsApp for a 1-click takeover.",
-    badge: "Human Control",
-    highlight: "text-amber-400 border-amber-500/20 bg-amber-500/10",
+    icon: "⚙️",
+    title: "100% White-Glove Setup",
+    desc: "We configure your Meta Business APIs, WhatsApp Business accounts, and sync your Shopify product catalog for you.",
+    badge: "Done For You",
+    highlight: "text-purple-400 border-purple-500/20 bg-purple-500/10",
   },
   {
     icon: "⚡",
-    title: "Anti-Spam & Brand Voice Tuning",
+    title: "Anti-Spam & Brand Voice",
     desc: "Trained exclusively on your brand's tone. Caps follow-up frequency so customers feel assisted rather than spammed.",
     badge: "Brand Voice",
     highlight: "text-indigo-400 border-indigo-500/20 bg-indigo-500/10",
   },
+  {
+    icon: "📊",
+    title: "Attributed Revenue Reporting",
+    desc: "Track every rupee generated. See exactly how many orders were closed by the AI agent and which campaigns drove them.",
+    badge: "Clear ROI",
+    highlight: "text-blue-400 border-blue-500/20 bg-blue-500/10",
+  },
+  {
+    icon: "🛡️",
+    title: "Instant Human Takeover",
+    desc: "Custom orders, VIP clients, or complex queries alert your human team on WhatsApp for a seamless 1-click takeover.",
+    badge: "Human Control",
+    highlight: "text-amber-400 border-amber-500/20 bg-amber-500/10",
+  },
 ];
 ---
 
-<section id="guardrails" class="relative overflow-hidden py-20 sm:py-28 border-y border-white/5 bg-[#060c15]">
+<section id="guardrails" class="relative overflow-hidden py-10 sm:py-14 border-y border-white/5 bg-[#060c15]">
   <div class="sect-grid"></div>
 
   <div class="page-shell relative z-10">
-    <div class="guardrails-header max-w-3xl mx-auto text-center opacity-0 mb-16">
+    <div class="guardrails-header max-w-3xl mx-auto text-center opacity-0 mb-8">
       <div class="chip mb-4 border-emerald-500/20 bg-emerald-500/10">
         <span class="mini-label text-emerald-300">Safety & Guardrails</span>
       </div>
@@ -47,8 +61,8 @@ const guardrailRules = [
       </p>
     </div>
 
-    <!-- Clean 4-Grid Guardrail Cards -->
-    <div class="grid gap-6 sm:grid-cols-2 max-w-5xl mx-auto">
+    <!-- Clean 6-Grid Guardrail Cards -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
       {
         guardrailRules.map((rule) => (
           <div class="guardrail-card opacity-0 rounded-2xl border border-white/10 bg-[#0a1422]/90 p-6 sm:p-7 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.8)] backdrop-blur-md hover:border-emerald-500/30 transition duration-300 hover:-translate-y-1">

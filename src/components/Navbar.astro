@@ -32,21 +32,19 @@ const demoHref = "/contact";
               class="h-8 w-8 object-contain"
             />
             <span
-              class="hidden font-heading text-[1.4rem] font-extrabold tracking-tight text-white sm:inline"
+              class="hidden font-heading text-[1.2rem] font-extrabold tracking-tight text-white sm:inline"
               >VoluChat</span
             >
           </div>
         </a>
       </div>
 
-      <div
-        class="hidden lg:flex lg:gap-x-1 rounded-full border border-[rgba(148,163,184,0.16)] bg-white/[0.045] px-1.5 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.055)]"
-      >
+      <div class="hidden lg:flex lg:gap-x-8">
         {
           navigation.map((item) => (
             <a
               href={item.href}
-              class="nav-link relative rounded-full px-4 py-2 text-[13px] font-semibold text-slate-200 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/[0.09] hover:text-white"
+              class="nav-link relative py-2 text-[13px] font-semibold text-slate-300 transition-colors duration-300 hover:text-white"
             >
               {item.name}
             </a>
@@ -148,9 +146,9 @@ const demoHref = "/contact";
   .nav-link::after {
     content: "";
     position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 6px;
+    left: 0;
+    right: 0;
+    bottom: -2px;
     height: 1.5px;
     border-radius: 999px;
     background: linear-gradient(90deg, #2dd4bf, #5eeac9);
