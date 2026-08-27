@@ -89,16 +89,12 @@ const setupComparison = [
         <div class="compare-hero-text opacity-0 mx-auto max-w-4xl text-center">
           <div class="chip">Comparison guide</div>
           <h1
-            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
           >
-            Helpdesks and chatbots manage conversations. VoluChat agents drive
-            revenue.
+            Chatbots manage tickets. VoluChat closes social commerce sales.
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-3xl">
-            Generic builders and helpdesks are great for broad support
-            operations. VoluChat is built for D2C brands that want autonomous
-            agents to handle product queries, recover carts, and execute upsells
-            out of the box.
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
+            Flowchart builders and support desks leak 70%+ of your buyers with rigid menus and external links. VoluChat is built specifically for D2C brands to qualify inquiries on Instagram, verify Shopify variant inventory, and close paid orders directly in WhatsApp in 90 seconds.
           </p>
         </div>
       </div>
@@ -110,9 +106,9 @@ const setupComparison = [
           {
             setupComparison.map((item, index) => (
               <article
-                class={`compare-setup-card opacity-0 solid-card md:p-7 ${index === 1 ? "border-teal-300/20 bg-teal-300/10" : ""}`}
+                class={`compare-setup-card opacity-0 solid-card md:p-7 ${index === 1 ? "border-emerald-500/30 bg-emerald-950/20" : ""}`}
               >
-                <p class={`mini-label ${index === 1 ? "text-teal-200" : ""}`}>
+                <p class={`mini-label ${index === 1 ? "text-emerald-300" : ""}`}>
                   {item.label}
                 </p>
                 <h2 class="mt-3 text-2xl font-heading font-semibold leading-tight text-white">
@@ -120,9 +116,9 @@ const setupComparison = [
                 </h2>
                 <div class="mt-5 grid gap-2">
                   {item.points.map((point) => (
-                    <div class="flex items-start gap-3 rounded-xl border border-[rgba(148,163,184,0.2)] bg-[#101b2e] p-3">
+                    <div class="flex items-start gap-3 rounded-xl border border-white/10 bg-[#101b2e] p-3">
                       <span
-                        class={`mt-1 h-2 w-2 shrink-0 rounded-full ${index === 1 ? "bg-teal-500" : "bg-slate-500"}`}
+                        class={`mt-1 h-2 w-2 shrink-0 rounded-full ${index === 1 ? "bg-emerald-400" : "bg-slate-500"}`}
                       />
                       <p class="text-base font-medium leading-relaxed text-slate-300">
                         {point}
@@ -139,21 +135,18 @@ const setupComparison = [
 
     <section class="compare-comp-section pb-24">
       <div class="page-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-        <aside class="compare-aside opacity-0 solid-card h-fit lg:sticky lg:top-32 lg:p-8">
-          <p class="section-eyebrow">The architectural difference</p>
+        <aside class="compare-aside opacity-0 solid-card h-fit lg:sticky lg:top-32 lg:p-8 border-emerald-500/20 bg-[#09131f]">
+          <p class="section-eyebrow text-emerald-400">The architectural difference</p>
           <h2
             class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white"
           >
-            Choose specialized AI over generic bots.
+            Autonomous Sales Closer vs Generic Bots.
           </h2>
           <p class="mt-5 text-base font-medium leading-relaxed text-slate-300">
-            VoluChat agents are built specifically for Shopify stores. They
-            don't just reply to messages—they execute commerce workflows like
-            inventory clearance and abandoned cart recovery with human
-            oversight.
+            VoluChat is engineered for modern D2C commerce. We connect directly with your official Meta APIs and Shopify catalog to execute real sales transactions inside chat with strict margin and COD safety guardrails.
           </p>
           <a href="/contact" class="btn-primary mt-8 w-full"
-                  >Book Demo</a
+                  >Apply for Pilot Cohort &rarr;</a
           >
         </aside>
 
