@@ -37,51 +37,53 @@ const pillars = [
 
 <section
   id="how-it-works"
-  class="relative bg-[#050b14] py-10 sm:py-14"
+  class="relative bg-[#050b14] py-20 sm:py-24 lg:py-28"
 >
   <div class="page-shell relative z-10">
-    <div class="usecases-header mb-10 max-w-3xl opacity-0">
-      <div class="chip mb-4">
-        <span class="mini-label">The Autonomous Commerce Engine</span>
+    <div class="usecases-header mb-12 grid gap-6 lg:grid-cols-2 lg:items-end opacity-0">
+      <div>
+        <div class="chip mb-4">
+          <span class="mini-label">The Autonomous Commerce Engine</span>
+        </div>
+        <h2 class="section-title text-white">
+          Built to close sales where <span class="gradient-text-anim">customers actually buy.</span>
+        </h2>
       </div>
-      <h2 class="section-title text-white">
-        Built to close sales where <span class="gradient-text-anim">customers actually buy.</span>
-      </h2>
-      <p class="section-copy mt-6 text-slate-300">
+      <p class="section-copy max-w-xl text-slate-400 lg:justify-self-end lg:pb-2">
         From the moment a customer comments on a Reel to the second their UPI payment clears inside WhatsApp — VoluChat manages the entire revenue journey without human intervention.
       </p>
     </div>
 
     <div class="grid gap-5 md:grid-cols-2">
       {
-        pillars.map((pillar) => (
+        pillars.map((pillar, index) => (
           <article
-            class="usecase-card group relative flex flex-col justify-between py-4 pr-6 opacity-0"
+            class={`usecase-card group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-7 transition-all duration-500 hover:border-emerald-500/30 hover:bg-white/[0.05] sm:p-8 opacity-0 ${index % 2 === 1 ? "md:translate-y-8" : ""}`}
           >
-            <div class="relative z-10 flex h-full flex-col justify-start">
+            <div class="relative z-10 flex h-full flex-col justify-between gap-8">
               <div>
-                <div class="mb-4 flex items-center gap-4">
-                  <span class="font-mono text-[11px] font-bold text-emerald-400">
+                <div class="mb-5 flex items-center justify-between gap-4">
+                  <span class="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-400">
                     {pillar.code}
                   </span>
-                  <span class="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
+                  <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-slate-400">
                     {pillar.badge}
                   </span>
                 </div>
 
-                <h3 class="text-xl font-bold text-white font-heading tracking-tight sm:text-2xl group-hover:text-emerald-300 transition-colors duration-300">
+                <h3 class="font-heading text-xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-emerald-300 sm:text-2xl">
                   {pillar.title}
                 </h3>
-                <p class="mt-3 text-sm font-medium leading-relaxed text-slate-400">
+                <p class="mt-3 text-sm leading-relaxed text-slate-400">
                   {pillar.text}
                 </p>
               </div>
 
-              <div class="mt-5 flex items-center justify-between">
-                <span class="text-[11px] font-mono font-bold text-emerald-300/80">
-                  ✓ {pillar.metric}
+              <div class="flex items-end justify-between border-t border-white/10 pt-5">
+                <span class="font-heading text-lg font-bold text-emerald-300">
+                  {pillar.metric}
                 </span>
-                <span class="text-[11px] font-semibold text-slate-500 group-hover:text-emerald-400 transition-colors duration-300">
+                <span class="text-[11px] font-semibold text-slate-500 transition-colors duration-300 group-hover:text-emerald-400">
                   Autonomous Layer &rarr;
                 </span>
               </div>

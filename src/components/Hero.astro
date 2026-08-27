@@ -4,7 +4,7 @@
 
 <section
   id="hero"
-  class="hero-section relative isolate overflow-hidden pt-[7rem] pb-14 sm:pt-[8rem] lg:pt-[8.5rem] lg:pb-20"
+  class="hero-section relative isolate overflow-hidden pt-[7.5rem] pb-16 sm:pt-[8.5rem] lg:pt-[9rem] lg:pb-24"
 >
   <!-- Modern layered background (pure CSS, zero JS) -->
   <div class="hero-bg" aria-hidden="true">
@@ -18,7 +18,7 @@
   </div>
 
   <div class="page-shell relative z-10">
-    <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_1.15fr] lg:gap-14 lg:items-center">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
       <!-- Copy Block -->
       <div class="text-center lg:text-left">
         <!-- Private Pilot Badge -->
@@ -31,22 +31,22 @@
         </div>
 
         <h1
-          class="hero-title mt-5 text-[2.25rem] font-bold leading-[1.06] tracking-tight sm:text-[2.6rem] lg:text-[2.9rem] xl:text-[3.25rem] font-heading"
+          class="hero-title mt-7 font-heading text-[2.75rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-[3.25rem] lg:text-[3.6rem] xl:text-[4rem]"
         >
-          <span class="bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-100 to-slate-300">
-            Turn Instagram DMs & WhatsApp Chats into
+          <span class="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
+            Turn Instagram DMs &amp; WhatsApp Chats into
           </span>
-          <span class="block gradient-text-anim">24/7 Automated Revenue.</span>
+          <span class="block gradient-text-anim pb-2">24/7 Automated Revenue.</span>
         </h1>
 
         <p
-          class="hero-text mt-6 max-w-xl text-[1.05rem] font-medium leading-relaxed text-slate-300 sm:text-lg lg:max-w-2xl"
+          class="hero-text mx-auto mt-6 max-w-xl text-[1.05rem] font-normal leading-relaxed text-slate-400 sm:text-lg lg:mx-0"
         >
           Stop losing 50%+ of your DM buyers when your sales team is offline. VoluChat's Autonomous AI Agent answers sizing doubts, checks live stock, and completes native WhatsApp orders 24/7.
         </p>
 
         <div
-          class="hero-ctas mt-8 flex flex-col gap-3.5 sm:flex-row sm:justify-center lg:justify-start"
+          class="hero-ctas mt-9 flex flex-col items-center gap-3.5 sm:flex-row sm:justify-center lg:justify-start"
         >
           <a href="/contact" class="btn-primary btn-sheen">
             Apply for 1 of 10 Pilot Spots &rarr;
@@ -57,7 +57,7 @@
         </div>
 
         <!-- Trust Features Strip -->
-        <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-6 text-xs font-medium text-slate-400">
+        <div class="mt-9 flex flex-wrap items-center justify-center gap-y-2 gap-x-7 text-[13px] font-medium text-slate-500 lg:justify-start">
           <div class="flex items-center gap-1.5">
             <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
@@ -79,24 +79,25 @@
         </div>
       </div>
 
-      <!-- Hero Visual: Mobile Frame with Demo Video -->
-      <div class="hero-mockup lg:hero-stage relative w-full max-w-[220px] sm:max-w-[240px] mx-auto lg:mx-0 lg:ml-32 xl:ml-48 lg:mt-4" data-tilt-strength="2">
-        <!-- Glowing background behind the phone -->
-        <div class="absolute -inset-4 rounded-[3rem] bg-emerald-500/20 blur-3xl opacity-50 animate-pulse"></div>
+      <!-- Hero Visual: phone on a glowing stage -->
+      <div class="hero-mockup relative mx-auto w-full max-w-[260px] sm:max-w-[280px] lg:mx-0 lg:justify-self-center" data-tilt-strength="2">
+        <!-- Stage glow -->
+        <div class="absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/15 blur-[100px]"></div>
 
         <!-- Phone Frame -->
-        <div class="relative rounded-[2.5rem] border-[5px] border-slate-800 bg-slate-950 shadow-[0_40px_120px_-40px_rgba(16,185,129,0.3)] overflow-hidden">
-          <!-- Dynamic Island / Notch -->
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 h-5 w-28 bg-slate-800 rounded-b-xl z-20"></div>
-          
-          <video 
-            src="/voluchat_demo_optimized.mp4" 
-            class="w-full h-auto block object-cover" 
-            autoplay 
-            loop 
-            muted 
-            playsinline>
-          </video>
+        <div class="tilt relative rounded-[2.75rem] border border-white/10 bg-slate-950 p-[5px] shadow-[0_60px_140px_-40px_rgba(16,185,129,0.35)]">
+          <div class="relative overflow-hidden rounded-[2.4rem] bg-slate-950">
+            <!-- Dynamic Island / Notch -->
+            <div class="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-slate-900"></div>
+            <video
+              src="/voluchat_demo_optimized.mp4"
+              class="block h-auto w-full object-cover"
+              autoplay
+              loop
+              muted
+              playsinline>
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -119,4 +120,3 @@
       .fromTo(".hero-mockup", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4");
   });
 </script>
-

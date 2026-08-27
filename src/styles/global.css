@@ -2,11 +2,11 @@
 
 @theme {
   --font-sans:
-    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   --font-heading:
-    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    "Sora", "Inter", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono:
     ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", "Roboto Mono",
     Menlo, Consolas, monospace;
@@ -33,7 +33,7 @@
   }
 
   body {
-    @apply text-slate-100 antialiased bg-[#07121d];
+    @apply text-slate-100 antialiased bg-[#050b14];
     min-width: 320px;
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
@@ -47,18 +47,11 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background:
-      radial-gradient(
-        circle at 48% -18%,
-        rgba(45, 212, 191, 0.075),
-        transparent 40%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(8, 18, 31, 0.98),
-        rgba(7, 16, 27, 0.99) 52%,
-        rgba(6, 13, 22, 1)
-      );
+    background: radial-gradient(
+      ellipse 90% 55% at 50% -10%,
+      rgba(45, 212, 191, 0.09),
+      transparent 60%
+    );
   }
 
   h1,
@@ -68,7 +61,7 @@
   h5,
   h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     text-wrap: balance;
     @apply text-white;
   }
@@ -84,66 +77,62 @@
   }
 
   .section-pad {
-    @apply py-16 lg:py-24;
+    @apply py-20 lg:py-28;
   }
 
   .section-band,
   .section-band-quiet {
-    @apply relative border-t border-[rgba(148,163,184,0.1)];
+    @apply relative border-t border-[rgba(148,163,184,0.08)];
     background: linear-gradient(
       180deg,
-      rgba(10, 21, 35, 0.88) 0%,
-      rgba(7, 16, 27, 0.78) 100%
+      rgba(10, 20, 34, 0.5) 0%,
+      rgba(6, 13, 23, 0.35) 100%
     );
   }
 
   .solid-card {
-    @apply rounded-[18px] border border-[rgba(148,163,184,0.16)] bg-[#0f1b2b] p-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)];
+    @apply rounded-[18px] border border-[rgba(148,163,184,0.12)] bg-[rgba(13,22,36,0.7)] p-6 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)];
     box-shadow:
       0 20px 64px -48px rgba(0, 0, 0, 0.9),
-      inset 0 1px 0 rgba(255, 255, 255, 0.055);
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
   .solid-card:hover {
-    @apply border-slate-400/30 bg-[#132033];
+    @apply border-teal-300/25 bg-[rgba(17,28,45,0.8)];
     box-shadow:
-      0 28px 86px -50px rgba(15, 118, 110, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.085);
-    transform: translateY(-2px);
-  }
-
-  .solid-card-compact {
-    @apply rounded-[16px] border border-[rgba(148,163,184,0.16)] bg-[#0f1b2b] p-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)];
-    box-shadow:
-      0 18px 54px -36px rgba(0, 0, 0, 0.82),
-      inset 0 1px 0 rgba(255, 255, 255, 0.075);
-  }
-
-  .solid-card-compact:hover {
-    @apply border-slate-400/30 bg-[#132033];
+      0 28px 86px -50px rgba(15, 118, 110, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.09);
     transform: translateY(-2px);
   }
 
   .glass-panel-premium {
-    @apply border border-[rgba(148,163,184,0.24)] bg-[rgba(16,27,46,0.92)] backdrop-blur-2xl shadow-2xl rounded-2xl;
+    @apply border border-[rgba(148,163,184,0.18)] bg-[rgba(12,21,35,0.85)] backdrop-blur-2xl shadow-2xl rounded-2xl;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       0 26px 76px -36px rgba(0, 0, 0, 0.82);
   }
 
   .section-title {
-    @apply text-[2.25rem] font-bold leading-[1.02] text-white sm:text-[2.5rem] lg:text-5xl tracking-tight;
+    @apply text-[2.25rem] font-semibold leading-[1.05] text-white sm:text-[2.5rem] lg:text-5xl tracking-tight;
   }
 
   .section-copy {
-    @apply text-base font-medium leading-relaxed text-slate-200 sm:text-lg;
+    @apply text-base font-normal leading-relaxed text-slate-300 sm:text-lg;
   }
 
   .btn-primary {
-    @apply relative inline-flex items-center justify-center rounded-full bg-white text-slate-950 px-6 py-3 text-sm font-bold transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98];
+    @apply relative inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 text-[15px] font-extrabold tracking-tight text-slate-950 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98] sm:w-auto;
     box-shadow:
-      0 18px 46px -22px rgba(255, 255, 255, 0.72),
-      inset 0 -2px 0 rgba(0, 0, 0, 0.12);
+      0 20px 50px -16px rgba(45, 212, 191, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 -3px 0 rgba(0, 0, 0, 0.14);
+  }
+
+  .btn-primary:hover {
+    box-shadow:
+      0 26px 60px -16px rgba(45, 212, 191, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 -3px 0 rgba(0, 0, 0, 0.14);
   }
 
   .btn-primary::after {
@@ -164,7 +153,7 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-[rgba(148,163,184,0.24)] bg-white/[0.055] px-6 py-3 text-sm font-bold text-slate-100 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:bg-white/[0.095] hover:border-teal-300/35 active:scale-[0.98];
+    @apply inline-flex w-full items-center justify-center rounded-full border border-[rgba(148,163,184,0.28)] bg-white/[0.055] px-8 py-4 text-[15px] font-bold tracking-tight text-slate-100 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:bg-white/[0.095] hover:border-teal-300/35 active:scale-[0.98] sm:w-auto;
   }
 
   .chip {
@@ -197,37 +186,12 @@
     );
   }
 
-  .sect-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    z-index: 1;
-    pointer-events: none;
-    animation: orbFloat 10s ease-in-out infinite alternate;
-  }
-
-  .kinetic-card {
-    transition:
-      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .kinetic-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 24px 58px -38px rgba(0, 0, 0, 0.78);
-    z-index: 20;
-  }
-
-  .glow-text {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-  }
-
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-teal-100 to-slate-300;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-[#7ef0d4] to-slate-300;
   }
 
   .blog-prose-shell {
-    @apply mx-auto max-w-3xl rounded-[1.75rem] border border-white/10 bg-[#101b2e] p-6 shadow-[0_28px_84px_-56px_rgba(0,0,0,0.9)] sm:p-10;
+    @apply mx-auto max-w-3xl rounded-[1.75rem] border border-white/10 bg-[#0c1728] p-6 shadow-[0_28px_84px_-56px_rgba(0,0,0,0.9)] sm:p-10;
   }
 
   .blog-prose {
@@ -318,7 +282,7 @@
   }
 
   .blog-prose pre {
-    @apply overflow-x-auto rounded-2xl border border-white/10 bg-[#07111f] p-5 text-sm leading-7 shadow-inner;
+    @apply overflow-x-auto rounded-2xl border border-white/10 bg-[#060e1a] p-5 text-sm leading-7 shadow-inner;
   }
 
   .blog-prose pre code {
@@ -350,20 +314,11 @@
   }
 
   .blog-cover-fallback {
-    @apply flex h-full items-end justify-between gap-6 bg-[radial-gradient(circle_at_15%_20%,rgba(45,212,191,0.16),transparent_35%),linear-gradient(135deg,#101b2e,#07111f)] p-8;
+    @apply flex h-full items-end justify-between gap-6 bg-[radial-gradient(circle_at_15%_20%,rgba(45,212,191,0.16),transparent_35%),linear-gradient(135deg,#0c1728,#060e1a)] p-8;
   }
 
   .blog-cover-mark {
     @apply hidden text-[7rem] font-heading font-bold leading-none text-white/5 sm:block;
-  }
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
   }
 }
 
@@ -374,38 +329,6 @@
   100% {
     background-position: 200% 50%;
     background-size: 200% auto;
-  }
-}
-
-@keyframes orbFloat {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(20px, -20px) scale(1.1);
-  }
-  100% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-}
-
-@keyframes pageFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pageFadeOnly {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
@@ -457,53 +380,6 @@
   animation: floatY 9s ease-in-out infinite;
 }
 
-/* Drifting aurora blobs */
-@keyframes auroraDrift {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(40px, -30px) scale(1.15);
-  }
-  66% {
-    transform: translate(-30px, 20px) scale(0.92);
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-}
-.animate-aurora {
-  animation: auroraDrift 18s ease-in-out infinite;
-}
-
-/* Marquee for trust strips */
-@keyframes marqueeX {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marqueeX 28s linear infinite;
-}
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-/* Rotating conic border */
-@keyframes spinSlow {
-  to {
-    transform: rotate(360deg);
-  }
-}
-.animate-spin-slow {
-  animation: spinSlow 8s linear infinite;
-}
-
 /* Pulsing soft ring */
 @keyframes pulseRing {
   0% {
@@ -528,14 +404,6 @@
   100% {
     transform: translateX(220%) skewX(-18deg);
   }
-}
-
-.animate-page-entry {
-  animation: pageFadeIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-page-fade {
-  animation: pageFadeOnly 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ---------- Reveal system: safe enhancement hooks ---------- */
@@ -617,39 +485,6 @@
   opacity: 1;
 }
 
-/* Animated gradient border wrapper */
-.border-glow-anim {
-  position: relative;
-}
-.border-glow-anim::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    #2dd4bf 18%,
-    transparent 38%,
-    transparent 62%,
-    #34d399 82%,
-    transparent 100%
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-.border-glow-anim:hover::after {
-  opacity: 0.7;
-  animation: spinSlow 6s linear infinite;
-}
-
 /* Sheen sweep on hover for primary buttons */
 .btn-sheen {
   position: relative;
@@ -703,29 +538,17 @@
     transform: none;
   }
 
-  .marquee-track,
   .gradient-text-anim,
   .animate-float,
   .animate-float-slow,
-  .animate-aurora,
-  .animate-spin-slow,
   .animate-pulse-ring {
     animation: none;
   }
 
-  .hero-eyebrow,
   .hero-title,
   .hero-text,
   .hero-ctas,
-  .hero-mockup,
-  .trace-segment {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  /* Never leave page-entry content invisible under reduced motion. */
-  .animate-page-entry,
-  .animate-page-fade {
+  .hero-mockup {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -756,7 +579,7 @@
       rgba(13, 148, 136, 0.1),
       transparent 55%
     ),
-    linear-gradient(180deg, #081a26 0%, #07111d 45%, #060e17 100%);
+    linear-gradient(180deg, #071524 0%, #050d18 45%, #040a12 100%);
 }
 
 /* Fine engineering grid that fades out toward the edges — gives depth without noise. */
@@ -935,16 +758,4 @@
    block above already forces these elements visible when motion is
    reduced, so this is safe by construction (no FOUC risk if JS fails).
    ============================================================ */
-@keyframes heroEnter {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 18px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  /* Hero entrance is now handled purely by GSAP in Hero.astro to prevent tilt conflicts */
-}
+

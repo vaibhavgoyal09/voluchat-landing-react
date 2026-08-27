@@ -41,47 +41,39 @@ const painPoints = [
 
 <section
   id="problem"
-  class="section-band-quiet relative overflow-hidden py-14 lg:py-20"
+  class="relative overflow-hidden py-20 lg:py-28"
 >
-  <div
-    class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
-  >
-  </div>
-
   <div class="page-shell">
-    <div class="problem-header max-w-3xl opacity-0">
-      <div class="chip mb-5">
-        <span class="mini-label">The Social Commerce Trap</span>
+    <div class="problem-header grid gap-6 lg:grid-cols-2 lg:items-end opacity-0">
+      <div>
+        <div class="chip mb-5">
+          <span class="mini-label">The Social Commerce Trap</span>
+        </div>
+        <h2 class="section-title text-white">
+          Where D2C brands <span class="gradient-text-anim">lose 50%+ of social revenue</span>
+        </h2>
       </div>
-      <h2 class="section-title text-white">
-        Where D2C brands <span class="gradient-text-anim">lose 50%+ of social revenue</span>
-      </h2>
-      <p class="section-copy mt-5 max-w-2xl text-slate-300">
+      <p class="section-copy max-w-xl text-slate-400 lg:justify-self-end lg:pb-2">
         You spend lakhs driving Instagram traffic, but your manual chat reps and rigid button chatbots cannot close buyers in the exact moment they want to purchase.
       </p>
     </div>
 
-    <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-14 border-t border-white/10">
       {
-        painPoints.map((point) => (
+        painPoints.map((point, index) => (
           <article
-            class="problem-card group relative flex flex-col justify-start py-2 pl-6 border-l-2 border-white/10 transition-colors duration-300 hover:border-emerald-500/60 opacity-0"
+            class="problem-card group relative grid grid-cols-[auto_1fr] items-baseline gap-x-6 gap-y-2 border-b border-white/10 py-7 transition-colors duration-300 hover:bg-white/[0.02] sm:gap-x-10 sm:py-8 lg:grid-cols-[auto_1fr_1fr] opacity-0"
           >
-            <div class="mb-3 flex items-center gap-3">
-              <span class="font-mono text-xs font-bold text-slate-500">
-                {point.code}
-              </span>
-              <span
-                class={`rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em] ${point.tone}`}
-              >
-                Revenue Leak
-              </span>
-            </div>
-
-            <h3 class="font-heading text-lg font-bold text-white group-hover:text-emerald-50 transition-colors">
+            <span class="font-heading text-4xl font-bold leading-none text-white/[0.07] transition-colors duration-300 group-hover:text-emerald-400/25 sm:text-6xl">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h3 class="font-heading text-lg font-semibold text-white transition-colors group-hover:text-emerald-50 sm:text-xl">
               {point.title}
+              <span class="mt-1 block font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500">
+                {point.code} &mdash; Revenue Leak
+              </span>
             </h3>
-            <p class="mt-2.5 text-sm font-medium leading-relaxed text-slate-400">
+            <p class="col-span-2 max-w-xl text-sm leading-relaxed text-slate-400 lg:col-span-1">
               {point.description}
             </p>
           </article>
@@ -115,17 +107,12 @@ const painPoints = [
     )
     .fromTo(
       ".problem-card",
-      { opacity: 0, y: 30, filter: "blur(4px)" },
+      { opacity: 0, y: 24 },
       {
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
         duration: 0.5,
-        stagger: {
-          grid: [2, 3],
-          from: "start",
-          amount: 0.35,
-        },
+        stagger: 0.08,
         ease: "power2.out",
       },
       "-=0.3"
