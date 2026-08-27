@@ -2,7 +2,6 @@ import { fetchPublishedBlogPosts, getBlogApiBaseUrl } from "../lib/blogApi.mjs";
 
 const DEFAULT_SITE_ORIGIN = "https://www.voluchat.com";
 const SITEMAP_BLOG_LIMIT = 100;
-const STATIC_LASTMOD = new Date().toISOString().split("T")[0];
 const STATIC_ROUTES = [
   { path: "/", priority: "1.0" },
   { path: "/features", priority: "0.8" },
@@ -33,7 +32,6 @@ export async function GET({ site }) {
   const entries = [
     ...STATIC_ROUTES.map((route) => ({
       loc: absoluteUrl(route.path, siteOrigin),
-      lastmod: STATIC_LASTMOD,
       priority: route.priority,
     })),
     ...blogs.map((blog) => ({
