@@ -7,17 +7,102 @@ import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
 const seoTitle = "Shopify Integration for WhatsApp & Instagram AI Sales | VoluChat";
 const seoDescription =
-  "Connect Shopify to VoluChat to enable real-time variant stock checking, dynamic pricing, and automated draft orders directly inside WhatsApp and Instagram DMs.";
+  "Connect Shopify to VoluChat for real-time variant stock checking, dynamic pricing, automated draft orders, and delivery pincode validation inside WhatsApp and Instagram DMs.";
 const seoKeywords =
-  "Shopify WhatsApp integration, Shopify Instagram DM AI, Shopify conversational commerce, Shopify live inventory sync, WhatsApp checkout Shopify";
+  "Shopify WhatsApp integration, Shopify Instagram DM AI, Shopify live inventory sync, WhatsApp checkout Shopify, Shopify draft order automation";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: seoTitle,
   description: seoDescription,
-  url: siteUrl,
+  url: `${siteUrl}/integrations/shopify`,
 };
+
+const readsFromShopify = [
+  {
+    title: "Live Variant Inventory",
+    description: "Real-time stock count for every size, color, and material variant. The AI never confirms availability for an out-of-stock item.",
+  },
+  {
+    title: "Product Pricing & SKUs",
+    description: "Accurate pricing pulled from your Shopify admin — including compare-at prices, discounts, and variant-specific pricing rules.",
+  },
+  {
+    title: "Fabric & Material Details",
+    description: "Product descriptions, material composition, and care instructions — used to answer sizing and fabric questions without hallucinations.",
+  },
+  {
+    title: "Delivery Pincode SLA",
+    description: "Checks whether a courier can deliver to a specific Indian pincode and confirms estimated transit time before the buyer asks.",
+  },
+  {
+    title: "Order Status & Tracking",
+    description: "Reads existing order data to provide instant tracking lookups — no more 'let me check with the team' responses.",
+  },
+];
+
+const createsInShopify = [
+  {
+    title: "Draft Orders with Pre-Populated SKUs",
+    description: "When a buyer confirms their selection in WhatsApp, VoluChat creates a Shopify draft order with customer details, variant info, and pricing — ready for payment.",
+  },
+  {
+    title: "1-Click UPI Payment Links",
+    description: "Generates a Razorpay or Cashfree payment link embedded in the draft order, sent directly in the WhatsApp conversation for instant checkout.",
+  },
+  {
+    title: "Order Confirmation Sync",
+    description: "Once payment is completed, the order status updates in Shopify admin. Your fulfillment team sees it instantly — no manual data entry.",
+  },
+];
+
+const flowSteps = [
+  {
+    step: "1",
+    title: "Customer comments or DMs",
+    description: "A shopper comments 'Price?' on your Instagram Reel or messages your WhatsApp at 11 PM.",
+  },
+  {
+    step: "2",
+    title: "VoluChat reads your Shopify catalog",
+    description: "Instantly checks variant stock, pricing, pincode SLA, and fabric details from your live Shopify store.",
+  },
+  {
+    step: "3",
+    title: "AI qualifies and recommends",
+    description: "Asks about size preference, budget, and delivery pincode — then recommends the right variant with exact pricing.",
+  },
+  {
+    step: "4",
+    title: "Draft order created in Shopify",
+    description: "Creates a draft order with pre-populated SKUs, customer details, and pricing in your Shopify admin.",
+  },
+  {
+    step: "5",
+    title: "UPI link sent in WhatsApp",
+    description: "Buyer receives a 1-click payment link in the chat, completes payment, and gets order confirmation — all in 90 seconds.",
+  },
+];
+
+const guardrails = [
+  {
+    title: "Read-Only by Default",
+    description: "VoluChat only reads catalog and order data. It never modifies your products, pricing, or inventory settings without explicit approval.",
+  },
+  {
+    title: "Zero Hallucination Design",
+    description: "Every product answer is grounded in live Shopify data. The AI never guesses pricing, stock, or delivery timelines.",
+  },
+  {
+    title: "Catalog Isolation",
+    description: "Each pilot store has an isolated catalog connection. Your data is never mixed with other merchants' data.",
+  },
+  {
+    title: "Margin Floor & Ceiling",
+    description: "Hardcoded limits prevent the AI from offering discounts below your minimum margin or above your maximum discount threshold.",
+  },
+];
 ---
 
 <Layout
@@ -38,7 +123,7 @@ const structuredData = {
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
-        <div class="int-hero-text opacity-0 max-w-4xl">
+        <div class="int-hero-text max-w-4xl">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
             Shopify &bull; Meta Architecture
@@ -46,10 +131,13 @@ const structuredData = {
           <h1
             class="max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
           >
-            Live Shopify Catalog Sync for WhatsApp & Instagram.
+            Your Shopify Store, Powering Every WhatsApp Conversation.
           </h1>
           <p class="section-copy mt-6 max-w-2xl text-slate-300">
-            Empower your autonomous social closer with real-time Shopify variant inventory, automated draft order creation, and instant tracking lookups without hallucinations.
+            VoluChat reads your live Shopify catalog — variant stock, pricing, fabric details, pincode SLA — and writes draft orders with UPI checkout links directly inside WhatsApp and Instagram DMs.
+          </p>
+          <p class="mt-4 max-w-xl text-sm font-medium leading-relaxed text-slate-500">
+            <strong class="text-slate-400">What is this integration?</strong> A real-time bridge between your Shopify store and your AI sales agent — ensuring every answer in chat is accurate, every stock check is live, and every order syncs back to your admin.
           </p>
           <div class="mt-8 flex flex-col gap-3.5 sm:flex-row">
             <a href="/contact" class="btn-primary">Apply for Pilot Store Setup &rarr;</a>
@@ -59,128 +147,81 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="int-cards-section relative pb-24">
+    <section class="pb-24">
       <div class="page-shell">
-        <div class="grid gap-8 lg:grid-cols-2 lg:items-start">
-          <article class="int-card opacity-0 solid-card md:p-8">
-            <p class="section-eyebrow">How it works</p>
-            <h2
-              class="mt-4 text-2xl font-heading font-semibold leading-[1.08] text-white"
-            >
-              Your store data, powering your chat
-            </h2>
-            <p
-              class="mt-4 text-base font-medium leading-relaxed text-slate-300"
-            >
-              By connecting Shopify to VoluChat, your AI agents become experts
-              on your specific catalog. They can instantly check real-time stock
-              levels for variants, confirm pricing, and assist with order
-              tracking. The sync happens automatically, meaning when you update
-              a product in Shopify, your chat AI instantly knows about it.
-            </p>
-          </article>
-
-          <article class="int-card opacity-0 solid-card md:p-8">
-            <p class="section-eyebrow">Guardrails & Control</p>
-            <h2
-              class="mt-4 text-2xl font-heading font-semibold leading-[1.08] text-white"
-            >
-              Secure and accurate
-            </h2>
-            <ul class="mt-5 space-y-3">
-              <li
-                class="flex gap-3 text-base font-medium leading-relaxed text-slate-200"
-              >
-                <span
-                  class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-200"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    ><polyline points="20 6 9 17 4 12"></polyline></svg
-                  >
-                </span>
-                <span
-                  >Requires strict read-only access to your catalog and order
-                  data.</span
-                >
-              </li>
-              <li
-                class="flex gap-3 text-base font-medium leading-relaxed text-slate-200"
-              >
-                <span
-                  class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-200"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    ><polyline points="20 6 9 17 4 12"></polyline></svg
-                  >
-                </span>
-                <span
-                  >Eliminates AI hallucinations by grounding all answers in
-                  exact store data.</span
-                >
-              </li>
-              <li
-                class="flex gap-3 text-base font-medium leading-relaxed text-slate-200"
-              >
-                <span
-                  class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-200"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    ><polyline points="20 6 9 17 4 12"></polyline></svg
-                  >
-                </span>
-                <span
-                  >Customer PII is handled securely and not used to train global
-                  models.</span
-                >
-              </li>
-            </ul>
-          </article>
+        <div class="mx-auto max-w-4xl">
+          <h2 class="section-eyebrow text-emerald-400 mb-6">How the integration works</h2>
+          <div class="space-y-4">
+            {flowSteps.map((item) => (
+              <article class="shopify-flow-step opacity-0 solid-card flex gap-5 p-5 md:p-6">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-950/30 text-sm font-bold text-emerald-400">
+                  {item.step}
+                </div>
+                <div>
+                  <h3 class="text-lg font-heading font-semibold text-white">{item.title}</h3>
+                  <p class="mt-1.5 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-pad relative overflow-hidden bg-[#070f1d]">
+    <section class="pb-24">
       <div class="page-shell">
-        <div class="mx-auto max-w-3xl text-center">
-          <h2 class="section-title !text-white">Powered by Shopify</h2>
-          <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="/features"
-              class="chip hover:bg-slate-500 transition-colors"
-              >Explore Features</a
-            >
-            <a
-              href="/pricing"
-              class="chip hover:bg-slate-500 transition-colors">Pilot Pricing</a
-            >
+        <div class="mx-auto max-w-4xl grid gap-8 lg:grid-cols-2">
+          <div>
+            <h2 class="section-eyebrow text-emerald-400 mb-6">Reads from your Shopify store</h2>
+            <div class="space-y-3">
+              {readsFromShopify.map((item) => (
+                <article class="shopify-card opacity-0 solid-card p-5">
+                  <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
+                  <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
+          <div>
+            <h2 class="section-eyebrow text-emerald-400 mb-6">Creates in your Shopify admin</h2>
+            <div class="space-y-3">
+              {createsInShopify.map((item) => (
+                <article class="shopify-card opacity-0 solid-card p-5">
+                  <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
+                  <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="section-eyebrow text-emerald-400 mb-6">Security & guardrails</h2>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {guardrails.map((item) => (
+              <article class="shopify-guardrail opacity-0 solid-card p-5 md:p-6">
+                <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
+                <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell text-center">
+        <h2 class="section-title !text-white">Ready to connect your Shopify store?</h2>
+        <p class="section-copy mx-auto mt-4 max-w-2xl text-slate-300">
+          White-glove setup for 10 pilot stores. We handle the Shopify integration, Meta API configuration, and brand voice calibration — you just approve the pilot.
+        </p>
+        <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
+          <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
+          <a href="/features" class="btn-secondary">See Full Feature Architecture</a>
         </div>
       </div>
     </section>
@@ -205,15 +246,21 @@ const structuredData = {
       { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
     );
 
-    gsap.fromTo(".int-card",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".int-cards-section",
-          start: "top 80%",
-          toggleActions: "play none none reverse"
+    gsap.utils.toArray<HTMLElement>(".shopify-flow-step, .shopify-card, .shopify-guardrail").forEach((el) => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
         }
-      }
-    );
+      );
+    });
   });
 </script>

@@ -9,7 +9,7 @@ const seoTitle = "VoluChat Features | Autonomous Social Commerce & Sales Agent A
 const seoDescription =
   "Explore all core features of VoluChat: Comment-to-DM engine, catalog intelligence, autonomous WhatsApp closer, in-chat checkout, and safety guardrails. The complete WhatsApp sales automation architecture.";
 const seoKeywords =
-  "VoluChat features, WhatsApp sales automation, WhatsApp AI sales closer, Instagram DM automation features, Shopify social commerce features, AI sales agent capabilities";
+  "VoluChat features, WhatsApp sales automation, WhatsApp AI sales closer, Instagram DM automation features, Shopify WhatsApp automation, AI sales agent capabilities";
 const siteUrl = "https://www.voluchat.com";
 
 const featureCategories = [
@@ -162,7 +162,7 @@ const structuredData = [
     "@type": "DefinedTermSet",
     name: "VoluChat Platform Capabilities",
     description:
-      "Core features of VoluChat's autonomous social commerce AI sales agent for Instagram and WhatsApp.",
+      "Core features of VoluChat's autonomous WhatsApp sales automation agent for Instagram and WhatsApp.",
     url: `${siteUrl}/features`,
     hasDefinedTerm: featureCategories.flatMap((group) => [
       {
@@ -191,25 +191,24 @@ const structuredData = [
 >
   <Navbar />
 
-  <main class="pt-20">
-    <!-- Clean Features Header -->
-    <section class="relative overflow-hidden pt-20 pb-14 sm:pt-24 lg:pb-20">
+  <main class="overflow-hidden">
+    <section class="relative isolate overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
       <div
         class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(16,185,129,0.12),transparent_35%),linear-gradient(180deg,rgba(7,18,29,0.98),rgba(6,12,21,0.98))]"
       >
       </div>
-      <div class="ambient-noise"></div>
+      <div class="sect-grid opacity-30"></div>
 
       <div class="page-shell">
-        <div class="features-hero-text opacity-0 mx-auto max-w-4xl text-center">
-          <div class="chip mb-4">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="chip mx-auto">
             <span class="mini-label">Platform Capabilities</span>
           </div>
           <h1
-            class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
+            class="mt-6 text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
           >
-            Everything you need to <br />
-            <span class="gradient-text-anim">automate social sales.</span>
+            Everything you need to
+            <span class="block gradient-text-anim">automate social sales.</span>
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-2xl text-slate-300">
             A comprehensive breakdown of VoluChat's autonomous commerce features — from viral comment capture to 90-second WhatsApp checkout and Shopify fulfillment.
@@ -222,57 +221,53 @@ const structuredData = [
       </div>
     </section>
 
-    <!-- Feature Categories Breakdown -->
-    <section class="features-list-section relative pb-20 sm:pb-28">
-      <div class="page-shell space-y-14 sm:space-y-20">
+    <section class="relative pb-20 sm:pb-28">
+      <div class="page-shell space-y-12 sm:space-y-16">
         {
           featureCategories.map((group) => (
-            <div class="feature-group opacity-0 rounded-[1.75rem] border border-white/10 bg-[#0a1424]/90 p-6 sm:p-10 shadow-[0_24px_80px_-50px_rgba(0,0,0,0.85)] backdrop-blur-md">
-              <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-white/10 pb-6 mb-8">
+            <article class="rounded-[1.75rem] border border-white/10 bg-[#0a1424]/90 p-6 shadow-[0_24px_80px_-50px_rgba(0,0,0,0.85)] backdrop-blur-md sm:p-10">
+              <header class="flex flex-col gap-3 border-b border-white/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <span class="font-mono text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-1.5">
+                  <span class="mb-1.5 block font-mono text-xs font-bold uppercase tracking-widest text-emerald-400">
                     {group.category}
                   </span>
-                  <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">
+                  <h2 class="text-2xl font-heading font-bold text-white sm:text-3xl">
                     {group.title}
                   </h2>
                 </div>
-                <span class="w-fit rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1 text-xs font-mono font-bold text-emerald-300">
+                <span class="w-fit rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1 font-mono text-xs font-bold text-emerald-300">
                   {group.badge}
                 </span>
-              </div>
+              </header>
 
-              <p class="text-sm sm:text-base text-slate-300 font-medium mb-8 max-w-3xl">
+              <p class="mb-8 mt-6 max-w-3xl text-sm font-medium leading-relaxed text-slate-300 sm:text-base">
                 {group.desc}
               </p>
 
               <div class="grid gap-5 md:grid-cols-3">
                 {group.features.map((feat) => (
-                  <article class="feature-card rounded-2xl border border-white/10 bg-[#060e1a] p-6 hover:border-emerald-500/40 hover:bg-[#0d1c2e] transition duration-300 flex flex-col justify-between">
-                    <div>
-                      <div class="h-10 w-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-xl mb-4">
-                        {feat.icon}
-                      </div>
-                      <h3 class="text-lg font-heading font-bold text-white">
-                        {feat.title}
-                      </h3>
-                      <p class="mt-2.5 text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                        {feat.desc}
-                      </p>
+                  <article class="rounded-2xl border border-white/10 bg-[#060e1a] p-6 transition duration-300 hover:border-emerald-500/40 hover:bg-[#0d1c2e]">
+                    <div class="mb-4 grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.05] text-xl">
+                      {feat.icon}
                     </div>
+                    <h3 class="font-heading text-lg font-bold text-white">
+                      {feat.title}
+                    </h3>
+                    <p class="mt-2.5 text-xs font-medium leading-relaxed text-slate-300 sm:text-sm">
+                      {feat.desc}
+                    </p>
                   </article>
                 ))}
               </div>
-            </div>
+            </article>
           ))
         }
       </div>
     </section>
 
-    <!-- Technical Architecture Strip -->
-    <section class="tech-specs-section relative border-y border-white/10 bg-[#060e1a] py-12 sm:py-20">
+    <section class="relative border-y border-white/10 bg-[#060e1a] py-16 sm:py-24">
       <div class="page-shell">
-        <div class="tech-header opacity-0 max-w-3xl mb-12">
+        <div class="mb-12 max-w-3xl">
           <div class="chip mb-3">
             <span class="mini-label">Under the Hood</span>
           </div>
@@ -287,14 +282,14 @@ const structuredData = [
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {
             technicalSpecs.map((spec, idx) => (
-              <div class="tech-card opacity-0 rounded-2xl border border-white/10 bg-[#0a1526]/80 p-6">
+              <div class="rounded-2xl border border-white/10 bg-[#0a1526]/80 p-6">
                 <span class="font-mono text-xs font-bold text-emerald-400">
                   0{idx + 1}
                 </span>
-                <h3 class="mt-3 text-base font-heading font-bold text-white">
+                <h3 class="mt-3 font-heading text-base font-bold text-white">
                   {spec.title}
                 </h3>
-                <p class="mt-2 text-xs text-slate-300 font-medium leading-relaxed">
+                <p class="mt-2 text-xs font-medium leading-relaxed text-slate-300">
                   {spec.detail}
                 </p>
               </div>
@@ -308,58 +303,3 @@ const structuredData = [
   <FAQ />
   <Footer />
 </Layout>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
-
-    // Hero
-    gsap.fromTo(".features-hero-text",
-      { opacity: 0, y: 25 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
-    );
-
-    // Feature Groups
-    const groups = gsap.utils.toArray<HTMLElement>(".feature-group");
-    groups.forEach((group) => {
-      gsap.fromTo(group,
-        { opacity: 0, y: 35 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: group,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-
-    // Tech Specs
-    const techTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".tech-specs-section",
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    techTl.fromTo(".tech-header",
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
-    ).fromTo(".tech-card",
-      { opacity: 0, y: 25, scale: 0.98 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.4, stagger: 0.08, ease: "power2.out" },
-      "-=0.3"
-    );
-  });
-</script>

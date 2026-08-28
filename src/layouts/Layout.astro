@@ -167,6 +167,24 @@ const structuredDataItems = [
     </div>
     <CookieConsent />
 
+    <!-- Safety net: if any element is still invisible (opacity 0) 1s after load
+         (e.g. a page forgot its GSAP entrance), promote it to visible. Content
+         must never depend on JS to be readable. -->
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document
+            .querySelectorAll<HTMLElement>('[class*="opacity-0"]')
+            .forEach((el) => {
+              if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
+                el.style.opacity = "1";
+                el.style.transform = "none";
+              }
+            });
+        }, 1200);
+      });
+    </script>
+
     <!-- Scroll-reveal + interaction enhancements.
 	     Uses small native browser APIs on the critical path. Heavier GSAP
 	     effects are loaded only by components that need them after interaction. -->

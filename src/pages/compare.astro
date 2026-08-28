@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Navbar.astro";
+import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
@@ -22,47 +22,77 @@ const structuredData = {
 const competitors = [
   {
     name: "Flowchart WhatsApp Tools (e.g. Wati, Interakt)",
+    icon: "🧭",
     fit: "Broadcast messaging & rigid button-based flowcharts ('Press 1 for tracking, Press 2 for sizing').",
-    setup:
+    tradeoff:
       "Forces buyers through robotic decision trees. Drops off 70%+ of real buyers who have conversational questions about styling, fabric, or urgency.",
-    contrast:
+    advantage:
       "VoluChat converses naturally with your buyers, understands sizing nuances, verifies real-time stock, and closes orders directly in-chat via UPI.",
   },
   {
     name: "Social Bot Builders (e.g. Manychat)",
+    icon: "🔗",
     fit: "Keyword auto-responders that send static coupon links to external websites.",
-    setup:
+    tradeoff:
       "Sends shoppers an external browser link where 60%+ abandon the cart. Cannot check real-time variant stock or handle complex customer objections.",
-    contrast:
+    advantage:
       "VoluChat generates native In-DM checkouts and draft orders so the buyer completes payment in 90 seconds without ever leaving WhatsApp.",
   },
   {
     name: "Manual Human Chat Reps",
+    icon: "👥",
     fit: "Hiring 2–4 full-time support agents to manually answer Instagram DMs and WhatsApp chats.",
-    setup:
+    tradeoff:
       "Offline between 10 PM – 9 AM (when 40%+ of social sales occur). High training overhead, slow response times, and inconsistent closing rates.",
-    contrast:
+    advantage:
       "VoluChat works 24/7/365 with sub-2s responses, zero rep churn, 100% brand tone consistency, and seamless 1-click human escalation when needed.",
   },
 ];
 
-const setupComparison = [
+const differentiators = [
   {
     label: "Traditional Chatbots & Reps",
-    title: "High friction, low conversion",
     points: [
       "Offline at night when social ads convert best",
       "Rigid 'Press 1' menus that frustrate buyers",
       "External links that leak 60%+ of carts",
+      "Slow response, inconsistent brand voice",
     ],
   },
   {
     label: "VoluChat AI Closer",
-    title: "Autonomous 24/7 revenue engine",
     points: [
       "Sub-2s response time day and night",
       "Real-time Shopify stock & sizing intelligence",
       "Native In-DM UPI & draft order checkout",
+      "Strict margin floors, 1-click human handoff",
+    ],
+  },
+];
+
+const whenToChooseOther = [
+  {
+    label: "Choose Wati if…",
+    points: [
+      "You need broadcast messaging for promotions and sale announcements",
+      "Simple order tracking bots with 'Press 1' menus are enough",
+      "You want a self-serve tool and have time to build flows yourself",
+    ],
+  },
+  {
+    label: "Choose Manychat if…",
+    points: [
+      "Basic Instagram comment auto-replies for lead capture are your priority",
+      "You mainly distribute coupon codes to an existing audience",
+      "Budget is tight and you need a simple keyword trigger tool",
+    ],
+  },
+  {
+    label: "Choose manual reps if…",
+    points: [
+      "Your chat volume is under 10 inquiries per day",
+      "Conversations require deep emotional nuance every time",
+      "You're okay with offline gaps and inconsistent response times",
     ],
   },
 ];
@@ -75,23 +105,24 @@ const setupComparison = [
   canonical={new URL("/compare", siteUrl).toString()}
   structuredData={[structuredData, getFaqSchema()]}
 >
-  <Header />
+  <Navbar />
 
-  <main class="pt-20">
-    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
+  <main class="overflow-hidden">
+    <section class="relative isolate overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
       <div
         class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(83,111,159,0.12),transparent_32%),radial-gradient(circle_at_18%_42%,rgba(203,217,234,0.16),transparent_30%)]"
       >
       </div>
-      <div class="ambient-noise"></div>
+      <div class="sect-grid opacity-20"></div>
 
       <div class="page-shell">
-        <div class="compare-hero-text opacity-0 mx-auto max-w-4xl text-center">
-          <div class="chip">Comparison guide</div>
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="chip mx-auto">Comparison guide</div>
           <h1
-            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
+            class="mt-6 text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
           >
-            Chatbots manage tickets. VoluChat closes social commerce sales.
+            Chatbots manage tickets.
+            <span class="block gradient-text-anim">VoluChat closes Instagram and WhatsApp sales.</span>
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
             Flowchart builders and support desks leak 70%+ of your buyers with rigid menus and external links. VoluChat is built specifically for D2C brands to qualify inquiries on Instagram, verify Shopify variant inventory, and close paid orders directly in WhatsApp in 90 seconds.
@@ -100,32 +131,36 @@ const setupComparison = [
       </div>
     </section>
 
-    <section class="pb-10">
+    <section class="relative pb-16">
       <div class="page-shell">
-        <div class="grid gap-4 lg:grid-cols-2">
+        <div class="grid gap-5 lg:grid-cols-2">
           {
-            setupComparison.map((item, index) => (
+            differentiators.map((item, index) => (
               <article
-                class={`compare-setup-card opacity-0 solid-card md:p-7 ${index === 1 ? "border-emerald-500/30 bg-emerald-950/20" : ""}`}
+                class={`solid-card p-6 sm:p-8 ${index === 1 ? "border-emerald-500/30 bg-emerald-950/20" : ""}`}
               >
                 <p class={`mini-label ${index === 1 ? "text-emerald-300" : ""}`}>
                   {item.label}
                 </p>
                 <h2 class="mt-3 text-2xl font-heading font-semibold leading-tight text-white">
-                  {item.title}
+                  {index === 1
+                    ? "Autonomous 24/7 revenue engine"
+                    : "High friction, low conversion"}
                 </h2>
-                <div class="mt-5 grid gap-2">
+                <ul class="mt-6 space-y-3">
                   {item.points.map((point) => (
-                    <div class="flex items-start gap-3 rounded-xl border border-white/10 bg-[#0c1728] p-3">
+                    <li class="flex items-start gap-3 rounded-xl border border-white/10 bg-[#0c1728] p-3.5">
                       <span
-                        class={`mt-1 h-2 w-2 shrink-0 rounded-full ${index === 1 ? "bg-emerald-400" : "bg-slate-500"}`}
-                      />
-                      <p class="text-base font-medium leading-relaxed text-slate-300">
+                        class={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[10px] font-bold ${index === 1 ? "bg-emerald-500/20 text-emerald-300" : "bg-slate-500/20 text-slate-300"}`}
+                      >
+                        {index === 1 ? "✓" : "✕"}
+                      </span>
+                      <p class="text-sm font-medium leading-relaxed text-slate-200 sm:text-base">
                         {point}
                       </p>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </article>
             ))
           }
@@ -133,53 +168,53 @@ const setupComparison = [
       </div>
     </section>
 
-    <section class="compare-comp-section pb-24">
-      <div class="page-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-        <aside class="compare-aside opacity-0 solid-card h-fit lg:sticky lg:top-32 lg:p-8 border-emerald-500/20 bg-[#081120]">
-          <p class="section-eyebrow text-emerald-400">The architectural difference</p>
-          <h2
-            class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white"
-          >
-            Autonomous Sales Closer vs Generic Bots.
+    <section class="relative pb-20 sm:pb-28">
+      <div class="page-shell">
+        <div class="mx-auto mb-12 max-w-2xl text-center">
+          <p class="section-eyebrow text-emerald-400">Side by side</p>
+          <h2 class="section-title mt-3 text-white font-heading">
+            How each alternative actually stacks up.
           </h2>
-          <p class="mt-5 text-base font-medium leading-relaxed text-slate-300">
-            VoluChat is engineered for modern D2C commerce. We connect directly with your official Meta APIs and Shopify catalog to execute real sales transactions inside chat with strict margin and COD safety guardrails.
+          <p class="section-copy mx-auto mt-4 max-w-2xl text-slate-300">
+            Three real categories we compete with, what they are genuinely good at, and where VoluChat replaces them.
           </p>
-          <a href="/contact" class="btn-primary mt-8 w-full"
-                  >Apply for Pilot Cohort &rarr;</a
-          >
-        </aside>
+        </div>
 
-        <div class="space-y-5">
+        <div class="grid gap-6">
           {
             competitors.map((item) => (
-              <article class="compare-comp-card opacity-0 solid-card md:p-7">
-                <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+              <article class="solid-card p-6 sm:p-8">
+                <header class="flex items-start gap-4 border-b border-white/10 pb-5">
+                  <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-white/10 bg-white/[0.05] text-2xl">
+                    {item.icon}
+                  </span>
                   <div>
-                    <p class="mini-label">Alternative Category</p>
-                    <h3 class="mt-2 text-2xl font-heading font-semibold text-white">
+                    <p class="mini-label">Alternative category</p>
+                    <h3 class="mt-1 text-xl font-heading font-semibold text-white sm:text-2xl">
                       {item.name}
                     </h3>
                   </div>
-                </div>
+                </header>
+
                 <div class="mt-6 grid gap-4 md:grid-cols-2">
-                  <div class="rounded-2xl border border-[rgba(148,163,184,0.2)] bg-[#0c1728] p-5">
+                  <div class="rounded-2xl border border-white/10 bg-[#0c1728] p-5">
                     <p class="mini-label">Core strength</p>
-                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                    <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300 sm:text-base">
                       {item.fit}
                     </p>
                   </div>
-                  <div class="rounded-2xl border border-[rgba(148,163,184,0.2)] bg-[#0d1829] p-5">
-                    <p class="mini-label">The Tradeoff</p>
-                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
-                      {item.setup}
+                  <div class="rounded-2xl border border-white/10 bg-[#0d1829] p-5">
+                    <p class="mini-label text-rose-300">The tradeoff</p>
+                    <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300 sm:text-base">
+                      {item.tradeoff}
                     </p>
                   </div>
                 </div>
-                <div class="mt-4 rounded-2xl border border-teal-300/20 bg-teal-300/10 p-5">
-                  <p class="mini-label text-teal-200">VoluChat Advantage</p>
-                  <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
-                    {item.contrast}
+
+                <div class="mt-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-5">
+                  <p class="mini-label text-emerald-200">VoluChat advantage</p>
+                  <p class="mt-3 text-sm font-medium leading-relaxed text-slate-100 sm:text-base">
+                    {item.advantage}
                   </p>
                 </div>
               </article>
@@ -189,49 +224,40 @@ const setupComparison = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="relative pb-24">
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl">
-          <div class="text-center mb-10">
+        <div class="mx-auto max-w-5xl">
+          <div class="mb-10 text-center">
             <p class="section-eyebrow text-emerald-400">Honest take</p>
-            <h2 class="section-title mt-4 text-white font-heading">
+            <h2 class="section-title mt-3 text-white font-heading">
               When to choose the other tools
             </h2>
-            <p class="section-copy mx-auto mt-5 max-w-2xl text-slate-300">
+            <p class="section-copy mx-auto mt-4 max-w-2xl text-slate-300">
               We'd rather you pick the right tool than regret a wrong fit. Here's when each alternative actually makes sense.
             </p>
           </div>
 
           <div class="grid gap-5 md:grid-cols-3">
-            <article class="solid-card p-6">
-              <p class="mini-label text-slate-400">Choose Wati if...</p>
-              <ul class="mt-3 space-y-2 text-sm font-medium leading-relaxed text-slate-300">
-                <li>You need broadcast messaging for promotions and sale announcements</li>
-                <li>Simple order tracking bots with 'Press 1' menus are enough</li>
-                <li>You want a self-serve tool and have time to build flows yourself</li>
-              </ul>
-            </article>
-            <article class="solid-card p-6">
-              <p class="mini-label text-slate-400">Choose Manychat if...</p>
-              <ul class="mt-3 space-y-2 text-sm font-medium leading-relaxed text-slate-300">
-                <li>Basic Instagram comment auto-replies for lead capture are your priority</li>
-                <li>You mainly distribute coupon codes to an existing audience</li>
-                <li>Budget is tight and you need a simple keyword trigger tool</li>
-              </ul>
-            </article>
-            <article class="solid-card p-6">
-              <p class="mini-label text-slate-400">Choose manual reps if...</p>
-              <ul class="mt-3 space-y-2 text-sm font-medium leading-relaxed text-slate-300">
-                <li>Your chat volume is under 10 inquiries per day</li>
-                <li>Conversations require deep emotional nuance every time</li>
-                <li>You're okay with offline gaps and inconsistent response times</li>
-              </ul>
-            </article>
+            {
+              whenToChooseOther.map((item) => (
+                <article class="solid-card p-6">
+                  <p class="mini-label text-slate-300">{item.label}</p>
+                  <ul class="mt-4 space-y-3 text-sm font-medium leading-relaxed text-slate-300">
+                    {item.points.map((point) => (
+                      <li class="flex gap-2.5">
+                        <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
           </div>
 
-          <div class="mt-10 solid-card p-6 md:p-8 border-emerald-500/30 bg-emerald-950/20 text-center">
-            <p class="mini-label text-emerald-300">Choose VoluChat if...</p>
-            <p class="mt-3 text-lg font-medium leading-relaxed text-slate-200 max-w-2xl mx-auto">
+          <div class="mt-10 solid-card border-emerald-500/30 bg-emerald-950/20 p-8 text-center sm:p-10">
+            <p class="mini-label text-emerald-300">Choose VoluChat if…</p>
+            <p class="mx-auto mt-3 max-w-2xl text-lg font-medium leading-relaxed text-slate-100">
               You want to close sales, not just answer questions. VoluChat qualifies buyers, checks live stock, handles objections, and completes orders in-chat — the full 90-second commerce loop the other tools can't deliver.
             </p>
             <a href="/contact" class="btn-primary mt-6 inline-block">Apply for Pilot Cohort &rarr;</a>
@@ -239,56 +265,9 @@ const setupComparison = [
         </div>
       </div>
     </section>
+
+    <FAQ />
   </main>
 
-  <FAQ />
   <Footer />
 </Layout>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
-
-    // Hero
-    gsap.fromTo(".compare-hero-text",
-      { opacity: 0, y: 30, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
-    );
-
-    // Setup Section
-    gsap.fromTo(".compare-setup-card",
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.2, ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".compare-setup-card",
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Competitors Section
-    const compTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".compare-comp-section",
-        start: "top 75%",
-        toggleActions: "play none none reverse"
-      }
-    });
-    
-    compTl.fromTo(".compare-aside",
-      { opacity: 0, x: -30 },
-      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
-    ).fromTo(".compare-comp-card",
-      { opacity: 0, y: 40, rotateX: -5 },
-      { opacity: 1, y: 0, rotateX: 0, duration: 0.7, stagger: 0.15, ease: "back.out(1.2)" },
-      "-=0.5"
-    );
-  });
-</script>

@@ -182,7 +182,7 @@ const structuredData = blog
     {
       blog ? (
         <article class="blog-article mx-auto max-w-5xl px-5 sm:px-6">
-          <div class="blog-post-header opacity-0 mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+          <div class="blog-post-header mx-auto mb-10 max-w-3xl text-center sm:mb-12">
             <a
               href="/blog"
               class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-200 transition-colors hover:text-teal-100"
@@ -250,7 +250,7 @@ const structuredData = blog
             </div>
           </div>
 
-          <div class="blog-post-image opacity-0 relative mx-auto mb-10 aspect-[16/8.5] max-w-4xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b1526] shadow-[0_22px_70px_rgba(0,0,0,0.4)] sm:mb-12 lg:aspect-[21/9]">
+          <div class="blog-post-image relative mx-auto mb-10 aspect-[16/8.5] max-w-4xl overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b1526] shadow-[0_22px_70px_rgba(0,0,0,0.4)] sm:mb-12 lg:aspect-[21/9]">
             {blog.featuredImageUrl ? (
               <img
                 src={blog.featuredImageUrl}
@@ -279,7 +279,7 @@ const structuredData = blog
           </div>
 
           {blog.excerpt && (
-            <div class="blog-tldr opacity-0 mx-auto mb-10 max-w-3xl rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6 sm:p-8">
+            <div class="blog-tldr mx-auto mb-10 max-w-3xl rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6 sm:p-8">
               <p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-400 font-mono mb-3">TL;DR</p>
               <p class="text-base font-medium leading-relaxed text-slate-200">
                 {blog.excerpt}
@@ -287,7 +287,7 @@ const structuredData = blog
             </div>
           )}
 
-          <div class="blog-prose-shell opacity-0">
+          <div class="blog-prose-shell">
             <div class="blog-prose" set:html={renderedContentHtml} />
           </div>
 

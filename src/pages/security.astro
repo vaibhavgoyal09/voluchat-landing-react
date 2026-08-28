@@ -6,102 +6,238 @@ import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
 const siteUrl = "https://www.voluchat.com";
+const seoTitle = "Security & Brand Guardrails | VoluChat";
+const seoDescription =
+  "Learn how VoluChat protects your Shopify store with official Meta Cloud APIs, strict discount floors, live inventory validation, catalog isolation, and 1-click human escalation.";
+const seoKeywords =
+  "WhatsApp API security, Meta Cloud API compliance, ecommerce AI guardrails, brand safe AI sales closer, Shopify data isolation";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Security & Guardrails | VoluChat Social Commerce Agents",
-  description: "Learn how VoluChat protects your store with official Meta & WhatsApp Business Cloud APIs, strict discount floors, live inventory validation, and 1-click human escalation.",
-  url: siteUrl,
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/security`,
 };
 
-const safeguards = [
+const metaCompliance = [
   {
-    title: "Official Meta & WhatsApp APIs",
-    text: "Zero shady unofficial scrapers or browser extensions. Connected directly via official Meta Cloud APIs for 100% account safety and zero ban risk.",
+    title: "Official Meta Cloud APIs Only",
+    description: "VoluChat connects exclusively through Meta's official WhatsApp Business Cloud API and Instagram Graph API. No unofficial scrapers, browser extensions, or grey-market tools. Your account stays fully compliant with Meta's terms of service.",
   },
   {
-    title: "Strict Margin Floors",
-    text: "The AI agent is cryptographically restricted from offering unauthorized discounts or trading away margins to chase a conversion.",
+    title: "Scoped API Permissions",
+    description: "We request only the minimum API permissions needed for your enabled workflows. If you only use WhatsApp sales, we don't request Instagram access. If you only use comment-to-DM, we don't request message read access beyond new comments.",
   },
   {
-    title: "Real-time Catalog Isolation",
-    text: "Read-only inventory sync ensures the AI agent only sells verified, in-stock variant SKUs with accurate delivery SLAs.",
+    title: "Token Security",
+    description: "Access tokens are stored encrypted at rest, never logged in plaintext, and rotated on a regular schedule. Compromised tokens are revoked immediately via Meta's token invalidation API.",
+  },
+];
+
+const dataFlow = [
+  {
+    title: "What VoluChat reads from your store",
+    items: [
+      "Product catalog: titles, descriptions, variants, pricing, SKUs, images",
+      "Inventory levels: real-time stock counts per variant across all locations",
+      "Order data: order status, tracking numbers, fulfillment state",
+      "Shipping policies: delivery zones, COD availability, return windows",
+      "Discount rules: active promotions, coupon codes, margin floors",
+    ],
+  },
+  {
+    title: "What VoluChat writes to your store",
+    items: [
+      "Draft orders: pre-populated with customer details, selected variant, and pricing",
+      "Payment links: Razorpay or Cashfree UPI links embedded in draft orders",
+      "Order notes: internal notes marking AI-generated vs human-assisted orders",
+    ],
+  },
+  {
+    title: "What VoluChat never touches",
+    items: [
+      "Product pricing or inventory levels (read-only, never modified by AI)",
+      "Fulfillment or shipping operations (your team handles this)",
+      "Refund or return processing (escalated to human, never auto-processed)",
+      "Customer payment credentials (handled entirely by Razorpay/Cashfree)",
+    ],
+  },
+];
+
+const guardrails = [
+  {
+    title: "Strict Margin Floors & Ceilings",
+    description: "The AI is cryptographically restricted from offering discounts below your configured minimum margin or above your maximum discount threshold. Every discount request is checked against your rules before being shown to the buyer.",
+    details: ["Configurable per-product or per-category margin floors", "Maximum discount percentage enforced in real-time", "Bundle and combo offers checked against combined margin rules", "Audit trail of every discount offer made by the AI"],
+  },
+  {
+    title: "Zero Out-of-Stock Selling",
+    description: "VoluChat reads live Shopify variant inventory before every stock confirmation. If a variant has 0 units, the AI never confirms availability — it suggests alternatives or waits for restock.",
+    details: ["Real-time variant stock checks via Shopify GraphQL API", "Multi-location inventory awareness (central warehouse + stores)", "Low-stock warnings trigger 'selling fast' urgency without false promises", "Back-in-stock alerts offered when variants are unavailable"],
   },
   {
     title: "1-Click Human Escalation",
-    text: "Custom bridal orders, VIP clients, or negative sentiment triggers instantly alert your team on WhatsApp for a seamless takeover.",
+    description: "Certain situations automatically trigger a handoff to your human team. The AI detects these signals and alerts your sales rep on WhatsApp within seconds.",
+    details: ["Custom orders: bridal, bulk, or non-standard requests", "VIP customers: high LTV or repeat buyers flagged in Shopify", "Negative sentiment: frustration, anger, or complaint keywords", "Refund/return requests: never handled by AI, always escalated", "Ambiguous sizing: when AI confidence on size recommendation is low"],
+  },
+  {
+    title: "Brand Voice Calibration",
+    description: "Before going live, we train the AI on your brand's tone, vocabulary, and communication style. Every customer interaction matches your brand identity — not generic chatbot language.",
+    details: ["Tone mapping: casual, formal, luxury, playful — matched to your brand", "Vocabulary training: your product names, abbreviations, and terminology", "Response templates: your preferred greeting, sign-off, and escalation phrases", "Competitor handling: how your brand discusses alternatives (or doesn't)"],
+  },
+];
+
+const codGuardrails = [
+  {
+    title: "OTP Verification for COD Orders",
+    description: "Cash-on-Delivery orders above a configurable threshold require WhatsApp button confirmation or OTP verification before the order is placed — reducing fake orders and RTO rates.",
+  },
+  {
+    title: "Prepayment Incentives",
+    description: "The AI can offer small discounts (within your margin rules) for UPI prepayment instead of COD, reducing your return-to-origin costs while giving the buyer a reason to pay upfront.",
+  },
+  {
+    title: "Address Validation",
+    description: "Before confirming a COD order, the AI validates the delivery pincode against your shipping zones and confirms the estimated delivery timeline — preventing orders to areas you don't serve.",
   },
 ];
 ---
 
 <Layout
-  title="Security & Brand Guardrails | VoluChat"
-  description="Learn how VoluChat protects your store with official Meta & WhatsApp Business Cloud APIs, strict discount floors, live inventory validation, and 1-click human escalation."
-  keywords="WhatsApp API security, Meta Cloud API, ecommerce AI guardrails, brand safe AI sales closer"
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
   canonical={new URL("/security", siteUrl).toString()}
   structuredData={[structuredData, getFaqSchema()]}
 >
   <Header />
 
-  <main class="relative overflow-hidden pt-36 pb-24 sm:pt-40">
-    <div
-      class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.12),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.6),transparent_30%)]"
-    >
-    </div>
-    <div class="ambient-noise"></div>
+  <main class="overflow-hidden">
+    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.12),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.6),transparent_30%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
 
-    <div class="page-shell px-6">
-      <div class="sec-hero-text opacity-0 mx-auto mb-14 max-w-3xl text-center">
-        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-          Enterprise-Grade Brand Safety
+      <div class="page-shell">
+        <div class="sec-hero-text mx-auto max-w-4xl">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            Enterprise-Grade Brand Safety
+          </div>
+          <h1
+            class="max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
+          >
+            Total control over every conversation and checkout.
+          </h1>
+          <p class="section-copy mt-6 max-w-2xl text-slate-300">
+            We treat your brand reputation as sacred. VoluChat wraps every AI response in strict margin limits, verified stock checks, catalog isolation, and instant human fallback — so your brand never says the wrong thing.
+          </p>
+          <p class="mt-4 max-w-xl text-sm font-medium leading-relaxed text-slate-500">
+            <strong class="text-slate-400">What does this mean?</strong> Your AI sales agent can only say what your Shopify catalog says, can only discount within your configured margins, and hands off to a human the moment something is ambiguous.
+          </p>
         </div>
-        <h1
-          class="text-4xl font-semibold leading-[1.03] text-white md:text-6xl font-heading"
-        >
-          Total control over every conversation and checkout.
-        </h1>
-        <p class="section-copy mx-auto mt-6 max-w-2xl text-slate-300">
-          We treat your brand reputation as sacred. VoluChat wraps every conversational response in strict margin limits, verified stock checks, and instant human fallback.
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="section-eyebrow text-emerald-400 mb-6">Meta API compliance</h2>
+          <div class="grid gap-4 sm:grid-cols-3">
+            {metaCompliance.map((item) => (
+              <article class="sec-card opacity-0 solid-card p-5 md:p-6">
+                <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
+                <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="section-eyebrow text-emerald-400 mb-6">Data flow architecture</h2>
+          <div class="grid gap-4 sm:grid-cols-3">
+            {dataFlow.map((group) => (
+              <article class="sec-card opacity-0 solid-card p-5 md:p-6">
+                <h3 class="text-base font-heading font-semibold text-white mb-3">{group.title}</h3>
+                <ul class="space-y-2">
+                  {group.items.map((item) => (
+                    <li class="flex gap-2.5 text-sm font-medium leading-relaxed text-slate-300">
+                      <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/60"></span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="section-eyebrow text-emerald-400 mb-6">Brand safety guardrails</h2>
+          <div class="space-y-4">
+            {guardrails.map((item) => (
+              <article class="sec-guardrail opacity-0 solid-card p-6 md:p-8">
+                <div class="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+                  <div>
+                    <h3 class="text-lg font-heading font-semibold text-white">{item.title}</h3>
+                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                  </div>
+                  <ul class="space-y-2">
+                    {item.details.map((d) => (
+                      <li class="flex gap-2.5 text-sm font-medium leading-relaxed text-slate-300">
+                        <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-200">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="section-eyebrow text-emerald-400 mb-6">COD order guardrails</h2>
+          <div class="grid gap-4 sm:grid-cols-3">
+            {codGuardrails.map((item) => (
+              <article class="sec-card opacity-0 solid-card p-5 md:p-6">
+                <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
+                <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell text-center">
+        <h2 class="section-title !text-white">Ready to deploy with full brand control?</h2>
+        <p class="section-copy mx-auto mt-4 max-w-2xl text-slate-300">
+          White-glove setup for 10 pilot stores. We configure every guardrail, test every edge case, and tune the AI on your brand voice before going live.
         </p>
-      </div>
-
-      <div class="sec-main-card opacity-0 solid-card mb-10 p-6 md:p-10 border-emerald-500/20 bg-[#081120]">
-        <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
-          <div class="rounded-2xl bg-gradient-to-br from-emerald-950/80 to-[#0c1c28] border border-emerald-500/30 p-8 text-white">
-            <p
-              class="text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-400 font-mono"
-            >
-              Zero Bot Hallucinations
-            </p>
-            <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.08]">
-              Autonomous sales with ironclad boundaries.
-            </h2>
-            <p class="mt-5 text-sm font-medium leading-relaxed text-slate-300">
-              Your AI closer is trained exclusively on your official Shopify product catalog, shipping policies, and discount ceilings. It never invents policies or sells out-of-stock items.
-            </p>
-          </div>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            {
-              safeguards.map((item, index) => (
-                <article class="sec-safeguard-card opacity-0 rounded-[1.5rem] border border-white/10 bg-[#0a1424]/90 p-5">
-                  <span class="grid h-8 w-8 place-items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 font-mono text-xs font-bold text-emerald-300">
-                    0{index + 1}
-                  </span>
-                  <h3 class="mt-4 text-base font-heading font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p class="mt-2 text-xs font-medium leading-relaxed text-slate-300">
-                    {item.text}
-                  </p>
-                </article>
-              ))
-            }
-          </div>
+        <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
+          <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
+          <a href="/features" class="btn-secondary">See Full Feature Architecture</a>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <FAQ />
@@ -118,39 +254,26 @@ const safeguards = [
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 
-    // Hero
     gsap.fromTo(".sec-hero-text",
       { opacity: 0, y: 30, scale: 0.95 },
       { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
     );
 
-    // Main Card
-    const mainTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".sec-main-card",
-        start: "top 80%",
-        toggleActions: "play none none reverse"
-      }
-    });
-    mainTl.fromTo(".sec-main-card",
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
-    ).fromTo(".sec-safeguard-card",
-      { opacity: 0, scale: 0.95 },
-      { opacity: 1, scale: 1, duration: 0.5, stagger: 0.1, ease: "back.out(1.2)" },
-      "-=0.4"
-    );
-
-    // Bottom Grid
-    gsap.fromTo(".sec-article-card",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".sec-grid",
-          start: "top 85%",
-          toggleActions: "play none none reverse"
+    gsap.utils.toArray<HTMLElement>(".sec-card, .sec-guardrail").forEach((el) => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
         }
-      }
-    );
+      );
+    });
   });
 </script>

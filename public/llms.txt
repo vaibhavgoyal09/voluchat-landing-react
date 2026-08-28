@@ -26,12 +26,12 @@ VoluChat is a WhatsApp sales automation platform designed for Indian D2C brands.
 
 - **vs Wati**: VoluChat uses generative AI for natural conversation instead of flowchart menus. It checks live inventory and closes orders in-chat, not just sends notifications.
 - **vs Interakt**: VoluChat autonomously qualifies and closes sales. Interakt is a shared inbox toolkit — your team must reply manually.
-- **vs Respond.io**: VoluChat is purpose-built for social commerce on WhatsApp + Instagram with Shopify-native inventory sync and UPI checkout. Respond.io is a broader omnichannel platform.
+- **vs Respond.io**: VoluChat is purpose-built for WhatsApp and Instagram DM sales with Shopify-native inventory sync and in-chat UPI checkout. Respond.io is a broader omnichannel platform.
 - **vs Manual chat reps**: VoluChat operates 24/7, responds in sub-2 seconds, handles unlimited simultaneous conversations, and costs a fraction of hiring chat support staff.
 
 ## Target audience
 
-D2C brands selling on Shopify in India, using Instagram Reels and WhatsApp for social commerce. Particularly brands losing 50%+ of inbound DM inquiries to slow or offline manual chat reps. Typical use case: a customer comments "Price?" on an Instagram Reel at 11 PM — VoluChat replies instantly, qualifies the buyer, checks stock, and completes the order in WhatsApp before the next morning.
+D2C brands selling on Shopify in India, using Instagram Reels and WhatsApp for direct sales. Particularly brands losing 50%+ of inbound DM inquiries to slow or offline manual chat reps. Typical use case: a customer comments "Price?" on an Instagram Reel at 11 PM — VoluChat replies instantly, qualifies the buyer, checks stock, and completes the order in WhatsApp before the next morning.
 
 ## Pricing
 
@@ -60,6 +60,7 @@ Astro 6 SSR on Vercel, Tailwind CSS v4, GSAP animations. Meta Cloud API and What
 
 ## Contact
 
+GitHub: https://github.com/voluchat
 Email: support@voluchat.com
 Instagram: https://www.instagram.com/voluchat
 X/Twitter: https://x.com/voluchat

@@ -46,7 +46,7 @@ const types = [
     type: "AI Sales Agents",
     example: "VoluChat",
     description: "Generative AI that understands natural language, reads live Shopify inventory, checks delivery pincodes, handles objections, enforces margin guardrails, and completes native UPI checkout — all inside WhatsApp.",
-    fit: "End-to-end social commerce: qualification, sizing, stock checks, objection handling, and in-chat payment.",
+    fit: "End-to-end WhatsApp sales: qualification, sizing, stock checks, objection handling, and in-chat payment.",
   },
 ];
 
@@ -130,7 +130,7 @@ const faqSchema = {
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
-        <div class="whatis-hero-text opacity-0 mx-auto max-w-4xl text-center">
+        <div class="whatis-hero-text mx-auto max-w-4xl text-center">
           <div class="chip mb-4">
             <span class="mini-label">Definition</span>
           </div>
@@ -156,7 +156,7 @@ const faqSchema = {
           <div class="space-y-4">
             {
               types.map((item) => (
-                <article class="whatis-type opacity-0 solid-card p-6 md:p-8">
+                <article class="whatis-type solid-card p-6 md:p-8">
                   <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                     <div class="max-w-xl">
                       <h3 class="text-xl font-heading font-semibold text-white">
@@ -192,7 +192,7 @@ const faqSchema = {
           <div class="space-y-4">
             {
               howItWorks.map((item) => (
-                <article class="whatis-step opacity-0 solid-card p-6 md:p-8">
+                <article class="whatis-step solid-card p-6 md:p-8">
                   <div class="flex items-start gap-5">
                     <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 font-mono text-sm font-bold text-emerald-300">
                       {item.step}
