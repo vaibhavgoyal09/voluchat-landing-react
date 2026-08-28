@@ -39,11 +39,45 @@ const canonicalUrl = new URL(
 ).toString();
 const imageUrl = new URL(image, siteOrigin).toString();
 const articleTags = Array.isArray(tags) ? tags.filter(Boolean) : [];
-const structuredDataItems = Array.isArray(structuredData)
-  ? structuredData.filter(Boolean)
-  : structuredData
-    ? [structuredData]
-    : [];
+
+const globalSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "VoluChat",
+    url: siteOrigin,
+    logo: `${siteOrigin}/voluchat_logo.svg`,
+    sameAs: [
+      "https://www.instagram.com/voluchat",
+      "https://x.com/voluchat",
+      "https://www.linkedin.com/company/voluchat",
+      "https://www.youtube.com/@voluchat",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "VoluChat",
+    alternateName: "VoluChat AI",
+    url: siteOrigin,
+    description:
+      "Turn Instagram DMs and WhatsApp chats into 24/7 automated revenue.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteOrigin}/blog?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  },
+];
+
+const structuredDataItems = [
+  ...globalSchemas,
+  ...(Array.isArray(structuredData)
+    ? structuredData.filter(Boolean)
+    : structuredData
+      ? [structuredData]
+      : []),
+];
 ---
 
 <!doctype html>

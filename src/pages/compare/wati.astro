@@ -1,0 +1,184 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "VoluChat vs Wati — AI Sales Closer vs Flowchart WhatsApp Bot";
+const seoDescription =
+  "Compare VoluChat's autonomous AI sales agent with Wati's flowchart-based WhatsApp chatbot for Shopify D2C brands. See why natural conversation closes 3x more sales than rigid button menus.";
+const seoKeywords =
+  "VoluChat vs Wati, Wati alternative, Wati vs AI sales agent, WhatsApp chatbot for Shopify, best WhatsApp sales tool India";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/compare/wati`,
+};
+
+const comparison = [
+  {
+    category: "Conversation Style",
+    wati: "Rigid flowchart menus ('Press 1 for tracking, Press 2 for sizing'). Buyers must navigate robotic decision trees.",
+    voluchat: "Natural language AI that understands conversational questions about sizing, fabric, urgency, and custom requests without menus.",
+  },
+  {
+    category: "Real-Time Inventory",
+    wati: "Cannot check live Shopify variant stock. Relies on static product catalogs or manual updates.",
+    voluchat: "Reads live Shopify variant inventory in real-time. Never sells an out-of-stock size or backordered variant.",
+  },
+  {
+    category: "Checkout Experience",
+    wati: "Sends buyers to external website links where 60%+ abandon the cart. No in-chat payment.",
+    voluchat: "Native in-DM UPI links and draft order checkout. Buyer completes payment in 90 seconds without leaving WhatsApp.",
+  },
+  {
+    category: "Instagram Integration",
+    wati: "Basic auto-reply to comments. No context about the specific post or product the buyer commented on.",
+    voluchat: "Comment-to-DM engine replies in 2 seconds with exact pricing, stock info, and photos for the specific product in the Reel or post.",
+  },
+  {
+    category: "Night Coverage",
+    wati: "Flowchart bots work 24/7 but drop off 70%+ of conversational buyers who don't fit the decision tree.",
+    voluchat: "AI closer handles complex objections, verifies delivery pincodes, and closes orders 24/7 including the 40% of sales that happen at night.",
+  },
+  {
+    category: "Setup",
+    wati: "Self-serve flowchart builder. You configure the bot logic yourself.",
+    voluchat: "100% white-glove setup. VoluChat's engineering team handles Meta API, WhatsApp Business API, Shopify sync, and brand voice guardrails.",
+  },
+];
+
+const verdict = {
+  chooseWati: "You need broadcast messaging for promotions, simple order tracking bots, or a low-cost self-serve tool for basic FAQ automation.",
+  chooseVoluchat: "You want to close sales, not just answer questions. VoluChat qualifies buyers, checks stock, handles objections, and completes orders in-chat — the full 90-second commerce loop Wati can't deliver.",
+};
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare/wati", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(83,111,159,0.12),transparent_32%),radial-gradient(circle_at_18%_42%,rgba(203,217,234,0.16),transparent_30%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="compare-hero-text opacity-0 mx-auto max-w-4xl text-center">
+          <div class="chip">VoluChat vs Wati</div>
+          <h1
+            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
+          >
+            VoluChat vs Wati — AI Sales Closer vs Flowchart Bot.
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
+            Wati automates WhatsApp with rigid button menus and broadcast campaigns. VoluChat is a generative AI sales agent that converses naturally, checks live Shopify stock, and closes paid orders in-chat — the full 90-second social commerce loop.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl space-y-4">
+          {
+            comparison.map((row) => (
+              <article class="opacity-0 solid-card p-6 md:p-8">
+                <p class="section-eyebrow text-emerald-400 mb-4">{row.category}</p>
+                <div class="grid gap-5 md:grid-cols-2">
+                  <div class="rounded-2xl border border-white/10 bg-[#0c1728] p-5">
+                    <p class="mini-label text-slate-400">Wati</p>
+                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                      {row.wati}
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <p class="mini-label text-emerald-300">VoluChat</p>
+                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
+                      {row.voluchat}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl grid gap-5 md:grid-cols-2">
+          <article class="solid-card p-6 md:p-8">
+            <p class="mini-label text-slate-400">Choose Wati if...</p>
+            <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+              {verdict.chooseWati}
+            </p>
+          </article>
+          <article class="solid-card p-6 md:p-8 border-emerald-500/30 bg-emerald-950/20">
+            <p class="mini-label text-emerald-300">Choose VoluChat if...</p>
+            <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
+              {verdict.chooseVoluchat}
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell text-center">
+        <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
+        <p class="mt-4 text-sm text-slate-400">Or explore the full <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">comparison guide</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    gsap.fromTo(".compare-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+
+    gsap.utils.toArray<HTMLElement>(".solid-card").forEach((card) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  });
+</script>
