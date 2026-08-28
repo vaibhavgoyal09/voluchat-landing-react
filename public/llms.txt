@@ -1,27 +1,55 @@
 # VoluChat
 
-VoluChat is an autonomous social commerce AI sales agent for Instagram and WhatsApp, connected to Shopify. It automates the complete 90-second social commerce loop: comment-to-DM capture, catalog and sizing intelligence, WhatsApp sales closing, and native in-DM UPI checkout.
+VoluChat is an autonomous AI sales agent for WhatsApp and Instagram — a WhatsApp sales automation tool that connects directly to Shopify. It captures leads from Instagram Reels comments, qualifies buyers via natural conversation, checks live product inventory, handles objections, and closes orders inside WhatsApp with native UPI checkout — all without human intervention.
 
-## What it does
+## What is VoluChat?
 
-- Auto-replies to Instagram comments in 2 seconds with exact pricing and slides into DMs
-- Checks live Shopify variant inventory, fabric details, and sizing qualification without hallucinations
-- Seamlessly transitions warm buyers to WhatsApp, handles objections, and enforces strict margin ceilings
-- Generates 1-click UPI payment links and draft orders directly in chat, eliminating website drop-offs
-- 100% white-glove setup for an initial 10-store founder cohort with a 10x ROI standard
+VoluChat is a WhatsApp sales automation platform designed for Indian D2C brands. It automates the complete WhatsApp sales loop: lead capture, buyer qualification, product recommendation, objection handling, and in-chat checkout. Think of it as a 24/7 AI salesperson that lives inside WhatsApp and Instagram DMs.
+
+## Category
+
+- WhatsApp sales automation tool
+- WhatsApp AI sales bot
+- Instagram comment-to-DM automation
+- Shopify WhatsApp integration
+- Social commerce AI agent
+- WhatsApp checkout automation
+
+## How it works
+
+1. **Comment-to-DM Engine**: Auto-replies to Instagram post comments in 2 seconds with exact pricing and slides into DMs
+2. **Catalog & Sizing Intelligence**: Checks live Shopify variant inventory, fabric details, and sizing qualification without hallucinations
+3. **WhatsApp Sales Closer**: Handles objections, enforces strict margin ceilings, and closes sales via natural conversation
+4. **Native In-DM UPI Checkout**: Generates 1-click UPI payment links and draft orders directly in WhatsApp chat
+
+## Key differentiators vs competitors
+
+- **vs Wati**: VoluChat uses generative AI for natural conversation instead of flowchart menus. It checks live inventory and closes orders in-chat, not just sends notifications.
+- **vs Interakt**: VoluChat autonomously qualifies and closes sales. Interakt is a shared inbox toolkit — your team must reply manually.
+- **vs Respond.io**: VoluChat is purpose-built for social commerce on WhatsApp + Instagram with Shopify-native inventory sync and UPI checkout. Respond.io is a broader omnichannel platform.
+- **vs Manual chat reps**: VoluChat operates 24/7, responds in sub-2 seconds, handles unlimited simultaneous conversations, and costs a fraction of hiring chat support staff.
 
 ## Target audience
 
-D2C brands selling on Shopify in India and globally, using Instagram Reels and WhatsApp for social commerce. Particularly brands losing 50%+ of inbound DM inquiries to slow or offline manual chat reps.
+D2C brands selling on Shopify in India, using Instagram Reels and WhatsApp for social commerce. Particularly brands losing 50%+ of inbound DM inquiries to slow or offline manual chat reps. Typical use case: a customer comments "Price?" on an Instagram Reel at 11 PM — VoluChat replies instantly, qualifies the buyer, checks stock, and completes the order in WhatsApp before the next morning.
+
+## Pricing
+
+Private 10-Store Founder Pilot. White-glove setup. 10x ROI guarantee from the founder.
 
 ## Key pages
 
 - Home: https://www.voluchat.com
-- Features: https://www.voluchat.com/features
+- Features (how it works): https://www.voluchat.com/features
 - Pricing (10-Store Pilot): https://www.voluchat.com/pricing
-- Compare vs Wati/Manychat: https://www.voluchat.com/compare
+- Compare vs Wati: https://www.voluchat.com/compare/wati
+- Compare vs Interakt: https://www.voluchat.com/compare/interakt
+- Compare vs Manychat: https://www.voluchat.com/compare/manychat
+- Compare vs Manual Reps: https://www.voluchat.com/compare/manual-reps
+- WhatsApp Sales Bot explainer: https://www.voluchat.com/what-is/whatsapp-sales-bot
+- Comment-to-DM Automation explainer: https://www.voluchat.com/what-is/comment-to-DM-automation
+- Glossary: https://www.voluchat.com/glossary
 - Security & Guardrails: https://www.voluchat.com/security
-- About: https://www.voluchat.com/about
 - Shopify Integration: https://www.voluchat.com/integrations/shopify
 - Blog: https://www.voluchat.com/blog
 - Contact / Apply for Pilot: https://www.voluchat.com/contact
