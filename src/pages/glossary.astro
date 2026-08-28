@@ -1,0 +1,278 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
+
+const seoTitle = "Social Commerce Glossary — WhatsApp & Instagram Sales Terms Explained";
+const seoDescription =
+  "Key terms for social commerce automation: comment-to-DM, UPI checkout, catalog sync, WhatsApp sales bot, Shopify inventory sync, and more — defined for D2C founders.";
+const seoKeywords =
+  "social commerce glossary, WhatsApp sales terms, Instagram DM automation glossary, D2C chatbot terms, UPI checkout meaning";
+const siteUrl = "https://www.voluchat.com";
+
+const terms = [
+  {
+    category: "Core Concepts",
+    items: [
+      {
+        term: "Comment-to-DM Automation",
+        definition: "A social commerce technique that automatically replies to Instagram post comments with a personalized direct message containing product pricing, variant availability, and a checkout link — typically within 2 seconds of the comment.",
+        link: "/what-is/comment-to-DM-automation",
+      },
+      {
+        term: "WhatsApp Sales Bot",
+        definition: "An AI-powered conversational agent operating inside WhatsApp that qualifies buyers, answers product questions with live inventory data, handles objections, and completes orders via UPI or draft orders — all without human intervention.",
+        link: "/what-is/whatsapp-sales-bot",
+      },
+      {
+        term: "Social Commerce Closer",
+        definition: "An autonomous AI agent that handles the complete sales loop on social platforms — from lead capture via Instagram comments to order completion via WhatsApp checkout — without manual chat rep involvement.",
+        link: "/features",
+      },
+      {
+        term: "Autonomous Sales Agent",
+        definition: "A software agent that independently qualifies buyers, answers product questions, handles objections, and closes orders across messaging channels (Instagram DM, WhatsApp) using generative AI and live store data.",
+        link: "/features",
+      },
+    ],
+  },
+  {
+    category: "Checkout & Payments",
+    items: [
+      {
+        term: "In-DM UPI Checkout",
+        definition: "A payment flow where the buyer completes a UPI transaction (GPay, PhonePe, Paytm) directly inside a WhatsApp or Instagram DM conversation — without being redirected to an external website or browser.",
+        link: "/features",
+      },
+      {
+        term: "Shopify Draft Order",
+        definition: "An order created in Shopify's admin with customer details and SKU information pre-populated, but not yet paid. Used by VoluChat to stage orders inside chat before the buyer completes payment.",
+        link: "/integrations/shopify",
+      },
+      {
+        term: "Native In-Chat Checkout",
+        definition: "A checkout experience that keeps the entire purchase transaction inside the messaging app (WhatsApp, Instagram DM) — from product discovery to payment confirmation — eliminating external website redirects.",
+        link: "/features",
+      },
+      {
+        term: "1-Click Payment Link",
+        definition: "A pre-generated payment URL sent directly in a chat message that, when tapped, opens a payment gateway (Razorpay, Cashfree) with order details pre-filled — allowing the buyer to pay in a single tap.",
+        link: "/features",
+      },
+    ],
+  },
+  {
+    category: "Catalog & Inventory",
+    items: [
+      {
+        term: "Live Shopify Catalog Sync",
+        definition: "Real-time bidirectional synchronization between VoluChat and a Shopify store's product catalog — including variant stock levels, pricing rules, SKU metadata, and order creation via GraphQL webhooks.",
+        link: "/integrations/shopify",
+      },
+      {
+        term: "Variant Stock Check",
+        definition: "The process of querying Shopify's inventory API to verify the real-time stock count for a specific product variant (size, color, material) before confirming availability to a buyer in chat.",
+        link: "/features",
+      },
+      {
+        term: "Zero Hallucination Commerce",
+        definition: "A design principle where all product answers (pricing, stock, sizing, delivery) are grounded in live Shopify catalog data rather than AI-generated guesses — ensuring no false promises about availability or pricing.",
+        link: "/security",
+      },
+      {
+        term: "Pincode SLA Check",
+        definition: "An automated check that verifies whether a courier can deliver to a specific Indian pincode and confirms the estimated transit timeline — before the buyer asks about delivery.",
+        link: "/features",
+      },
+    ],
+  },
+  {
+    category: "Guardrails & Safety",
+    items: [
+      {
+        term: "Margin Floor & Ceiling",
+        definition: "Hardcoded limits that prevent the AI agent from offering discounts below a minimum margin or above a maximum discount threshold — protecting profitability on every sale.",
+        link: "/security",
+      },
+      {
+        term: "Brand Voice Calibration",
+        definition: "The process of training the AI agent to match a specific brand's tone, vocabulary, and communication style — ensuring every customer interaction feels consistent with the brand's identity.",
+        link: "/security",
+      },
+      {
+        term: "Human-in-the-Loop Escalation",
+        definition: "An automatic handoff mechanism where the AI agent detects situations requiring human judgment (custom orders, VIP clients, negative sentiment) and immediately alerts a human sales rep on WhatsApp.",
+        link: "/security",
+      },
+      {
+        term: "COD Verification",
+        definition: "A guardrail that verifies Cash-on-Delivery orders through additional confirmation steps (WhatsApp button, OTP, or prepayment incentive) to reduce Return-to-Origin (RTO) rates.",
+        link: "/security",
+      },
+    ],
+  },
+  {
+    category: "Platform & Integration",
+    items: [
+      {
+        term: "Meta Cloud API",
+        definition: "Official Meta-provided API for accessing Instagram and WhatsApp Business features programmatically — including sending DMs, reading comments, and managing conversations at scale.",
+        link: "/security",
+      },
+      {
+        term: "WhatsApp Business Cloud API",
+        definition: "Meta's official cloud-hosted API for sending and receiving WhatsApp messages programmatically — the compliant backbone for automated WhatsApp sales and support.",
+        link: "/security",
+      },
+      {
+        term: "Shopify Webhook",
+        definition: "An automated HTTP callback sent by Shopify when a specific event occurs (order created, inventory updated, product changed) — used by VoluChat to keep catalog data synchronized in real-time.",
+        link: "/integrations/shopify",
+      },
+      {
+        term: "Instagram Graph API",
+        definition: "Meta's official API for reading Instagram post comments, sending DMs, and managing business account interactions — the foundation for comment-to-DM automation.",
+        link: "/features",
+      },
+    ],
+  },
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/glossary`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: "VoluChat Social Commerce Glossary",
+    description:
+      "Key terms and definitions for social commerce automation, WhatsApp sales, Instagram DM automation, and Shopify integration.",
+    url: `${siteUrl}/glossary`,
+    hasDefinedTerm: terms.flatMap((group) =>
+      group.items.map((item) => ({
+        "@type": "DefinedTerm",
+        name: item.term,
+        description: item.definition,
+        url: `${siteUrl}${item.link}`,
+        inDefinedTermSet: `${siteUrl}/glossary`,
+      }))
+    ),
+  },
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/glossary", siteUrl).toString()}
+  structuredData={[...structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(16,185,129,0.15),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="glossary-hero-text opacity-0 mx-auto max-w-4xl text-center">
+          <div class="chip mb-4">
+            <span class="mini-label">Glossary</span>
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
+          >
+            Social Commerce Terms, Defined.
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-2xl text-slate-300">
+            Key terms for WhatsApp sales automation, Instagram DM commerce, and Shopify integration — explained for D2C founders.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl space-y-12">
+          {
+            terms.map((group) => (
+              <div>
+                <h2 class="section-eyebrow text-emerald-400 mb-6">{group.category}</h2>
+                <div class="space-y-3">
+                  {group.items.map((item) => (
+                    <article class="glossary-term opacity-0 solid-card p-5 md:p-6">
+                      <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                        <div class="max-w-2xl">
+                          <h3 class="text-lg font-heading font-semibold text-white">
+                            {item.term}
+                          </h3>
+                          <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">
+                            {item.definition}
+                          </p>
+                        </div>
+                        <a
+                          href={item.link}
+                          class="mt-2 shrink-0 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors md:mt-1"
+                        >
+                          Learn more →
+                        </a>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    gsap.fromTo(".glossary-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+
+    gsap.utils.toArray<HTMLElement>(".glossary-term").forEach((card) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  });
+</script>

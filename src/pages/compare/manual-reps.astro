@@ -1,0 +1,216 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "VoluChat vs Manual Chat Reps — AI Sales Agent vs Human Support Team";
+const seoDescription =
+  "Compare VoluChat's autonomous AI sales agent with hiring manual human chat reps for Instagram DM and WhatsApp sales. See why AI closes 3x more orders at a fraction of the cost.";
+const seoKeywords =
+  "VoluChat vs manual reps, AI vs human chat support, WhatsApp sales automation, Instagram DM automation vs hiring, reduce chat support cost";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/compare/manual-reps`,
+};
+
+const comparison = [
+  {
+    category: "Availability",
+    manual: "Offline between 10 PM – 9 AM. 40%+ of social sales happen during off-hours when reps are unavailable.",
+    voluchat: "24/7/365 coverage. Captures every lead regardless of time — nights, weekends, holidays.",
+  },
+  {
+    category: "Response Time",
+    manual: "5–30 minutes during working hours. Next-morning replies lose 70%+ of high-intent buyers.",
+    voluchat: "Sub-2 seconds. Instant response while the purchase impulse is still hot.",
+  },
+  {
+    category: "Cost",
+    manual: "₹15,000–30,000/month per rep. Need 2–4 reps for 24/7 coverage. Training overhead, churn risk.",
+    voluchat: "Fixed pilot pricing with 10x ROI guarantee. Zero hiring, training, or churn costs.",
+  },
+  {
+    category: "Consistency",
+    manual: "Inconsistent brand tone, variable closing rates, human error on pricing and stock info.",
+    voluchat: "100% brand voice consistency. Every buyer gets the same accurate pricing, stock info, and closing approach.",
+  },
+  {
+    category: "Inventory Accuracy",
+    manual: "Reps manually check Shopify admin. Risk of confirming out-of-stock items or quoting wrong prices.",
+    voluchat: "Reads live Shopify variant inventory in real-time. Never confirms availability for sold-out items.",
+  },
+  {
+    category: "Scalability",
+    manual: "Hiring and training takes weeks. Cannot handle viral Reel comment spikes without adding headcount.",
+    voluchat: "Handles 10 or 10,000 simultaneous conversations without degradation. Zero additional cost at scale.",
+  },
+];
+
+const costBreakdown = [
+  { label: "2 Chat Reps (monthly)", cost: "₹30,000–60,000" },
+  { label: "Training & Onboarding", cost: "₹10,000–15,000" },
+  { label: "Night Shift Premium", cost: "₹8,000–12,000" },
+  { label: "Replaced When They Leave", cost: "₹15,000–25,000" },
+  { label: "VoluChat Pilot Setup", cost: "Fixed pricing, 10x ROI guarantee" },
+];
+
+const verdict = {
+  chooseManual: "Your chat volume is under 10 inquiries per day, conversations require deep emotional nuance every time, and you're okay with offline gaps and inconsistent response times.",
+  chooseVoluchat: "You want 24/7 coverage, sub-2s response times, accurate inventory checks, and autonomous order closing — at a fraction of the cost of hiring and training a chat team.",
+};
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare/manual-reps", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(83,111,159,0.12),transparent_32%),radial-gradient(circle_at_18%_42%,rgba(203,217,234,0.16),transparent_30%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="compare-hero-text opacity-0 mx-auto max-w-4xl text-center">
+          <div class="chip">VoluChat vs Manual Reps</div>
+          <h1
+            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
+          >
+            AI Sales Agent vs Hiring Chat Reps.
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
+            Hiring 2–4 full-time reps to manually answer Instagram DMs and WhatsApp chats costs ₹3–6L/year and still leaves 40%+ of leads unanswered at night. VoluChat closes sales 24/7 at a fraction of the cost.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl space-y-4">
+          {
+            comparison.map((row) => (
+              <article class="opacity-0 solid-card p-6 md:p-8">
+                <p class="section-eyebrow text-emerald-400 mb-4">{row.category}</p>
+                <div class="grid gap-5 md:grid-cols-2">
+                  <div class="rounded-2xl border border-white/10 bg-[#0c1728] p-5">
+                    <p class="mini-label text-slate-400">Manual Reps</p>
+                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                      {row.manual}
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <p class="mini-label text-emerald-300">VoluChat</p>
+                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
+                      {row.voluchat}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <div class="solid-card p-6 md:p-8">
+            <p class="section-eyebrow text-emerald-400 mb-4">Cost comparison</p>
+            <h2 class="text-2xl font-heading font-semibold text-white mb-6">
+              What manual reps actually cost
+            </h2>
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              {costBreakdown.map((item) => (
+                <div class="rounded-xl border border-white/10 bg-[#0c1728] p-4 text-center">
+                  <p class="text-xs font-medium text-slate-400">{item.label}</p>
+                  <p class="mt-2 text-sm font-bold text-white">{item.cost}</p>
+                </div>
+              ))}
+            </div>
+            <p class="mt-5 text-sm text-slate-400">
+              VoluChat replaces all of these costs with a single fixed pilot price and a personal 10x ROI guarantee from the founder.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl grid gap-5 md:grid-cols-2">
+          <article class="solid-card p-6 md:p-8">
+            <p class="mini-label text-slate-400">Keep manual reps if...</p>
+            <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+              {verdict.chooseManual}
+            </p>
+          </article>
+          <article class="solid-card p-6 md:p-8 border-emerald-500/30 bg-emerald-950/20">
+            <p class="mini-label text-emerald-300">Choose VoluChat if...</p>
+            <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
+              {verdict.chooseVoluchat}
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="page-shell text-center">
+        <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
+        <p class="mt-4 text-sm text-slate-400">Or explore the full <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">comparison guide</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    gsap.fromTo(".compare-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+
+    gsap.utils.toArray<HTMLElement>(".solid-card").forEach((card) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  });
+</script>

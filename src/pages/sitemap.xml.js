@@ -10,6 +10,8 @@ const STATIC_ROUTES = [
   { path: "/compare", priority: "0.8" },
   { path: "/compare/wati", priority: "0.8" },
   { path: "/compare/manychat", priority: "0.8" },
+  { path: "/compare/interakt", priority: "0.8" },
+  { path: "/compare/manual-reps", priority: "0.8" },
   { path: "/about", priority: "0.7" },
   { path: "/security", priority: "0.7" },
   { path: "/blog", priority: "0.6" },
@@ -19,6 +21,7 @@ const STATIC_ROUTES = [
   { path: "/integrations/shopify", priority: "0.8" },
   { path: "/what-is/comment-to-DM-automation", priority: "0.7" },
   { path: "/what-is/whatsapp-sales-bot", priority: "0.7" },
+  { path: "/glossary", priority: "0.6" },
 ];
 
 export async function GET({ site }) {
