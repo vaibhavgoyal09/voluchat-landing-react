@@ -1,4 +1,10 @@
 ---
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
 const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
 ---
 

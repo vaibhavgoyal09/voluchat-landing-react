@@ -5,11 +5,11 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Manychat — AI Sales Closer vs Instagram Auto-Responder";
+const seoTitle = "VoluChat vs Manychat — AI Sales Stylist vs Instagram Auto-Responder";
 const seoDescription =
-  "Compare VoluChat's autonomous AI sales agent with Manychat's keyword-based Instagram auto-responder for Shopify D2C brands. See why in-DM checkout beats external link leaks.";
+  "Compare VoluChat's autonomous AI sales stylist with Manychat's keyword auto-responder for fashion brands. Close orders directly on WhatsApp instead of sending external links.";
 const seoKeywords =
-  "VoluChat vs Manychat, Manychat alternative, Manychat vs AI sales agent, Instagram DM automation, WhatsApp sales bot India";
+  "VoluChat vs Manychat, Manychat alternative fashion, Instagram DM sales closer clothing, boutique WhatsApp checkout";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
@@ -22,39 +22,39 @@ const structuredData = {
 const comparison = [
   {
     category: "Response Intelligence",
-    manychat: "Keyword-based auto-responders. Triggers on exact matches ('price', 'size') and sends static messages.",
-    voluchat: "Generative AI that understands nuanced questions — 'Do you have this in blue, size M, for a wedding next week?' — and responds contextually.",
+    manychat: "Keyword-based auto-responders. Triggers on exact matches ('price', 'size') and sends generic static messages.",
+    voluchat: "AI Stylist that understands nuanced fashion questions — 'Is this pure linen?', 'I'm 5'4, will size M be too long?' — and answers with context.",
   },
   {
-    category: "Inventory Accuracy",
-    manychat: "Cannot check live Shopify variant stock. May confirm availability for items that are actually sold out.",
-    voluchat: "Reads live Shopify variant inventory in real-time. Never sells out-of-stock items or backordered variants.",
+    category: "Live Variant Inventory",
+    manychat: "Cannot check live catalog variant stock. May confirm availability for colors or sizes that are actually sold out.",
+    voluchat: "Reads live variant inventory in real-time. Never sells sold-out sizes and suggests matching in-stock outfits.",
   },
   {
     category: "Checkout Flow",
-    manychat: "Sends an external browser link (coupon code or website URL). 60%+ of shoppers abandon at this step.",
-    voluchat: "Native in-DM UPI links and Shopify draft orders. Buyer completes payment in 90 seconds without leaving WhatsApp or Instagram.",
+    manychat: "Sends an external browser link (website URL). 70%+ of impulse shoppers abandon at this step.",
+    voluchat: "Native in-DM UPI links and draft orders. Buyer completes payment in 90 seconds without ever leaving WhatsApp.",
   },
   {
-    category: "Instagram Comment-to-DM",
-    manychat: "Basic comment trigger that sends a pre-written DM. No context about the specific product in the post.",
-    voluchat: "2-second auto-reply with exact pricing, variant info, and stock status for the specific Reel or post the buyer commented on.",
+    category: "Instagram Reel Comment-to-DM",
+    manychat: "Basic keyword trigger that sends a pre-written DM. No understanding of the specific outfit shown in the Reel.",
+    voluchat: "2-second auto-reply with exact pricing, variant info, and stock status for the specific outfit in the Reel.",
   },
   {
-    category: "WhatsApp Sales Closer",
-    manychat: "Primarily an Instagram tool. WhatsApp capabilities are limited to broadcast sequences.",
-    voluchat: "Full WhatsApp sales agent — qualifies buyers, checks delivery pincodes, handles objections, enforces margin guardrails, and closes orders.",
+    category: "WhatsApp Closing Layer",
+    manychat: "Primarily an Instagram link-pusher. WhatsApp capabilities are limited to broadcast sequences.",
+    voluchat: "Full WhatsApp AI stylist — qualifies measurements, checks delivery pincodes, handles COD doubts, and closes orders.",
   },
   {
     category: "Setup",
-    manychat: "Self-serve SaaS. You build the flows yourself using their visual builder.",
-    voluchat: "100% white-glove setup for 10 pilot stores. Engineering team handles Meta API, Shopify sync, and brand voice guardrails.",
+    manychat: "Self-serve SaaS. You build and maintain the flowchart logic yourself.",
+    voluchat: "100% white-glove setup. Founder personally syncs your catalog, size chart, and brand voice.",
   },
 ];
 
 const verdict = {
-  chooseManychat: "You need basic Instagram comment auto-replies for lead capture, coupon code distribution, or simple broadcast sequences to an existing list.",
-  chooseVoluchat: "You want to close sales end-to-end. VoluChat handles the full loop: comment capture, sizing questions, stock checks, objection handling, and in-chat payment — without sending buyers to external links.",
+  chooseManychat: "You need basic Instagram comment auto-replies for lead capture, discount link distribution, or simple broadcast sequences.",
+  chooseVoluchat: "You want to turn Reel scrollers into paid orders. VoluChat handles sizing, stock, objections, and collects UPI payment inside WhatsApp without external link drop-offs.",
 };
 ---
 
@@ -81,10 +81,10 @@ const verdict = {
           <h1
             class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
           >
-            VoluChat vs Manychat — AI Sales Closer vs Auto-Responder.
+            VoluChat vs Manychat — AI Sales Closer vs Link-Pusher.
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
-            Manychat sends keyword-triggered DMs and external links. VoluChat is a conversational AI that qualifies buyers, checks live stock, handles objections, and completes native checkout inside WhatsApp — closing sales, not just sending links.
+            Manychat sends keyword-triggered DMs and external website links where 70%+ of boutique buyers abandon. VoluChat is an AI stylist that qualifies measurements, checks live stock, and completes 1-click UPI checkout inside WhatsApp.
           </p>
         </div>
       </div>

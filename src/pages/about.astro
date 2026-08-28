@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "About VoluChat — The Autonomous Sales Closer for D2C Brands";
+const seoTitle = "About VoluChat — AI Sales Stylist for Fashion & Boutique Brands";
 const seoDescription =
-  "Learn how VoluChat turns Instagram comments and WhatsApp chats into 24/7 automated revenue for D2C brands with 100% white-glove setup.";
+  "VoluChat provides 24/7 autonomous AI sales stylists on WhatsApp for clothing boutiques and fashion brands. 100% white-glove setup for our 10-store pilot cohort.";
 const seoKeywords =
-  "About VoluChat, WhatsApp sales automation, Instagram DM sales agent, D2C conversational commerce";
+  "About VoluChat, WhatsApp sales bot fashion, boutique Instagram DM sales agent, clothing sales automation, fashion ecommerce WhatsApp";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
@@ -19,20 +19,6 @@ const structuredData = {
   url: `${siteUrl}/about`,
 };
 
-const principles = [
-  {
-    title: "Context before action",
-    text: "A useful commerce agent should understand the cart, customer, product, inventory, and policy context before it recommends anything.",
-  },
-  {
-    title: "Revenue over replies",
-    text: "Answering a question matters. Recovering a cart, saving a sale, clearing old stock, or surfacing the right add-on matters more.",
-  },
-  {
-    title: "Approval over blind automation",
-    text: "AI should not discount, message, or change a customer experience without clear limits. Sensitive actions stay reviewable and approved.",
-  },
-];
 ---
 
 <Layout
@@ -62,10 +48,10 @@ const principles = [
             <h1
               class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl font-heading"
             >
-              Building the autonomous closer for Instagram DM and WhatsApp sales.
+              Building the autonomous sales stylist for fashion boutiques.
             </h1>
             <p class="section-copy mt-6 max-w-xl text-slate-300">
-              Online shopping in India and global D2C has moved to Instagram and WhatsApp. VoluChat provides the 24/7 intelligent sales agent that ensures no buyer inquiry goes unanswered and every warm lead is closed into a paid order.
+              Fashion shopping has moved to Instagram Reels and WhatsApp chats. VoluChat provides a 24/7 AI stylist that qualifies sizes, answers fabric questions, and closes 1-click UPI orders while boutique founders sleep.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="/contact" class="btn-primary">Apply for Pilot Cohort &rarr;</a>
@@ -197,10 +183,8 @@ const principles = [
       { opacity: 0, x: -30, filter: "blur(5px)" },
       { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.8, ease: "power2.out" }
     );
-    gsap.fromTo(".abt-hero-image",
-      { opacity: 0, scale: 0.95 },
-      { opacity: 1, scale: 1, duration: 1, ease: "power3.out" },
-      "-=0.6"
+    gsap.from(".abt-hero-image",
+      { opacity: 0, scale: 0.95, duration: 1, ease: "power3.out", immediateRender: true }
     );
 
     // Believe

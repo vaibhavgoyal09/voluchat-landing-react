@@ -1,6 +1,6 @@
 ---
 const isHome = Astro.url.pathname === "/";
-const homeHref = (hash) => (isHome ? hash : `/${hash}`);
+const homeHref = (hash: string) => (isHome ? hash : `/${hash}`);
 
 const navigation = [
   { name: "Features", href: "/features" },
@@ -57,7 +57,7 @@ const demoHref = "/contact";
           href={demoHref}
           class="btn-primary w-auto px-6 py-2.5 text-[13px] shadow-[0_0_15px_rgba(255,255,255,0.2)]"
         >
-          Book Demo
+          Apply for Pilot &rarr;
         </a>
       </div>
 
@@ -66,7 +66,7 @@ const demoHref = "/contact";
           href={demoHref}
           class="inline-flex h-11 items-center justify-center rounded-full bg-white px-4 text-[13px] font-bold text-slate-950 shadow-sm transition hover:bg-slate-200"
         >
-          Book Demo
+          Apply for Pilot
         </a>
         <button
           type="button"

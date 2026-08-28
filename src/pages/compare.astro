@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Wati, Manychat, & Manual Reps — Sales Comparison";
+const seoTitle = "VoluChat vs Wati, Manychat, & Manual Reps — AI Sales Agent for Fashion Boutiques";
 const seoDescription =
-  "Compare VoluChat's Autonomous Social Sales Closer with flowchart chatbots (Wati, Manychat) and expensive manual chat teams for Instagram & WhatsApp commerce.";
+  "Compare VoluChat's autonomous AI sales stylist with flowchart bots (Wati), link-pushers (Manychat), and manual chat reps for apparel and boutique brands on WhatsApp.";
 const seoKeywords =
-  "VoluChat vs Wati, VoluChat vs Manychat, WhatsApp sales automation comparison, WhatsApp sales agent, Instagram DM automation vs chatbots, ecommerce social closer";
+  "VoluChat vs Wati, VoluChat vs Manychat, WhatsApp boutique sales bot, fashion ecommerce automation vs chatbots, Instagram DM sales closer";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
@@ -25,47 +25,47 @@ const competitors = [
     icon: "🧭",
     fit: "Broadcast messaging & rigid button-based flowcharts ('Press 1 for tracking, Press 2 for sizing').",
     tradeoff:
-      "Forces buyers through robotic decision trees. Drops off 70%+ of real buyers who have conversational questions about styling, fabric, or urgency.",
+      "Forces boutique shoppers through robotic menus. Drops 70%+ of high-intent buyers who ask natural styling questions ('Is this pure silk?', 'Does it come with a dupatta?').",
     advantage:
-      "VoluChat converses naturally with your buyers, understands sizing nuances, verifies real-time stock, and closes orders directly in-chat via UPI.",
+      "VoluChat acts as an AI Stylist — conversing naturally, qualifying exact fit and measurements, verifying live variant stock, and closing orders via UPI inside chat.",
   },
   {
     name: "Social Bot Builders (e.g. Manychat)",
     icon: "🔗",
     fit: "Keyword auto-responders that send static coupon links to external websites.",
     tradeoff:
-      "Sends shoppers an external browser link where 60%+ abandon the cart. Cannot check real-time variant stock or handle complex customer objections.",
+      "Kicks shoppers to an external browser link where 70%+ abandon the cart. Cannot check live variant inventory or handle sizing objections in DM.",
     advantage:
-      "VoluChat generates native In-DM checkouts and draft orders so the buyer completes payment in 90 seconds without ever leaving WhatsApp.",
+      "VoluChat generates native In-DM checkouts and draft orders so the customer pays via 1-click UPI in 90 seconds without ever leaving WhatsApp.",
   },
   {
     name: "Manual Human Chat Reps",
     icon: "👥",
     fit: "Hiring 2–4 full-time support agents to manually answer Instagram DMs and WhatsApp chats.",
     tradeoff:
-      "Offline between 10 PM – 9 AM (when 40%+ of social sales occur). High training overhead, slow response times, and inconsistent closing rates.",
+      "Offline between 10 PM – 9 AM (when 55%+ of fashion browsing occurs). Founders spend 4+ hours chasing manual UPI screenshots and size chart questions.",
     advantage:
-      "VoluChat works 24/7/365 with sub-2s responses, zero rep churn, 100% brand tone consistency, and seamless 1-click human escalation when needed.",
+      "VoluChat works 24/7 with sub-2s responses, zero rep churn, 100% brand tone consistency, and seamless 1-click human escalation when needed.",
   },
 ];
 
 const differentiators = [
   {
-    label: "Traditional Chatbots & Reps",
+    label: "Flowchart Bots & Manual Reps",
     points: [
-      "Offline at night when social ads convert best",
-      "Rigid 'Press 1' menus that frustrate buyers",
-      "External links that leak 60%+ of carts",
-      "Slow response, inconsistent brand voice",
+      "Offline at 11 PM when Instagram Reels & ads peak",
+      "Rigid 'Press 1' menus that kill the boutique vibe",
+      "External website links that leak 70%+ of carts",
+      "Manual UPI screenshot chasing and sizing errors",
     ],
   },
   {
-    label: "VoluChat AI Closer",
+    label: "VoluChat AI Stylist",
     points: [
       "Sub-2s response time day and night",
-      "Real-time Shopify stock & sizing intelligence",
-      "Native In-DM UPI & draft order checkout",
-      "Strict margin floors, 1-click human handoff",
+      "Real-time catalog stock & sizing intelligence",
+      "Native In-DM 1-click UPI checkout links",
+      "Strict margin floors, 1-click founder takeover",
     ],
   },
 ];
@@ -74,25 +74,25 @@ const whenToChooseOther = [
   {
     label: "Choose Wati if…",
     points: [
-      "You need broadcast messaging for promotions and sale announcements",
-      "Simple order tracking bots with 'Press 1' menus are enough",
+      "You need broadcast messaging for mass discount blasts and festive campaigns",
+      "Simple order tracking bots with 'Press 1' menus are sufficient",
       "You want a self-serve tool and have time to build flows yourself",
     ],
   },
   {
     label: "Choose Manychat if…",
     points: [
-      "Basic Instagram comment auto-replies for lead capture are your priority",
-      "You mainly distribute coupon codes to an existing audience",
-      "Budget is tight and you need a simple keyword trigger tool",
+      "Basic Instagram comment auto-replies for lead capture are your only priority",
+      "You mainly distribute coupon links to an existing follower base",
+      "Budget is tight and you just need a simple keyword trigger tool",
     ],
   },
   {
     label: "Choose manual reps if…",
     points: [
-      "Your chat volume is under 10 inquiries per day",
-      "Conversations require deep emotional nuance every time",
-      "You're okay with offline gaps and inconsistent response times",
+      "Your chat volume is under 10 boutique inquiries per day",
+      "Every single order requires bespoke bespoke tailoring customization",
+      "You're okay with offline midnight gaps and slow response times",
     ],
   },
 ];
@@ -121,11 +121,11 @@ const whenToChooseOther = [
           <h1
             class="mt-6 text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
           >
-            Chatbots manage tickets.
-            <span class="block gradient-text-anim">VoluChat closes Instagram and WhatsApp sales.</span>
+            Chatbots push website links.
+            <span class="block gradient-text-anim">VoluChat closes fashion sales on WhatsApp.</span>
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
-            Flowchart builders and support desks leak 70%+ of your buyers with rigid menus and external links. VoluChat is built specifically for D2C brands to qualify inquiries on Instagram, verify Shopify variant inventory, and close paid orders directly in WhatsApp in 90 seconds.
+            Flowchart builders and support desks leak 70%+ of boutique buyers with rigid menus and slow website links. VoluChat is built specifically for fashion &amp; apparel brands to answer sizing queries, verify live inventory, and close paid orders directly in WhatsApp in 90 seconds.
           </p>
         </div>
       </div>

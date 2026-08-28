@@ -19,7 +19,7 @@ interface Props {
 
 const {
   title,
-  description = "Turn Instagram DMs and WhatsApp chats into 24/7 automated revenue. VoluChat's AI sales agent answers product questions, checks stock, and closes orders directly inside WhatsApp.",
+  description = "VoluChat automates WhatsApp sales for D2C e-commerce brands — upsells, cross-sells, cart recovery, and in-chat UPI checkout. 24/7.",
   keywords,
   image = "/og-image.webp",
   type = "website",
@@ -195,8 +195,8 @@ const structuredDataItems = [
         ).matches;
         if (reduceMotion) {
           document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
-            el.style.opacity = "1";
-            el.style.transform = "none";
+            (el as HTMLElement).style.opacity = "1";
+            (el as HTMLElement).style.transform = "none";
           });
           return;
         }

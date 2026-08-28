@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "Social Commerce Glossary — WhatsApp & Instagram Sales Terms Explained";
+const seoTitle = "E-Commerce & WhatsApp Sales Glossary — Terms Explained for D2C Founders";
 const seoDescription =
-  "Key terms for WhatsApp and Instagram sales automation: comment-to-DM, UPI checkout, catalog sync, WhatsApp sales bot, Shopify inventory sync, and more — defined for D2C founders.";
+  "Key terms for WhatsApp and Instagram e-commerce automation: comment-to-DM, upsells, cross-sells, cart recovery, UPI checkout, and more — defined for D2C founders.";
 const seoKeywords =
-  "WhatsApp sales glossary, Instagram DM automation glossary, D2C chatbot terms, UPI checkout meaning";
+  "WhatsApp sales glossary, Instagram DM automation glossary, e-commerce automation terms, cart recovery meaning, upsell cross-sell definitions";
 const siteUrl = "https://www.voluchat.com";
 
 const terms = [
@@ -153,7 +153,7 @@ const structuredData = [
     "@type": "DefinedTermSet",
     name: "VoluChat Social Commerce Glossary",
     description:
-      "Key terms and definitions for WhatsApp sales automation, Instagram DM automation, and Shopify integration.",
+      "Key terms and definitions for WhatsApp and Instagram e-commerce automation, upsells, cross-sells, cart recovery, and in-chat checkout.",
     url: `${siteUrl}/glossary`,
     hasDefinedTerm: terms.flatMap((group) =>
       group.items.map((item) => ({
@@ -196,7 +196,7 @@ const structuredData = [
             Social Commerce Terms, Defined.
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-2xl text-slate-300">
-            Key terms for WhatsApp sales automation, Instagram DM commerce, and Shopify integration — explained for D2C founders.
+            Key terms for WhatsApp and Instagram e-commerce automation, upsells, cross-sells, cart recovery, and in-chat checkout — explained for D2C founders.
           </p>
         </div>
       </div>

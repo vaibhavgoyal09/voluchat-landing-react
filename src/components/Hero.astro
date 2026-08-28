@@ -27,36 +27,36 @@
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span>Private Founder Cohort: <strong>Limited to 10 Stores</strong></span>
+          <span>Private Pilot Cohort: <strong>10 Fashion &amp; Boutique Brands Only</strong></span>
         </div>
 
         <h1
           class="hero-title mt-7 font-heading text-[2.75rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-[3.25rem] lg:text-[3.6rem] xl:text-[4rem]"
         >
           <span class="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
-            Turn Instagram DMs &amp; WhatsApp Chats into
+            Your Instagram Reels Bring the Traffic.
           </span>
-          <span class="block gradient-text-anim pb-2">24/7 Automated Revenue.</span>
+          <span class="block gradient-text-anim pb-2">VoluChat Closes the Sale on WhatsApp.</span>
         </h1>
 
         <p
-          class="hero-text mx-auto mt-6 max-w-xl text-[1.05rem] font-normal leading-relaxed text-slate-400 sm:text-lg lg:mx-0"
+          class="hero-text mx-auto mt-6 max-w-xl text-[1.05rem] font-normal leading-relaxed text-slate-300 sm:text-lg lg:mx-0"
         >
-          Stop losing 50%+ of your DM buyers when your sales team is offline. VoluChat's Autonomous AI Agent answers sizing doubts, checks live stock, and completes native WhatsApp orders 24/7.
+          When shoppers comment <span class="text-white font-medium">"Price?"</span> or <span class="text-white font-medium">"Size L available?"</span> at 11 PM, VoluChat auto-replies in 2 seconds, qualifies their fit on WhatsApp, and collects instant UPI payment — before they scroll to another brand.
         </p>
 
-        <p class="mx-auto mt-4 max-w-lg text-sm font-medium leading-relaxed text-slate-500 lg:mx-0">
-          <strong class="text-slate-400">What is VoluChat?</strong> A WhatsApp sales automation tool that uses AI to close Shopify orders in 90 seconds — from Instagram comment capture to in-chat UPI checkout — without human intervention.
+        <p class="mx-auto mt-4 max-w-lg text-sm font-medium leading-relaxed text-slate-400 lg:mx-0">
+          <span class="text-emerald-400 font-semibold">⚡ Zero flowchart buttons.</span> No sending them to a slow website link. Just 90-second conversational checkout directly inside chat.
         </p>
 
         <div
           class="hero-ctas mt-9 flex flex-col items-center gap-3.5 sm:flex-row sm:justify-center lg:justify-start"
         >
           <a href="/contact" class="btn-primary btn-sheen">
-            Apply for 1 of 10 Pilot Spots &rarr;
+            Apply for 1 of 10 Fashion Pilot Spots &rarr;
           </a>
-          <a href="#how-it-works" class="btn-secondary">
-            See the 4-Step Revenue Flow
+          <a href="#revenue-loop" class="btn-secondary">
+            See the 90-Second Sales Loop
           </a>
         </div>
 
@@ -84,18 +84,18 @@
       </div>
 
       <!-- Hero Visual: phone on a glowing stage -->
-      <div class="hero-mockup relative mx-auto w-full max-w-[260px] sm:max-w-[280px] lg:mx-0 lg:justify-self-center" data-tilt-strength="2">
+      <div class="hero-mockup relative mx-auto w-full max-w-[260px] sm:max-w-[280px] lg:mx-0 lg:justify-self-center -mt-8 lg:-mt-12" data-tilt-strength="2">
         <!-- Stage glow -->
         <div class="absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/15 blur-[100px]"></div>
 
         <!-- Phone Frame -->
         <div class="tilt relative rounded-[2.75rem] border border-white/10 bg-slate-950 p-[5px] shadow-[0_60px_140px_-40px_rgba(16,185,129,0.35)]">
-          <div class="relative overflow-hidden rounded-[2.4rem] bg-slate-950">
+          <div class="relative overflow-hidden rounded-[2.4rem] bg-slate-950" style="aspect-ratio: 9 / 20.5;">
             <!-- Dynamic Island / Notch -->
             <div class="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-slate-900"></div>
             <video
               src="/voluchat_demo_optimized.mp4"
-              class="block h-auto w-full object-cover"
+              class="absolute inset-0 h-full w-full object-cover"
               autoplay
               loop
               muted
@@ -114,13 +114,14 @@
   document.addEventListener("DOMContentLoaded", () => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // 1. Text & CTAs pop in fast and crisp
+    if (prefersReduced) return;
+
     const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     heroTl
-      .fromTo(".hero-title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 })
-      .fromTo(".hero-text", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.35")
-      .fromTo(".hero-ctas", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.3")
-      .fromTo(".hero-mockup", { opacity: 0, scale: 0.95, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4");
+      .from(".hero-title", { opacity: 0, y: 24, duration: 0.6, immediateRender: true })
+      .from(".hero-text", { opacity: 0, y: 16, duration: 0.5, immediateRender: true }, "-=0.35")
+      .from(".hero-ctas", { opacity: 0, y: 14, duration: 0.4, immediateRender: true }, "-=0.3")
+      .from(".hero-mockup", { opacity: 0, scale: 0.95, y: 20, duration: 0.7, ease: "power2.out", immediateRender: true }, "-=0.4");
   });
 </script>
