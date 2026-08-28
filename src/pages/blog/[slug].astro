@@ -120,6 +120,26 @@ const structuredData = blog
             },
           ]
         : []),
+      ...((() => {
+        const headings = blog.content.match(/^##\s+(.+)$/gm) || [];
+        const steps = headings
+          .map((h) => h.replace(/^##\s+/, "").trim())
+          .filter((h) => /step\s+\d|^\d+[\.\)]\s|how\s+to|setup|install|configure|create|build|deploy/i.test(h));
+        if (steps.length < 2) return [];
+        return [
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: blog.title,
+            description: blog.excerpt,
+            step: steps.map((step, i) => ({
+              "@type": "HowToStep",
+              position: i + 1,
+              name: step,
+            })),
+          },
+        ];
+      })()),
     ]
   : [];
 ---

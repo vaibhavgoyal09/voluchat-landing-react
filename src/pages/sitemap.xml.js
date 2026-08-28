@@ -18,6 +18,7 @@ const STATIC_ROUTES = [
   { path: "/terms", priority: "0.5" },
   { path: "/integrations/shopify", priority: "0.8" },
   { path: "/what-is/comment-to-DM-automation", priority: "0.7" },
+  { path: "/what-is/whatsapp-sales-bot", priority: "0.7" },
 ];
 
 export async function GET({ site }) {
