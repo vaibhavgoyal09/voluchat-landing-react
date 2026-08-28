@@ -1,0 +1,39 @@
+# VoluChat
+
+VoluChat is an autonomous social commerce AI sales agent for Instagram and WhatsApp, connected to Shopify. It automates the complete 90-second social commerce loop: comment-to-DM capture, catalog and sizing intelligence, WhatsApp sales closing, and native in-DM UPI checkout.
+
+## What it does
+
+- Auto-replies to Instagram comments in 2 seconds with exact pricing and slides into DMs
+- Checks live Shopify variant inventory, fabric details, and sizing qualification without hallucinations
+- Seamlessly transitions warm buyers to WhatsApp, handles objections, and enforces strict margin ceilings
+- Generates 1-click UPI payment links and draft orders directly in chat, eliminating website drop-offs
+- 100% white-glove setup for an initial 10-store founder cohort with a 10x ROI standard
+
+## Target audience
+
+D2C brands selling on Shopify in India and globally, using Instagram Reels and WhatsApp for social commerce. Particularly brands losing 50%+ of inbound DM inquiries to slow or offline manual chat reps.
+
+## Key pages
+
+- Home: https://www.voluchat.com
+- Features: https://www.voluchat.com/features
+- Pricing (10-Store Pilot): https://www.voluchat.com/pricing
+- Compare vs Wati/Manychat: https://www.voluchat.com/compare
+- Security & Guardrails: https://www.voluchat.com/security
+- About: https://www.voluchat.com/about
+- Shopify Integration: https://www.voluchat.com/integrations/shopify
+- Blog: https://www.voluchat.com/blog
+- Contact / Apply for Pilot: https://www.voluchat.com/contact
+
+## Tech stack
+
+Astro 6 SSR on Vercel, Tailwind CSS v4, GSAP animations. Meta Cloud API and WhatsApp Business Cloud API integration. Shopify GraphQL webhook sync.
+
+## Contact
+
+Email: support@voluchat.com
+Instagram: https://www.instagram.com/voluchat
+X/Twitter: https://x.com/voluchat
+LinkedIn: https://www.linkedin.com/company/voluchat
+YouTube: https://www.youtube.com/@voluchat

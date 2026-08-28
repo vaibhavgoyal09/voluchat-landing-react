@@ -11,13 +11,31 @@ const seoDescription =
 const seoKeywords =
   "VoluChat pilot pricing, WhatsApp AI agent cost, done for you ecommerce automation, Instagram DM sales agent setup";
 const siteUrl = "https://www.voluchat.com";
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/pricing`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/pricing`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "VoluChat Pilot Cohort Setup",
+    description: "Done-for-you autonomous AI sales agent setup for Shopify D2C brands. Includes Meta API configuration, WhatsApp Business API, Shopify catalog sync, and brand voice guardrails.",
+    provider: {
+      "@type": "Organization",
+      name: "VoluChat",
+      url: siteUrl,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    serviceType: "Autonomous Social Commerce AI Sales Agent Setup",
+  },
+];
 
 const pilotIncludes = [
   {
@@ -46,8 +64,6 @@ const pilotIncludes = [
   },
 ];
 
-const pricingAnswer =
-  "VoluChat is currently accepting 10 pilot stores for our private founder cohort. Pricing is structured as a transparent, high-ROI setup & performance package with a personal 10x value guarantee.";
 ---
 
 <Layout
@@ -55,7 +71,7 @@ const pricingAnswer =
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/pricing", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema(pricingAnswer)]}
+  structuredData={[...structuredData, getFaqSchema()]}
 >
   <Header />
 
