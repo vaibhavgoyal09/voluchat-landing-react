@@ -9,7 +9,7 @@ import GuardrailsSection from "../components/GuardrailsSection.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
 import FounderNoteSection from "../components/FounderNoteSection.astro";
-import { getFaqSchema } from "../lib/faqSchema.mjs";
+import { getFaqSchema, getQAPageSchemas } from "../lib/faqSchema.mjs";
 
 export const prerender = true;
 
@@ -73,7 +73,7 @@ const structuredData = [
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/", siteUrl).toString()}
-  structuredData={[...structuredData, getFaqSchema()]}
+  structuredData={[...structuredData, getFaqSchema(), ...getQAPageSchemas()]}
 >
   <Navbar />
 

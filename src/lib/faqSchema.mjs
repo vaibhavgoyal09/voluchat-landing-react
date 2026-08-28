@@ -45,3 +45,19 @@ export function getFaqSchema() {
     })),
   };
 }
+
+export function getQAPageSchemas() {
+  return faqs.map((faq) => ({
+    "@context": "https://schema.org",
+    "@type": "QAPage",
+    mainEntity: {
+      "@type": "Question",
+      name: faq.question,
+      answerCount: 1,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    },
+  }));
+}

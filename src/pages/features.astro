@@ -11,13 +11,6 @@ const seoDescription =
 const seoKeywords =
   "VoluChat features, WhatsApp AI sales closer, Instagram DM automation features, Shopify social commerce features, AI sales agent capabilities";
 const siteUrl = "https://www.voluchat.com";
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/features`,
-};
 
 const featureCategories = [
   {
@@ -155,6 +148,38 @@ const technicalSpecs = [
     detail: "Modular agents specialized in capture, sizing advisory, negotiation, and settlement working as a single unified engine.",
   },
 ];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/features`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: "VoluChat Platform Capabilities",
+    description:
+      "Core features of VoluChat's autonomous social commerce AI sales agent for Instagram and WhatsApp.",
+    url: `${siteUrl}/features`,
+    hasDefinedTerm: featureCategories.flatMap((group) => [
+      {
+        "@type": "DefinedTerm",
+        name: group.title,
+        description: group.desc,
+        inDefinedTermSet: `${siteUrl}/features`,
+      },
+      ...group.features.map((feat) => ({
+        "@type": "DefinedTerm",
+        name: feat.title,
+        description: feat.desc,
+        inDefinedTermSet: `${siteUrl}/features`,
+      })),
+    ]),
+  },
+];
 ---
 
 <Layout
@@ -162,7 +187,7 @@ const technicalSpecs = [
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/features", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema()]}
+  structuredData={[...structuredData, getFaqSchema()]}
 >
   <Navbar />
 

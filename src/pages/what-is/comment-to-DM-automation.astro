@@ -1,0 +1,302 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "What is Comment-to-DM Automation? | Instagram Sales Explained";
+const seoDescription =
+  "Comment-to-DM automation is the process of automatically replying to Instagram comments with a direct message containing pricing, stock info, and a checkout link. Learn how it works and why it closes 3x more social sales.";
+const seoKeywords =
+  "comment to DM automation, Instagram comment auto reply, Instagram DM automation, social commerce automation, WhatsApp sales bot";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/what-is/comment-to-DM-automation`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: "Comment-to-DM Automation",
+    description:
+      "A social commerce technique that automatically replies to Instagram post comments with a personalized direct message containing product pricing, variant availability, and a checkout link — typically within 2 seconds of the comment.",
+    url: `${siteUrl}/what-is/comment-to-DM-automation`,
+  },
+];
+
+const howItWorks = [
+  {
+    step: "1",
+    title: "Shopper comments on your Reel or post",
+    detail:
+      "A buyer sees your Instagram Reel, carousel, or ad and comments with a purchase intent signal — 'Price?', 'Available in M?', 'COD?', or even just an emoji.",
+  },
+  {
+    step: "2",
+    title: "AI detects intent in under 2 seconds",
+    detail:
+      "The automation engine reads the comment, identifies the specific product SKU shown in the post, and determines the buyer's intent (pricing inquiry, sizing question, availability check).",
+  },
+  {
+    step: "3",
+    title: "Personalized DM sent with exact details",
+    detail:
+      "A direct message is sent with the product photo, exact price, available sizes/colors, and a 1-click UPI payment link or WhatsApp chat link — all without any human involvement.",
+  },
+  {
+    step: "4",
+    title: "Buyer completes checkout in-chat",
+    detail:
+      "The buyer taps the payment link, pays via UPI (GPay, PhonePe, Paytm), and receives order confirmation — all without leaving the messaging app or bouncing to an external website.",
+  },
+];
+
+const benefits = [
+  {
+    title: "8x higher conversion than next-morning replies",
+    text: "Social shoppers buy on impulse. When they ask about sizing or price at 11 PM, an instant intelligent answer is the difference between a ₹3,000 checkout and a lost customer.",
+  },
+  {
+    title: "Zero cart abandonment from external links",
+    text: "Traditional tools send buyers to a website where 60%+ abandon. Comment-to-DM automation keeps the entire transaction inside Instagram DMs or WhatsApp.",
+  },
+  {
+    title: "24/7 coverage without hiring chat reps",
+    text: "40%+ of social purchases happen between 10 PM and 8 AM when human teams are offline. Automated DMs capture every lead regardless of time.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is comment-to-DM automation?",
+      answerCount: 1,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Comment-to-DM automation is a social commerce technique that automatically replies to Instagram post comments with a personalized direct message. When someone comments 'Price?' or 'Available?' on your Reel or ad, the system detects the intent, identifies the product, and sends a DM with exact pricing, stock info, and a checkout link — typically within 2 seconds.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does comment-to-DM automation increase sales?",
+      answerCount: 1,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Comment-to-DM automation increases sales by responding to buyer intent within seconds while the purchase impulse is still hot. Traditional next-morning replies lose 70%+ of high-intent buyers. The instant DM with pricing and a checkout link keeps the buyer inside the messaging app, eliminating the 60%+ cart abandonment that happens when buyers are sent to external websites.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is comment-to-DM automation allowed by Instagram?",
+      answerCount: 1,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, when done through official Meta Cloud APIs. VoluChat uses the official Instagram Graph API and WhatsApp Business Cloud API — no scraping, no browser extensions, no account ban risk. Meta explicitly supports automated DM responses through their official API partners.",
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/what-is/comment-to-DM-automation", siteUrl).toString()}
+  structuredData={[...structuredData, getFaqSchema(), faqSchema]}
+>
+  <Header />
+
+  <main class="pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(16,185,129,0.15),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="whatis-hero-text opacity-0 mx-auto max-w-4xl text-center">
+          <div class="chip mb-4">
+            <span class="mini-label">Definition</span>
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
+          >
+            What is Comment-to-DM Automation?
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
+            Comment-to-DM automation is the process of automatically replying to Instagram post comments with a personalized direct message containing product pricing, variant availability, and a checkout link — typically within 2 seconds of the comment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl space-y-4">
+          <p class="section-eyebrow text-emerald-400">How it works</p>
+          <h2 class="text-3xl font-heading font-semibold text-white mb-8">
+            The 4-step social commerce loop
+          </h2>
+          {
+            howItWorks.map((item) => (
+              <article class="whatis-step opacity-0 solid-card p-6 md:p-8">
+                <div class="flex items-start gap-5">
+                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 font-mono text-sm font-bold text-emerald-300">
+                    {item.step}
+                  </span>
+                  <div>
+                    <h3 class="text-xl font-heading font-semibold text-white">
+                      {item.title}
+                    </h3>
+                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <p class="section-eyebrow text-emerald-400 mb-4">Why it matters</p>
+          <h2 class="text-3xl font-heading font-semibold text-white mb-8">
+            The business impact
+          </h2>
+          <div class="grid gap-5 md:grid-cols-3">
+            {
+              benefits.map((item) => (
+                <article class="whatis-benefit opacity-0 solid-card p-6">
+                  <h3 class="text-lg font-heading font-bold text-white">
+                    {item.title}
+                  </h3>
+                  <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300">
+                    {item.text}
+                  </p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl solid-card p-8 md:p-10">
+          <p class="section-eyebrow text-emerald-400 mb-4">The difference</p>
+          <h2 class="text-2xl font-heading font-semibold text-white mb-6">
+            Manual replies vs Comment-to-DM automation
+          </h2>
+          <div class="grid gap-5 md:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-[#0c1728] p-5">
+              <p class="mini-label text-slate-400">Without automation</p>
+              <ul class="mt-3 space-y-2 text-sm font-medium text-slate-300">
+                <li>Reply next morning — buyer already scrolled past</li>
+                <li>Copy-paste pricing into every DM manually</li>
+                <li>Miss 40%+ of leads that come in at night</li>
+                <li>Send buyer to website — 60%+ abandon cart</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+              <p class="mini-label text-emerald-300">With automation</p>
+              <ul class="mt-3 space-y-2 text-sm font-medium text-slate-200">
+                <li>Reply in 2 seconds while impulse is hot</li>
+                <li>AI reads exact product SKU, price, and stock</li>
+                <li>24/7 coverage including nights and weekends</li>
+                <li>Buyer completes checkout inside WhatsApp</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl text-center">
+          <p class="section-eyebrow text-emerald-400 mb-4">See it in action</p>
+          <h2 class="text-3xl font-heading font-semibold text-white mb-4">
+            Ready to automate your Instagram sales?
+          </h2>
+          <p class="section-copy mx-auto mb-8 max-w-2xl text-slate-300">
+            VoluChat's comment-to-DM engine replies to Instagram comments in 2 seconds with exact pricing, checks live Shopify stock, and closes orders inside WhatsApp — the full 90-second social commerce loop.
+          </p>
+          <div class="flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
+            <a href="/features" class="btn-secondary">Explore all features</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    gsap.fromTo(".whatis-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+
+    gsap.utils.toArray<HTMLElement>(".whatis-step").forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          delay: i * 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    gsap.utils.toArray<HTMLElement>(".whatis-benefit").forEach((card) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  });
+</script>
