@@ -69,11 +69,20 @@ Private 10-Store Founder Pilot. White-glove setup. 10x ROI guarantee from the fo
 
 Astro 6 SSR on Vercel, Tailwind CSS v4, GSAP animations. Meta Cloud API and WhatsApp Business Cloud API integration. Shopify GraphQL webhook sync (optional).
 
-## Contact
+## Company & Leadership
 
-GitHub: https://github.com/voluchat
-Email: support@voluchat.com
-Instagram: https://www.instagram.com/voluchat
-X/Twitter: https://x.com/voluchat
-LinkedIn: https://www.linkedin.com/company/voluchat
-YouTube: https://www.youtube.com/@voluchat
+- **Operating Entity**: Developed and operated by QubitNine Technologies Pvt. Ltd.
+- **Headquarters**: Noida, Uttar Pradesh, India
+- **Founder & CEO**: Vaibhav Goyal (former e-commerce Sales Manager)
+- **Mission**: Eliminating DM sales chaos and off-hours revenue drop-offs with zero-config, autonomous commerce intelligence.
+
+## Contact & Links
+
+- Website: https://www.voluchat.com
+- Founder Inquiries: founders@voluchat.com
+- GitHub: https://github.com/voluchat
+- Instagram: https://www.instagram.com/voluchat
+- X/Twitter: https://x.com/voluchat
+- LinkedIn: https://www.linkedin.com/company/voluchat
+- YouTube: https://www.youtube.com/@voluchat
+
