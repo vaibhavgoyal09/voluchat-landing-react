@@ -77,39 +77,23 @@ const howItWorks = [
   },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is a WhatsApp sales bot?",
-      answerCount: 1,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A WhatsApp sales bot is an e-commerce automation agent that operates inside WhatsApp to qualify buyers, recommend products with upsells and cross-sells, recover abandoned carts, and complete orders via UPI or draft orders. Unlike basic flowchart bots, e-commerce automation agents understand natural language and can execute the full commerce loop — from qualification to checkout — without human intervention.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How is a WhatsApp sales bot different from a WhatsApp chatbot?",
-      answerCount: 1,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A WhatsApp chatbot typically handles FAQ responses and order tracking through rigid button menus. A WhatsApp sales bot goes further — it qualifies buyers, recommends upsells and cross-sells, recovers abandoned carts, enforces margin guardrails, and completes native checkout inside the chat. The key difference is driving revenue, not just answering questions.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can a WhatsApp sales bot check real-time inventory?",
-      answerCount: 1,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, advanced WhatsApp sales bots like VoluChat connect directly to your product catalog via webhooks and GraphQL to read live variant stock levels. This means the bot never confirms availability for out-of-stock items and can suggest alternatives when a specific size or color is unavailable.",
-      },
-    },
-  ],
-};
+const pageFaqs = [
+  {
+    question: "What is a WhatsApp sales bot?",
+    answer:
+      "A WhatsApp sales bot is an e-commerce automation agent that operates inside WhatsApp to qualify buyers, recommend products with upsells and cross-sells, recover abandoned carts, and complete orders via UPI or draft orders. Unlike basic flowchart bots, e-commerce automation agents understand natural language and can execute the full commerce loop — from qualification to checkout — without human intervention.",
+  },
+  {
+    question: "How is a WhatsApp sales bot different from a WhatsApp chatbot?",
+    answer:
+      "A WhatsApp chatbot typically handles FAQ responses and order tracking through rigid button menus. A WhatsApp sales bot goes further — it qualifies buyers, recommends upsells and cross-sells, recovers abandoned carts, enforces margin guardrails, and completes native checkout inside the chat. The key difference is driving revenue, not just answering questions.",
+  },
+  {
+    question: "Can a WhatsApp sales bot check real-time inventory?",
+    answer:
+      "Yes, advanced WhatsApp sales bots like VoluChat connect directly to your product catalog via webhooks and GraphQL to read live variant stock levels. This means the bot never confirms availability for out-of-stock items and can suggest alternatives when a specific size or color is unavailable.",
+  },
+];
 ---
 
 <Layout
@@ -117,7 +101,7 @@ const faqSchema = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/what-is/whatsapp-sales-bot", siteUrl).toString()}
-  structuredData={[...structuredData, getFaqSchema(), faqSchema]}
+  structuredData={[...structuredData, getFaqSchema(pageFaqs)]}
 >
   <Header />
 

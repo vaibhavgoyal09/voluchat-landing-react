@@ -92,8 +92,8 @@ VoluChat automates the complete 90-second fashion comment-to-checkout loop:
 │   │   │   └── manual-reps.astro # Dedicated comparison: VoluChat vs manual chat reps
 │   │   │
 │   │   ├── what-is/
-│   │   │   ├── comment-to-DM-automation.astro # Definitional page with extractable answer, inline QAPage schemas
-│   │   │   └── whatsapp-sales-bot.astro       # Definitional page with types comparison, inline QAPage schemas
+│   │   │   ├── comment-to-DM-automation.astro # Definitional page with extractable answer, FAQPage schema
+│   │   │   └── whatsapp-sales-bot.astro       # Definitional page with types comparison, FAQPage schema
 │   │   │
 │   │   └── integrations/
 │   │       └── shopify.astro    # Shopify integration page (5-step flow, reads/creates, security)
@@ -104,7 +104,7 @@ VoluChat automates the complete 90-second fashion comment-to-checkout loop:
 │   └── lib/
 │       ├── markdown.mjs         # Zero-dependency markdown -> HTML renderer
 │       ├── blogApi.mjs          # Blog API client
-│       └── faqSchema.mjs        # Centralized FAQ + QAPage schema helpers (getFaqSchema, getQAPageSchemas)
+│       └── faqSchema.mjs        # Centralized FAQ schema helper (getFaqSchema)
 │
 ├── astro.config.mjs             # Astro config (Vercel adapter, Tailwind Vite plugin, critters, compress)
 ├── tsconfig.json                # Strict TS, path alias @/* -> src/*
@@ -153,8 +153,8 @@ The homepage is structured in a high-conversion narrative sequence designed to e
 | `/compare/interakt` | Dedicated comparison: VoluChat vs Interakt (shared inbox vs autonomous e-commerce automation). |
 | `/compare/manual-reps` | Dedicated comparison: VoluChat vs hiring manual chat reps (cost, availability, consistency). |
 | `/features` | Technical Capture -> Qualify -> Close -> Settle architecture deep-dive with DefinedTermSet schema. |
-| `/what-is/comment-to-DM-automation` | Definitional page with extractable answer, 4-step flow, comparison, and 3 inline QAPage schemas. |
-| `/what-is/whatsapp-sales-bot` | Definitional page with bot types comparison, 4-step flow, and 3 inline QAPage schemas. |
+| `/what-is/comment-to-DM-automation` | Definitional page with extractable answer, 4-step flow, comparison, and FAQPage schema. |
+| `/what-is/whatsapp-sales-bot` | Definitional page with bot types comparison, 4-step flow, and FAQPage schema. |
 | `/glossary` | 20-term glossary across 5 categories with DefinedTermSet schema. |
 | `/security` | Meta Business Cloud API compliance, catalog isolation, and discount margin floors. |
 | `/integrations/shopify` | Shopify integration page — 5-step flow, what it reads, what it creates, security guardrails. |
@@ -167,10 +167,10 @@ The homepage is structured in a high-conversion narrative sequence designed to e
 
 ### Schema Strategy
 - **Global schemas** (Organization, WebSite with SearchAction): injected in `Layout.astro`, prepended to all pages.
-- **Homepage**: SoftwareApplication + ItemList + 6 QAPage schemas.
+- **Homepage**: SoftwareApplication + ItemList + FAQPage schema.
 - **Glossary**: DefinedTermSet with 20 DefinedTerm objects.
 - **Features**: DefinedTermSet with 15 feature terms across 5 categories.
-- **Definitional pages** (`/what-is/*`): WebPage + DefinedTerm + 3 inline QAPage schemas each.
+- **Definitional pages** (`/what-is/*`): WebPage + DefinedTerm + FAQPage schema each.
 - **Blog posts**: Conditional HowTo schema (auto-detects step-like h2 headings).
 - **Pricing**: Service schema.
 

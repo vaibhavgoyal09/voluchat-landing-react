@@ -71,39 +71,23 @@ const benefits = [
   },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is comment-to-DM automation?",
-      answerCount: 1,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Comment-to-DM automation is an Instagram DM automation technique that automatically replies to post comments with a personalized direct message. When someone comments 'Price?' or 'Available?' on your Reel or ad, the system detects the intent, identifies the product, and sends a DM with exact pricing, stock info, and a checkout link — typically within 2 seconds.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does comment-to-DM automation increase sales?",
-      answerCount: 1,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Comment-to-DM automation increases sales by responding to buyer intent within seconds while the purchase impulse is still hot. Traditional next-morning replies lose 70%+ of high-intent buyers. The instant DM with pricing and a checkout link keeps the buyer inside the messaging app, eliminating the 60%+ cart abandonment that happens when buyers are sent to external websites.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is comment-to-DM automation allowed by Instagram?",
-      answerCount: 1,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, when done through official Meta Cloud APIs. VoluChat uses the official Instagram Graph API and WhatsApp Business Cloud API — no scraping, no browser extensions, no account ban risk. Meta explicitly supports automated DM responses through their official API partners.",
-      },
-    },
-  ],
-};
+const pageFaqs = [
+  {
+    question: "What is comment-to-DM automation?",
+    answer:
+      "Comment-to-DM automation is an Instagram DM automation technique that automatically replies to post comments with a personalized direct message. When someone comments 'Price?' or 'Available?' on your Reel or ad, the system detects the intent, identifies the product, and sends a DM with exact pricing, stock info, and a checkout link — typically within 2 seconds.",
+  },
+  {
+    question: "How does comment-to-DM automation increase sales?",
+    answer:
+      "Comment-to-DM automation increases sales by responding to buyer intent within seconds while the purchase impulse is still hot. Traditional next-morning replies lose 70%+ of high-intent buyers. The instant DM with pricing and a checkout link keeps the buyer inside the messaging app, eliminating the 60%+ cart abandonment that happens when buyers are sent to external websites.",
+  },
+  {
+    question: "Is comment-to-DM automation allowed by Instagram?",
+    answer:
+      "Yes, when done through official Meta Cloud APIs. VoluChat uses the official Instagram Graph API and WhatsApp Business Cloud API — no scraping, no browser extensions, no account ban risk. Meta explicitly supports automated DM responses through their official API partners.",
+  },
+];
 ---
 
 <Layout
@@ -111,7 +95,7 @@ const faqSchema = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/what-is/comment-to-DM-automation", siteUrl).toString()}
-  structuredData={[...structuredData, getFaqSchema(), faqSchema]}
+  structuredData={[...structuredData, getFaqSchema(pageFaqs)]}
 >
   <Header />
 

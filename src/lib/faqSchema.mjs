@@ -31,11 +31,12 @@ const faqs = [
   },
 ];
 
-export function getFaqSchema() {
+export function getFaqSchema(additionalFaqs = []) {
+  const allFaqs = [...faqs, ...additionalFaqs];
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: allFaqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -46,18 +47,3 @@ export function getFaqSchema() {
   };
 }
 
-export function getQAPageSchemas() {
-  return faqs.map((faq) => ({
-    "@context": "https://schema.org",
-    "@type": "QAPage",
-    mainEntity: {
-      "@type": "Question",
-      name: faq.question,
-      answerCount: 1,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    },
-  }));
-}
