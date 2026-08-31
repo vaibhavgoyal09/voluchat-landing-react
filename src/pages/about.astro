@@ -5,20 +5,117 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "About VoluChat — AI Sales Stylist for Fashion & Boutique Brands";
+const seoTitle = "About VoluChat — Why We're Building Autonomous Commerce";
 const seoDescription =
-  "VoluChat provides 24/7 autonomous AI sales stylists on WhatsApp for clothing boutiques and fashion brands. 100% white-glove setup for our 10-store pilot cohort.";
+  "Born on the frontline of e-commerce sales. VoluChat, by QubitNine Technologies Pvt. Ltd., eliminates DM chaos with zero-config, autonomous AI sales agents on WhatsApp.";
 const seoKeywords =
-  "About VoluChat, WhatsApp sales bot fashion, boutique Instagram DM sales agent, clothing sales automation, fashion ecommerce WhatsApp";
+  "About VoluChat, QubitNine Technologies, WhatsApp sales bot story, ecommerce sales automation, boutique WhatsApp DM agent, Vaibhav Goyal";
 const siteUrl = "https://www.voluchat.com";
+
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "AboutPage",
   name: seoTitle,
   description: seoDescription,
   url: `${siteUrl}/about`,
+  mainEntity: {
+    "@type": "Organization",
+    name: "VoluChat",
+    legalName: "QubitNine Technologies Pvt. Ltd.",
+    url: siteUrl,
+    logo: `${siteUrl}/voluchat_logo.svg`,
+    founder: {
+      "@type": "Person",
+      name: "Vaibhav Goyal",
+      jobTitle: "Founder & CEO",
+      description:
+        "Former e-commerce Sales Manager turned founder, building zero-config autonomous sales intelligence for online merchants.",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Noida",
+      addressRegion: "Uttar Pradesh",
+      addressCountry: "India",
+    },
+    sameAs: [
+      "https://www.instagram.com/voluchat",
+      "https://x.com/voluchat",
+      "https://www.linkedin.com/company/voluchat",
+      "https://www.youtube.com/@voluchat",
+    ],
+  },
 };
 
+const frontlineProblems = [
+  {
+    icon: "🔍",
+    leak: "01",
+    title: "The Camera Roll Photo Hunt",
+    desc: "Sales reps wasted 10–15 minutes scrolling through thousands of photos in phone albums just to find specific product angles, fabric swatches, or size charts requested by a shopper.",
+  },
+  {
+    icon: "⏳",
+    leak: "02",
+    title: "The Window-Shopper Drain",
+    desc: "Reps spent 80% of their day fielding repetitive questions from casual tire-kickers, while high-intent, ready-to-pay buyers waited in line and eventually bought elsewhere.",
+  },
+  {
+    icon: "🌙",
+    leak: "03",
+    title: "The Midnight Revenue Bleed",
+    desc: "Peak social shopping happens between 9 PM and 2 AM. When sales reps went to sleep, hot inbound DM leads went stone cold by morning.",
+  },
+  {
+    icon: "🚫",
+    leak: "04",
+    title: "Selling Out-of-Stock Variants",
+    desc: "Without live inventory synchronization, reps frequently accepted customer payments for sizes or colors that were already sold out, triggering costly refunds and frustrated buyers.",
+  },
+  {
+    icon: "📋",
+    leak: "05",
+    title: "Manual Order Chaos",
+    desc: "Copy-pasting shipping addresses from chat threads, verifying screenshot receipts, and manually creating invoices led to frequent fulfillment mistakes.",
+  },
+  {
+    icon: "📊",
+    leak: "06",
+    title: "Zero Sales Accountability",
+    desc: "Merchants had zero visibility into why deals were lost, which objections killed conversions, or how much revenue was slipping through unanswered chats.",
+  },
+];
+
+const operatingPrinciples = [
+  {
+    number: "01",
+    title: "Zero-Config Simplicity",
+    desc: "Running an online store is already hard enough. Merchants shouldn't have to become prompt engineers or flowchart architects. We provide full setup white-glove, out of the box.",
+  },
+  {
+    number: "02",
+    title: "10x Value Standard",
+    desc: "We don't charge for software that sits idle or delivers vanity metrics. If VoluChat doesn't generate at least 10x measurable ROI for our partner stores, we have failed.",
+  },
+  {
+    number: "03",
+    title: "Zero Hallucination Guardrails",
+    desc: "Conversational speed means nothing if the bot promises discounts that erode margins or confirms items that are out of stock. Deterministic guardrails protect your brand.",
+  },
+  {
+    number: "04",
+    title: "Instant Human Escalation",
+    desc: "AI should handle 80% of repetitive qualification and closing, but step aside seamlessly when bespoke requests or complex human judgment are needed.",
+  },
+];
+
+const companyFacts = [
+  { label: "Legal Entity", value: "QubitNine Technologies Pvt. Ltd." },
+  { label: "Headquarters", value: "Noida, Uttar Pradesh, India" },
+  { label: "Leadership", value: "Vaibhav Goyal (Founder & CEO)" },
+  { label: "Operating Stage", value: "Private 10-Store Founder Pilot" },
+  { label: "Direct Inquiries", value: "founders@voluchat.com" },
+  { label: "Core Platform", value: "Meta Cloud API & WhatsApp Engine" },
+];
 ---
 
 <Layout
@@ -31,38 +128,41 @@ const structuredData = {
   <Header />
 
   <main class="pt-20">
-    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-16 pb-20 sm:pt-24 lg:pb-28">
       <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_80%_16%,rgba(203,217,234,0.2),transparent_30%)]"
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(20,184,166,0.12),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(45,212,191,0.08),transparent_30%)]"
       >
       </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
-        <div class="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div class="abt-hero-text">
-            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-              Our Mission
+            <div
+              class="inline-flex items-center gap-2 rounded-full border border-teal-500/25 bg-teal-950/40 px-3.5 py-1 text-xs font-bold text-teal-300 mb-6"
+            >
+              <span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+              The VoluChat Story
             </div>
             <h1
-              class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl font-heading"
+              class="text-4xl font-semibold leading-[1.08] text-white sm:text-6xl font-heading"
             >
-              Building the autonomous sales stylist for fashion boutiques.
+              Running an online store was never meant to be a headache.
             </h1>
-            <p class="section-copy mt-6 max-w-xl text-slate-300">
-              Fashion shopping has moved to Instagram Reels and WhatsApp chats. VoluChat provides a 24/7 AI stylist that qualifies sizes, answers fabric questions, and closes 1-click UPI orders while boutique founders sleep.
+            <p class="section-copy mt-6 max-w-xl text-slate-300 text-lg leading-relaxed">
+              VoluChat was born directly on the frontline of e-commerce sales. We saw brilliant merchants spend lakhs on marketing, only to drown in chaotic WhatsApp chats, lost night-time orders, and out-of-stock mishaps.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="/contact" class="btn-primary">Apply for Pilot Cohort &rarr;</a>
-              <a href="/#how-it-works" class="btn-secondary">Explore the Engine</a>
+              <a href="#origin" class="btn-secondary">Read Our Genesis</a>
             </div>
           </div>
 
-          <div class="abt-hero-image solid-card p-3 border-emerald-500/20 bg-[#081120]">
+          <div class="abt-hero-image solid-card p-3 border-teal-500/20 bg-[#081120]">
             <img
               src="/about_hero.webp"
-              alt="VoluChat workspace for commerce agents"
+              alt="Autonomous commerce workspace by VoluChat"
               class="h-full w-full rounded-xl object-cover"
               width="1024"
               height="1024"
@@ -74,45 +174,82 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="abt-believe-section section-pad relative overflow-hidden">
+    <!-- Origin Story / Frontline Reality -->
+    <section id="origin" class="abt-origin-section section-pad section-band relative overflow-hidden">
       <div class="page-shell">
-        <div class="abt-believe-text mx-auto max-w-3xl text-center">
-          <p class="section-eyebrow text-emerald-400">What we believe</p>
-          <h2 class="section-title mt-4 text-white font-heading">
-            Speed and conversational depth close sales. Not rigid bot menus.
+        <div class="max-w-3xl">
+          <p class="section-eyebrow text-teal-400">The Genesis</p>
+          <h2 class="section-title mt-4 text-white font-heading text-3xl sm:text-5xl">
+            Built from real frontline frustration, not a Silicon Valley whiteboard.
           </h2>
-          <p class="section-copy mx-auto mt-5 max-w-2xl text-slate-300">
-            Social shoppers buy on impulse. When they ask about sizing, custom delivery dates, or COD at 11 PM, an instant intelligent answer is the difference between a ₹3,000 checkout and a lost customer.
+          <p class="mt-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+            While working as a <strong>Sales Manager</strong> for an online commerce store, our founder lived through the daily chaos of social selling. Social media brought massive organic and paid traffic, but closing orders manually over WhatsApp DMs was fundamentally broken.
           </p>
         </div>
 
-        <div class="mt-12 grid gap-5 md:grid-cols-3">
+        <!-- 6 Frontline Leaks Grid -->
+        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {
-            [
-              {
-                title: "Speed is Conversion",
-                text: "Replying to an Instagram Reel comment in 2 seconds delivers 8x higher conversion than replying the next morning.",
-              },
-              {
-                title: "Zero Bot Hallucinations",
-                text: "The AI understands live Shopify variant stock, accurate delivery pincodes, and strict margin rules without making false promises.",
-              },
-              {
-                title: "10x Value Standard",
-                text: "We don't charge for software that sits idle. We provide white-glove setup and guarantee measurable revenue lift for every store.",
-              },
-            ].map((item, index) => (
-              <article
-                class="abt-believe-card solid-card border-white/10 bg-[#0a1424]/90 p-7"
-              >
-                <span class="grid h-10 w-10 place-items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 font-mono text-xs font-bold text-emerald-300">
-                  0{index + 1}
-                </span>
-                <h3 class="mt-6 text-xl font-heading font-semibold text-white">
+            frontlineProblems.map((item) => (
+              <div class="abt-problem-card solid-card relative border-white/10 bg-[#0a1424]/90 p-7 hover:border-teal-500/30 transition-all">
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl">{item.icon}</span>
+                  <span class="font-mono text-xs font-bold text-teal-400/80 bg-teal-950/60 px-2 py-0.5 rounded border border-teal-500/20">
+                    PROBLEM {item.leak}
+                  </span>
+                </div>
+                <h3 class="mt-5 text-lg font-heading font-semibold text-white">
                   {item.title}
                 </h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300 font-normal">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-10 rounded-2xl border border-teal-500/20 bg-teal-950/20 p-8 sm:p-10 backdrop-blur-md">
+          <h3 class="text-xl sm:text-2xl font-heading font-semibold text-white">
+            The Bot Dilemma: Why Flowcharts Failed
+          </h3>
+          <p class="mt-4 text-slate-300 leading-relaxed">
+            When trying existing automation tools (ManyChat, Wati, flowchart bots), we ran into another wall: they required weeks of complex setup, logic diagrams, and ongoing maintenance. Non-technical store owners were forced to become prompt engineers and software architects just to send a product link.
+          </p>
+          <p class="mt-3 text-slate-300 leading-relaxed">
+            <strong>VoluChat exists to change that paradigm:</strong> deliver an autonomous, zero-config sales agent that works out of the box with live catalog synchronization, sizing qualification, and 1-click UPI checkout.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operating Principles -->
+    <section class="abt-principles-section section-pad relative overflow-hidden">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="section-eyebrow text-teal-400">Our Standards</p>
+          <h2 class="section-title mt-4 text-white font-heading">
+            How we operate and build
+          </h2>
+          <p class="section-copy mx-auto mt-4 max-w-2xl text-slate-300">
+            Principles designed to eliminate merchant risk and build sustainable sales growth.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+          {
+            operatingPrinciples.map((item) => (
+              <article class="abt-principle-card solid-card border-white/10 bg-[#0a1424]/80 p-8">
+                <div class="flex items-center gap-4">
+                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal-500/15 border border-teal-500/30 font-mono text-sm font-bold text-teal-300">
+                    {item.number}
+                  </span>
+                  <h3 class="text-xl font-heading font-semibold text-white">
+                    {item.title}
+                  </h3>
+                </div>
                 <p class="mt-4 text-sm font-medium leading-relaxed text-slate-300">
-                  {item.text}
+                  {item.desc}
                 </p>
               </article>
             ))
@@ -121,14 +258,15 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="abt-founder-section relative pb-28">
+    <!-- The Bigger Vision -->
+    <section class="abt-vision-section section-pad section-band relative overflow-hidden">
       <div class="page-shell">
-        <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div class="abt-founder-image solid-card p-3 border-emerald-500/20 bg-[#081120]">
+        <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div class="abt-vision-image solid-card p-3 border-teal-500/20 bg-[#081120]">
             <img
               src="/mission_collaboration.webp"
-              alt="Configuring ecommerce agent workflows"
-              class="max-h-[500px] w-full rounded-xl object-cover"
+              alt="VoluChat e-commerce agent workflow"
+              class="h-full w-full rounded-xl object-cover"
               width="1024"
               height="1024"
               loading="lazy"
@@ -136,27 +274,86 @@ const structuredData = {
             />
           </div>
 
-          <div class="abt-founder-text">
-            <p class="section-eyebrow text-emerald-400">Founder commitment</p>
-            <h2
-              class="mt-4 text-3xl font-heading font-semibold leading-[1.08] text-white sm:text-5xl"
-            >
-              "I will deliver 10x the value of what we charge. Anything less is unacceptable."
+          <div class="abt-vision-text">
+            <p class="section-eyebrow text-teal-400">The Horizon</p>
+            <h2 class="mt-4 text-3xl font-heading font-semibold text-white sm:text-5xl">
+              Our vision goes far beyond a WhatsApp chatbot.
             </h2>
-            <p
-              class="mt-5 text-base font-medium leading-relaxed text-slate-300"
-            >
-              As a founder, I saw merchants spending lakhs on Meta ads, only to watch 50%+ of their customer intent leak away because manual sales reps were offline or overwhelmed. VoluChat exists to turn social media DMs into a 24/7 autonomous cash-register.
+            <p class="mt-6 text-slate-300 leading-relaxed text-base">
+              A chat bot is just an interface. Our long-term mission is to build the <strong>autonomous operating layer for modern e-commerce</strong>.
             </p>
-            <div
-              class="mt-8 rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-6"
-            >
-              <p class="text-base font-semibold leading-relaxed text-slate-200">
-                "For our initial 10 pilot stores, my team and I personally handle 100% of the Meta setup, catalog synchronization, and live closer tuning."
+            <p class="mt-4 text-slate-300 leading-relaxed text-base">
+              From the moment an Instagram shopper comments on a video, to sizing guidance, intelligent inventory allocation, fraud-protected UPI payment links, and post-purchase support — VoluChat handles the heavy lifting so boutique founders can focus purely on product and brand storytelling.
+            </p>
+
+            <div class="mt-8 grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
+              <div>
+                <p class="text-2xl font-bold font-heading text-white">Zero</p>
+                <p class="text-xs text-slate-400 mt-1">Flowchart builder config required</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold font-heading text-teal-400">10x</p>
+                <p class="text-xs text-slate-400 mt-1">Founder ROI value standard</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Transparency & Quick Facts -->
+    <section class="abt-facts-section section-pad relative overflow-hidden">
+      <div class="page-shell">
+        <div class="rounded-3xl border border-white/10 bg-[#07111e]/90 p-8 sm:p-12">
+          <div class="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+            <div>
+              <p class="section-eyebrow text-teal-400">Corporate Information</p>
+              <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-white mt-2">
+                Company Transparency
+              </h2>
+              <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+                VoluChat is developed and operated by <strong>QubitNine Technologies Pvt. Ltd.</strong> (under registration), headquartered in Noida, Uttar Pradesh, India.
               </p>
-              <p class="mt-4 text-sm font-bold text-emerald-300 font-mono">
-                Vaibhav Goyal &bull; Founder, VoluChat
+              <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                We are committed to enterprise data isolation, official Meta Cloud API compliance, and merchant margin safety.
               </p>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2">
+              {
+                companyFacts.map((fact) => (
+                  <div class="rounded-xl border border-white/5 bg-slate-900/60 p-4">
+                    <p class="text-xs font-mono font-medium text-slate-400 uppercase tracking-wider">
+                      {fact.label}
+                    </p>
+                    <p class="text-sm font-semibold text-white mt-1">
+                      {fact.value}
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Commitment Card -->
+    <section class="abt-founder-section relative pb-28">
+      <div class="page-shell">
+        <div class="rounded-3xl border border-teal-500/30 bg-gradient-to-b from-teal-950/40 via-[#0a1424] to-[#081120] p-8 sm:p-12 text-center max-w-4xl mx-auto">
+          <p class="section-eyebrow text-teal-400">Direct Founder Accountability</p>
+          <blockquote class="mt-4 text-2xl sm:text-3xl font-heading font-semibold text-white leading-relaxed">
+            "I will deliver 10x the value of what we charge. Anything less is unacceptable."
+          </blockquote>
+          <p class="mt-6 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+            For every brand joining our 10-Store Pilot Cohort, my team and I personally oversee catalog ingestion, Instagram hook tuning, and live sales qualification. No outsourced support, no junior account managers.
+          </p>
+          <div class="mt-8 flex flex-col items-center justify-center gap-2">
+            <p class="text-base font-bold text-white">Vaibhav Goyal</p>
+            <p class="text-xs font-mono text-teal-300">Founder & CEO &bull; VoluChat / QubitNine Technologies</p>
+            <div class="mt-4">
+              <a href="/contact" class="btn-primary">Apply to Join the 10-Store Cohort &rarr;</a>
             </div>
           </div>
         </div>
@@ -178,47 +375,67 @@ const structuredData = {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 
-    // Hero
-    gsap.fromTo(".abt-hero-text",
+    // Hero Animation
+    gsap.fromTo(
+      ".abt-hero-text",
       { opacity: 0, x: -30, filter: "blur(5px)" },
       { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.8, ease: "power2.out" }
     );
-    gsap.from(".abt-hero-image",
-      { opacity: 0, scale: 0.95, duration: 1, ease: "power3.out", immediateRender: true }
-    );
-
-    // Believe
-    const believeTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".abt-believe-section",
-        start: "top 75%",
-        toggleActions: "play none none reverse"
-      }
+    gsap.from(".abt-hero-image", {
+      opacity: 0,
+      scale: 0.95,
+      duration: 1,
+      ease: "power3.out",
+      immediateRender: true,
     });
-    believeTl.fromTo(".abt-believe-text",
+
+    // Origin Problems Stagger
+    const originTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".abt-origin-section",
+        start: "top 75%",
+        toggleActions: "play none none reverse",
+      },
+    });
+    originTl.fromTo(
+      ".abt-problem-card",
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
-    ).fromTo(".abt-believe-card",
-      { opacity: 0, y: 40, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.15, ease: "back.out(1.2)" },
-      "-=0.4"
+      { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }
     );
 
-    // Founder
-    const founderTl = gsap.timeline({
+    // Principles Stagger
+    const principlesTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".abt-founder-section",
+        trigger: ".abt-principles-section",
         start: "top 75%",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     });
-    founderTl.fromTo(".abt-founder-image",
-      { opacity: 0, x: -40, rotateY: 10 },
-      { opacity: 1, x: 0, rotateY: 0, duration: 0.8, ease: "power2.out" }
-    ).fromTo(".abt-founder-text",
-      { opacity: 0, x: 30 },
-      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" },
-      "-=0.6"
+    principlesTl.fromTo(
+      ".abt-principle-card",
+      { opacity: 0, y: 35 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power2.out" }
     );
+
+    // Vision Animation
+    const visionTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".abt-vision-section",
+        start: "top 75%",
+        toggleActions: "play none none reverse",
+      },
+    });
+    visionTl
+      .fromTo(
+        ".abt-vision-image",
+        { opacity: 0, x: -30 },
+        { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+      )
+      .fromTo(
+        ".abt-vision-text",
+        { opacity: 0, x: 30 },
+        { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" },
+        "-=0.5"
+      );
   });
 </script>
