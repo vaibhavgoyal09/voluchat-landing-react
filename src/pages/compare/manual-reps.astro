@@ -5,9 +5,9 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Manual Chat Reps — AI Sales Stylist vs Human Support for Boutiques";
+const seoTitle = "VoluChat vs Manual Chat Reps — AI Stylist for Boutiques";
 const seoDescription =
-  "Compare VoluChat's autonomous AI sales stylist with hiring manual chat reps for clothing boutique Instagram DMs and WhatsApp chats. Close 3x more orders 24/7 at a fraction of the cost.";
+  "Compare VoluChat's AI sales stylist with hiring manual chat reps for Instagram and WhatsApp. Close 3x more orders 24/7 at 1/10th the cost.";
 const seoKeywords =
   "VoluChat vs manual reps, boutique chat reps vs AI, WhatsApp sales bot fashion, Instagram DM closer clothing";
 const siteUrl = "https://www.voluchat.com";
@@ -104,7 +104,7 @@ const verdict = {
           {
             comparison.map((row) => (
               <article class="solid-card p-6 md:p-8">
-                <p class="section-eyebrow text-emerald-400 mb-4">{row.category}</p>
+                <h2 class="section-eyebrow text-emerald-400 mb-4">{row.category}</h2>
                 <div class="grid gap-5 md:grid-cols-2">
                   <div class="rounded-2xl border border-white/10 bg-[#0c1728] p-5">
                     <p class="mini-label text-slate-400">Manual Reps</p>
@@ -154,13 +154,13 @@ const verdict = {
       <div class="page-shell">
         <div class="mx-auto max-w-4xl grid gap-5 md:grid-cols-2">
           <article class="solid-card p-6 md:p-8">
-            <p class="mini-label text-slate-400">Keep manual reps if...</p>
+            <h2 class="mini-label text-slate-400">Keep manual reps if...</h2>
             <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
               {verdict.chooseManual}
             </p>
           </article>
           <article class="solid-card p-6 md:p-8 border-emerald-500/30 bg-emerald-950/20">
-            <p class="mini-label text-emerald-300">Choose VoluChat if...</p>
+            <h2 class="mini-label text-emerald-300">Choose VoluChat if...</h2>
             <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
               {verdict.chooseVoluchat}
             </p>
