@@ -5,147 +5,142 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat Features — AI Sales Stylist for Fashion Brands";
+const seoTitle = "VoluChat Features — WhatsApp AI Sales Agent for Fashion Boutiques";
 const seoDescription =
-  "Explore VoluChat features: Instagram comment-to-DM, WhatsApp sizing qualification, live stock checks, upsells, and 1-click UPI checkout.";
+  "Explore VoluChat features: Instagram comment-to-DM, AI sizing stylist, 1-click UPI checkout, and 24/7 WhatsApp sales automation for clothing boutiques — no website required.";
 const seoKeywords =
-  "VoluChat features, fashion WhatsApp sales bot, Instagram DM sizing agent, boutique cart recovery WhatsApp, clothing in-chat checkout";
+  "WhatsApp sales agent features, fashion boutique DM automation, Instagram comment to DM clothing, AI sizing stylist WhatsApp, in-chat UPI checkout, sell on WhatsApp without website";
 const siteUrl = "https://www.voluchat.com";
 
-const featureCategories = [
+const featurePillars = [
   {
-    category: "01 / Lead Capture & Top-of-Funnel",
-    title: "Comment-to-DM & Instant Outreach",
-    desc: "Capture active buyer intent within seconds of public interaction across Instagram and Meta ads.",
-    badge: "Top of Funnel",
-    features: [
+    number: "01",
+    tag: "Lead Capture",
+    title: "Instant Comment-to-DM Sales Engine",
+    subtitle: "Turn viral Instagram Reel comments into buying conversations in 2 seconds.",
+    description: "When a shopper comments 'Price?' or 'Available?' on your Instagram Reel, they want an answer immediately. VoluChat auto-replies to their comment and slides into their DMs with exact pricing, photos, and a direct WhatsApp link before they scroll away.",
+    highlight: "2.0s Response Time",
+    items: [
       {
-        icon: "⚡",
-        title: "2-Second Auto DM Dispatch",
-        desc: "Instantly detects buyer comments ('Price?', 'Available?', 'Size M?') on Reels and ads, triggering a direct message before the shopper scrolls away.",
+        title: "2-Second Reel Comment Auto-Reply",
+        desc: "Instantly acknowledges comments on your posts, Reels, and ads, driving public curiosity into private sales conversations.",
       },
       {
-        icon: "🎯",
-        title: "Post & Reel Context Mapping",
-        desc: "The agent understands the exact product SKU, variant, and pricing shown in the specific video or post the shopper commented on.",
+        title: "Exact Reel & Product Recognition",
+        desc: "Knows the exact dress, lehenga, or co-ord set shown in the specific Reel the customer commented on.",
       },
       {
-        icon: "🔗",
-        title: "Seamless WhatsApp Handoff",
-        desc: "Moves qualified buyers from Instagram DMs directly into your official WhatsApp chat with conversation history preserved.",
+        title: "1-Click WhatsApp Transfer",
+        desc: "Smoothly shifts ready-to-buy customers from Instagram DMs into your official WhatsApp chat with product context intact.",
       },
     ],
   },
   {
-    category: "02 / Catalog & Product Advisory",
-    title: "Catalog Intelligence & Sizing Advisory",
-    desc: "Provide real-time product answers grounded in your live Shopify catalog with zero guesswork or hallucinations.",
-    badge: "Catalog Brain",
-    features: [
+    number: "02",
+    tag: "AI Stylist",
+    title: "AI Fashion Stylist & Sizing Expert",
+    subtitle: "Answer sizing, fabric, and styling questions without typing a single word.",
+    description: "Stop answering 'Is size M true to size?' fifty times a day. VoluChat understands your sizing charts, bust/waist measurements, fabric composition, and wash care instructions to guide customers to the right fit with zero hesitation.",
+    highlight: "Zero Sizing Confusion",
+    items: [
       {
-        icon: "📦",
-        title: "Real-Time Shopify Stock Check",
-        desc: "Verifies live variant stock counts before confirming availability. Never sells an out-of-stock size or backordered variant.",
+        title: "Measurement & Fit Recommendation",
+        desc: "Asks customer height and fit preferences to recommend the exact size, drastically reducing post-purchase exchange requests.",
       },
       {
-        icon: "📏",
-        title: "Conversational Sizing Guidance",
-        desc: "Answers complex buyer sizing questions, recommends sizing based on height/fit preferences, and shares accurate size charts in-chat.",
+        title: "Fabric, Quality & Care Details",
+        desc: "Explains pure cotton, georgette, chanderi silk details, lining information, and care tips directly in the chat.",
       },
       {
-        icon: "🧵",
-        title: "Fabric, Care & Styling Advice",
-        desc: "Trained on your product specifications to explain material composition, wash instructions, styling tips, and matching accessories.",
-      },
-    ],
-  },
-  {
-    category: "03 / Autonomous Closer & Negotiation",
-    title: "WhatsApp Sales Closer Engine",
-    desc: "Autonomous conversational closing that addresses buyer hesitations and seals orders 24/7.",
-    badge: "Sales Closer",
-    features: [
-      {
-        icon: "🌙",
-        title: "24/7 Night-Shift Sales Closer",
-        desc: "Captures and closes the 40%+ of social purchases that happen between 10 PM and 8 AM when human teams are offline.",
-      },
-      {
-        icon: "🏷️",
-        title: "Margin-Safe Incentive Engine",
-        desc: "Strategically offers pre-approved prepaid discounts (e.g. 5–10% off for instant UPI) to incentivize upfront payment and stop abandoned chats.",
-      },
-      {
-        icon: "🚚",
-        title: "Pincode SLA & Delivery Confirmation",
-        desc: "Instantly checks courier delivery feasibility and confirms realistic transit timelines before the customer asks.",
+        title: "Smart Styling & Cross-Sell Add-ons",
+        desc: "Suggests matching dupattas, jewelry, or complementary pieces to increase average order value naturally.",
       },
     ],
   },
   {
-    category: "04 / In-Chat Checkout & Fulfillment",
-    title: "Native Payment & Order Settlement",
-    desc: "Frictionless checkout experience without sending shoppers to external website browsers.",
-    badge: "Checkout & Sync",
-    features: [
+    number: "03",
+    tag: "In-Chat Checkout",
+    title: "1-Click UPI Payment & Instant Settlement",
+    subtitle: "Collect payments inside WhatsApp without sending QR codes or asking for screenshots.",
+    description: "Forget typing your Google Pay number and begging customers for transaction screenshots. VoluChat generates 1-click UPI links (GPay, PhonePe, Paytm, CRED) directly in chat so customers can pay in 15 seconds.",
+    highlight: "15-Second Checkout",
+    items: [
       {
-        icon: "💳",
-        title: "1-Click UPI & Instant Payment Link",
-        desc: "Generates quick UPI / payment links directly inside WhatsApp, allowing buyers to pay in under 90 seconds.",
+        title: "1-Click UPI Payment Links",
+        desc: "Generates instant payment links that open Google Pay, PhonePe, or Paytm directly on the customer's phone.",
       },
       {
-        icon: "🔄",
-        title: "Automatic Shopify Admin Sync",
-        desc: "Creates paid orders or draft orders in Shopify with customer address and SKU details pre-populated instantly upon settlement.",
+        title: "Zero Screenshot Verification",
+        desc: "Payments are verified automatically via secure gateway webhooks — no manual bank checking or screenshot matching.",
       },
       {
-        icon: "📍",
-        title: "Automated Tracking & Status Updates",
-        desc: "Pushes real-time order confirmation and courier tracking links directly to the customer's WhatsApp thread.",
+        title: "Prepaid Discount Incentives",
+        desc: "Strategically offers small prepaid discounts (e.g. ₹100 off on instant UPI) to eliminate COD orders and avoid fake deliveries.",
       },
     ],
   },
   {
-    category: "05 / Safety, Control & Analytics",
-    title: "Guardrails & Human-in-the-Loop",
-    desc: "Complete operational control, margin protection, and revenue tracking across every conversation.",
-    badge: "Brand Safety",
-    features: [
+    number: "04",
+    tag: "Zero-Website Selling",
+    title: "Catalog & Order Management Without a Website",
+    subtitle: "Manage your collection and customer orders using simple spreadsheets or photos.",
+    description: "You don't need a ₹50,000 Shopify website to run an automated boutique. Upload your product photos, sizes, and prices via Google Sheets or chat. VoluChat tracks stock, collects customer addresses, and logs orders cleanly.",
+    highlight: "Zero Website Required",
+    items: [
       {
-        icon: "🛡️",
-        title: "Strict Margin Floors & Ceilings",
-        desc: "Hardcoded limits ensure the agent never offers discounts exceeding your predefined maximum margin threshold.",
+        title: "Simple Sheet or Photo Catalog Sync",
+        desc: "Sync products easily from Google Sheets or image folders — no complex e-commerce dashboard needed.",
       },
       {
-        icon: "🙋",
-        title: "1-Click Human Handoff",
-        desc: "Detects custom requests, bridal inquiries, or sensitive escalations and immediately alerts human sales reps on WhatsApp.",
+        title: "Automated Address & Pincode Capture",
+        desc: "Collects complete delivery address, pincode, and contact number in chat, validating courier serviceable areas.",
       },
       {
-        icon: "📊",
-        title: "Direct Revenue Attribution",
-        desc: "Tracks every rupee earned back to the exact Reel, comment, and chat thread that generated the order.",
+        title: "Optional Shopify Sync Available",
+        desc: "Already have a Shopify store? VoluChat connects optionally to sync inventory and create draft orders automatically.",
+      },
+    ],
+  },
+  {
+    number: "05",
+    tag: "24/7 Closer & Control",
+    title: "24/7 Night-Shift Closer with Live Human Takeover",
+    subtitle: "Close midnight orders while you sleep, with instant alerts for custom bridal requests.",
+    description: "Over 50% of boutique shopping happens after 9 PM. VoluChat works all night closing orders while you sleep, but immediately notifies your phone if a VIP customer requests custom bridal stitching or personal styling.",
+    highlight: "24/7 Automated Revenue",
+    items: [
+      {
+        title: "Late-Night Automated Sales Closer",
+        desc: "Answers pricing, qualifies sizing, and collects UPI payments from 11 PM to 4 AM when manual staff is asleep.",
+      },
+      {
+        title: "Instant Human Escalation on WhatsApp",
+        desc: "Detects custom bridal requests, bulk orders, or complaints and notifies you on WhatsApp for 1-click human takeover.",
+      },
+      {
+        title: "Strict Margin Protection Floors",
+        desc: "Hardcoded safety rules ensure the AI never quotes wrong prices or offers discounts beyond your approved limits.",
       },
     ],
   },
 ];
 
-const technicalSpecs = [
+const transformationPoints = [
   {
-    title: "Meta Cloud API Integration",
-    detail: "Official Meta & WhatsApp Business Cloud API — 100% compliant, zero scraping, no account ban risks.",
+    before: "Waking up to 40 unread 'Price?' DMs with buyers already gone",
+    after: "Every DM answered in 2s with photos & sizes closed overnight",
   },
   {
-    title: "Shopify Webhooks & GraphQL Sync",
-    detail: "Sub-second bidirectional synchronization with Shopify inventory, pricing, variant metadata, and order creation.",
+    before: "Typing out GPay numbers and waiting hours for payment screenshots",
+    after: "Instant 1-click UPI link with automatic payment confirmation",
   },
   {
-    title: "Sub-2s Response Latency",
-    detail: "High-performance inference pipeline delivers conversational responses in under 2 seconds to maximize buyer impulse.",
+    before: "Manually measuring dresses and sending size charts 50x a day",
+    after: "AI Stylist qualifies height and fit recommendations in seconds",
   },
   {
-    title: "Multi-Agent Workflow Architecture",
-    detail: "Modular agents specialized in capture, sizing advisory, negotiation, and settlement working as a single unified engine.",
+    before: "Copy-pasting customer addresses from chat into messy spreadsheets",
+    after: "Clean address, pincode, and order details logged automatically",
   },
 ];
 
@@ -160,21 +155,21 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
-    name: "VoluChat Platform Capabilities",
+    name: "VoluChat Boutique WhatsApp Sales Capabilities",
     description:
-      "Core features of VoluChat's autonomous e-commerce automation agent for Instagram and WhatsApp DMs — upsells, cross-sells, cart recovery, and in-chat checkout.",
+      "Features of VoluChat's WhatsApp AI Sales Agent for clothing and fashion boutiques selling directly in DMs without needing a website.",
     url: `${siteUrl}/features`,
-    hasDefinedTerm: featureCategories.flatMap((group) => [
+    hasDefinedTerm: featurePillars.flatMap((pillar) => [
       {
         "@type": "DefinedTerm",
-        name: group.title,
-        description: group.desc,
+        name: pillar.title,
+        description: pillar.description,
         inDefinedTermSet: `${siteUrl}/features`,
       },
-      ...group.features.map((feat) => ({
+      ...pillar.items.map((item) => ({
         "@type": "DefinedTerm",
-        name: feat.title,
-        description: feat.desc,
+        name: item.title,
+        description: item.desc,
         inDefinedTermSet: `${siteUrl}/features`,
       })),
     ]),
@@ -192,70 +187,122 @@ const structuredData = [
   <Navbar />
 
   <main class="overflow-hidden">
-    <section class="hero-stripe">
-      <div class="section-glow-emerald"></div>
-      <div class="sect-grid opacity-30"></div>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20 bg-[#000000]">
+      <!-- Background Ambient Glow -->
+      <div class="absolute left-1/2 top-1/4 -z-10 h-[450px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(16,185,129,0.15),transparent_70%)] blur-[90px] pointer-events-none"></div>
+      <div class="sect-grid opacity-20 pointer-events-none"></div>
 
-      <div class="page-shell">
-        <div class="mx-auto max-w-4xl text-center">
-          <div class="chip mx-auto">
-            <span class="mini-label">Platform Capabilities</span>
+      <div class="page-shell relative z-10">
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="chip mx-auto mb-5">
+            <span class="mini-label text-emerald-400">Boutique Sales Automation</span>
           </div>
-          <h1
-            class="mt-6 text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
-          >
-            Everything you need to
-            <span class="block text-emerald-400">automate social sales.</span>
+          
+          <h1 class="text-3xl font-bold leading-[1.1] text-[#fcfdff] sm:text-5xl lg:text-6xl font-heading tracking-tight">
+            Everything your clothing boutique needs to <span class="text-emerald-400">sell on WhatsApp 24/7.</span>
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-2xl">
-            A comprehensive breakdown of VoluChat's autonomous commerce features — from viral comment capture to 90-second WhatsApp checkout and Shopify fulfillment.
+          
+          <p class="section-copy mx-auto mt-5 max-w-2xl text-base sm:text-lg">
+            Turn Instagram Reel comments and WhatsApp inquiries into completed UPI orders automatically. No website, Shopify store, or coding required.
           </p>
-          <div class="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="/contact" class="btn-primary">Book a Live Demo &rarr;</a>
-            <a href="/compare" class="btn-secondary">Compare vs Wati / Manychat</a>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-3.5">
+            <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
+            <a href="/#how-it-works" class="btn-secondary">See How It Works</a>
+          </div>
+
+          <div class="mt-6 flex items-center justify-center gap-4 text-xs font-mono text-slate-400">
+            <span>✓ No Website Needed</span>
+            <span>&bull;</span>
+            <span>✓ 100% White-Glove Setup</span>
+            <span>&bull;</span>
+            <span>✓ Works on WhatsApp &amp; Instagram</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="relative pb-20 sm:pb-28 bg-[#000000]">
-      <div class="page-shell space-y-10 sm:space-y-14">
-        {
-          featureCategories.map((group) => (
-            <article class="solid-card p-6 sm:p-10">
-              <header class="flex flex-col gap-3 border-b border-white/[0.08] pb-6 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <span class="mb-1.5 block font-mono text-xs font-bold uppercase tracking-widest text-emerald-400">
-                    {group.category}
-                  </span>
-                  <h2 class="text-2xl font-heading font-semibold text-[#fcfdff] sm:text-3xl">
-                    {group.title}
-                  </h2>
+    <!-- Before vs After Comparison Strip -->
+    <section class="border-y border-white/[0.08] bg-[#06060a] py-12 sm:py-16">
+      <div class="page-shell">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <span class="font-mono text-xs font-bold uppercase tracking-wider text-emerald-400">The Boutique Transformation</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading mt-1">Manual DM Selling vs VoluChat AI</h2>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {
+            transformationPoints.map((point) => (
+              <div class="rounded-2xl border border-white/[0.08] bg-[#0a0a0e] p-5 flex flex-col justify-between">
+                <div class="border-b border-white/[0.06] pb-3 mb-3">
+                  <span class="text-[10px] font-mono uppercase text-rose-400 font-semibold tracking-wider block mb-1">Manual Struggle</span>
+                  <p class="text-xs text-slate-400 font-normal leading-relaxed">{point.before}</p>
                 </div>
-                <span class="w-fit rounded-full border border-white/[0.08] bg-[#101012] px-3.5 py-1 font-mono text-xs font-medium text-emerald-300">
-                  {group.badge}
+                <div>
+                  <span class="text-[10px] font-mono uppercase text-emerald-400 font-semibold tracking-wider block mb-1">With VoluChat</span>
+                  <p class="text-xs font-medium text-white leading-relaxed">{point.after}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 Core Feature Pillars -->
+    <section class="relative py-16 sm:py-24 bg-[#000000]">
+      <div class="page-shell space-y-12 sm:space-y-16">
+        {
+          featurePillars.map((pillar) => (
+            <article class="reveal-on-scroll rounded-3xl border border-white/[0.10] bg-gradient-to-b from-[#0e1017] via-[#0a0b0f] to-[#07080a] p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
+              <!-- Top Header Block -->
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-white/[0.08] pb-6 mb-6">
+                <div class="flex items-center gap-3">
+                  <span class="grid h-8 w-8 place-items-center rounded-lg bg-emerald-500/15 border border-emerald-500/30 font-mono text-xs font-bold text-emerald-400">
+                    {pillar.number}
+                  </span>
+                  <div>
+                    <span class="font-mono text-[11px] font-semibold text-emerald-400 uppercase tracking-wider block">
+                      {pillar.tag}
+                    </span>
+                    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold font-heading text-white mt-0.5">
+                      {pillar.title}
+                    </h2>
+                  </div>
+                </div>
+
+                <span class="w-fit rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1 font-mono text-xs font-semibold text-emerald-300 self-start sm:self-auto">
+                  {pillar.highlight}
                 </span>
-              </header>
+              </div>
 
-              <p class="mb-8 mt-6 max-w-3xl text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
-                {group.desc}
-              </p>
+              <!-- Context Description -->
+              <div class="max-w-3xl mb-8">
+                <p class="text-sm sm:text-base font-semibold text-slate-200 mb-2 font-heading">
+                  {pillar.subtitle}
+                </p>
+                <p class="text-xs sm:text-sm text-[rgba(252,253,255,0.7)] font-normal leading-relaxed">
+                  {pillar.description}
+                </p>
+              </div>
 
-              <div class="grid gap-4 md:grid-cols-3">
-                {group.features.map((feat) => (
-                  <article class="solid-card-subtle flex flex-col justify-between">
+              <!-- 3-Column Specific Breakdown -->
+              <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {pillar.items.map((item) => (
+                  <div class="rounded-2xl border border-white/[0.06] bg-[#12141c]/80 p-5 flex flex-col justify-between hover:border-emerald-500/30 transition-all">
                     <div>
-                      <div class="mb-4 grid h-9 w-9 place-items-center rounded-lg border border-white/[0.14] bg-[#101012] text-lg text-emerald-300">
-                        {feat.icon}
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                        <h3 class="font-heading text-sm font-bold text-white">
+                          {item.title}
+                        </h3>
                       </div>
-                      <h3 class="font-heading text-base font-semibold text-[#fcfdff]">
-                        {feat.title}
-                      </h3>
-                      <p class="mt-2 text-xs font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-sm">
-                        {feat.desc}
+                      <p class="text-xs text-[rgba(252,253,255,0.65)] font-normal leading-relaxed">
+                        {item.desc}
                       </p>
                     </div>
-                  </article>
+                  </div>
                 ))}
               </div>
             </article>
@@ -264,36 +311,23 @@ const structuredData = [
       </div>
     </section>
 
-    <section class="relative border-y border-white/[0.08] bg-[#06060a] py-16 sm:py-24">
+    <!-- Bottom Conversion CTA Section -->
+    <section class="border-t border-white/[0.08] bg-gradient-to-b from-[#08090e] to-[#040507] py-16 sm:py-20 text-center">
       <div class="page-shell">
-        <div class="mb-12 max-w-3xl">
-          <div class="chip mb-3">
-            <span class="mini-label">Under the Hood</span>
+        <div class="max-w-2xl mx-auto">
+          <div class="chip mx-auto mb-4">
+            <span class="mini-label text-emerald-400">Private 10-Store Pilot</span>
           </div>
-          <h2 class="section-title text-[#fcfdff] font-heading">
-            Enterprise-grade infrastructure.
+          <h2 class="text-2xl sm:text-4xl font-bold text-white font-heading">
+            Ready to automate your boutique sales on WhatsApp?
           </h2>
-          <p class="section-copy mt-4">
-            Engineered for high-volume D2C brands that require sub-second speeds, zero downtime, and total security.
+          <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
+            We handle 100% of the setup — uploading your catalog, setting up WhatsApp APIs, and training your AI stylist on your brand voice.
           </p>
-        </div>
-
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {
-            technicalSpecs.map((spec, idx) => (
-              <div class="solid-card p-6">
-                <span class="font-mono text-xs font-bold text-emerald-400">
-                  0{idx + 1}
-                </span>
-                <h3 class="mt-3 font-heading text-base font-semibold text-[#fcfdff]">
-                  {spec.title}
-                </h3>
-                <p class="mt-2 text-xs font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
-                  {spec.detail}
-                </p>
-              </div>
-            ))
-          }
+          <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
+            <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
+            <a href="/pricing" class="btn-secondary">View Pilot Pricing &amp; ROI Standard</a>
+          </div>
         </div>
       </div>
     </section>

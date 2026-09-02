@@ -1,20 +1,20 @@
 ---
 const supportingPoints = [
   {
-    code: "LEAK 01",
+    code: "PROBLEM 01",
     stat: "55%",
     pct: 55,
-    statLabel: "Midnight Browsing",
-    title: "11 PM Leads Go Cold",
-    description: "Shoppers comment 'Price?' late at night when reps are offline. By morning, they've bought elsewhere.",
+    statLabel: "Late Night DMs",
+    title: "Customers message at 11 PM and buy elsewhere by morning",
+    description: "Most people scroll Instagram in bed late at night. When they message asking for price or sizes while you're asleep, they don't wait — they buy from another store.",
   },
   {
-    code: "LEAK 02",
-    stat: "35%",
-    pct: 35,
-    statLabel: "COD Returns (RTO)",
-    title: "Unverified Impulse Orders",
-    description: "Orders placed without sizing qualification or UPI prepayment incentives trigger costly return-to-origin shipments.",
+    code: "PROBLEM 02",
+    stat: "40%",
+    pct: 40,
+    statLabel: "Payment Friction",
+    title: "Drop-offs while texting UPI IDs & waiting for screenshots",
+    description: "Typing out your GPay number, texting 'Please share payment screenshot', and checking your bank app manually creates friction that makes buyers drop off before paying.",
   },
 ];
 ---
@@ -26,13 +26,13 @@ const supportingPoints = [
   <div class="page-shell">
     <div class="max-w-2xl mb-10">
       <div class="chip mb-3">
-        <span class="mini-label text-rose-400">The Fashion DM Revenue Leak</span>
+        <span class="mini-label text-rose-400">The Problem With Manual Selling</span>
       </div>
       <h2 class="section-title text-[#fcfdff] font-heading">
-        Where clothing brands <span class="text-rose-400">lose 60%+ of social buyers</span>.
+        Where boutique owners <span class="text-rose-400">lose half their daily sales</span>.
       </h2>
       <p class="section-copy mt-2 text-sm sm:text-base">
-        Manual chat reps and rigid flowchart bots fail when boutique buyers are ready to purchase.
+        Selling in WhatsApp DMs works great — until you get flooded with messages, take too long to reply, and customers end up buying elsewhere.
       </p>
     </div>
 
@@ -44,39 +44,39 @@ const supportingPoints = [
         <div>
           <!-- Header -->
           <div class="flex items-center justify-between border-b border-rose-500/15 pb-3 mb-5">
-            <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-wider">Primary Revenue Leak</span>
+            <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-wider">Biggest Daily Drop-Off</span>
             <span class="rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 font-mono text-[11px] text-rose-300 font-medium">
-              Cart Drop-Off ↓
+              Left on &ldquo;Seen&rdquo; ↓
             </span>
           </div>
 
           <!-- Hero Number -->
           <div class="flex items-baseline gap-2 mb-2">
             <div class="font-heading text-5xl sm:text-6xl font-bold text-white tracking-tight leading-none">
-              68<span class="text-rose-400">%</span>
+              65<span class="text-rose-400">%</span>
             </div>
             <span class="text-xs font-mono text-rose-400/90 font-medium">
-              drop-off rate
+              stop replying
             </span>
           </div>
 
           <!-- Slim Progress Bar -->
           <div class="h-1.5 w-full rounded-full bg-rose-950/60 overflow-hidden my-4">
-            <div class="h-full w-[68%] rounded-full bg-gradient-to-r from-rose-600 to-rose-400"></div>
+            <div class="h-full w-[65%] rounded-full bg-gradient-to-r from-rose-600 to-rose-400"></div>
           </div>
 
           <h3 class="font-heading text-lg sm:text-xl font-bold text-white leading-snug mb-2">
-            of Instagram DM shoppers drop off before completing website checkout.
+            of buyers leave you on &ldquo;seen&rdquo; if they don't get a price, size, or photos within 5 minutes.
           </h3>
 
           <p class="text-xs sm:text-sm text-rose-200/75 font-normal leading-relaxed">
-            Sending interested DM buyers to a slow 5-step web cart destroys impulse buying. VoluChat qualifies their size and closes 1-click UPI checkout directly inside WhatsApp.
+            When a customer asks &ldquo;Price?&rdquo; or &ldquo;Is size M in stock?&rdquo;, they are ready to buy right now. If you're busy packing orders or away from your phone, they scroll to the next page. VoluChat answers instantly, shows exact sizing, and collects UPI payment in 85 seconds.
           </p>
         </div>
 
         <div class="mt-6 pt-4 border-t border-rose-500/15 flex items-center justify-between text-xs font-mono text-rose-300/80">
-          <span>External Cart Friction</span>
-          <span class="font-bold text-rose-400">Fix: In-Chat UPI</span>
+          <span>Cause: Delayed manual replies</span>
+          <span class="font-bold text-rose-400">Fix: 2-second AI replies &amp; 1-click UPI</span>
         </div>
       </article>
 
@@ -95,7 +95,7 @@ const supportingPoints = [
                   <div class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight">
                     {point.stat}
                   </div>
-                  <span class="text-[11px] font-mono text-slate-400">leak rate</span>
+                  <span class="text-[11px] font-mono text-slate-400">lost buyers</span>
                 </div>
 
                 <!-- Slim Progress Bar -->
