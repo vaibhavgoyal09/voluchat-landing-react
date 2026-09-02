@@ -73,24 +73,75 @@
         </div>
       </div>
 
-      <!-- Hero Visual: phone on a subtle glowing stage -->
-      <div class="hero-mockup relative mx-auto w-full max-w-[260px] sm:max-w-[280px] lg:mx-0 lg:justify-self-center -mt-8 lg:-mt-12" data-tilt-strength="2">
-        <!-- Stage atmospheric glow (Resend subtle radial) -->
-        <div class="absolute left-1/2 top-1/2 -z-10 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/10 blur-[80px]"></div>
+      <!-- Hero Visual: phone on an illuminated glowing stage with high-contrast chassis -->
+      <div class="hero-mockup relative mx-auto w-full max-w-[245px] sm:max-w-[260px] lg:max-w-[275px] xl:max-w-[285px] lg:mx-0 lg:justify-self-center -mt-6 lg:-mt-10">
+        <!-- Stage atmospheric illumination & backdrop glow (creates high contrast against pure black) -->
+        <div class="absolute left-1/2 top-1/2 -z-10 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.22)_0%,rgba(20,184,166,0.12)_40%,transparent_70%)] blur-[70px]"></div>
+        <div class="absolute left-1/2 top-1/2 -z-10 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.04] blur-[40px]"></div>
 
-        <!-- Phone Frame -->
-        <div class="tilt relative rounded-[2.5rem] border border-white/[0.14] bg-[#0a0a0c] p-[4px]">
-          <div class="relative overflow-hidden rounded-[2.25rem] bg-[#000000]" style="aspect-ratio: 9 / 20.5;">
-            <!-- Dynamic Island / Notch -->
-            <div class="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-[#101012]"></div>
-            <video
-              src="/voluchat_demo_optimized.mp4"
-              class="absolute inset-0 h-full w-full object-cover"
-              autoplay
-              loop
-              muted
-              playsinline>
-            </video>
+        <!-- Floating Live Highlights (Contextual Glass Pills) -->
+        <div class="animate-float-slow absolute -top-4 -left-4 z-30 hidden sm:flex items-center gap-2 rounded-xl border border-white/15 bg-[#121318]/90 px-3 py-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-md">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="text-[11px] font-medium text-slate-200">
+            <strong class="text-emerald-400 font-semibold">2.0s</strong> Comment-to-DM
+          </span>
+        </div>
+
+        <div class="animate-float absolute -bottom-4 -right-4 z-30 hidden sm:flex items-center gap-2 rounded-xl border border-white/15 bg-[#121318]/90 px-3.5 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-md">
+          <div class="flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] uppercase font-medium tracking-wider text-slate-400">In-Chat UPI</p>
+            <p class="text-xs font-bold text-white">₹7,999 Closed in 85s</p>
+          </div>
+        </div>
+
+        <!-- Interactive Tilt Phone Device -->
+        <div class="tilt relative" data-tilt-strength="3">
+          <!-- Metallic Hardware Buttons (Catch light against dark page) -->
+          <!-- Silent Switch -->
+          <div class="absolute -left-[5px] top-24 h-6 w-[3px] rounded-l-sm bg-gradient-to-r from-slate-400 to-slate-600 shadow-sm"></div>
+          <!-- Volume Up -->
+          <div class="absolute -left-[5px] top-36 h-10 w-[3px] rounded-l-sm bg-gradient-to-r from-slate-400 to-slate-600 shadow-sm"></div>
+          <!-- Volume Down -->
+          <div class="absolute -left-[5px] top-50 h-10 w-[3px] rounded-l-sm bg-gradient-to-r from-slate-400 to-slate-600 shadow-sm"></div>
+          <!-- Power Button -->
+          <div class="absolute -right-[5px] top-36 h-14 w-[3px] rounded-r-sm bg-gradient-to-l from-slate-400 to-slate-600 shadow-sm"></div>
+
+          <!-- Phone Chassis: Natural Titanium Metallic Edge with Defined Specular Rim -->
+          <div class="relative rounded-[2.85rem] bg-gradient-to-b from-slate-600 via-slate-700 to-slate-800 p-[3px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95),0_0_50px_rgba(16,185,129,0.2),inset_0_1px_1px_rgba(255,255,255,0.6)]">
+            
+            <!-- Inner Dark Chamfer & Display Frame -->
+            <div class="rounded-[2.65rem] bg-[#16171d] p-[4px] ring-1 ring-white/10">
+              
+              <!-- Screen Container (Exact 9:20 matching the video aspect ratio perfectly) -->
+              <div class="relative overflow-hidden rounded-[2.4rem] bg-[#000000] ring-1 ring-black" style="aspect-ratio: 9 / 20;">
+                
+                <!-- Realistic Screen Glass Specular Sheen -->
+                <div class="pointer-events-none absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.07]"></div>
+
+                <!-- Video Stream (Full uncropped 9:20 fit) -->
+                <video
+                  poster="/voluchat_demo_poster.webp"
+                  class="absolute inset-0 h-full w-full object-cover"
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  preload="metadata"
+                  aria-label="VoluChat automated WhatsApp sales demo"
+                >
+                  <source src="/voluchat_demo_optimized.webm" type="video/webm" />
+                  <source src="/voluchat_demo_optimized.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
           </div>
         </div>
       </div>
