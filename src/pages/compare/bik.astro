@@ -1,0 +1,186 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "VoluChat vs Bik.ai — Autonomous AI Sales Stylist vs WhatsApp Marketing Platform";
+const seoDescription =
+  "Compare VoluChat with Bik.ai. See why autonomous sizing qualification and in-chat 1-click UPI checkout convert 3x more boutique shoppers than broadcast marketing.";
+const seoKeywords =
+  "VoluChat vs Bik, Bik.ai alternative fashion, WhatsApp marketing vs sales agent, Bik WhatsApp ecommerce, boutique WhatsApp sales closer";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/compare/bik`,
+};
+
+const comparison = [
+  {
+    category: "Core Purpose & Focus",
+    detail: "Primary design philosophy of the platform",
+    bik: "Outbound WhatsApp marketing blasts, mass promotional broadcasts, and re-engagement campaigns.",
+    voluchat: "Autonomous 24/7 in-chat sales closer built specifically for apparel and fashion boutiques.",
+    voluAdvantage: "100% In-Chat Closing",
+  },
+  {
+    category: "Sizing & Fit Qualification",
+    detail: "How incoming questions about measurements and fabric are handled",
+    bik: "Relies on generic automated replies or pushes customers to website product pages.",
+    voluchat: "Conversational AI Stylist calibrated on your exact size charts, bust/waist specs, and fabric details.",
+    voluAdvantage: "Conversational AI Stylist",
+  },
+  {
+    category: "Payment & Checkout Loop",
+    detail: "How orders are completed and paid",
+    bik: "Directs buyers to complete checkout on your website where mobile drop-off rates exceed 70%.",
+    voluchat: "1-Click UPI payment links (GPay, PhonePe, Paytm) generated directly inside WhatsApp in 90 seconds.",
+    voluAdvantage: "Native in-chat UPI",
+  },
+  {
+    category: "Instagram Reel Comment-to-DM",
+    detail: "Handling viral comments and driving them into sales chats",
+    bik: "Basic comment auto-replies without product-specific sizing intelligence.",
+    voluchat: "Replies to Reel comments in 2 seconds with exact pricing, photos, and sizing options for that specific outfit.",
+    voluAdvantage: "Sub-2s Reel-to-DM",
+  },
+  {
+    category: "Midnight Sales Coverage (10 PM – 2 AM)",
+    detail: "Closing impulse buyers when shopping in bed",
+    bik: "Broadcasts drive traffic, but conversational doubts at night go unanswered until morning.",
+    voluchat: "Closes sales autonomously 24/7 without manual intervention or night shifts.",
+    voluAdvantage: "100% Midnight capture",
+  },
+  {
+    category: "Setup & Onboarding Effort",
+    detail: "Technical effort required to launch",
+    bik: "Complex dashboard setup requiring campaign configuration and template approvals.",
+    voluchat: "100% Done-For-You white-glove setup by our founder. Meta Cloud APIs, Shopify sync, and AI tuning included free.",
+    voluAdvantage: "Zero setup effort",
+  },
+];
+
+const verdict = {
+  chooseBik: "You are a large multi-category brand primarily looking to run heavy outbound WhatsApp broadcast campaigns, discount blasts, and CRM retention sequences.",
+  chooseVoluchat: "You are an apparel or boutique brand losing sales to slow DM replies, sizing hesitations, and website drop-offs, and want to close sales directly in WhatsApp 24/7.",
+};
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare/bik", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="compare-hero-text mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            VoluChat vs Bik.ai
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+          >
+            Autonomous Sales Stylist vs
+            <span class="block text-emerald-400">Broadcast Marketing Platform.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Bik.ai excels at sending bulk WhatsApp broadcast campaigns. VoluChat is an autonomous sales closer that answers sizing doubts, checks live stock, and completes 1-click UPI orders in 90 seconds.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side by Side Deep Comparison Grid -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Detailed Breakdown</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares to Bik.ai.
+          </h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-5">
+          {
+            comparison.map((item, idx) => (
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+                  <div>
+                    <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
+                  </div>
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                    ✓ {item.voluAdvantage}
+                  </span>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-400">Bik.ai Approach</span>
+                    </div>
+                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.bik}</p>
+                  </div>
+
+                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                    </div>
+                    <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict Cards -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+          <div class="solid-card p-6 sm:p-8">
+            <span class="mini-label text-slate-400">Choose Bik.ai if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Outbound Marketing Blasts</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseBik}</p>
+          </div>
+
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
+            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">In-Chat Fashion Revenue</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center">
+          <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+          <p class="mt-4 text-sm text-slate-500">
+            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>

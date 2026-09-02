@@ -1,0 +1,186 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "VoluChat vs Limechat — Boutique AI Closer vs Enterprise Bot Platform";
+const seoDescription =
+  "Compare VoluChat with Limechat. See why fashion boutiques choose VoluChat's 100% done-for-you setup, specialized sizing intelligence, and in-chat UPI checkout.";
+const seoKeywords =
+  "VoluChat vs Limechat, Limechat alternative fashion, boutique WhatsApp bot, AI sales closer Shopify, Limechat pricing alternative";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/compare/limechat`,
+};
+
+const comparison = [
+  {
+    category: "Target Audience & Complexity",
+    detail: "Who the software is engineered for",
+    limechat: "Large enterprise D2C corporations with complex multi-brand support teams and long sales cycles.",
+    voluchat: "Fast-growing fashion, clothing, and ethnic wear boutiques selling through Instagram Reels & WhatsApp DMs.",
+    voluAdvantage: "Boutique Fashion Focus",
+  },
+  {
+    category: "Setup & Onboarding Time",
+    detail: "How fast you can go live and start generating sales",
+    limechat: "Multi-week onboarding process involving sales demos, technical integrations, and engineering custom flows.",
+    voluchat: "100% Done-For-You by our founder. Go live in under 48 hours with zero technical work from your team.",
+    voluAdvantage: "48-Hour White-Glove Launch",
+  },
+  {
+    category: "Sizing & Fit Qualification",
+    detail: "Understanding body measurements, fabric details, and styling nuances",
+    limechat: "Generic Level-3 NLP trained on broad support FAQs rather than deep fashion sizing nuances.",
+    voluchat: "AI Stylist specialized exclusively in apparel: bust/waist charts, fabric compositions, and styling pairings.",
+    voluAdvantage: "Fashion AI Stylist",
+  },
+  {
+    category: "In-Chat UPI & Draft Order Checkout",
+    detail: "Completing payment without website bounce",
+    limechat: "Redirects customers to mobile website checkouts or standard payment gateways.",
+    voluchat: "Generates native 1-click UPI deep links (GPay, PhonePe, Paytm) inside WhatsApp for sub-90s checkout.",
+    voluAdvantage: "Native in-chat UPI",
+  },
+  {
+    category: "Pricing & Commitment",
+    detail: "Contract requirements and financial barriers",
+    limechat: "Heavy enterprise retainer contracts, setup fees, and conversation volume minimums.",
+    voluchat: "30-day free trial with 100% free setup and transparent pricing standard.",
+    voluAdvantage: "30 Days Free Trial",
+  },
+  {
+    category: "Founder-Led Engineering Support",
+    detail: "Who handles your store optimization",
+    limechat: "Account managers and tiered enterprise ticket support queues.",
+    voluchat: "Direct WhatsApp access to founder (Vaibhav Goyal) for weekly conversion tuning.",
+    voluAdvantage: "Direct Founder Access",
+  },
+];
+
+const verdict = {
+  chooseLimechat: "You are an enterprise brand with 50+ customer support agents handling thousands of general inquiries across multiple product verticals.",
+  chooseVoluchat: "You are a fashion brand or boutique that wants a dedicated, autonomous AI stylist to close sales, qualify sizing, and collect UPI payments 24/7.",
+};
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare/limechat", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="compare-hero-text mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            VoluChat vs Limechat
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+          >
+            Specialized Fashion AI Stylist vs
+            <span class="block text-emerald-400">Enterprise Bot Platform.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Limechat builds complex enterprise support systems for massive corporations. VoluChat is purpose-built for fashion boutiques: 100% done-for-you setup, specialized sizing intelligence, and in-chat 1-click UPI checkout.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side by Side Deep Comparison Grid -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Detailed Breakdown</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares to Limechat.
+          </h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-5">
+          {
+            comparison.map((item, idx) => (
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+                  <div>
+                    <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
+                  </div>
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                    ✓ {item.voluAdvantage}
+                  </span>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-400">Limechat Approach</span>
+                    </div>
+                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.limechat}</p>
+                  </div>
+
+                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                    </div>
+                    <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict Cards -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+          <div class="solid-card p-6 sm:p-8">
+            <span class="mini-label text-slate-400">Choose Limechat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Enterprise Enterprise Support</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseLimechat}</p>
+          </div>
+
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
+            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Boutique Sizing & In-Chat Sales</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center">
+          <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+          <p class="mt-4 text-sm text-slate-500">
+            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>

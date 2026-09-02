@@ -10,6 +10,8 @@ const STATIC_ROUTES = [
   { path: "/pricing", priority: "0.9" },
   { path: "/compare", priority: "0.8" },
   { path: "/compare/wati", priority: "0.8" },
+  { path: "/compare/bik", priority: "0.8" },
+  { path: "/compare/limechat", priority: "0.8" },
   { path: "/compare/manychat", priority: "0.8" },
   { path: "/compare/interakt", priority: "0.8" },
   { path: "/compare/manual-reps", priority: "0.8" },
