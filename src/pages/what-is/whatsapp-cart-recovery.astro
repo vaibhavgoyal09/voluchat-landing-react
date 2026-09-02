@@ -1,0 +1,272 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "What is WhatsApp Cart Recovery for Fashion Boutiques? | VoluChat";
+const seoDescription =
+  "How WhatsApp cart recovery helps fashion and clothing stores recover 35%+ of abandoned checkouts with personalized fit reassurance, fabric photos, and 1-click UPI links.";
+const seoKeywords =
+  "WhatsApp cart recovery, abandoned checkout WhatsApp, fashion cart recovery Shopify, recover abandoned cart India, WhatsApp sales bot";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/what-is/whatsapp-cart-recovery`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: "WhatsApp Cart Recovery",
+    description:
+      "An automated, personalized WhatsApp messaging system that re-engages fashion shoppers who dropped off during checkout by answering sizing doubts, providing fabric clarification, and offering 1-click UPI checkout directly inside chat.",
+    url: `${siteUrl}/what-is/whatsapp-cart-recovery`,
+  },
+];
+
+const howItWorks = [
+  {
+    step: "1",
+    title: "Shopper drops off at checkout",
+    detail:
+      "A customer selects a dress or saree, adds to cart or asks in DMs, but hesitates at payment (usually due to sizing uncertainty or delivery date questions).",
+  },
+  {
+    step: "2",
+    title: "Smart delay trigger (15–30 mins)",
+    detail:
+      "VoluChat detects the abandoned cart and waits for the optimal window so the message feels thoughtful rather than aggressive.",
+  },
+  {
+    step: "3",
+    title: "AI reaches out with personalized fit advice",
+    detail:
+      "Instead of generic spam, the AI stylist sends the exact product photo, addresses common sizing doubts, and offers real assistance.",
+  },
+  {
+    step: "4",
+    title: "1-Click UPI payment inside WhatsApp",
+    detail:
+      "The buyer resolves their hesitation, taps the pre-filled UPI link, and completes the purchase in seconds without leaving WhatsApp.",
+  },
+];
+
+const reasons = [
+  {
+    title: "98% Open Rate vs 15% Email",
+    desc: "Fashion shoppers in India rarely check promotional email folders. WhatsApp messages are seen within 3 minutes, giving you a 4x higher recovery rate.",
+  },
+  {
+    title: "Solves Sizing & Fit Hesitation",
+    desc: "The #1 reason women abandon clothing carts is fit doubt: 'Will size L be too tight?'. VoluChat actively answers sizing doubts before asking for payment.",
+  },
+  {
+    title: "Personalized, Non-Spammy Tone",
+    desc: "Trained to sound like a friendly, attentive boutique stylist rather than a robotic notification blast, protecting your brand prestige.",
+  },
+  {
+    title: "Seamless 1-Click UPI Payment",
+    desc: "Buyers can pay instantly via GPay, PhonePe, or Paytm right in the chat thread without re-typing their address on a website.",
+  },
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/what-is/whatsapp-cart-recovery", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center whatis-hero-text">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Fashion Revenue Playbook
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading"
+          >
+            What is WhatsApp Cart Recovery?
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
+            How modern clothing boutiques recover 35%+ of lost checkouts by turning abandoned carts into helpful styling conversations on WhatsApp.
+          </p>
+        </div>
+
+        <div class="mx-auto mt-14 max-w-3xl solid-card-elevated p-8 md:p-10">
+          <p class="section-eyebrow mb-2">The Short Answer</p>
+          <blockquote class="font-heading text-xl md:text-2xl font-semibold text-[#fcfdff] leading-relaxed">
+            "WhatsApp cart recovery reaches out to shoppers who left items in their cart, answers their doubts about sizing or fabric, and gives them a 1-click UPI link to complete the order inside WhatsApp."
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Step Flow -->
+    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">The Recovery Process</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat recovers lost fashion orders automatically.
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {
+            howItWorks.map((item) => (
+              <div class="whatis-step solid-card p-6 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="grid h-8 w-8 place-items-center rounded-full bg-[#101012] border border-emerald-400/30 font-mono text-xs font-bold text-emerald-300">
+                      {item.step}
+                    </span>
+                    <span class="font-mono text-[10px] uppercase font-bold text-emerald-400">
+                      Step {item.step}
+                    </span>
+                  </div>
+                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">
+                    {item.title}
+                  </h3>
+                  <p class="mt-2 text-xs sm:text-sm leading-relaxed text-[rgba(252,253,255,0.7)] font-normal">
+                    {item.detail}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Why WhatsApp Crushes Email -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">Why It Works</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Why automated WhatsApp recovery beats traditional email flows.
+          </h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+          {
+            reasons.map((item) => (
+              <div class="whatis-benefit solid-card p-6 sm:p-7">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-emerald-400 font-bold font-mono text-sm">✓</span>
+                  <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">
+                    {item.title}
+                  </h3>
+                </div>
+                <p class="text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-4">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            First 10 Stores Only
+          </div>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-4">
+            Stop losing 60%+ of your boutique checkouts.
+          </h2>
+          <p class="section-copy mx-auto mb-8 max-w-2xl">
+            Claim your 30-day free trial with 100% done-for-you setup. We sync your Shopify store, configure Meta Cloud APIs, and calibrate the AI on your brand voice.
+          </p>
+          <div class="flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20know%20how%20Cart%20Recovery%20works%20for%20my%20store."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    gsap.fromTo(".whatis-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+
+    gsap.utils.toArray<HTMLElement>(".whatis-step").forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          delay: i * 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    gsap.utils.toArray<HTMLElement>(".whatis-benefit").forEach((card) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  });
+</script>

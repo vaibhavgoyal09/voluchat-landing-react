@@ -1,0 +1,309 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "What is In-Chat UPI Checkout on WhatsApp? | VoluChat Guide";
+const seoDescription =
+  "Learn how in-chat UPI checkout lets customers pay via GPay, PhonePe, and Paytm directly inside WhatsApp DMs — zero website drop-offs and lower COD RTO.";
+const seoKeywords =
+  "in-chat UPI checkout, WhatsApp UPI payment link, WhatsApp checkout for Shopify, GPay PhonePe WhatsApp payment, reduce COD RTO India";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/what-is/in-chat-upi-checkout`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: "In-Chat UPI Checkout",
+    description:
+      "A frictionless payment method that allows Instagram and WhatsApp buyers to complete 1-click prepaid UPI payments (via GPay, PhonePe, Paytm) directly within the chat conversation without leaving the messaging app for an external website.",
+    url: `${siteUrl}/what-is/in-chat-upi-checkout`,
+  },
+];
+
+const howItWorks = [
+  {
+    step: "1",
+    title: "Customer picks size & confirms order in WhatsApp",
+    detail:
+      "After the AI stylist recommends the right fit (e.g. Size M, Kurti + Dupatta set), the shopper confirms they are ready to buy.",
+  },
+  {
+    step: "2",
+    title: "Instant 1-click UPI payment link generated",
+    detail:
+      "VoluChat creates an official draft order and generates a dynamic UPI link (supporting Google Pay, PhonePe, Paytm, and BHIM).",
+  },
+  {
+    step: "3",
+    title: "Buyer taps & authorizes payment in 5 seconds",
+    detail:
+      "The buyer taps the button, their preferred UPI app opens with the exact amount pre-filled, and they enter their PIN.",
+  },
+  {
+    step: "4",
+    title: "Order marked paid & auto-synced to Shopify",
+    detail:
+      "Payment is instantly verified via webhook. The customer gets an official WhatsApp receipt, and your store backend syncs the paid order for dispatch.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Zero Website Drop-Offs",
+    desc: "Redirecting social shoppers from Instagram or WhatsApp to an external website loses 60%+ of impulse buyers. In-chat checkout closes the sale where they already are.",
+  },
+  {
+    title: "Drastically Cuts COD & Return (RTO) Rates",
+    desc: "Cash on Delivery has a 30–40% return rate in Indian fashion. When buyers can pay smoothly via UPI in seconds, your prepaid order share surges past 75%.",
+  },
+  {
+    title: "No Screenshot Verification Headache",
+    desc: "Stop asking customers to send payment screenshots or manually checking your bank app. Payments are verified automatically through secure payment gateway webhooks.",
+  },
+  {
+    title: "Official Meta & Payment Gateway Security",
+    desc: "Uses secure, RBI-compliant payment gateway integrations (Razorpay, Cashfree) over official WhatsApp Cloud APIs. Your customer payment data remains completely safe.",
+  },
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/what-is/in-chat-upi-checkout", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center whatis-hero-text">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            WhatsApp Commerce Guide
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading"
+          >
+            What is In-Chat UPI Checkout?
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
+            A frictionless way for fashion and boutique brands to collect instant prepaid orders over WhatsApp — without sending shoppers to slow website links or asking for bank transfer screenshots.
+          </p>
+        </div>
+
+        <div class="mx-auto mt-14 max-w-3xl solid-card-elevated p-8 md:p-10">
+          <p class="section-eyebrow mb-2">The Short Answer</p>
+          <blockquote class="font-heading text-xl md:text-2xl font-semibold text-[#fcfdff] leading-relaxed">
+            "In-chat UPI checkout lets customers pay with GPay, PhonePe, or Paytm inside WhatsApp with a single tap, turning Instagram DM conversations into verified prepaid orders in under 90 seconds."
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Step Process -->
+    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">How It Works</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            From WhatsApp chat to paid order in 4 steps.
+          </h2>
+          <p class="section-copy mx-auto mt-4 max-w-xl">
+            Smooth, instant, and completely automated.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {
+            howItWorks.map((item) => (
+              <div class="whatis-step solid-card p-6 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="grid h-8 w-8 place-items-center rounded-full bg-[#101012] border border-emerald-400/30 font-mono text-xs font-bold text-emerald-300">
+                      {item.step}
+                    </span>
+                    <span class="font-mono text-[10px] uppercase font-bold text-emerald-400">
+                      Step {item.step}
+                    </span>
+                  </div>
+                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">
+                    {item.title}
+                  </h3>
+                  <p class="mt-2 text-xs sm:text-sm leading-relaxed text-[rgba(252,253,255,0.7)] font-normal">
+                    {item.detail}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Why It Matters -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">The Business Impact</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Why Indian boutiques are replacing website links with WhatsApp checkout.
+          </h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+          {
+            benefits.map((benefit) => (
+              <div class="whatis-benefit solid-card p-6 sm:p-7">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-emerald-400 font-bold font-mono text-sm">✓</span>
+                  <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">
+                    {benefit.title}
+                  </h3>
+                </div>
+                <p class="text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                  {benefit.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl solid-card-elevated p-8 md:p-10">
+          <p class="section-eyebrow mb-4">The Difference</p>
+          <h2 class="text-2xl font-heading font-semibold text-[#fcfdff] mb-6">
+            Manual Bank Details vs Automated In-Chat UPI Checkout
+          </h2>
+          <div class="grid gap-5 md:grid-cols-2">
+            <div class="solid-card-subtle p-5">
+              <p class="mini-label text-rose-400">Manual DM Selling</p>
+              <ul class="mt-3 space-y-2.5 text-sm font-normal text-[rgba(252,253,255,0.7)]">
+                <li>Texting your UPI ID / bank account manually</li>
+                <li>Waiting 30+ minutes for customer screenshot</li>
+                <li>Checking banking app to verify transaction</li>
+                <li>High COD share leading to 35%+ return (RTO) rates</li>
+                <li>Manual order entry mistakes in dispatch</li>
+              </ul>
+            </div>
+            <div class="solid-card-subtle border-emerald-500/30 p-5">
+              <p class="mini-label text-emerald-400">VoluChat In-Chat UPI</p>
+              <ul class="mt-3 space-y-2.5 text-sm font-normal text-[rgba(252,253,255,0.86)]">
+                <li>1-click dynamic UPI link generated in 2 seconds</li>
+                <li>Buyer pays with GPay, PhonePe, or Paytm instantly</li>
+                <li>Instant automatic payment confirmation webhook</li>
+                <li>Prepaid conversions increase above 75%</li>
+                <li>Direct sync with Shopify for instant dispatch</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-4">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Official Meta Tech Partner
+          </div>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-4">
+            Ready to collect instant UPI orders inside WhatsApp?
+          </h2>
+          <p class="section-copy mx-auto mb-8 max-w-2xl">
+            Get 30 days free with 100% done-for-you setup. We configure your Meta Cloud API, live Shopify catalog, and payment links with zero tech work from you.
+          </p>
+          <div class="flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20know%20how%20In-Chat%20UPI%20works%20for%20my%20store."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    gsap.fromTo(".whatis-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+
+    gsap.utils.toArray<HTMLElement>(".whatis-step").forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          delay: i * 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    gsap.utils.toArray<HTMLElement>(".whatis-benefit").forEach((card) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  });
+</script>
