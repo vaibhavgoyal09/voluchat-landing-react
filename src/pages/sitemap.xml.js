@@ -5,6 +5,7 @@ const SITEMAP_BLOG_LIMIT = 100;
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 const STATIC_ROUTES = [
   { path: "/", priority: "1.0" },
+  { path: "/free-trial", priority: "0.95" },
   { path: "/features", priority: "0.8" },
   { path: "/pricing", priority: "0.9" },
   { path: "/compare", priority: "0.8" },
@@ -15,12 +16,16 @@ const STATIC_ROUTES = [
   { path: "/about", priority: "0.7" },
   { path: "/security", priority: "0.7" },
   { path: "/blog", priority: "0.6" },
-  { path: "/contact", priority: "0.9" },
+  { path: "/contact", priority: "0.8" },
   { path: "/privacy", priority: "0.5" },
   { path: "/terms", priority: "0.5" },
   { path: "/integrations/shopify", priority: "0.8" },
+  { path: "/integrations/razorpay", priority: "0.75" },
+  { path: "/integrations/cashfree", priority: "0.75" },
   { path: "/what-is/comment-to-DM-automation", priority: "0.7" },
   { path: "/what-is/whatsapp-sales-bot", priority: "0.7" },
+  { path: "/what-is/in-chat-upi-checkout", priority: "0.75" },
+  { path: "/what-is/whatsapp-cart-recovery", priority: "0.75" },
   { path: "/glossary", priority: "0.6" },
 ];
 

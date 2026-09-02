@@ -5,9 +5,9 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Wati, Manychat & Reps — Fashion Sales Agent";
+const seoTitle = "VoluChat vs Wati, Manychat & Manual Reps — Honest Comparison";
 const seoDescription =
-  "Compare VoluChat's AI sales stylist with Wati, Manychat, and manual chat reps for clothing and fashion boutiques on WhatsApp and Instagram.";
+  "See how VoluChat's autonomous AI sales stylist compares to traditional flowchart chatbots (Wati, Interakt), link-pushers (ManyChat), and manual sales reps for fashion boutiques.";
 const seoKeywords =
   "VoluChat vs Wati, VoluChat vs Manychat, WhatsApp boutique sales bot, fashion ecommerce automation vs chatbots, Instagram DM sales closer";
 const siteUrl = "https://www.voluchat.com";
@@ -19,80 +19,119 @@ const structuredData = {
   url: `${siteUrl}/compare`,
 };
 
-const competitors = [
+const featureComparison = [
   {
-    name: "Flowchart WhatsApp Tools (e.g. Wati, Interakt)",
+    feature: "Response Time & Speed",
+    detail: "How quickly the tool engages an incoming comment or DM",
+    voluchat: "Sub-2 seconds (Instant 24/7)",
+    voluStatus: "win",
+    wati: "Flowchart delays / slow routing",
+    manychat: "2–5s (Keyword triggers only)",
+    reps: "15–45 min (Offline at night)",
+  },
+  {
+    feature: "Conversational Sizing & Fit",
+    detail: "Understanding body measurements, fabric details, and fit advice",
+    voluchat: "AI Stylist qualified on your size chart",
+    voluStatus: "win",
+    wati: "Cannot answer sizing ('Press 1/2')",
+    manychat: "Cannot answer sizing doubts",
+    reps: "Frequent human sizing errors",
+  },
+  {
+    feature: "Live Inventory & Stock Verification",
+    detail: "Real-time sync with Shopify/catalog variants before confirming",
+    voluchat: "Live variant check (S-XXL in real-time)",
+    voluStatus: "win",
+    wati: "Static catalog / No live variant sync",
+    manychat: "No live variant inventory checks",
+    reps: "Manual admin check (oversells)",
+  },
+  {
+    feature: "Checkout & Payment Experience",
+    detail: "How customer completes payment and places order",
+    voluchat: "1-Click UPI & Draft Orders inside WhatsApp",
+    voluStatus: "win",
+    wati: "Pushes external website links",
+    manychat: "Pushes external website links",
+    reps: "Manual UPI screenshot verification",
+  },
+  {
+    feature: "Midnight Sales Recovery (10 PM – 2 AM)",
+    detail: "Capturing in-bed impulse shoppers when ads & Reels peak",
+    voluchat: "100% Autonomous (Closes sales while you sleep)",
+    voluStatus: "win",
+    wati: "Robotic menus lose 70%+ of leads",
+    manychat: "External links bounce in-bed buyers",
+    reps: "Completely offline (0% coverage)",
+  },
+  {
+    feature: "Setup & Onboarding Effort",
+    detail: "Time and technical work required to deploy and calibrate",
+    voluchat: "100% Done-For-You by Founder & Team",
+    voluStatus: "win",
+    wati: "Self-serve complex flowchart builder",
+    manychat: "Self-serve node graph builder",
+    reps: "Weeks of hiring & training overhead",
+  },
+];
+
+const directCards = [
+  {
+    name: "Wati / Interakt",
+    tagline: "Rigid Flowchart Bots & Shared Inboxes",
+    badge: "Traditional Bots",
     icon: "🧭",
-    fit: "Broadcast messaging & rigid button-based flowcharts ('Press 1 for tracking, Press 2 for sizing').",
-    tradeoff:
-      "Forces boutique shoppers through robotic menus. Drops 70%+ of high-intent buyers who ask natural styling questions ('Is this pure silk?', 'Does it come with a dupatta?').",
-    advantage:
-      "VoluChat acts as an AI Stylist — conversing naturally, qualifying exact fit and measurements, verifying live variant stock, and closing orders via UPI inside chat.",
+    slug: "/compare/wati",
+    goodFor: "Broadcasting bulk festive discount templates and running basic 'Press 1 for tracking' support menus.",
+    theProblem: "Fashion shoppers hate robotic menus. When someone asks 'Will this fit a 38 bust?' or 'Is it pure silk?', flowchart bots fail, and sending website links loses 70%+ of buyers.",
+    voluDifference: "VoluChat converses naturally like an experienced boutique stylist, answers sizing & fabric doubts, and generates 1-click UPI checkout links inside chat.",
   },
   {
-    name: "Social Bot Builders (e.g. Manychat)",
+    name: "ManyChat",
+    tagline: "Social Keyword Link-Pushers",
+    badge: "Keyword Bots",
     icon: "🔗",
-    fit: "Keyword auto-responders that send static coupon links to external websites.",
-    tradeoff:
-      "Kicks shoppers to an external browser link where 70%+ abandon the cart. Cannot check live variant inventory or handle sizing objections in DM.",
-    advantage:
-      "VoluChat generates native In-DM checkouts and draft orders so the customer pays via 1-click UPI in 90 seconds without ever leaving WhatsApp.",
+    slug: "/compare/manychat",
+    goodFor: "Distributing simple PDF download links or coupon codes to social followers based on keyword triggers.",
+    theProblem: "ManyChat just redirects buyers out of Instagram to a website browser, where 70%+ abandon their cart. It cannot check live variant stock or close sales in-chat.",
+    voluDifference: "VoluChat closes the complete sale natively in WhatsApp — qualifying sizes, checking live stock, and settling payments via UPI in 90 seconds.",
   },
   {
-    name: "Manual Human Chat Reps",
+    name: "Manual Sales Reps",
+    tagline: "Human Chat Reps on Salary",
+    badge: "Human Staff",
     icon: "👥",
-    fit: "Hiring 2–4 full-time support agents to manually answer Instagram DMs and WhatsApp chats.",
-    tradeoff:
-      "Offline between 10 PM – 9 AM (when 55%+ of fashion browsing occurs). Founders spend 4+ hours chasing manual UPI screenshots and size chart questions.",
-    advantage:
-      "VoluChat works 24/7 with sub-2s responses, zero rep churn, 100% brand tone consistency, and seamless 1-click human escalation when needed.",
+    slug: "/compare/manual-reps",
+    goodFor: "Stores with under 5 chats/day where every single outfit is custom-stitched to individual bridal measurements.",
+    theProblem: "Costly (₹20k–₹40k/month per rep), offline during peak 11 PM shopping hours, high staff turnover, and prone to sizing & manual payment errors.",
+    voluDifference: "VoluChat provides 24/7 instant sub-2s responses, zero salary overhead, zero sizing errors, and instant 1-tap human escalation whenever needed.",
   },
 ];
 
-const differentiators = [
+const honestChoices = [
   {
-    label: "Flowchart Bots & Manual Reps",
+    category: "Choose Wati / Interakt if...",
     points: [
-      "Offline at 11 PM when Instagram Reels & ads peak",
-      "Rigid 'Press 1' menus that kill the boutique vibe",
-      "External website links that leak 70%+ of carts",
-      "Manual UPI screenshot chasing and sizing errors",
+      "Your primary goal is sending 50,000+ promotional WhatsApp marketing broadcasts.",
+      "You only need basic automated replies like 'Check your order status at this link'.",
+      "You have an in-house team to manually build and update flowchart trees.",
     ],
   },
   {
-    label: "VoluChat AI Stylist",
+    category: "Choose ManyChat if...",
     points: [
-      "Sub-2s response time day and night",
-      "Real-time catalog stock & sizing intelligence",
-      "Native In-DM 1-click UPI checkout links",
-      "Strict margin floors, 1-click founder takeover",
-    ],
-  },
-];
-
-const whenToChooseOther = [
-  {
-    label: "Choose Wati if…",
-    points: [
-      "You need broadcast messaging for mass discount blasts and festive campaigns",
-      "Simple order tracking bots with 'Press 1' menus are sufficient",
-      "You want a self-serve tool and have time to build flows yourself",
+      "You just want a simple keyword auto-responder for Instagram comments.",
+      "You are driving traffic to a massive e-commerce portal rather than closing in DMs.",
+      "You want a DIY $15/month visual builder and don't need in-chat payments.",
     ],
   },
   {
-    label: "Choose Manychat if…",
+    category: "Choose Manual Reps if...",
     points: [
-      "Basic Instagram comment auto-replies for lead capture are your only priority",
-      "You mainly distribute coupon links to an existing follower base",
-      "Budget is tight and you just need a simple keyword trigger tool",
-    ],
-  },
-  {
-    label: "Choose manual reps if…",
-    points: [
-      "Your chat volume is under 10 boutique inquiries per day",
-      "Every single order requires bespoke bespoke tailoring customization",
-      "You're okay with offline midnight gaps and slow response times",
+      "You handle fewer than 5 conversations a day with very high customization.",
+      "Every single garment is fully bespoke or made-to-measure with fabric trials.",
+      "You don't mind losing late-night buyers when reps are asleep.",
     ],
   },
 ];
@@ -107,57 +146,145 @@ const whenToChooseOther = [
 >
   <Navbar />
 
-  <main class="overflow-hidden">
-    <section class="hero-stripe">
-      <div class="section-glow-emerald"></div>
-      <div class="sect-grid opacity-20"></div>
+  <main class="overflow-hidden pt-20">
+    <!-- Hero Header -->
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="mx-auto max-w-4xl text-center">
-          <div class="chip mx-auto">Comparison guide</div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Independent Comparison Guide
+          </div>
           <h1
-            class="mt-6 text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
-            Chatbots push website links.
-            <span class="block text-emerald-400">VoluChat closes fashion sales on WhatsApp.</span>
+            Traditional bots push website links.
+            <span class="block text-emerald-400">VoluChat closes sales in WhatsApp.</span>
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-3xl">
-            Flowchart builders and support desks leak 70%+ of boutique buyers with rigid menus and slow website links. VoluChat is built specifically for fashion &amp; apparel brands to answer sizing queries, verify live inventory, and close paid orders directly in WhatsApp in 90 seconds.
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Rigid flowchart builders and support desks leak 70%+ of boutique buyers with robotic menus and slow website links. Here is how VoluChat compares to traditional tools.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="relative pb-16 bg-[#000000]">
+    <!-- Visual Interactive Feature Matrix Table -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
       <div class="page-shell">
-        <div class="grid gap-5 lg:grid-cols-2">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Direct Feature Comparison</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares side-by-side.
+          </h2>
+          <p class="section-copy mx-auto mt-3 max-w-xl">
+            Built specifically for fashion brands and clothing boutiques.
+          </p>
+        </div>
+
+        <!-- High-Contrast Comparison Matrix -->
+        <div class="max-w-6xl mx-auto overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0a0a0c] shadow-2xl">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-white/[0.12] bg-[#101012]">
+                  <th class="p-5 sm:p-6 text-sm font-heading font-bold text-white w-1/3">Capability</th>
+                  <th class="p-5 sm:p-6 text-sm font-heading font-bold text-emerald-300 bg-emerald-950/30 border-x border-emerald-500/20 w-1/4">
+                    <div class="flex items-center gap-2">
+                      <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                      <span>VoluChat AI</span>
+                    </div>
+                  </th>
+                  <th class="p-5 sm:p-6 text-xs sm:text-sm font-heading font-semibold text-slate-300">Wati / Interakt</th>
+                  <th class="p-5 sm:p-6 text-xs sm:text-sm font-heading font-semibold text-slate-300">ManyChat</th>
+                  <th class="p-5 sm:p-6 text-xs sm:text-sm font-heading font-semibold text-slate-300">Manual Reps</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/[0.06] text-sm">
+                {
+                  featureComparison.map((row) => (
+                    <tr class="hover:bg-white/[0.02] transition-colors">
+                      <td class="p-5 sm:p-6">
+                        <div class="font-heading font-semibold text-white text-base">{row.feature}</div>
+                        <div class="text-xs text-slate-400 mt-1 font-normal">{row.detail}</div>
+                      </td>
+                      <td class="p-5 sm:p-6 font-medium text-emerald-300 bg-emerald-950/20 border-x border-emerald-500/20">
+                        <div class="flex items-start gap-2">
+                          <span class="text-emerald-400 font-bold font-mono text-sm mt-0.5">✓</span>
+                          <span>{row.voluchat}</span>
+                        </div>
+                      </td>
+                      <td class="p-5 sm:p-6 text-slate-400 font-normal">
+                        <span class="text-rose-400/80 mr-1.5 font-mono">✕</span>{row.wati}
+                      </td>
+                      <td class="p-5 sm:p-6 text-slate-400 font-normal">
+                        <span class="text-rose-400/80 mr-1.5 font-mono">✕</span>{row.manychat}
+                      </td>
+                      <td class="p-5 sm:p-6 text-slate-400 font-normal">
+                        <span class="text-rose-400/80 mr-1.5 font-mono">✕</span>{row.reps}
+                      </td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep-Dive Detailed Breakdown Cards -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">Category Breakdowns</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Understanding your alternatives in detail.
+          </h2>
+        </div>
+
+        <div class="grid gap-8 max-w-5xl mx-auto">
           {
-            differentiators.map((item, index) => (
-              <article
-                class={`p-6 sm:p-8 ${index === 1 ? "solid-card-elevated" : "solid-card"}`}
-              >
-                <p class={`mini-label ${index === 1 ? "text-emerald-400" : "text-slate-400"}`}>
-                  {item.label}
-                </p>
-                <h2 class="mt-3 text-2xl font-heading font-semibold leading-tight text-[#fcfdff]">
-                  {index === 1
-                    ? "Autonomous 24/7 revenue engine"
-                    : "High friction, low conversion"}
-                </h2>
-                <ul class="mt-6 space-y-3">
-                  {item.points.map((point) => (
-                    <li class="flex items-start gap-3 rounded-lg border border-white/[0.06] bg-[#06060a] p-3.5">
-                      <span
-                        class={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[10px] font-bold ${index === 1 ? "bg-emerald-500/20 text-emerald-300" : "bg-white/[0.08] text-slate-400"}`}
-                      >
-                        {index === 1 ? "✓" : "✕"}
-                      </span>
-                      <p class="text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.86)] sm:text-base">
-                        {point}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+            directCards.map((card) => (
+              <article class="solid-card-elevated p-7 sm:p-9 border border-white/[0.14] rounded-2xl relative overflow-hidden">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-5 mb-6">
+                  <div class="flex items-center gap-3.5">
+                    <span class="grid h-12 w-12 place-items-center rounded-xl bg-[#101012] border border-white/[0.14] text-2xl">
+                      {card.icon}
+                    </span>
+                    <div>
+                      <h3 class="text-2xl font-heading font-bold text-white">{card.name}</h3>
+                      <p class="text-xs font-mono text-slate-400 mt-0.5">{card.tagline}</p>
+                    </div>
+                  </div>
+                  <a
+                    href={card.slug}
+                    class="shrink-0 inline-flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-400 hover:text-emerald-300 underline underline-offset-4"
+                  >
+                    View Full {card.name} Breakdown &rarr;
+                  </a>
+                </div>
+
+                <div class="grid gap-6 md:grid-cols-2">
+                  <div class="rounded-xl border border-white/[0.08] bg-[#0a0a0c] p-5">
+                    <p class="mini-label text-slate-400">What they are built for</p>
+                    <p class="mt-2 text-sm text-slate-300 leading-relaxed">{card.goodFor}</p>
+                  </div>
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <p class="mini-label text-rose-400">Where they leak boutique sales</p>
+                    <p class="mt-2 text-sm text-slate-300 leading-relaxed">{card.theProblem}</p>
+                  </div>
+                </div>
+
+                <div class="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                  <p class="mini-label text-emerald-400">The VoluChat Advantage</p>
+                  <p class="mt-2 text-sm font-medium text-emerald-100 leading-relaxed">{card.voluDifference}</p>
+                </div>
               </article>
             ))
           }
@@ -165,106 +292,64 @@ const whenToChooseOther = [
       </div>
     </section>
 
-    <section class="relative pb-20 sm:pb-28 bg-[#000000]">
+    <!-- Honest Takes: When to Choose Other Tools -->
+    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
       <div class="page-shell">
-        <div class="mx-auto mb-12 max-w-2xl text-center">
-          <p class="section-eyebrow">Side by side</p>
+        <div class="mx-auto max-w-3xl text-center mb-14">
+          <p class="section-eyebrow">Transparent Guide</p>
           <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
-            How each alternative actually stacks up.
+            When you should choose the other tools.
           </h2>
           <p class="section-copy mx-auto mt-4 max-w-2xl">
-            Three real categories we compete with, what they are genuinely good at, and where VoluChat replaces them.
+            We want you to pick the exact right tool for your current business stage. Here is when an alternative might be a better fit.
           </p>
         </div>
 
-        <div class="grid gap-6">
+        <div class="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
           {
-            competitors.map((item) => (
-              <article class="solid-card p-6 sm:p-8">
-                <header class="flex items-start gap-4 border-b border-white/[0.08] pb-5">
-                  <span class="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-white/[0.14] bg-[#101012] text-2xl">
-                    {item.icon}
-                  </span>
-                  <div>
-                    <p class="mini-label">Alternative category</p>
-                    <h3 class="mt-1 text-xl font-heading font-semibold text-[#fcfdff] sm:text-2xl">
-                      {item.name}
-                    </h3>
-                  </div>
-                </header>
-
-                <div class="mt-6 grid gap-4 md:grid-cols-2">
-                  <div class="solid-card-subtle">
-                    <p class="mini-label">Core strength</p>
-                    <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
-                      {item.fit}
-                    </p>
-                  </div>
-                  <div class="solid-card-subtle">
-                    <p class="mini-label text-rose-400">The tradeoff</p>
-                    <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
-                      {item.tradeoff}
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mt-4 rounded-xl border border-white/[0.14] bg-[#101012] p-5">
-                  <p class="mini-label text-emerald-400">VoluChat advantage</p>
-                  <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.86)] sm:text-base">
-                    {item.advantage}
-                  </p>
-                </div>
-              </article>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section class="relative pb-24 bg-[#000000]">
-      <div class="page-shell">
-        <div class="mx-auto max-w-5xl">
-          <div class="mb-10 text-center">
-            <p class="section-eyebrow">Honest take</p>
-            <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
-              When to choose the other tools
-            </h2>
-            <p class="section-copy mx-auto mt-4 max-w-2xl">
-              We'd rather you pick the right tool than regret a wrong fit. Here's when each alternative actually makes sense.
-            </p>
-          </div>
-
-          <div class="grid gap-5 md:grid-cols-3">
-            {
-              whenToChooseOther.map((item) => (
-                <article class="solid-card p-6">
-                  <p class="mini-label text-slate-300">{item.label}</p>
-                  <ul class="mt-4 space-y-3 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
-                    {item.points.map((point) => (
-                      <li class="flex gap-2.5">
-                        <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
-                        <span>{point}</span>
+            honestChoices.map((choice) => (
+              <div class="solid-card p-6 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-heading font-semibold text-white text-base border-b border-white/[0.08] pb-3 mb-4">
+                    {choice.category}
+                  </h3>
+                  <ul class="space-y-3">
+                    {choice.points.map((pt) => (
+                      <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 font-normal leading-relaxed">
+                        <span class="text-slate-500 mt-1 font-mono">•</span>
+                        <span>{pt}</span>
                       </li>
                     ))}
                   </ul>
-                </article>
-              ))
-            }
-          </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
 
-          <div class="mt-10 solid-card-elevated p-8 text-center sm:p-10">
-            <p class="mini-label text-emerald-400">Choose VoluChat if…</p>
-            <p class="mx-auto mt-3 max-w-2xl text-lg font-normal leading-relaxed text-[rgba(252,253,255,0.86)]">
-              You want to close sales, not just answer questions. VoluChat qualifies buyers, checks live stock, handles objections, and completes orders in-chat — the full 90-second commerce loop the other tools can't deliver.
-            </p>
-            <a href="/free-trial" class="btn-primary mt-6 inline-block">Start 30-Day Free Trial &rarr;</a>
+        <div class="mt-14 max-w-3xl mx-auto text-center rounded-2xl border border-emerald-500/30 bg-gradient-to-b from-[#0a1410] to-[#0a0a0c] p-8 sm:p-10 shadow-2xl">
+          <h3 class="text-2xl font-heading font-bold text-white">
+            Choose VoluChat if you want to close fashion sales 24/7.
+          </h3>
+          <p class="section-copy mx-auto mt-3 max-w-xl text-sm sm:text-base">
+            Turn viral Reel comments into paid UPI orders in 90 seconds. 30 days free with 100% white-glove setup.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
+            <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20know%20how%20VoluChat%20compares%20to%20my%20current%20setup."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>
     </section>
-
-    <FAQ />
   </main>
 
+  <FAQ />
   <Footer />
 </Layout>

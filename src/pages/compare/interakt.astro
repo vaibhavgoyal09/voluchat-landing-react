@@ -5,11 +5,11 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Interakt — AI Stylist vs WhatsApp Inbox";
+const seoTitle = "VoluChat vs Interakt — Autonomous AI Sales vs Shared Inbox";
 const seoDescription =
-  "Compare VoluChat with Interakt's team inbox. See why automated sizing qualification and in-chat UPI checkout close more boutique orders.";
+  "Compare VoluChat's autonomous AI sales closer with Interakt's manual shared inbox. See why automated sizing qualification and in-chat UPI closes more orders.";
 const seoKeywords =
-  "VoluChat vs Interakt, Interakt alternative fashion, WhatsApp sales agent clothing, boutique DM sales closer";
+  "VoluChat vs Interakt, Interakt alternative fashion, WhatsApp shared inbox vs AI agent, boutique WhatsApp sales closer, clothing WhatsApp automation";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
@@ -21,40 +21,52 @@ const structuredData = {
 
 const comparison = [
   {
-    category: "Conversation Intelligence",
-    interakt: "Template-based responses and shared human inbox. Agents manually type replies or use pre-approved WhatsApp templates.",
-    voluchat: "Conversational AI Stylist that answers natural questions about fits, lengths, fabrics, and styling advice without human typing.",
+    category: "Manual Work vs Autonomous Closing",
+    detail: "How much human effort is needed to reply and close",
+    interakt: "A shared inbox for human support reps. Your team must still manually type every reply, check sizes, and chase payments.",
+    voluchat: "Autonomous AI sales stylist. Automatically qualifies fit, checks stock, and completes checkout without human reps.",
+    voluAdvantage: "100% Autonomous",
   },
   {
-    category: "Sales Automation",
-    interakt: "Broadcast campaigns and generic notification alerts. No autonomous sizing qualification or objection handling.",
-    voluchat: "Full autonomous sales closer: qualifies measurements, checks live variant inventory, cross-sells matching sets, and sends 1-click UPI links.",
+    category: "Midnight Response Time (10 PM – 2 AM)",
+    detail: "Speed during peak late-night in-bed shopping",
+    interakt: "Customers wait 8–12 hours until your staff comes online the next morning. 80%+ buy from another store.",
+    voluchat: "Sub-2 second replies 24/7. Captures midnight impulse buyers while they are still in bed with their phone in hand.",
+    voluAdvantage: "Sub-2s 24/7 coverage",
   },
   {
-    category: "Live Variant Inventory",
-    interakt: "Basic catalog notifications. Cannot check live variant stock during high-intent sales conversations.",
-    voluchat: "Reads live variant inventory in real-time. Prevents selling out-of-stock sizes and suggests in-stock styling alternatives.",
+    category: "Sizing & Fit Qualification",
+    detail: "Understanding fabric nuances and body measurements",
+    interakt: "Relies on human reps knowing the catalog or sends basic static links. High rate of human miscommunication.",
+    voluchat: "Trained on your exact size charts and fabric guides. Recommends the right size without hallucinations.",
+    voluAdvantage: "AI Stylist intelligence",
   },
   {
-    category: "Checkout Experience",
-    interakt: "Sends buyers to external website links. No native in-chat payment capability.",
-    voluchat: "Native in-DM UPI payment links and draft orders. Shopper completes payment in 90 seconds without leaving WhatsApp.",
+    category: "Payment & Order Sync",
+    detail: "Collecting payment and confirming in Shopify",
+    interakt: "Staff must type UPI IDs manually, wait for screenshot uploads, and manually create orders.",
+    voluchat: "Generates dynamic 1-click UPI links and automatically converts draft orders into confirmed paid orders in Shopify.",
+    voluAdvantage: "1-Click UPI & auto-sync",
   },
   {
-    category: "Instagram Reel Integration",
-    interakt: "Primarily a WhatsApp support inbox. No native Instagram Reel comment-to-DM selling engine.",
-    voluchat: "Comment-to-DM engine auto-replies to Instagram Reel comments in 2 seconds with exact pricing, photos, and sizing options.",
+    category: "Instagram Reel Comment Integration",
+    detail: "Converting viral comments into direct WhatsApp chats",
+    interakt: "Primarily WhatsApp-focused. No native 2-second Instagram Comment-to-WhatsApp sales loop.",
+    voluchat: "Detects comments on Instagram Reels in 2 seconds and smoothly transitions high-intent buyers into WhatsApp sales chats.",
+    voluAdvantage: "Reel-to-WhatsApp loop",
   },
   {
-    category: "Setup",
-    interakt: "Self-serve WhatsApp Business API tool. You configure templates, rules, and team assignments yourself.",
-    voluchat: "100% white-glove setup. Founder personally syncs your catalog, size chart, and brand voice.",
+    category: "Setup & Onboarding Effort",
+    detail: "Time required to get started",
+    interakt: "Self-serve SaaS dashboard. You must set up agent accounts, routing rules, and templates yourself.",
+    voluchat: "100% Done-For-You white-glove setup by our founder. Meta Cloud APIs, catalog sync, and voice calibration included free.",
+    voluAdvantage: "Zero setup effort",
   },
 ];
 
 const verdict = {
-  chooseInterakt: "You need a shared team inbox for human support reps, broadcast messaging for marketing blasts, and you have agents available to reply manually.",
-  chooseVoluchat: "You want to close apparel sales autonomously 24/7. VoluChat qualifies sizes, checks live stock, handles styling doubts, and completes UPI payments in WhatsApp.",
+  chooseInterakt: "You have a large team of 10+ support agents handling post-purchase order tracking tickets, delivery returns, and customer service grievances.",
+  chooseVoluchat: "You want to automate pre-purchase sales, qualify fashion sizing doubts, recover abandoned checkouts, and collect UPI payments 24/7 without hiring more reps.",
 };
 ---
 
@@ -67,77 +79,104 @@ const verdict = {
 >
   <Header />
 
-  <main class="overflow-hidden">
-    <section class="hero-stripe">
-      <div class="section-glow-emerald"></div>
-      <div class="sect-grid opacity-20"></div>
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="compare-hero-text mx-auto max-w-4xl text-center">
-          <div class="chip">VoluChat vs Interakt</div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            VoluChat vs Interakt
+          </div>
           <h1
-            class="mt-6 text-4xl font-semibold leading-[1.02] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
-            VoluChat vs Interakt — AI Sales Agent vs Shared Inbox.
+            Autonomous Sales Closer vs
+            <span class="block text-emerald-400">Manual Shared Inbox.</span>
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-3xl">
-            Interakt provides a shared team inbox for human agents. VoluChat is an autonomous AI sales agent for fashion boutiques that qualifies sizing, cross-sells matching outfits, and completes 1-click UPI orders in-chat without manual typing.
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Interakt is a shared inbox where your human team must manually type replies. VoluChat is an autonomous AI sales stylist that qualifies sizes, checks live stock, and completes UPI payments 24/7.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="pb-16 bg-[#000000]">
+    <!-- Side by Side Deep Comparison Grid -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl space-y-4">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Detailed Breakdown</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares to Interakt.
+          </h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-5">
           {
-            comparison.map((row) => (
-              <article class="solid-card p-6 md:p-8">
-                <h2 class="section-eyebrow mb-4">{row.category}</h2>
-                <div class="grid gap-4 md:grid-cols-2">
-                  <div class="solid-card-subtle">
-                    <p class="mini-label">Interakt</p>
-                    <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
-                      {row.interakt}
-                    </p>
+            comparison.map((item, idx) => (
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+                  <div>
+                    <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
                   </div>
-                  <div class="solid-card-subtle border-emerald-500/30">
-                    <p class="mini-label text-emerald-400">VoluChat</p>
-                    <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.86)] sm:text-base">
-                      {row.voluchat}
-                    </p>
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                    ✓ {item.voluAdvantage}
+                  </span>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-400">Interakt Approach</span>
+                    </div>
+                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.interakt}</p>
+                  </div>
+
+                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                    </div>
+                    <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
                   </div>
                 </div>
-              </article>
+              </div>
             ))
           }
         </div>
       </div>
     </section>
 
-    <section class="pb-16 bg-[#000000]">
+    <!-- Verdict Cards -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl grid gap-5 md:grid-cols-2">
-          <article class="solid-card p-6 md:p-8">
-            <h2 class="mini-label text-slate-400">Choose Interakt if...</h2>
-            <p class="mt-3 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
-              {verdict.chooseInterakt}
-            </p>
-          </article>
-          <article class="solid-card-elevated p-6 md:p-8">
-            <h2 class="mini-label text-emerald-400">Choose VoluChat if...</h2>
-            <p class="mt-3 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.86)] sm:text-base">
-              {verdict.chooseVoluchat}
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+          <div class="solid-card p-6 sm:p-8">
+            <span class="mini-label text-slate-400">Choose Interakt if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Support Ticket Management</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseInterakt}</p>
+          </div>
 
-    <section class="pb-24 bg-[#000000]">
-      <div class="page-shell text-center">
-        <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
-        <p class="mt-4 text-sm font-normal text-slate-500">Or explore the full <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">comparison guide</a>.</p>
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
+            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Automated Sales & Sizing</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center">
+          <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+          <p class="mt-4 text-sm text-slate-500">
+            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -145,37 +184,3 @@ const verdict = {
   <FAQ />
   <Footer />
 </Layout>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
-
-    gsap.fromTo(".compare-hero-text",
-      { opacity: 0, y: 30, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
-    );
-
-    gsap.utils.toArray<HTMLElement>(".solid-card").forEach((card) => {
-      gsap.fromTo(card,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-  });
-</script>

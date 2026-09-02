@@ -5,11 +5,11 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Manual Chat Reps — AI Stylist for Boutiques";
+const seoTitle = "VoluChat vs Manual Sales Reps — Hiring Chat Staff vs AI Closer";
 const seoDescription =
-  "Compare VoluChat's AI sales stylist with hiring manual chat reps for Instagram and WhatsApp. Close 3x more orders 24/7 at 1/10th the cost.";
+  "Compare hiring full-time chat reps with VoluChat's autonomous AI sales stylist for WhatsApp and Instagram. 24/7 availability, zero churn, and 10x ROI standard.";
 const seoKeywords =
-  "VoluChat vs manual reps, boutique chat reps vs AI, WhatsApp sales bot fashion, Instagram DM closer clothing";
+  "hire WhatsApp sales reps vs chatbot, ecommerce chat rep cost India, Instagram DM sales agent, boutique sales closer WhatsApp, 24/7 chat sales";
 const siteUrl = "https://www.voluchat.com";
 const structuredData = {
   "@context": "https://schema.org",
@@ -21,43 +21,55 @@ const structuredData = {
 
 const comparison = [
   {
-    category: "Late-Night Coverage",
-    manual: "Offline between 10 PM – 9 AM. 55%+ of fashion Reel browsing happens at night when reps are asleep.",
-    voluchat: "24/7/365 coverage. Converts midnight 'Price?' and 'Size M available?' comments in under 90 seconds.",
-  },
-  {
-    category: "Response Time",
+    category: "Late Night Speed (10 PM – 2 AM)",
+    detail: "Coverage when Instagram Reel ads and browsing peak",
     manual: "15–45 minutes during working hours. Next-morning replies lose 80%+ of impulse fashion shoppers.",
     voluchat: "Sub-2 seconds. Instant response while the outfit impulse and buying mood are hottest.",
+    voluAdvantage: "Sub-2s 24/7 speed",
   },
   {
-    category: "Monthly Overhead",
-    manual: "₹18,000–35,000/month per rep. Need 2–3 reps for partial night shifts plus high churn.",
-    voluchat: "30-day free trial with predictable transparent pricing. Zero hiring or rep churn overhead.",
+    category: "Monthly Overhead & Hiring",
+    detail: "Staff salaries, training, and turnover management",
+    manual: "₹20,000–₹40,000/month per rep. Requires 2–3 reps for full shifts plus constant retraining on staff churn.",
+    voluchat: "30-day free trial with transparent predictable pricing. Zero hiring, payroll, or churn headaches.",
+    voluAdvantage: "Zero hiring overhead",
   },
   {
     category: "Sizing & Fit Accuracy",
+    detail: "Preventing miscalculated body measurements & returns",
     manual: "Reps often misquote size measurements, forget fabric details, or make manual bank account typos.",
-    voluchat: "100% consistent sizing qualification trained on your exact chart and fabric specifications.",
+    voluchat: "100% consistent sizing qualification trained on your exact size charts and fabric guides.",
+    voluAdvantage: "Zero sizing errors",
   },
   {
-    category: "Inventory & Stock Sync",
-    manual: "Reps manually check catalog/admin. Risk of confirming out-of-stock sizes or discontinued colors.",
+    category: "Live Inventory & Stock Verification",
+    detail: "Preventing sales of sold-out colors and sizes",
+    manual: "Reps must manually open the admin backend. Risk of confirming out-of-stock pieces.",
     voluchat: "Reads live variant inventory in real-time. Never confirms availability for sold-out pieces.",
+    voluAdvantage: "Live stock protection",
   },
   {
     category: "Viral Reel Scalability",
-    manual: "Cannot handle 400+ comments on a viral Reel without crashing or taking 24+ hours to respond.",
+    detail: "Handling 500+ comments on a viral post",
+    manual: "Staff get overwhelmed, responses take 24+ hours, and hot buyers scroll past.",
     voluchat: "Simultaneously qualifies and closes 10 or 1,000 fashion shoppers with zero response lag.",
+    voluAdvantage: "Infinite scale",
+  },
+  {
+    category: "Human Escalation & Control",
+    detail: "Handling VIP buyers and custom bridal inquiries",
+    manual: "Reps may guess answers or drop VIP conversations without founder visibility.",
+    voluchat: "AI handles 90% of routine sales and alerts your human team in 1 tap for custom bridal orders.",
+    voluAdvantage: "1-Tap human takeover",
   },
 ];
 
 const costBreakdown = [
-  { label: "2 Chat Reps (monthly)", cost: "₹36,000–60,000" },
-  { label: "Training & Onboarding", cost: "₹10,000–15,000" },
-  { label: "Night Shift Premium", cost: "₹10,000–15,000" },
-  { label: "Lost Midnight Sales", cost: "₹50,000+/mo" },
-  { label: "VoluChat Setup", cost: "30 Days Free, Done-For-You" },
+  { label: "2 Chat Reps (Monthly Salary)", cost: "₹40,000–₹70,000" },
+  { label: "Training & Staff Churn Costs", cost: "₹10,000–₹15,000" },
+  { label: "Night Shift Allowance", cost: "₹10,000–₹15,000" },
+  { label: "Lost Midnight Sales (Offline)", cost: "₹50,000+/month" },
+  { label: "VoluChat AI Stylist", cost: "30 Days Free, Done-For-You" },
 ];
 
 const verdict = {
@@ -75,101 +87,136 @@ const verdict = {
 >
   <Header />
 
-  <main class="overflow-hidden">
-    <section class="hero-stripe">
-      <div class="section-glow-emerald"></div>
-      <div class="sect-grid opacity-20"></div>
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="compare-hero-text mx-auto max-w-4xl text-center">
-          <div class="chip">VoluChat vs Manual Reps</div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            VoluChat vs Manual Sales Reps
+          </div>
           <h1
-            class="mt-6 text-4xl font-semibold leading-[1.02] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
-            AI Sales Stylist vs Hiring Chat Reps.
+            Autonomous AI Stylist vs
+            <span class="block text-emerald-400">Hiring Manual Chat Reps.</span>
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-3xl">
-            Hiring manual chat reps costs ₹40k+/month and leaves 55%+ of fashion inquiries cold at night. VoluChat acts as a tireless 24/7 AI stylist that closes orders in WhatsApp without manual typing.
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Hiring chat reps is expensive, suffers from high turnover, and leaves your boutique offline at 11 PM when Instagram browsing peaks. VoluChat qualifies sizes, checks live stock, and closes orders 24/7.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="pb-16 bg-[#000000]">
+    <!-- Side by Side Deep Comparison Grid -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl space-y-4">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Detailed Breakdown</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares to hiring manual reps.
+          </h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-5">
           {
-            comparison.map((row) => (
-              <article class="solid-card p-6 md:p-8">
-                <h2 class="section-eyebrow mb-4">{row.category}</h2>
-                <div class="grid gap-4 md:grid-cols-2">
-                  <div class="solid-card-subtle">
-                    <p class="mini-label">Manual Reps</p>
-                    <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
-                      {row.manual}
-                    </p>
+            comparison.map((item, idx) => (
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+                  <div>
+                    <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
                   </div>
-                  <div class="solid-card-subtle border-emerald-500/30">
-                    <p class="mini-label text-emerald-400">VoluChat</p>
-                    <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.86)] sm:text-base">
-                      {row.voluchat}
-                    </p>
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                    ✓ {item.voluAdvantage}
+                  </span>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-400">Manual Reps Approach</span>
+                    </div>
+                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.manual}</p>
+                  </div>
+
+                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                    </div>
+                    <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
                   </div>
                 </div>
-              </article>
+              </div>
             ))
           }
         </div>
       </div>
     </section>
 
-    <section class="pb-16 bg-[#000000]">
+    <!-- Financial Cost Analysis Table -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#000000]">
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl">
-          <div class="solid-card p-6 md:p-8">
-            <p class="section-eyebrow mb-4">Cost comparison</p>
-            <h2 class="text-2xl font-heading font-semibold text-[#fcfdff] mb-6">
-              What manual reps actually cost
-            </h2>
-            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-              {costBreakdown.map((item) => (
-                <div class="solid-card-subtle p-4 text-center">
-                  <p class="text-xs font-medium text-slate-400">{item.label}</p>
-                  <p class="mt-2 text-sm font-semibold text-[#fcfdff]">{item.cost}</p>
+        <div class="mx-auto max-w-2xl text-center mb-10">
+          <p class="section-eyebrow">Cost Analysis</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            The True Cost of Manual Chat Staff
+          </h2>
+          <p class="section-copy mx-auto mt-3 max-w-lg">
+            What you actually spend per month to maintain manual DM sales coverage.
+          </p>
+        </div>
+
+        <div class="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0a0a0c] shadow-2xl">
+          <div class="divide-y divide-white/[0.06]">
+            {
+              costBreakdown.map((item, i) => (
+                <div class={`flex items-center justify-between p-5 sm:p-6 ${i === costBreakdown.length - 1 ? 'bg-emerald-950/30 font-bold' : ''}`}>
+                  <span class={`text-sm ${i === costBreakdown.length - 1 ? 'text-emerald-300 font-heading text-base font-bold' : 'text-slate-300'}`}>
+                    {item.label}
+                  </span>
+                  <span class={`font-mono text-sm ${i === costBreakdown.length - 1 ? 'text-emerald-400 text-base font-bold' : 'text-rose-400/90'}`}>
+                    {item.cost}
+                  </span>
                 </div>
-              ))}
-            </div>
-            <p class="mt-5 text-sm font-normal text-[rgba(252,253,255,0.7)]">
-              VoluChat eliminates shift handoffs, training downtime, and missed night inquiries with an autonomous fashion closer that works 24/7.
-            </p>
+              ))
+            }
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pb-16 bg-[#000000]">
+    <!-- Verdict Cards -->
+    <section class="py-20 sm:py-24 bg-[#06060a] border-t border-white/[0.08]">
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl grid gap-5 md:grid-cols-2">
-          <article class="solid-card p-6 md:p-8">
-            <h2 class="mini-label text-slate-400">Stick with manual reps if...</h2>
-            <p class="mt-3 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
-              {verdict.chooseManual}
-            </p>
-          </article>
-          <article class="solid-card-elevated p-6 md:p-8">
-            <h2 class="mini-label text-emerald-400">Choose VoluChat if...</h2>
-            <p class="mt-3 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.86)] sm:text-base">
-              {verdict.chooseVoluchat}
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+          <div class="solid-card p-6 sm:p-8">
+            <span class="mini-label text-slate-400">Choose Manual Reps if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Custom Bridal Alterations</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseManual}</p>
+          </div>
 
-    <section class="pb-24 bg-[#000000]">
-      <div class="page-shell text-center">
-        <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
-        <p class="mt-4 text-sm font-normal text-slate-500">Or explore the full <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">comparison guide</a>.</p>
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
+            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">24/7 Instant Autonomous Sales</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center">
+          <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+          <p class="mt-4 text-sm text-slate-500">
+            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -177,37 +224,3 @@ const verdict = {
   <FAQ />
   <Footer />
 </Layout>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
-
-    gsap.fromTo(".compare-hero-text",
-      { opacity: 0, y: 30, scale: 0.95 },
-      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
-    );
-
-    gsap.utils.toArray<HTMLElement>(".solid-card").forEach((card) => {
-      gsap.fromTo(card,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-  });
-</script>

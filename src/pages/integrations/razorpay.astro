@@ -1,0 +1,215 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "Razorpay WhatsApp Integration — Instant UPI Checkout | VoluChat";
+const seoDescription =
+  "Connect Razorpay with VoluChat to collect 1-click UPI payments (GPay, PhonePe, Paytm) inside WhatsApp DMs with instant webhook verification.";
+const seoKeywords =
+  "Razorpay WhatsApp integration, WhatsApp UPI payment link, Razorpay UPI WhatsApp, Razorpay payment link automation, WhatsApp Shopify payment";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/integrations/razorpay`,
+};
+
+const capabilities = [
+  {
+    title: "Dynamic 1-Click UPI Links",
+    description: "Generates custom Razorpay UPI payment links with the customer's exact order amount, item name, and boutique branding pre-filled.",
+  },
+  {
+    title: "Instant Webhook Verification",
+    description: "Payment status is verified in under 1 second via secure Razorpay webhooks. No asking customers for screenshots or checking bank apps.",
+  },
+  {
+    title: "Auto-Mark Paid in Shopify",
+    description: "Once Razorpay confirms the transaction, the order is automatically converted from a draft to a confirmed, paid order ready for dispatch.",
+  },
+  {
+    title: "Instant WhatsApp Receipt",
+    description: "Sends an official payment confirmation and receipt message directly to the buyer's WhatsApp thread with delivery estimation.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Support for All Indian UPI Apps",
+    description: "Shoppers can pay seamlessly using Google Pay, PhonePe, Paytm, BHIM, or credit/debit cards with a single tap.",
+  },
+  {
+    title: "Cuts COD Return (RTO) Fraud",
+    description: "By making prepaid payments frictionless in WhatsApp, Indian boutiques see prepaid order ratios increase from 40% to 75%+.",
+  },
+  {
+    title: "100% RBI & PCI-DSS Compliant",
+    description: "Payment data is processed directly on Razorpay's bank-grade encrypted checkout. VoluChat never touches card or UPI PIN data.",
+  },
+  {
+    title: "Zero Setup Hassle",
+    description: "We configure your Razorpay API webhooks and WhatsApp integration for you as part of our 100% free white-glove setup.",
+  },
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/integrations/razorpay", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center integration-hero-text">
+          <div class="inline-flex items-center gap-2 rounded-full border border-blue-500/25 bg-blue-950/40 px-3.5 py-1 text-xs font-bold text-blue-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+            Payment Gateway Integration
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading"
+          >
+            Razorpay + WhatsApp.
+            <span class="block text-emerald-400">1-Click UPI Payments in Chat.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
+            Eliminate payment screenshot chasing. VoluChat generates dynamic Razorpay UPI payment links inside WhatsApp and verifies orders automatically in seconds.
+          </p>
+
+          <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20know%20about%20Razorpay%20integration%20with%20VoluChat."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Razorpay Works with VoluChat -->
+    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">How It Works</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Automated payment collection in 4 simple steps.
+          </h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {
+            capabilities.map((cap, i) => (
+              <div class="integration-step solid-card p-6 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="grid h-8 w-8 place-items-center rounded-full bg-[#101012] border border-blue-400/30 font-mono text-xs font-bold text-blue-300">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">
+                    {cap.title}
+                  </h3>
+                  <p class="mt-2 text-xs sm:text-sm leading-relaxed text-[rgba(252,253,255,0.7)] font-normal">
+                    {cap.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">Key Advantages</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Why fashion brands choose Razorpay on VoluChat.
+          </h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+          {
+            benefits.map((b) => (
+              <div class="solid-card p-6 sm:p-7">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-emerald-400 font-bold font-mono text-sm">✓</span>
+                  <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">
+                    {b.title}
+                  </h3>
+                </div>
+                <p class="text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                  {b.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-4">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            100% Free White-Glove Setup
+          </div>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-4">
+            Ready to collect instant Razorpay payments on WhatsApp?
+          </h2>
+          <p class="section-copy mx-auto mb-8 max-w-2xl">
+            Get 30 days free. Our engineering team handles the complete Razorpay webhook setup and WhatsApp API configuration for your store.
+          </p>
+          <div class="flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+            <a href="/integrations/shopify" class="btn-secondary">Explore Shopify Sync</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    gsap.fromTo(".integration-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+  });
+</script>

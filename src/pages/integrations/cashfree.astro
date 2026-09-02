@@ -1,0 +1,215 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "Cashfree Payments WhatsApp Integration — Instant UPI | VoluChat";
+const seoDescription =
+  "Connect Cashfree Payments with VoluChat to generate instant UPI deep-links, verify payments in WhatsApp, and auto-sync paid orders to Shopify.";
+const seoKeywords =
+  "Cashfree WhatsApp integration, Cashfree UPI WhatsApp, Cashfree payment link automation, WhatsApp Shopify payment India, Cashfree auto settlement";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/integrations/cashfree`,
+};
+
+const capabilities = [
+  {
+    title: "1-Click Dynamic UPI Links",
+    description: "Generates custom Cashfree payment links directly in WhatsApp DMs with order details, buyer name, and amount locked in.",
+  },
+  {
+    title: "Real-Time Webhook Verification",
+    description: "Verifies successful UPI and card payments instantly via webhooks — zero manual screenshot checking or bank reconciliations.",
+  },
+  {
+    title: "Auto-Fulfillment Order Sync",
+    description: "Marks draft orders as paid in your Shopify or custom backend immediately so your warehouse team can pack and dispatch.",
+  },
+  {
+    title: "Automated WhatsApp Invoice",
+    description: "Sends branded order summary and digital receipt to the customer's WhatsApp chat the second payment completes.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Instant UPI Intent Flow",
+    description: "Opens Google Pay, PhonePe, Paytm, or CRED directly on the buyer's smartphone with the amount pre-filled.",
+  },
+  {
+    title: "Lower RTO & Return Rates",
+    description: "Turn Cash-on-Delivery shoppers into instant prepaid buyers right inside the chat before dispatching goods.",
+  },
+  {
+    title: "Enterprise Grade Security",
+    description: "PCI-DSS Level 1 certified payment processing. Safe for customer data and compliant with Meta & RBI regulations.",
+  },
+  {
+    title: "100% Done-For-You Integration",
+    description: "We configure Cashfree API keys, webhooks, and testing as part of your 30-day free trial setup.",
+  },
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/integrations/cashfree", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center integration-hero-text">
+          <div class="inline-flex items-center gap-2 rounded-full border border-teal-500/25 bg-teal-950/40 px-3.5 py-1 text-xs font-bold text-teal-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse"></span>
+            Payment Gateway Integration
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading"
+          >
+            Cashfree + WhatsApp.
+            <span class="block text-emerald-400">Fast UPI Checkout Inside Chat.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
+            Turn social DM inquiries into instant paid orders. VoluChat creates dynamic Cashfree payment links inside WhatsApp and confirms transactions automatically.
+          </p>
+
+          <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20know%20about%20Cashfree%20integration%20with%20VoluChat."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Cashfree Works -->
+    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">How It Works</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Automated Cashfree payment collection on WhatsApp.
+          </h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {
+            capabilities.map((cap, i) => (
+              <div class="integration-step solid-card p-6 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="grid h-8 w-8 place-items-center rounded-full bg-[#101012] border border-teal-400/30 font-mono text-xs font-bold text-teal-300">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">
+                    {cap.title}
+                  </h3>
+                  <p class="mt-2 text-xs sm:text-sm leading-relaxed text-[rgba(252,253,255,0.7)] font-normal">
+                    {cap.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <p class="section-eyebrow">Key Advantages</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Why fashion merchants love Cashfree on VoluChat.
+          </h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+          {
+            benefits.map((b) => (
+              <div class="solid-card p-6 sm:p-7">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-emerald-400 font-bold font-mono text-sm">✓</span>
+                  <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">
+                    {b.title}
+                  </h3>
+                </div>
+                <p class="text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                  {b.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-4">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            100% Free White-Glove Setup
+          </div>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-4">
+            Ready to deploy Cashfree on your WhatsApp store?
+          </h2>
+          <p class="section-copy mx-auto mb-8 max-w-2xl">
+            Get 30 days free. Our engineering team connects your Cashfree account, sets up webhooks, and tests the complete payment flow.
+          </p>
+          <div class="flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+            <a href="/integrations/shopify" class="btn-secondary">Explore Shopify Sync</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    gsap.fromTo(".integration-hero-text",
+      { opacity: 0, y: 30, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" }
+    );
+  });
+</script>

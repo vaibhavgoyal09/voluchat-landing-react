@@ -14,16 +14,19 @@ VoluChat is an AI sales stylist that operates inside Instagram DMs and WhatsApp 
 - **In-Chat UPI Checkout**: Generates 1-click UPI payment links and draft orders directly in WhatsApp without sending shoppers to external website links
 - **Live Catalog & Variant Sync**: Reads real-time variant stock, pricing, and sizing charts (Shopify integration available)
 - **Brand Voice Calibration**: Trained on your boutique's tone, vocabulary, and communication style
-- **100% White-Glove Setup**: Done-for-you deployment for an initial 10-store fashion cohort with a founder-backed 10x ROI standard
+- **Official Meta Tech Partner**: Certified integration for WhatsApp Business Cloud API, Instagram Graph API, and Facebook
+- **100% Free Setup & 30-Day Free Trial**: Done-for-you deployment for the first 10 stores with a founder-backed 10x ROI standard
+- **WhatsApp App Coexistence**: Zero disruption — store owners keep using their standard WhatsApp Business phone app alongside the AI agent
 
 ## Category
 
-- AI sales agent for fashion
+- AI sales agent for fashion & boutique brands
+- Official Meta Tech Partner for WhatsApp & Instagram
 - WhatsApp sales bot for clothing boutiques
 - Instagram comment-to-DM automation
 - Fashion e-commerce WhatsApp checkout
-- Size chart AI sales agent
-- Boutique cart recovery WhatsApp
+- In-Chat UPI payment automation
+- Boutique cart recovery on WhatsApp
 
 ## How it works
 
@@ -44,26 +47,31 @@ VoluChat is an AI sales stylist that operates inside Instagram DMs and WhatsApp 
 
 Apparel brands, fashion labels, and Instagram clothing boutiques running Meta ads / Reels who lose revenue to manual DM backlogs and late-night inquiry drop-offs. Typical use case: a customer comments "Price?" or "Size L available?" on an Instagram Reel at 11 PM — VoluChat replies instantly, qualifies fit on WhatsApp, and completes the UPI payment before the customer scrolls away.
 
-## Pricing
+## Offer & Pricing
 
-Private 10-Store Founder Pilot. White-glove setup. 10x ROI guarantee from the founder.
+- **30-Day Free Trial**: All premium AI sales agent features unlocked
+- **100% Free Done-For-You Setup**: Meta API, WhatsApp Cloud API, catalog sync, size charts, and UPI links configured by founder & engineering team
+- **Founder Direct Support**: Direct WhatsApp access with founder (Vaibhav Goyal)
 
 ## Key pages
 
 - Home: https://www.voluchat.com
-- Features (e-commerce automation architecture): https://www.voluchat.com/features
-- Pricing (10-Store Pilot): https://www.voluchat.com/pricing
+- 30-Day Free Trial & Setup: https://www.voluchat.com/free-trial
+- Features: https://www.voluchat.com/features
+- Pricing: https://www.voluchat.com/pricing
 - Compare vs Wati: https://www.voluchat.com/compare/wati
 - Compare vs Manychat: https://www.voluchat.com/compare/manychat
 - Compare vs Interakt: https://www.voluchat.com/compare/interakt
 - Compare vs Manual Reps: https://www.voluchat.com/compare/manual-reps
+- In-Chat UPI Checkout Guide: https://www.voluchat.com/what-is/in-chat-upi-checkout
+- WhatsApp Cart Recovery Guide: https://www.voluchat.com/what-is/whatsapp-cart-recovery
 - WhatsApp Sales Bot explainer: https://www.voluchat.com/what-is/whatsapp-sales-bot
 - Comment-to-DM Automation explainer: https://www.voluchat.com/what-is/comment-to-DM-automation
 - Glossary: https://www.voluchat.com/glossary
 - Security & Guardrails: https://www.voluchat.com/security
 - Shopify Integration: https://www.voluchat.com/integrations/shopify
 - Blog: https://www.voluchat.com/blog
-- Contact / Apply for Pilot: https://www.voluchat.com/contact
+- Contact Us: https://www.voluchat.com/contact
 
 ## Tech stack
 
