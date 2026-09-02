@@ -3,89 +3,110 @@ const supportingPoints = [
   {
     code: "LEAK 01",
     stat: "55%",
+    pct: 55,
     statLabel: "Midnight Browsing",
     title: "11 PM Leads Go Cold",
-    description: "Shoppers comment 'Price?' late at night when manual reps are offline. By morning, they've bought elsewhere.",
+    description: "Shoppers comment 'Price?' late at night when reps are offline. By morning, they've bought elsewhere.",
   },
   {
     code: "LEAK 02",
     stat: "35%",
+    pct: 35,
     statLabel: "COD Returns (RTO)",
     title: "Unverified Impulse Orders",
-    description: "Orders placed without sizing verification or UPI prepayment incentives result in costly return-to-origin shipments.",
+    description: "Orders placed without sizing qualification or UPI prepayment incentives trigger costly return-to-origin shipments.",
   },
 ];
 ---
 
 <section
   id="problem"
-  class="relative overflow-hidden py-20 sm:py-24 bg-[#000000]"
+  class="relative overflow-hidden py-16 sm:py-20 bg-[#000000]"
 >
   <div class="page-shell">
-    <div class="max-w-3xl mb-14">
-      <div class="chip mb-4">
+    <div class="max-w-2xl mb-10">
+      <div class="chip mb-3">
         <span class="mini-label text-rose-400">The Fashion DM Revenue Leak</span>
       </div>
       <h2 class="section-title text-[#fcfdff] font-heading">
         Where clothing brands <span class="text-rose-400">lose 60%+ of social buyers</span>.
       </h2>
-      <p class="section-copy mt-3">
-        Manual chat reps and rigid flowchart bots fail when buyers are ready to purchase.
+      <p class="section-copy mt-2 text-sm sm:text-base">
+        Manual chat reps and rigid flowchart bots fail when boutique buyers are ready to purchase.
       </p>
     </div>
 
-    <!-- Asymmetric 2-Column Problem Layout: 1 Killer Hero Stat + 2 Supporting Evidence Cards -->
-    <div class="grid gap-6 lg:grid-cols-[1.3fr_1fr] items-stretch">
-      <!-- Dominant Killer Statistic Card -->
-      <article class="reveal-on-scroll rounded-2xl border border-rose-500/30 bg-gradient-to-b from-[#160b0e] via-[#0d0709] to-[#0a0a0c] p-8 sm:p-10 flex flex-col justify-between hover:border-rose-500/50 transition-all shadow-2xl relative overflow-hidden">
-        <!-- Subtle background glow -->
-        <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-rose-500/10 blur-3xl pointer-events-none"></div>
-
+    <!-- Compact 1+2 Asymmetric Problem Layout -->
+    <div class="grid gap-5 lg:grid-cols-[1.25fr_1fr] items-stretch">
+      
+      <!-- Dominant Hero Statistic Card (Primary Pain Point in Rose/Red) -->
+      <article class="reveal-on-scroll rounded-2xl border border-rose-500/30 bg-gradient-to-b from-[#140a0c] via-[#0d0709] to-[#0a0a0c] p-6 sm:p-7 flex flex-col justify-between hover:border-rose-500/50 transition-all shadow-lg relative overflow-hidden">
         <div>
-          <div class="flex items-center justify-between border-b border-rose-500/20 pb-4 mb-8">
-            <span class="font-mono text-xs text-rose-400 font-bold uppercase tracking-wider">Primary Revenue Leak</span>
-            <span class="rounded-full border border-rose-500/30 bg-rose-500/10 px-3 py-1 font-mono text-xs text-rose-300 font-medium">
-              Cart Drop-Off
+          <!-- Header -->
+          <div class="flex items-center justify-between border-b border-rose-500/15 pb-3 mb-5">
+            <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-wider">Primary Revenue Leak</span>
+            <span class="rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 font-mono text-[11px] text-rose-300 font-medium">
+              Cart Drop-Off ↓
             </span>
           </div>
 
           <!-- Hero Number -->
-          <div class="font-heading text-6xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-4">
-            68<span class="text-rose-400">%</span>
+          <div class="flex items-baseline gap-2 mb-2">
+            <div class="font-heading text-5xl sm:text-6xl font-bold text-white tracking-tight leading-none">
+              68<span class="text-rose-400">%</span>
+            </div>
+            <span class="text-xs font-mono text-rose-400/90 font-medium">
+              drop-off rate
+            </span>
           </div>
 
-          <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white leading-tight mb-3">
+          <!-- Slim Progress Bar -->
+          <div class="h-1.5 w-full rounded-full bg-rose-950/60 overflow-hidden my-4">
+            <div class="h-full w-[68%] rounded-full bg-gradient-to-r from-rose-600 to-rose-400"></div>
+          </div>
+
+          <h3 class="font-heading text-lg sm:text-xl font-bold text-white leading-snug mb-2">
             of Instagram DM shoppers drop off before completing website checkout.
           </h3>
 
-          <p class="text-sm sm:text-base text-rose-200/80 font-normal leading-relaxed max-w-lg">
-            Sending interested DM buyers to a slow 5-step web cart destroys impulse buying. VoluChat qualifies their size and closes UPI checkout directly inside the conversation.
+          <p class="text-xs sm:text-sm text-rose-200/75 font-normal leading-relaxed">
+            Sending interested DM buyers to a slow 5-step web cart destroys impulse buying. VoluChat qualifies their size and closes 1-click UPI checkout directly inside WhatsApp.
           </p>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-rose-500/20 flex items-center justify-between text-xs font-mono text-rose-300/80">
-          <span>Cause: External Website Friction</span>
-          <span class="font-bold text-rose-400">Solution: In-Chat UPI</span>
+        <div class="mt-6 pt-4 border-t border-rose-500/15 flex items-center justify-between text-xs font-mono text-rose-300/80">
+          <span>External Cart Friction</span>
+          <span class="font-bold text-rose-400">Fix: In-Chat UPI</span>
         </div>
       </article>
 
-      <!-- 2 Stacked Supporting Evidence Cards -->
-      <div class="grid gap-6 flex-col justify-between">
+      <!-- 2 Stacked Supporting Evidence Cards (Neutral / Muted Slate Tones) -->
+      <div class="grid gap-5 flex-col justify-between">
         {
           supportingPoints.map((point, idx) => (
-            <article class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-2xl border border-white/[0.10] bg-[#0a0a0c] p-6 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all`}>
+            <article class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-2xl border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 flex flex-col justify-between hover:border-white/15 transition-all`}>
               <div>
-                <div class="flex items-center justify-between border-b border-white/[0.06] pb-3 mb-4">
-                  <span class="font-mono text-xs text-slate-500 font-bold">{point.code}</span>
-                  <span class="font-mono text-xs text-slate-400 uppercase">{point.statLabel}</span>
+                <div class="flex items-center justify-between border-b border-white/[0.06] pb-2.5 mb-3">
+                  <span class="font-mono text-[11px] text-slate-500 font-bold">{point.code}</span>
+                  <span class="font-mono text-[10px] text-slate-400 uppercase tracking-wider">{point.statLabel}</span>
                 </div>
-                <div class="font-heading text-4xl font-bold text-white tracking-tight mb-2">
-                  {point.stat}
+
+                <div class="flex items-baseline gap-2 mb-2">
+                  <div class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                    {point.stat}
+                  </div>
+                  <span class="text-[11px] font-mono text-slate-400">leak rate</span>
                 </div>
-                <h3 class="font-heading text-lg font-semibold text-white">
+
+                <!-- Slim Progress Bar -->
+                <div class="h-1 w-full rounded-full bg-white/[0.06] overflow-hidden mb-3">
+                  <div class="h-full rounded-full bg-slate-500/60" style={`width: ${point.pct}%;`}></div>
+                </div>
+
+                <h3 class="font-heading text-sm sm:text-base font-semibold text-white">
                   {point.title}
                 </h3>
-                <p class="mt-2 text-xs text-[rgba(252,253,255,0.7)] font-normal leading-relaxed">
+                <p class="mt-1.5 text-xs text-[rgba(252,253,255,0.65)] font-normal leading-relaxed">
                   {point.description}
                 </p>
               </div>
