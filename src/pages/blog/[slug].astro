@@ -73,7 +73,7 @@ const blogKeywords = blog
 const blogCanonicalUrl = blog
   ? new URL(blog.canonicalUrl || blog.href, siteOrigin).toString()
   : undefined;
-const blogImageUrl = blog?.featuredImageUrl || "/og-image.webp";
+const blogImageUrl = blog?.featuredImageUrl || (slug ? `/open-graph/blog/${slug}.png` : "/open-graph/index.png");
 const absoluteBlogImageUrl = new URL(blogImageUrl, siteOrigin).toString();
 const structuredData = blog
   ? [

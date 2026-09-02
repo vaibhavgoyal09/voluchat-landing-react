@@ -21,7 +21,7 @@ const {
   title,
   description = "VoluChat automates WhatsApp sales for D2C e-commerce brands — upsells, cross-sells, cart recovery, and in-chat UPI checkout. 24/7.",
   keywords,
-  image = "/og-image.webp",
+  image,
   type = "website",
   robots = "index, follow",
   canonical,
@@ -37,7 +37,11 @@ const canonicalUrl = new URL(
   canonical ?? Astro.url.pathname,
   siteOrigin,
 ).toString();
-const imageUrl = new URL(image, siteOrigin).toString();
+
+const cleanPath = Astro.url.pathname.replace(/^\/+|\/+$/g, "");
+const defaultOgImage = cleanPath ? `/open-graph/${cleanPath}.png` : "/open-graph/index.png";
+const ogImagePath = image || defaultOgImage;
+const imageUrl = new URL(ogImagePath, siteOrigin).toString();
 const articleTags = Array.isArray(tags) ? tags.filter(Boolean) : [];
 
 const globalSchemas = [
