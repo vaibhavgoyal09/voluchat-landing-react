@@ -1,0 +1,324 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
+
+const seoTitle = "Claim 30-Day Free Trial | VoluChat AI WhatsApp Sales Stylist";
+const seoDescription =
+  "Get 30 days absolutely free with 100% white-glove setup. Full access to VoluChat's autonomous AI sales stylist, sizing intelligence, and in-chat UPI checkout.";
+const seoKeywords =
+  "VoluChat free trial, fashion WhatsApp sales bot, boutique Instagram DM sales closer, clothing cart recovery, done-for-you WhatsApp setup";
+const siteUrl = "https://www.voluchat.com";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/free-trial`,
+};
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/free-trial", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema()]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div class="trial-hero-text">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Special Offer: First 10 Stores Only
+            </div>
+            <h1
+              class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading"
+            >
+              30 Days Absolutely Free.
+              <span class="block text-emerald-400">100% Done-For-You Setup.</span>
+            </h1>
+            <p class="section-copy mt-6 max-w-xl">
+              Get all VoluChat AI features unlocked for 30 days. Our founder personally builds, configures, and calibrates your WhatsApp sales stylist at zero cost.
+            </p>
+
+            <div class="mt-8 space-y-6">
+              <div class="solid-card p-6">
+                <p class="section-eyebrow">What you get with your 30-Day Free Trial</p>
+                <div class="mt-4 grid gap-3">
+                  {
+                    [
+                      "100% Free Setup: Meta API & WhatsApp Cloud API done for you",
+                      "Full Live Shopify Catalog & Size Chart Syncing",
+                      "Automated Instagram Comment-to-DM Sales Engine",
+                      "Native In-DM WhatsApp UPI & 1-Click Draft Order Checkout",
+                      "All Premium AI Stylist & Cart Recovery Features Unlocked",
+                      "Direct WhatsApp Support with Founder (Vaibhav Goyal)",
+                    ].map((item) => (
+                      <div class="flex items-center gap-3">
+                        <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#101012] border border-white/[0.14] font-mono text-[10px] font-bold text-emerald-300">
+                          ✓
+                        </span>
+                        <span class="text-sm font-normal leading-snug text-[rgba(252,253,255,0.86)]">
+                          {item}
+                        </span>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+
+              <!-- Direct Communication Badges -->
+              <div class="grid gap-3 sm:grid-cols-2">
+                <a
+                  href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20claim%20the%2030-Day%20Free%20Trial%20with%20free%20setup%20for%20my%20store."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-3.5 rounded-xl border border-emerald-500/30 bg-[#0a0a0c] p-4 transition-all hover:border-emerald-400/60 hover:bg-emerald-950/20 group"
+                >
+                  <div
+                    class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-emerald-500/30 bg-emerald-950/40 text-emerald-400 group-hover:scale-105 transition-transform"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.07-2.121-.52-1.825-.753-3.009-2.607-3.1-2.727-.09-.12- .737-.98-.737-1.87 0-.89.465-1.327.63-1.507.166-.18.361-.225.482-.225.12 0 .241.001.346.006.11.005.258-.042.404.308.149.36.51 1.243.555 1.334.045.09.075.195.015.315-.06.12-.09.195-.18.3-.09.105-.19.234-.271.315-.09.09-.184.187-.079.367.105.18.468.772.998 1.246.684.61 1.26.799 1.44.89.18.09.286.075.391-.045.106-.12.451-.525.572-.705.12-.18.241-.15.405-.09.166.06 1.052.496 1.233.586.18.09.301.135.346.21.045.075.045.436-.099.841z"/>
+                      <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.408A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.637 0-3.15-.472-4.43-1.286l-.317-.199-2.952.835.83-2.87-.217-.328A8.17 8.17 0 013.8 12c0-4.52 3.68-8.2 8.2-8.2 4.52 0 8.2 3.68 8.2 8.2 0 4.52-3.68 8.2-8.2 8.2z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-[10px] font-mono font-semibold uppercase tracking-wider text-emerald-400">Direct WhatsApp</p>
+                    <p class="text-sm font-semibold text-[#fcfdff] group-hover:text-emerald-300 transition-colors">+91 88475 68693</p>
+                  </div>
+                </a>
+
+                <a
+                  href="mailto:support@voluchat.com"
+                  class="flex items-center gap-3.5 rounded-xl border border-white/[0.08] bg-[#0a0a0c] p-4 transition-all hover:border-white/[0.2] hover:bg-[#101012] group"
+                >
+                  <div
+                    class="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-white/[0.14] bg-[#101012] text-slate-300 group-hover:text-white transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      ></path><polyline points="22,6 12,13 2,6"></polyline></svg
+                    >
+                  </div>
+                  <div>
+                    <p class="text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Founder Desk</p>
+                    <p class="text-sm font-semibold text-[#fcfdff] group-hover:text-emerald-300 transition-colors">support@voluchat.com</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="trial-form-card solid-card-elevated p-6 sm:p-8 lg:p-10">
+            <form id="trial-form" class="space-y-5">
+              <div>
+                <div class="inline-block bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[10px] font-mono px-2.5 py-0.5 rounded-full font-semibold uppercase tracking-wider mb-2">
+                  Zero Risk &bull; No Credit Card Required
+                </div>
+                <h2 class="text-2xl font-heading font-semibold text-[#fcfdff]">
+                  Claim Your 30-Day Free Trial
+                </h2>
+                <p class="mt-1.5 text-sm font-normal text-[rgba(252,253,255,0.7)]">
+                  Takes 60 seconds. We begin your store setup within 12 hours.
+                </p>
+              </div>
+
+              <div>
+                <label
+                  for="name"
+                  class="mb-2 block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400"
+                  >Your Name / Brand Role</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="e.g. Vaibhav (Founder)"
+                  class="w-full rounded-lg border border-white/[0.14] bg-[#06060a] px-4 py-3 text-sm font-normal text-[#fcfdff] placeholder:text-slate-600 transition-all focus:border-white focus:bg-[#0a0a0c] focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="mb-2 block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400"
+                  >WhatsApp No. / Work Email</label
+                >
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="+91 98765 43210 or you@brand.in"
+                  class="w-full rounded-lg border border-white/[0.14] bg-[#06060a] px-4 py-3 text-sm font-normal text-[#fcfdff] placeholder:text-slate-600 transition-all focus:border-white focus:bg-[#0a0a0c] focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="shopify_url"
+                  class="mb-2 block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400"
+                  >Instagram Handle or Website</label
+                >
+                <input
+                  type="text"
+                  id="shopify_url"
+                  name="shopify_url"
+                  required
+                  placeholder="@yourboutique or yourstore.com"
+                  class="w-full rounded-lg border border-white/[0.14] bg-[#06060a] px-4 py-3 text-sm font-normal text-[#fcfdff] placeholder:text-slate-600 transition-all focus:border-white focus:bg-[#0a0a0c] focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="priority"
+                  class="mb-2 block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400"
+                  >Estimated Daily Inquiries / DMs</label
+                >
+                <select
+                  id="priority"
+                  name="priority"
+                  class="w-full rounded-lg border border-white/[0.14] bg-[#06060a] px-4 py-3 text-sm font-normal text-[#fcfdff] transition-all focus:border-white focus:bg-[#0a0a0c] focus:outline-none"
+                >
+                  <option value="10-50">10 – 50 inquiries / day</option>
+                  <option value="50-200">50 – 200 inquiries / day</option>
+                  <option value="200+">200+ inquiries / day (High Volume)</option>
+                  <option value="starting">Just launching Ads & Reels</option>
+                </select>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="btn-primary w-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-55"
+              >
+                <span id="btn-text">Start 30-Day Free Trial &rarr;</span>
+              </button>
+
+              <div
+                id="form-message"
+                class="hidden rounded-lg p-3 text-center text-xs font-semibold"
+              >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ />
+  </main>
+
+  <Footer />
+
+  <script>
+    import { gsap } from "gsap";
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+  
+      const tl = gsap.timeline();
+      tl.fromTo(".trial-hero-text",
+        { opacity: 0, x: -30 },
+        { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
+      ).fromTo(".trial-form-card",
+        { opacity: 0, x: 40, rotateY: -10 },
+        { opacity: 1, x: 0, rotateY: 0, duration: 1, ease: "power3.out" },
+        "-=0.6"
+      );
+    });
+  </script>
+
+  <script
+    is:inline
+    define:vars={{ webhookUrl: import.meta.env.PUBLIC_N8N_DEMO_WEBHOOK_URL }}
+  >
+    const form = document.getElementById("trial-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const btnText = document.getElementById("btn-text");
+    const formMessage = document.getElementById("form-message");
+
+    if (form) {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        submitBtn.disabled = true;
+        const originalText = btnText.innerText;
+        btnText.innerText = "Claiming offer...";
+        formMessage.classList.add("hidden");
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          if (!webhookUrl) {
+            throw new Error("Missing contact webhook URL");
+          }
+
+          const response = await fetch(webhookUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          if (!response.ok) {
+            throw new Error("Failed to send request");
+          }
+
+          formMessage.innerText =
+            "🎉 Thank you! We received your store details and will reach out on WhatsApp to begin your free 30-day setup.";
+          formMessage.className =
+            "rounded-2xl border border-teal-300/20 bg-teal-300/10 p-4 text-center text-base font-medium text-teal-100 mt-6";
+          formMessage.classList.remove("hidden");
+          form.reset();
+          btnText.innerText = "Free Trial Claimed";
+        } catch (error) {
+          formMessage.innerText =
+            "Something went wrong. Please try again or message us directly on WhatsApp.";
+          formMessage.className =
+            "rounded-2xl border border-rose-300/20 bg-rose-400/10 p-4 text-center text-base font-medium text-rose-100 mt-6";
+          formMessage.classList.remove("hidden");
+          submitBtn.disabled = false;
+          btnText.innerText = originalText;
+        }
+      });
+    }
+  </script>
+</Layout>

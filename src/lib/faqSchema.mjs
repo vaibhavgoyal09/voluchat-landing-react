@@ -20,9 +20,9 @@ const faqs = [
       "Yes. Your team has full oversight. If a customer needs custom alterations, bespoke bridal ordering, or VIP assistance, any rep can jump in and take over the WhatsApp chat seamlessly.",
   },
   {
-    question: "What is included in the 10-Store Pilot Program?",
+    question: "What is included in the 30-Day Free Trial & Free Setup offer?",
     answer:
-      "The VoluChat engineering team handles 100% of the technical heavy lifting: Meta API authorization, WhatsApp Business API setup, Shopify catalog syncing, and brand voice guardrail testing.",
+      "For the first 10 boutique stores, you get a full 30-day free trial with all VoluChat AI sales features unlocked and 100% free white-glove setup. Our founder and engineering team configure your Meta Cloud API, WhatsApp Business API, Shopify product catalog sync, size charts, and UPI checkout links with zero technical work needed from your side.",
   },
   {
     question: "How do payments work inside WhatsApp?",

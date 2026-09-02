@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "About VoluChat — Autonomous WhatsApp Commerce";
+const seoTitle = "About VoluChat — Built for Fashion & Clothing Boutiques";
 const seoDescription =
-  "Learn why we're building VoluChat — zero-config autonomous AI sales agents on WhatsApp and Instagram for fashion and clothing boutiques.";
+  "Why we built VoluChat — autonomous WhatsApp and Instagram sales agent that closes orders, recommends sizes, and collects UPI payments 24/7.";
 const seoKeywords =
-  "About VoluChat, QubitNine Technologies, WhatsApp sales bot story, ecommerce sales automation, boutique WhatsApp DM agent, Vaibhav Goyal";
+  "About VoluChat, fashion boutique WhatsApp sales bot, clothing DM automation, Instagram reel comment sales, Vaibhav Goyal";
 const siteUrl = "https://www.voluchat.com";
 
 const structuredData = {
@@ -29,7 +29,7 @@ const structuredData = {
       name: "Vaibhav Goyal",
       jobTitle: "Founder & CEO",
       description:
-        "Former e-commerce Sales Manager turned founder, building zero-config autonomous sales intelligence for online merchants.",
+        "Former e-commerce Sales Manager turned founder, building automated WhatsApp sales agents for fashion boutique owners.",
     },
     address: {
       "@type": "PostalAddress",
@@ -48,73 +48,73 @@ const structuredData = {
 
 const frontlineProblems = [
   {
-    icon: "🔍",
+    icon: "📸",
     leak: "01",
-    title: "The Camera Roll Photo Hunt",
-    desc: "Sales reps wasted 10–15 minutes scrolling through thousands of photos in phone albums just to find specific product angles, fabric swatches, or size charts requested by a shopper.",
+    title: "Scrolling Phone Gallery for Photos",
+    desc: "When a customer asks for real fabric photos or size charts, your team spends 10 minutes scrolling through thousands of photos on their phone while the buyer loses interest.",
   },
   {
-    icon: "⏳",
+    icon: "💬",
     leak: "02",
-    title: "The Window-Shopper Drain",
-    desc: "Reps spent 80% of their day fielding repetitive questions from casual tire-kickers, while high-intent, ready-to-pay buyers waited in line and eventually bought elsewhere.",
+    title: "Overwhelmed by 'Price Please' Comments",
+    desc: "A Reel goes viral, but 80% of comments are casual inquiries. Real buyers asking about sizes or ready to pay get buried in the backlog.",
   },
   {
     icon: "🌙",
     leak: "03",
-    title: "The Midnight Revenue Bleed",
-    desc: "Peak social shopping happens between 9 PM and 2 AM. When sales reps went to sleep, hot inbound DM leads went stone cold by morning.",
+    title: "Losing Hot Midnight Buyers",
+    desc: "Most fashion shopping happens in bed between 10 PM and 1 AM. When your staff goes to sleep, high-intent buyers message other boutiques instead.",
   },
   {
-    icon: "🚫",
+    icon: "❌",
     leak: "04",
-    title: "Selling Out-of-Stock Variants",
-    desc: "Without live inventory synchronization, reps frequently accepted customer payments for sizes or colors that were already sold out, triggering costly refunds and frustrated buyers.",
+    title: "Selling Sold-Out Sizes",
+    desc: "Without live stock tracking, reps accept customer UPI payments for sizes or colors that are already out of stock, causing angry refunds.",
   },
   {
-    icon: "📋",
+    icon: "📝",
     leak: "05",
-    title: "Manual Order Chaos",
-    desc: "Copy-pasting shipping addresses from chat threads, verifying screenshot receipts, and manually creating invoices led to frequent fulfillment mistakes.",
+    title: "Manual Address & Payment Chaos",
+    desc: "Manually typing bank details, checking screenshot receipts, and copy-pasting addresses from chat threads leads to costly dispatch errors.",
   },
   {
-    icon: "📊",
+    icon: "📉",
     leak: "06",
-    title: "Zero Sales Accountability",
-    desc: "Merchants had zero visibility into why deals were lost, which objections killed conversions, or how much revenue was slipping through unanswered chats.",
+    title: "Zero Clarity on Lost Sales",
+    desc: "You spend lakhs on Instagram Ads and creator shoots, but have no clear idea why half of your DM conversations never turn into orders.",
   },
 ];
 
 const operatingPrinciples = [
   {
     number: "01",
-    title: "Zero-Config Simplicity",
-    desc: "Running an online store is already hard enough. Merchants shouldn't have to become prompt engineers or flowchart architects. We provide full setup white-glove, out of the box.",
+    title: "100% Done-For-You Setup",
+    desc: "Running a clothing brand is busy enough. You shouldn't have to build chatbots or complex flowchart diagrams. We handle your entire setup for you.",
   },
   {
     number: "02",
     title: "10x Value Standard",
-    desc: "We don't charge for software that sits idle or delivers vanity metrics. If VoluChat doesn't generate at least 10x measurable ROI for our partner stores, we have failed.",
+    desc: "We only win when you win. If VoluChat doesn't visibly increase your store's WhatsApp sales and save your team hours every day, we haven't earned your business.",
   },
   {
     number: "03",
-    title: "Zero Hallucination Guardrails",
-    desc: "Conversational speed means nothing if the bot promises discounts that erode margins or confirms items that are out of stock. Deterministic guardrails protect your brand.",
+    title: "Zero Guesswork & Margin Safety",
+    desc: "Speed is useless if a bot offers unauthorized discounts or confirms items you don't have. Our strict guardrails protect your brand reputation and profits.",
   },
   {
     number: "04",
-    title: "Instant Human Escalation",
-    desc: "AI should handle 80% of repetitive qualification and closing, but step aside seamlessly when bespoke requests or complex human judgment are needed.",
+    title: "Instant Human Takeover",
+    desc: "AI handles repetitive sizing queries and generates UPI checkout links, but steps aside instantly whenever custom bridal orders or human touch is needed.",
   },
 ];
 
 const companyFacts = [
   { label: "Legal Entity", value: "QubitNine Technologies Pvt. Ltd." },
   { label: "Headquarters", value: "Noida, Uttar Pradesh, India" },
-  { label: "Leadership", value: "Vaibhav Goyal (Founder & CEO)" },
-  { label: "Operating Stage", value: "Private 10-Store Founder Pilot" },
-  { label: "Direct Inquiries", value: "founders@voluchat.com" },
-  { label: "Core Platform", value: "Meta Cloud API & WhatsApp Engine" },
+  { label: "Founder", value: "Vaibhav Goyal (Founder & CEO)" },
+  { label: "Special Offer", value: "30-Day Free Trial (First 10 Stores)" },
+  { label: "Direct Founder Line", value: "+91 88475 68693 (WhatsApp)" },
+  { label: "Email Support", value: "support@voluchat.com" },
 ];
 ---
 
@@ -138,26 +138,26 @@ const companyFacts = [
           <div class="abt-hero-text">
             <div class="chip mb-6">
               <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mr-1.5"></span>
-              The VoluChat Story
+              Why We Built VoluChat
             </div>
             <h1
               class="text-4xl font-semibold leading-[1.08] text-[#fcfdff] sm:text-6xl font-heading"
             >
-              Running an online store was never meant to be a headache.
+              Selling on Instagram &amp; WhatsApp was never meant to be this exhausting.
             </h1>
             <p class="section-copy mt-6 max-w-xl text-lg leading-relaxed">
-              VoluChat was born directly on the frontline of e-commerce sales. We saw brilliant merchants spend lakhs on marketing, only to drown in chaotic WhatsApp chats, lost night-time orders, and out-of-stock mishaps.
+              We built VoluChat after experiencing the real chaos of online boutique sales: running viral Reels, only to lose orders to slow replies, midnight DMs, and manual payment tracking.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/contact" class="btn-primary">Apply for Pilot Cohort &rarr;</a>
-              <a href="#origin" class="btn-secondary">Read Our Genesis</a>
+              <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+              <a href="#origin" class="btn-secondary">Read Our Story</a>
             </div>
           </div>
 
           <div class="abt-hero-image solid-card p-2">
             <img
               src="/about_hero.webp"
-              alt="Autonomous commerce workspace by VoluChat"
+              alt="VoluChat WhatsApp automation for fashion boutiques"
               class="h-full w-full rounded-lg object-cover"
               width="1024"
               height="1024"
@@ -173,12 +173,12 @@ const companyFacts = [
     <section id="origin" class="abt-origin-section relative overflow-hidden py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
       <div class="page-shell">
         <div class="max-w-3xl">
-          <p class="section-eyebrow">The Genesis</p>
+          <p class="section-eyebrow">The Real Frontline Story</p>
           <h2 class="section-title mt-3 text-[#fcfdff] font-heading text-3xl sm:text-5xl">
-            Built from real frontline frustration, not a Silicon Valley whiteboard.
+            Built from real store frustration, not theoretical tech ideas.
           </h2>
           <p class="mt-5 text-base sm:text-lg font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
-            While working as a <strong>Sales Manager</strong> for an online commerce store, our founder lived through the daily chaos of social selling. Social media brought massive organic and paid traffic, but closing orders manually over WhatsApp DMs was fundamentally broken.
+            While working as a <strong>Sales Manager</strong> for an online commerce store, our founder saw the daily reality of DM selling up close. Instagram brought massive organic views and ad traffic, but closing orders manually over WhatsApp was slow, chaotic, and leaked revenue every single night.
           </p>
         </div>
 
@@ -206,13 +206,13 @@ const companyFacts = [
 
         <div class="mt-10 solid-card-elevated p-8 sm:p-10">
           <h3 class="text-xl sm:text-2xl font-heading font-semibold text-[#fcfdff]">
-            The Bot Dilemma: Why Flowcharts Failed
+            Why Traditional Chatbots Don't Work for Fashion
           </h3>
           <p class="mt-4 text-sm sm:text-base font-normal text-[rgba(252,253,255,0.7)] leading-relaxed">
-            When trying existing automation tools (ManyChat, Wati, flowchart bots), we ran into another wall: they required weeks of complex setup, logic diagrams, and ongoing maintenance. Non-technical store owners were forced to become prompt engineers and software architects just to send a product link.
+            Existing tools (Wati, ManyChat, flowchart bots) give customers rigid "Press 1 for Price, Press 2 for Sizing" buttons. Fashion shoppers hate that. Clothing buyers need real answers: <em>"Will this fit a 38 bust?", "Is the fabric pure cotton?", "Can I get this delivered by Friday?"</em>.
           </p>
           <p class="mt-3 text-sm sm:text-base font-normal text-[rgba(252,253,255,0.86)] leading-relaxed">
-            <strong>VoluChat exists to change that paradigm:</strong> deliver an autonomous, zero-config sales agent that works out of the box with live catalog synchronization, sizing qualification, and 1-click UPI checkout.
+            <strong>VoluChat changes the game:</strong> an intelligent AI sales stylist that talks like your best sales rep, checks live inventory, recommends the right size, and generates 1-click UPI payment links directly inside WhatsApp.
           </p>
         </div>
       </div>
@@ -222,12 +222,12 @@ const companyFacts = [
     <section class="abt-principles-section relative overflow-hidden py-20 sm:py-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="section-eyebrow">Our Standards</p>
+          <p class="section-eyebrow">Our Core Standards</p>
           <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
-            How we operate and build
+            How we support every partner store
           </h2>
           <p class="section-copy mx-auto mt-4 max-w-2xl">
-            Principles designed to eliminate merchant risk and build sustainable sales growth.
+            Built to take the stress off boutique owners and deliver real, measurable sales.
           </p>
         </div>
 
@@ -260,7 +260,7 @@ const companyFacts = [
           <div class="abt-vision-image solid-card p-2">
             <img
               src="/mission_collaboration.webp"
-              alt="VoluChat e-commerce agent workflow"
+              alt="VoluChat e-commerce sales automation"
               class="h-full w-full rounded-lg object-cover"
               width="1024"
               height="1024"
@@ -270,25 +270,25 @@ const companyFacts = [
           </div>
 
           <div class="abt-vision-text">
-            <p class="section-eyebrow">The Horizon</p>
+            <p class="section-eyebrow">Our Vision</p>
             <h2 class="mt-3 text-3xl font-heading font-semibold text-[#fcfdff] sm:text-5xl">
-              Our vision goes far beyond a WhatsApp chatbot.
+              Giving every boutique a 24/7 top-performing sales team.
             </h2>
             <p class="mt-5 text-[rgba(252,253,255,0.7)] leading-relaxed text-base font-normal">
-              A chat bot is just an interface. Our long-term mission is to build the <strong>autonomous operating layer for modern e-commerce</strong>.
+              Big e-commerce brands have massive support centers and technical teams. Independent boutiques and growing fashion labels shouldn't be held back because they can't afford 24/7 staff.
             </p>
             <p class="mt-3 text-[rgba(252,253,255,0.7)] leading-relaxed text-base font-normal">
-              From the moment an Instagram shopper comments on a video, to sizing guidance, intelligent inventory allocation, fraud-protected UPI payment links, and post-purchase support — VoluChat handles the heavy lifting so boutique founders can focus purely on product and brand storytelling.
+              From the instant a shopper comments on your Instagram Reel, to sizing help, live stock check, 1-click UPI payments, and order tracking — VoluChat automates the entire sales journey so you can focus on creating great collections.
             </p>
 
             <div class="mt-8 grid grid-cols-2 gap-4 border-t border-white/[0.08] pt-6">
               <div>
-                <p class="text-2xl font-bold font-heading text-[#fcfdff]">Zero</p>
-                <p class="text-xs text-slate-400 mt-1">Flowchart builder config required</p>
+                <p class="text-2xl font-bold font-heading text-[#fcfdff]">Zero Tech</p>
+                <p class="text-xs text-slate-400 mt-1">We set up everything for you</p>
               </div>
               <div>
-                <p class="text-2xl font-bold font-heading text-emerald-400">10x</p>
-                <p class="text-xs text-slate-400 mt-1">Founder ROI value standard</p>
+                <p class="text-2xl font-bold font-heading text-emerald-400">30 Days</p>
+                <p class="text-xs text-slate-400 mt-1">Free trial with all features</p>
               </div>
             </div>
           </div>
@@ -342,7 +342,7 @@ const companyFacts = [
             "I will deliver 10x the value of what we charge. Anything less is unacceptable."
           </blockquote>
           <p class="mt-6 text-[rgba(252,253,255,0.7)] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-normal">
-            For every brand joining our 10-Store Pilot Cohort, my team and I personally oversee catalog ingestion, Instagram hook tuning, and live sales qualification. No outsourced support, no junior account managers.
+            For every brand in our first 10 stores, we provide a <strong>30-day free trial</strong> while my team and I personally oversee catalog ingestion, Instagram hook tuning, and live sales qualification. No outsourced support, no junior account managers.
           </p>
           <div class="mt-8 flex flex-col items-center justify-center gap-2">
             <div class="relative mb-2">
@@ -359,8 +359,27 @@ const companyFacts = [
             </div>
             <p class="text-base font-semibold text-white">Vaibhav Goyal</p>
             <p class="text-xs font-mono text-emerald-300">Founder & CEO &bull; VoluChat / QubitNine Technologies</p>
-            <div class="mt-4">
-              <a href="/contact" class="btn-primary">Apply to Join the 10-Store Cohort &rarr;</a>
+            <div class="mt-5 flex flex-col sm:flex-row items-center gap-3">
+              <a href="/free-trial" class="btn-primary">Claim 30-Day Free Trial &rarr;</a>
+              <a
+                href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20claim%20the%2030-Day%20Free%20Trial%20for%20my%20store."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary inline-flex items-center gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="text-emerald-400"
+                  aria-hidden="true"
+                >
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.408A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.637 0-3.15-.472-4.43-1.286l-.317-.199-2.952.835.83-2.87-.217-.328A8.17 8.17 0 013.8 12c0-4.52 3.68-8.2 8.2-8.2 4.52 0 8.2 3.68 8.2 8.2 0 4.52-3.68 8.2-8.2 8.2z" clip-rule="evenodd"/>
+                </svg>
+                <span>Chat on WhatsApp</span>
+              </a>
             </div>
           </div>
         </div>
