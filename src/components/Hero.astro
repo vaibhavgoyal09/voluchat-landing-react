@@ -40,45 +40,35 @@
         </h1>
 
         <p
-          class="hero-text mx-auto mt-6 max-w-xl text-[1.05rem] font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-lg lg:mx-0"
+          class="hero-text mx-auto mt-6 max-w-xl text-lg font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-xl lg:mx-0"
         >
-          When shoppers comment <span class="text-white font-medium">"Price?"</span> or <span class="text-white font-medium">"Size L available?"</span> at 11 PM, VoluChat auto-replies in 2 seconds, qualifies their fit on WhatsApp, and collects instant UPI payment — before they scroll to another brand.
-        </p>
-
-        <p class="mx-auto mt-4 max-w-lg text-sm font-medium leading-relaxed text-slate-400 lg:mx-0">
-          <span class="text-emerald-400 font-semibold">⚡ Zero flowchart buttons.</span> No sending them to a slow website link. Just 90-second conversational checkout directly inside chat.
+          Turn Instagram comments and DMs into WhatsApp conversations — and conversations into orders, automatically.
         </p>
 
         <div
-          class="hero-ctas mt-9 flex flex-col items-center gap-3.5 sm:flex-row sm:justify-center lg:justify-start"
+          class="hero-ctas mt-8 flex flex-col items-center gap-3.5 sm:flex-row sm:justify-center lg:justify-start"
         >
           <a href="/contact" class="btn-primary">
             Apply for 1 of 10 Fashion Pilot Spots &rarr;
           </a>
-          <a href="#revenue-loop" class="btn-secondary">
-            See the 90-Second Sales Loop
+          <a href="#how-it-works-flow" class="btn-secondary">
+            See How It Works
           </a>
         </div>
 
-        <!-- Trust Features Strip -->
-        <div class="mt-9 flex flex-wrap items-center justify-center gap-y-2 gap-x-7 text-[13px] font-medium text-slate-400 lg:justify-start">
-          <div class="flex items-center gap-1.5">
-            <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-            </svg>
-            <span>Zero flowcharts / rigid buttons</span>
+        <!-- Trust Metrics Bar -->
+        <div class="mt-9 grid grid-cols-3 gap-3 border-t border-white/[0.08] pt-6 text-left max-w-lg mx-auto lg:mx-0">
+          <div>
+            <div class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">2.0<span class="text-emerald-400">s</span></div>
+            <p class="text-[11px] font-normal text-slate-400 mt-0.5">Comment-to-DM Reply</p>
           </div>
-          <div class="flex items-center gap-1.5">
-            <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-            </svg>
-            <span>Native In-DM UPI / Draft Orders</span>
+          <div>
+            <div class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">&lt;90<span class="text-emerald-400">s</span></div>
+            <p class="text-[11px] font-normal text-slate-400 mt-0.5">WhatsApp Checkout</p>
           </div>
-          <div class="flex items-center gap-1.5">
-            <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-            </svg>
-            <span>100% Done-For-You Setup</span>
+          <div>
+            <div class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">10<span class="text-emerald-400">x</span></div>
+            <p class="text-[11px] font-normal text-slate-400 mt-0.5">Pilot ROI Standard</p>
           </div>
         </div>
       </div>
@@ -108,20 +98,56 @@
   </div>
 </section>
 
-<script>
-  import { gsap } from "gsap";
+<style>
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  @keyframes heroMockupPop {
+    from {
+      opacity: 0;
+      transform: translateY(22px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 
-    if (prefersReduced) return;
+  .hero-title {
+    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 
-    const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  .hero-text {
+    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    opacity: 0;
+  }
 
-    heroTl
-      .from(".hero-title", { opacity: 0, y: 24, duration: 0.6, immediateRender: true })
-      .from(".hero-text", { opacity: 0, y: 16, duration: 0.5, immediateRender: true }, "-=0.35")
-      .from(".hero-ctas", { opacity: 0, y: 14, duration: 0.4, immediateRender: true }, "-=0.3")
-      .from(".hero-mockup", { opacity: 0, scale: 0.95, y: 20, duration: 0.7, ease: "power2.out", immediateRender: true }, "-=0.4");
-  });
-</script>
+  .hero-ctas {
+    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    opacity: 0;
+  }
+
+  .hero-mockup {
+    animation: heroMockupPop 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-title,
+    .hero-text,
+    .hero-ctas,
+    .hero-mockup {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>

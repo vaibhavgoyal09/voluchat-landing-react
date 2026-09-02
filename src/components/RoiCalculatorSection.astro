@@ -1,0 +1,176 @@
+---
+// Interactive Boutique Transformation & ROI Calculator Component
+---
+
+<section id="roi-calculator" class="relative overflow-hidden py-20 sm:py-24 lg:py-28 bg-[#06060a] border-y border-white/[0.08]">
+  <!-- Background atmosphere -->
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.08),transparent_50%)]"></div>
+  <div class="sect-grid opacity-20"></div>
+
+  <div class="page-shell relative z-10">
+    <!-- Header -->
+    <div class="mb-12 max-w-2xl">
+      <div class="chip mb-4">
+        <span class="mini-label text-emerald-400">The Boutique ROI Standard</span>
+      </div>
+      <h2 class="section-title text-[#fcfdff] font-heading">
+        Calculate your <span class="text-emerald-400">recovered DM revenue</span>.
+      </h2>
+      <p class="section-copy mt-3">
+        See the real revenue impact of closing night-time comments and sizing questions instantly inside WhatsApp.
+      </p>
+    </div>
+
+    <!-- Main 2-Column Calculator Deck -->
+    <div class="reveal-on-scroll mx-auto max-w-5xl grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-stretch">
+      <!-- Left: Interactive Sliders & Inputs -->
+      <div class="rounded-xl border border-white/[0.12] bg-[#0a0a0c] p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-6">
+            <h3 class="font-heading text-lg font-semibold text-white">Your Store Numbers</h3>
+            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md">Live Projection</span>
+          </div>
+
+          <!-- Slider 1: Monthly Inquiries -->
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between items-center text-sm">
+              <label for="calc-inquiries" class="text-slate-300 font-medium">Reel Comments &amp; DMs / month</label>
+              <span id="label-inquiries" class="font-mono font-bold text-emerald-400 text-base">1,500</span>
+            </div>
+            <input
+              type="range"
+              id="calc-inquiries"
+              min="300"
+              max="10000"
+              step="100"
+              value="1500"
+              class="w-full accent-emerald-400 h-1.5 bg-[#1a1a22] rounded-lg cursor-pointer"
+            />
+            <div class="flex justify-between text-[10px] font-mono text-slate-500">
+              <span>300</span>
+              <span>5,000</span>
+              <span>10,000+</span>
+            </div>
+          </div>
+
+          <!-- Slider 2: Average Order Value (AOV) -->
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between items-center text-sm">
+              <label for="calc-aov" class="text-slate-300 font-medium">Average Order Value (AOV)</label>
+              <span id="label-aov" class="font-mono font-bold text-emerald-400 text-base">₹2,800</span>
+            </div>
+            <input
+              type="range"
+              id="calc-aov"
+              min="800"
+              max="15000"
+              step="100"
+              value="2800"
+              class="w-full accent-emerald-400 h-1.5 bg-[#1a1a22] rounded-lg cursor-pointer"
+            />
+            <div class="flex justify-between text-[10px] font-mono text-slate-500">
+              <span>₹800</span>
+              <span>₹7,500</span>
+              <span>₹15,000</span>
+            </div>
+          </div>
+
+          <!-- Toggle: Peak Night Traffic -->
+          <div class="rounded-lg border border-white/[0.06] bg-[#101012] p-4 flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-white">High 9 PM &ndash; 2 AM Traffic</p>
+              <p class="text-xs text-slate-400 mt-0.5">50%+ apparel queries happen after hours</p>
+            </div>
+            <span class="text-xs font-mono font-semibold text-emerald-300 bg-emerald-500/10 px-2 py-1 rounded">Active</span>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-500 mt-6 pt-4 border-t border-white/[0.06] leading-relaxed">
+          Based on aggregate boutique metrics: average 4% manual close rate with next-morning reply vs 16% autonomous 90-second WhatsApp checkout rate.
+        </p>
+      </div>
+
+      <!-- Right: Live Results & Value Standard Panel -->
+      <div class="rounded-xl border border-emerald-500/30 bg-gradient-to-b from-[#0a1410] to-[#0a0a0c] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+        <!-- Top glow -->
+        <div class="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-400 font-mono">Monthly Revenue Potential</span>
+          
+          <div class="mt-4">
+            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Estimated Additional Sales</p>
+            <div class="mt-1 flex items-baseline gap-2">
+              <span id="stat-revenue" class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight">₹5,04,000</span>
+              <span class="text-emerald-400 text-sm font-semibold font-mono">/ mo</span>
+            </div>
+          </div>
+
+          <!-- Breakdown list -->
+          <div class="mt-8 space-y-3 pt-6 border-t border-white/[0.08]">
+            <div class="flex justify-between items-center text-sm">
+              <span class="text-slate-400">Additional Orders Closed</span>
+              <span id="stat-orders" class="font-mono font-bold text-white text-base">180 orders</span>
+            </div>
+            <div class="flex justify-between items-center text-sm">
+              <span class="text-slate-400">Founder Chat Time Saved</span>
+              <span id="stat-hours" class="font-mono font-bold text-emerald-300 text-base">75 hrs / mo</span>
+            </div>
+            <div class="flex justify-between items-center text-sm">
+              <span class="text-slate-400">Speed to First Response</span>
+              <span class="font-mono font-bold text-emerald-300 text-base">2.1s (instant)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/[0.08]">
+          <a href="/contact" class="btn-primary !w-full justify-center text-center">
+            Claim 1 of 10 Pilot Cohort Spots &rarr;
+          </a>
+          <p class="text-center text-[11px] text-slate-400 mt-2.5 font-normal">
+            Backed by our 10x ROI Value Standard: 100% white-glove setup.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const inquiriesInput = document.getElementById("calc-inquiries") as HTMLInputElement | null;
+    const aovInput = document.getElementById("calc-aov") as HTMLInputElement | null;
+    const labelInquiries = document.getElementById("label-inquiries");
+    const labelAov = document.getElementById("label-aov");
+    const statRevenue = document.getElementById("stat-revenue");
+    const statOrders = document.getElementById("stat-orders");
+    const statHours = document.getElementById("stat-hours");
+
+    function updateCalc() {
+      if (!inquiriesInput || !aovInput) return;
+      const inquiries = parseInt(inquiriesInput.value, 10) || 1500;
+      const aov = parseInt(aovInput.value, 10) || 2800;
+
+      // Update labels
+      if (labelInquiries) labelInquiries.textContent = inquiries.toLocaleString("en-IN");
+      if (labelAov) labelAov.textContent = `₹${aov.toLocaleString("en-IN")}`;
+
+      // Conversion calculation:
+      // Manual baseline: 4% conversion on late inquiries
+      // VoluChat 90s loop: 16% conversion (12% net lift)
+      const additionalOrders = Math.round(inquiries * 0.12);
+      const additionalRevenue = additionalOrders * aov;
+      // Chat time saved: ~25 mins per closed order manual back-and-forth
+      const hoursSaved = Math.round((inquiries * 3) / 60);
+
+      if (statRevenue) statRevenue.textContent = `₹${additionalRevenue.toLocaleString("en-IN")}`;
+      if (statOrders) statOrders.textContent = `${additionalOrders.toLocaleString("en-IN")} orders`;
+      if (statHours) statHours.textContent = `${hoursSaved} hrs / mo`;
+    }
+
+    if (inquiriesInput && aovInput) {
+      inquiriesInput.addEventListener("input", updateCalc);
+      aovInput.addEventListener("input", updateCalc);
+    }
+  });
+</script>

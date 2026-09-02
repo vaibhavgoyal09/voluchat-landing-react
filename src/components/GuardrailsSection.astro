@@ -1,144 +1,93 @@
 ---
 const guardrailRules = [
   {
-    icon: "🏷️",
-    title: "Strict Price Guardrails",
-    desc: "The AI agent can only offer pre-approved discounts (e.g. max 10% for prepaid UPI). It never drops prices below your cost margin.",
+    num: "01",
+    title: "Strict Price & Margin Floor",
+    desc: "Cryptographically locked from offering unauthorized discounts below your margin limits.",
     badge: "Margin Safe",
-    highlight: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
+    highlight: "100% Margin Floor",
   },
   {
-    icon: "📦",
-    title: "Zero Out-of-Stock Promises",
-    desc: "Real-time Shopify inventory checks prevent the AI from ever selling unavailable variants, avoiding dead checkouts.",
+    num: "02",
+    title: "Live Shopify Stock Check",
+    desc: "Checks real-time variant stock before confirming. Zero overselling or dead checkouts.",
     badge: "Live Stock",
-    highlight: "text-teal-400 border-teal-500/20 bg-teal-500/10",
+    highlight: "Zero Out-of-Stock",
   },
   {
-    icon: "⚙️",
-    title: "100% White-Glove Setup",
-    desc: "We configure your Meta Business APIs, WhatsApp Business accounts, and sync your Shopify product catalog for you.",
-    badge: "Done For You",
-    highlight: "text-purple-400 border-purple-500/20 bg-purple-500/10",
-  },
-  {
-    icon: "⚡",
-    title: "Anti-Spam & Brand Voice",
-    desc: "Trained exclusively on your brand's tone. Caps follow-up frequency so customers feel assisted rather than spammed.",
-    badge: "Brand Voice",
-    highlight: "text-indigo-400 border-indigo-500/20 bg-indigo-500/10",
-  },
-  {
-    icon: "📊",
-    title: "Attributed Revenue Reporting",
-    desc: "Track every rupee generated. See exactly how many orders were closed by the AI agent and which campaigns drove them.",
-    badge: "Clear ROI",
-    highlight: "text-blue-400 border-blue-500/20 bg-blue-500/10",
-  },
-  {
-    icon: "🛡️",
+    num: "03",
     title: "Instant Human Takeover",
-    desc: "Custom orders, VIP clients, or complex queries alert your human team on WhatsApp for a seamless 1-click takeover.",
+    desc: "VIP buyers and custom bridal questions instantly alert your human sales reps on WhatsApp.",
     badge: "Human Control",
-    highlight: "text-amber-400 border-amber-500/20 bg-amber-500/10",
+    highlight: "1-Tap Escalation",
+  },
+  {
+    num: "04",
+    title: "Brand Voice Calibration",
+    desc: "Trained exclusively on your tone and vocabulary. Never sounds like a generic robot.",
+    badge: "Voice Tuned",
+    highlight: "Boutique Calibrated",
   },
 ];
 ---
 
-<section id="guardrails" class="relative overflow-hidden py-20 sm:py-24 lg:py-28 border-y border-white/[0.08] bg-[#000000]">
-  <div class="sect-grid"></div>
-
+<section id="guardrails" class="relative overflow-hidden py-20 sm:py-24 border-y border-white/[0.08] bg-[#000000]">
   <div class="page-shell relative z-10">
-    <div class="guardrails-header max-w-3xl mx-auto text-center opacity-0 mb-8">
+    <div class="mb-14 max-w-2xl">
       <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">Safety & Guardrails</span>
+        <span class="mini-label text-emerald-400">Brand Safety Standards</span>
       </div>
       <h2 class="section-title text-[#fcfdff] font-heading">
-        AI sales with <span class="text-emerald-400">ironclad brand safety.</span>
+        Autonomous sales with <span class="text-emerald-400">total brand control</span>.
       </h2>
-      <p class="section-copy mt-5 text-[rgba(252,253,255,0.7)] max-w-2xl mx-auto">
-        Never worry about AI hallucinations or unauthorized discounts. VoluChat operates strictly within the rules and margin floors you define.
+      <p class="section-copy mt-3">
+        Zero unauthorized discounts, zero out-of-stock promises, and instant 1-tap human takeover.
       </p>
     </div>
 
-    <!-- Clean 6-Grid Guardrail Cards -->
-    <div class="grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    <!-- Clean 2x2 Punchy Guardrails Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 max-w-5xl mx-auto">
       {
-        guardrailRules.map((rule) => (
-          <div class="guardrail-card opacity-0 group flex flex-col items-start pt-5 border-t border-white/[0.08] transition-colors duration-200 hover:border-emerald-500/40">
-            <div class="flex items-center gap-4 mb-4 w-full justify-between">
-              <span class="text-2xl">{rule.icon}</span>
-              <span class={`rounded-full border border-white/[0.08] bg-[#101012] px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-emerald-300`}>
-                {rule.badge}
-              </span>
+        guardrailRules.map((rule, idx) => (
+          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-2xl border border-white/[0.12] bg-[#0a0a0c] p-6 sm:p-8 flex flex-col justify-between hover:border-emerald-500/40 transition-all`}>
+            <div>
+              <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-5">
+                <span class="font-mono text-xs text-slate-500 font-bold">GUARDRAIL {rule.num}</span>
+                <span class="rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-0.5 text-xs font-mono font-medium text-emerald-300">
+                  {rule.badge}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white font-heading mb-2">
+                {rule.title}
+              </h3>
+              <p class="text-sm text-[rgba(252,253,255,0.7)] font-normal leading-relaxed">
+                {rule.desc}
+              </p>
             </div>
-
-            <h3 class="text-xl font-semibold text-[#fcfdff] font-heading group-hover:text-emerald-300 transition-colors">
-              {rule.title}
-            </h3>
-            <p class="mt-2.5 text-sm text-[rgba(252,253,255,0.7)] font-normal leading-relaxed">
-              {rule.desc}
-            </p>
+            
+            <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between font-mono text-xs">
+              <span class="font-bold text-emerald-400">{rule.highlight}</span>
+              <span class="text-slate-500">Enforced by Policy</span>
+            </div>
           </div>
         ))
       }
     </div>
 
-    <!-- Human-in-the-loop guarantee banner -->
-    <div class="mt-12 max-w-5xl mx-auto rounded-xl border border-white/[0.14] bg-[#0a0a0c] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-3 text-center sm:text-left">
-        <span class="h-2.5 w-2.5 rounded-full bg-emerald-400 shrink-0"></span>
-        <p class="text-sm font-normal text-[rgba(252,253,255,0.86)]">
-          <strong class="text-white font-medium">Human Oversight Guarantee:</strong> Your team can review chat logs, modify responses, or pause the AI on any customer thread with a single tap.
+    <!-- Human Oversight Guarantee Bar -->
+    <div class="mt-8 max-w-5xl mx-auto rounded-2xl border border-white/[0.12] bg-[#0a0a0c] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5 text-center sm:text-left">
+        <span class="relative flex h-3 w-3 shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+        </span>
+        <p class="text-sm text-slate-300 font-medium">
+          <strong class="text-white font-semibold">Human Oversight Guarantee:</strong> Your team can review chat logs, modify responses, or pause the AI at any time with 1 tap.
         </p>
       </div>
-      <a href="/contact" class="btn-secondary !text-xs shrink-0 !py-2 !px-4">
-        Test Guardrails &rarr;
+      <a href="/security" class="shrink-0 text-xs font-mono text-emerald-400 hover:text-emerald-300 underline underline-offset-4">
+        Review Safety Specs &rarr;
       </a>
     </div>
-
   </div>
 </section>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
-
-    gsap.fromTo(".guardrails-header", 
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", scrollTrigger: { trigger: "#guardrails", start: "top 85%" } }
-    );
-
-    gsap.fromTo(".guardrail-card",
-      { opacity: 0, y: 20, scale: 0.98 },
-      { 
-        opacity: 1, y: 0, scale: 1, 
-        duration: 0.4, 
-        stagger: 0.06, 
-        ease: "power2.out",
-        scrollTrigger: { trigger: ".guardrail-card", start: "top 90%" }
-      }
-    );
-  });
-</script>
-
-<style>
-  .sect-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 4rem 4rem;
-    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-    pointer-events: none;
-    z-index: 0;
-  }
-</style>

@@ -1,121 +1,98 @@
 ---
-const painPoints = [
+const supportingPoints = [
   {
     code: "LEAK 01",
-    title: "11 PM 'Price?' & Sizing Doubts Go Cold",
-    description: "55%+ of apparel browsing happens late at night. When reps are offline, buyers asking 'Is this true to size?' or 'Price?' scroll away and buy from competitors.",
-    tone: "text-rose-400 border-rose-500/20 bg-rose-500/10",
+    stat: "55%",
+    statLabel: "Midnight Browsing",
+    title: "11 PM Leads Go Cold",
+    description: "Shoppers comment 'Price?' late at night when manual reps are offline. By morning, they've bought elsewhere.",
   },
   {
     code: "LEAK 02",
-    title: "Viral Reel Comment Deluge",
-    description: "A styling Reel hits 50k views and gets 400+ 'Price please' comments. Manual teams take 8+ hours to DM everyone, losing 80% of peak buying intent.",
-    tone: "text-amber-400 border-amber-500/20 bg-amber-500/10",
-  },
-  {
-    code: "LEAK 03",
-    title: "Robotic Chatbot Flowcharts",
-    description: "Tools like Wati force buyers through rigid 'Press 1' menus. Boutique shoppers want natural styling advice: 'Does this kurti come with pants?'",
-    tone: "text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
-  },
-  {
-    code: "LEAK 04",
-    title: "Drop-Off on External Website Links",
-    description: "Pushing DM shoppers to an external website cart kills the conversational impulse. 70%+ drop off rather than completing a 5-step web checkout.",
-    tone: "text-indigo-400 border-indigo-500/20 bg-indigo-500/10",
-  },
-  {
-    code: "LEAK 05",
-    title: "Manual UPI Screenshots & Sizing Errors",
-    description: "Chasing payment screenshots, checking bank transfers manually, and answering repetitive size chart questions burns 5+ hours of founder time daily.",
-    tone: "text-teal-400 border-teal-500/20 bg-teal-500/10",
-  },
-  {
-    code: "LEAK 06",
-    title: "High COD Return Rates (RTO)",
-    description: "Unconfirmed impulse orders placed without real-time address validation and sizing confirmation result in 30%+ painful delivery returns.",
-    tone: "text-red-400 border-red-500/20 bg-red-500/10",
+    stat: "35%",
+    statLabel: "COD Returns (RTO)",
+    title: "Unverified Impulse Orders",
+    description: "Orders placed without sizing verification or UPI prepayment incentives result in costly return-to-origin shipments.",
   },
 ];
 ---
 
 <section
   id="problem"
-  class="relative overflow-hidden py-20 lg:py-28"
+  class="relative overflow-hidden py-20 sm:py-24 bg-[#000000]"
 >
   <div class="page-shell">
-    <div class="problem-header grid gap-6 lg:grid-cols-2 lg:items-end opacity-0">
-      <div>
-        <div class="chip mb-5">
-          <span class="mini-label">The Fashion DM Revenue Leak</span>
-        </div>
-        <h2 class="section-title text-white">
-          Where clothing brands <span class="gradient-text-anim">lose 60%+ of social sales</span>
-        </h2>
+    <div class="max-w-3xl mb-14">
+      <div class="chip mb-4">
+        <span class="mini-label text-rose-400">The Fashion DM Revenue Leak</span>
       </div>
-      <p class="section-copy max-w-xl text-slate-400 lg:justify-self-end lg:pb-2">
-        You spend lakhs producing content and running Meta ads, but manual chat replies and rigid chatbot builders cannot close impulse boutique buyers at midnight.
+      <h2 class="section-title text-[#fcfdff] font-heading">
+        Where clothing brands <span class="text-rose-400">lose 60%+ of social buyers</span>.
+      </h2>
+      <p class="section-copy mt-3">
+        Manual chat reps and rigid flowchart bots fail when buyers are ready to purchase.
       </p>
     </div>
 
-    <div class="mt-14 border-t border-white/[0.08]">
-      {
-        painPoints.map((point, index) => (
-          <article
-            class="problem-card group relative grid grid-cols-[auto_1fr] items-baseline gap-x-6 gap-y-2 border-b border-white/[0.08] py-7 transition-colors duration-200 hover:bg-white/[0.02] sm:gap-x-10 sm:py-8 lg:grid-cols-[auto_1fr_1fr] opacity-0"
-          >
-            <span class="font-heading text-4xl font-bold leading-none text-white/[0.12] transition-colors duration-200 group-hover:text-emerald-400/40 sm:text-6xl">
-              {String(index + 1).padStart(2, "0")}
+    <!-- Asymmetric 2-Column Problem Layout: 1 Killer Hero Stat + 2 Supporting Evidence Cards -->
+    <div class="grid gap-6 lg:grid-cols-[1.3fr_1fr] items-stretch">
+      <!-- Dominant Killer Statistic Card -->
+      <article class="reveal-on-scroll rounded-2xl border border-rose-500/30 bg-gradient-to-b from-[#160b0e] via-[#0d0709] to-[#0a0a0c] p-8 sm:p-10 flex flex-col justify-between hover:border-rose-500/50 transition-all shadow-2xl relative overflow-hidden">
+        <!-- Subtle background glow -->
+        <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-rose-500/10 blur-3xl pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between border-b border-rose-500/20 pb-4 mb-8">
+            <span class="font-mono text-xs text-rose-400 font-bold uppercase tracking-wider">Primary Revenue Leak</span>
+            <span class="rounded-full border border-rose-500/30 bg-rose-500/10 px-3 py-1 font-mono text-xs text-rose-300 font-medium">
+              Cart Drop-Off
             </span>
-            <h3 class="font-heading text-lg font-semibold text-[#fcfdff] transition-colors group-hover:text-emerald-300 sm:text-xl">
-              {point.title}
-              <span class="mt-1 block font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500">
-                {point.code} &mdash; Revenue Leak
-              </span>
-            </h3>
-            <p class="col-span-2 max-w-xl text-sm leading-relaxed text-[rgba(252,253,255,0.7)] lg:col-span-1">
-              {point.description}
-            </p>
-          </article>
-        ))
-      }
+          </div>
+
+          <!-- Hero Number -->
+          <div class="font-heading text-6xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-4">
+            68<span class="text-rose-400">%</span>
+          </div>
+
+          <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white leading-tight mb-3">
+            of Instagram DM shoppers drop off before completing website checkout.
+          </h3>
+
+          <p class="text-sm sm:text-base text-rose-200/80 font-normal leading-relaxed max-w-lg">
+            Sending interested DM buyers to a slow 5-step web cart destroys impulse buying. VoluChat qualifies their size and closes UPI checkout directly inside the conversation.
+          </p>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-rose-500/20 flex items-center justify-between text-xs font-mono text-rose-300/80">
+          <span>Cause: External Website Friction</span>
+          <span class="font-bold text-rose-400">Solution: In-Chat UPI</span>
+        </div>
+      </article>
+
+      <!-- 2 Stacked Supporting Evidence Cards -->
+      <div class="grid gap-6 flex-col justify-between">
+        {
+          supportingPoints.map((point, idx) => (
+            <article class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-2xl border border-white/[0.10] bg-[#0a0a0c] p-6 sm:p-8 flex flex-col justify-between hover:border-white/20 transition-all`}>
+              <div>
+                <div class="flex items-center justify-between border-b border-white/[0.06] pb-3 mb-4">
+                  <span class="font-mono text-xs text-slate-500 font-bold">{point.code}</span>
+                  <span class="font-mono text-xs text-slate-400 uppercase">{point.statLabel}</span>
+                </div>
+                <div class="font-heading text-4xl font-bold text-white tracking-tight mb-2">
+                  {point.stat}
+                </div>
+                <h3 class="font-heading text-lg font-semibold text-white">
+                  {point.title}
+                </h3>
+                <p class="mt-2 text-xs text-[rgba(252,253,255,0.7)] font-normal leading-relaxed">
+                  {point.description}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#problem",
-        start: "top 78%",
-      }
-    });
-
-    tl.fromTo(
-      ".problem-header",
-      { opacity: 0, x: -30 },
-      { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }
-    )
-    .fromTo(
-      ".problem-card",
-      { opacity: 0, y: 24 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.08,
-        ease: "power2.out",
-      },
-      "-=0.3"
-    );
-  });
-</script>

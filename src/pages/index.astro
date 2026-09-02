@@ -3,12 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import ProblemSection from "../components/ProblemSection.astro";
-import UseCasesSection from "../components/UseCasesSection.astro";
-import ProductLoopSection from "../components/ProductLoopSection.astro";
+import HowItWorksFlow from "../components/HowItWorksFlow.astro";
+import ProductDemoSection from "../components/ProductDemoSection.astro";
+import RoiCalculatorSection from "../components/RoiCalculatorSection.astro";
+import FounderNoteSection from "../components/FounderNoteSection.astro";
 import GuardrailsSection from "../components/GuardrailsSection.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
-import FounderNoteSection from "../components/FounderNoteSection.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
 export const prerender = true;
@@ -80,8 +81,9 @@ const structuredData = [
   <main class="overflow-x-hidden">
     <Hero />
     <ProblemSection />
-    <ProductLoopSection />
-    <UseCasesSection />
+    <HowItWorksFlow />
+    <ProductDemoSection />
+    <RoiCalculatorSection />
     <FounderNoteSection />
     <GuardrailsSection />
     <FAQ />
