@@ -1,96 +1,39 @@
 # VoluChat
 
-VoluChat is an autonomous AI sales agent on WhatsApp for fashion & clothing boutiques. It closes sales, qualifies sizing and measurements, recovers abandoned carts, drives upsells and cross-sells, and completes in-chat UPI checkout — all without human intervention.
+> Autonomous AI sales agent on WhatsApp for fashion & clothing boutiques. Closes sales, qualifies sizing, recovers abandoned carts, drives upsells, and completes in-chat UPI checkout — 24/7, no human intervention needed.
 
-## What is VoluChat?
+VoluChat is an AI sales stylist that operates inside Instagram DMs and WhatsApp conversations. It captures leads from Instagram comments on fashion Reels, qualifies buyer sizing & fit, answers fabric questions using live catalog inventory, and completes orders with native in-chat UPI payment.
 
-VoluChat is an AI sales stylist that operates inside Instagram DMs and WhatsApp conversations. It captures leads from Instagram comments on fashion Reels, qualifies buyer sizing & fit, answers fabric questions using live catalog inventory, handles objections, and completes orders with native in-chat UPI payment.
+## Product
 
-## What it does
+- [Home](https://www.voluchat.com): Main site with live demo and pilot signup
+- [Free Trial & Setup](https://www.voluchat.com/free-trial): 30-day free trial with done-for-you onboarding
+- [Features](https://www.voluchat.com/features): Capture → Qualify → Close → Settle architecture
+- [Pricing](https://www.voluchat.com/pricing): Pilot cohort scope and 10x ROI commitment
+- [Shopify Integration](https://www.voluchat.com/integrations/shopify): 5-step flow, catalog sync, security guardrails
 
-- **Comment-to-DM Engine**: Auto-replies to Instagram & Facebook fashion Reel comments in 2 seconds with exact pricing, photos, and sizing options
-- **AI Stylist & Sizing Intelligence**: Answers fit questions, compares size charts, and checks live variant stock (S-XXL) without hallucinations
-- **Upsells & Cross-Sells**: Recommends complementary styling pieces and matching sets during chat to maximize AOV
-- **In-Chat UPI Checkout**: Generates 1-click UPI payment links and draft orders directly in WhatsApp without sending shoppers to external website links
-- **Live Catalog & Variant Sync**: Reads real-time variant stock, pricing, and sizing charts (Shopify integration available)
-- **Brand Voice Calibration**: Trained on your boutique's tone, vocabulary, and communication style
-- **Official Meta Tech Partner**: Certified integration for WhatsApp Business Cloud API, Instagram Graph API, and Facebook Graph API
-- **100% Free Setup & 30-Day Free Trial**: Done-for-you deployment for the first 10 stores with a founder-backed 10x ROI standard
-- **WhatsApp App Coexistence**: Zero disruption — store owners keep using their standard WhatsApp Business phone app alongside the AI agent
+## Comparisons
 
-## Category
+- [VoluChat vs Wati](https://www.voluchat.com/compare/wati): AI conversation vs rigid 'Press 1' flowchart menus
+- [VoluChat vs Manychat](https://www.voluchat.com/compare/manychat): In-chat UPI checkout vs external link push
+- [VoluChat vs Interakt](https://www.voluchat.com/compare/interakt): Autonomous sales agent vs shared support inbox
+- [VoluChat vs Manual Reps](https://www.voluchat.com/compare/manual-reps): 24/7 AI vs human chat rep cost and availability
 
-- AI sales agent for fashion & boutique brands
-- Official Meta Tech Partner for WhatsApp, Instagram & Facebook
-- WhatsApp sales bot for clothing boutiques
-- Instagram & Facebook comment-to-DM automation
-- Fashion e-commerce WhatsApp checkout
-- In-Chat UPI payment automation
-- Boutique cart recovery on WhatsApp
+## Learn
 
-## How it works
+- [Comment-to-DM Automation](https://www.voluchat.com/what-is/comment-to-DM-automation): How Instagram comment-to-DM capture works
+- [WhatsApp Sales Bot](https://www.voluchat.com/what-is/whatsapp-sales-bot): Types of WhatsApp sales bots compared
+- [Glossary](https://www.voluchat.com/glossary): 20 terms across e-commerce automation, WhatsApp, and Instagram DMs
+- [Security & Guardrails](https://www.voluchat.com/security): Meta Cloud API compliance and brand safety
+- [Blog](https://www.voluchat.com/blog): Guides, comparisons, and e-commerce automation insights
 
-1. **Capture**: Shopper comments "Price?" on an Instagram Reel
-2. **Qualify**: AI auto-DMs in 2 seconds and moves to WhatsApp to qualify size, fit, and delivery pincode
-3. **Recommend**: Suggests matching pieces or answers fabric/care questions using live catalog data
-4. **Close**: Generates 1-click UPI payment link in WhatsApp — buyer completes checkout in under 90 seconds
-5. **Sync**: Automatically marks order paid and fulfilled in store admin
+## Company
 
-## Key differentiators vs competitors
-
-- **vs Wati**: VoluChat is an intelligent AI stylist that answers conversational sizing queries instead of forcing buyers through robotic 'Press 1' menus.
-- **vs Manychat**: VoluChat completes the entire checkout in-chat via UPI. Manychat pushes external links where 70%+ of boutique buyers abandon.
-- **vs Interakt**: VoluChat autonomously qualifies sizes and closes sales 24/7. Interakt is just a shared support inbox where your team must manually type replies.
-- **vs Manual chat reps**: VoluChat operates 24/7 (covering the 11 PM shopping rush), responds in sub-2 seconds, never makes sizing errors, and costs a fraction of hiring chat reps.
-
-## Target audience
-
-Apparel brands, fashion labels, and Instagram clothing boutiques running Meta ads / Reels who lose revenue to manual DM backlogs and late-night inquiry drop-offs. Typical use case: a customer comments "Price?" or "Size L available?" on an Instagram Reel at 11 PM — VoluChat replies instantly, qualifies fit on WhatsApp, and completes the UPI payment before the customer scrolls away.
-
-## Offer & Pricing
-
-- **30-Day Free Trial**: All premium AI sales agent features unlocked
-- **100% Free Done-For-You Setup**: Meta API, WhatsApp Cloud API, catalog sync, size charts, and UPI links configured by founder & engineering team
-- **Founder Direct Support**: Direct WhatsApp access with founder (Vaibhav Goyal)
-
-## Key pages
-
-- Home: https://www.voluchat.com
-- 30-Day Free Trial & Setup: https://www.voluchat.com/free-trial
-- Features: https://www.voluchat.com/features
-- Pricing: https://www.voluchat.com/pricing
-- Compare vs Wati: https://www.voluchat.com/compare/wati
-- Compare vs Manychat: https://www.voluchat.com/compare/manychat
-- Compare vs Interakt: https://www.voluchat.com/compare/interakt
-- Compare vs Manual Reps: https://www.voluchat.com/compare/manual-reps
-- In-Chat UPI Checkout Guide: https://www.voluchat.com/what-is/in-chat-upi-checkout
-- WhatsApp Cart Recovery Guide: https://www.voluchat.com/what-is/whatsapp-cart-recovery
-- WhatsApp Sales Bot explainer: https://www.voluchat.com/what-is/whatsapp-sales-bot
-- Comment-to-DM Automation explainer: https://www.voluchat.com/what-is/comment-to-DM-automation
-- Glossary: https://www.voluchat.com/glossary
-- Security & Guardrails: https://www.voluchat.com/security
-- Shopify Integration: https://www.voluchat.com/integrations/shopify
-- Blog: https://www.voluchat.com/blog
-- Contact Us: https://www.voluchat.com/contact
-
-## Tech stack
-
-Astro 6 SSR on Vercel, Tailwind CSS v4, GSAP animations. Meta Cloud API and WhatsApp Business Cloud API integration. Shopify GraphQL webhook sync (optional).
-
-## Company & Leadership
-
-- **Operating Entity**: Developed and operated by QubitNine Technologies Pvt. Ltd.
-- **Headquarters**: Noida, Uttar Pradesh, India
-- **Founder & CEO**: Vaibhav Goyal (former e-commerce Sales Manager)
-- **Mission**: Eliminating DM sales chaos and off-hours revenue drop-offs with zero-config, autonomous commerce intelligence.
-
-## Contact & Links
-
-- Website: https://www.voluchat.com
-- Founder Inquiries: founders@voluchat.com
-- GitHub: https://github.com/voluchat
-- Instagram: https://www.instagram.com/voluchat
-- X/Twitter: https://x.com/voluchat
-- LinkedIn: https://www.linkedin.com/company/voluchat
-- YouTube: https://www.youtube.com/@voluchat
+- [About](https://www.voluchat.com/about): Mission and founder story
+- [Contact](https://www.voluchat.com/contact): Pilot store intake form
+- [GitHub](https://github.com/voluchat): Open source and documentation
+- [Instagram](https://www.instagram.com/voluchat): Product demos and fashion automation examples
+- [X/Twitter](https://x.com/voluchat): Updates and industry commentary
+- [LinkedIn](https://www.linkedin.com/company/voluchat): Company page
+- [YouTube](https://www.youtube.com/@voluchat): Video walkthroughs
 
