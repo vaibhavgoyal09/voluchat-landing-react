@@ -8,22 +8,22 @@ VoluChat is an AI sales stylist that operates inside Instagram DMs and WhatsApp 
 
 ## What it does
 
-- **Comment-to-DM Engine**: Auto-replies to Instagram fashion Reel comments in 2 seconds with exact pricing, photos, and sizing options
+- **Comment-to-DM Engine**: Auto-replies to Instagram & Facebook fashion Reel comments in 2 seconds with exact pricing, photos, and sizing options
 - **AI Stylist & Sizing Intelligence**: Answers fit questions, compares size charts, and checks live variant stock (S-XXL) without hallucinations
 - **Upsells & Cross-Sells**: Recommends complementary styling pieces and matching sets during chat to maximize AOV
 - **In-Chat UPI Checkout**: Generates 1-click UPI payment links and draft orders directly in WhatsApp without sending shoppers to external website links
 - **Live Catalog & Variant Sync**: Reads real-time variant stock, pricing, and sizing charts (Shopify integration available)
 - **Brand Voice Calibration**: Trained on your boutique's tone, vocabulary, and communication style
-- **Official Meta Tech Partner**: Certified integration for WhatsApp Business Cloud API, Instagram Graph API, and Facebook
+- **Official Meta Tech Partner**: Certified integration for WhatsApp Business Cloud API, Instagram Graph API, and Facebook Graph API
 - **100% Free Setup & 30-Day Free Trial**: Done-for-you deployment for the first 10 stores with a founder-backed 10x ROI standard
 - **WhatsApp App Coexistence**: Zero disruption — store owners keep using their standard WhatsApp Business phone app alongside the AI agent
 
 ## Category
 
 - AI sales agent for fashion & boutique brands
-- Official Meta Tech Partner for WhatsApp & Instagram
+- Official Meta Tech Partner for WhatsApp, Instagram & Facebook
 - WhatsApp sales bot for clothing boutiques
-- Instagram comment-to-DM automation
+- Instagram & Facebook comment-to-DM automation
 - Fashion e-commerce WhatsApp checkout
 - In-Chat UPI payment automation
 - Boutique cart recovery on WhatsApp
