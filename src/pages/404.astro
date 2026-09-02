@@ -5,147 +5,106 @@ import Footer from "../components/Footer.astro";
 
 const siteUrl = "https://www.voluchat.com";
 
-const recoveryLinks = [
-  { label: "4-Pillar Commerce Engine", href: "/#how-it-works", note: "See the automated social sales architecture" },
-  { label: "Pilot Cohort Pricing", href: "/pricing", note: "Done-for-you setup with 10x ROI standard" },
+const helpfulLinks = [
   {
-    label: "Apply for 10-Store Pilot",
-    href: "/contact",
-    note: "Get white-glove WhatsApp & Instagram onboarding",
+    title: "How It Works",
+    description: "See how VoluChat automates comments, qualifies sizing, and closes orders.",
+    href: "/#how-it-works",
+  },
+  {
+    title: "Features & Architecture",
+    description: "Explore the 4-pillar automated sales engine for Instagram & WhatsApp.",
+    href: "/features",
+  },
+  {
+    title: "Pilot Cohort & Pricing",
+    description: "Discover our white-glove setup and 10x value standard for pilot stores.",
+    href: "/pricing",
+  },
+  {
+    title: "Compare Solutions",
+    description: "See how VoluChat compares to traditional chatbots and manual reps.",
+    href: "/compare",
   },
 ];
 ---
 
 <Layout
-  title="Page not found | VoluChat"
-  description="The VoluChat page you opened is missing or has moved. Return home, compare pricing, or contact support."
+  title="Page Not Found | VoluChat"
+  description="The page you were looking for doesn't exist or may have been moved. Return to VoluChat or explore our popular links."
   robots="noindex, follow"
   canonical={new URL("/404", siteUrl).toString()}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Page not found | VoluChat",
-    description: "The VoluChat page you opened is missing or has moved.",
+    name: "Page Not Found | VoluChat",
+    description: "The page you were looking for doesn't exist or may have been moved.",
     url: siteUrl,
   }}
 >
   <Header />
 
-  <main id="error-404" class="relative isolate overflow-hidden pt-[8.5rem] pb-24 lg:pt-[10.5rem] lg:pb-32 min-h-[95vh] flex flex-col justify-center">
-    
-    <!-- Premium layered background -->
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-bg-grid opacity-60"></div>
-      <div class="hero-bg-mesh opacity-80"></div>
-      <div class="hero-bg-orb hero-bg-orb--teal" style="top: 10%; left: 60%; width: 50vw; height: 50vw;"></div>
-      <div class="hero-bg-orb hero-bg-orb--violet" style="top: 60%; left: 20%; width: 40vw; height: 40vw; opacity: 0.5"></div>
-      <!-- Add a specific coral orb for the error theme -->
-      <div class="hero-bg-orb animate-float-slow" style="top: 30%; right: 10%; width: 35vw; height: 35vw; background-color: rgba(244,63,94,0.15); filter: blur(120px);"></div>
-      <div class="hero-bg-scan"></div>
-      <div class="hero-bg-vignette"></div>
-    </div>
+  <main class="min-h-[85vh] overflow-hidden bg-[#000000]">
+    <section class="hero-stripe pb-16 pt-32 sm:pt-40">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
-    <div class="page-shell relative z-10 w-full">
-      <div class="grid items-center gap-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
-        
-        <!-- Left: Copy Block -->
-        <div class="error-hero-text">
-          <div class="chip border-coral-500/30 text-coral-400 bg-coral-500/10 shadow-[0_0_15px_rgba(244,63,94,0.15)]">
-            <span class="h-1.5 w-1.5 rounded-full bg-coral-400 animate-pulse mr-2"></span>
-            Error 404
+      <div class="page-shell">
+        <div class="notfound-hero mx-auto max-w-2xl text-center">
+          <div class="chip mb-5">
+            <span class="mini-label">404 Error</span>
           </div>
-          
-          <h1 class="mt-6 font-heading text-[3.5rem] font-bold leading-[1.05] tracking-tight text-white sm:text-[4.5rem] lg:text-[5rem]">
-            Signal <span class="text-slate-600 line-through decoration-coral-500/50 decoration-4">lost.</span><br/>
-            <span class="gradient-text-anim">Route unknown.</span>
+
+          <h1 class="text-4xl font-semibold leading-[1.08] text-[#fcfdff] sm:text-5xl lg:text-6xl font-heading">
+            Page not found.
           </h1>
-          
-          <p class="section-copy mt-6 max-w-xl text-slate-300">
-            The link you followed may be broken, or the page has been moved. No worries — you can head back to the command center or explore our core systems below.
+
+          <p class="section-copy mx-auto mt-5 max-w-lg">
+            The page you are looking for might have been moved, renamed, or doesn't exist. Let's get you back on track.
           </p>
 
-          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href="/" class="btn-primary btn-sheen">
-              Return to Homepage
+          <div class="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
+            <a href="/" class="btn-primary">
+              Return to Homepage &rarr;
             </a>
-            <a href="/features" class="btn-secondary">
-              Explore Platform
+            <a href="/contact" class="btn-secondary">
+              Contact Support
             </a>
           </div>
         </div>
-
-        <!-- Right: Diagnostic Console Graphic -->
-        <div class="error-hero-mockup relative tilt" data-tilt-strength="3">
-          <div class="absolute -inset-10 rounded-[3rem] bg-coral-500/10 blur-[80px] opacity-60 mix-blend-screen animate-pulse-ring"></div>
-          
-          <div class="relative glass-panel-premium p-1.5 overflow-hidden">
-            <div class="rounded-[14px] bg-[#050c16] border border-white/5 overflow-hidden flex flex-col h-full shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-              
-              <!-- Top bar -->
-              <div class="flex items-center justify-between border-b border-white/[0.06] bg-black/40 px-5 py-3.5">
-                <div class="flex items-center gap-3">
-                  <div class="flex gap-1.5">
-                    <span class="h-2.5 w-2.5 rounded-full bg-slate-700/80"></span>
-                    <span class="h-2.5 w-2.5 rounded-full bg-slate-700/80"></span>
-                    <span class="h-2.5 w-2.5 rounded-full bg-coral-500 shadow-[0_0_10px_rgba(244,63,94,0.6)]"></span>
-                  </div>
-                  <span class="ml-2 font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">Diagnostic Protocol</span>
-                </div>
-                <div class="text-[10px] font-bold text-coral-400/80 font-mono bg-coral-400/10 px-2 py-1 rounded border border-coral-400/20">SYS_ERR_404</div>
-              </div>
-
-              <!-- Body -->
-              <div class="p-6 sm:p-8 flex flex-col gap-6">
-                <!-- Alert Box -->
-                <div class="rounded-xl bg-gradient-to-br from-coral-500/10 to-transparent border border-coral-500/20 p-5 relative overflow-hidden">
-                  <div class="absolute right-0 top-0 w-32 h-32 bg-coral-500/10 blur-2xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
-                  <div class="flex items-start gap-4 relative z-10">
-                    <div class="shrink-0 mt-0.5 bg-coral-500/20 p-2 rounded-lg border border-coral-500/30">
-                      <svg class="w-5 h-5 text-coral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <h2 class="text-sm font-bold text-coral-200">Target path unresolved</h2>
-                      <p class="text-[13px] text-slate-400 mt-1.5 leading-relaxed">
-                        The requested resource could not be located in the environment graph. Attempting recovery routing.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Recovery Actions -->
-                <div class="space-y-4">
-                  <div class="flex items-center gap-3 mb-2">
-                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-slate-500 text-center">Available Routes</div>
-                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-                  </div>
-                  
-                  <div class="grid gap-3">
-                    {recoveryLinks.map(link => (
-                      <a href={link.href} class="spotlight group flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 transition-all duration-300 hover:border-teal-500/30 hover:bg-teal-500/[0.04]">
-                        <div>
-                          <div class="text-[15px] font-bold text-slate-200 group-hover:text-white transition-colors">{link.label}</div>
-                          <div class="text-xs text-slate-400 mt-1">{link.note}</div>
-                        </div>
-                        <div class="h-10 w-10 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-teal-500 group-hover:bg-teal-400 group-hover:text-[#050c16] group-hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] transition-all duration-300 transform group-hover:scale-105 group-hover:translate-x-1">
-                          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                          </svg>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
+    </section>
+
+    <!-- Helpful Navigation Grid -->
+    <section class="pb-28 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl">
+          <p class="section-eyebrow mb-6 text-center">Popular destinations</p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {
+              helpfulLinks.map((item) => (
+                <a
+                  href={item.href}
+                  class="notfound-card group block rounded-xl border border-white/[0.12] bg-[#0c0c10] p-6 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#121216]"
+                >
+                  <div class="flex items-center justify-between gap-4">
+                    <h2 class="text-base font-heading font-semibold text-white transition-colors group-hover:text-emerald-400">
+                      {item.title}
+                    </h2>
+                    <span class="text-slate-400 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-emerald-400">
+                      &rarr;
+                    </span>
+                  </div>
+                  <p class="mt-2.5 text-sm font-normal leading-relaxed text-slate-300">
+                    {item.description}
+                  </p>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
@@ -158,14 +117,15 @@ const recoveryLinks = [
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 
-    const tl = gsap.timeline();
-    tl.fromTo(".error-hero-text",
-      { opacity: 0, x: -30 },
-      { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }
-    ).fromTo(".error-hero-mockup",
-      { opacity: 0, scale: 0.95, rotateY: -10 },
-      { opacity: 1, scale: 1, rotateY: 0, duration: 1, ease: "back.out(1.2)" },
-      "-=0.6"
+    gsap.fromTo(".notfound-hero", 
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+    );
+
+    gsap.fromTo(".notfound-card", 
+      { opacity: 0, y: 15 },
+      { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, delay: 0.1, ease: "power2.out" }
     );
   });
 </script>
+

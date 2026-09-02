@@ -58,22 +58,22 @@ const painPoints = [
       </p>
     </div>
 
-    <div class="mt-14 border-t border-white/10">
+    <div class="mt-14 border-t border-white/[0.08]">
       {
         painPoints.map((point, index) => (
           <article
-            class="problem-card group relative grid grid-cols-[auto_1fr] items-baseline gap-x-6 gap-y-2 border-b border-white/10 py-7 transition-colors duration-300 hover:bg-white/[0.02] sm:gap-x-10 sm:py-8 lg:grid-cols-[auto_1fr_1fr] opacity-0"
+            class="problem-card group relative grid grid-cols-[auto_1fr] items-baseline gap-x-6 gap-y-2 border-b border-white/[0.08] py-7 transition-colors duration-200 hover:bg-white/[0.02] sm:gap-x-10 sm:py-8 lg:grid-cols-[auto_1fr_1fr] opacity-0"
           >
-            <span class="font-heading text-4xl font-bold leading-none text-white/[0.07] transition-colors duration-300 group-hover:text-emerald-400/25 sm:text-6xl">
+            <span class="font-heading text-4xl font-bold leading-none text-white/[0.12] transition-colors duration-200 group-hover:text-emerald-400/40 sm:text-6xl">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <h3 class="font-heading text-lg font-semibold text-white transition-colors group-hover:text-emerald-50 sm:text-xl">
+            <h3 class="font-heading text-lg font-semibold text-[#fcfdff] transition-colors group-hover:text-emerald-300 sm:text-xl">
               {point.title}
               <span class="mt-1 block font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500">
                 {point.code} &mdash; Revenue Leak
               </span>
             </h3>
-            <p class="col-span-2 max-w-xl text-sm leading-relaxed text-slate-400 lg:col-span-1">
+            <p class="col-span-2 max-w-xl text-sm leading-relaxed text-[rgba(252,253,255,0.7)] lg:col-span-1">
               {point.description}
             </p>
           </article>

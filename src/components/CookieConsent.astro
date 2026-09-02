@@ -10,7 +10,7 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
 
 <aside
   id="cookie-consent"
-  class="cookie-consent fixed inset-x-3 bottom-3 z-[70] ml-auto max-w-[25rem] rounded-2xl border border-stone-200/90 bg-white/94 p-4 opacity-0 shadow-[0_18px_54px_rgba(29,43,67,0.14)] backdrop-blur-xl transition-all duration-500 sm:inset-x-auto sm:right-6 sm:bottom-6 sm:p-5"
+  class="cookie-consent fixed inset-x-3 bottom-3 z-[70] ml-auto max-w-[25rem] rounded-xl border border-white/[0.14] bg-[#0a0a0c]/95 p-4 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 sm:inset-x-auto sm:right-6 sm:bottom-6 sm:p-5"
   data-ga-measurement-id={gaMeasurementId}
   aria-label="Cookie consent"
   hidden
@@ -19,20 +19,20 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
     <span class="cookie-mark mt-1 shrink-0" aria-hidden="true"></span>
     <div class="min-w-0">
       <h2
-        class="text-base font-heading font-semibold leading-tight text-stone-950"
+        class="text-base font-heading font-semibold leading-tight text-[#fcfdff]"
       >
         Analytics cookies
       </h2>
-      <p class="mt-1.5 text-[13px] font-medium leading-relaxed text-stone-600">
+      <p class="mt-1.5 text-[13px] font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
         Help us improve VoluChat pages. Essential cookies stay on either way.
       </p>
       <a
         href="/privacy"
-        class="mt-2 inline-flex text-[13px] font-semibold text-primary-800 underline decoration-primary-300 underline-offset-4 transition hover:text-primary-900"
+        class="mt-2 inline-flex text-[13px] font-medium text-emerald-400 underline decoration-emerald-500/35 underline-offset-4 transition hover:text-emerald-300"
       >
         Privacy policy
       </a>
-      <p class="mt-2 text-[11px] font-semibold leading-relaxed text-stone-500">
+      <p class="mt-2 text-[11px] font-normal leading-relaxed text-slate-500">
         Scrolling this page also accepts analytics cookies.
       </p>
     </div>
@@ -41,14 +41,14 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
   <div class="mt-4 grid grid-cols-2 gap-2">
     <button
       type="button"
-      class="inline-flex min-h-10 items-center justify-center rounded-full border border-stone-200 bg-white px-4 py-2 text-[13px] font-semibold text-stone-700 shadow-sm transition hover:-translate-y-0.5 hover:border-stone-300 active:translate-y-0 active:scale-[0.98]"
+      class="inline-flex min-h-9 items-center justify-center rounded-lg border border-white/[0.14] bg-[#101012] px-4 py-2 text-[13px] font-medium text-slate-300 transition hover:bg-white/[0.08] active:scale-[0.98]"
       data-cookie-reject
     >
       Decline
     </button>
     <button
       type="button"
-      class="inline-flex min-h-10 items-center justify-center rounded-full border border-primary-900/80 bg-primary-900 px-4 py-2 text-[13px] font-semibold text-white shadow-lg shadow-primary-900/16 transition hover:-translate-y-0.5 hover:bg-primary-800 active:translate-y-0 active:scale-[0.98]"
+      class="inline-flex min-h-9 items-center justify-center rounded-lg bg-[#fcfdff] px-4 py-2 text-[13px] font-medium text-[#000000] transition hover:bg-[#f1f7fe] active:scale-[0.98]"
       data-cookie-accept
     >
       Accept

@@ -15,11 +15,11 @@ const demoHref = "/contact";
 
 <header
   id="lp-navbar"
-  class="fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
 >
   <div class="lp-nav-inner mx-auto w-full max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
     <nav
-      class="flex h-16 items-center justify-between rounded-full border border-white/10 bg-[#070f1d]/82 px-3 shadow-[0_24px_72px_-46px_rgba(0,0,0,0.95)] backdrop-blur-2xl sm:px-4"
+      class="flex h-16 items-center justify-between rounded-xl border border-white/[0.08] bg-[#000000]/85 px-4 backdrop-blur-xl sm:px-6"
       aria-label="Global"
     >
       <div class="flex pl-1 lg:flex-1 lg:pl-0">
@@ -29,10 +29,10 @@ const demoHref = "/contact";
             <img
               src="/voluchat_logo.svg"
               alt="VoluChat Logo"
-              class="h-8 w-8 object-contain"
+              class="h-7 w-7 object-contain"
             />
             <span
-              class="hidden font-heading text-[1.2rem] font-extrabold tracking-tight text-white sm:inline"
+              class="hidden font-heading text-[1.15rem] font-bold tracking-tight text-[#fcfdff] sm:inline"
               >VoluChat</span
             >
           </div>
@@ -44,7 +44,7 @@ const demoHref = "/contact";
           navigation.map((item) => (
             <a
               href={item.href}
-              class="nav-link relative py-2 text-[13px] font-semibold text-slate-300 transition-colors duration-300 hover:text-white"
+              class="nav-link relative py-1 text-[13px] font-medium text-[rgba(252,253,255,0.7)] transition-colors duration-200 hover:text-[#fcfdff]"
             >
               {item.name}
             </a>
@@ -55,7 +55,7 @@ const demoHref = "/contact";
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a
           href={demoHref}
-          class="btn-primary w-auto px-6 py-2.5 text-[13px] shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+          class="btn-primary !w-auto !px-4 !py-2 !text-[13px]"
         >
           Apply for Pilot &rarr;
         </a>
@@ -64,14 +64,14 @@ const demoHref = "/contact";
       <div class="flex items-center gap-2 lg:hidden">
         <a
           href={demoHref}
-          class="inline-flex h-11 items-center justify-center rounded-full bg-white px-4 text-[13px] font-bold text-slate-950 shadow-sm transition hover:bg-slate-200"
+          class="inline-flex h-9 items-center justify-center rounded-lg bg-[#fcfdff] px-3 text-[13px] font-medium text-[#000000] transition hover:bg-[#f1f7fe]"
         >
           Apply for Pilot
         </a>
         <button
           type="button"
           id="lp-mobile-menu-btn"
-          class="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.06] text-white shadow-sm backdrop-blur-xl transition hover:bg-white/10"
+          class="grid h-9 w-9 place-items-center rounded-lg border border-white/[0.14] bg-[#101012] text-white backdrop-blur-xl transition hover:bg-white/10"
           aria-expanded="false"
         >
           <span class="sr-only">Open menu</span>
@@ -96,22 +96,22 @@ const demoHref = "/contact";
   <!-- Mobile Menu Dropdown -->
   <div
     id="lp-mobile-backdrop"
-    class="fixed inset-0 -z-10 bg-slate-950/60 backdrop-blur-sm lg:hidden"
+    class="fixed inset-0 -z-10 bg-black/80 backdrop-blur-sm lg:hidden"
     aria-hidden="true"
   >
   </div>
   <div
     id="lp-mobile-menu"
-    class="fixed left-1/2 top-24 z-40 w-[calc(100%-2.5rem)] max-w-[22rem] rounded-2xl border border-white/10 bg-[#070f1d] p-5 shadow-[0_32px_90px_rgba(0,0,0,0.5)] lg:hidden"
+    class="fixed left-1/2 top-24 z-40 w-[calc(100%-2.5rem)] max-w-[22rem] rounded-xl border border-white/[0.14] bg-[#0a0a0c] p-4 lg:hidden"
     role="dialog"
     aria-modal="true"
   >
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-1.5">
       {
         navigation.map((item) => (
           <a
             href={item.href}
-            class="lp-mobile-link rounded-xl border border-white/10 bg-white/[0.055] px-4 py-3 text-[15px] font-semibold text-white transition hover:bg-white/[0.095] hover:border-white/15"
+            class="lp-mobile-link rounded-lg border border-white/[0.06] bg-[#101012] px-4 py-2.5 text-[14px] font-medium text-[#fcfdff] transition hover:bg-white/[0.08]"
           >
             {item.name}
           </a>
@@ -128,18 +128,15 @@ const demoHref = "/contact";
 
   /* Scroll-aware shrink + lift with a soft glow */
   #lp-navbar.scrolled .lp-nav-inner nav {
-    transform: translateY(-2px) scale(0.985);
-    border-color: rgba(94, 234, 212, 0.22);
-    box-shadow:
-      0 24px 72px -46px rgba(0, 0, 0, 0.95),
-      0 0 0 1px rgba(45, 212, 191, 0.06),
-      0 0 38px -12px rgba(45, 212, 191, 0.18);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.14);
+    background-color: rgba(0, 0, 0, 0.95);
   }
   .lp-nav-inner nav {
     transition:
-      transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 0.45s ease,
-      box-shadow 0.45s ease;
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.3s ease,
+      background-color 0.3s ease;
   }
 
   /* Animated underline for desktop nav links */

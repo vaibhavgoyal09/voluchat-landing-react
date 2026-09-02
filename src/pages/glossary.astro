@@ -177,13 +177,10 @@ const structuredData = [
 >
   <Header />
 
-  <main class="pt-20">
-    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
-      <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(16,185,129,0.15),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
-      >
-      </div>
-      <div class="ambient-noise"></div>
+  <main class="overflow-hidden">
+    <section class="hero-stripe">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
       <div class="page-shell">
         <div class="glossary-hero-text mx-auto max-w-4xl text-center">
@@ -191,39 +188,39 @@ const structuredData = [
             <span class="mini-label">Glossary</span>
           </div>
           <h1
-            class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
             Social Commerce Terms, Defined.
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-2xl text-slate-300">
+          <p class="section-copy mx-auto mt-6 max-w-2xl">
             Key terms for WhatsApp and Instagram e-commerce automation, upsells, cross-sells, cart recovery, and in-chat checkout — explained for D2C founders.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl space-y-12">
           {
             terms.map((group) => (
               <div>
-                <h2 class="section-eyebrow text-emerald-400 mb-6">{group.category}</h2>
+                <h2 class="section-eyebrow mb-6">{group.category}</h2>
                 <div class="space-y-3">
                   {group.items.map((item) => (
                     <article class="glossary-term solid-card p-5 md:p-6">
                       <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                         <div class="max-w-2xl">
-                          <h3 class="text-lg font-heading font-semibold text-white">
+                          <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">
                             {item.term}
                           </h3>
-                          <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">
+                          <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
                             {item.definition}
                           </p>
                         </div>
                         <a
                           href={item.link}
-                          class="mt-2 shrink-0 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors md:mt-1"
+                          class="mt-2 shrink-0 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors md:mt-1"
                         >
                           Learn more →
                         </a>

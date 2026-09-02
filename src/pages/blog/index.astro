@@ -42,50 +42,53 @@ try {
 >
   <Navbar />
 
-  <main
-    class="relative min-h-screen overflow-hidden pt-36 pb-20 sm:pt-40"
-  >
-    <div
-      class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_10%,rgba(83,111,159,0.12),transparent_30%),radial-gradient(circle_at_10%_68%,rgba(203,217,234,0.22),transparent_28%)]"
-    >
-    </div>
-    <div class="ambient-noise"></div>
+  <main class="min-h-screen overflow-hidden bg-[#000000]">
+    <section class="hero-stripe pb-14">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
-    <div class="page-shell">
-      <div class="blog-hero-text mx-auto mb-16 max-w-3xl text-center">
-        <div class="chip">Guides</div>
-        <h1
-          class="mt-6 text-4xl font-semibold leading-[1.03] text-white sm:text-6xl"
-        >
-          Ecommerce sales team automation guides.
-        </h1>
-        <p class="section-copy mx-auto mt-5 max-w-2xl">
-          Learn how to answer repeated product questions faster, reduce
-          duplicate manual replies, and prepare cleaner handoffs for your sales
-          team.
-        </p>
-      </div>
-
-      {
-        error && (
-          <div class="mb-12 rounded-[1.75rem] border border-white/10 bg-[#0c1728] p-6 text-center text-sm font-semibold text-slate-200">
-            {error}
+      <div class="page-shell">
+        <div class="blog-hero-text mx-auto max-w-3xl text-center">
+          <div class="chip mb-4">
+            <span class="mini-label">Guides</span>
           </div>
-        )
-      }
-
-      <div class="blog-grid grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {blogs.map((blog: any) => <BlogCard blog={blog} />)}
+          <h1
+            class="mt-6 text-4xl font-semibold leading-[1.03] text-[#fcfdff] sm:text-6xl font-heading"
+          >
+            Ecommerce sales team automation guides.
+          </h1>
+          <p class="section-copy mx-auto mt-5 max-w-2xl">
+            Learn how to answer repeated product questions faster, reduce
+            duplicate manual replies, and prepare cleaner handoffs for your sales
+            team.
+          </p>
+        </div>
       </div>
+    </section>
 
-      {
-        blogs.length === 0 && (
-          <div class="py-20 text-center">
-            <p class="font-medium text-slate-400">No blog posts found yet.</p>
-          </div>
-        )
-      }
-    </div>
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell">
+        {
+          error && (
+            <div class="mb-12 solid-card p-6 text-center text-sm font-medium text-slate-300">
+              {error}
+            </div>
+          )
+        }
+
+        <div class="blog-grid grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {blogs.map((blog: any) => <BlogCard blog={blog} />)}
+        </div>
+
+        {
+          blogs.length === 0 && (
+            <div class="py-20 text-center">
+              <p class="font-normal text-slate-500">No blog posts found yet.</p>
+            </div>
+          )
+        }
+      </div>
+    </section>
   </main>
 
   <Footer />

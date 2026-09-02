@@ -99,13 +99,10 @@ const pageFaqs = [
 >
   <Header />
 
-  <main class="pt-20">
-    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
-      <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(16,185,129,0.15),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
-      >
-      </div>
-      <div class="ambient-noise"></div>
+  <main class="overflow-hidden">
+    <section class="hero-stripe">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
       <div class="page-shell">
         <div class="whatis-hero-text mx-auto max-w-4xl text-center">
@@ -113,36 +110,36 @@ const pageFaqs = [
             <span class="mini-label">Definition</span>
           </div>
           <h1
-            class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
             What is Comment-to-DM Automation?
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
+          <p class="section-copy mx-auto mt-6 max-w-3xl">
             Comment-to-DM automation is the process of automatically replying to Instagram post comments with a personalized direct message containing product pricing, variant availability, and a checkout link — typically within 2 seconds of the comment.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="pb-16">
+    <section class="pb-16 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl space-y-4">
-          <p class="section-eyebrow text-emerald-400">How it works</p>
-          <h2 class="text-3xl font-heading font-semibold text-white mb-8">
+          <p class="section-eyebrow">How it works</p>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-8">
             The 4-step comment-to-checkout loop
           </h2>
           {
             howItWorks.map((item) => (
               <article class="whatis-step solid-card p-6 md:p-8">
                 <div class="flex items-start gap-5">
-                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 font-mono text-sm font-bold text-emerald-300">
+                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#101012] border border-white/[0.14] font-mono text-sm font-bold text-emerald-300">
                     {item.step}
                   </span>
                   <div>
-                    <h3 class="text-xl font-heading font-semibold text-white">
+                    <h3 class="text-xl font-heading font-semibold text-[#fcfdff]">
                       {item.title}
                     </h3>
-                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                    <p class="mt-2.5 text-base font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
                       {item.detail}
                     </p>
                   </div>
@@ -154,21 +151,21 @@ const pageFaqs = [
       </div>
     </section>
 
-    <section class="pb-16">
+    <section class="pb-16 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <p class="section-eyebrow text-emerald-400 mb-4">Why it matters</p>
-          <h2 class="text-3xl font-heading font-semibold text-white mb-8">
+          <p class="section-eyebrow mb-4">Why it matters</p>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-8">
             The business impact
           </h2>
           <div class="grid gap-5 md:grid-cols-3">
             {
               benefits.map((item) => (
                 <article class="whatis-benefit solid-card p-6">
-                  <h3 class="text-lg font-heading font-bold text-white">
+                  <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">
                     {item.title}
                   </h3>
-                  <p class="mt-3 text-sm font-medium leading-relaxed text-slate-300">
+                  <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
                     {item.text}
                   </p>
                 </article>
@@ -179,26 +176,26 @@ const pageFaqs = [
       </div>
     </section>
 
-    <section class="pb-16">
+    <section class="pb-16 bg-[#000000]">
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl solid-card p-8 md:p-10">
-          <p class="section-eyebrow text-emerald-400 mb-4">The difference</p>
-          <h2 class="text-2xl font-heading font-semibold text-white mb-6">
+        <div class="mx-auto max-w-4xl solid-card-elevated p-8 md:p-10">
+          <p class="section-eyebrow mb-4">The difference</p>
+          <h2 class="text-2xl font-heading font-semibold text-[#fcfdff] mb-6">
             Manual replies vs Comment-to-DM automation
           </h2>
           <div class="grid gap-5 md:grid-cols-2">
-            <div class="rounded-2xl border border-white/10 bg-[#0c1728] p-5">
+            <div class="solid-card-subtle p-5">
               <p class="mini-label text-slate-400">Without automation</p>
-              <ul class="mt-3 space-y-2 text-sm font-medium text-slate-300">
+              <ul class="mt-3 space-y-2 text-sm font-normal text-[rgba(252,253,255,0.7)]">
                 <li>Reply next morning — buyer already scrolled past</li>
                 <li>Copy-paste pricing into every DM manually</li>
                 <li>Miss 40%+ of leads that come in at night</li>
                 <li>Send buyer to website — 60%+ abandon cart</li>
               </ul>
             </div>
-            <div class="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-5">
-              <p class="mini-label text-emerald-300">With automation</p>
-              <ul class="mt-3 space-y-2 text-sm font-medium text-slate-200">
+            <div class="solid-card-subtle border-emerald-500/30 p-5">
+              <p class="mini-label text-emerald-400">With automation</p>
+              <ul class="mt-3 space-y-2 text-sm font-normal text-[rgba(252,253,255,0.86)]">
                 <li>Reply in 2 seconds while impulse is hot</li>
                 <li>AI reads exact product SKU, price, and stock</li>
                 <li>24/7 coverage including nights and weekends</li>
@@ -210,14 +207,14 @@ const pageFaqs = [
       </div>
     </section>
 
-    <section class="pb-16">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl text-center">
-          <p class="section-eyebrow text-emerald-400 mb-4">See it in action</p>
-          <h2 class="text-3xl font-heading font-semibold text-white mb-4">
+          <p class="section-eyebrow mb-4">See it in action</p>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-4">
             Ready to automate your Instagram sales?
           </h2>
-          <p class="section-copy mx-auto mb-8 max-w-2xl text-slate-300">
+          <p class="section-copy mx-auto mb-8 max-w-2xl">
             VoluChat's comment-to-DM engine replies to Instagram comments in 2 seconds with exact pricing, checks live Shopify stock, and closes orders inside WhatsApp — the full 90-second comment-to-checkout loop.
           </p>
           <div class="flex flex-col justify-center gap-3.5 sm:flex-row">

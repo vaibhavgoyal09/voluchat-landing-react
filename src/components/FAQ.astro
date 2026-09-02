@@ -53,16 +53,16 @@ const faqs = [
     </div>
 
     <div
-      class="mx-auto max-w-3xl divide-y divide-[rgba(148,163,184,0.16)] overflow-hidden rounded-2xl border border-[rgba(148,163,184,0.22)] bg-[#0c1728] shadow-[0_28px_86px_-54px_rgba(0,0,0,0.85)]"
+      class="mx-auto max-w-3xl divide-y divide-white/[0.08] overflow-hidden rounded-xl border border-white/[0.08] bg-[#0a0a0c]"
     >
       {
         faqs.slice(0, 7).map((faq, index) => (
-          <div class="faq-item transition-all duration-300" data-index={index}>
-            <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-white/[0.045]">
-              <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-white transition-colors group-hover:text-teal-200">
+          <div class="faq-item transition-colors duration-200" data-index={index}>
+            <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-white/[0.02]">
+              <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-[#fcfdff] transition-colors group-hover:text-emerald-300">
                 {faq.question}
               </span>
-              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[rgba(148,163,184,0.18)] bg-white/[0.06] shadow-sm transition-all duration-300 group-hover:border-teal-300/30 group-hover:bg-teal-300/10">
+              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.14] bg-[#101012] transition-colors duration-200 group-hover:border-emerald-500/40">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -70,18 +70,18 @@ const faqs = [
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="3"
+                  stroke-width="2.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="faq-chevron text-slate-300 transition-all duration-300 group-hover:text-teal-200"
+                  class="faq-chevron text-slate-400 transition-all duration-300 group-hover:text-emerald-300"
                 >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </span>
             </button>
-            <div class="faq-body max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+            <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 sm:px-8 sm:pb-8">
-                <p class="text-base font-medium leading-relaxed text-slate-200">
+                <p class="text-base font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
                   {faq.answer}
                 </p>
               </div>

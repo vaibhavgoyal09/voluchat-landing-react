@@ -127,30 +127,25 @@ const companyFacts = [
 >
   <Header />
 
-  <main class="pt-20">
+  <main class="overflow-hidden">
     <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-16 pb-20 sm:pt-24 lg:pb-28">
-      <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(20,184,166,0.12),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(45,212,191,0.08),transparent_30%)]"
-      >
-      </div>
-      <div class="ambient-noise"></div>
+    <section class="hero-stripe text-left">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div class="abt-hero-text">
-            <div
-              class="inline-flex items-center gap-2 rounded-full border border-teal-500/25 bg-teal-950/40 px-3.5 py-1 text-xs font-bold text-teal-300 mb-6"
-            >
-              <span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+            <div class="chip mb-6">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mr-1.5"></span>
               The VoluChat Story
             </div>
             <h1
-              class="text-4xl font-semibold leading-[1.08] text-white sm:text-6xl font-heading"
+              class="text-4xl font-semibold leading-[1.08] text-[#fcfdff] sm:text-6xl font-heading"
             >
               Running an online store was never meant to be a headache.
             </h1>
-            <p class="section-copy mt-6 max-w-xl text-slate-300 text-lg leading-relaxed">
+            <p class="section-copy mt-6 max-w-xl text-lg leading-relaxed">
               VoluChat was born directly on the frontline of e-commerce sales. We saw brilliant merchants spend lakhs on marketing, only to drown in chaotic WhatsApp chats, lost night-time orders, and out-of-stock mishaps.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -159,11 +154,11 @@ const companyFacts = [
             </div>
           </div>
 
-          <div class="abt-hero-image solid-card p-3 border-teal-500/20 bg-[#081120]">
+          <div class="abt-hero-image solid-card p-2">
             <img
               src="/about_hero.webp"
               alt="Autonomous commerce workspace by VoluChat"
-              class="h-full w-full rounded-xl object-cover"
+              class="h-full w-full rounded-lg object-cover"
               width="1024"
               height="1024"
               loading="eager"
@@ -175,33 +170,33 @@ const companyFacts = [
     </section>
 
     <!-- Origin Story / Frontline Reality -->
-    <section id="origin" class="abt-origin-section section-pad section-band relative overflow-hidden">
+    <section id="origin" class="abt-origin-section relative overflow-hidden py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
       <div class="page-shell">
         <div class="max-w-3xl">
-          <p class="section-eyebrow text-teal-400">The Genesis</p>
-          <h2 class="section-title mt-4 text-white font-heading text-3xl sm:text-5xl">
+          <p class="section-eyebrow">The Genesis</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading text-3xl sm:text-5xl">
             Built from real frontline frustration, not a Silicon Valley whiteboard.
           </h2>
-          <p class="mt-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+          <p class="mt-5 text-base sm:text-lg font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
             While working as a <strong>Sales Manager</strong> for an online commerce store, our founder lived through the daily chaos of social selling. Social media brought massive organic and paid traffic, but closing orders manually over WhatsApp DMs was fundamentally broken.
           </p>
         </div>
 
         <!-- 6 Frontline Leaks Grid -->
-        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {
             frontlineProblems.map((item) => (
-              <div class="abt-problem-card solid-card relative border-white/10 bg-[#0a1424]/90 p-7 hover:border-teal-500/30 transition-all">
+              <div class="abt-problem-card solid-card p-6 sm:p-7">
                 <div class="flex items-center justify-between">
                   <span class="text-2xl">{item.icon}</span>
-                  <span class="font-mono text-xs font-bold text-teal-400/80 bg-teal-950/60 px-2 py-0.5 rounded border border-teal-500/20">
+                  <span class="font-mono text-xs font-bold text-emerald-400 bg-[#101012] px-2.5 py-0.5 rounded-full border border-white/[0.08]">
                     PROBLEM {item.leak}
                   </span>
                 </div>
-                <h3 class="mt-5 text-lg font-heading font-semibold text-white">
+                <h3 class="mt-5 text-lg font-heading font-semibold text-[#fcfdff]">
                   {item.title}
                 </h3>
-                <p class="mt-3 text-sm leading-relaxed text-slate-300 font-normal">
+                <p class="mt-2.5 text-sm leading-relaxed text-[rgba(252,253,255,0.7)] font-normal">
                   {item.desc}
                 </p>
               </div>
@@ -209,14 +204,14 @@ const companyFacts = [
           }
         </div>
 
-        <div class="mt-10 rounded-2xl border border-teal-500/20 bg-teal-950/20 p-8 sm:p-10 backdrop-blur-md">
-          <h3 class="text-xl sm:text-2xl font-heading font-semibold text-white">
+        <div class="mt-10 solid-card-elevated p-8 sm:p-10">
+          <h3 class="text-xl sm:text-2xl font-heading font-semibold text-[#fcfdff]">
             The Bot Dilemma: Why Flowcharts Failed
           </h3>
-          <p class="mt-4 text-slate-300 leading-relaxed">
+          <p class="mt-4 text-sm sm:text-base font-normal text-[rgba(252,253,255,0.7)] leading-relaxed">
             When trying existing automation tools (ManyChat, Wati, flowchart bots), we ran into another wall: they required weeks of complex setup, logic diagrams, and ongoing maintenance. Non-technical store owners were forced to become prompt engineers and software architects just to send a product link.
           </p>
-          <p class="mt-3 text-slate-300 leading-relaxed">
+          <p class="mt-3 text-sm sm:text-base font-normal text-[rgba(252,253,255,0.86)] leading-relaxed">
             <strong>VoluChat exists to change that paradigm:</strong> deliver an autonomous, zero-config sales agent that works out of the box with live catalog synchronization, sizing qualification, and 1-click UPI checkout.
           </p>
         </div>
@@ -224,31 +219,31 @@ const companyFacts = [
     </section>
 
     <!-- Operating Principles -->
-    <section class="abt-principles-section section-pad relative overflow-hidden">
+    <section class="abt-principles-section relative overflow-hidden py-20 sm:py-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="section-eyebrow text-teal-400">Our Standards</p>
-          <h2 class="section-title mt-4 text-white font-heading">
+          <p class="section-eyebrow">Our Standards</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
             How we operate and build
           </h2>
-          <p class="section-copy mx-auto mt-4 max-w-2xl text-slate-300">
+          <p class="section-copy mx-auto mt-4 max-w-2xl">
             Principles designed to eliminate merchant risk and build sustainable sales growth.
           </p>
         </div>
 
-        <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <div class="mt-12 grid gap-5 md:grid-cols-2">
           {
             operatingPrinciples.map((item) => (
-              <article class="abt-principle-card solid-card border-white/10 bg-[#0a1424]/80 p-8">
+              <article class="abt-principle-card solid-card p-7 sm:p-8">
                 <div class="flex items-center gap-4">
-                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-teal-500/15 border border-teal-500/30 font-mono text-sm font-bold text-teal-300">
+                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[#101012] border border-white/[0.14] font-mono text-sm font-bold text-emerald-300">
                     {item.number}
                   </span>
-                  <h3 class="text-xl font-heading font-semibold text-white">
+                  <h3 class="text-xl font-heading font-semibold text-[#fcfdff]">
                     {item.title}
                   </h3>
                 </div>
-                <p class="mt-4 text-sm font-medium leading-relaxed text-slate-300">
+                <p class="mt-4 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
                   {item.desc}
                 </p>
               </article>
@@ -259,14 +254,14 @@ const companyFacts = [
     </section>
 
     <!-- The Bigger Vision -->
-    <section class="abt-vision-section section-pad section-band relative overflow-hidden">
+    <section class="abt-vision-section relative overflow-hidden py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
       <div class="page-shell">
         <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div class="abt-vision-image solid-card p-3 border-teal-500/20 bg-[#081120]">
+          <div class="abt-vision-image solid-card p-2">
             <img
               src="/mission_collaboration.webp"
               alt="VoluChat e-commerce agent workflow"
-              class="h-full w-full rounded-xl object-cover"
+              class="h-full w-full rounded-lg object-cover"
               width="1024"
               height="1024"
               loading="lazy"
@@ -275,24 +270,24 @@ const companyFacts = [
           </div>
 
           <div class="abt-vision-text">
-            <p class="section-eyebrow text-teal-400">The Horizon</p>
-            <h2 class="mt-4 text-3xl font-heading font-semibold text-white sm:text-5xl">
+            <p class="section-eyebrow">The Horizon</p>
+            <h2 class="mt-3 text-3xl font-heading font-semibold text-[#fcfdff] sm:text-5xl">
               Our vision goes far beyond a WhatsApp chatbot.
             </h2>
-            <p class="mt-6 text-slate-300 leading-relaxed text-base">
+            <p class="mt-5 text-[rgba(252,253,255,0.7)] leading-relaxed text-base font-normal">
               A chat bot is just an interface. Our long-term mission is to build the <strong>autonomous operating layer for modern e-commerce</strong>.
             </p>
-            <p class="mt-4 text-slate-300 leading-relaxed text-base">
+            <p class="mt-3 text-[rgba(252,253,255,0.7)] leading-relaxed text-base font-normal">
               From the moment an Instagram shopper comments on a video, to sizing guidance, intelligent inventory allocation, fraud-protected UPI payment links, and post-purchase support — VoluChat handles the heavy lifting so boutique founders can focus purely on product and brand storytelling.
             </p>
 
-            <div class="mt-8 grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
+            <div class="mt-8 grid grid-cols-2 gap-4 border-t border-white/[0.08] pt-6">
               <div>
-                <p class="text-2xl font-bold font-heading text-white">Zero</p>
+                <p class="text-2xl font-bold font-heading text-[#fcfdff]">Zero</p>
                 <p class="text-xs text-slate-400 mt-1">Flowchart builder config required</p>
               </div>
               <div>
-                <p class="text-2xl font-bold font-heading text-teal-400">10x</p>
+                <p class="text-2xl font-bold font-heading text-emerald-400">10x</p>
                 <p class="text-xs text-slate-400 mt-1">Founder ROI value standard</p>
               </div>
             </div>
@@ -302,19 +297,19 @@ const companyFacts = [
     </section>
 
     <!-- Company Transparency & Quick Facts -->
-    <section class="abt-facts-section section-pad relative overflow-hidden">
+    <section class="abt-facts-section relative overflow-hidden py-20 sm:py-24 bg-[#000000]">
       <div class="page-shell">
-        <div class="rounded-3xl border border-white/10 bg-[#07111e]/90 p-8 sm:p-12">
+        <div class="solid-card p-8 sm:p-12">
           <div class="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div>
-              <p class="section-eyebrow text-teal-400">Corporate Information</p>
-              <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-white mt-2">
+              <p class="section-eyebrow">Corporate Information</p>
+              <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[#fcfdff] mt-2">
                 Company Transparency
               </h2>
-              <p class="mt-4 text-sm text-slate-300 leading-relaxed">
-                VoluChat is developed and operated by <strong>QubitNine Technologies Pvt. Ltd.</strong> (under registration), headquartered in Noida, Uttar Pradesh, India.
+              <p class="mt-4 text-sm text-[rgba(252,253,255,0.7)] leading-relaxed font-normal">
+                VoluChat is developed and operated by <strong>QubitNine Technologies Pvt. Ltd.</strong>, headquartered in Noida, Uttar Pradesh, India.
               </p>
-              <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+              <p class="mt-3 text-sm text-[rgba(252,253,255,0.7)] leading-relaxed font-normal">
                 We are committed to enterprise data isolation, official Meta Cloud API compliance, and merchant margin safety.
               </p>
             </div>
@@ -322,11 +317,11 @@ const companyFacts = [
             <div class="grid gap-3 sm:grid-cols-2">
               {
                 companyFacts.map((fact) => (
-                  <div class="rounded-xl border border-white/5 bg-slate-900/60 p-4">
+                  <div class="solid-card-subtle p-4">
                     <p class="text-xs font-mono font-medium text-slate-400 uppercase tracking-wider">
                       {fact.label}
                     </p>
-                    <p class="text-sm font-semibold text-white mt-1">
+                    <p class="text-sm font-semibold text-[#fcfdff] mt-1">
                       {fact.value}
                     </p>
                   </div>
@@ -339,19 +334,19 @@ const companyFacts = [
     </section>
 
     <!-- Founder Commitment Card -->
-    <section class="abt-founder-section relative pb-28">
+    <section class="abt-founder-section relative pb-28 bg-[#000000]">
       <div class="page-shell">
-        <div class="rounded-3xl border border-teal-500/30 bg-gradient-to-b from-teal-950/40 via-[#0a1424] to-[#081120] p-8 sm:p-12 text-center max-w-4xl mx-auto">
-          <p class="section-eyebrow text-teal-400">Direct Founder Accountability</p>
-          <blockquote class="mt-4 text-2xl sm:text-3xl font-heading font-semibold text-white leading-relaxed">
+        <div class="solid-card-elevated p-8 sm:p-12 text-center max-w-4xl mx-auto">
+          <p class="section-eyebrow">Direct Founder Accountability</p>
+          <blockquote class="mt-4 text-2xl sm:text-3xl font-heading font-semibold text-[#fcfdff] leading-relaxed">
             "I will deliver 10x the value of what we charge. Anything less is unacceptable."
           </blockquote>
-          <p class="mt-6 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p class="mt-6 text-[rgba(252,253,255,0.7)] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-normal">
             For every brand joining our 10-Store Pilot Cohort, my team and I personally oversee catalog ingestion, Instagram hook tuning, and live sales qualification. No outsourced support, no junior account managers.
           </p>
           <div class="mt-8 flex flex-col items-center justify-center gap-2">
-            <p class="text-base font-bold text-white">Vaibhav Goyal</p>
-            <p class="text-xs font-mono text-teal-300">Founder & CEO &bull; VoluChat / QubitNine Technologies</p>
+            <p class="text-base font-semibold text-white">Vaibhav Goyal</p>
+            <p class="text-xs font-mono text-emerald-300">Founder & CEO &bull; VoluChat / QubitNine Technologies</p>
             <div class="mt-4">
               <a href="/contact" class="btn-primary">Apply to Join the 10-Store Cohort &rarr;</a>
             </div>

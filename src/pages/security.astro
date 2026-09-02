@@ -113,43 +113,40 @@ const codGuardrails = [
   <Header />
 
   <main class="overflow-hidden">
-    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-24">
-      <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.12),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.6),transparent_30%)]"
-      >
-      </div>
-      <div class="ambient-noise"></div>
+    <section class="hero-stripe text-left">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
       <div class="page-shell">
         <div class="sec-hero-text mx-auto max-w-4xl">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <div class="chip mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mr-1.5"></span>
             Enterprise-Grade Brand Safety
           </div>
           <h1
-            class="max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
+            class="max-w-3xl text-4xl font-semibold leading-[1.02] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
             Total control over every conversation and checkout.
           </h1>
-          <p class="section-copy mt-6 max-w-2xl text-slate-300">
+          <p class="section-copy mt-6 max-w-2xl">
             We treat your brand reputation as sacred. VoluChat wraps every AI response in strict margin limits, verified stock checks, catalog isolation, and instant human fallback — so your brand never says the wrong thing.
           </p>
-          <p class="mt-4 max-w-xl text-sm font-medium leading-relaxed text-slate-500">
+          <p class="mt-4 max-w-xl text-sm font-normal leading-relaxed text-slate-500">
             <strong class="text-slate-400">What does this mean?</strong> Your e-commerce automation agent can only say what your catalog says, can only discount within your configured margins, and hands off to a human the moment something is ambiguous.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <h2 class="section-eyebrow text-emerald-400 mb-6">Meta API compliance</h2>
+          <h2 class="section-eyebrow mb-6">Meta API compliance</h2>
           <div class="grid gap-4 sm:grid-cols-3">
             {metaCompliance.map((item) => (
               <article class="sec-card opacity-0 solid-card p-5 md:p-6">
-                <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
-                <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
+                <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
               </article>
             ))}
           </div>
@@ -157,18 +154,18 @@ const codGuardrails = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <h2 class="section-eyebrow text-emerald-400 mb-6">Data flow architecture</h2>
+          <h2 class="section-eyebrow mb-6">Data flow architecture</h2>
           <div class="grid gap-4 sm:grid-cols-3">
             {dataFlow.map((group) => (
               <article class="sec-card opacity-0 solid-card p-5 md:p-6">
-                <h3 class="text-base font-heading font-semibold text-white mb-3">{group.title}</h3>
+                <h3 class="text-base font-heading font-semibold text-[#fcfdff] mb-3">{group.title}</h3>
                 <ul class="space-y-2">
                   {group.items.map((item) => (
-                    <li class="flex gap-2.5 text-sm font-medium leading-relaxed text-slate-300">
-                      <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/60"></span>
+                    <li class="flex gap-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                      <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"></span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -180,23 +177,23 @@ const codGuardrails = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <h2 class="section-eyebrow text-emerald-400 mb-6">Brand safety guardrails</h2>
+          <h2 class="section-eyebrow mb-6">Brand safety guardrails</h2>
           <div class="space-y-4">
             {guardrails.map((item) => (
               <article class="sec-guardrail opacity-0 solid-card p-6 md:p-8">
                 <div class="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-start">
                   <div>
-                    <h3 class="text-lg font-heading font-semibold text-white">{item.title}</h3>
-                    <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                    <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
+                    <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
                   </div>
-                  <ul class="space-y-2">
+                  <ul class="space-y-2.5">
                     {item.details.map((d) => (
-                      <li class="flex gap-2.5 text-sm font-medium leading-relaxed text-slate-300">
-                        <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-300/10 text-teal-200">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <li class="flex gap-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                        <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#101012] border border-white/[0.14] font-mono text-[10px] font-bold text-emerald-300">
+                          ✓
                         </span>
                         <span>{d}</span>
                       </li>
@@ -210,15 +207,15 @@ const codGuardrails = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <h2 class="section-eyebrow text-emerald-400 mb-6">COD order guardrails</h2>
+          <h2 class="section-eyebrow mb-6">COD order guardrails</h2>
           <div class="grid gap-4 sm:grid-cols-3">
             {codGuardrails.map((item) => (
               <article class="sec-card opacity-0 solid-card p-5 md:p-6">
-                <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
-                <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
+                <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
               </article>
             ))}
           </div>
@@ -226,10 +223,10 @@ const codGuardrails = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell text-center">
-        <h2 class="section-title !text-white">Ready to deploy with full brand control?</h2>
-        <p class="section-copy mx-auto mt-4 max-w-2xl text-slate-300">
+        <h2 class="section-title text-[#fcfdff]">Ready to deploy with full brand control?</h2>
+        <p class="section-copy mx-auto mt-4 max-w-2xl">
           White-glove setup for 10 pilot stores. We configure every guardrail, test every edge case, and tune the AI on your brand voice before going live.
         </p>
         <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">

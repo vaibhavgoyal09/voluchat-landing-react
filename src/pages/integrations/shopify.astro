@@ -115,28 +115,25 @@ const guardrails = [
   <Header />
 
   <main class="overflow-hidden">
-    <section class="relative overflow-hidden pt-36 pb-20 sm:pt-40 lg:pb-24">
-      <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(16,185,129,0.12),transparent_30%),radial-gradient(circle_at_82%_16%,rgba(15,23,42,0.6),transparent_30%)]"
-      >
-      </div>
-      <div class="ambient-noise"></div>
+    <section class="hero-stripe text-left">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
       <div class="page-shell">
         <div class="int-hero-text max-w-4xl">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <div class="chip mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mr-1.5"></span>
             Shopify &bull; Meta Architecture
           </div>
           <h1
-            class="max-w-3xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
+            class="max-w-3xl text-4xl font-semibold leading-[1.02] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
             Your Shopify Store, Powering Every WhatsApp Conversation.
           </h1>
-          <p class="section-copy mt-6 max-w-2xl text-slate-300">
+          <p class="section-copy mt-6 max-w-2xl">
             VoluChat reads your live Shopify catalog — variant stock, pricing, fabric details, pincode SLA — and writes draft orders with UPI checkout links directly inside WhatsApp and Instagram DMs.
           </p>
-          <p class="mt-4 max-w-xl text-sm font-medium leading-relaxed text-slate-500">
+          <p class="mt-4 max-w-xl text-sm font-normal leading-relaxed text-slate-500">
             <strong class="text-slate-400">What is this integration?</strong> A real-time bridge between your Shopify store and VoluChat's e-commerce automation agent — ensuring every answer in chat is accurate, every stock check is live, and every order syncs back to your admin.
           </p>
           <div class="mt-8 flex flex-col gap-3.5 sm:flex-row">
@@ -147,19 +144,19 @@ const guardrails = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <h2 class="section-eyebrow text-emerald-400 mb-6">How the integration works</h2>
+          <h2 class="section-eyebrow mb-6">How the integration works</h2>
           <div class="space-y-4">
             {flowSteps.map((item) => (
               <article class="shopify-flow-step opacity-0 solid-card flex gap-5 p-5 md:p-6">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-950/30 text-sm font-bold text-emerald-400">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/[0.14] bg-[#101012] text-sm font-mono font-bold text-emerald-400">
                   {item.step}
                 </div>
                 <div>
-                  <h3 class="text-lg font-heading font-semibold text-white">{item.title}</h3>
-                  <p class="mt-1.5 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                  <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
+                  <p class="mt-1.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
                 </div>
               </article>
             ))}
@@ -168,27 +165,27 @@ const guardrails = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl grid gap-8 lg:grid-cols-2">
           <div>
-            <h2 class="section-eyebrow text-emerald-400 mb-6">Reads from your Shopify store</h2>
+            <h2 class="section-eyebrow mb-6">Reads from your Shopify store</h2>
             <div class="space-y-3">
               {readsFromShopify.map((item) => (
                 <article class="shopify-card opacity-0 solid-card p-5">
-                  <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
-                  <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
+                  <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
                 </article>
               ))}
             </div>
           </div>
           <div>
-            <h2 class="section-eyebrow text-emerald-400 mb-6">Creates in your Shopify admin</h2>
+            <h2 class="section-eyebrow mb-6">Creates in your Shopify admin</h2>
             <div class="space-y-3">
               {createsInShopify.map((item) => (
                 <article class="shopify-card opacity-0 solid-card p-5">
-                  <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
-                  <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
+                  <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
                 </article>
               ))}
             </div>
@@ -197,15 +194,15 @@ const guardrails = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <h2 class="section-eyebrow text-emerald-400 mb-6">Security & guardrails</h2>
+          <h2 class="section-eyebrow mb-6">Security & guardrails</h2>
           <div class="grid gap-4 sm:grid-cols-2">
             {guardrails.map((item) => (
               <article class="shopify-guardrail opacity-0 solid-card p-5 md:p-6">
-                <h3 class="text-base font-heading font-semibold text-white">{item.title}</h3>
-                <p class="mt-2 text-sm font-medium leading-relaxed text-slate-300">{item.description}</p>
+                <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
+                <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
               </article>
             ))}
           </div>
@@ -213,10 +210,10 @@ const guardrails = [
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell text-center">
-        <h2 class="section-title !text-white">Ready to connect your Shopify store?</h2>
-        <p class="section-copy mx-auto mt-4 max-w-2xl text-slate-300">
+        <h2 class="section-title text-[#fcfdff]">Ready to connect your Shopify store?</h2>
+        <p class="section-copy mx-auto mt-4 max-w-2xl">
           White-glove setup for 10 pilot stores. We handle the Shopify integration, Meta API configuration, and brand voice calibration — you just approve the pilot.
         </p>
         <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">

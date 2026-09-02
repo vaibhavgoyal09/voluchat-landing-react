@@ -37,7 +37,7 @@ const pillars = [
 
 <section
   id="how-it-works"
-  class="relative bg-[#050b14] py-20 sm:py-24 lg:py-28"
+  class="relative bg-[#000000] py-20 sm:py-24 lg:py-28"
 >
   <div class="page-shell relative z-10">
     <div class="usecases-header mb-12 grid gap-6 lg:grid-cols-2 lg:items-end opacity-0">
@@ -45,11 +45,11 @@ const pillars = [
         <div class="chip mb-4">
           <span class="mini-label">The Fashion AI Sales Engine</span>
         </div>
-        <h2 class="section-title text-white">
-          Built to close fashion buyers <span class="gradient-text-anim">where they actually shop.</span>
+        <h2 class="section-title text-[#fcfdff]">
+          Built to close fashion buyers <span class="text-emerald-400">where they actually shop.</span>
         </h2>
       </div>
-      <p class="section-copy max-w-xl text-slate-400 lg:justify-self-end lg:pb-2">
+      <p class="section-copy max-w-xl text-[rgba(252,253,255,0.7)] lg:justify-self-end lg:pb-2">
         From the moment a customer comments on an Instagram Reel to the second their UPI payment clears inside WhatsApp — VoluChat manages the entire boutique selling loop.
       </p>
     </div>
@@ -58,7 +58,7 @@ const pillars = [
       {
         pillars.map((pillar, index) => (
           <article
-            class={`usecase-card group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-7 transition-all duration-500 hover:border-emerald-500/30 hover:bg-white/[0.05] sm:p-8 opacity-0 ${index % 2 === 1 ? "md:translate-y-8" : ""}`}
+            class={`usecase-card group relative overflow-hidden rounded-xl border border-white/[0.08] bg-[#0a0a0c] p-7 transition-all duration-300 hover:border-emerald-500/40 hover:bg-[#101012] sm:p-8 opacity-0 ${index % 2 === 1 ? "md:translate-y-6" : ""}`}
           >
             <div class="relative z-10 flex h-full flex-col justify-between gap-8">
               <div>
@@ -66,24 +66,24 @@ const pillars = [
                   <span class="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-400">
                     {pillar.code}
                   </span>
-                  <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-slate-400">
+                  <span class="rounded-full border border-white/[0.08] bg-[#101012] px-3 py-1 text-[9px] font-medium uppercase tracking-[0.16em] text-slate-400">
                     {pillar.badge}
                   </span>
                 </div>
 
-                <h3 class="font-heading text-xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-emerald-300 sm:text-2xl">
+                <h3 class="font-heading text-xl font-semibold tracking-tight text-[#fcfdff] transition-colors duration-200 group-hover:text-emerald-300 sm:text-2xl">
                   {pillar.title}
                 </h3>
-                <p class="mt-3 text-sm leading-relaxed text-slate-400">
+                <p class="mt-3 text-sm leading-relaxed text-[rgba(252,253,255,0.7)]">
                   {pillar.text}
                 </p>
               </div>
 
-              <div class="flex items-end justify-between border-t border-white/10 pt-5">
-                <span class="font-heading text-lg font-bold text-emerald-300">
+              <div class="flex items-end justify-between border-t border-white/[0.08] pt-5">
+                <span class="font-heading text-lg font-semibold text-emerald-300">
                   {pillar.metric}
                 </span>
-                <span class="text-[11px] font-semibold text-slate-500 transition-colors duration-300 group-hover:text-emerald-400">
+                <span class="text-[11px] font-medium text-slate-500 transition-colors duration-200 group-hover:text-emerald-400">
                   Autonomous Layer &rarr;
                 </span>
               </div>

@@ -67,46 +67,43 @@ const verdict = {
 >
   <Header />
 
-  <main class="pt-20">
-    <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-24">
-      <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,rgba(83,111,159,0.12),transparent_32%),radial-gradient(circle_at_18%_42%,rgba(203,217,234,0.16),transparent_30%)]"
-      >
-      </div>
-      <div class="ambient-noise"></div>
+  <main class="overflow-hidden">
+    <section class="hero-stripe">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
       <div class="page-shell">
         <div class="compare-hero-text mx-auto max-w-4xl text-center">
           <div class="chip">VoluChat vs Wati</div>
           <h1
-            class="mt-6 text-4xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl font-heading"
+            class="mt-6 text-4xl font-semibold leading-[1.02] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
             VoluChat vs Wati — AI Sales Stylist vs Flowchart Bot.
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
+          <p class="section-copy mx-auto mt-6 max-w-3xl">
             Wati automates WhatsApp with rigid button menus and broadcast campaigns. VoluChat is an AI sales agent for fashion boutiques that converses naturally, answers sizing queries, cross-sells matching outfits, and completes 1-click UPI orders in-chat.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="pb-16">
+    <section class="pb-16 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl space-y-4">
           {
             comparison.map((row) => (
               <article class="solid-card p-6 md:p-8">
-                <h2 class="section-eyebrow text-emerald-400 mb-4">{row.category}</h2>
-                <div class="grid gap-5 md:grid-cols-2">
-                  <div class="rounded-2xl border border-white/10 bg-[#0c1728] p-5">
-                    <p class="mini-label text-slate-400">Wati</p>
-                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                <h2 class="section-eyebrow mb-4">{row.category}</h2>
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="solid-card-subtle">
+                    <p class="mini-label">Wati</p>
+                    <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
                       {row.wati}
                     </p>
                   </div>
-                  <div class="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-5">
-                    <p class="mini-label text-emerald-300">VoluChat</p>
-                    <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
+                  <div class="solid-card-subtle border-emerald-500/30">
+                    <p class="mini-label text-emerald-400">VoluChat</p>
+                    <p class="mt-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.86)] sm:text-base">
                       {row.voluchat}
                     </p>
                   </div>
@@ -118,18 +115,18 @@ const verdict = {
       </div>
     </section>
 
-    <section class="pb-16">
+    <section class="pb-16 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl grid gap-5 md:grid-cols-2">
           <article class="solid-card p-6 md:p-8">
             <h2 class="mini-label text-slate-400">Choose Wati if...</h2>
-            <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+            <p class="mt-3 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)] sm:text-base">
               {verdict.chooseWati}
             </p>
           </article>
-          <article class="solid-card p-6 md:p-8 border-emerald-500/30 bg-emerald-950/20">
-            <h2 class="mini-label text-emerald-300">Choose VoluChat if...</h2>
-            <p class="mt-3 text-base font-medium leading-relaxed text-slate-200">
+          <article class="solid-card-elevated p-6 md:p-8">
+            <h2 class="mini-label text-emerald-400">Choose VoluChat if...</h2>
+            <p class="mt-3 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.86)] sm:text-base">
               {verdict.chooseVoluchat}
             </p>
           </article>
@@ -137,10 +134,10 @@ const verdict = {
       </div>
     </section>
 
-    <section class="pb-24">
+    <section class="pb-24 bg-[#000000]">
       <div class="page-shell text-center">
         <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
-        <p class="mt-4 text-sm text-slate-400">Or explore the full <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">comparison guide</a>.</p>
+        <p class="mt-4 text-sm font-normal text-slate-500">Or explore the full <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">comparison guide</a>.</p>
       </div>
     </section>
   </main>

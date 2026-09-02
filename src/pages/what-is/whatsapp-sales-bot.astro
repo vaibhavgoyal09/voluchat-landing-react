@@ -105,13 +105,10 @@ const pageFaqs = [
 >
   <Header />
 
-  <main class="pt-20">
-    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-20">
-      <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_14%,rgba(16,185,129,0.15),transparent_34%),linear-gradient(180deg,rgba(8,17,31,0.96),rgba(6,13,24,0.96))]"
-      >
-      </div>
-      <div class="ambient-noise"></div>
+  <main class="overflow-hidden">
+    <section class="hero-stripe">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
 
       <div class="page-shell">
         <div class="whatis-hero-text mx-auto max-w-4xl text-center">
@@ -119,22 +116,22 @@ const pageFaqs = [
             <span class="mini-label">Definition</span>
           </div>
           <h1
-            class="text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
           >
             What is a WhatsApp Sales Bot?
           </h1>
-          <p class="section-copy mx-auto mt-6 max-w-3xl text-slate-300">
+          <p class="section-copy mx-auto mt-6 max-w-3xl">
             A WhatsApp sales bot is an e-commerce automation agent that qualifies buyers, recommends products with upsells and cross-sells, recovers abandoned carts, and completes orders directly inside WhatsApp — without human intervention.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="pb-16">
+    <section class="pb-16 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <p class="section-eyebrow text-emerald-400 mb-4">Types of WhatsApp bots</p>
-          <h2 class="text-3xl font-heading font-semibold text-white mb-8">
+          <p class="section-eyebrow mb-4">Types of WhatsApp bots</p>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-8">
             Not all WhatsApp bots are equal
           </h2>
           <div class="space-y-4">
@@ -143,17 +140,17 @@ const pageFaqs = [
                 <article class="whatis-type solid-card p-6 md:p-8">
                   <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                     <div class="max-w-xl">
-                      <h3 class="text-xl font-heading font-semibold text-white">
+                      <h3 class="text-xl font-heading font-semibold text-[#fcfdff]">
                         {item.type}
                       </h3>
-                      <p class="mt-1 text-sm text-slate-500">e.g. {item.example}</p>
-                      <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                      <p class="mt-1 text-xs text-slate-500 font-mono">e.g. {item.example}</p>
+                      <p class="mt-3 text-sm sm:text-base font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
                         {item.description}
                       </p>
                     </div>
-                    <div class="md:text-right">
+                    <div class="md:text-right shrink-0">
                       <p class="mini-label text-slate-400">Best for</p>
-                      <p class="mt-1 text-sm font-medium text-slate-300">
+                      <p class="mt-1 text-sm font-medium text-emerald-400">
                         {item.fit}
                       </p>
                     </div>
@@ -166,11 +163,11 @@ const pageFaqs = [
       </div>
     </section>
 
-    <section class="pb-16">
+    <section class="pb-16 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <p class="section-eyebrow text-emerald-400 mb-4">How it works</p>
-          <h2 class="text-3xl font-heading font-semibold text-white mb-8">
+          <p class="section-eyebrow mb-4">How it works</p>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-8">
             The 4-step AI sales flow
           </h2>
           <div class="space-y-4">
@@ -178,14 +175,14 @@ const pageFaqs = [
               howItWorks.map((item) => (
                 <article class="whatis-step solid-card p-6 md:p-8">
                   <div class="flex items-start gap-5">
-                    <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 font-mono text-sm font-bold text-emerald-300">
+                    <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#101012] border border-white/[0.14] font-mono text-sm font-bold text-emerald-300">
                       {item.step}
                     </span>
                     <div>
-                      <h3 class="text-xl font-heading font-semibold text-white">
+                      <h3 class="text-xl font-heading font-semibold text-[#fcfdff]">
                         {item.title}
                       </h3>
-                      <p class="mt-3 text-base font-medium leading-relaxed text-slate-300">
+                      <p class="mt-2.5 text-sm sm:text-base font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
                         {item.detail}
                       </p>
                     </div>
@@ -198,20 +195,18 @@ const pageFaqs = [
       </div>
     </section>
 
-    <section class="pb-16">
-      <div class="page-shell">
-        <div class="mx-auto max-w-4xl text-center">
-          <p class="section-eyebrow text-emerald-400 mb-4">See it in action</p>
-          <h2 class="text-3xl font-heading font-semibold text-white mb-4">
-            Ready to deploy e-commerce automation on WhatsApp?
-          </h2>
-          <p class="section-copy mx-auto mb-8 max-w-2xl text-slate-300">
-            VoluChat is a WhatsApp e-commerce automation agent that goes beyond chatbots — it qualifies buyers, recommends upsells and cross-sells, recovers abandoned carts, and closes orders with native UPI checkout in 90 seconds.
-          </p>
-          <div class="flex flex-col justify-center gap-3.5 sm:flex-row">
-            <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
-            <a href="/compare" class="btn-secondary">Compare vs Wati / Manychat</a>
-          </div>
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell text-center">
+        <p class="section-eyebrow mb-4">See it in action</p>
+        <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-4">
+          Ready to deploy e-commerce automation on WhatsApp?
+        </h2>
+        <p class="section-copy mx-auto mb-8 max-w-2xl">
+          VoluChat is a WhatsApp e-commerce automation agent that goes beyond chatbots — it qualifies buyers, recommends upsells and cross-sells, recovers abandoned carts, and closes orders with native UPI checkout in 90 seconds.
+        </p>
+        <div class="flex flex-col justify-center gap-3.5 sm:flex-row">
+          <a href="/contact" class="btn-primary">Apply for 1 of 10 Pilot Spots &rarr;</a>
+          <a href="/compare" class="btn-secondary">Compare vs Wati / Manychat</a>
         </div>
       </div>
     </section>

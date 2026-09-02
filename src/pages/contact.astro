@@ -45,20 +45,19 @@ const structuredData = {
               Private Founder Cohort &bull; 10 Fashion Brands
             </div>
             <h1
-              class="text-4xl font-semibold leading-[1.04] text-white sm:text-5xl lg:text-6xl font-heading"
+              class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading"
             >
-              Apply for 1 of 10 Pilot Store Deployments.
+              Deploy VoluChat on your store.
+              <span class="block text-emerald-400">100% White-Glove Setup.</span>
             </h1>
-            <p class="section-copy mt-6 max-w-xl text-slate-300">
-              We are selecting 10 ambitious apparel and clothing boutique brands. The founder personally handles 100% of the Meta Cloud API configuration, catalog &amp; size chart syncing, and AI stylist tuning.
+            <p class="section-copy mt-6 max-w-xl">
+              Apply for our 10-Store Founder Cohort. We personally build, configure, and calibrate your autonomous sales agent end-to-end.
             </p>
 
-            <div class="mt-10 grid gap-4">
-              <div
-                class="rounded-2xl border border-white/10 bg-[#0a1424]/90 p-6"
-              >
-                <p class="section-eyebrow text-emerald-400">What is included in the pilot</p>
-                <div class="mt-4 grid gap-3.5">
+            <div class="mt-8 space-y-6">
+              <div class="solid-card p-6">
+                <p class="section-eyebrow">What is included in the pilot</p>
+                <div class="mt-4 grid gap-3">
                   {
                     [
                       "Done-For-You Meta API & WhatsApp Business API Setup",
@@ -66,12 +65,12 @@ const structuredData = {
                       "Automated Instagram Comment-to-DM Lead Engine",
                       "In-DM Native WhatsApp UPI / 1-Click Draft Order Checkout",
                       "Direct Founder Support on WhatsApp with 10x ROI Guarantee",
-                    ].map((item, index) => (
+                    ].map((item) => (
                       <div class="flex items-center gap-3">
-                        <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-emerald-500/15 font-mono text-xs font-bold text-emerald-300">
+                        <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#101012] border border-white/[0.14] font-mono text-[10px] font-bold text-emerald-300">
                           ✓
                         </span>
-                        <span class="text-sm font-medium leading-snug text-slate-200">
+                        <span class="text-sm font-normal leading-snug text-[rgba(252,253,255,0.86)]">
                           {item}
                         </span>
                       </div>
@@ -81,10 +80,10 @@ const structuredData = {
               </div>
 
               <div
-                class="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+                class="flex items-center gap-4 rounded-xl border border-white/[0.08] bg-[#0a0a0c] p-4"
               >
                 <div
-                  class="grid h-10 w-10 place-items-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-300"
+                  class="grid h-10 w-10 place-items-center rounded-lg border border-white/[0.14] bg-[#101012] text-emerald-300"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -102,10 +101,10 @@ const structuredData = {
                   >
                 </div>
                 <div>
-                  <p class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Direct Founder Desk</p>
+                  <p class="mini-label">Direct Founder Desk</p>
                   <a
                     href="mailto:support@voluchat.com"
-                    class="text-sm font-semibold text-white transition-colors hover:text-emerald-300"
+                    class="text-sm font-medium text-[#fcfdff] transition-colors hover:text-emerald-400"
                     >support@voluchat.com</a
                   >
                 </div>
@@ -113,13 +112,13 @@ const structuredData = {
             </div>
           </div>
 
-          <div class="contact-form-card solid-card p-6 sm:p-8 lg:p-10 border-emerald-500/20 bg-[#0c1524]">
+          <div class="contact-form-card solid-card-elevated p-6 sm:p-8 lg:p-10">
             <form id="contact-form" class="space-y-5">
               <div>
-                <h2 class="text-2xl font-heading font-semibold text-white">
+                <h2 class="text-2xl font-heading font-semibold text-[#fcfdff]">
                   Pilot Qualification Form
                 </h2>
-                <p class="mt-1.5 text-sm font-medium text-slate-300">
+                <p class="mt-1.5 text-sm font-normal text-[rgba(252,253,255,0.7)]">
                   Takes 60 seconds. We review and respond within 12 hours.
                 </p>
               </div>
@@ -127,7 +126,7 @@ const structuredData = {
               <div>
                 <label
                   for="name"
-                  class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                  class="mb-2 block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400"
                   >Your Name / Role</label
                 >
                 <input
@@ -136,14 +135,14 @@ const structuredData = {
                   name="name"
                   required
                   placeholder="e.g. Vaibhav (Founder)"
-                  class="w-full rounded-xl border border-white/10 bg-[#050c16] px-4 py-3.5 text-sm font-medium text-white placeholder:text-slate-500 transition-all focus:border-emerald-400 focus:bg-[#0a1424] focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
+                  class="w-full rounded-lg border border-white/[0.14] bg-[#06060a] px-4 py-3 text-sm font-normal text-[#fcfdff] placeholder:text-slate-600 transition-all focus:border-white focus:bg-[#0a0a0c] focus:outline-none"
                 />
               </div>
 
               <div>
                 <label
                   for="email"
-                  class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                  class="mb-2 block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400"
                   >Work Email / WhatsApp No.</label
                 >
                 <input
@@ -152,14 +151,14 @@ const structuredData = {
                   name="email"
                   required
                   placeholder="you@store.com or +91 98765..."
-                  class="w-full rounded-xl border border-white/10 bg-[#050c16] px-4 py-3.5 text-sm font-medium text-white placeholder:text-slate-500 transition-all focus:border-emerald-400 focus:bg-[#0a1424] focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
+                  class="w-full rounded-lg border border-white/[0.14] bg-[#06060a] px-4 py-3 text-sm font-normal text-[#fcfdff] placeholder:text-slate-600 transition-all focus:border-white focus:bg-[#0a0a0c] focus:outline-none"
                 />
               </div>
 
               <div>
                 <label
                   for="shopify_url"
-                  class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                  class="mb-2 block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400"
                   >Instagram Handle or Store URL</label
                 >
                 <input
@@ -168,20 +167,20 @@ const structuredData = {
                   name="shopify_url"
                   required
                   placeholder="@yourbrand.in or yourstore.com"
-                  class="w-full rounded-xl border border-white/10 bg-[#050c16] px-4 py-3.5 text-sm font-medium text-white placeholder:text-slate-500 transition-all focus:border-emerald-400 focus:bg-[#0a1424] focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
+                  class="w-full rounded-lg border border-white/[0.14] bg-[#06060a] px-4 py-3 text-sm font-normal text-[#fcfdff] placeholder:text-slate-600 transition-all focus:border-white focus:bg-[#0a0a0c] focus:outline-none"
                 />
               </div>
 
               <div>
                 <label
                   for="priority"
-                  class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300"
+                  class="mb-2 block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400"
                   >Estimated Daily DM & Chat Volume</label
                 >
                 <select
                   id="priority"
                   name="priority"
-                  class="w-full rounded-xl border border-white/10 bg-[#050c16] px-4 py-3.5 text-sm font-medium text-white transition-all focus:border-emerald-400 focus:bg-[#0a1424] focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
+                  class="w-full rounded-lg border border-white/[0.14] bg-[#06060a] px-4 py-3 text-sm font-normal text-[#fcfdff] transition-all focus:border-white focus:bg-[#0a0a0c] focus:outline-none"
                 >
                   <option value="10-50">10 – 50 inquiries / day</option>
                   <option value="50-200">50 – 200 inquiries / day</option>
@@ -193,14 +192,14 @@ const structuredData = {
               <button
                 type="submit"
                 id="submit-btn"
-                class="btn-primary w-full gap-3 px-6 py-4 text-sm font-bold bg-white text-slate-950 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-55"
+                class="btn-primary w-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-55"
               >
                 <span id="btn-text">Submit Pilot Application &rarr;</span>
               </button>
 
               <div
                 id="form-message"
-                class="hidden rounded-xl p-3 text-center text-xs font-semibold"
+                class="hidden rounded-lg p-3 text-center text-xs font-semibold"
               >
               </div>
             </form>
