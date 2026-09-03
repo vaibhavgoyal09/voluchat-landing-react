@@ -1,41 +1,43 @@
 ---
-// Interactive Boutique Transformation & ROI Calculator Component
+// Simple & Intuitive Revenue Recovery Calculator
 ---
 
-<section id="roi-calculator" class="relative overflow-hidden py-20 sm:py-24 lg:py-28 bg-[#06060a] border-y border-white/[0.08]">
-  <!-- Background atmosphere -->
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.08),transparent_50%)]"></div>
-  <div class="sect-grid opacity-20"></div>
-
-  <div class="page-shell relative z-10">
-    <!-- Header -->
-    <div class="mb-12 max-w-2xl">
-      <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">The Boutique ROI Standard</span>
+<section id="roi-calculator" class="relative overflow-hidden py-16 sm:py-20 bg-[#000000] border-t border-white/[0.08]">
+  <div class="page-shell">
+    <!-- Header aligned with ProblemSection & HowItWorksFlow -->
+    <div class="max-w-2xl mb-10">
+      <div class="chip mb-3">
+        <span class="mini-label text-emerald-400">Revenue Recovery Calculator</span>
       </div>
       <h2 class="section-title text-[#fcfdff] font-heading">
-        Calculate your <span class="text-emerald-400">recovered DM revenue</span>.
+        How much extra sales can <span class="text-emerald-400">your boutique make</span>?
       </h2>
-      <p class="section-copy mt-3">
-        See the real revenue impact of closing night-time comments and sizing questions instantly inside WhatsApp.
+      <p class="section-copy mt-2 text-sm sm:text-base">
+        See how much revenue you recover when night-time Reel comments and WhatsApp chats get answered in 2 seconds.
       </p>
     </div>
 
-    <!-- Main 2-Column Calculator Deck -->
-    <div class="reveal-on-scroll mx-auto max-w-5xl grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-stretch">
-      <!-- Left: Interactive Sliders & Inputs -->
-      <div class="rounded-xl border border-white/[0.12] bg-[#0a0a0c] p-6 sm:p-8 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-6">
-            <h3 class="font-heading text-lg font-semibold text-white">Your Store Numbers</h3>
-            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md">Live Projection</span>
+    <!-- 2-Column Balanced Deck -->
+    <div class="grid gap-6 lg:grid-cols-2 max-w-5xl mx-auto items-stretch">
+      <!-- Left: Simple Inputs -->
+      <div class="rounded-2xl border border-white/[0.12] bg-[#0a0a0c] p-6 sm:p-7 flex flex-col justify-between shadow-xl">
+        <div class="space-y-6">
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5">
+            <h3 class="font-heading text-base sm:text-lg font-semibold text-white">Your Monthly Numbers</h3>
+            <span class="text-[11px] font-mono font-medium text-slate-400 bg-white/[0.04] border border-white/[0.08] px-2.5 py-0.5 rounded-full">
+              Interactive
+            </span>
           </div>
 
-          <!-- Slider 1: Monthly Inquiries -->
-          <div class="space-y-3 mb-6">
-            <div class="flex justify-between items-center text-sm">
-              <label for="calc-inquiries" class="text-slate-300 font-medium">Reel Comments &amp; DMs / month</label>
-              <span id="label-inquiries" class="font-mono font-bold text-emerald-400 text-base">1,500</span>
+          <!-- Slider 1: Messages -->
+          <div class="space-y-2.5">
+            <div class="flex justify-between items-center">
+              <label for="calc-inquiries" class="text-sm font-medium text-slate-200">
+                Monthly Inquiries &amp; Comments
+              </label>
+              <span id="label-inquiries" class="font-mono text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-md">
+                1,500 chats
+              </span>
             </div>
             <input
               type="range"
@@ -44,20 +46,24 @@
               max="10000"
               step="100"
               value="1500"
-              class="w-full accent-emerald-400 h-1.5 bg-[#1a1a22] rounded-lg cursor-pointer"
+              class="w-full accent-emerald-400 h-2 bg-slate-800 rounded-lg cursor-pointer"
             />
-            <div class="flex justify-between text-[10px] font-mono text-slate-500">
+            <div class="flex justify-between text-[11px] font-mono text-slate-500">
               <span>300</span>
               <span>5,000</span>
               <span>10,000+</span>
             </div>
           </div>
 
-          <!-- Slider 2: Average Order Value (AOV) -->
-          <div class="space-y-3 mb-6">
-            <div class="flex justify-between items-center text-sm">
-              <label for="calc-aov" class="text-slate-300 font-medium">Average Order Value (AOV)</label>
-              <span id="label-aov" class="font-mono font-bold text-emerald-400 text-base">₹2,800</span>
+          <!-- Slider 2: Average Outfit Price -->
+          <div class="space-y-2.5">
+            <div class="flex justify-between items-center">
+              <label for="calc-aov" class="text-sm font-medium text-slate-200">
+                Average Outfit Price
+              </label>
+              <span id="label-aov" class="font-mono text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-md">
+                ₹2,800
+              </span>
             </div>
             <input
               type="range"
@@ -66,69 +72,83 @@
               max="15000"
               step="100"
               value="2800"
-              class="w-full accent-emerald-400 h-1.5 bg-[#1a1a22] rounded-lg cursor-pointer"
+              class="w-full accent-emerald-400 h-2 bg-slate-800 rounded-lg cursor-pointer"
             />
-            <div class="flex justify-between text-[10px] font-mono text-slate-500">
+            <div class="flex justify-between text-[11px] font-mono text-slate-500">
               <span>₹800</span>
               <span>₹7,500</span>
               <span>₹15,000</span>
             </div>
           </div>
 
-          <!-- Toggle: Peak Night Traffic -->
-          <div class="rounded-lg border border-white/[0.06] bg-[#101012] p-4 flex items-center justify-between">
-            <div>
-              <p class="text-sm font-medium text-white">High 9 PM &ndash; 2 AM Traffic</p>
-              <p class="text-xs text-slate-400 mt-0.5">50%+ apparel queries happen after hours</p>
-            </div>
-            <span class="text-xs font-mono font-semibold text-emerald-300 bg-emerald-500/10 px-2 py-1 rounded">Active</span>
+          <!-- Direct Takeaway Box -->
+          <div class="rounded-xl border border-white/[0.08] bg-[#101014] p-4 text-xs space-y-1.5">
+            <p class="font-semibold text-white flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              Why this extra revenue is captured:
+            </p>
+            <p class="text-slate-300 leading-relaxed pl-4">
+              Over 50% of boutique DMs arrive after 9 PM. When you reply in 2 seconds instead of the next morning, customers buy before clicking onto a competitor's Reel.
+            </p>
           </div>
         </div>
 
-        <p class="text-xs text-slate-500 mt-6 pt-4 border-t border-white/[0.06] leading-relaxed">
-          Based on aggregate boutique metrics: average 4% manual close rate with next-morning reply vs 16% autonomous 90-second WhatsApp checkout rate.
+        <p class="text-[11px] text-slate-500 mt-5 pt-3.5 border-t border-white/[0.06]">
+          * Conservative estimate: calculates closing just 5 extra orders per 100 missed chats.
         </p>
       </div>
 
-      <!-- Right: Live Results & Value Standard Panel -->
-      <div class="rounded-xl border border-emerald-500/30 bg-gradient-to-b from-[#0a1410] to-[#0a0a0c] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
-        <!-- Top glow -->
-        <div class="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"></div>
-
+      <!-- Right: Clear Results -->
+      <div class="rounded-2xl border border-emerald-500/30 bg-gradient-to-b from-[#0a1410] to-[#0a0a0c] p-6 sm:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden">
         <div>
-          <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-400 font-mono">Monthly Revenue Potential</span>
-          
-          <div class="mt-4">
-            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Estimated Additional Sales</p>
-            <div class="mt-1 flex items-baseline gap-2">
-              <span id="stat-revenue" class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight">₹5,04,000</span>
+          <div class="flex items-center justify-between border-b border-emerald-500/20 pb-3.5">
+            <h3 class="font-heading text-base sm:text-lg font-semibold text-white">Your Extra Revenue</h3>
+            <span class="text-[11px] font-mono font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+              Every Month
+            </span>
+          </div>
+
+          <div class="my-6">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block font-semibold">Estimated New Monthly Sales</span>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span id="stat-revenue" class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none">
+                ₹2,10,000
+              </span>
               <span class="text-emerald-400 text-sm font-semibold font-mono">/ mo</span>
             </div>
           </div>
 
-          <!-- Breakdown list -->
-          <div class="mt-8 space-y-3 pt-6 border-t border-white/[0.08]">
-            <div class="flex justify-between items-center text-sm">
-              <span class="text-slate-400">Additional Orders Closed</span>
-              <span id="stat-orders" class="font-mono font-bold text-white text-base">180 orders</span>
+          <!-- Key Metrics in Crisp Cards -->
+          <div class="space-y-3 rounded-xl bg-[#080c0a]/90 border border-emerald-500/20 p-4 text-sm">
+            <div class="flex justify-between items-center text-slate-300">
+              <span>Extra orders closed:</span>
+              <span id="stat-orders" class="font-bold text-white font-mono text-base">+75 orders</span>
             </div>
-            <div class="flex justify-between items-center text-sm">
-              <span class="text-slate-400">Founder Chat Time Saved</span>
-              <span id="stat-hours" class="font-mono font-bold text-emerald-300 text-base">75 hrs / mo</span>
+            <div class="flex justify-between items-center text-slate-300">
+              <span>Time saved typing replies:</span>
+              <span id="stat-hours" class="font-bold text-emerald-300 font-mono text-base">75 hrs / mo</span>
             </div>
-            <div class="flex justify-between items-center text-sm">
-              <span class="text-slate-400">Speed to First Response</span>
-              <span class="font-mono font-bold text-emerald-300 text-base">2.1s (instant)</span>
+            <div class="flex justify-between items-center text-slate-300">
+              <span>Response time:</span>
+              <span class="font-bold text-emerald-300 font-mono text-base">Instant (2.0s)</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-white/[0.08]">
+        <div class="mt-6 pt-4 border-t border-emerald-500/20 space-y-3">
           <a href="/free-trial" class="btn-primary !w-full justify-center text-center">
-            Claim 30-Day Free Trial &rarr;
+            Start 30-Day Free Trial &rarr;
           </a>
-          <p class="text-center text-[11px] text-slate-400 mt-2.5 font-normal">
-            Includes 100% done-for-you setup &bull; No credit card required &bull; First 10 stores
+          <a
+            href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-secondary inline-flex !w-full items-center justify-center gap-2 text-center text-xs sm:text-sm"
+          >
+            💬 Test Drive the Bot on WhatsApp
+          </a>
+          <p class="text-center text-[11px] text-slate-400">
+            Free 100% white-glove setup &bull; No credit card &bull; 30 days free
           </p>
         </div>
       </div>
@@ -145,32 +165,37 @@
     const statRevenue = document.getElementById("stat-revenue");
     const statOrders = document.getElementById("stat-orders");
     const statHours = document.getElementById("stat-hours");
+    const statLeaks = document.getElementById("stat-leaks");
+
+    // Realistic baseline: turning 5% of missed inquiries into completed orders
+    const recoveryRate = 0.05;
 
     function updateCalc() {
       if (!inquiriesInput || !aovInput) return;
       const inquiries = parseInt(inquiriesInput.value, 10) || 1500;
       const aov = parseInt(aovInput.value, 10) || 2800;
 
-      // Update labels
-      if (labelInquiries) labelInquiries.textContent = inquiries.toLocaleString("en-IN");
+      // Update input labels
+      if (labelInquiries) labelInquiries.textContent = `${inquiries.toLocaleString("en-IN")} messages`;
       if (labelAov) labelAov.textContent = `₹${aov.toLocaleString("en-IN")}`;
 
-      // Conversion calculation:
-      // Manual baseline: 4% conversion on late inquiries
-      // VoluChat 90s loop: 16% conversion (12% net lift)
-      const additionalOrders = Math.round(inquiries * 0.12);
+      // Calculated numbers
+      const additionalOrders = Math.round(inquiries * recoveryRate);
       const additionalRevenue = additionalOrders * aov;
-      // Chat time saved: ~25 mins per closed order manual back-and-forth
+      const lostNightChatsSaved = Math.round(inquiries * 0.50 * 0.65);
       const hoursSaved = Math.round((inquiries * 3) / 60);
 
       if (statRevenue) statRevenue.textContent = `₹${additionalRevenue.toLocaleString("en-IN")}`;
-      if (statOrders) statOrders.textContent = `${additionalOrders.toLocaleString("en-IN")} orders`;
-      if (statHours) statHours.textContent = `${hoursSaved} hrs / mo`;
+      if (statOrders) statOrders.textContent = `+${additionalOrders.toLocaleString("en-IN")} orders`;
+      if (statLeaks) statLeaks.textContent = `~${lostNightChatsSaved.toLocaleString("en-IN")} buyers`;
+      if (statHours) statHours.textContent = `${hoursSaved} hours / mo`;
     }
 
     if (inquiriesInput && aovInput) {
       inquiriesInput.addEventListener("input", updateCalc);
       aovInput.addEventListener("input", updateCalc);
     }
+
+    updateCalc();
   });
 </script>
