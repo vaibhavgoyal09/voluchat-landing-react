@@ -74,6 +74,11 @@
   --color-accent-teal: #14b8a6;
   --color-accent-teal-glow: rgba(45, 212, 191, 0.18);
 
+  /* Titanium neutrals — Apple material, single green accent preserved */
+  --color-titanium-hi: #e8e8ed;
+  --color-titanium-mid: #a1a1a6;
+  --color-titanium-edge: #3a3d45;
+
   --color-primary-50: #ecfdf7;
   --color-primary-100: #d1faed;
   --color-primary-200: #a7f3dd;
@@ -140,7 +145,7 @@
   }
 
   .section-pad {
-    @apply py-20 lg:py-28;
+    @apply py-28 lg:py-36;
   }
 
   .section-band,
@@ -249,11 +254,33 @@
   }
 
   .section-title {
-    @apply text-[2.25rem] font-semibold leading-[1.05] text-[#fcfdff] sm:text-[2.5rem] lg:text-5xl tracking-tight;
+    @apply font-semibold leading-[1.02] text-[#f5f5f7] tracking-[-0.04em];
+    font-size: clamp(2.5rem, 5vw, 4rem);
   }
 
   .section-copy {
-    @apply text-base font-normal leading-relaxed text-[rgba(252,253,255,0.70)] sm:text-lg;
+    @apply text-base font-normal leading-relaxed sm:text-lg;
+    color: #86868b;
+  }
+
+  /* Titanium surfaces — brushed metal + specular rim, green reserved for money/live */
+  .titanium-surface {
+    background: linear-gradient(135deg, rgba(232,232,237,0.08), rgba(161,161,166,0.04) 30%, rgba(18,20,26,0.65) 70%);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 20px 50px -15px rgba(0, 0, 0, 0.7),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  /* Apple spec row — hairline dividers instead of cards */
+  .hairline-row {
+    @apply border-t border-white/[0.08] py-7 sm:py-8;
+  }
+  .hairline-row:last-child {
+    @apply border-b;
   }
 
   /* Primary Button: Apple-like sleek action with micro specular reflection */

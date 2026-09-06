@@ -2,25 +2,25 @@
 // Simple & Intuitive Revenue Recovery Calculator
 ---
 
-<section id="roi-calculator" class="relative overflow-hidden py-16 sm:py-20 bg-[#000000] border-t border-white/[0.08]">
+<section id="roi-calculator" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#000000] border-t border-white/[0.08]">
   <div class="page-shell">
     <!-- Header aligned with ProblemSection & HowItWorksFlow -->
-    <div class="max-w-2xl mb-10">
+    <div class="max-w-3xl mb-12">
       <div class="chip mb-3">
         <span class="mini-label text-emerald-400">Revenue Recovery Calculator</span>
       </div>
-      <h2 class="section-title text-[#fcfdff] font-heading">
+      <h2 class="section-title font-heading">
         How much extra sales can <span class="text-emerald-400">your boutique make</span>?
       </h2>
-      <p class="section-copy mt-2 text-sm sm:text-base">
+      <p class="section-copy mt-4">
         See how much revenue you recover when night-time Reel comments and WhatsApp chats get answered in 2 seconds.
       </p>
     </div>
 
-    <!-- 2-Column Balanced Deck with Apple Liquid Glass Style -->
-    <div class="grid gap-6 lg:grid-cols-2 max-w-5xl mx-auto items-stretch">
-      <!-- Left: Simple Inputs (Liquid Glass Panel) -->
-      <div class="rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_16px_40px_-10px_rgba(0,0,0,0.6),inset_0_1px_1.5px_rgba(255,255,255,0.16)]">
+    <!-- Apple Store configurator: open inputs + single titanium result -->
+    <div class="grid gap-10 lg:grid-cols-2 lg:gap-14 max-w-5xl mx-auto items-start">
+      <!-- Left: open inputs, hairline rows -->
+      <div class="border-t border-white/[0.08] pt-6 flex flex-col justify-between">
         <div class="space-y-6">
           <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5">
             <h3 class="font-heading text-base sm:text-lg font-semibold text-white">Your Monthly Numbers</h3>
@@ -35,7 +35,7 @@
               <label for="calc-inquiries" class="text-sm font-medium text-slate-200">
                 Monthly Inquiries &amp; Comments
               </label>
-              <span id="label-inquiries" class="font-mono text-sm font-bold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-3 py-0.5 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
+              <span id="label-inquiries" class="font-mono text-sm font-bold text-white border border-white/[0.14] bg-transparent px-3 py-0.5 rounded-full">
                 1,500 chats
               </span>
             </div>
@@ -61,7 +61,7 @@
               <label for="calc-aov" class="text-sm font-medium text-slate-200">
                 Average Outfit Price
               </label>
-              <span id="label-aov" class="font-mono text-sm font-bold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-3 py-0.5 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
+              <span id="label-aov" class="font-mono text-sm font-bold text-white border border-white/[0.14] bg-transparent px-3 py-0.5 rounded-full">
                 ₹2,800
               </span>
             </div>
@@ -81,13 +81,13 @@
             </div>
           </div>
 
-          <!-- Direct Takeaway Box -->
-          <div class="rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-md p-4 text-xs space-y-1.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+          <!-- Direct Takeaway — open, no box -->
+          <div class="border-t border-white/[0.08] pt-4 text-xs space-y-1.5">
             <p class="font-semibold text-white flex items-center gap-2">
-              <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
               Why this extra revenue is captured:
             </p>
-            <p class="text-slate-300 leading-relaxed pl-4">
+            <p class="text-[#86868b] leading-relaxed pl-4">
               Over 50% of boutique DMs arrive after 9 PM. When you reply in 2 seconds instead of the next morning, customers buy before clicking onto a competitor's Reel.
             </p>
           </div>
@@ -98,8 +98,8 @@
         </p>
       </div>
 
-      <!-- Right: Clear Results (Emerald Liquid Glass) -->
-      <div class="rounded-3xl border border-emerald-500/30 bg-emerald-950/20 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_16px_40px_-10px_rgba(0,0,0,0.6),inset_0_1px_1.5px_rgba(255,255,255,0.2)] relative overflow-hidden">
+      <!-- Right: single titanium result — green reserved for money -->
+      <div class="titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
         <div>
           <div class="flex items-center justify-between border-b border-emerald-500/20 pb-3.5">
             <h3 class="font-heading text-base sm:text-lg font-semibold text-white">Your Extra Revenue</h3>
@@ -118,17 +118,17 @@
             </div>
           </div>
 
-          <!-- Key Metrics in Crisp Cards -->
-          <div class="space-y-3 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/[0.10] p-4 text-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
-            <div class="flex justify-between items-center text-slate-200">
+          <!-- Key Metrics — hairline rows, not mini-cards -->
+          <div class="space-y-0 border-t border-white/[0.08] text-sm">
+            <div class="flex justify-between items-center text-slate-300 py-3 border-b border-white/[0.08]">
               <span>Extra orders closed:</span>
               <span id="stat-orders" class="font-bold text-white font-mono text-base">+75 orders</span>
             </div>
-            <div class="flex justify-between items-center text-slate-200">
+            <div class="flex justify-between items-center text-slate-300 py-3 border-b border-white/[0.08]">
               <span>Time saved typing replies:</span>
-              <span id="stat-hours" class="font-bold text-emerald-300 font-mono text-base">75 hrs / mo</span>
+              <span id="stat-hours" class="font-bold text-white font-mono text-base">75 hrs / mo</span>
             </div>
-            <div class="flex justify-between items-center text-slate-200">
+            <div class="flex justify-between items-center text-slate-300 py-3">
               <span>Response time:</span>
               <span class="font-bold text-emerald-300 font-mono text-base">Instant (2.0s)</span>
             </div>

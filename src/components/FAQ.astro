@@ -54,25 +54,25 @@ const faqs = [
   </div>
 
   <div class="page-shell">
-    <div class="mx-auto mb-10 max-w-2xl text-center">
+    <div class="mx-auto mb-12 max-w-3xl text-center">
       <p class="section-eyebrow">FAQ</p>
       <h2 class="section-title mt-4">Questions about commerce agents.</h2>
-      <p class="section-copy mx-auto mt-5 max-w-xl">
+      <p class="section-copy mx-auto mt-4 max-w-xl">
         Common questions from boutique founders before deploying autonomous agents.
       </p>
     </div>
 
     <div
-      class="reveal-on-scroll mx-auto max-w-3xl divide-y divide-white/[0.08] overflow-hidden rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.6),inset_0_1px_1.5px_rgba(255,255,255,0.16)]"
+      class="reveal-on-scroll mx-auto max-w-3xl border-t border-white/[0.08]"
     >
       {
         faqs.map((faq, index) => (
-          <div class="faq-item transition-colors duration-200" data-index={index}>
-            <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-white/[0.04]">
-              <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-[#fcfdff] transition-colors group-hover:text-emerald-300">
+          <div class="faq-item border-b border-white/[0.08] transition-colors duration-200" data-index={index}>
+            <button class="faq-toggle group flex w-full items-center justify-between gap-6 py-6 text-left transition-colors">
+              <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-[#f5f5f7] transition-colors group-hover:text-emerald-300">
                 {faq.question}
               </span>
-              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/[0.14] bg-white/[0.06] backdrop-blur-md transition-colors duration-200 group-hover:border-emerald-500/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/[0.14] bg-transparent transition-colors duration-200 group-hover:border-emerald-500/40">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="15"
@@ -90,8 +90,8 @@ const faqs = [
               </span>
             </button>
             <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-              <div class="px-6 pb-6 sm:px-8 sm:pb-8">
-                <p class="text-base font-normal leading-relaxed text-[rgba(245,245,247,0.72)]">
+              <div class="pb-7">
+                <p class="text-base font-normal leading-relaxed text-[#86868b]">
                   {faq.answer}
                 </p>
               </div>
@@ -107,15 +107,15 @@ const faqs = [
 
 <style>
   .faq-item.active {
-    background-color: rgba(45, 212, 191, 0.055);
+    background-color: transparent;
   }
   .faq-item.active .faq-chevron {
     transform: rotate(180deg);
-    color: #99f6e4;
+    color: #10b981;
   }
   .faq-item.active .faq-icon-wrap {
-    background-color: rgba(45, 212, 191, 0.12);
-    border-color: rgba(94, 234, 212, 0.36);
+    background-color: transparent;
+    border-color: rgba(16, 185, 129, 0.45);
   }
   .faq-item.active .faq-body {
     max-height: 420px;

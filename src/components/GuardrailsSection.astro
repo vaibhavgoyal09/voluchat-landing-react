@@ -31,51 +31,45 @@ const guardrailRules = [
 ];
 ---
 
-<section id="guardrails" class="relative overflow-hidden py-20 sm:py-24 border-y border-white/[0.08] bg-[#000000]">
+<section id="guardrails" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-y border-white/[0.08] bg-[#000000]">
   <div class="page-shell relative z-10">
-    <div class="mb-14 max-w-2xl">
+    <div class="mb-12 max-w-3xl">
       <div class="chip mb-4">
         <span class="mini-label text-emerald-400">Brand Safety Standards</span>
       </div>
-      <h2 class="section-title text-[#fcfdff] font-heading">
+      <h2 class="section-title font-heading">
         Autonomous sales with <span class="text-emerald-400">total brand control</span>.
       </h2>
-      <p class="section-copy mt-3">
+      <p class="section-copy mt-4">
         Zero unauthorized discounts, zero out-of-stock promises, and instant 1-tap human takeover.
       </p>
     </div>
 
-    <!-- Clean 2x2 Punchy Guardrails Grid (Liquid Glass) -->
-    <div class="grid gap-6 sm:grid-cols-2 max-w-5xl mx-auto">
+    <!-- Titanium spec sheet — dividers, not cards -->
+    <div class="max-w-5xl mx-auto">
       {
         guardrailRules.map((rule, idx) => (
-          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-emerald-500/40 hover:bg-white/[0.06] transition-all duration-300 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.16)]`}>
+          <div class={`hairline-row reveal-on-scroll reveal-delay-${idx + 1} grid gap-3 sm:grid-cols-[72px_1fr_auto] sm:gap-8 sm:items-baseline`}>
+            <span class="font-mono text-xs text-[#a1a1a6] font-bold">{rule.num}</span>
             <div>
-              <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-5">
-                <span class="font-mono text-xs text-slate-400 font-bold">GUARDRAIL {rule.num}</span>
-                <span class="rounded-full border border-emerald-500/30 bg-emerald-950/20 px-3 py-0.5 text-xs font-mono font-medium text-emerald-300 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
-                  {rule.badge}
-                </span>
-              </div>
-              <h3 class="text-xl font-semibold text-white font-heading mb-2">
+              <h3 class="text-xl font-semibold text-white font-heading">
                 {rule.title}
               </h3>
-              <p class="text-sm text-[rgba(245,245,247,0.7)] font-normal leading-relaxed">
+              <p class="mt-1 text-sm text-[#86868b] font-normal leading-relaxed">
                 {rule.desc}
               </p>
+              <span class="mt-2 inline-block font-mono text-xs font-bold text-emerald-400">{rule.highlight}</span>
             </div>
-            
-            <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between font-mono text-xs">
-              <span class="font-bold text-emerald-400">{rule.highlight}</span>
-              <span class="text-slate-400">Enforced by Policy</span>
-            </div>
+            <span class="hidden sm:inline-block rounded-full border border-white/[0.14] bg-white/[0.04] px-3 py-1 text-xs font-mono font-medium text-slate-300">
+              {rule.badge}
+            </span>
           </div>
         ))
       }
     </div>
 
-    <!-- Human Oversight Guarantee Bar (Liquid Glass Capsule) -->
-    <div class="mt-8 max-w-5xl mx-auto rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.16)]">
+    <!-- Human Oversight Guarantee — titanium capsule, green dot only -->
+    <div class="titanium-surface mt-10 max-w-5xl mx-auto rounded-full px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3.5 text-center sm:text-left">
         <span class="relative flex h-3 w-3 shrink-0">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>

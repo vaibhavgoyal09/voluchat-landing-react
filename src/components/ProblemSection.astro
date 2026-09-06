@@ -21,26 +21,26 @@ const supportingPoints = [
 
 <section
   id="problem"
-  class="relative overflow-hidden py-16 sm:py-20 bg-[#000000]"
+  class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#000000]"
 >
   <div class="page-shell">
-    <div class="max-w-2xl mb-10">
+    <div class="max-w-3xl mb-12">
       <div class="chip mb-3">
         <span class="mini-label text-rose-400">The Problem With Manual Selling</span>
       </div>
-      <h2 class="section-title text-[#fcfdff] font-heading">
+      <h2 class="section-title font-heading">
         Where boutique owners <span class="text-rose-400">lose half their daily sales</span>.
       </h2>
-      <p class="section-copy mt-2 text-sm sm:text-base">
+      <p class="section-copy mt-4">
         Selling in WhatsApp DMs works great — until you get flooded with messages, take too long to reply, and customers end up buying elsewhere.
       </p>
     </div>
 
-    <!-- Compact 1+2 Asymmetric Problem Layout -->
-    <div class="grid gap-5 lg:grid-cols-[1.25fr_1fr] items-stretch">
+    <!-- Editorial: 1 titanium feature + hairline spec rows -->
+    <div class="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-14 items-start">
       
-      <!-- Dominant Hero Statistic Card (Liquid Glass Rose Accented) -->
-      <article class="reveal-on-scroll rounded-3xl border border-rose-500/25 bg-rose-950/20 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-rose-500/40 transition-all duration-300 shadow-[0_16px_40px_-10px_rgba(0,0,0,0.6),inset_0_1px_1.5px_rgba(255,255,255,0.18)] relative overflow-hidden">
+      <!-- Dominant Hero Statistic — titanium surface, rose kept for loss only -->
+      <article class="reveal-on-scroll titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
         <div>
           <!-- Header -->
           <div class="flex items-center justify-between border-b border-rose-500/20 pb-3 mb-5">
@@ -80,33 +80,20 @@ const supportingPoints = [
         </div>
       </article>
 
-      <!-- 2 Stacked Supporting Evidence Cards (Frosted Slate Glass) -->
-      <div class="grid gap-5 flex-col justify-between">
+      <!-- 2 supporting points as Apple spec rows — no boxes -->
+      <div>
         {
           supportingPoints.map((point, idx) => (
-            <article class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl p-6 flex flex-col justify-between hover:border-white/[0.22] hover:bg-white/[0.06] transition-all duration-300 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.16)]`}>
+            <article class={`hairline-row reveal-on-scroll reveal-delay-${idx + 1} grid gap-3 sm:grid-cols-[88px_1fr] sm:gap-6`}>
+              <div class="font-heading text-4xl font-bold text-white tracking-tight">
+                {point.stat}
+              </div>
               <div>
-                <div class="flex items-center justify-between border-b border-white/[0.08] pb-2.5 mb-3">
-                  <span class="font-mono text-[11px] text-slate-400 font-bold">{point.code}</span>
-                  <span class="font-mono text-[10px] text-slate-300 uppercase tracking-wider">{point.statLabel}</span>
-                </div>
-
-                <div class="flex items-baseline gap-2 mb-2">
-                  <div class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                    {point.stat}
-                  </div>
-                  <span class="text-[11px] font-mono text-slate-400">lost buyers</span>
-                </div>
-
-                <!-- Slim Progress Bar -->
-                <div class="h-1 w-full rounded-full bg-white/[0.08] overflow-hidden mb-3">
-                  <div class="h-full rounded-full bg-white/40" style={`width: ${point.pct}%;`}></div>
-                </div>
-
-                <h3 class="font-heading text-sm sm:text-base font-semibold text-white">
+                <div class="font-mono text-[11px] text-slate-500 font-bold">{point.code} — {point.statLabel}</div>
+                <h3 class="font-heading text-base sm:text-lg font-semibold text-white mt-1">
                   {point.title}
                 </h3>
-                <p class="mt-1.5 text-xs text-[rgba(245,245,247,0.68)] font-normal leading-relaxed">
+                <p class="mt-1.5 text-sm text-[#86868b] font-normal leading-relaxed">
                   {point.description}
                 </p>
               </div>
