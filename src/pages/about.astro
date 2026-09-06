@@ -182,23 +182,20 @@ const companyFacts = [
           </p>
         </div>
 
-        <!-- 6 Frontline Leaks Grid -->
-        <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <!-- 6 Frontline Leaks — kid-simple numbered list, no cards -->
+        <div class="mt-14 max-w-4xl">
           {
             frontlineProblems.map((item) => (
-              <div class="abt-problem-card solid-card p-6 sm:p-7">
-                <div class="flex items-center justify-between">
-                  <span class="text-2xl">{item.icon}</span>
-                  <span class="font-mono text-xs font-bold text-emerald-400 bg-[#101012] px-2.5 py-0.5 rounded-full border border-white/[0.08]">
-                    PROBLEM {item.leak}
-                  </span>
+              <div class="abt-problem-card hairline-row grid gap-3 sm:grid-cols-[56px_1fr] sm:gap-6">
+                <span class="kid-num !text-3xl text-[#a1a1a6]">{item.leak}</span>
+                <div>
+                  <h3 class="text-lg font-heading font-semibold text-white">
+                    <span class="mr-2">{item.icon}</span>{item.title}
+                  </h3>
+                  <p class="mt-2 text-sm leading-relaxed text-[#86868b] font-normal">
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 class="mt-5 text-lg font-heading font-semibold text-[#fcfdff]">
-                  {item.title}
-                </h3>
-                <p class="mt-2.5 text-sm leading-relaxed text-[rgba(252,253,255,0.7)] font-normal">
-                  {item.desc}
-                </p>
               </div>
             ))
           }

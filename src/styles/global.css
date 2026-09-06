@@ -405,6 +405,43 @@
     );
   }
 
+  /* Visual storytelling helpers — kid-simple, Apple-clean */
+  .visual-frame {
+    background: linear-gradient(135deg, rgba(232,232,237,0.08), rgba(161,161,166,0.04) 30%, rgba(18,20,26,0.65) 70%);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 20px 50px -15px rgba(0, 0, 0, 0.7),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.22);
+    @apply rounded-3xl p-6 sm:p-8;
+  }
+  .chat-ai {
+    @apply rounded-2xl rounded-tl-md px-4 py-3 text-sm leading-relaxed text-white;
+    background: rgba(16,185,129,0.14);
+    border: 1px solid rgba(16,185,129,0.28);
+  }
+  .chat-user {
+    @apply rounded-2xl rounded-tr-md px-4 py-3 text-sm leading-relaxed text-slate-200;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .kid-num {
+    @apply font-heading font-bold text-white tracking-tight;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1;
+  }
+  .win-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-mono font-bold text-emerald-300;
+    background: rgba(16,185,129,0.12);
+    border: 1px solid rgba(16,185,129,0.35);
+  }
+  .lose-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-mono text-slate-400;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-emerald-300 to-slate-300;
   }

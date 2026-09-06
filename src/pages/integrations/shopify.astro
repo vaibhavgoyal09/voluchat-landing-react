@@ -147,16 +147,29 @@ const guardrails = [
     <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
-          <h2 class="section-eyebrow mb-6">How the integration works</h2>
-          <div class="space-y-4">
+          <h2 class="section-eyebrow mb-2">How the integration works</h2>
+          <p class="section-copy mb-8 max-w-2xl">5 steps. 90 seconds. No website hopping.</p>
+          <!-- Kid-simple visual flow: comment → Shopify → chat → order → pay -->
+          <div class="visual-frame mb-8 flex items-center justify-between gap-2 overflow-x-auto text-center">
+            <div class="min-w-[90px]"><p class="text-2xl">💬</p><p class="mt-1 text-xs text-white font-semibold">Comment</p></div>
+            <span class="text-[#86868b]">→</span>
+            <div class="min-w-[90px]"><p class="text-2xl">🛍️</p><p class="mt-1 text-xs text-white font-semibold">Shopify check</p></div>
+            <span class="text-[#86868b]">→</span>
+            <div class="min-w-[90px]"><p class="text-2xl">📏</p><p class="mt-1 text-xs text-white font-semibold">Size fit</p></div>
+            <span class="text-[#86868b]">→</span>
+            <div class="min-w-[90px]"><p class="text-2xl">🧾</p><p class="mt-1 text-xs text-white font-semibold">Draft order</p></div>
+            <span class="text-emerald-400">→</span>
+            <div class="min-w-[90px]"><p class="text-2xl">💚</p><p class="mt-1 text-xs font-semibold text-emerald-300">UPI paid</p></div>
+          </div>
+          <div class="space-y-0">
             {flowSteps.map((item) => (
-              <article class="shopify-flow-step opacity-0 solid-card flex gap-5 p-5 md:p-6">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/[0.14] bg-[#101012] text-sm font-mono font-bold text-emerald-400">
+              <article class="shopify-flow-step opacity-0 hairline-row flex gap-5 !py-5">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/[0.14] bg-transparent text-sm font-mono font-bold text-white">
                   {item.step}
                 </div>
                 <div>
-                  <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
-                  <p class="mt-1.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
+                  <h3 class="text-lg font-heading font-semibold text-white">{item.title}</h3>
+                  <p class="mt-1.5 text-sm font-normal leading-relaxed text-[#86868b]">{item.description}</p>
                 </div>
               </article>
             ))}
@@ -167,25 +180,25 @@ const guardrails = [
 
     <section class="pb-24 bg-[#000000]">
       <div class="page-shell">
-        <div class="mx-auto max-w-4xl grid gap-8 lg:grid-cols-2">
+        <div class="mx-auto max-w-4xl grid gap-10 lg:grid-cols-2">
           <div>
             <h2 class="section-eyebrow mb-6">Reads from your Shopify store</h2>
-            <div class="space-y-3">
+            <div class="space-y-0">
               {readsFromShopify.map((item) => (
-                <article class="shopify-card opacity-0 solid-card p-5">
-                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
-                  <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
+                <article class="shopify-card opacity-0 hairline-row !py-4">
+                  <h3 class="text-base font-heading font-semibold text-white">↓ {item.title}</h3>
+                  <p class="mt-1 text-sm font-normal leading-relaxed text-[#86868b]">{item.description}</p>
                 </article>
               ))}
             </div>
           </div>
           <div>
             <h2 class="section-eyebrow mb-6">Creates in your Shopify admin</h2>
-            <div class="space-y-3">
+            <div class="visual-frame !p-5 space-y-0">
               {createsInShopify.map((item) => (
-                <article class="shopify-card opacity-0 solid-card p-5">
-                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
-                  <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
+                <article class="shopify-card opacity-0 border-t border-white/[0.08] py-4 first:border-0 first:pt-0 last:pb-0">
+                  <h3 class="text-base font-heading font-semibold text-white">↑ {item.title}</h3>
+                  <p class="mt-1 text-sm font-normal leading-relaxed text-[#86868b]">{item.description}</p>
                 </article>
               ))}
             </div>

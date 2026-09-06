@@ -54,79 +54,46 @@ const structuredData = {
           </p>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-          <!-- WhatsApp Card -->
-          <a
-            href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20learn%20more%20about%20VoluChat."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="solid-card-elevated p-8 flex flex-col justify-between group hover:border-emerald-400/50 transition-all text-left"
-          >
-            <div>
-              <div class="grid h-12 w-12 place-items-center rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 group-hover:scale-105 transition-transform mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.07-2.121-.52-1.825-.753-3.009-2.607-3.1-2.727-.09-.12- .737-.98-.737-1.87 0-.89.465-1.327.63-1.507.166-.18.361-.225.482-.225.12 0 .241.001.346.006.11.005.258-.042.404.308.149.36.51 1.243.555 1.334.045.09.075.195.015.315-.06.12-.09.195-.18.3-.09.105-.19.234-.271.315-.09.09-.184.187-.079.367.105.18.468.772.998 1.246.684.61 1.26.799 1.44.89.18.09.286.075.391-.045.106-.12.451-.525.572-.705.12-.18.241-.15.405-.09.166.06 1.052.496 1.233.586.18.09.301.135.346.21.045.075.045.436-.099.841z"/>
-                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.408A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.637 0-3.15-.472-4.43-1.286l-.317-.199-2.952.835.83-2.87-.217-.328A8.17 8.17 0 013.8 12c0-4.52 3.68-8.2 8.2-8.2 4.52 0 8.2 3.68 8.2 8.2 0 4.52-3.68 8.2-8.2 8.2z" clip-rule="evenodd"/>
-                </svg>
-              </div>
-              <p class="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">Instant Chat</p>
-              <h3 class="font-heading text-xl font-bold text-[#fcfdff] mt-2">WhatsApp Founder Desk</h3>
-              <p class="text-sm text-[rgba(252,253,255,0.7)] mt-2 leading-relaxed">
-                Direct WhatsApp conversation with the founder. Fastest reply within minutes.
-              </p>
+        <div class="grid gap-10 lg:grid-cols-[1fr_1fr] max-w-5xl mx-auto items-start">
+          <!-- Big visual: pick 1 way -->
+          <div class="visual-frame lg:sticky lg:top-24">
+            <p class="font-mono text-[11px] uppercase tracking-widest text-[#a1a1a6]">Fastest: 1 tap</p>
+            <div class="mt-4 space-y-3">
+              <div class="chat-user">Hi! I need help with sizing for Diwali drop?</div>
+              <div class="chat-ai">Hey! I'm Vaibhav, founder. Reply in minutes — send your catalog link.</div>
+              <a
+                href="https://wa.me/918847568693?text=Hi%20Vaibhav%2C%20I'd%20like%20to%20learn%20more%20about%20VoluChat."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary !w-full justify-center text-center"
+              >
+                Chat on WhatsApp →
+              </a>
+              <p class="text-center text-xs font-mono text-[#86868b]">+91 88475 68693 • replies in minutes</p>
             </div>
-            <p class="text-sm font-semibold text-emerald-400 mt-6 group-hover:underline">+91 88475 68693 &rarr;</p>
-          </a>
-
-          <!-- Email Support Card -->
-          <a
-            href="mailto:support@voluchat.com"
-            class="solid-card-elevated p-8 flex flex-col justify-between group hover:border-white/30 transition-all text-left"
-          >
-            <div>
-              <div class="grid h-12 w-12 place-items-center rounded-xl bg-[#101012] border border-white/[0.14] text-slate-300 group-hover:scale-105 transition-transform mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-              </div>
-              <p class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400">Email Inquiries</p>
-              <h3 class="font-heading text-xl font-bold text-[#fcfdff] mt-2">support@voluchat.com</h3>
-              <p class="text-sm text-[rgba(252,253,255,0.7)] mt-2 leading-relaxed">
-                For general inquiries, store onboarding requests, security questions, or partnerships.
-              </p>
+            <div class="mt-6 border-t border-white/[0.08] pt-4 grid grid-cols-3 gap-2 text-center">
+              <div><p class="kid-num !text-2xl">1</p><p class="text-xs text-[#86868b]">You say hi</p></div>
+              <div><p class="kid-num !text-2xl">2</p><p class="text-xs text-[#86868b]">We reply</p></div>
+              <div><p class="kid-num !text-2xl text-emerald-400">3</p><p class="text-xs text-[#86868b]">You sell</p></div>
             </div>
-            <p class="text-sm font-semibold text-[#fcfdff] mt-6 group-hover:text-emerald-400 transition-colors">Send Email &rarr;</p>
-          </a>
-
-          <!-- 30-Day Free Trial Card -->
-          <a
-            href="/free-trial"
-            class="solid-card-elevated p-8 flex flex-col justify-between group border-emerald-500/30 hover:border-emerald-400 transition-all text-left bg-gradient-to-b from-[#0e1614] to-[#0a0a0c]"
-          >
-            <div>
-              <div class="grid h-12 w-12 place-items-center rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 group-hover:scale-105 transition-transform mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              </div>
-              <p class="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">Limited Offer</p>
-              <h3 class="font-heading text-xl font-bold text-[#fcfdff] mt-2">30-Day Free Trial</h3>
-              <p class="text-sm text-[rgba(252,253,255,0.7)] mt-2 leading-relaxed">
-                Get 30 days free with 100% done-for-you setup. All AI sales stylist features unlocked.
-              </p>
-            </div>
-            <p class="text-sm font-semibold text-emerald-400 mt-6 group-hover:underline">Start Free Trial &rarr;</p>
-          </a>
-        </div>
-
-        <!-- Corporate Transparency Footer Strip -->
-        <div class="mt-14 max-w-5xl mx-auto solid-card p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div>
-            <h4 class="font-heading text-base font-semibold text-[#fcfdff]">QubitNine Technologies Pvt. Ltd.</h4>
-            <p class="text-xs text-slate-400 mt-1">Noida, Uttar Pradesh, India &bull; Operating entity of VoluChat</p>
           </div>
-          <a href="/about" class="btn-secondary !text-xs !py-2 !px-4 shrink-0">About Company Story &rarr;</a>
+          <div>
+            <div class="hairline-row">
+              <p class="font-mono text-[11px] uppercase tracking-widest text-[#a1a1a6]">Email</p>
+              <a href="mailto:support@voluchat.com" class="mt-1 block font-heading text-xl font-bold text-white hover:text-emerald-300">support@voluchat.com →</a>
+              <p class="mt-1 text-sm text-[#86868b]">Onboarding, security, partnerships.</p>
+            </div>
+            <div class="hairline-row">
+              <p class="font-mono text-[11px] uppercase tracking-widest text-[#a1a1a6]">Free trial</p>
+              <a href="/free-trial" class="mt-1 block font-heading text-xl font-bold text-white hover:text-emerald-300">30-Day Free Trial →</a>
+              <p class="mt-1 text-sm text-[#86868b]">All features unlocked, done-for-you setup.</p>
+            </div>
+            <div class="hairline-row">
+              <p class="font-mono text-[11px] uppercase tracking-widest text-[#a1a1a6]">Company</p>
+              <p class="mt-1 font-heading text-base font-semibold text-white">QubitNine Technologies Pvt. Ltd.</p>
+              <p class="text-xs text-[#86868b] mt-1">Noida, India • Operating entity of VoluChat</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

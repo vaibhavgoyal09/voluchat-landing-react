@@ -142,7 +142,7 @@ const cohortPromise = [
       <div class="page-shell">
         <div class="mx-auto mb-12 max-w-2xl text-center">
           <p class="section-eyebrow">The 10-Store Guarantee</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+          <h2 class="section-title mt-3 font-heading">
             What you get from day one.
           </h2>
           <p class="section-copy mx-auto mt-4 max-w-2xl">
@@ -150,17 +150,39 @@ const cohortPromise = [
           </p>
         </div>
 
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- PROCESS: how you start — open flow with arrows -->
+        <p class="mx-auto mb-6 max-w-5xl font-mono text-[11px] uppercase tracking-[0.2em] text-[#a1a1a6]">How you start →</p>
+        <div class="mx-auto mb-20 grid max-w-5xl gap-8 sm:grid-cols-3 sm:gap-10">
+          <div class="relative border-t-2 border-white/[0.10] pt-8 text-center sm:text-left">
+            <span class="inline-grid h-9 w-9 place-items-center rounded-full border border-white/[0.16] bg-transparent font-mono text-sm font-bold text-white">1</span>
+            <p class="mt-4 font-heading text-base font-semibold text-white">You apply</p>
+            <p class="mt-2 text-sm leading-relaxed text-[#86868b]">30-sec form.<br />We check fit in 24h.</p>
+          </div>
+          <div class="relative border-t-2 border-white/[0.10] pt-8 text-center sm:text-left">
+            <span class="inline-grid h-9 w-9 place-items-center rounded-full border border-white/[0.16] bg-transparent font-mono text-sm font-bold text-white">2</span>
+            <p class="mt-4 font-heading text-base font-semibold text-white">We build everything</p>
+            <p class="mt-2 text-sm leading-relaxed text-[#86868b]">Catalog, Meta APIs, UPI.<br />Done in 48h.</p>
+          </div>
+          <div class="relative border-t-2 border-emerald-500/50 pt-8 text-center sm:text-left">
+            <span class="inline-grid h-9 w-9 place-items-center rounded-full border border-emerald-500/50 bg-emerald-500/10 font-mono text-sm font-bold text-emerald-300">3</span>
+            <p class="mt-4 font-heading text-base font-semibold text-white">You sell 24/7</p>
+            <p class="mt-2 text-sm leading-relaxed text-[#86868b]">Comments → DMs<br />→ paid orders.</p>
+          </div>
+        </div>
+
+        <!-- PROOF: why it works — boxed titanium band, totally different read -->
+        <p class="mx-auto mb-6 max-w-5xl font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">Why stores trust it ✓</p>
+        <div class="visual-frame mx-auto grid max-w-5xl gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {
             cohortPromise.map((stat) => (
-              <div class="solid-card p-6">
-                <p class="font-heading text-3xl font-bold leading-none text-[#fcfdff] sm:text-4xl">
+              <div class="pb-2">
+                <p class="kid-num">
                   {stat.metric}
                 </p>
-                <p class="mt-2 text-xs font-mono uppercase tracking-[0.18em] text-emerald-400">
+                <p class="mt-3 text-xs font-mono uppercase tracking-[0.18em] text-emerald-400">
                   {stat.suffix}
                 </p>
-                <p class="mt-4 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                <p class="mt-3 text-sm font-normal leading-relaxed text-[#86868b]">
                   {stat.text}
                 </p>
               </div>
@@ -174,30 +196,47 @@ const cohortPromise = [
       <div class="page-shell">
         <div class="mx-auto mb-12 max-w-2xl text-center">
           <p class="section-eyebrow">White-Glove Scope</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
-            Everything we build, configure, and manage for you.
+          <h2 class="section-title mt-3 font-heading">
+            Everything we build for you.
           </h2>
           <p class="section-copy mx-auto mt-4 max-w-2xl">
-            Six concrete deliverables, not a wishlist. Everything is fully built and tested before your 30-day free trial goes live.
+            Six deliverables. Fully built before your trial goes live.
           </p>
         </div>
 
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {
-            pilotIncludes.map((item) => (
-              <article class="solid-card flex h-full flex-col p-6 sm:p-7">
-                <div class="grid h-10 w-10 place-items-center rounded-lg border border-white/[0.14] bg-[#101012] text-xl text-emerald-300">
-                  {item.icon}
-                </div>
-                <h3 class="mt-5 text-lg font-heading font-semibold leading-snug text-[#fcfdff]">
-                  {item.title}
-                </h3>
-                <p class="mt-3 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
-                  {item.text}
-                </p>
-              </article>
-            ))
-          }
+        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 max-w-5xl mx-auto items-start">
+          <!-- Sticky visual: what the shopper sees -->
+          <div class="visual-frame lg:sticky lg:top-24">
+            <p class="font-mono text-[11px] uppercase tracking-widest text-[#a1a1a6]">What your customer sees</p>
+            <div class="mt-4 space-y-3">
+              <div class="chat-user">Price? Is size M in stock?</div>
+              <div class="chat-ai">Yes! M is in stock — ₹2,899, pure cotton. <span class="text-emerald-300 font-semibold">Pay here →</span></div>
+              <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
+                <p class="font-heading text-2xl font-bold text-white">₹2,899</p>
+                <p class="mt-1 text-xs font-mono text-emerald-300">1-click UPI • Paid in 85s</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            {
+              pilotIncludes.map((item, idx) => (
+                <article class="hairline-row grid gap-2 sm:grid-cols-[44px_1fr]">
+                  <div class="grid h-10 w-10 place-items-center rounded-full border border-white/[0.12] bg-transparent text-xl">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p class="font-mono text-[11px] text-[#a1a1a6] font-bold">0{idx + 1}</p>
+                    <h3 class="mt-1 text-lg font-heading font-semibold leading-snug text-white">
+                      {item.title}
+                    </h3>
+                    <p class="mt-2 text-sm font-normal leading-relaxed text-[#86868b]">
+                      {item.text}
+                    </p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
         </div>
       </div>
     </section>
