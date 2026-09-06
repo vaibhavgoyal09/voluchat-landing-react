@@ -35,22 +35,22 @@ const steps = [
 ];
 ---
 
-<section id="how-it-works" class="relative overflow-hidden py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+<section id="how-it-works" class="relative overflow-hidden py-20 sm:py-24 border-t border-white/[0.08] bg-gradient-to-b from-[#050608] via-[#08090f] to-[#040507]">
   <div class="page-shell relative z-10">
     <div class="mb-14 max-w-2xl">
       <div class="chip mb-4">
         <span class="mini-label text-emerald-400">The 90-Second Loop</span>
       </div>
       <h2 class="section-title text-[#fcfdff] font-heading">
-        How an Instagram comment turns into a <span class="text-emerald-400">paid order in 90 seconds</span>.
+        How an Instagram comment turns into a <span class="bg-gradient-to-r from-emerald-300 via-teal-200 to-emerald-400 bg-clip-text text-transparent">paid order in 90 seconds</span>.
       </h2>
       <p class="section-copy mt-3">
-        Zero flowchart menus. No sending shoppers to slow website links.
+        Zero flowchart menus. No sending shoppers to slow external website links.
       </p>
     </div>
 
-    <!-- Connected Pipeline Timeline Track -->
-    <div class="relative rounded-2xl border border-white/[0.10] bg-[#0a0a0c] p-6 sm:p-8 lg:p-10 overflow-hidden">
+    <!-- Connected Pipeline Timeline Track (Liquid Glass Shell) -->
+    <div class="relative rounded-3xl border border-white/[0.12] bg-white/[0.03] backdrop-blur-2xl p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.6),inset_0_1px_1.5px_rgba(255,255,255,0.18)] overflow-hidden">
       <!-- Horizontal connector track line across desktop -->
       <div class="hidden lg:block absolute top-[4.5rem] left-12 right-12 h-px bg-gradient-to-r from-pink-500/40 via-emerald-500/40 to-emerald-400/60 z-0"></div>
 
@@ -61,10 +61,10 @@ const steps = [
               <div>
                 <!-- Step Indicator Circle -->
                 <div class="flex items-center gap-3 mb-6">
-                  <div class="h-10 w-10 rounded-full border border-white/[0.14] bg-[#101012] flex items-center justify-center font-mono text-xs font-bold text-white group-hover:border-emerald-400 group-hover:text-emerald-300 transition-all shadow-lg">
+                  <div class="h-10 w-10 rounded-full border border-white/[0.18] bg-white/[0.06] backdrop-blur-xl flex items-center justify-center font-mono text-xs font-bold text-white group-hover:border-emerald-400 group-hover:text-emerald-300 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.25)]">
                     {step.num}
                   </div>
-                  <span class={`lg:hidden rounded-full border px-2 py-0.5 text-[9px] font-mono uppercase font-medium ${step.badgeColor}`}>
+                  <span class={`lg:hidden rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium backdrop-blur-md ${step.badgeColor}`}>
                     {step.badge}
                   </span>
                 </div>
@@ -73,20 +73,20 @@ const steps = [
                   <span class="text-[10px] uppercase font-mono tracking-wider text-emerald-400 font-bold block">
                     {step.label}
                   </span>
-                  <h3 class="font-heading text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
+                  <h3 class="font-heading text-lg font-semibold text-white group-hover:text-emerald-300 transition-colors">
                     {step.title}
                   </h3>
-                  <p class="text-xs text-[rgba(252,253,255,0.7)] font-normal leading-relaxed pt-1">
+                  <p class="text-xs text-[rgba(245,245,247,0.7)] font-normal leading-relaxed pt-1">
                     {step.detail}
                   </p>
                 </div>
               </div>
 
-              <div class="mt-6 pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                <span class={`hidden lg:inline-block rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium ${step.badgeColor}`}>
+              <div class="mt-6 pt-3 border-t border-white/[0.08] flex items-center justify-between">
+                <span class={`hidden lg:inline-block rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium backdrop-blur-md ${step.badgeColor}`}>
                   {step.badge}
                 </span>
-                <span class="text-[11px] font-mono text-slate-500">
+                <span class="text-[11px] font-mono text-slate-400">
                   {idx < 3 ? "Next Stage →" : "✓ Settled"}
                 </span>
               </div>

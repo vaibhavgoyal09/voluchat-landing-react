@@ -17,9 +17,9 @@ const demoHref = "/free-trial";
   id="lp-navbar"
   class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
 >
-  <div class="lp-nav-inner mx-auto w-full max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="lp-nav-inner mx-auto w-full max-w-6xl px-4 pt-3 sm:px-6 lg:px-8">
     <nav
-      class="flex h-16 items-center justify-between rounded-xl border border-white/[0.08] bg-[#000000]/85 px-4 backdrop-blur-xl sm:px-6"
+      class="flex h-14 items-center justify-between rounded-full border border-white/[0.12] bg-[#0c0d12]/75 px-4 backdrop-blur-2xl sm:px-6 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.18)]"
       aria-label="Global"
     >
       <div class="flex pl-1 lg:flex-1 lg:pl-0">
@@ -29,22 +29,22 @@ const demoHref = "/free-trial";
             <img
               src="/voluchat_logo.svg"
               alt="VoluChat Logo"
-              class="h-7 w-7 object-contain"
+              class="h-6 w-6 object-contain drop-shadow-[0_2px_8px_rgba(16,185,129,0.3)]"
             />
             <span
-              class="hidden font-heading text-[1.15rem] font-bold tracking-tight text-[#fcfdff] sm:inline"
+              class="hidden font-heading text-[1.05rem] font-bold tracking-tight text-[#fcfdff] sm:inline"
               >VoluChat</span
             >
           </div>
         </a>
       </div>
 
-      <div class="hidden lg:flex lg:gap-x-8">
+      <div class="hidden lg:flex lg:gap-x-7 items-center">
         {
           navigation.map((item) => (
             <a
               href={item.href}
-              class="nav-link relative py-1 text-[13px] font-medium text-[rgba(252,253,255,0.7)] transition-colors duration-200 hover:text-[#fcfdff]"
+              class="nav-link relative py-1 text-[13px] font-medium text-[rgba(245,245,247,0.72)] transition-colors duration-200 hover:text-[#ffffff]"
             >
               {item.name}
             </a>
@@ -55,7 +55,7 @@ const demoHref = "/free-trial";
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a
           href={demoHref}
-          class="btn-primary !w-auto !px-4 !py-2 !text-[13px]"
+          class="btn-primary !w-auto !px-4 !py-1.5 !text-[12.5px]"
         >
           30-Day Free Trial &rarr;
         </a>
@@ -64,19 +64,19 @@ const demoHref = "/free-trial";
       <div class="flex items-center gap-2 lg:hidden">
         <a
           href={demoHref}
-          class="inline-flex h-9 items-center justify-center rounded-lg bg-[#fcfdff] px-3 text-[12px] sm:text-[13px] font-medium text-[#000000] transition hover:bg-[#f1f7fe] whitespace-nowrap"
+          class="inline-flex h-8 items-center justify-center rounded-full bg-[#fcfdff] px-3 text-[12px] font-medium text-[#000000] transition hover:bg-white shadow-[0_2px_8px_rgba(255,255,255,0.2)] whitespace-nowrap"
         >
-          30-Day Free Trial &rarr;
+          Free Trial &rarr;
         </a>
         <button
           type="button"
           id="lp-mobile-menu-btn"
-          class="grid h-9 w-9 place-items-center rounded-lg border border-white/[0.14] bg-[#101012] text-white backdrop-blur-xl transition hover:bg-white/10"
+          class="grid h-8 w-8 place-items-center rounded-full border border-white/[0.14] bg-white/[0.06] text-white backdrop-blur-xl transition hover:bg-white/10"
           aria-expanded="false"
         >
           <span class="sr-only">Open menu</span>
           <svg
-            class="h-5 w-5"
+            class="h-4 w-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="2"
@@ -96,13 +96,13 @@ const demoHref = "/free-trial";
   <!-- Mobile Menu Dropdown -->
   <div
     id="lp-mobile-backdrop"
-    class="fixed inset-0 -z-10 bg-black/80 backdrop-blur-sm lg:hidden"
+    class="fixed inset-0 -z-10 bg-black/75 backdrop-blur-md lg:hidden"
     aria-hidden="true"
   >
   </div>
   <div
     id="lp-mobile-menu"
-    class="fixed left-1/2 top-24 z-40 w-[calc(100%-2.5rem)] max-w-[22rem] rounded-xl border border-white/[0.14] bg-[#0a0a0c] p-4 lg:hidden"
+    class="fixed left-1/2 top-20 z-40 w-[calc(100%-2.5rem)] max-w-[22rem] rounded-2xl border border-white/[0.16] bg-[#0f1118]/85 p-4 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.18)] lg:hidden"
     role="dialog"
     aria-modal="true"
   >
@@ -111,7 +111,7 @@ const demoHref = "/free-trial";
         navigation.map((item) => (
           <a
             href={item.href}
-            class="lp-mobile-link rounded-lg border border-white/[0.06] bg-[#101012] px-4 py-2.5 text-[14px] font-medium text-[#fcfdff] transition hover:bg-white/[0.08]"
+            class="lp-mobile-link rounded-xl border border-white/[0.06] bg-white/[0.04] px-4 py-2.5 text-[14px] font-medium text-[#fcfdff] transition hover:bg-white/[0.08]"
           >
             {item.name}
           </a>
@@ -129,14 +129,18 @@ const demoHref = "/free-trial";
   /* Scroll-aware shrink + lift with a soft glow */
   #lp-navbar.scrolled .lp-nav-inner nav {
     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.14);
-    background-color: rgba(0, 0, 0, 0.95);
+    border-color: rgba(255, 255, 255, 0.20);
+    background-color: rgba(10, 12, 18, 0.85);
+    box-shadow:
+      0 12px 36px -4px rgba(0, 0, 0, 0.7),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
   }
   .lp-nav-inner nav {
     transition:
       transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
       border-color 0.3s ease,
-      background-color 0.3s ease;
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   /* Animated underline for desktop nav links */

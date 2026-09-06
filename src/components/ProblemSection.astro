@@ -39,13 +39,13 @@ const supportingPoints = [
     <!-- Compact 1+2 Asymmetric Problem Layout -->
     <div class="grid gap-5 lg:grid-cols-[1.25fr_1fr] items-stretch">
       
-      <!-- Dominant Hero Statistic Card (Primary Pain Point in Rose/Red) -->
-      <article class="reveal-on-scroll rounded-2xl border border-rose-500/30 bg-gradient-to-b from-[#140a0c] via-[#0d0709] to-[#0a0a0c] p-6 sm:p-7 flex flex-col justify-between hover:border-rose-500/50 transition-all shadow-lg relative overflow-hidden">
+      <!-- Dominant Hero Statistic Card (Liquid Glass Rose Accented) -->
+      <article class="reveal-on-scroll rounded-3xl border border-rose-500/25 bg-rose-950/20 backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-rose-500/40 transition-all duration-300 shadow-[0_16px_40px_-10px_rgba(0,0,0,0.6),inset_0_1px_1.5px_rgba(255,255,255,0.18)] relative overflow-hidden">
         <div>
           <!-- Header -->
-          <div class="flex items-center justify-between border-b border-rose-500/15 pb-3 mb-5">
-            <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-wider">Biggest Daily Drop-Off</span>
-            <span class="rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 font-mono text-[11px] text-rose-300 font-medium">
+          <div class="flex items-center justify-between border-b border-rose-500/20 pb-3 mb-5">
+            <span class="font-mono text-[11px] text-rose-300 font-bold uppercase tracking-wider">Biggest Daily Drop-Off</span>
+            <span class="rounded-full border border-rose-400/30 bg-rose-500/15 px-3 py-0.5 font-mono text-[11px] text-rose-200 font-medium shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
               Left on &ldquo;Seen&rdquo; ↓
             </span>
           </div>
@@ -55,40 +55,40 @@ const supportingPoints = [
             <div class="font-heading text-5xl sm:text-6xl font-bold text-white tracking-tight leading-none">
               65<span class="text-rose-400">%</span>
             </div>
-            <span class="text-xs font-mono text-rose-400/90 font-medium">
+            <span class="text-xs font-mono text-rose-300/90 font-medium">
               stop replying
             </span>
           </div>
 
           <!-- Slim Progress Bar -->
-          <div class="h-1.5 w-full rounded-full bg-rose-950/60 overflow-hidden my-4">
-            <div class="h-full w-[65%] rounded-full bg-gradient-to-r from-rose-600 to-rose-400"></div>
+          <div class="h-1.5 w-full rounded-full bg-white/10 overflow-hidden my-4 backdrop-blur-sm">
+            <div class="h-full w-[65%] rounded-full bg-gradient-to-r from-rose-500 to-rose-300 shadow-[0_0_12px_rgba(244,63,94,0.6)]"></div>
           </div>
 
-          <h3 class="font-heading text-lg sm:text-xl font-bold text-white leading-snug mb-2">
+          <h3 class="font-heading text-lg sm:text-xl font-semibold text-white leading-snug mb-2.5">
             of buyers leave you on &ldquo;seen&rdquo; if they don't get a price, size, or photos within 5 minutes.
           </h3>
 
-          <p class="text-xs sm:text-sm text-rose-200/75 font-normal leading-relaxed">
+          <p class="text-xs sm:text-sm text-rose-100/75 font-normal leading-relaxed">
             When a customer asks &ldquo;Price?&rdquo; or &ldquo;Is size M in stock?&rdquo;, they are ready to buy right now. If you're busy packing orders or away from your phone, they scroll to the next page. VoluChat answers instantly, shows exact sizing, and collects UPI payment in 85 seconds.
           </p>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-rose-500/15 flex items-center justify-between text-xs font-mono text-rose-300/80">
+        <div class="mt-6 pt-4 border-t border-rose-500/20 flex items-center justify-between text-xs font-mono text-rose-200/80">
           <span>Cause: Delayed manual replies</span>
-          <span class="font-bold text-rose-400">Fix: 2-second AI replies &amp; 1-click UPI</span>
+          <span class="font-bold text-rose-300">Fix: 2s AI replies &amp; 1-click UPI</span>
         </div>
       </article>
 
-      <!-- 2 Stacked Supporting Evidence Cards (Neutral / Muted Slate Tones) -->
+      <!-- 2 Stacked Supporting Evidence Cards (Frosted Slate Glass) -->
       <div class="grid gap-5 flex-col justify-between">
         {
           supportingPoints.map((point, idx) => (
-            <article class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-2xl border border-white/[0.08] bg-[#0c0d12] p-5 sm:p-6 flex flex-col justify-between hover:border-white/15 transition-all`}>
+            <article class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl p-6 flex flex-col justify-between hover:border-white/[0.22] hover:bg-white/[0.06] transition-all duration-300 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.16)]`}>
               <div>
-                <div class="flex items-center justify-between border-b border-white/[0.06] pb-2.5 mb-3">
-                  <span class="font-mono text-[11px] text-slate-500 font-bold">{point.code}</span>
-                  <span class="font-mono text-[10px] text-slate-400 uppercase tracking-wider">{point.statLabel}</span>
+                <div class="flex items-center justify-between border-b border-white/[0.08] pb-2.5 mb-3">
+                  <span class="font-mono text-[11px] text-slate-400 font-bold">{point.code}</span>
+                  <span class="font-mono text-[10px] text-slate-300 uppercase tracking-wider">{point.statLabel}</span>
                 </div>
 
                 <div class="flex items-baseline gap-2 mb-2">
@@ -99,14 +99,14 @@ const supportingPoints = [
                 </div>
 
                 <!-- Slim Progress Bar -->
-                <div class="h-1 w-full rounded-full bg-white/[0.06] overflow-hidden mb-3">
-                  <div class="h-full rounded-full bg-slate-500/60" style={`width: ${point.pct}%;`}></div>
+                <div class="h-1 w-full rounded-full bg-white/[0.08] overflow-hidden mb-3">
+                  <div class="h-full rounded-full bg-white/40" style={`width: ${point.pct}%;`}></div>
                 </div>
 
                 <h3 class="font-heading text-sm sm:text-base font-semibold text-white">
                   {point.title}
                 </h3>
-                <p class="mt-1.5 text-xs text-[rgba(252,253,255,0.65)] font-normal leading-relaxed">
+                <p class="mt-1.5 text-xs text-[rgba(245,245,247,0.68)] font-normal leading-relaxed">
                   {point.description}
                 </p>
               </div>

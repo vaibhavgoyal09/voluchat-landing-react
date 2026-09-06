@@ -45,37 +45,37 @@ const guardrailRules = [
       </p>
     </div>
 
-    <!-- Clean 2x2 Punchy Guardrails Grid -->
+    <!-- Clean 2x2 Punchy Guardrails Grid (Liquid Glass) -->
     <div class="grid gap-6 sm:grid-cols-2 max-w-5xl mx-auto">
       {
         guardrailRules.map((rule, idx) => (
-          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-2xl border border-white/[0.12] bg-[#0a0a0c] p-6 sm:p-8 flex flex-col justify-between hover:border-emerald-500/40 transition-all`}>
+          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-emerald-500/40 hover:bg-white/[0.06] transition-all duration-300 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.16)]`}>
             <div>
               <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-5">
-                <span class="font-mono text-xs text-slate-500 font-bold">GUARDRAIL {rule.num}</span>
-                <span class="rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-0.5 text-xs font-mono font-medium text-emerald-300">
+                <span class="font-mono text-xs text-slate-400 font-bold">GUARDRAIL {rule.num}</span>
+                <span class="rounded-full border border-emerald-500/30 bg-emerald-950/20 px-3 py-0.5 text-xs font-mono font-medium text-emerald-300 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
                   {rule.badge}
                 </span>
               </div>
-              <h3 class="text-xl font-bold text-white font-heading mb-2">
+              <h3 class="text-xl font-semibold text-white font-heading mb-2">
                 {rule.title}
               </h3>
-              <p class="text-sm text-[rgba(252,253,255,0.7)] font-normal leading-relaxed">
+              <p class="text-sm text-[rgba(245,245,247,0.7)] font-normal leading-relaxed">
                 {rule.desc}
               </p>
             </div>
             
             <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between font-mono text-xs">
               <span class="font-bold text-emerald-400">{rule.highlight}</span>
-              <span class="text-slate-500">Enforced by Policy</span>
+              <span class="text-slate-400">Enforced by Policy</span>
             </div>
           </div>
         ))
       }
     </div>
 
-    <!-- Human Oversight Guarantee Bar -->
-    <div class="mt-8 max-w-5xl mx-auto rounded-2xl border border-white/[0.12] bg-[#0a0a0c] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Human Oversight Guarantee Bar (Liquid Glass Capsule) -->
+    <div class="mt-8 max-w-5xl mx-auto rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.16)]">
       <div class="flex items-center gap-3.5 text-center sm:text-left">
         <span class="relative flex h-3 w-3 shrink-0">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -85,7 +85,7 @@ const guardrailRules = [
           <strong class="text-white font-semibold">Human Oversight Guarantee:</strong> Your team can review chat logs, modify responses, or pause the AI at any time with 1 tap.
         </p>
       </div>
-      <a href="/security" class="shrink-0 text-xs font-mono text-emerald-400 hover:text-emerald-300 underline underline-offset-4">
+      <a href="/security" class="shrink-0 text-xs font-mono text-emerald-300 hover:text-emerald-200 underline underline-offset-4">
         Review Safety Specs &rarr;
       </a>
     </div>

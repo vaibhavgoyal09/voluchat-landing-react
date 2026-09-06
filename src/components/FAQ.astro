@@ -63,20 +63,20 @@ const faqs = [
     </div>
 
     <div
-      class="reveal-on-scroll mx-auto max-w-3xl divide-y divide-white/[0.08] overflow-hidden rounded-xl border border-white/[0.08] bg-[#0a0a0c]"
+      class="reveal-on-scroll mx-auto max-w-3xl divide-y divide-white/[0.08] overflow-hidden rounded-3xl border border-white/[0.12] bg-white/[0.04] backdrop-blur-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.6),inset_0_1px_1.5px_rgba(255,255,255,0.16)]"
     >
       {
         faqs.map((faq, index) => (
           <div class="faq-item transition-colors duration-200" data-index={index}>
-            <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-white/[0.02]">
+            <button class="faq-toggle group flex w-full items-center justify-between gap-6 px-6 py-5 sm:px-8 sm:py-6 text-left transition-colors hover:bg-white/[0.04]">
               <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-[#fcfdff] transition-colors group-hover:text-emerald-300">
                 {faq.question}
               </span>
-              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.14] bg-[#101012] transition-colors duration-200 group-hover:border-emerald-500/40">
+              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/[0.14] bg-white/[0.06] backdrop-blur-md transition-colors duration-200 group-hover:border-emerald-500/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="15"
+                  height="15"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -91,7 +91,7 @@ const faqs = [
             </button>
             <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
               <div class="px-6 pb-6 sm:px-8 sm:pb-8">
-                <p class="text-base font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                <p class="text-base font-normal leading-relaxed text-[rgba(245,245,247,0.72)]">
                   {faq.answer}
                 </p>
               </div>
