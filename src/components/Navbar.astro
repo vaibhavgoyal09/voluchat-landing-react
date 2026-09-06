@@ -17,34 +17,43 @@ const demoHref = "/free-trial";
   id="lp-navbar"
   class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
 >
-  <div class="lp-nav-inner mx-auto w-full max-w-6xl px-4 pt-3 sm:px-6 lg:px-8">
+  <div class="lp-nav-container mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 transition-all duration-300">
     <nav
-      class="flex h-14 items-center justify-between rounded-full border border-white/[0.12] bg-[#0c0d12]/75 px-4 backdrop-blur-2xl sm:px-6 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.18)]"
+      class="relative flex h-14 sm:h-16 items-center justify-between px-3 sm:px-6"
       aria-label="Global"
     >
-      <div class="flex pl-1 lg:flex-1 lg:pl-0">
-        <a href="/" class="-m-1.5 p-1.5 focus-visible:ring-offset-0">
+      <!-- Dedicated pill background layer: hardware accelerated opacity + scale -->
+      <div
+        class="lp-nav-pill-bg pointer-events-none absolute inset-0 rounded-full border border-white/[0.14] bg-[#0c0e15]/85 shadow-[0_12px_36px_-4px_rgba(0,0,0,0.7),inset_0_1px_1px_0_rgba(255,255,255,0.2)] backdrop-blur-2xl"
+        aria-hidden="true"
+      >
+      </div>
+
+      <!-- Brand / Logo -->
+      <div class="relative z-10 flex items-center pl-1 lg:flex-1 lg:pl-0">
+        <a href="/" class="group -m-1.5 p-1.5 focus-visible:ring-offset-0">
           <span class="sr-only">VoluChat</span>
-          <div class="flex items-center gap-2.5">
+          <div class="flex items-center gap-3">
             <img
               src="/voluchat_logo.svg"
               alt="VoluChat Logo"
-              class="h-6 w-6 object-contain drop-shadow-[0_2px_8px_rgba(16,185,129,0.3)]"
+              class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl object-contain drop-shadow-[0_2px_12px_rgba(33,111,197,0.35)] transition-transform duration-200 group-hover:scale-105"
             />
             <span
-              class="hidden font-heading text-[1.05rem] font-bold tracking-tight text-[#fcfdff] sm:inline"
+              class="font-heading text-[1.2rem] sm:text-[1.25rem] font-bold tracking-tight text-[#fcfdff] transition-colors group-hover:text-white"
               >VoluChat</span
             >
           </div>
         </a>
       </div>
 
-      <div class="hidden lg:flex lg:gap-x-7 items-center">
+      <!-- Desktop Nav Links -->
+      <div class="relative z-10 hidden lg:flex lg:gap-x-8 items-center">
         {
           navigation.map((item) => (
             <a
               href={item.href}
-              class="nav-link relative py-1 text-[13px] font-medium text-[rgba(245,245,247,0.72)] transition-colors duration-200 hover:text-[#ffffff]"
+              class="nav-link relative py-1 text-[13.5px] font-medium text-[rgba(245,245,247,0.75)] transition-colors duration-200 hover:text-[#ffffff]"
             >
               {item.name}
             </a>
@@ -52,95 +61,130 @@ const demoHref = "/free-trial";
         }
       </div>
 
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <!-- Desktop CTA -->
+      <div class="relative z-10 hidden lg:flex lg:flex-1 lg:justify-end">
         <a
           href={demoHref}
-          class="btn-primary !w-auto !px-4 !py-1.5 !text-[12.5px]"
+          class="btn-primary !w-auto !px-4.5 !py-2 !text-[13px] shadow-[0_4px_16px_rgba(20,184,166,0.25)] hover:shadow-[0_6px_20px_rgba(20,184,166,0.35)]"
         >
           30-Day Free Trial &rarr;
         </a>
       </div>
 
-      <div class="flex items-center gap-2 lg:hidden">
+      <!-- Mobile Controls (Trial Button + Animated Hamburger) -->
+      <div class="relative z-10 flex items-center gap-2.5 lg:hidden">
         <a
           href={demoHref}
-          class="inline-flex h-8 items-center justify-center rounded-full bg-[#fcfdff] px-3 text-[12px] font-medium text-[#000000] transition hover:bg-white shadow-[0_2px_8px_rgba(255,255,255,0.2)] whitespace-nowrap"
+          class="inline-flex h-8.5 items-center justify-center rounded-full bg-[#fcfdff] px-3.5 text-[12.5px] font-semibold text-[#000000] transition hover:bg-white shadow-[0_2px_10px_rgba(255,255,255,0.2)] whitespace-nowrap active:scale-95"
         >
           Free Trial &rarr;
         </a>
         <button
           type="button"
           id="lp-mobile-menu-btn"
-          class="grid h-8 w-8 place-items-center rounded-full border border-white/[0.14] bg-white/[0.06] text-white backdrop-blur-xl transition hover:bg-white/10"
+          class="grid h-9 w-9 place-items-center rounded-full border border-white/[0.14] bg-white/[0.07] text-white backdrop-blur-xl transition hover:bg-white/12 active:scale-95"
           aria-expanded="false"
+          aria-label="Toggle navigation menu"
         >
-          <span class="sr-only">Open menu</span>
-          <svg
-            class="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="lp-menu-line lp-menu-a"></span>
+          <span class="lp-menu-line lp-menu-b"></span>
         </button>
       </div>
     </nav>
   </div>
 
-  <!-- Mobile Menu Dropdown -->
+  <!-- Mobile Drawer Backdrop -->
   <div
     id="lp-mobile-backdrop"
-    class="fixed inset-0 -z-10 bg-black/75 backdrop-blur-md lg:hidden"
+    class="fixed inset-0 top-[60px] -z-10 bg-black/80 backdrop-blur-md lg:hidden"
     aria-hidden="true"
   >
   </div>
+
+  <!-- Mobile Menu Dropdown -->
   <div
     id="lp-mobile-menu"
-    class="fixed left-1/2 top-20 z-40 w-[calc(100%-2.5rem)] max-w-[22rem] rounded-2xl border border-white/[0.16] bg-[#0f1118]/85 p-4 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.18)] lg:hidden"
+    class="fixed inset-x-4 top-[70px] z-40 max-w-lg mx-auto rounded-3xl border border-white/[0.12] bg-[#0c0e15]/95 p-4 sm:p-5 backdrop-blur-2xl shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.18)] lg:hidden"
     role="dialog"
     aria-modal="true"
   >
-    <div class="flex flex-col gap-1.5">
+    <div class="flex flex-col gap-1">
       {
         navigation.map((item) => (
           <a
             href={item.href}
-            class="lp-mobile-link rounded-xl border border-white/[0.06] bg-white/[0.04] px-4 py-2.5 text-[14px] font-medium text-[#fcfdff] transition hover:bg-white/[0.08]"
+            class="lp-mobile-link group flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] font-medium text-[rgba(245,245,247,0.85)] transition hover:bg-white/[0.06] hover:text-white active:bg-white/[0.09]"
           >
-            {item.name}
+            <span>{item.name}</span>
+            <svg
+              class="h-4 w-4 text-white/30 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-emerald-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
           </a>
         ))
       }
+    </div>
+
+    <!-- Mobile Menu Bottom Action Strip -->
+    <div class="mt-4 pt-3.5 border-t border-white/[0.08] flex flex-col gap-2.5">
+      <a
+        href={demoHref}
+        class="lp-mobile-link flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 py-3 text-center text-[14px] font-semibold text-[#050608] shadow-[0_4px_16px_rgba(16,185,129,0.3)] transition active:scale-[0.98]"
+      >
+        <span>Start 30-Day Free Trial</span>
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+      <div class="flex items-center justify-center gap-2 text-[11.5px] text-white/50 pt-1">
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+        <span>Official Meta Partner &bull; Zero credit card needed</span>
+      </div>
     </div>
   </div>
 </header>
 
 <style>
   #lp-navbar {
-    transition: transform 0.3s ease;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* Scroll-aware shrink + lift with a soft glow */
-  #lp-navbar.scrolled .lp-nav-inner nav {
+  /* Scrolled header state */
+  #lp-navbar.scrolled {
     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.20);
-    background-color: rgba(10, 12, 18, 0.85);
-    box-shadow:
-      0 12px 36px -4px rgba(0, 0, 0, 0.7),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
   }
-  .lp-nav-inner nav {
+
+  /* Glass pill background element - graceful fade & scale */
+  .lp-nav-pill-bg {
+    opacity: 0;
+    transform: scale(0.96);
     transition:
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 0.3s ease,
-      background-color 0.3s ease,
-      box-shadow 0.3s ease;
+      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  #lp-navbar.scrolled .lp-nav-pill-bg {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Container bounds smoothly and visibly glide inward */
+  .lp-nav-container {
+    max-width: 80rem; /* max-w-7xl */
+    transition: max-width 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #lp-navbar.scrolled .lp-nav-container {
+    max-width: 68rem; /* max-w-5xl compact pill container */
   }
 
   /* Animated underline for desktop nav links */
@@ -155,23 +199,28 @@ const demoHref = "/free-trial";
     background: linear-gradient(90deg, #2dd4bf, #5eeac9);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0.85;
   }
   .nav-link:hover::after {
     transform: scaleX(1);
   }
 
+  /* Mobile menu button lines (clean CSS hamburger -> X animation) */
+  #lp-mobile-menu-btn {
+    position: relative;
+  }
+
   .lp-menu-line {
+    position: absolute;
     display: block;
-    grid-area: 1 / 1;
     height: 1.5px;
-    width: 17px;
+    width: 16px;
     border-radius: 999px;
-    background: currentColor;
+    background: #fcfdff;
     transition:
-      transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-      opacity 0.32s ease;
+      transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.2s ease;
   }
 
   .lp-menu-a {
@@ -181,34 +230,6 @@ const demoHref = "/free-trial";
     transform: translateY(3.5px);
   }
 
-  #lp-mobile-menu,
-  #lp-mobile-backdrop {
-    opacity: 0;
-    visibility: hidden;
-    transition:
-      opacity 0.28s ease,
-      transform 0.28s ease,
-      visibility 0.28s ease;
-  }
-
-  #lp-mobile-menu {
-    transform: translateX(-50%) translateY(-10px) scale(0.98);
-  }
-
-  #lp-mobile-menu.lp-menu-open,
-  #lp-mobile-backdrop.lp-menu-open {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  #lp-mobile-menu.lp-menu-open {
-    transform: translateX(-50%) translateY(0) scale(1);
-  }
-
-  #lp-mobile-backdrop.lp-menu-open {
-    transform: none;
-  }
-
   .lp-toggle-open .lp-menu-a {
     transform: translateY(0) rotate(45deg);
   }
@@ -216,20 +237,64 @@ const demoHref = "/free-trial";
   .lp-toggle-open .lp-menu-b {
     transform: translateY(0) rotate(-45deg);
   }
+
+  /* Mobile menu dropdown & backdrop with fast GPU transitions */
+  #lp-mobile-menu,
+  #lp-mobile-backdrop {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0.2s ease;
+  }
+
+  #lp-mobile-menu {
+    transform: translateY(-8px) scale(0.98);
+    will-change: opacity, transform;
+  }
+
+  #lp-mobile-menu.lp-menu-open,
+  #lp-mobile-backdrop.lp-menu-open {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  #lp-mobile-menu.lp-menu-open {
+    transform: translateY(0) scale(1);
+  }
+
+  #lp-mobile-backdrop.lp-menu-open {
+    transform: none;
+  }
 </style>
 
 <script>
-  // Scroll behavior
   const navbar = document.getElementById("lp-navbar");
-  let navScrollFrame = 0;
-  const onScroll = () => {
-    if (navScrollFrame) return;
-    navScrollFrame = window.requestAnimationFrame(() => {
-      navScrollFrame = 0;
-      navbar?.classList.toggle("scrolled", window.scrollY > 20);
-    });
+  let isScrolled = false;
+  let ticking = false;
+
+  const updateScroll = () => {
+    const shouldBeScrolled = window.scrollY > 30;
+    if (shouldBeScrolled !== isScrolled) {
+      isScrolled = shouldBeScrolled;
+      navbar?.classList.toggle("scrolled", isScrolled);
+    }
+    ticking = false;
   };
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScroll);
+      ticking = true;
+    }
+  };
+
   window.addEventListener("scroll", onScroll, { passive: true });
+  // Initial check
+  updateScroll();
 
   // Mobile menu
   const toggle = document.getElementById("lp-mobile-menu-btn");
