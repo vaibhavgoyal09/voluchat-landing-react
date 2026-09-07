@@ -1,43 +1,53 @@
 const faqs = [
   {
-    question: "What is included in the 30-Day Free Trial & Free Setup offer?",
+    question: "How is VoluChat different from chatbot tools like Wati or ManyChat?",
     answer:
-      "For the first 10 boutique stores, you get a full 30-day free trial with all VoluChat AI sales features unlocked and 100% free white-glove setup. Our founder and engineering team configure your Meta Cloud API, WhatsApp Business API, Shopify product catalog sync, size charts, and UPI checkout links with zero technical work needed from your side.",
+      "Rule-based tools push rigid button menus ('Press 1 for Price') and external website links where shoppers drop off. VoluChat acts like a digital team member: it understands fashion questions, checks live catalog inventory, qualifies sizing, generates secure UPI payment links, and answers order tracking queries directly in chat.",
   },
   {
-    question: "Will my existing WhatsApp Business phone app still work?",
+    question: "Is this replacing my sales and support team?",
     answer:
-      "Yes, 100%. VoluChat is fully compatible with WhatsApp's official Coexistence feature. You and your team can continue using your existing WhatsApp Business mobile app exactly as you do today. Incoming customer messages sync seamlessly across your phone app and VoluChat's autonomous AI closer.",
+      "No. It handles routine questions—size charts, fabric details, price queries, order status, and FAQs—freeing your team to focus on high-touch VIP clients, bespoke wedding customizations, and packing orders.",
   },
   {
-    question: "Will my WhatsApp or Instagram account get banned?",
+    question: "What happens when the AI doesn't know the answer?",
     answer:
-      "No. As an Official Meta Tech Partner, VoluChat operates exclusively on Meta's official WhatsApp Business Cloud API and Instagram Graph API. We never use unauthorized scrapers, browser extensions, or unofficial automation bots that risk account flags. Your number and business account remain 100% safe and compliant with Meta's Terms of Service.",
+      "It doesn't invent an answer. When a question falls outside its configured knowledge or rules (like custom bridal alterations or bulk wholesale inquiries), it alerts your team on WhatsApp with the complete chat context for a smooth human takeover.",
   },
   {
-    question: "How does VoluChat differ from Wati, Interakt, or ManyChat?",
+    question: "Can I control discounts and commercial rules?",
     answer:
-      "Traditional tools are rigid flowchart bots with robotic 'Press 1' buttons that frustrate buyers. VoluChat is an intelligent generative AI closer that understands natural human conversations, answers complex product sizing/fabric questions, checks live stock, and completes native checkouts.",
+      "Yes. Strict margin rules and discount caps are set by you during onboarding. The AI cannot offer unapproved deals or negotiate below your profitability floors.",
   },
   {
-    question: "How does the Instagram Comment-to-DM trigger work?",
+    question: "Can it check my live inventory?",
     answer:
-      "Whenever someone comments on your Instagram posts, Reels, or Meta ads (e.g. 'Price please', 'Is this available in Medium?'), VoluChat auto-replies in 2 seconds and sends a personalized DM with photos, price, and stock info.",
+      "Yes. VoluChat syncs with Shopify or your boutique's product catalog to check variant stock in real-time before confirming availability, preventing out-of-stock orders.",
   },
   {
-    question: "How do payments work inside WhatsApp?",
+    question: "Can it track customer orders?",
     answer:
-      "VoluChat pushes native WhatsApp catalog checkouts, instant 1-click UPI links (GPay, PhonePe, Paytm), and Razorpay/Cashfree payment links. Once paid, the order is automatically marked paid in your Shopify backend.",
+      "Yes. When customers message asking 'Where is my order?', VoluChat verifies their order number and returns live dispatch status, AWB tracking, and expected delivery milestones from courier partners like Delhivery and Shiprocket.",
   },
   {
-    question: "Can human sales reps intervene if needed?",
+    question: "Can customers request exchanges through it?",
     answer:
-      "Yes. Your team has full oversight. If a customer needs custom alterations, bespoke bridal ordering, or VIP assistance, any rep can jump in and take over the WhatsApp chat seamlessly.",
+      "Yes. It checks your boutique's configured return window, verifies the order date, collects unboxing photos and preferred exchange sizes, and prepares a verified ticket for your staff.",
   },
   {
-    question: "Do I need to give up my existing Shopify store?",
+    question: "Can my team take over a conversation?",
     answer:
-      "No! VoluChat connects directly to your existing Shopify store. It reads your product catalog, syncs inventory levels, and creates official paid orders in real-time.",
+      "Yes. At any point, your team can reply in the chat on your existing WhatsApp Business app or dashboard; the AI pauses immediately and lets humans take over.",
+  },
+  {
+    question: "Will it sound like my boutique?",
+    answer:
+      "Yes. During onboarding, we calibrate the AI's tone, greetings, and vocabulary to match your boutique's brand identity, whether that is warm & consultative or modern & minimalist.",
+  },
+  {
+    question: "How does setup work?",
+    answer:
+      "We provide guided onboarding in under 48 hours. Our team connects your Instagram, WhatsApp Business API, catalog, and courier preferences with zero technical effort required from you.",
   },
 ];
 
@@ -57,3 +67,4 @@ export function getFaqSchema(additionalFaqs = []) {
   };
 }
 
+export { faqs };

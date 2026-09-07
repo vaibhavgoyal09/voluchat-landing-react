@@ -1,64 +1,25 @@
 ---
-const faqs = [
-  {
-    question: "What is included in the 30-Day Free Trial & Free Setup offer?",
-    answer:
-      "For the first 10 boutique stores, you get a full 30-day free trial with all VoluChat AI sales features unlocked and 100% free white-glove setup. Our founder and engineering team configure your Meta Cloud API, WhatsApp Business API, Shopify product catalog sync, size charts, and UPI checkout links with zero technical work needed from your side.",
-  },
-  {
-    question: "Will my existing WhatsApp Business phone app still work?",
-    answer:
-      "Yes, 100%. VoluChat is fully compatible with WhatsApp's official Coexistence feature. You and your team can continue using your existing WhatsApp Business mobile app exactly as you do today. Incoming customer messages sync seamlessly across your phone app and VoluChat's autonomous AI closer.",
-  },
-  {
-    question: "Will my WhatsApp or Instagram account get banned?",
-    answer:
-      "No. As an Official Meta Tech Partner, VoluChat operates exclusively on Meta's official WhatsApp Business Cloud API and Instagram Graph API. We never use unauthorized scrapers, browser extensions, or unofficial automation bots that risk account flags. Your number and business account remain 100% safe and compliant with Meta's Terms of Service.",
-  },
-  {
-    question: "How does VoluChat differ from Wati, Interakt, or ManyChat?",
-    answer:
-      "Traditional tools are rigid flowchart bots with robotic 'Press 1' buttons that frustrate buyers. VoluChat is an intelligent generative AI closer that understands natural human conversations, answers complex product sizing/fabric questions, checks live stock, and completes native checkouts.",
-  },
-  {
-    question: "How does the Instagram Comment-to-DM trigger work?",
-    answer:
-      "Whenever someone comments on your Instagram posts, Reels, or Meta ads (e.g. 'Price please', 'Is this available in Medium?'), VoluChat auto-replies in 2 seconds and sends a personalized DM with photos, price, and stock info.",
-  },
-  {
-    question: "How do payments work inside WhatsApp?",
-    answer:
-      "VoluChat pushes native WhatsApp catalog checkouts, instant 1-click UPI links (GPay, PhonePe, Paytm), and Razorpay/Cashfree payment links. Once paid, the order is automatically marked paid in your Shopify backend.",
-  },
-  {
-    question: "Can human sales reps intervene if needed?",
-    answer:
-      "Yes. Your team has full oversight. If a customer needs custom alterations, bespoke bridal ordering, or VIP assistance, any rep can jump in and take over the WhatsApp chat seamlessly.",
-  },
-  {
-    question: "Do I need to give up my existing Shopify store?",
-    answer:
-      "No! VoluChat connects directly to your existing Shopify store. It reads your product catalog, syncs inventory levels, and creates official paid orders in real-time.",
-  },
-];
-
+import { faqs } from "../lib/faqSchema.mjs";
 ---
-
 
 <section
   id="faq"
-  class="section-pad section-band-quiet relative overflow-hidden"
+  class="section-pad section-band-quiet relative overflow-hidden bg-[#000000] border-t border-white/[0.08]"
 >
   <div class="absolute inset-0 -z-10 pointer-events-none">
     <div class="sect-grid opacity-20"></div>
   </div>
 
   <div class="page-shell">
-    <div class="mx-auto mb-12 max-w-3xl text-center">
-      <p class="section-eyebrow">FAQ</p>
-      <h2 class="section-title mt-4">Questions about commerce agents.</h2>
+    <div class="mx-auto mb-14 max-w-3xl text-center">
+      <div class="chip mb-4 mx-auto inline-flex">
+        <span class="mini-label text-emerald-400">Questions &amp; Answers</span>
+      </div>
+      <h2 class="section-title font-heading mt-2">
+        Frequently asked <span class="text-emerald-400">questions</span>.
+      </h2>
       <p class="section-copy mx-auto mt-4 max-w-xl">
-        Common questions from boutique founders before deploying autonomous agents.
+        Everything boutique founders want to know about hiring an AI Employee for online operations.
       </p>
     </div>
 
@@ -100,35 +61,40 @@ const faqs = [
         ))
       }
     </div>
-
-
   </div>
 </section>
 
-<style>
-  .faq-item.active {
-    background-color: transparent;
-  }
-  .faq-item.active .faq-chevron {
-    transform: rotate(180deg);
-    color: #10b981;
-  }
-  .faq-item.active .faq-icon-wrap {
-    background-color: transparent;
-    border-color: rgba(16, 185, 129, 0.45);
-  }
-  .faq-item.active .faq-body {
-    max-height: 420px;
-  }
-</style>
-
 <script>
-  const faqItems = document.querySelectorAll(".faq-item");
-  faqItems.forEach((item) => {
-    item.querySelector(".faq-toggle")?.addEventListener("click", () => {
-      const isActive = item.classList.contains("active");
-      faqItems.forEach((i) => i.classList.remove("active"));
-      if (!isActive) item.classList.add("active");
+  function setupFaqAccordion() {
+    const items = document.querySelectorAll(".faq-item");
+
+    items.forEach((item) => {
+      const toggle = item.querySelector(".faq-toggle");
+      const body = item.querySelector(".faq-body") as HTMLElement | null;
+      const chevron = item.querySelector(".faq-chevron");
+
+      if (!toggle || !body) return;
+
+      toggle.addEventListener("click", () => {
+        const isOpen = body.style.maxHeight && body.style.maxHeight !== "0px";
+
+        // Close all
+        items.forEach((other) => {
+          const otherBody = other.querySelector(".faq-body") as HTMLElement | null;
+          const otherChevron = other.querySelector(".faq-chevron");
+          if (otherBody) otherBody.style.maxHeight = "0px";
+          if (otherChevron) otherChevron.classList.remove("rotate-180");
+        });
+
+        // Toggle clicked
+        if (!isOpen) {
+          body.style.maxHeight = body.scrollHeight + "px";
+          if (chevron) chevron.classList.add("rotate-180");
+        }
+      });
     });
-  });
+  }
+
+  setupFaqAccordion();
+  document.addEventListener("astro:page-load", setupFaqAccordion);
 </script>
