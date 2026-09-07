@@ -1,0 +1,315 @@
+---
+const scenarios = [
+  {
+    id: "sell",
+    label: "01 — Sell",
+    title: "Comment-to-DM Sizing & Checkout",
+    subtitle: "Converts Instagram Reel traffic into paid WhatsApp orders.",
+    messages: [
+      {
+        sender: "customer",
+        time: "11:14 PM",
+        text: "Price of the emerald anarkali from your latest reel? Is size L in stock?",
+      },
+      {
+        sender: "ai",
+        time: "11:14 PM",
+        text: "Hi Priya! ✨ That's our handcrafted Chanderi Silk Emerald Anarkali with zardozi embroidery. Price is ₹7,999 (inclusive of taxes).",
+      },
+      {
+        sender: "ai",
+        time: "11:14 PM",
+        text: "Yes, Size L (Bust 40\", Waist 34\") has 3 pieces left in stock today. Would you like standard length (52\") or custom height?",
+      },
+      {
+        sender: "customer",
+        time: "11:15 PM",
+        text: "Standard 52\" is perfect! Can I pay via GPay?",
+      },
+      {
+        sender: "ai",
+        time: "11:15 PM",
+        text: "Here is your direct 1-click UPI payment link for ₹7,999: [upi://pay?pa=boutique@okaxis...]. Once paid, your order is instantly confirmed!",
+        badge: "Draft Order #2891 Synced to Shopify",
+      },
+    ],
+    note: "AI checks live variant stock, recommends exact bust/waist fit, and closes checkout in-chat.",
+  },
+  {
+    id: "track",
+    label: "02 — Track",
+    title: "Instant WISMO Delivery Updates",
+    subtitle: "Pulls real-time courier dispatch status in under 3 seconds.",
+    messages: [
+      {
+        sender: "customer",
+        time: "02:30 PM",
+        text: "Hi, where is my order #1234? Has it been shipped yet?",
+      },
+      {
+        sender: "ai",
+        time: "02:30 PM",
+        text: "Looking up order #1234 for you right now...",
+      },
+      {
+        sender: "ai",
+        time: "02:30 PM",
+        text: "Good news! Your order was dispatched yesterday via Delhivery (AWB: 9821839210).",
+      },
+      {
+        sender: "ai",
+        time: "02:30 PM",
+        text: "Current status: Out for Delivery in Indiranagar, Bengaluru. Expected delivery today by 6:00 PM. Live tracking: delhivery.com/track/...",
+      },
+    ],
+    note: "Zero repetitive typing. Real-time courier API lookups resolve WISMO queries unassisted.",
+  },
+  {
+    id: "exchange",
+    label: "03 — Exchange",
+    title: "Policy-Bound Sizing Exchanges",
+    subtitle: "Validates boutique return window and collects unboxing details.",
+    messages: [
+      {
+        sender: "customer",
+        time: "04:15 PM",
+        text: "I received my order yesterday but need a size exchange. The M feels slightly loose on shoulders.",
+      },
+      {
+        sender: "ai",
+        time: "04:15 PM",
+        text: "We can help you with that! According to our boutique policy, size exchanges are accepted within 7 days of delivery.",
+      },
+      {
+        sender: "ai",
+        time: "04:15 PM",
+        text: "Your order was delivered yesterday, so you're well within the window. We have Size S in stock. Please upload a clear photo of the garment with tags intact to proceed.",
+      },
+      {
+        sender: "customer",
+        time: "04:17 PM",
+        text: "[Photo uploaded: Tag attached, unworn garment]",
+      },
+      {
+        sender: "ai",
+        time: "04:17 PM",
+        text: "Photo verified with tags intact. Exchange request #EX-402 initiated for Size S. Our reverse courier will pick this up tomorrow.",
+        badge: "Exchange Ticket Created",
+      },
+    ],
+    note: "Adheres strictly to boutique policy windows, collects unboxing photos, and prepares clean records.",
+  },
+  {
+    id: "escalation",
+    label: "04 — Human Takeover",
+    title: "1-Tap Exception Escalation",
+    subtitle: "Recognizes complex custom requests and alerts staff with full context.",
+    messages: [
+      {
+        sender: "customer",
+        time: "06:45 PM",
+        text: "Can you customize the blouse neckline to a deep sweetheart cut and add extra sleeve padding for my wedding?",
+      },
+      {
+        sender: "ai",
+        time: "06:45 PM",
+        text: "Congratulations on your upcoming wedding! 🌸 Custom bridal tailoring requires our master designer's personal review.",
+      },
+      {
+        sender: "ai",
+        time: "06:45 PM",
+        text: "I've alerted Ananya (Head Stylist) with your measurements and request. She will step into this chat in a few moments to assist you directly.",
+        badge: "Staff Alerted on WhatsApp & Dashboard with Full Context",
+      },
+      {
+        sender: "staff",
+        time: "06:47 PM",
+        text: "Hi! Ananya here from the design team. I would love to make that custom sweetheart neckline for you. Let's discuss...",
+      },
+    ],
+    note: "Autonomous doesn't mean uncontrolled. The AI detects requests beyond configured rules and hands off smoothly.",
+  },
+];
+---
+
+<section id="proof" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-white/[0.08] bg-[#050507]">
+  <div class="page-shell relative z-10">
+    <div class="mb-14 max-w-3xl">
+      <div class="chip mb-4">
+        <span class="mini-label text-emerald-400">Product Demonstration</span>
+      </div>
+      <h2 class="section-title font-heading">
+        See your AI Employee <span class="text-emerald-400">at work</span>.
+      </h2>
+      <p class="section-copy mt-4">
+        Interactive demonstrations across the four core boutique responsibilities. Explore real conversations from the first Reel inquiry to post-purchase fulfillment.
+      </p>
+    </div>
+
+    <!-- Tab Container -->
+    <div class="product-proof-wrapper max-w-5xl mx-auto">
+      <!-- Tab Navigation Buttons -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 p-1.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl mb-8">
+        {
+          scenarios.map((scenario, index) => (
+            <button
+              type="button"
+              class={`proof-tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+                index === 0
+                  ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-[0_4px_12px_rgba(16,185,129,0.15)]"
+                  : "text-slate-400 hover:text-white hover:bg-white/[0.04] border border-transparent"
+              }`}
+              data-target={scenario.id}
+            >
+              {scenario.label}
+            </button>
+          ))
+        }
+      </div>
+
+      <!-- Scenarios Panels -->
+      <div class="relative">
+        {
+          scenarios.map((scenario, index) => (
+            <div
+              id={`proof-panel-${scenario.id}`}
+              class={`proof-panel transition-opacity duration-300 ${index === 0 ? "block opacity-100" : "hidden opacity-0"}`}
+            >
+              <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
+                
+                <!-- Chat Window Mockup -->
+                <div class="titanium-surface rounded-3xl p-5 sm:p-7 border border-white/[0.12] bg-[#0a0a0d] shadow-2xl relative overflow-hidden">
+                  <!-- Chat Header -->
+                  <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-5">
+                    <div class="flex items-center gap-3">
+                      <div class="relative h-9 w-9 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xs">
+                        VC
+                        <span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-black"></span>
+                      </div>
+                      <div>
+                        <div class="text-xs sm:text-sm font-semibold text-white">VoluChat AI Employee</div>
+                        <div class="text-[10px] text-emerald-400 font-mono flex items-center gap-1">
+                          Online &bull; Active for Boutique
+                        </div>
+                      </div>
+                    </div>
+                    <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono text-slate-400">
+                      Live Simulation
+                    </span>
+                  </div>
+
+                  <!-- Messages Flow -->
+                  <div class="space-y-3.5 min-h-[290px] flex flex-col justify-end">
+                    {
+                      scenario.messages.map((msg) => (
+                        <div class={`flex flex-col ${msg.sender === "customer" ? "items-end" : "items-start"}`}>
+                          <div
+                            class={`max-w-[85%] rounded-2xl px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed ${
+                              msg.sender === "customer"
+                                ? "bg-emerald-600 text-white rounded-br-xs"
+                                : msg.sender === "staff"
+                                ? "bg-amber-950/40 border border-amber-500/40 text-amber-200 rounded-bl-xs"
+                                : "bg-white/[0.07] border border-white/[0.08] text-slate-200 rounded-bl-xs"
+                            }`}
+                          >
+                            {msg.text}
+                          </div>
+                          
+                          {msg.badge && (
+                            <div class="mt-1.5 flex items-center gap-1.5 rounded-md bg-emerald-950/40 border border-emerald-500/30 px-2.5 py-1 text-[10px] font-mono text-emerald-300">
+                              <span>✓</span>
+                              <span>{msg.badge}</span>
+                            </div>
+                          )}
+
+                          <span class="text-[9px] text-slate-500 font-mono mt-1 px-1">
+                            {msg.time}
+                          </span>
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
+
+                <!-- Scenario Explanation -->
+                <div class="space-y-5 lg:pl-4">
+                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-slate-300">
+                    <span class="text-emerald-400">●</span> Scenario Context
+                  </div>
+
+                  <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    {scenario.title}
+                  </h3>
+
+                  <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+                    {scenario.subtitle}
+                  </p>
+
+                  <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
+                    <div class="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider mb-1">
+                      System Capability
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                      {scenario.note}
+                    </p>
+                  </div>
+
+                  <div class="pt-2">
+                    <a
+                      href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                    >
+                      <span>Test this live on WhatsApp &rarr;</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupProofTabs() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>(".proof-tab-btn");
+    const panels = document.querySelectorAll<HTMLDivElement>(".proof-panel");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+
+        // Update Buttons
+        buttons.forEach((b) => {
+          b.classList.remove("bg-emerald-500/20", "text-emerald-300", "border-emerald-500/40", "shadow-[0_4px_12px_rgba(16,185,129,0.15)]");
+          b.classList.add("text-slate-400", "border-transparent");
+        });
+        btn.classList.add("bg-emerald-500/20", "text-emerald-300", "border-emerald-500/40", "shadow-[0_4px_12px_rgba(16,185,129,0.15)]");
+        btn.classList.remove("text-slate-400", "border-transparent");
+
+        // Update Panels
+        panels.forEach((p) => {
+          if (p.id === `proof-panel-${targetId}`) {
+            p.classList.remove("hidden");
+            setTimeout(() => {
+              p.classList.remove("opacity-0");
+              p.classList.add("opacity-100");
+            }, 10);
+          } else {
+            p.classList.add("hidden", "opacity-0");
+            p.classList.remove("opacity-100");
+          }
+        });
+      });
+    });
+  }
+
+  // Init on DOM ready and view transitions
+  setupProofTabs();
+  document.addEventListener("astro:page-load", setupProofTabs);
+</script>
