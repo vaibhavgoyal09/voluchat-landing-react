@@ -6,13 +6,13 @@
   <div class="page-shell">
     <div class="max-w-3xl mb-16 lg:mb-20">
       <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">Workload &amp; Economics Estimator</span>
+        <span class="mini-label text-emerald-400">Revenue Estimator</span>
       </div>
       <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-        How much store workload could your <span class="text-emerald-400">AI Employee handle</span>?
+        How many sales could your <span class="text-emerald-400">AI Employee close</span>?
       </h2>
       <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
-        Estimate how much repetitive texting, sizing questions, parcel tracking lookups, and late-night inquiries your AI employee can automate for your boutique.
+        Your AI employee handles sizing, checkout, tracking, and exchanges — 24/7. See the revenue impact.
       </p>
     </div>
 
@@ -80,35 +80,11 @@
             </div>
           </div>
 
-          <!-- Slider 3: After-Hours Inquiries -->
-          <div class="space-y-3">
-            <div class="flex justify-between items-center">
-              <label for="calc-afterhours" class="text-sm font-medium text-slate-200">
-                Inquiries Outside Work Hours
-              </label>
-              <span id="label-afterhours" class="font-mono text-sm font-bold text-white bg-white/[0.06] border border-white/[0.12] px-3 py-0.5 rounded-full">
-                45%
-              </span>
-            </div>
-            <input
-              type="range"
-              id="calc-afterhours"
-              min="20"
-              max="70"
-              step="5"
-              value="45"
-              class="w-full accent-emerald-400 h-2 bg-white/10 rounded-lg cursor-pointer"
-            />
-            <div class="flex justify-between text-[11px] font-mono text-slate-500">
-              <span>20%</span>
-              <span>45%</span>
-              <span>70%</span>
-            </div>
-          </div>
+
         </div>
 
         <p class="text-[11px] text-slate-500 mt-8 pt-4 border-t border-white/[0.06]">
-          * Illustrative model based on conservative boutique conversion &amp; operational metrics.
+          * Illustrative model based on conservative conversion metrics.
         </p>
       </div>
 
@@ -118,7 +94,7 @@
           <div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
             <h3 class="font-heading text-lg font-semibold text-white">Monthly Impact Model</h3>
             <span class="text-[10px] font-mono font-semibold text-emerald-300 bg-emerald-500/10 px-3 py-0.5 rounded-full border border-emerald-500/20">
-              Store Operations
+              Revenue
             </span>
           </div>
 
@@ -135,17 +111,14 @@
           <!-- Key Metrics -->
           <div class="divide-y divide-white/[0.06] text-sm">
             <div class="flex justify-between items-center text-slate-300 py-3.5">
-              <span>Conversations handled unassisted:</span>
+              <span>Chats handled:</span>
               <span id="stat-conversations" class="font-bold text-white font-mono text-base">1,125 chats</span>
             </div>
             <div class="flex justify-between items-center text-slate-300 py-3.5">
-              <span>Repetitive typing avoided:</span>
+              <span>Hours saved:</span>
               <span id="stat-hours" class="font-bold text-white font-mono text-base">75 hrs / mo</span>
             </div>
-            <div class="flex justify-between items-center text-slate-300 py-3.5">
-              <span>After-hours inquiries closed:</span>
-              <span id="stat-afterhours" class="font-bold text-emerald-400 font-mono text-base">675 chats</span>
-            </div>
+
           </div>
         </div>
 
@@ -171,48 +144,37 @@
   function setupRoiCalc() {
     const inquiriesInput = document.getElementById("calc-inquiries") as HTMLInputElement | null;
     const aovInput = document.getElementById("calc-aov") as HTMLInputElement | null;
-    const afterhoursInput = document.getElementById("calc-afterhours") as HTMLInputElement | null;
 
     const labelInquiries = document.getElementById("label-inquiries");
     const labelAov = document.getElementById("label-aov");
-    const labelAfterhours = document.getElementById("label-afterhours");
 
     const statRevenue = document.getElementById("stat-revenue");
     const statConversations = document.getElementById("stat-conversations");
     const statHours = document.getElementById("stat-hours");
-    const statAfterhours = document.getElementById("stat-afterhours");
 
-    // Conservative baseline: ~4% conversion uplift on previously unattended or delayed chats
     const conversionRate = 0.04;
 
     function updateCalc() {
-      if (!inquiriesInput || !aovInput || !afterhoursInput) return;
+      if (!inquiriesInput || !aovInput) return;
       const inquiries = parseInt(inquiriesInput.value, 10) || 1500;
       const aov = parseInt(aovInput.value, 10) || 3500;
-      const afterHoursPct = parseInt(afterhoursInput.value, 10) || 45;
 
-      // Update input labels
       if (labelInquiries) labelInquiries.textContent = `${inquiries.toLocaleString("en-IN")} chats`;
       if (labelAov) labelAov.textContent = `₹${aov.toLocaleString("en-IN")}`;
-      if (labelAfterhours) labelAfterhours.textContent = `${afterHoursPct}%`;
 
-      // Conservative calculations
       const handledUnassisted = Math.round(inquiries * 0.75);
-      const afterHoursChats = Math.round(inquiries * (afterHoursPct / 100));
-      const hoursSaved = Math.round((handledUnassisted * 4) / 60); // approx 4 mins saved per conversation
-      const potentialOrders = Math.round(afterHoursChats * conversionRate);
+      const hoursSaved = Math.round((handledUnassisted * 4) / 60);
+      const potentialOrders = Math.round(handledUnassisted * conversionRate);
       const potentialRevenue = potentialOrders * aov;
 
       if (statRevenue) statRevenue.textContent = `₹${potentialRevenue.toLocaleString("en-IN")}`;
       if (statConversations) statConversations.textContent = `${handledUnassisted.toLocaleString("en-IN")} chats`;
       if (statHours) statHours.textContent = `${hoursSaved} hrs / mo`;
-      if (statAfterhours) statAfterhours.textContent = `${afterHoursChats.toLocaleString("en-IN")} chats`;
     }
 
-    if (inquiriesInput && aovInput && afterhoursInput) {
+    if (inquiriesInput && aovInput) {
       inquiriesInput.addEventListener("input", updateCalc);
       aovInput.addEventListener("input", updateCalc);
-      afterhoursInput.addEventListener("input", updateCalc);
     }
 
     updateCalc();
