@@ -1,35 +1,35 @@
 ---
-const steps = [
+const jobs = [
   {
     num: "01",
-    label: "Instagram, WhatsApp & Storefront",
-    title: "Customer Inquiry",
-    detail: "Shopper asks 'Price?' on your Reel at 11 PM, sends a voice note on WhatsApp, or visits your website widget.",
-    badge: "Multi-Channel",
-    badgeColor: "text-pink-400 bg-pink-500/10 border-pink-500/20",
-  },
-  {
-    num: "02",
-    label: "Auto DM (2s)",
-    title: "Instant AI Response",
-    detail: "Public reply boosts algorithmic reach + private DM with exact sizes and prices.",
-    badge: "2s Latency",
+    label: "Autonomous Stylist & Closer",
+    title: "Sell",
+    detail: "Converts casual comments and DMs into completed orders with sizing recommendations and secure UPI payment links.",
+    badge: "Revenue Engine",
     badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
   },
   {
-    num: "03",
-    label: "Official WhatsApp",
-    title: "Fit & Sizing Qualification",
-    detail: "Answers fabric doubts ('Pure cotton?'), checks live stock, and confirms sizing.",
-    badge: "AI Stylist",
+    num: "02",
+    label: "Orders & Live Delivery",
+    title: "Track",
+    detail: "Answers 'Where is my order?' in seconds by pulling real-time courier dispatch and delivery milestones.",
+    badge: "WISMO Ops",
     badgeColor: "text-teal-400 bg-teal-500/10 border-teal-500/20",
   },
   {
+    num: "03",
+    label: "Returns & Exchanges",
+    title: "Resolve",
+    detail: "Handles routine exchange requests without making your team chase information—checks policy, verifies orders, and collects photos.",
+    badge: "Post-Purchase",
+    badgeColor: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
+  },
+  {
     num: "04",
-    label: "1-Click UPI",
-    title: "Native In-Chat Checkout",
-    detail: "1-click UPI link generated. Payment verified and order saved in under 90 seconds.",
-    badge: "Closed Sale",
+    label: "Customer Concierge",
+    title: "Support",
+    detail: "Answers repetitive questions about fabrics, lining, delivery timelines, store visits, and custom modifications 24/7.",
+    badge: "Front-Desk 24/7",
     badgeColor: "text-emerald-300 bg-emerald-500/15 border-emerald-500/30",
   },
 ];
@@ -37,15 +37,15 @@ const steps = [
 
 <section id="how-it-works" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-white/[0.08] bg-[#000000]">
   <div class="page-shell relative z-10">
-    <div class="mb-12 max-w-3xl">
+    <div class="mb-14 max-w-3xl">
       <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">The 90-Second Loop</span>
+        <span class="mini-label text-emerald-400">Scope of Work</span>
       </div>
       <h2 class="section-title font-heading">
-        How an Instagram comment turns into a <span class="text-emerald-400">paid order in 90 seconds</span>.
+        4 Jobs. <span class="text-emerald-400">One AI Employee</span>.
       </h2>
       <p class="section-copy mt-4">
-        Zero flowchart menus. No sending shoppers to slow external website links.
+        What work does your AI Employee actually handle every single day? Four core front-office responsibilities running autonomously under your business rules.
       </p>
     </div>
 
@@ -56,38 +56,38 @@ const steps = [
 
       <div class="grid gap-10 lg:grid-cols-4 lg:gap-8 relative z-10">
         {
-          steps.map((step, idx) => (
+          jobs.map((job, idx) => (
             <div class={`reveal-on-scroll reveal-delay-${idx + 1} flex flex-col justify-between group relative`}>
               <div>
                 <!-- Step Indicator — titanium dot on the line -->
                 <div class="flex items-center gap-3 mb-6">
                   <div class="relative z-10 h-10 w-10 rounded-full border border-white/[0.18] bg-[#0a0a0c] flex items-center justify-center font-mono text-xs font-bold text-white group-hover:border-emerald-400 group-hover:text-emerald-300 transition-all shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
-                    {step.num}
+                    {job.num}
                   </div>
-                  <span class={`lg:hidden rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium backdrop-blur-md ${step.badgeColor}`}>
-                    {step.badge}
+                  <span class={`lg:hidden rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium backdrop-blur-md ${job.badgeColor}`}>
+                    {job.badge}
                   </span>
                 </div>
 
                 <div class="space-y-1.5">
                   <span class="text-[11px] uppercase font-mono tracking-[0.14em] text-[#a1a1a6] font-bold block">
-                    {step.label}
+                    {job.label}
                   </span>
-                  <h3 class="font-heading text-lg font-semibold text-white group-hover:text-emerald-300 transition-colors">
-                    {step.title}
+                  <h3 class="font-heading text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                    {job.title}
                   </h3>
-                  <p class="text-sm text-[#86868b] font-normal leading-relaxed pt-1">
-                    {step.detail}
+                  <p class="text-sm text-[#86868b] font-normal leading-relaxed pt-2">
+                    {job.detail}
                   </p>
                 </div>
               </div>
 
-              <div class="mt-6 pt-3 border-t border-white/[0.08] flex items-center justify-between">
-                <span class={`hidden lg:inline-block rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium backdrop-blur-md ${step.badgeColor}`}>
-                  {step.badge}
+              <div class="mt-8 pt-3 border-t border-white/[0.08] flex items-center justify-between">
+                <span class={`hidden lg:inline-block rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium backdrop-blur-md ${job.badgeColor}`}>
+                  {job.badge}
                 </span>
                 <span class="text-[11px] font-mono text-slate-400">
-                  {idx < 3 ? "Next Stage →" : "✓ Settled"}
+                  {idx < 3 ? "Job " + (idx + 1) + " →" : "All 4 Jobs Active"}
                 </span>
               </div>
             </div>
