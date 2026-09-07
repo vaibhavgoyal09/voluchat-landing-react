@@ -1,19 +1,18 @@
 ---
-// Simple & Intuitive Revenue Recovery Calculator
+// Workload & Economics Estimator
 ---
 
 <section id="roi-calculator" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#000000] border-t border-white/[0.08]">
   <div class="page-shell">
-    <!-- Header aligned with ProblemSection & HowItWorksFlow -->
-    <div class="max-w-3xl mb-12">
+    <div class="max-w-3xl mb-14">
       <div class="chip mb-3">
-        <span class="mini-label text-emerald-400">Revenue Recovery Calculator</span>
+        <span class="mini-label text-emerald-400">Workload &amp; Economics Estimator</span>
       </div>
       <h2 class="section-title font-heading">
-        How much extra sales can <span class="text-emerald-400">your boutique make</span>?
+        How much work could your <span class="text-emerald-400">AI Employee handle</span>?
       </h2>
       <p class="section-copy mt-4">
-        See how much revenue you recover when night-time Reel comments and WhatsApp chats get answered in 2 seconds.
+        Calculate how much repetitive texting, sizing questions, tracking lookups, and late-night inquiries your AI employee can automate for your boutique.
       </p>
     </div>
 
@@ -62,54 +61,80 @@
                 Average Outfit Price
               </label>
               <span id="label-aov" class="font-mono text-sm font-bold text-white border border-white/[0.14] bg-transparent px-3 py-0.5 rounded-full">
-                ₹2,800
+                ₹3,500
               </span>
             </div>
             <input
               type="range"
               id="calc-aov"
-              min="800"
+              min="1500"
               max="15000"
               step="100"
-              value="2800"
+              value="3500"
               class="w-full accent-emerald-400 h-2 bg-white/10 rounded-lg cursor-pointer"
             />
             <div class="flex justify-between text-[11px] font-mono text-slate-400">
-              <span>₹800</span>
+              <span>₹1,500</span>
               <span>₹7,500</span>
               <span>₹15,000</span>
             </div>
           </div>
 
-          <!-- Direct Takeaway — open, no box -->
+          <!-- Slider 3: After-Hours Inquiries -->
+          <div class="space-y-2.5">
+            <div class="flex justify-between items-center">
+              <label for="calc-afterhours" class="text-sm font-medium text-slate-200">
+                Inquiries Outside Work Hours
+              </label>
+              <span id="label-afterhours" class="font-mono text-sm font-bold text-white border border-white/[0.14] bg-transparent px-3 py-0.5 rounded-full">
+                45%
+              </span>
+            </div>
+            <input
+              type="range"
+              id="calc-afterhours"
+              min="20"
+              max="70"
+              step="5"
+              value="45"
+              class="w-full accent-emerald-400 h-2 bg-white/10 rounded-lg cursor-pointer"
+            />
+            <div class="flex justify-between text-[11px] font-mono text-slate-400">
+              <span>20%</span>
+              <span>45%</span>
+              <span>70%</span>
+            </div>
+          </div>
+
+          <!-- Direct Takeaway -->
           <div class="border-t border-white/[0.08] pt-4 text-xs space-y-1.5">
             <p class="font-semibold text-white flex items-center gap-2">
               <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-              Why this extra revenue is captured:
+              The Economic Impact:
             </p>
             <p class="text-[#86868b] leading-relaxed pl-4">
-              Over 50% of boutique DMs arrive after 9 PM. When you reply in 2 seconds instead of the next morning, customers buy before clicking onto a competitor's Reel.
+              More orders captured when shoppers browse late at night, fewer hours spent typing tracking updates, and zero missed messages during peak campaign launches.
             </p>
           </div>
         </div>
 
         <p class="text-[11px] text-slate-400 mt-5 pt-3.5 border-t border-white/[0.06]">
-          * Conservative estimate: calculates closing just 5 extra orders per 100 missed chats.
+          * Illustrative estimate based on the configured inputs above — not a guaranteed result.
         </p>
       </div>
 
-      <!-- Right: single titanium result — green reserved for money -->
+      <!-- Right: single titanium result -->
       <div class="titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
         <div>
           <div class="flex items-center justify-between border-b border-emerald-500/20 pb-3.5">
-            <h3 class="font-heading text-base sm:text-lg font-semibold text-white">Your Extra Revenue</h3>
+            <h3 class="font-heading text-base sm:text-lg font-semibold text-white">Monthly Impact Model</h3>
             <span class="text-[11px] font-mono font-semibold text-emerald-300 bg-emerald-500/15 px-3 py-0.5 rounded-full border border-emerald-500/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]">
-              Every Month
+              Front-Office Ops
             </span>
           </div>
 
           <div class="my-6">
-            <span class="text-xs font-mono uppercase tracking-wider text-slate-300 block font-semibold">Estimated New Monthly Sales</span>
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-300 block font-semibold">Potential Revenue Opportunity</span>
             <div class="mt-2 flex items-baseline gap-2">
               <span id="stat-revenue" class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none drop-shadow-sm">
                 ₹2,10,000
@@ -118,26 +143,26 @@
             </div>
           </div>
 
-          <!-- Key Metrics — hairline rows, not mini-cards -->
+          <!-- Key Metrics -->
           <div class="space-y-0 border-t border-white/[0.08] text-sm">
             <div class="flex justify-between items-center text-slate-300 py-3 border-b border-white/[0.08]">
-              <span>Extra orders closed:</span>
-              <span id="stat-orders" class="font-bold text-white font-mono text-base">+75 orders</span>
+              <span>Conversations handled unassisted:</span>
+              <span id="stat-conversations" class="font-bold text-white font-mono text-base">1,125 chats</span>
             </div>
             <div class="flex justify-between items-center text-slate-300 py-3 border-b border-white/[0.08]">
-              <span>Time saved typing replies:</span>
+              <span>Repetitive typing avoided:</span>
               <span id="stat-hours" class="font-bold text-white font-mono text-base">75 hrs / mo</span>
             </div>
             <div class="flex justify-between items-center text-slate-300 py-3">
-              <span>Response time:</span>
-              <span class="font-bold text-emerald-300 font-mono text-base">Instant (2.0s)</span>
+              <span>After-hours inquiries covered:</span>
+              <span id="stat-afterhours" class="font-bold text-emerald-300 font-mono text-base">675 chats</span>
             </div>
           </div>
         </div>
 
         <div class="mt-6 pt-4 border-t border-emerald-500/20 space-y-3">
           <a href="/free-trial" class="btn-primary !w-full justify-center text-center">
-            Start 30-Day Free Trial &rarr;
+            Hire Your AI Employee &rarr;
           </a>
           <a
             href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
@@ -145,10 +170,10 @@
             rel="noopener noreferrer"
             class="btn-secondary inline-flex !w-full items-center justify-center gap-2 text-center text-xs sm:text-sm"
           >
-            💬 Test Drive the Bot on WhatsApp
+            💬 Test Drive on WhatsApp
           </a>
           <p class="text-center text-[11px] text-slate-400">
-            Free 100% white-glove setup &bull; No credit card &bull; 30 days free
+            Guided onboarding &bull; No credit card required &bull; Early access pricing
           </p>
         </div>
       </div>
@@ -157,45 +182,56 @@
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  function setupRoiCalc() {
     const inquiriesInput = document.getElementById("calc-inquiries") as HTMLInputElement | null;
     const aovInput = document.getElementById("calc-aov") as HTMLInputElement | null;
+    const afterhoursInput = document.getElementById("calc-afterhours") as HTMLInputElement | null;
+
     const labelInquiries = document.getElementById("label-inquiries");
     const labelAov = document.getElementById("label-aov");
-    const statRevenue = document.getElementById("stat-revenue");
-    const statOrders = document.getElementById("stat-orders");
-    const statHours = document.getElementById("stat-hours");
-    const statLeaks = document.getElementById("stat-leaks");
+    const labelAfterhours = document.getElementById("label-afterhours");
 
-    // Realistic baseline: turning 5% of missed inquiries into completed orders
-    const recoveryRate = 0.05;
+    const statRevenue = document.getElementById("stat-revenue");
+    const statConversations = document.getElementById("stat-conversations");
+    const statHours = document.getElementById("stat-hours");
+    const statAfterhours = document.getElementById("stat-afterhours");
+
+    // Conservative baseline: ~4% conversion uplift on previously unattended or delayed chats
+    const conversionRate = 0.04;
 
     function updateCalc() {
-      if (!inquiriesInput || !aovInput) return;
+      if (!inquiriesInput || !aovInput || !afterhoursInput) return;
       const inquiries = parseInt(inquiriesInput.value, 10) || 1500;
-      const aov = parseInt(aovInput.value, 10) || 2800;
+      const aov = parseInt(aovInput.value, 10) || 3500;
+      const afterHoursPct = parseInt(afterhoursInput.value, 10) || 45;
 
       // Update input labels
-      if (labelInquiries) labelInquiries.textContent = `${inquiries.toLocaleString("en-IN")} messages`;
+      if (labelInquiries) labelInquiries.textContent = `${inquiries.toLocaleString("en-IN")} chats`;
       if (labelAov) labelAov.textContent = `₹${aov.toLocaleString("en-IN")}`;
+      if (labelAfterhours) labelAfterhours.textContent = `${afterHoursPct}%`;
 
-      // Calculated numbers
-      const additionalOrders = Math.round(inquiries * recoveryRate);
-      const additionalRevenue = additionalOrders * aov;
-      const lostNightChatsSaved = Math.round(inquiries * 0.50 * 0.65);
-      const hoursSaved = Math.round((inquiries * 3) / 60);
+      // Conservative calculations
+      const handledUnassisted = Math.round(inquiries * 0.75);
+      const afterHoursChats = Math.round(inquiries * (afterHoursPct / 100));
+      const hoursSaved = Math.round((handledUnassisted * 4) / 60); // approx 4 mins saved per conversation
+      const potentialOrders = Math.round(afterHoursChats * conversionRate);
+      const potentialRevenue = potentialOrders * aov;
 
-      if (statRevenue) statRevenue.textContent = `₹${additionalRevenue.toLocaleString("en-IN")}`;
-      if (statOrders) statOrders.textContent = `+${additionalOrders.toLocaleString("en-IN")} orders`;
-      if (statLeaks) statLeaks.textContent = `~${lostNightChatsSaved.toLocaleString("en-IN")} buyers`;
-      if (statHours) statHours.textContent = `${hoursSaved} hours / mo`;
+      if (statRevenue) statRevenue.textContent = `₹${potentialRevenue.toLocaleString("en-IN")}`;
+      if (statConversations) statConversations.textContent = `${handledUnassisted.toLocaleString("en-IN")} chats`;
+      if (statHours) statHours.textContent = `${hoursSaved} hrs / mo`;
+      if (statAfterhours) statAfterhours.textContent = `${afterHoursChats.toLocaleString("en-IN")} chats`;
     }
 
-    if (inquiriesInput && aovInput) {
+    if (inquiriesInput && aovInput && afterhoursInput) {
       inquiriesInput.addEventListener("input", updateCalc);
       aovInput.addEventListener("input", updateCalc);
+      afterhoursInput.addEventListener("input", updateCalc);
     }
 
     updateCalc();
-  });
+  }
+
+  setupRoiCalc();
+  document.addEventListener("astro:page-load", setupRoiCalc);
 </script>
