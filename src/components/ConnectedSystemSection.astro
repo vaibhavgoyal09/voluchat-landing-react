@@ -1,0 +1,124 @@
+---
+const tiers = [
+  {
+    step: "01",
+    tag: "TOUCHPOINTS",
+    title: "Customer Discovery",
+    desc: "Where boutique shoppers discover outfits and message with purchase intent.",
+    channels: [
+      { name: "Instagram Reels & Comments", icon: "📸" },
+      { name: "Instagram Direct Messages", icon: "💬" },
+      { name: "WhatsApp Business API", icon: "📱" },
+      { name: "Website Storefront Widget", icon: "🌐" },
+    ],
+    border: "border-emerald-500/30",
+    bg: "bg-emerald-950/10",
+  },
+  {
+    step: "02",
+    tag: "CENTRAL BRAIN",
+    title: "VoluChat AI Employee",
+    desc: "The autonomous intelligence layer running your online front office under your rules.",
+    channels: [
+      { name: "Brand Voice & Tone Calibration", icon: "✨" },
+      { name: "Deep Sizing & Fabric Intelligence", icon: "👗" },
+      { name: "Strict Profit Margin Floor Rules", icon: "🔒" },
+      { name: "Exchange & Policy Verification", icon: "📋" },
+    ],
+    border: "border-teal-500/40",
+    bg: "bg-teal-950/20",
+    highlight: true,
+  },
+  {
+    step: "03",
+    tag: "EXECUTION & FULFILLMENT",
+    title: "Store & Logistics Backends",
+    desc: "Connects real-time inventory records and live courier tracking milestones.",
+    channels: [
+      { name: "Shopify / Custom Boutique Catalog", icon: "🛍️" },
+      { name: "Live Variant Inventory Sync", icon: "📦" },
+      { name: "Couriers (Delhivery, Shiprocket, etc.)", icon: "🚚" },
+      { name: "Secure UPI Payment Confirmations", icon: "💳" },
+    ],
+    border: "border-cyan-500/30",
+    bg: "bg-cyan-950/10",
+  },
+];
+---
+
+<section id="system" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-white/[0.08] bg-[#000000]">
+  <div class="page-shell relative z-10">
+    <div class="mb-14 max-w-3xl">
+      <div class="chip mb-4">
+        <span class="mini-label text-emerald-400">The Front-Office Architecture</span>
+      </div>
+      <h2 class="section-title font-heading">
+        One AI employee. <span class="text-emerald-400">Your entire online front office</span>.
+      </h2>
+      <p class="section-copy mt-4">
+        Not another isolated inbox tool. VoluChat acts as the central intelligence layer between your customer touchpoints, your store catalog, and your courier partners.
+      </p>
+    </div>
+
+    <!-- 3-Tier Architecture Diagram Grid -->
+    <div class="grid gap-8 lg:grid-cols-3 items-stretch relative">
+      {
+        tiers.map((tier) => (
+          <div class={`titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border ${tier.border} ${tier.bg}`}>
+            <div>
+              <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-6">
+                <span class="font-mono text-[11px] text-emerald-400 font-bold uppercase tracking-wider">
+                  Tier {tier.step}
+                </span>
+                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono text-slate-300">
+                  {tier.tag}
+                </span>
+              </div>
+
+              <h3 class="font-heading text-xl font-bold text-white mb-2">
+                {tier.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed mb-6">
+                {tier.desc}
+              </p>
+
+              <div class="space-y-2.5">
+                {
+                  tier.channels.map((ch) => (
+                    <div class="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+                      <span class="text-sm">{ch.icon}</span>
+                      <span class="text-xs font-medium text-slate-200">{ch.name}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            {tier.highlight && (
+              <div class="mt-6 pt-3 border-t border-teal-500/30 flex items-center justify-between text-[11px] font-mono text-teal-300">
+                <span>Autonomous Intelligence</span>
+                <span class="font-bold">✓ Zero Manual Hassle</span>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Architectural Pipeline Summary Banner -->
+    <div class="mt-10 rounded-2xl border border-white/[0.10] bg-white/[0.02] p-5 sm:p-6 backdrop-blur-md">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div class="flex items-center gap-3">
+          <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+          <span class="text-xs sm:text-sm font-medium text-slate-200">
+            <strong class="text-white">The Unified Flow:</strong> First Reel Comment &rarr; Size Qualification &rarr; In-Chat Checkout &rarr; Live Courier Tracking &rarr; Routine Exchange
+          </span>
+        </div>
+        <span class="text-xs font-mono text-emerald-400 font-medium shrink-0">
+          From First DM to Final Delivery
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
