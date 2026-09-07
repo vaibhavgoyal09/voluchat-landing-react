@@ -26,6 +26,7 @@
 * **Strict Anti-Claims:** Never state "Trusted by 100+ boutiques", "Handles 80% of support", "10x Guaranteed ROI", "Save 70%", fake client logos, or fabricated testimonials.
 * **Early-Access Honesty:** Position clearly as an early-access program built specifically for fashion boutiques, where founders work directly with the product team to calibrate their boutique workflows.
 * **Demonstration Over Assertion:** Let the visitor interact with the 4 actual conversation lifecycles directly on the page and via the live WhatsApp test drive.
+* **Scenario Authenticity:** All product-proof conversations must use actual currently supported VoluChat functionality. No simulated integrations or fabricated API capabilities. If a workflow is illustrative rather than live, label it clearly as a demo.
 
 ---
 
@@ -82,11 +83,11 @@ The landing page follows an airtight buying sequence:
     - `01. Reel Comments → DMs`: Auto-replies in 2s with exact outfit pricing and photos.  
     - `02. Sizing & Fit Qualification`: Answers bust, waist, fabric, and fit questions without guessing.  
     - `03. Styling Recommendations`: Recommends matching dupattas, accessories, and complementary pieces.  
-    - `04. 1-Click In-Chat Checkout`: Generates native UPI payment links and confirms orders in chat.
+    - `04. Secure In-Chat Checkout`: Generates secure UPI payment links and confirms orders in chat.
   - **Right Column: AFTER THE SALE (Turn orders into happy customers)**  
     - `05. Live Order Tracking (WISMO)`: Checks courier status and updates customers instantly in chat.  
     - `06. Store & Care FAQs`: Clarifies wash instructions, alteration policies, and shipping timelines.  
-    - `07. Routine Exchange Handling`: Checks policy window, verifies purchase date, and collects unboxing photos.  
+    - `07. Routine Exchange Handling`: Checks configured policy window, verifies purchase date, and collects unboxing photos.  
     - `08. Seamless Human Escalation`: Hands complex exceptions to your team with full conversation context.
 
 ---
@@ -98,7 +99,7 @@ The landing page follows an airtight buying sequence:
   - Subtitle: *What work does it actually do every single day?*
 * **4 Clean Outcome Cards:**
   1. **01 — SELL (Autonomous Stylist & Closer)**  
-     Converts casual comments and DMs into completed orders with sizing recommendations and instant UPI payment links.
+     Converts casual comments and DMs into completed orders with sizing recommendations and secure UPI payment links.
   2. **02 — TRACK (Orders & Delivery)**  
      Answers "Where is my order?" in seconds by pulling real-time courier dispatch and delivery milestones.
   3. **03 — RESOLVE (Returns & Exchanges)**  
@@ -112,16 +113,16 @@ The landing page follows an airtight buying sequence:
 *Interactive tabs or multi-scenario viewer demonstrating 4 real boutique conversations:*
 * **Tab 01: Sell**  
   Customer: *"Is this kurta available in size L?"*  
-  AI: Confirms stock, answers fabric doubt (pure chanderi silk), qualifies size with bust measurements, generates 1-click UPI checkout → Order Confirmed.
+  AI: Confirms stock, answers fabric doubt (pure chanderi silk), qualifies size with bust measurements, generates secure UPI payment link → Order Confirmed.
 * **Tab 02: Track**  
   Customer: *"Where is my order #1234?"*  
   AI: Fetches live tracking from courier API → *"Your order was dispatched yesterday via Delhivery and is out for delivery today."*
 * **Tab 03: Exchange**  
   Customer: *"I received the dress but need a smaller size."*  
-  AI: Checks return/exchange policy window (within 7 days) → asks for unboxing picture and preferred size → prepares verified escalation ticket.
+  AI: Checks the boutique's configured exchange window → asks for the required unboxing photo and preferred size → prepares verified escalation ticket.
 * **Tab 04: Human Takeover**  
   Customer: *"Can you customize the blouse neck design for my wedding?"*  
-  AI: Recognizes custom modification beyond rules → *"I'll connect you directly with our design team. Here is our head stylist."* Alerts human team on WhatsApp with full conversation context.
+  AI: Recognizes custom modification beyond rules → alerts human team on WhatsApp with full conversation context.
 
 ---
 
@@ -162,23 +163,23 @@ The landing page follows an airtight buying sequence:
 ---
 
 ### 3.8 Early-Access Transparency Section (`src/components/EarlyAccessSection.astro` / integrated in flow)
-* **Title:** *Built for boutiques. Ready for your first conversation.*
-* **Copy:** *VoluChat is currently opening its early-access program for fashion and apparel boutiques. We work directly with boutique founders to calibrate product catalogs, sizing recommendations, and post-purchase policies before go-live.*
-* **Perk:** 30-day guided onboarding, direct founder support, and zero setup fee.
+* **Title:** *Join the first boutiques shaping VoluChat.*
+* **Copy:** *VoluChat is currently opening its early-access program for fashion and apparel boutiques. Work directly with our team to configure your catalog, brand voice, sizing logic, and post-purchase policies.*
+* **Perks (Real Launch Commitments):** Guided onboarding, direct founder support, and early-access pricing.
 
 ---
 
 ### 3.9 The 10 Essential FAQs (`src/components/FAQ.astro`)
 1. **How is VoluChat different from chatbot tools like Wati or ManyChat?** (Rule-based bots push button menus and external website links. VoluChat acts like an employee: answers sizing doubts, sells in-chat, checks live courier tracking, and handles routine exchanges).
-2. **Is this replacing my sales and support team?** (No. It handles the 80% repetitive questions—size charts, price queries, order status—freeing your staff for high-touch custom bridal clients, photoshoots, and fulfillment).
-3. **What happens when the AI doesn't know the answer?** (It never guesses. It follows your configured rules and alerts your team on WhatsApp with the complete chat context for instant 1-tap takeover).
+2. **Is this replacing my sales and support team?** (No. It handles routine questions—size charts, price queries, order status, and FAQs—freeing your team to focus on high-touch customers and exceptions).
+3. **What happens when the AI doesn't know the answer?** (It doesn't invent an answer. When a question falls outside its configured knowledge or rules, it alerts your team with the conversation context for human takeover).
 4. **Can I control discounts and business rules?** (Yes. Strict margin rules and discount caps are set by you. The AI cannot offer unapproved deals).
 5. **Can it check my live inventory?** (Yes. It syncs with Shopify or your product catalog to check variant stock before confirming availability).
 6. **Can it track customer orders?** (Yes. When customers ask "Where is my order?", it verifies the order number and returns live courier dispatch and transit milestones).
-7. **Can customers request exchanges through it?** (Yes. It checks your policy window, verifies the purchase date, collects unboxing photos and preferred sizes, and prepares a verified ticket).
+7. **Can customers request exchanges through it?** (Yes. It checks your configured policy window, verifies the purchase date, collects unboxing photos and preferred sizes, and prepares a verified ticket).
 8. **Can my team take over a conversation?** (Yes. At any point, your team can reply in the chat; the AI pauses immediately).
 9. **Will it sound like my boutique?** (Yes. During onboarding, we tune the AI's vocabulary, greetings, and tone to match your brand).
-10. **How does setup work?** (White-glove setup in under 48 hours. We connect your Instagram, WhatsApp Business API, catalog, and courier preferences with zero code required from you).
+10. **How does setup work?** (Guided setup in under 48 hours. We connect your Instagram, WhatsApp Business API, catalog, and courier preferences with zero code required from you).
 
 ---
 
@@ -187,31 +188,3 @@ The landing page follows an airtight buying sequence:
 * **Sub-headline:** *Set it up once. Let it sell, support, and handle routine customer operations 24/7.*
 * **Primary Action:** `Start Free Trial →` (`/free-trial`)
 * **Secondary Action:** `💬 Test Drive on WhatsApp`
-
----
-
-## 4. Phased Implementation Plan
-
-### Sprint 1: Core Copy & Positioning Alignment
-* Update `Hero.astro` with new headline, sub-headline, clean badge, and balanced metric strip.
-* Refactor `ProblemSection.astro` into the "Before vs After the Sale" operational matrix.
-* Update `HowItWorksFlow.astro` to showcase "4 Jobs. One AI Employee."
-
-### Sprint 2: Product Proof & Scenarios
-* Add the 4-scenario tabbed conversation demonstration ("See Your AI Employee at Work": Sell, Track, Exchange, Human Takeover).
-* Update phone chassis badges to reflect the full lifecycle.
-
-### Sprint 3: Architecture, Control & Early Access
-* Implement the Connected System section (Touchpoints → VoluChat Brain → Business Systems → Outcomes).
-* Refactor `GuardrailsSection.astro` into "Autonomous Doesn't Mean Uncontrolled" with honest, non-absolute language.
-* Embed early-access transparency banner/card.
-
-### Sprint 4: Economics & Objection Resolution
-* Re-tune `RoiCalculatorSection.astro` with conservative workload metrics and clear assumption disclosures.
-* Overhaul `FAQ.astro` with the 10 objection-eliminating questions.
-* Update final CTA and footer links.
-
-### Sprint 5: Verification & Quality Assurance
-* Run full TypeScript & lint check (`npm run lint`).
-* Verify production build (`npm run build`).
-* Validate responsive design, mobile layout, and animation performance.
