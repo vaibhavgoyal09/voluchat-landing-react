@@ -1,133 +1,129 @@
 ---
 const scenarios = [
   {
-    id: "sell",
-    label: "01 — Sell",
-    title: "Reel Comment to WhatsApp Payment",
-    subtitle: "Converts Instagram Reel comments into confirmed prepaid orders.",
+    id: "discover",
+    label: "01 — Catalog & Stock",
+    title: "Reel Inquiry to Instant Stock Check",
+    subtitle: "Searches your live catalog and checks real-time size availability in 2 seconds.",
     messages: [
       {
         sender: "customer",
         time: "11:14 PM",
-        text: "Price of the emerald anarkali from your latest reel? Is size L in stock?",
+        text: "Price of the Chanderi Silk Anarkali from your latest reel? Is Size M in stock?",
       },
       {
         sender: "ai",
         time: "11:14 PM",
-        text: "Hi Priya! ✨ That's our handcrafted Chanderi Silk Emerald Anarkali with zardozi embroidery. Price is ₹7,999 (inclusive of taxes).",
+        text: "Hi Priya! ✨ That's our handcrafted Chanderi Silk Anarkali Set with zardozi embroidery. Price is ₹3,899 (inclusive of taxes).",
       },
       {
         sender: "ai",
         time: "11:14 PM",
-        text: "Yes, Size L (Bust 40\", Waist 34\") has 3 pieces left in stock today. Would you like standard length (52\") or custom height?",
+        text: "Yes, Size M (Bust 38\", Waist 32\") has 2 pieces left in stock today. We also have Size S and L available.",
       },
       {
         sender: "customer",
         time: "11:15 PM",
-        text: "Standard 52\" is perfect! Can I pay via GPay?",
+        text: "Can you add Size M to my bag?",
       },
       {
         sender: "ai",
         time: "11:15 PM",
-        text: "Here is your direct 1-click UPI payment link for ₹7,999: [upi://pay?pa=boutique@okaxis...]. Once paid, your order is instantly confirmed!",
+        text: "Added Chanderi Silk Anarkali (Size M) to your bag! Total: ₹3,899. Would you like to complete checkout or see matching dupattas?",
+        badge: "Live Stock Verified from Catalog",
+      },
+    ],
+    note: "Reads your synced catalog, verifies exact variant stock in real time, and manages the customer's cart directly in chat.",
+  },
+  {
+    id: "visual",
+    label: "02 — Visual Search",
+    title: "Customer Photo to Catalog Match",
+    subtitle: "Identifies outfits from customer screenshots and recommends matching catalog pieces.",
+    messages: [
+      {
+        sender: "customer",
+        time: "03:20 PM",
+        text: "[Photo attached: Pastel Organza Lehenga] Hi! Do you have any outfit similar to this for a sangeet?",
+      },
+      {
+        sender: "ai",
+        time: "03:20 PM",
+        text: "Found 2 matching pieces from our festive collection! ✨\n1. Blush Rose Organza Lehenga — ₹6,499 (Sizes S to XL)\n2. Dust Pink Tissue Silk Saree — ₹4,299",
+      },
+      {
+        sender: "customer",
+        time: "03:21 PM",
+        text: "The Blush Rose Lehenga looks gorgeous! Is size L ready to dispatch?",
+      },
+      {
+        sender: "ai",
+        time: "03:21 PM",
+        text: "Yes! Size L (Bust 40\") is in stock and ready to dispatch within 24 hours. Would you like me to reserve it for you?",
+        badge: "Visual AI Match from Catalog",
+      },
+    ],
+    note: "Customers share Pinterest or Instagram photos. VoluChat's visual search matches similar garments in your active inventory.",
+  },
+  {
+    id: "checkout",
+    label: "03 — In-Chat Pay",
+    title: "Address Collection to 1-Click UPI",
+    subtitle: "Collects delivery address in-chat and generates a 1-click UPI checkout link.",
+    messages: [
+      {
+        sender: "customer",
+        time: "08:40 PM",
+        text: "I want to order the Blush Rose Lehenga in Size L. Can I pay via GPay?",
+      },
+      {
+        sender: "ai",
+        time: "08:40 PM",
+        text: "Added Size L to your order! Please share your full delivery address and pincode to proceed.",
+      },
+      {
+        sender: "customer",
+        time: "08:41 PM",
+        text: "Flat 402, Palm Heights, 12th Main, Indiranagar, Bangalore - 560038",
+      },
+      {
+        sender: "ai",
+        time: "08:41 PM",
+        text: "Here is your 1-click UPI payment link for ₹6,499: [upi://pay?pa=boutique@upi...]. Once paid, your order is instantly confirmed with free express delivery!",
         badge: "Draft Order Synced to Store",
       },
     ],
-    note: "Checks stock live, answers fabric/measurement questions, and sends a 1-click UPI payment link.",
+    note: "Captures shipping address cleanly, creates the checkout draft in your store, and sends a native 1-click UPI payment link.",
   },
   {
-    id: "track",
-    label: "02 — Track",
-    title: "Instant Parcel Tracking Updates",
-    subtitle: "Checks courier status in seconds without you searching dashboards.",
+    id: "tracking",
+    label: "04 — Track & Handover",
+    title: "Live Courier Tracking & VIP Handover",
+    subtitle: "Fetches live courier status in seconds and alerts you for bespoke custom orders.",
     messages: [
       {
         sender: "customer",
         time: "02:30 PM",
-        text: "Hi, where is my order #1234? Has it been shipped yet?",
+        text: "Hi, where is my order #1084? Has it been shipped yet?",
       },
       {
         sender: "ai",
         time: "02:30 PM",
-        text: "Looking up order #1234 for you right now...",
-      },
-      {
-        sender: "ai",
-        time: "02:30 PM",
-        text: "Good news! Your order was dispatched yesterday via Delhivery (AWB: 9821839210).",
-      },
-      {
-        sender: "ai",
-        time: "02:30 PM",
-        text: "Current status: Out for Delivery in Indiranagar, Bengaluru. Expected delivery today by 6:00 PM. Live tracking: delhivery.com/track/...",
-      },
-    ],
-    note: "No more searching courier portals or copy-pasting tracking numbers manually.",
-  },
-  {
-    id: "exchange",
-    label: "03 — Exchange",
-    title: "Smooth Size Exchange Handling",
-    subtitle: "Follows your store's return rules and collects unboxing photos.",
-    messages: [
-      {
-        sender: "customer",
-        time: "04:15 PM",
-        text: "I received my order yesterday but need a size exchange. The M feels slightly loose on shoulders.",
-      },
-      {
-        sender: "ai",
-        time: "04:15 PM",
-        text: "We can help you with that! According to our boutique policy, size exchanges are accepted within 7 days of delivery.",
-      },
-      {
-        sender: "ai",
-        time: "04:15 PM",
-        text: "Your order was delivered yesterday, so you're well within the window. We have Size S in stock. Please upload a clear photo of the garment with tags intact to proceed.",
+        text: "Looking up order #1084... Dispatched yesterday via Delhivery (AWB: 9821839210). Status: Out for delivery today by 6 PM in Bangalore.",
       },
       {
         sender: "customer",
-        time: "04:17 PM",
-        text: "[Photo uploaded: Tag attached, unworn garment]",
+        time: "02:31 PM",
+        text: "Thank you! Can you also do custom blouse tailoring with extra padding for my wedding next month?",
       },
       {
         sender: "ai",
-        time: "04:17 PM",
-        text: "Photo verified with tags intact. Exchange request #EX-402 initiated for Size S. Our reverse courier will pick this up tomorrow.",
-        badge: "Exchange Ticket Created",
+        time: "02:31 PM",
+        text: "Congratulations on your upcoming wedding! 🌸 Custom bridal tailoring requires our master stylist's review. I've alerted Ananya (Head Stylist) with your details to step in right now!",
+        badge: "1-Tap Handover to Boutique Owner",
       },
     ],
-    note: "Protects your exchange policy, confirms tags are intact, and logs the replacement cleanly.",
-  },
-  {
-    id: "escalation",
-    label: "04 — Handover",
-    title: "Instant Handover for Custom Orders",
-    subtitle: "Alerts you immediately on WhatsApp whenever a client needs personal styling.",
-    messages: [
-      {
-        sender: "customer",
-        time: "06:45 PM",
-        text: "Can you customize the blouse neckline to a deep sweetheart cut and add extra sleeve padding for my wedding?",
-      },
-      {
-        sender: "ai",
-        time: "06:45 PM",
-        text: "Congratulations on your upcoming wedding! 🌸 Custom bridal tailoring requires our master designer's personal review.",
-      },
-      {
-        sender: "ai",
-        time: "06:45 PM",
-        text: "I've alerted Ananya (Head Stylist) with your measurements and request. She will step into this chat in a few moments to assist you directly.",
-        badge: "Alert Sent to Boutique Owner on WhatsApp",
-      },
-      {
-        sender: "staff",
-        time: "06:47 PM",
-        text: "Hi! Ananya here from the design team. I would love to make that custom sweetheart neckline for you. Let's discuss...",
-      },
-    ],
-    note: "You stay in total control. The moment a client wants custom bridal design, it hands over to you.",
+    note: "Answers repetitive tracking lookups from couriers. The moment a client asks for custom bridal tailoring, it alerts you immediately.",
   },
 ];
 ---
