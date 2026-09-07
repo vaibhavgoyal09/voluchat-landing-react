@@ -5,19 +5,19 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat Features — WhatsApp AI Sales Agent for Fashion Boutiques";
+const seoTitle = "VoluChat Features — Front-Office AI Employee for Fashion Boutiques";
 const seoDescription =
-  "Explore VoluChat features: Instagram comment-to-DM, AI sizing stylist, 1-click UPI checkout, embeddable storefront widget, voice message support, and 24/7 WhatsApp sales automation for clothing boutiques.";
+  "Explore VoluChat's front-office operations: Instagram comment-to-DM capture, AI sizing & sales employee, order tracking (WISMO), returns & exchanges, 1-click UPI checkout, and 24/7 autonomous boutique support.";
 const seoKeywords =
-  "WhatsApp sales agent features, fashion boutique DM automation, Instagram comment to DM clothing, AI sizing stylist WhatsApp, in-chat UPI checkout, sell on WhatsApp without website";
+  "AI employee fashion boutique, front-office operations WhatsApp, order tracking WISMO, returns exchanges automation, WhatsApp sales agent, boutique DM automation, AI sizing employee, in-chat UPI checkout";
 const siteUrl = "https://www.voluchat.com";
 
 const featurePillars = [
   {
     number: "01",
-    tag: "Lead Capture",
-    title: "Instant Comment-to-DM Sales Engine",
-    subtitle: "Turn viral Instagram Reel comments into buying conversations in 2 seconds.",
+    tag: "Customer Capture",
+    title: "Instant Customer Capture — From Comment to Conversation",
+    subtitle: "Turn Instagram Reel comments into qualified buying conversations in 2 seconds.",
     description: "When a shopper comments 'Price?' or 'Available?' on your Instagram Reel, they want an answer immediately. VoluChat auto-replies to their comment and slides into their DMs with exact pricing, photos, and a direct WhatsApp link before they scroll away.",
     highlight: "2.0s Response Time",
     items: [
@@ -37,10 +37,10 @@ const featurePillars = [
   },
   {
     number: "02",
-    tag: "AI Stylist",
-    title: "AI Fashion Stylist & Sizing Expert",
-    subtitle: "Answer sizing, fabric, and styling questions without typing a single word.",
-    description: "Stop answering 'Is size M true to size?' fifty times a day. VoluChat understands your sizing charts, bust/waist measurements, fabric composition, and wash care instructions to guide customers to the right fit with zero hesitation.",
+    tag: "Sales & Sizing Employee",
+    title: "AI Sales & Sizing Employee",
+    subtitle: "Qualifies orders, recommends fits, and manages routine customer requests 24/7.",
+    description: "Stop answering sizing questions fifty times a day. VoluChat understands your catalog, sizing charts, and fit preferences to recommend the right size, manage routine exchanges, and assist with order tracking — all without typing a single word.",
     highlight: "Zero Sizing Confusion",
     items: [
       {
@@ -81,19 +81,19 @@ const featurePillars = [
   },
   {
     number: "04",
-    tag: "Zero-Website Selling",
-    title: "Catalog & Order Management Without a Website",
-    subtitle: "Manage your collection and customer orders using simple spreadsheets or photos.",
-    description: "You don't need a ₹50,000 Shopify website to run an automated boutique. Upload your product photos, sizes, and prices via Google Sheets or chat. VoluChat tracks stock, collects customer addresses, and logs orders cleanly.",
+    tag: "Catalog & Stock",
+    title: "Catalog, Stock & Courier Updates Without a Website",
+    subtitle: "Manage your collection, sizes, and parcels with simple spreadsheets or photos.",
+    description: "You don't need a complicated website dashboard. Upload product photos, sizes, and prices via Google Sheets or chat. VoluChat checks available stock, collects delivery addresses, logs orders, and sends tracking links cleanly.",
     highlight: "Zero Website Required",
     items: [
       {
         title: "Simple Sheet or Photo Catalog Sync",
-        desc: "Sync products easily from Google Sheets or image folders — no complex e-commerce dashboard needed.",
+        desc: "Add your latest collection easily from Google Sheets or phone photos — no technical setup needed.",
       },
       {
-        title: "Automated Address & Pincode Capture",
-        desc: "Collects complete delivery address, pincode, and contact number in chat, validating courier serviceable areas.",
+        title: "Automated Address & Pincode Checking",
+        desc: "Collects complete delivery address and pincode in chat, checking courier serviceability before taking payment.",
       },
       {
         title: "Optional Shopify Sync Available",
@@ -103,33 +103,37 @@ const featurePillars = [
   },
   {
     number: "05",
-    tag: "24/7 Closer & Control",
-    title: "24/7 Night-Shift Closer with Live Human Takeover",
-    subtitle: "Close midnight orders while you sleep, with instant alerts for custom bridal requests.",
-    description: "Over 50% of boutique shopping happens after 9 PM. VoluChat works all night closing orders while you sleep, but immediately notifies your phone if a VIP customer requests custom bridal stitching or personal styling.",
-    highlight: "24/7 Automated Revenue",
+    tag: "24/7 Store Operations",
+    title: "24/7 Store Operations — Parcel Tracking, Exchanges & Night Sales",
+    subtitle: "Answers 'Where is my parcel?', validates size exchanges, and closes night sales.",
+    description: "Most boutique inquiries happen after 9 PM or ask 'Where is my parcel?'. VoluChat checks live courier status, checks your 7-day exchange rules with unboxing photos, and closes orders while you sleep — alerting you only when personal attention is needed.",
+    highlight: "24/7 Always Active",
     items: [
       {
-        title: "Late-Night Automated Sales Closer",
-        desc: "Answers pricing, qualifies sizing, and collects UPI payments from 11 PM to 4 AM when manual staff is asleep.",
+        title: "Live Parcel Tracking Answers",
+        desc: "Pulls live courier status (Delhivery, Shiprocket, BlueDart) and sends direct tracking updates instantly in WhatsApp.",
       },
       {
-        title: "Instant Human Escalation on WhatsApp",
-        desc: "Detects custom bridal requests, bulk orders, or complaints and notifies you on WhatsApp for 1-click human takeover.",
+        title: "Smooth Size Exchange Validation",
+        desc: "Checks your 7-day policy window, collects unboxing photos with tags intact, and prepares the replacement details cleanly.",
       },
       {
-        title: "Strict Margin Protection Floors",
-        desc: "Hardcoded safety rules ensure the AI never quotes wrong prices or offers discounts beyond your approved limits.",
+        title: "Instant WhatsApp Alert for Custom Requests",
+        desc: "Detects bespoke bridal tailoring, bulk wedding orders, or special requests and alerts you for 1-tap takeover.",
+      },
+      {
+        title: "Fixed Price & Discount Limits",
+        desc: "Follows your strict minimum price rules so your boutique never offers unauthorized discounts.",
       },
     ],
   },
   {
     number: "06",
-    tag: "Storefront Widget",
-    title: "Embeddable AI Sales Widget for Your Website",
-    subtitle: "Turn website visitors into buyers with proactive AI assistance — no redirects needed.",
-    description: "Add an intelligent chat widget to any Shopify or custom website. It proactively helps visitors with sizing, highlights add-to-cart buttons, recovers abandoned carts, and generates discount hints — all without sending them away from your page.",
-    highlight: "Zero-Redirect Selling",
+    tag: "Website Chat Widget",
+    title: "Storefront AI Chat Widget for Your Website",
+    subtitle: "Guide website visitors, recommend sizes, and share tracking updates right on your site.",
+    description: "Add a smart chat assistant to your website or Shopify store. It answers sizing questions, guides hesitant buyers to checkout, provides live parcel tracking, and handles exchange requests without redirecting them elsewhere.",
+    highlight: "Zero-Redirect Experience",
     items: [
       {
         title: "8 Proactive Playbooks",
@@ -149,24 +153,24 @@ const featurePillars = [
 
 const transformationPoints = [
   {
-    before: "Waking up to 40 unread 'Price?' DMs with buyers already gone",
-    after: "Every DM answered in 2s with photos & sizes closed overnight",
+    before: "Waking up to 40 unread 'Price?' DMs with buyers already gone — plus tracking and return requests piling up",
+    after: "Every DM answered in 2s with sizing, tracking updates, and exchange validation done inside WhatsApp overnight",
   },
   {
-    before: "Typing out GPay numbers and waiting hours for payment screenshots",
-    after: "Instant 1-click UPI link with automatic payment confirmation",
+    before: "Manually checking courier dashboards for 'Where is my order?' texts and typing out GPay numbers",
+    after: "Live tracking status pulled instantly + 1-click UPI link with automatic payment confirmation",
   },
   {
-    before: "Manually measuring dresses and sending size charts 50x a day",
-    after: "AI Stylist qualifies height and fit recommendations in seconds",
+    before: "Measuring dresses and answering sizing questions 50x a day, plus validating return tags and photos manually",
+    after: "AI employee qualifies fits, manages routine exchanges, and handles order status — zero manual lookup",
   },
   {
-    before: "Copy-pasting customer addresses from chat into messy spreadsheets",
-    after: "Clean address, pincode, and order details logged automatically",
+    before: "Copy-pasting customer addresses from chat into messy spreadsheets and manually updating tracking links",
+    after: "Clean address, order details, and live courier tracking logged automatically with customer notifications",
   },
   {
-    before: "Website visitors leave to WhatsApp and never come back",
-    after: "AI widget closes sales directly on your website with proactive help",
+    before: "Website visitors leave to WhatsApp and never come back — with no way to track their inquiry or assist with returns",
+    after: "AI widget captures inquiries, provides tracking updates, and manages exchanges directly on your site",
   },
 ];
 
@@ -181,9 +185,9 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
-    name: "VoluChat Boutique WhatsApp Sales Capabilities",
+    name: "VoluChat Front-Office AI Employee for Fashion Boutiques",
     description:
-      "Features of VoluChat's WhatsApp AI Sales Agent for clothing and fashion boutiques selling directly in DMs without needing a website.",
+      "Front-office operations for fashion boutiques: customer capture, AI sales & sizing employee, in-chat checkout, catalog & tracking management, 24/7 operations with WISMO and returns, and website widget.",
     url: `${siteUrl}/features`,
     hasDefinedTerm: featurePillars.flatMap((pillar) => [
       {
@@ -222,15 +226,15 @@ const structuredData = [
       <div class="page-shell relative z-10">
         <div class="mx-auto max-w-3xl text-center">
           <div class="chip mx-auto mb-5">
-            <span class="mini-label text-emerald-400">Boutique Sales Automation</span>
+            <span class="mini-label text-emerald-400">Front-Office Operations</span>
           </div>
           
           <h1 class="text-3xl font-bold leading-[1.1] text-[#fcfdff] sm:text-5xl lg:text-6xl font-heading tracking-tight">
-            Everything your clothing boutique needs to <span class="text-emerald-400">sell on WhatsApp 24/7.</span>
+            Everything your clothing boutique needs to <span class="text-emerald-400">run front-office operations 24/7.</span>
           </h1>
           
           <p class="section-copy mx-auto mt-5 max-w-2xl text-base sm:text-lg">
-            Turn Instagram &amp; Facebook Reel comments and WhatsApp inquiries into completed UPI orders automatically. No website, Shopify store, or coding required.
+            Turn Instagram &amp; Facebook Reel comments and WhatsApp inquiries into completed orders — with live tracking updates and routine exchange validation — automatically. No website, Shopify store, or coding required.
           </p>
 
           <div class="mt-8 flex flex-wrap justify-center gap-3.5">
@@ -356,10 +360,10 @@ const structuredData = [
             <span class="mini-label text-emerald-400">First 10 Stores Only</span>
           </div>
           <h2 class="text-2xl sm:text-4xl font-bold text-white font-heading">
-            Ready to automate your boutique sales on WhatsApp?
+            Ready to hire your boutique's AI front-office employee?
           </h2>
           <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
-            Get 30 days free with 100% done-for-you setup. We upload your catalog, set up WhatsApp APIs, and calibrate your AI stylist on your brand voice.
+            Get 30 days free with 100% done-for-you setup. We upload your catalog, set up WhatsApp APIs, configure tracking and exchange rules, and calibrate your AI employee on your brand voice.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
             <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>

@@ -3,8 +3,8 @@ const scenarios = [
   {
     id: "sell",
     label: "01 — Sell",
-    title: "Comment-to-DM Sizing & Checkout",
-    subtitle: "Converts Instagram Reel traffic into paid WhatsApp orders.",
+    title: "Reel Comment to WhatsApp Payment",
+    subtitle: "Converts Instagram Reel comments into confirmed prepaid orders.",
     messages: [
       {
         sender: "customer",
@@ -30,16 +30,16 @@ const scenarios = [
         sender: "ai",
         time: "11:15 PM",
         text: "Here is your direct 1-click UPI payment link for ₹7,999: [upi://pay?pa=boutique@okaxis...]. Once paid, your order is instantly confirmed!",
-        badge: "Draft Order #2891 Synced to Shopify",
+        badge: "Draft Order Synced to Store",
       },
     ],
-    note: "AI checks live variant stock, recommends exact bust/waist fit, and closes checkout in-chat.",
+    note: "Checks stock live, answers fabric/measurement questions, and sends a 1-click UPI payment link.",
   },
   {
     id: "track",
     label: "02 — Track",
-    title: "Instant WISMO Delivery Updates",
-    subtitle: "Pulls real-time courier dispatch status in under 3 seconds.",
+    title: "Instant Parcel Tracking Updates",
+    subtitle: "Checks courier status in seconds without you searching dashboards.",
     messages: [
       {
         sender: "customer",
@@ -62,13 +62,13 @@ const scenarios = [
         text: "Current status: Out for Delivery in Indiranagar, Bengaluru. Expected delivery today by 6:00 PM. Live tracking: delhivery.com/track/...",
       },
     ],
-    note: "Zero repetitive typing. Real-time courier API lookups resolve WISMO queries unassisted.",
+    note: "No more searching courier portals or copy-pasting tracking numbers manually.",
   },
   {
     id: "exchange",
     label: "03 — Exchange",
-    title: "Policy-Bound Sizing Exchanges",
-    subtitle: "Validates boutique return window and collects unboxing details.",
+    title: "Smooth Size Exchange Handling",
+    subtitle: "Follows your store's return rules and collects unboxing photos.",
     messages: [
       {
         sender: "customer",
@@ -97,13 +97,13 @@ const scenarios = [
         badge: "Exchange Ticket Created",
       },
     ],
-    note: "Adheres strictly to boutique policy windows, collects unboxing photos, and prepares clean records.",
+    note: "Protects your exchange policy, confirms tags are intact, and logs the replacement cleanly.",
   },
   {
     id: "escalation",
-    label: "04 — Human Takeover",
-    title: "1-Tap Exception Escalation",
-    subtitle: "Recognizes complex custom requests and alerts staff with full context.",
+    label: "04 — Handover",
+    title: "Instant Handover for Custom Orders",
+    subtitle: "Alerts you immediately on WhatsApp whenever a client needs personal styling.",
     messages: [
       {
         sender: "customer",
@@ -119,7 +119,7 @@ const scenarios = [
         sender: "ai",
         time: "06:45 PM",
         text: "I've alerted Ananya (Head Stylist) with your measurements and request. She will step into this chat in a few moments to assist you directly.",
-        badge: "Staff Alerted on WhatsApp & Dashboard with Full Context",
+        badge: "Alert Sent to Boutique Owner on WhatsApp",
       },
       {
         sender: "staff",
@@ -127,7 +127,7 @@ const scenarios = [
         text: "Hi! Ananya here from the design team. I would love to make that custom sweetheart neckline for you. Let's discuss...",
       },
     ],
-    note: "Autonomous doesn't mean uncontrolled. The AI detects requests beyond configured rules and hands off smoothly.",
+    note: "You stay in total control. The moment a client wants custom bridal design, it hands over to you.",
   },
 ];
 ---
