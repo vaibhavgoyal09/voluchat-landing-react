@@ -1,106 +1,151 @@
 ---
-const supportingPoints = [
+const beforeSalePoints = [
   {
-    code: "PROBLEM 01",
-    stat: "55%",
-    pct: 55,
-    statLabel: "Late Night DMs",
-    title: "Customers message at 11 PM and buy elsewhere by morning",
-    description: "Most people scroll Instagram in bed late at night. When they message asking for price or sizes while you're asleep, they don't wait — they buy from another store.",
+    num: "01",
+    title: "Reel Comments → DMs in 2s",
+    desc: "Auto-replies in 2 seconds with exact outfit pricing, photos, and private DM links before shoppers scroll away.",
   },
   {
-    code: "PROBLEM 02",
-    stat: "40%",
-    pct: 40,
-    statLabel: "Payment Friction",
-    title: "Drop-offs while texting UPI IDs & waiting for screenshots",
-    description: "Typing out your GPay number, texting 'Please share payment screenshot', and checking your bank app manually creates friction that makes buyers drop off before paying.",
+    num: "02",
+    title: "Sizing & Fit Qualification",
+    desc: "Understands bust, waist, and length measurements to qualify the exact size without sizing charts confusion.",
+  },
+  {
+    num: "03",
+    title: "Styling & Complementary Upsells",
+    desc: "Recommends matching dupattas, jewelry, and styling add-ons to naturally elevate average order value in-chat.",
+  },
+  {
+    num: "04",
+    title: "Secure In-Chat Checkout",
+    desc: "Generates secure UPI payment links and creates confirmed draft orders instantly—no external website bounce.",
+  },
+];
+
+const afterSalePoints = [
+  {
+    num: "05",
+    title: "Live Order Tracking (WISMO)",
+    desc: "Answers 'Where is my order?' in seconds by pulling real-time courier milestones from Delhivery, Shiprocket, and more.",
+  },
+  {
+    num: "06",
+    title: "Store & Care FAQs",
+    desc: "Clarifies dry cleaning vs gentle wash, alteration policies, and delivery timelines in your boutique's exact tone.",
+  },
+  {
+    num: "07",
+    title: "Routine Exchange Handling",
+    desc: "Validates your configured policy window, verifies purchase date, and collects unboxing photos without human drama.",
+  },
+  {
+    num: "08",
+    title: "Seamless Human Escalation",
+    desc: "Detects custom requests and high-value VIP exceptions, alerting your team on WhatsApp with full conversation history.",
   },
 ];
 ---
 
 <section
-  id="problem"
-  class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#000000]"
+  id="shift"
+  class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#000000] border-t border-white/[0.08]"
 >
   <div class="page-shell">
-    <div class="max-w-3xl mb-12">
+    <div class="max-w-3xl mb-14">
       <div class="chip mb-3">
-        <span class="mini-label text-rose-400">The Problem With Manual Selling</span>
+        <span class="mini-label text-emerald-400">The Front-Office Reality</span>
       </div>
       <h2 class="section-title font-heading">
-        Where boutique owners <span class="text-rose-400">lose half their daily sales</span>.
+        Your customers don’t stop messaging when you stop working.
       </h2>
       <p class="section-copy mt-4">
-        Selling in WhatsApp DMs works great — until you get flooded with messages, take too long to reply, and customers end up buying elsewhere.
+        Traditional chatbots stop at basic replies. Human reps need sleep. Your AI employee works the complete customer lifecycle from first interest to final delivery.
       </p>
     </div>
 
-    <!-- Editorial: 1 titanium feature + hairline spec rows -->
-    <div class="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-14 items-start">
+    <!-- 2-Column Operational Lifecycle Matrix -->
+    <div class="grid gap-8 lg:grid-cols-2 lg:gap-10 items-stretch">
       
-      <!-- Dominant Hero Statistic — titanium surface, rose kept for loss only -->
-      <article class="reveal-on-scroll titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+      <!-- Column 1: Before The Sale -->
+      <div class="titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border border-emerald-500/20 bg-gradient-to-b from-emerald-950/10 via-[#0a0a0c] to-[#0a0a0c]">
         <div>
           <!-- Header -->
-          <div class="flex items-center justify-between border-b border-rose-500/20 pb-3 mb-5">
-            <span class="font-mono text-[11px] text-rose-300 font-bold uppercase tracking-wider">Biggest Daily Drop-Off</span>
-            <span class="rounded-full border border-rose-400/30 bg-rose-500/15 px-3 py-0.5 font-mono text-[11px] text-rose-200 font-medium shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
-              Left on &ldquo;Seen&rdquo; ↓
-            </span>
-          </div>
-
-          <!-- Hero Number -->
-          <div class="flex items-baseline gap-2 mb-2">
-            <div class="font-heading text-5xl sm:text-6xl font-bold text-white tracking-tight leading-none">
-              65<span class="text-rose-400">%</span>
+          <div class="flex items-center justify-between border-b border-emerald-500/20 pb-4 mb-6">
+            <div>
+              <span class="font-mono text-[10px] sm:text-[11px] text-emerald-400 font-bold uppercase tracking-wider block">Phase 01</span>
+              <h3 class="font-heading text-lg sm:text-xl font-bold text-white mt-0.5">Before The Sale</h3>
             </div>
-            <span class="text-xs font-mono text-rose-300/90 font-medium">
-              stop replying
+            <span class="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 font-mono text-[11px] text-emerald-300 font-medium">
+              Turn Attention Into Orders
             </span>
           </div>
 
-          <!-- Slim Progress Bar -->
-          <div class="h-1.5 w-full rounded-full bg-white/10 overflow-hidden my-4 backdrop-blur-sm">
-            <div class="h-full w-[65%] rounded-full bg-gradient-to-r from-rose-500 to-rose-300 shadow-[0_0_12px_rgba(244,63,94,0.6)]"></div>
+          <p class="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed mb-6">
+            Shoppers browsing late at night expect immediate answers. VoluChat qualifies their interest, recommends sizing, and takes payment before they leave.
+          </p>
+
+          <!-- List of Before the Sale Points -->
+          <div class="space-y-4">
+            {
+              beforeSalePoints.map((point) => (
+                <div class="flex items-start gap-3.5 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-emerald-500/30 transition-colors">
+                  <span class="font-mono text-xs font-bold text-emerald-400 mt-0.5">{point.num}</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-white tracking-tight">{point.title}</h4>
+                    <p class="text-xs text-slate-400 font-normal mt-1 leading-relaxed">{point.desc}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-emerald-500/20 flex items-center justify-between text-xs font-mono text-emerald-300/80">
+          <span>Speed: Under 90 seconds</span>
+          <span class="font-bold text-emerald-400">Result: Closed Revenue</span>
+        </div>
+      </div>
+
+      <!-- Column 2: After The Sale -->
+      <div class="titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border border-teal-500/20 bg-gradient-to-b from-teal-950/10 via-[#0a0a0c] to-[#0a0a0c]">
+        <div>
+          <!-- Header -->
+          <div class="flex items-center justify-between border-b border-teal-500/20 pb-4 mb-6">
+            <div>
+              <span class="font-mono text-[10px] sm:text-[11px] text-teal-400 font-bold uppercase tracking-wider block">Phase 02</span>
+              <h3 class="font-heading text-lg sm:text-xl font-bold text-white mt-0.5">After The Sale</h3>
+            </div>
+            <span class="rounded-full border border-teal-400/30 bg-teal-500/10 px-3 py-1 font-mono text-[11px] text-teal-300 font-medium">
+              Turn Orders Into Happy Buyers
+            </span>
           </div>
 
-          <h3 class="font-heading text-lg sm:text-xl font-semibold text-white leading-snug mb-2.5">
-            of buyers leave you on &ldquo;seen&rdquo; if they don't get a price, size, or photos within 5 minutes.
-          </h3>
-
-          <p class="text-xs sm:text-sm text-rose-100/75 font-normal leading-relaxed">
-            When a customer asks &ldquo;Price?&rdquo; or &ldquo;Is size M in stock?&rdquo;, they are ready to buy right now. If you're busy packing orders or away from your phone, they scroll to the next page. VoluChat answers instantly, shows exact sizing, and collects UPI payment in 85 seconds.
+          <p class="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed mb-6">
+            Your AI employee doesn't stop working when the customer pays. It automates repetitive tracking lookups, care queries, and routine exchanges.
           </p>
+
+          <!-- List of After the Sale Points -->
+          <div class="space-y-4">
+            {
+              afterSalePoints.map((point) => (
+                <div class="flex items-start gap-3.5 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-teal-500/30 transition-colors">
+                  <span class="font-mono text-xs font-bold text-teal-400 mt-0.5">{point.num}</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-white tracking-tight">{point.title}</h4>
+                    <p class="text-xs text-slate-400 font-normal mt-1 leading-relaxed">{point.desc}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-rose-500/20 flex items-center justify-between text-xs font-mono text-rose-200/80">
-          <span>Cause: Delayed manual replies</span>
-          <span class="font-bold text-rose-300">Fix: 2s AI replies &amp; 1-click UPI</span>
+        <div class="mt-8 pt-4 border-t border-teal-500/20 flex items-center justify-between text-xs font-mono text-teal-300/80">
+          <span>Coverage: 24/7 unassisted</span>
+          <span class="font-bold text-teal-400">Result: Zero Repetitive Backlog</span>
         </div>
-      </article>
-
-      <!-- 2 supporting points as Apple spec rows — no boxes -->
-      <div>
-        {
-          supportingPoints.map((point, idx) => (
-            <article class={`hairline-row reveal-on-scroll reveal-delay-${idx + 1} grid gap-3 sm:grid-cols-[88px_1fr] sm:gap-6`}>
-              <div class="font-heading text-4xl font-bold text-white tracking-tight">
-                {point.stat}
-              </div>
-              <div>
-                <div class="font-mono text-[11px] text-slate-500 font-bold">{point.code} — {point.statLabel}</div>
-                <h3 class="font-heading text-base sm:text-lg font-semibold text-white mt-1">
-                  {point.title}
-                </h3>
-                <p class="mt-1.5 text-sm text-[#86868b] font-normal leading-relaxed">
-                  {point.description}
-                </p>
-              </div>
-            </article>
-          ))
-        }
       </div>
+
     </div>
   </div>
 </section>
