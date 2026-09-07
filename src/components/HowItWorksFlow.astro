@@ -2,98 +2,82 @@
 const jobs = [
   {
     num: "01",
-    label: "Selling & Size Advice",
-    title: "Sell",
-    detail: "Turns casual 'Price?' comments and DMs into completed orders with exact sizing guidance and direct UPI payment links.",
-    badge: "Boutique Closer",
-    badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+    label: "Selling & Sizing",
+    title: "Sell & Close",
+    detail: "Turns casual 'Price?' comments and DMs into completed orders with size guidance and direct 1-click UPI links.",
+    badge: "Revenue",
   },
   {
     num: "02",
-    label: "Parcel & Courier Updates",
-    title: "Track",
-    detail: "Answers 'Where is my parcel?' in seconds by checking live status directly from Delhivery, Shiprocket, or your courier.",
-    badge: "Instant Tracking",
-    badgeColor: "text-teal-400 bg-teal-500/10 border-teal-500/20",
+    label: "Courier Updates",
+    title: "Track Parcels",
+    detail: "Answers 'Where is my parcel?' instantly by fetching live status directly from Delhivery, Shiprocket, or your courier.",
+    badge: "Fulfillment",
   },
   {
     num: "03",
-    label: "Size Exchanges & Returns",
-    title: "Resolve",
-    detail: "Handles routine exchange requests by checking your 7-day policy, confirming tag photos, and logging the replacement.",
-    badge: "Exchange Help",
-    badgeColor: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
+    label: "Policy & Exchanges",
+    title: "Resolve Exchanges",
+    detail: "Handles routine exchange requests by verifying your 7-day policy, collecting tag photos, and creating tickets.",
+    badge: "Operations",
   },
   {
     num: "04",
-    label: "Fabric, Store & Care FAQs",
-    title: "Support",
-    detail: "Answers repetitive questions about pure fabrics, lining, boutique timings, and shipping estimates 24/7 in your brand tone.",
-    badge: "Always-On Help",
-    badgeColor: "text-emerald-300 bg-emerald-500/15 border-emerald-500/30",
+    label: "Store & Care FAQs",
+    title: "24/7 Support",
+    detail: "Answers questions on pure fabrics, lining, wash care, boutique timings, and shipping timelines in your tone.",
+    badge: "Support",
   },
 ];
 ---
 
 <section id="how-it-works" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-white/[0.08] bg-[#000000]">
   <div class="page-shell relative z-10">
-    <div class="mb-14 max-w-3xl">
+    <div class="mb-16 lg:mb-20 max-w-3xl">
       <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">Scope of Work</span>
+        <span class="mini-label text-emerald-400">Core Scope of Work</span>
       </div>
-      <h2 class="section-title font-heading">
+      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
         4 Jobs. <span class="text-emerald-400">One AI Employee</span>.
       </h2>
-      <p class="section-copy mt-4">
-        What work does your AI Employee actually handle every single day? Four core daily store jobs running autonomously under your business rules.
+      <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
+        What work does your AI Employee actually execute every single day? Four core daily store jobs running autonomously under your exact business rules.
       </p>
     </div>
 
-    <!-- Open Apple timeline — no outer box, thin connector -->
-    <div class="relative">
-      <!-- Horizontal connector track line across desktop -->
-      <div class="hidden lg:block absolute top-5 left-0 right-0 h-px bg-white/[0.10] z-0"></div>
-
-      <div class="grid gap-10 lg:grid-cols-4 lg:gap-8 relative z-10">
-        {
-          jobs.map((job, idx) => (
-            <div class={`reveal-on-scroll reveal-delay-${idx + 1} flex flex-col justify-between group relative`}>
-              <div>
-                <!-- Step Indicator — titanium dot on the line -->
-                <div class="flex items-center gap-3 mb-6">
-                  <div class="relative z-10 h-10 w-10 rounded-full border border-white/[0.18] bg-[#0a0a0c] flex items-center justify-center font-mono text-xs font-bold text-white group-hover:border-emerald-400 group-hover:text-emerald-300 transition-all shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
-                    {job.num}
-                  </div>
-                  <span class={`lg:hidden rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium backdrop-blur-md ${job.badgeColor}`}>
-                    {job.badge}
-                  </span>
-                </div>
-
-                <div class="space-y-1.5">
-                  <span class="text-[11px] uppercase font-mono tracking-[0.14em] text-[#a1a1a6] font-bold block">
-                    {job.label}
-                  </span>
-                  <h3 class="font-heading text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors">
-                    {job.title}
-                  </h3>
-                  <p class="text-sm text-[#86868b] font-normal leading-relaxed pt-2">
-                    {job.detail}
-                  </p>
-                </div>
-              </div>
-
-              <div class="mt-8 pt-3 border-t border-white/[0.08] flex items-center justify-between">
-                <span class={`hidden lg:inline-block rounded-full border px-2.5 py-0.5 text-[9px] font-mono uppercase font-medium backdrop-blur-md ${job.badgeColor}`}>
+    <!-- 4 Clean Modular Cards with Generous Spacing -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+      {
+        jobs.map((job, idx) => (
+          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-white/[0.08] bg-[#070709] p-7 sm:p-8 flex flex-col justify-between hover:border-white/[0.18] transition-all duration-300 group`}>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="font-mono text-xs font-bold text-emerald-400">
+                  {job.num}
+                </span>
+                <span class="rounded-full border border-white/[0.10] bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-mono text-slate-400">
                   {job.badge}
                 </span>
-                <span class="text-[11px] font-mono text-slate-400">
-                  {idx < 3 ? "Job " + (idx + 1) + " →" : "All 4 Jobs Active"}
-                </span>
               </div>
+
+              <span class="text-[11px] uppercase font-mono tracking-wider text-slate-400 font-semibold block mb-1">
+                {job.label}
+              </span>
+              <h3 class="font-heading text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                {job.title}
+              </h3>
+              <p class="text-sm text-slate-400 font-normal leading-relaxed mt-3">
+                {job.detail}
+              </p>
             </div>
-          ))
-        }
-      </div>
+
+            <div class="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <span>Job 0{idx + 1}</span>
+              <span class="text-emerald-400 font-medium group-hover:translate-x-1 transition-transform">Active 24/7 &rarr;</span>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

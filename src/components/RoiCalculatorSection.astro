@@ -4,37 +4,37 @@
 
 <section id="roi-calculator" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#000000] border-t border-white/[0.08]">
   <div class="page-shell">
-    <div class="max-w-3xl mb-14">
-      <div class="chip mb-3">
+    <div class="max-w-3xl mb-16 lg:mb-20">
+      <div class="chip mb-4">
         <span class="mini-label text-emerald-400">Workload &amp; Economics Estimator</span>
       </div>
-      <h2 class="section-title font-heading">
-        How much work could your <span class="text-emerald-400">AI Employee handle</span>?
+      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        How much store workload could your <span class="text-emerald-400">AI Employee handle</span>?
       </h2>
-      <p class="section-copy mt-4">
-        Calculate how much repetitive texting, sizing questions, tracking lookups, and late-night inquiries your AI employee can automate for your boutique.
+      <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
+        Estimate how much repetitive texting, sizing questions, parcel tracking lookups, and late-night inquiries your AI employee can automate for your boutique.
       </p>
     </div>
 
-    <!-- Apple Store configurator: open inputs + single titanium result -->
+    <!-- 2-Column Clean Interactive Estimator -->
     <div class="grid gap-10 lg:grid-cols-2 lg:gap-14 max-w-5xl mx-auto items-start">
-      <!-- Left: open inputs, hairline rows -->
-      <div class="border-t border-white/[0.08] pt-6 flex flex-col justify-between">
-        <div class="space-y-6">
-          <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5">
-            <h3 class="font-heading text-base sm:text-lg font-semibold text-white">Your Monthly Numbers</h3>
-            <span class="text-[11px] font-mono font-medium text-slate-300 bg-white/[0.06] border border-white/[0.12] px-3 py-0.5 rounded-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
-              Interactive
+      <!-- Left: open inputs, hairline rows with generous spacing -->
+      <div class="rounded-3xl border border-white/[0.08] bg-[#070709] p-8 sm:p-10 flex flex-col justify-between">
+        <div class="space-y-8">
+          <div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
+            <h3 class="font-heading text-lg font-semibold text-white">Your Store Activity</h3>
+            <span class="text-[10px] font-mono font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-0.5 rounded-full">
+              Live Estimator
             </span>
           </div>
 
           <!-- Slider 1: Messages -->
-          <div class="space-y-2.5">
+          <div class="space-y-3">
             <div class="flex justify-between items-center">
               <label for="calc-inquiries" class="text-sm font-medium text-slate-200">
                 Monthly Inquiries &amp; Comments
               </label>
-              <span id="label-inquiries" class="font-mono text-sm font-bold text-white border border-white/[0.14] bg-transparent px-3 py-0.5 rounded-full">
+              <span id="label-inquiries" class="font-mono text-sm font-bold text-white bg-white/[0.06] border border-white/[0.12] px-3 py-0.5 rounded-full">
                 1,500 chats
               </span>
             </div>
@@ -47,7 +47,7 @@
               value="1500"
               class="w-full accent-emerald-400 h-2 bg-white/10 rounded-lg cursor-pointer"
             />
-            <div class="flex justify-between text-[11px] font-mono text-slate-400">
+            <div class="flex justify-between text-[11px] font-mono text-slate-500">
               <span>300</span>
               <span>5,000</span>
               <span>10,000+</span>
@@ -55,12 +55,12 @@
           </div>
 
           <!-- Slider 2: Average Outfit Price -->
-          <div class="space-y-2.5">
+          <div class="space-y-3">
             <div class="flex justify-between items-center">
               <label for="calc-aov" class="text-sm font-medium text-slate-200">
                 Average Outfit Price
               </label>
-              <span id="label-aov" class="font-mono text-sm font-bold text-white border border-white/[0.14] bg-transparent px-3 py-0.5 rounded-full">
+              <span id="label-aov" class="font-mono text-sm font-bold text-white bg-white/[0.06] border border-white/[0.12] px-3 py-0.5 rounded-full">
                 ₹3,500
               </span>
             </div>
@@ -73,7 +73,7 @@
               value="3500"
               class="w-full accent-emerald-400 h-2 bg-white/10 rounded-lg cursor-pointer"
             />
-            <div class="flex justify-between text-[11px] font-mono text-slate-400">
+            <div class="flex justify-between text-[11px] font-mono text-slate-500">
               <span>₹1,500</span>
               <span>₹7,500</span>
               <span>₹15,000</span>
@@ -81,12 +81,12 @@
           </div>
 
           <!-- Slider 3: After-Hours Inquiries -->
-          <div class="space-y-2.5">
+          <div class="space-y-3">
             <div class="flex justify-between items-center">
               <label for="calc-afterhours" class="text-sm font-medium text-slate-200">
                 Inquiries Outside Work Hours
               </label>
-              <span id="label-afterhours" class="font-mono text-sm font-bold text-white border border-white/[0.14] bg-transparent px-3 py-0.5 rounded-full">
+              <span id="label-afterhours" class="font-mono text-sm font-bold text-white bg-white/[0.06] border border-white/[0.12] px-3 py-0.5 rounded-full">
                 45%
               </span>
             </div>
@@ -99,44 +99,33 @@
               value="45"
               class="w-full accent-emerald-400 h-2 bg-white/10 rounded-lg cursor-pointer"
             />
-            <div class="flex justify-between text-[11px] font-mono text-slate-400">
+            <div class="flex justify-between text-[11px] font-mono text-slate-500">
               <span>20%</span>
               <span>45%</span>
               <span>70%</span>
             </div>
           </div>
-
-          <!-- Direct Takeaway -->
-          <div class="border-t border-white/[0.08] pt-4 text-xs space-y-1.5">
-            <p class="font-semibold text-white flex items-center gap-2">
-              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-              The Economic Impact:
-            </p>
-            <p class="text-[#86868b] leading-relaxed pl-4">
-              More orders captured when shoppers browse late at night, fewer hours spent typing tracking updates, and zero missed messages during peak campaign launches.
-            </p>
-          </div>
         </div>
 
-        <p class="text-[11px] text-slate-400 mt-5 pt-3.5 border-t border-white/[0.06]">
-          * Illustrative estimate based on the configured inputs above — not a guaranteed result.
+        <p class="text-[11px] text-slate-500 mt-8 pt-4 border-t border-white/[0.06]">
+          * Illustrative model based on conservative boutique conversion &amp; operational metrics.
         </p>
       </div>
 
-      <!-- Right: single titanium result -->
-      <div class="titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+      <!-- Right: Impact Model Card with high contrast and clean typography -->
+      <div class="rounded-3xl border border-white/[0.08] bg-[#070709] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
         <div>
-          <div class="flex items-center justify-between border-b border-emerald-500/20 pb-3.5">
-            <h3 class="font-heading text-base sm:text-lg font-semibold text-white">Monthly Impact Model</h3>
-            <span class="text-[11px] font-mono font-semibold text-emerald-300 bg-emerald-500/15 px-3 py-0.5 rounded-full border border-emerald-500/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]">
+          <div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
+            <h3 class="font-heading text-lg font-semibold text-white">Monthly Impact Model</h3>
+            <span class="text-[10px] font-mono font-semibold text-emerald-300 bg-emerald-500/10 px-3 py-0.5 rounded-full border border-emerald-500/20">
               Store Operations
             </span>
           </div>
 
-          <div class="my-6">
-            <span class="text-xs font-mono uppercase tracking-wider text-slate-300 block font-semibold">Potential Revenue Opportunity</span>
+          <div class="my-8">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block font-medium">Estimated Monthly Revenue Opportunity</span>
             <div class="mt-2 flex items-baseline gap-2">
-              <span id="stat-revenue" class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none drop-shadow-sm">
+              <span id="stat-revenue" class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none">
                 ₹2,10,000
               </span>
               <span class="text-emerald-400 text-sm font-semibold font-mono">/ mo</span>
@@ -144,23 +133,23 @@
           </div>
 
           <!-- Key Metrics -->
-          <div class="space-y-0 border-t border-white/[0.08] text-sm">
-            <div class="flex justify-between items-center text-slate-300 py-3 border-b border-white/[0.08]">
+          <div class="divide-y divide-white/[0.06] text-sm">
+            <div class="flex justify-between items-center text-slate-300 py-3.5">
               <span>Conversations handled unassisted:</span>
               <span id="stat-conversations" class="font-bold text-white font-mono text-base">1,125 chats</span>
             </div>
-            <div class="flex justify-between items-center text-slate-300 py-3 border-b border-white/[0.08]">
+            <div class="flex justify-between items-center text-slate-300 py-3.5">
               <span>Repetitive typing avoided:</span>
               <span id="stat-hours" class="font-bold text-white font-mono text-base">75 hrs / mo</span>
             </div>
-            <div class="flex justify-between items-center text-slate-300 py-3">
-              <span>After-hours inquiries covered:</span>
-              <span id="stat-afterhours" class="font-bold text-emerald-300 font-mono text-base">675 chats</span>
+            <div class="flex justify-between items-center text-slate-300 py-3.5">
+              <span>After-hours inquiries closed:</span>
+              <span id="stat-afterhours" class="font-bold text-emerald-400 font-mono text-base">675 chats</span>
             </div>
           </div>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-emerald-500/20 space-y-3">
+        <div class="mt-8 pt-6 border-t border-white/[0.08] space-y-3.5">
           <a href="/free-trial" class="btn-primary !w-full justify-center text-center">
             Hire Your AI Employee &rarr;
           </a>
@@ -172,9 +161,6 @@
           >
             💬 Test Drive on WhatsApp
           </a>
-          <p class="text-center text-[11px] text-slate-400">
-            Guided onboarding &bull; No credit card required &bull; Early access pricing
-          </p>
         </div>
       </div>
     </div>

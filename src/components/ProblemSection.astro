@@ -1,47 +1,55 @@
 ---
-const beforeSalePoints = [
+const beforeSaleItems = [
   {
     num: "01",
-    title: "Reel Comments → DMs in 2 Seconds",
-    desc: "When someone comments 'Price?' or 'PP?' on your Reel, VoluChat replies instantly with exact prices, photos, and a private message before they scroll away.",
+    title: "Instant Reel Comment-to-DM",
+    desc: "When someone asks 'Price?' on your Reel, VoluChat replies in 2 seconds with exact pricing, photos, and a direct DM before they scroll away.",
+    tag: "2s Response",
   },
   {
     num: "02",
-    title: "Takes Care of Sizing Doubts",
-    desc: "Knows bust, waist, and length measurements for every outfit. Guides your buyers to their perfect fit without back-and-forth size chart confusion.",
+    title: "Fit & Sizing Consultation",
+    desc: "Understands bust, waist, and length measurements for every outfit. Guides shoppers to their perfect fit without sizing confusion.",
+    tag: "Size Charts",
   },
   {
     num: "03",
-    title: "Suggests Matching Accessories",
-    desc: "Recommends matching dupattas, jewelry, or complementary pieces right inside the chat to increase your average bill value naturally.",
+    title: "Matching Outfit Recommendations",
+    desc: "Suggests matching dupattas, jewelry, or complementary pieces right inside the chat to lift average order value naturally.",
+    tag: "Smart Upsell",
   },
   {
     num: "04",
-    title: "1-Click UPI Payment in Chat",
-    desc: "Sends a direct Google Pay or PhonePe payment link. No typing out your UPI ID or waiting hours for payment screenshots.",
+    title: "1-Click Native UPI Checkout",
+    desc: "Sends a direct Google Pay or PhonePe payment link. No typing UPI IDs manually or waiting hours for payment screenshots.",
+    tag: "In-Chat Pay",
   },
 ];
 
-const afterSalePoints = [
+const afterSaleItems = [
   {
     num: "05",
-    title: "Answers 'Where is my parcel?'",
-    desc: "Checks live courier status from Delhivery, Shiprocket, or BlueDart in seconds and sends tracking updates right in WhatsApp.",
+    title: "Live Courier Tracking",
+    desc: "Checks real-time parcel status from Delhivery, Shiprocket, or BlueDart and sends tracking updates on WhatsApp in seconds.",
+    tag: "Live Tracking",
   },
   {
     num: "06",
-    title: "Answers Fabric & Wash Doubts",
-    desc: "Explains pure cotton vs georgette, dry cleaning vs gentle wash, and delivery timelines in your boutique's exact tone.",
+    title: "Fabric, Wash & Care Doubts",
+    desc: "Explains pure fabrics, lining details, dry cleaning vs gentle wash, and delivery timelines in your boutique's exact tone.",
+    tag: "Brand Tone",
   },
   {
     num: "07",
-    title: "Handles Size Exchanges Calmly",
-    desc: "Checks your 7-day exchange window, asks for unboxing photos with tags intact, and prepares the replacement details cleanly.",
+    title: "Routine Size Exchanges",
+    desc: "Enforces your 7-day exchange window, asks for unboxing photos with tags intact, and prepares replacement details cleanly.",
+    tag: "Policy Enforced",
   },
   {
     num: "08",
-    title: "Alerts You for VIP & Bridal Inquiries",
+    title: "1-Tap VIP & Bridal Escalation",
     desc: "When a customer asks for bespoke bridal stitching or bulk wedding orders, it alerts you on WhatsApp so you can step in with 1 tap.",
+    tag: "Human Handover",
   },
 ];
 ---
@@ -51,51 +59,56 @@ const afterSalePoints = [
   class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#000000] border-t border-white/[0.08]"
 >
   <div class="page-shell">
-    <div class="max-w-3xl mb-14">
-      <div class="chip mb-3">
+    <!-- Header with generous breathing room -->
+    <div class="max-w-3xl mb-16 lg:mb-20">
+      <div class="chip mb-4">
         <span class="mini-label text-emerald-400">The Boutique Reality</span>
       </div>
-      <h2 class="section-title font-heading">
-        Your customers don’t stop messaging when you stop working.
+      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        Your customers don’t stop messaging <span class="text-emerald-400">when you stop working</span>.
       </h2>
-      <p class="section-copy mt-4 text-white font-medium">
-        Never lose a sale because you were asleep, packing orders, or helping a customer in-store.
-      </p>
-      <p class="text-sm text-slate-400 mt-2 font-normal">
-        Traditional chatbots stop at basic replies. Human reps need sleep. Your AI employee works the complete customer lifecycle from first interest to final delivery.
+      <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
+        Never lose another high-intent customer because you were asleep, packing orders, or attending to clients in-store. VoluChat runs your customer lifecycle from first interest to final delivery.
       </p>
     </div>
 
-    <!-- 2-Column Operational Lifecycle Matrix -->
-    <div class="grid gap-8 lg:grid-cols-2 lg:gap-10 items-stretch">
+    <!-- 2-Column Spacious Lifecycle Architecture -->
+    <div class="grid gap-10 lg:grid-cols-2 lg:gap-12 items-stretch">
       
       <!-- Column 1: Before The Sale -->
-      <div class="titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border border-emerald-500/20 bg-gradient-to-b from-emerald-950/10 via-[#0a0a0c] to-[#0a0a0c]">
+      <div class="rounded-3xl border border-white/[0.08] bg-[#070709] p-8 sm:p-10 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300">
         <div>
-          <!-- Header -->
-          <div class="flex items-center justify-between border-b border-emerald-500/20 pb-4 mb-6">
+          <!-- Phase Header -->
+          <div class="flex items-center justify-between pb-6 border-b border-white/[0.08] mb-8">
             <div>
-              <span class="font-mono text-[10px] sm:text-[11px] text-emerald-400 font-bold uppercase tracking-wider block">Phase 01</span>
-              <h3 class="font-heading text-lg sm:text-xl font-bold text-white mt-0.5">Before The Sale</h3>
+              <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider block">Phase 01</span>
+              <h3 class="font-heading text-2xl font-bold text-white mt-1">Before The Sale</h3>
             </div>
-            <span class="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 font-mono text-[11px] text-emerald-300 font-medium">
-              Turn Attention Into Orders
+            <span class="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 font-mono text-xs text-emerald-300 font-medium">
+              Turn Attention Into Revenue
             </span>
           </div>
 
-          <p class="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed mb-6">
-            Shoppers browsing late at night expect immediate answers. VoluChat qualifies their interest, recommends sizing, and takes payment before they leave.
-          </p>
-
-          <!-- List of Before the Sale Points -->
-          <div class="space-y-4">
+          <!-- Items list with generous vertical rhythm -->
+          <div class="space-y-7">
             {
-              beforeSalePoints.map((point) => (
-                <div class="flex items-start gap-3.5 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-emerald-500/30 transition-colors">
-                  <span class="font-mono text-xs font-bold text-emerald-400 mt-0.5">{point.num}</span>
-                  <div>
-                    <h4 class="text-sm font-semibold text-white tracking-tight">{point.title}</h4>
-                    <p class="text-xs text-slate-400 font-normal mt-1 leading-relaxed">{point.desc}</p>
+              beforeSaleItems.map((item) => (
+                <div class="group flex items-start gap-4">
+                  <span class="font-mono text-xs font-bold text-emerald-400 mt-1 shrink-0 w-6">
+                    {item.num}
+                  </span>
+                  <div class="space-y-1 flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <h4 class="text-base font-semibold text-white tracking-tight group-hover:text-emerald-300 transition-colors">
+                        {item.title}
+                      </h4>
+                      <span class="text-[10px] font-mono text-slate-500 hidden sm:inline-block">
+                        {item.tag}
+                      </span>
+                    </div>
+                    <p class="text-sm text-slate-400 font-normal leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))
@@ -103,39 +116,46 @@ const afterSalePoints = [
           </div>
         </div>
 
-        <div class="mt-8 pt-4 border-t border-emerald-500/20 flex items-center justify-between text-xs font-mono text-emerald-300/80">
-          <span>Speed: Under 90 seconds</span>
-          <span class="font-bold text-emerald-400">Result: Closed Revenue</span>
+        <div class="mt-10 pt-5 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-slate-400">
+          <span>Speed: <strong class="text-white">Under 90 seconds</strong></span>
+          <span class="text-emerald-400 font-semibold">Result: Closed Revenue</span>
         </div>
       </div>
 
       <!-- Column 2: After The Sale -->
-      <div class="titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border border-teal-500/20 bg-gradient-to-b from-teal-950/10 via-[#0a0a0c] to-[#0a0a0c]">
+      <div class="rounded-3xl border border-white/[0.08] bg-[#070709] p-8 sm:p-10 flex flex-col justify-between hover:border-teal-500/30 transition-all duration-300">
         <div>
-          <!-- Header -->
-          <div class="flex items-center justify-between border-b border-teal-500/20 pb-4 mb-6">
+          <!-- Phase Header -->
+          <div class="flex items-center justify-between pb-6 border-b border-white/[0.08] mb-8">
             <div>
-              <span class="font-mono text-[10px] sm:text-[11px] text-teal-400 font-bold uppercase tracking-wider block">Phase 02</span>
-              <h3 class="font-heading text-lg sm:text-xl font-bold text-white mt-0.5">After The Sale</h3>
+              <span class="font-mono text-xs text-teal-400 font-bold uppercase tracking-wider block">Phase 02</span>
+              <h3 class="font-heading text-2xl font-bold text-white mt-1">After The Sale</h3>
             </div>
-            <span class="rounded-full border border-teal-400/30 bg-teal-500/10 px-3 py-1 font-mono text-[11px] text-teal-300 font-medium">
-              Turn Orders Into Happy Buyers
+            <span class="rounded-full border border-teal-500/20 bg-teal-500/10 px-3.5 py-1 font-mono text-xs text-teal-300 font-medium">
+              Zero Repetitive Backlog
             </span>
           </div>
 
-          <p class="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed mb-6">
-            Your AI employee doesn't stop working when the customer pays. It automates repetitive tracking lookups, care queries, and routine exchanges.
-          </p>
-
-          <!-- List of After the Sale Points -->
-          <div class="space-y-4">
+          <!-- Items list with generous vertical rhythm -->
+          <div class="space-y-7">
             {
-              afterSalePoints.map((point) => (
-                <div class="flex items-start gap-3.5 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-teal-500/30 transition-colors">
-                  <span class="font-mono text-xs font-bold text-teal-400 mt-0.5">{point.num}</span>
-                  <div>
-                    <h4 class="text-sm font-semibold text-white tracking-tight">{point.title}</h4>
-                    <p class="text-xs text-slate-400 font-normal mt-1 leading-relaxed">{point.desc}</p>
+              afterSaleItems.map((item) => (
+                <div class="group flex items-start gap-4">
+                  <span class="font-mono text-xs font-bold text-teal-400 mt-1 shrink-0 w-6">
+                    {item.num}
+                  </span>
+                  <div class="space-y-1 flex-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <h4 class="text-base font-semibold text-white tracking-tight group-hover:text-teal-300 transition-colors">
+                        {item.title}
+                      </h4>
+                      <span class="text-[10px] font-mono text-slate-500 hidden sm:inline-block">
+                        {item.tag}
+                      </span>
+                    </div>
+                    <p class="text-sm text-slate-400 font-normal leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))
@@ -143,9 +163,9 @@ const afterSalePoints = [
           </div>
         </div>
 
-        <div class="mt-8 pt-4 border-t border-teal-500/20 flex items-center justify-between text-xs font-mono text-teal-300/80">
-          <span>Coverage: 24/7 unassisted</span>
-          <span class="font-bold text-teal-400">Result: Zero Repetitive Backlog</span>
+        <div class="mt-10 pt-5 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-slate-400">
+          <span>Coverage: <strong class="text-white">24/7 Unassisted</strong></span>
+          <span class="text-teal-400 font-semibold">Result: 0 Unanswered DMs</span>
         </div>
       </div>
 

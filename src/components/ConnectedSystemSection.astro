@@ -1,106 +1,107 @@
 ---
-const tiers = [
+const systemPillars = [
   {
     step: "01",
-    tag: "WHERE SHOPPERS MESSAGE",
-    title: "Customer Inquiries",
-    desc: "Where buyers find your outfits and message asking for price, sizes, or delivery.",
-    channels: [
-      { name: "Instagram Reel Comments", icon: "📸" },
-      { name: "Instagram Direct Messages", icon: "💬" },
-      { name: "Official WhatsApp Chats", icon: "📱" },
-      { name: "Website Storefront Chat", icon: "🌐" },
+    label: "Customer Channels",
+    title: "Omnichannel Inquiries",
+    desc: "Seamlessly intercepts high-intent buyers across all your active social storefronts.",
+    features: [
+      "Instagram Reel comments & Story replies",
+      "Instagram Direct Messages (DMs)",
+      "Official WhatsApp Business API",
+      "Storefront website live chat widget",
     ],
-    border: "border-emerald-500/30",
-    bg: "bg-emerald-950/10",
+    badge: "Capture & Engage",
   },
   {
     step: "02",
-    tag: "YOUR DIGITAL EMPLOYEE",
-    title: "VoluChat AI Employee",
-    desc: "Answers like your best sales rep — following your boutique's exact tone, prices, and rules.",
-    channels: [
-      { name: "Learns Your Boutique Tone & Voice", icon: "✨" },
-      { name: "Knows Your Size Charts & Fabrics", icon: "👗" },
-      { name: "Never Sells Below Your Fixed Margins", icon: "🔒" },
-      { name: "Checks Exchange & Return Policy Rules", icon: "📋" },
+    label: "Digital Employee",
+    title: "Boutique Intelligence",
+    desc: "Executes conversations with your exact tone, garment knowledge, and pricing rules.",
+    features: [
+      "Calibrated to your boutique voice & tone",
+      "Understands garment fabrics & size charts",
+      "Protects strict minimum price margins",
+      "Enforces your 7-day exchange window",
     ],
-    border: "border-teal-500/40",
-    bg: "bg-teal-950/20",
+    badge: "AI Brain",
     highlight: true,
   },
   {
     step: "03",
-    tag: "WHERE WORK GETS DONE",
-    title: "Store & Courier Sync",
-    desc: "Connects your live stock and courier tracking so customers get instant answers.",
-    channels: [
-      { name: "Shopify / Google Sheet / Photo Catalog", icon: "🛍️" },
-      { name: "Live Stock Counts (S to XXL)", icon: "📦" },
-      { name: "Couriers (Delhivery, Shiprocket, etc.)", icon: "🚚" },
-      { name: "1-Click UPI Payment Confirmation", icon: "💳" },
+    label: "Store Operations",
+    title: "Ecosystem Sync",
+    desc: "Connects your inventory, couriers, and payment gateways for 100% automated operations.",
+    features: [
+      "Shopify & product catalog inventory sync",
+      "Real-time courier tracking (Delhivery, Shiprocket)",
+      "1-click UPI payments (GPay, PhonePe, Paytm)",
+      "Instant draft order generation & sync",
     ],
-    border: "border-cyan-500/30",
-    bg: "bg-cyan-950/10",
+    badge: "Fulfillment & Pay",
   },
 ];
 ---
 
 <section id="system" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-white/[0.08] bg-[#000000]">
   <div class="page-shell relative z-10">
-    <div class="mb-14 max-w-3xl">
+    <div class="mb-16 lg:mb-20 max-w-3xl">
       <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">Connected Store Operations</span>
+        <span class="mini-label text-emerald-400">Store Ecosystem</span>
       </div>
-      <h2 class="section-title font-heading">
-        One AI employee. <span class="text-emerald-400">Your entire online store on autopilot</span>.
+      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        One AI employee. <span class="text-emerald-400">Your entire store on autopilot</span>.
       </h2>
-      <p class="section-copy mt-4 text-white font-medium">
-        Never lose another sale because you were asleep, packing parcels, or attending walk-in clients.
-      </p>
-      <p class="text-sm text-slate-400 mt-2 font-normal">
-        VoluChat connects directly to your Instagram, WhatsApp, product catalog, and couriers — answering sizing doubts, taking payments, and sending parcel updates without you typing a word.
+      <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
+        VoluChat connects directly to your Instagram, WhatsApp, catalog, and couriers — qualifying sizing, taking payments, and sending parcel updates without you typing a word.
       </p>
     </div>
 
-    <!-- 3-Tier Architecture Diagram Grid -->
-    <div class="grid gap-8 lg:grid-cols-3 items-stretch relative">
+    <!-- 3-Pillar Clean Architecture Grid -->
+    <div class="grid gap-8 lg:grid-cols-3 items-stretch">
       {
-        tiers.map((tier) => (
-          <div class={`titanium-surface rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border ${tier.border} ${tier.bg}`}>
+        systemPillars.map((pillar) => (
+          <div class={`rounded-3xl border ${pillar.highlight ? "border-emerald-500/40 bg-gradient-to-b from-emerald-950/20 via-[#070709] to-[#070709]" : "border-white/[0.08] bg-[#070709]"} p-8 sm:p-9 flex flex-col justify-between hover:border-white/[0.2] transition-all duration-300`}>
             <div>
-              <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-6">
-                <span class="font-mono text-[11px] text-emerald-400 font-bold uppercase tracking-wider">
-                  Tier {tier.step}
+              <div class="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-6">
+                <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">
+                  Step {pillar.step}
                 </span>
                 <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono text-slate-300">
-                  {tier.tag}
+                  {pillar.badge}
                 </span>
               </div>
 
-              <h3 class="font-heading text-xl font-bold text-white mb-2">
-                {tier.title}
+              <span class="text-[11px] uppercase font-mono tracking-wider text-slate-400 font-semibold block mb-1">
+                {pillar.label}
+              </span>
+              <h3 class="font-heading text-xl font-bold text-white mb-3">
+                {pillar.title}
               </h3>
-              <p class="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed mb-6">
-                {tier.desc}
+              <p class="text-sm text-slate-400 font-normal leading-relaxed mb-6">
+                {pillar.desc}
               </p>
 
-              <div class="space-y-2.5">
+              <div class="space-y-3 pt-2">
                 {
-                  tier.channels.map((ch) => (
-                    <div class="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                      <span class="text-sm">{ch.icon}</span>
-                      <span class="text-xs font-medium text-slate-200">{ch.name}</span>
+                  pillar.features.map((feat) => (
+                    <div class="flex items-start gap-2.5 text-xs text-slate-300">
+                      <span class="text-emerald-400 mt-0.5 shrink-0 font-bold">✓</span>
+                      <span>{feat}</span>
                     </div>
                   ))
                 }
               </div>
             </div>
 
-            {tier.highlight && (
-              <div class="mt-6 pt-3 border-t border-teal-500/30 flex items-center justify-between text-[11px] font-mono text-teal-300">
+            {pillar.highlight ? (
+              <div class="mt-8 pt-4 border-t border-emerald-500/30 flex items-center justify-between text-xs font-mono text-emerald-300">
                 <span>Autonomous Intelligence</span>
-                <span class="font-bold">✓ Zero Manual Hassle</span>
+                <span class="font-bold">Zero Manual Work</span>
+              </div>
+            ) : (
+              <div class="mt-8 pt-4 border-t border-white/[0.06] text-xs font-mono text-slate-500">
+                Full System Synchronization
               </div>
             )}
           </div>
@@ -108,13 +109,13 @@ const tiers = [
       }
     </div>
 
-    <!-- Architectural Pipeline Summary Banner -->
-    <div class="mt-10 rounded-2xl border border-white/[0.10] bg-white/[0.02] p-5 sm:p-6 backdrop-blur-md">
+    <!-- Architectural Pipeline Ribbon -->
+    <div class="mt-12 rounded-2xl border border-white/[0.08] bg-[#070709] p-6">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
         <div class="flex items-center gap-3">
-          <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
-          <span class="text-xs sm:text-sm font-medium text-slate-200">
-            <strong class="text-white">The Unified Flow:</strong> First Reel Comment &rarr; Size Qualification &rarr; In-Chat Checkout &rarr; Live Courier Tracking &rarr; Routine Exchange
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium">
+            <strong class="text-white font-semibold">End-to-End Loop:</strong> Reel Comment &rarr; Size Advisory &rarr; UPI Payment &rarr; Live Courier Tracking &rarr; Routine Exchange
           </span>
         </div>
         <span class="text-xs font-mono text-emerald-400 font-medium shrink-0">
