@@ -19,7 +19,7 @@ const { items = [] } = Astro.props as { items: Crumb[] };
             {item.href ? (
               <a href={item.href} class="transition-colors hover:text-emerald-700">{item.label}</a>
             ) : (
-              <span aria-current="page" class="text-slate-300">{item.label}</span>
+              <span aria-current="page" class="text-slate-500">{item.label}</span>
             )}
           </li>
         </>

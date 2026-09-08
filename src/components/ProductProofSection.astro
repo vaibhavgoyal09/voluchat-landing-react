@@ -478,7 +478,7 @@ const scenarios = [
         const userMsg = document.createElement("div");
         userMsg.className = "flex flex-col items-end animate-fade-in";
         userMsg.innerHTML = `
-          <div class="max-w-[88%] rounded-2xl rounded-br-md px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed wa-out text-white shadow-sm">
+          <div class="max-w-[88%] rounded-2xl rounded-br-md px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed wa-out text-emerald-950 shadow-sm">
             ${userText.replace(/^[^\s]+\s/, "")}
           </div>
           <span class="text-[9px] text-slate-500 font-mono mt-1 px-1">Just now</span>
@@ -489,7 +489,7 @@ const scenarios = [
         const typingIndicator = document.createElement("div");
         typingIndicator.className = "flex flex-col items-start";
         typingIndicator.innerHTML = `
-          <div class="rounded-2xl rounded-bl-md px-3.5 py-2 text-xs wa-in text-emerald-400 font-mono flex items-center gap-1.5">
+          <div class="rounded-2xl rounded-bl-md px-3.5 py-2 text-xs wa-in text-emerald-600 font-mono flex items-center gap-1.5">
             <span class="animate-pulse">●</span> VoluChat AI is typing...
           </div>
         `;
@@ -503,7 +503,7 @@ const scenarios = [
             <div class="max-w-[88%] rounded-2xl rounded-bl-md px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed wa-in text-slate-800 shadow-sm">
               ${replyText}
             </div>
-            <div class="mt-1 flex items-center gap-1 rounded-md bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 text-[9px] font-mono text-emerald-300">
+            <div class="mt-1 flex items-center gap-1 rounded-md bg-emerald-100 border border-emerald-300 px-2 py-0.5 text-[9px] font-mono text-emerald-800">
               ✓ Interactive Live Simulated
             </div>
             <span class="text-[9px] text-slate-500 font-mono mt-1 px-1">Just now ✓✓</span>
