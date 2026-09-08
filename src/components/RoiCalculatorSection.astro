@@ -2,28 +2,28 @@
 // Workload & Economics Estimator
 ---
 
-<section id="roi-calculator" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#000000] border-t border-white/[0.08]">
+<section id="roi-calculator" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 bg-[#f8fafc] border-t border-slate-200/80">
   <div class="page-shell">
     <div class="max-w-3xl mb-16 lg:mb-20">
-      <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">Revenue Estimator</span>
+      <div class="chip-emerald mb-4 inline-flex">
+        <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">Revenue Estimator</span>
       </div>
-      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-        How many sales could your <em class="serif-accent">AI Employee close</em>?
+      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
+        How many sales could your <em class="serif-accent">AI Sales Agent close</em>?
       </h2>
-      <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
-        Your AI employee handles sizing, checkout, tracking, and exchanges — 24/7. See the revenue impact.
+      <p class="section-copy mt-5 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+        Your AI sales agent handles sizing, checkout, tracking, and exchanges — 24/7 across Instagram, Facebook Messenger, and WhatsApp. See the revenue impact.
       </p>
     </div>
 
     <!-- 2-Column Clean Interactive Estimator -->
     <div class="grid gap-10 lg:grid-cols-2 lg:gap-14 max-w-5xl mx-auto items-start">
       <!-- Left: open inputs, hairline rows with generous spacing -->
-      <div class="rounded-3xl border border-white/[0.08] bg-[#070709] p-8 sm:p-10 flex flex-col justify-between">
+      <div class="rounded-3xl border border-slate-200/90 bg-white/80 p-8 sm:p-10 flex flex-col justify-between backdrop-blur-xl shadow-xs">
         <div class="space-y-8">
-          <div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
-            <h3 class="font-heading text-lg font-semibold text-white">Your Store Activity</h3>
-            <span class="text-[10px] font-mono font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-0.5 rounded-full">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-200/80">
+            <h3 class="font-heading text-lg font-semibold text-slate-900">Your Store Activity</h3>
+            <span class="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-0.5 rounded-full">
               Live Estimator
             </span>
           </div>
@@ -31,10 +31,10 @@
           <!-- Slider 1: Messages -->
           <div class="space-y-3">
             <div class="flex justify-between items-center">
-              <label for="calc-inquiries" class="text-sm font-medium text-slate-200">
+              <label for="calc-inquiries" class="text-sm font-semibold text-slate-800">
                 Monthly Inquiries &amp; Comments
               </label>
-              <span id="label-inquiries" class="font-mono text-sm font-bold text-white bg-white/[0.06] border border-white/[0.12] px-3 py-0.5 rounded-full">
+              <span id="label-inquiries" class="font-mono text-sm font-bold text-slate-900 bg-slate-100 border border-slate-200 px-3 py-0.5 rounded-full shadow-2xs">
                 1,500 chats
               </span>
             </div>
@@ -45,7 +45,7 @@
               max="10000"
               step="100"
               value="1500"
-              class="w-full accent-emerald-400 h-2 bg-white/10 rounded-lg cursor-pointer"
+              class="w-full accent-emerald-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
             />
             <div class="flex justify-between text-[11px] font-mono text-slate-500">
               <span>300</span>
@@ -57,10 +57,10 @@
           <!-- Slider 2: Average Outfit Price -->
           <div class="space-y-3">
             <div class="flex justify-between items-center">
-              <label for="calc-aov" class="text-sm font-medium text-slate-200">
+              <label for="calc-aov" class="text-sm font-semibold text-slate-800">
                 Average Outfit Price
               </label>
-              <span id="label-aov" class="font-mono text-sm font-bold text-white bg-white/[0.06] border border-white/[0.12] px-3 py-0.5 rounded-full">
+              <span id="label-aov" class="font-mono text-sm font-bold text-slate-900 bg-slate-100 border border-slate-200 px-3 py-0.5 rounded-full shadow-2xs">
                 ₹3,500
               </span>
             </div>
@@ -71,7 +71,7 @@
               max="15000"
               step="100"
               value="3500"
-              class="w-full accent-emerald-400 h-2 bg-white/10 rounded-lg cursor-pointer"
+              class="w-full accent-emerald-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
             />
             <div class="flex justify-between text-[11px] font-mono text-slate-500">
               <span>₹1,500</span>
@@ -83,46 +83,46 @@
 
         </div>
 
-        <p class="text-[11px] text-slate-500 mt-8 pt-4 border-t border-white/[0.06]">
+        <p class="text-[11px] text-slate-500 mt-8 pt-4 border-t border-slate-200/80">
           * Illustrative model based on conservative conversion metrics.
         </p>
       </div>
 
       <!-- Right: Impact Model Card with high contrast and clean typography -->
-      <div class="rounded-3xl border border-white/[0.08] bg-[#070709] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+      <div class="rounded-3xl border border-emerald-500/40 bg-gradient-to-b from-white via-emerald-50/20 to-white p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-xl shadow-sm">
         <div>
-          <div class="flex items-center justify-between pb-4 border-b border-white/[0.08]">
-            <h3 class="font-heading text-lg font-semibold text-white">Monthly Impact Model</h3>
-            <span class="text-[10px] font-mono font-semibold text-emerald-300 bg-emerald-500/10 px-3 py-0.5 rounded-full border border-emerald-500/20">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-200/80">
+            <h3 class="font-heading text-lg font-semibold text-slate-900">Monthly Impact Model</h3>
+            <span class="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-3 py-0.5 rounded-full border border-emerald-300">
               Revenue
             </span>
           </div>
 
           <div class="my-8">
-            <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block font-medium">Estimated Recovered Boutique Revenue</span>
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-500 block font-semibold">Estimated Recovered Boutique Revenue</span>
             <div class="mt-2 flex items-baseline gap-2">
-              <span id="stat-revenue" class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight leading-none">
+              <span id="stat-revenue" class="font-heading text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-none">
                 ₹2,10,000
               </span>
-              <span class="text-emerald-400 text-sm font-semibold font-mono">/ mo</span>
+              <span class="text-emerald-700 text-sm font-semibold font-mono">/ mo</span>
             </div>
           </div>
 
           <!-- Key Metrics -->
-          <div class="divide-y divide-white/[0.06] text-sm">
-            <div class="flex justify-between items-center text-slate-300 py-3.5">
-              <span>Chats handled:</span>
-              <span id="stat-conversations" class="font-bold text-white font-mono text-base">1,125 chats</span>
+          <div class="divide-y divide-slate-200/80 text-sm">
+            <div class="flex justify-between items-center text-slate-700 py-3.5">
+              <span class="font-medium">Chats handled:</span>
+              <span id="stat-conversations" class="font-bold text-slate-900 font-mono text-base">1,125 chats</span>
             </div>
-            <div class="flex justify-between items-center text-slate-300 py-3.5">
-              <span>Hours saved:</span>
-              <span id="stat-hours" class="font-bold text-white font-mono text-base">75 hrs / mo</span>
+            <div class="flex justify-between items-center text-slate-700 py-3.5">
+              <span class="font-medium">Hours saved:</span>
+              <span id="stat-hours" class="font-bold text-slate-900 font-mono text-base">75 hrs / mo</span>
             </div>
 
           </div>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-white/[0.08] space-y-3.5">
+        <div class="mt-8 pt-6 border-t border-slate-200/80 space-y-3.5">
           <a href="/free-trial" class="btn-primary !w-full justify-center text-center">
             Start My 30-Day Free Trial &rarr;
           </a>

@@ -5,11 +5,11 @@ import Footer from "../components/Footer.astro";
 import FAQ from "../components/FAQ.astro";
 import { getFaqSchema } from "../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat Features — AI Employee for Fashion Boutiques";
+const seoTitle = "VoluChat Features — AI Sales Agent for Fashion Boutiques";
 const seoDescription =
-  "Explore how VoluChat automates boutique sales: Instagram comment-to-DM capture, AI sizing & sales employee, order tracking (WISMO), returns & exchanges, 1-click UPI checkout, and 24/7 customer support.";
+  "Explore how VoluChat automates boutique sales: Instagram & Facebook comment-to-DM capture, AI sizing & sales agent, order tracking (WISMO), returns & exchanges, 1-click UPI checkout, and 24/7 customer support.";
 const seoKeywords =
-  "AI employee fashion boutique, WhatsApp sales automation, order tracking WISMO, returns exchanges automation, WhatsApp sales agent, boutique DM automation, AI sizing employee, in-chat UPI checkout";
+  "AI sales agent fashion boutique, WhatsApp sales automation, Facebook Messenger boutique automation, order tracking WISMO, returns exchanges automation, WhatsApp sales agent, boutique DM automation, AI sizing agent, in-chat UPI checkout";
 const siteUrl = "https://www.voluchat.com";
 
 const featurePillars = [
@@ -17,28 +17,28 @@ const featurePillars = [
     number: "01",
     tag: "Customer Capture",
     title: "Instant Customer Capture — From Comment to Conversation",
-    subtitle: "Turn Instagram Reel comments into qualified buying conversations in 2 seconds.",
+    subtitle: "Turn Instagram Reel & Facebook post comments into qualified buying conversations in 2 seconds.",
     description: "When a shopper comments 'Price?' or 'Available?' on your Instagram Reel or Facebook post, they want an answer immediately. VoluChat auto-replies to their comment and slides into their DMs with exact pricing, photos, and a direct WhatsApp link before they scroll away.",
     highlight: "2.0s Response Time",
     items: [
       {
-        title: "2-Second Reel Comment Auto-Reply",
-        desc: "Instantly acknowledges comments on your posts, Reels, and ads, driving public curiosity into private sales conversations.",
+        title: "2-Second Comment Auto-Reply",
+        desc: "Instantly acknowledges comments on your posts, Reels, and ads across Instagram and Facebook Pages, driving public curiosity into private sales conversations.",
       },
       {
         title: "Exact Reel & Product Recognition",
-        desc: "Knows the exact dress, lehenga, or co-ord set shown in the specific Reel the customer commented on.",
+        desc: "Knows the exact dress, lehenga, or co-ord set shown in the specific Reel or post the customer commented on.",
       },
       {
         title: "1-Click WhatsApp Transfer",
-        desc: "Smoothly shifts ready-to-buy customers from Instagram DMs into your official WhatsApp chat with product context intact.",
+        desc: "Smoothly shifts ready-to-buy customers from Instagram DMs and Facebook Messenger into your official WhatsApp chat with product context intact.",
       },
     ],
   },
   {
     number: "02",
-    tag: "Sales & Sizing Employee",
-    title: "AI Sales & Sizing Employee",
+    tag: "Sales & Sizing Agent",
+    title: "AI Sales & Sizing Agent",
     subtitle: "Qualifies orders, recommends fits, and manages routine customer requests 24/7.",
     description: "Stop answering sizing questions fifty times a day. VoluChat understands your catalog, sizing charts, and fit preferences to recommend the right size, manage routine exchanges, and assist with order tracking — all without typing a single word.",
     highlight: "Zero Sizing Confusion",
@@ -162,7 +162,7 @@ const transformationPoints = [
   },
   {
     before: "Measuring dresses and answering sizing questions 50x a day, plus validating return tags and photos manually",
-    after: "AI employee qualifies fits, manages routine exchanges, and handles order status — zero manual lookup",
+    after: "AI sales agent qualifies fits, manages routine exchanges, and handles order status — zero manual lookup",
   },
   {
     before: "Copy-pasting customer addresses from chat into messy spreadsheets and manually updating tracking links",
@@ -185,9 +185,9 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
-    name: "VoluChat AI Employee for Fashion Boutiques",
+    name: "VoluChat AI Sales Agent for Fashion Boutiques",
     description:
-      "Daily online operations for fashion boutiques: customer capture, AI sales & sizing employee, in-chat checkout, catalog & tracking management, 24/7 operations with WISMO and returns, and website widget.",
+      "Daily online operations for fashion boutiques: customer capture, AI sales & sizing agent, in-chat checkout, catalog & tracking management, 24/7 operations with WISMO and returns, and website widget.",
     url: `${siteUrl}/features`,
     hasDefinedTerm: featurePillars.flatMap((pillar) => [
       {
@@ -360,7 +360,7 @@ const structuredData = [
             Ready to automate your boutique's sales 24/7?
           </h2>
           <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
-            30 days free with 48-hour white-glove setup. We upload your catalog, set up WhatsApp APIs, configure tracking and exchange rules, and calibrate your AI employee on your brand voice.
+            30 days free with 48-hour white-glove setup. We upload your catalog, connect your Instagram, Facebook Page, and WhatsApp APIs, configure tracking and exchange rules, and calibrate your AI sales agent on your brand voice.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
             <a href="/free-trial" class="btn-primary">Start My 30-Day Free Trial &rarr;</a>

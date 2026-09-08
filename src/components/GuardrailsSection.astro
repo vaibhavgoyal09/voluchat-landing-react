@@ -1,80 +1,120 @@
 ---
-const guardrailRules = [
+const guardrails = [
   {
     num: "01",
-    title: "Fixed Price & Discount Limits",
+    title: "Margin & Discount Protection",
     desc: "The AI never offers unapproved discounts or bargains below your minimum prices. Your margins are strictly protected.",
-    badge: "Margin Protected",
+    badge: "Strict Margin Floor",
+    input: "“Can I get 35% discount or ₹1,000 off?”",
+    defense: "🛡️ Guardrail Defense: Minimum price ₹3,499 enforced. Offers complimentary matching potli bag instead.",
+    tag: "Zero Margin Leak",
   },
   {
     num: "02",
-    title: "Live Stock Verification",
-    desc: "Checks exact size and color availability in real time before confirming orders. You'll never oversell out-of-stock items.",
-    badge: "Real-Time Stock",
+    title: "Real-Time Stock Isolation",
+    desc: "Checks exact variant availability in real time before confirming orders. You'll never oversell out-of-stock items.",
+    badge: "Zero Overselling",
+    input: "“Book Size XS in Peach Organza Lehenga”",
+    defense: "🛡️ Inventory Isolation: XS is 0 in stock. Instantly suggests Size S with 24h alteration or next batch pre-order.",
+    tag: "Live Catalog Sync",
   },
   {
     num: "03",
     title: "Strict Policy Compliance",
     desc: "Enforces your 7-day exchange window, verifies tag photos, and strictly follows your boutique return policies.",
-    badge: "Zero Ambiguity",
+    badge: "Policy Enforced",
+    input: "“Want to exchange kurta bought 18 days ago”",
+    defense: "🛡️ Policy Rule: 7-day window expired. Politely offers 10% loyalty credit on the next new collection drop.",
+    tag: "Zero Ambiguity",
   },
   {
     num: "04",
-    title: "1-Tap Human Handover",
-    desc: "For custom bridal stitching, VIP clients, or complex queries, the AI immediately alerts you on WhatsApp to take over seamlessly.",
+    title: "1-Tap VIP & Bridal Handover",
+    desc: "For custom bridal stitching, bulk wedding orders, or VIP clients, the AI immediately alerts you on WhatsApp.",
     badge: "100% Control",
+    input: "“Looking for bespoke 15-piece bridal wedding trousseau”",
+    defense: "🛡️ VIP Handover: Master Stylist Ananya alerted on WhatsApp with 1-tap takeover link & client notes.",
+    tag: "Instant Escalation",
   },
 ];
 ---
 
-<section id="guardrails" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-white/[0.08] bg-[#000000]">
+<section id="guardrails" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-slate-200/80 bg-[#f8fafc]">
+  <!-- Background radial glow -->
+  <div class="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+    <div class="h-[600px] w-[800px] rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)] blur-[120px]"></div>
+  </div>
+
   <div class="page-shell relative z-10">
     <div class="mb-16 lg:mb-20 max-w-3xl">
-      <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">Total Store Control</span>
+      <div class="chip-emerald mb-4 inline-flex">
+        <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">Total Brand Safety</span>
       </div>
-      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
         Automated selling with <em class="serif-accent">zero brand risk</em>.
       </h2>
-      <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
-        You configure the boundaries. The AI executes them 24/7 on Instagram, WhatsApp, and Facebook Messenger. It never offers unauthorized discounts, never oversells inventory, and alerts you the instant personal styling is needed.
+      <p class="section-copy mt-5 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+        You configure the boundaries. The AI executes them 24/7 on Instagram, WhatsApp, and Facebook Messenger. It never offers unauthorized discounts, never oversells inventory, and alerts you the instant VIP personal attention is needed.
       </p>
     </div>
 
-    <!-- Editorial Spec Rows with Generous Whitespace -->
-    <div class="max-w-4xl mx-auto divide-y divide-white/[0.08]">
+    <!-- 4 Visual Guardrail Defense Cards (2x2 Grid) -->
+    <div class="grid gap-6 sm:grid-cols-2 max-w-5xl mx-auto">
       {
-        guardrailRules.map((rule, idx) => (
-          <div class={`reveal-on-scroll reveal-delay-${idx + 1} py-8 sm:py-9 grid gap-4 sm:grid-cols-[60px_1fr_auto] sm:gap-8 items-start`}>
-            <span class="font-mono text-sm text-emerald-400 font-bold mt-0.5">{rule.num}</span>
-            <div class="space-y-1.5">
-              <h3 class="text-lg sm:text-xl font-semibold text-white font-heading tracking-tight">
+        guardrails.map((rule, idx) => (
+          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-slate-200/90 bg-white/80 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-emerald-500/50 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_0_24px_rgba(16,185,129,0.08)] group backdrop-blur-xl`}>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs font-bold text-emerald-600 flex items-center gap-1.5">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                  Rule {rule.num}
+                </span>
+                <span class="rounded-full border border-slate-200 bg-slate-100/80 px-2.5 py-0.5 text-[10px] font-mono text-slate-700 group-hover:border-emerald-500/30 group-hover:text-emerald-700 transition-colors">
+                  {rule.badge}
+                </span>
+              </div>
+
+              <h3 class="font-heading text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors mb-2">
                 {rule.title}
               </h3>
-              <p class="text-sm text-slate-400 font-normal leading-relaxed max-w-2xl">
+              <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed mb-5">
                 {rule.desc}
               </p>
+
+              <!-- Live Guardrail Simulation Box -->
+              <div class="rounded-2xl border border-slate-200/80 bg-slate-50/90 p-3.5 space-y-2.5 my-2">
+                <div class="text-[11px] text-slate-600 bg-white border border-slate-200/70 rounded-xl p-2 font-mono shadow-2xs">
+                  <span class="text-slate-600 block text-[9px] uppercase tracking-wider mb-0.5">Shopper Message</span>
+                  <span class="text-slate-800 font-medium">{rule.input}</span>
+                </div>
+                <div class="text-[11px] text-emerald-900 bg-emerald-50/90 border border-emerald-500/30 rounded-xl p-2 font-mono leading-relaxed">
+                  {rule.defense}
+                </div>
+              </div>
             </div>
-            <span class="self-start inline-block rounded-full border border-white/[0.10] bg-white/[0.04] px-3 py-1 text-[11px] font-mono font-medium text-slate-300">
-              {rule.badge}
-            </span>
+
+            <!-- Bottom Outcome Row -->
+            <div class="mt-4 pt-3.5 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <span class="text-emerald-600 font-semibold">{rule.tag}</span>
+              <span class="text-slate-700 font-medium">100% Guaranteed</span>
+            </div>
           </div>
         ))
       }
     </div>
 
     <!-- Human Oversight Capsule -->
-    <div class="mt-14 max-w-4xl mx-auto rounded-2xl border border-white/[0.08] bg-[#070709] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="mt-14 max-w-5xl mx-auto rounded-2xl border border-slate-200/90 bg-white/90 p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm backdrop-blur-xl">
       <div class="flex items-center gap-3.5 text-center sm:text-left">
         <span class="relative flex h-2.5 w-2.5 shrink-0">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
         </span>
-        <p class="text-xs sm:text-sm text-slate-300 font-normal">
-          <strong class="text-white font-semibold">Human Oversight Guarantee:</strong> Step into any customer conversation with 1 tap at any time.
+        <p class="text-xs sm:text-sm text-slate-700 font-normal">
+          <strong class="text-slate-900 font-semibold">Human Oversight Guarantee:</strong> Step into any customer conversation with 1 tap on WhatsApp at any time.
         </p>
       </div>
-      <a href="/security" class="shrink-0 text-xs font-mono text-emerald-400 hover:text-emerald-300 underline underline-offset-4 transition-colors">
+      <a href="/security" class="shrink-0 text-xs font-mono text-emerald-600 hover:text-emerald-700 font-semibold underline underline-offset-4 transition-colors">
         Review Safety Specs &rarr;
       </a>
     </div>

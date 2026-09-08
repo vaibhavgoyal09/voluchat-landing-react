@@ -1,93 +1,185 @@
 ---
-const systemPillars = [
+const channels = [
+  { name: "Instagram Reels & DMs", icon: "📸", action: "Auto-replies in 2s to 'Price?'" },
+  { name: "WhatsApp Business API", icon: "💬", action: "Full sales consultation & checkout" },
+  { name: "Facebook Messenger", icon: "👥", action: "Page comment-to-DM loop" },
+];
+
+const backendSystems = [
+  { name: "Shopify / Custom Catalog", icon: "🛍️", role: "Real-time variant & stock check" },
+  { name: "Razorpay / Cashfree UPI", icon: "⚡", role: "1-Click instant payment links" },
+  { name: "Delhivery / Shiprocket", icon: "📦", role: "Live courier tracking updates" },
+];
+
+const pillars = [
   {
     step: "01",
-    label: "Customer Channels",
-    title: "Omnichannel Inquiries",
-    desc: "Seamlessly intercepts high-intent buyers across all your active social storefronts.",
+    label: "Capture Layer",
+    title: "Omnichannel Inbound",
+    desc: "Captures high-intent fashion buyers the second they interact with your content.",
     features: [
-      "Instagram Reel comments & Story replies",
-      "Instagram Direct Messages (DMs)",
-      "Facebook Page comments & Messenger DMs",
-      "Official WhatsApp Business API",
-      "Storefront website live chat widget",
+      "Instagram Reel comments & Story DMs",
+      "Official WhatsApp Cloud API sync",
+      "Facebook Messenger auto-engagement",
+      "Website live chat drawer widget",
     ],
-    badge: "Capture & Engage",
+    badge: "100% Leads Caught",
   },
   {
     step: "02",
-    label: "Digital Employee",
-    title: "Boutique Intelligence",
-    desc: "Executes conversations with your exact tone, garment knowledge, and pricing rules.",
+    label: "Intelligence Engine",
+    title: "AI Stylist & Sizing Brain",
+    desc: "Executes sales conversations calibrated to your boutique's exact voice, fabrics, and size charts.",
     features: [
-      "Calibrated to your boutique voice & tone",
-      "Understands garment fabrics & size charts",
-      "Protects strict minimum price margins",
-      "Enforces your 7-day exchange window",
+      "Bust, waist & length size qualification",
+      "Handcrafted fabric & lining guidance",
+      "Strict discount margin protection",
+      "7-day exchange window enforcement",
     ],
     badge: "AI Brain",
     highlight: true,
   },
   {
     step: "03",
-    label: "Store Operations",
-    title: "Ecosystem Sync",
-    desc: "Connects your inventory, couriers, and payment gateways for 100% automated operations.",
+    label: "Commerce Settlement",
+    title: "1-Click Settle & Courier",
+    desc: "Collects addresses, processes UPI payments, and updates courier tracking automatically.",
     features: [
-      "Shopify & product catalog inventory sync",
-      "Real-time courier tracking (Delhivery, Shiprocket)",
-      "1-click UPI payments (GPay, PhonePe, Paytm)",
-      "Instant draft order generation & sync",
+      "1-Click UPI links (GPay, PhonePe, Paytm)",
+      "Instant draft order sync to store",
+      "Real-time Delhivery/Shiprocket tracking",
+      "1-Tap VIP handover to boutique owner",
     ],
-    badge: "Fulfillment & Pay",
+    badge: "Autopilot Settle",
   },
 ];
 ---
 
-<section id="system" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-white/[0.08] bg-[#000000]">
+<section id="system" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-slate-200/80 bg-[#f8fafc]">
+  <!-- Center pipeline glow -->
+  <div class="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+    <div class="h-[600px] w-[900px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.07)_0%,rgba(20,184,166,0.03)_50%,transparent_70%)] blur-[140px]"></div>
+  </div>
+
   <div class="page-shell relative z-10">
-    <div class="mb-16 lg:mb-20 max-w-3xl">
-      <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">Sales Channel</span>
+    <div class="mb-14 lg:mb-16 max-w-3xl">
+      <div class="chip-emerald mb-4 inline-flex">
+        <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">Connected System Architecture</span>
       </div>
-      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-        One AI employee. <em class="serif-accent">Your online sales on autopilot</em>.
+      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
+        One AI Sales Agent. <em class="serif-accent">Your entire store connected</em>.
       </h2>
-      <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
-        VoluChat connects directly to your Instagram, WhatsApp, catalog, and couriers — qualifying sizing, taking payments, and sending parcel updates without you typing a word.
+      <p class="section-copy mt-5 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+        VoluChat acts as the central autonomous nervous system between your social channels, your catalog, payment gateways, and shipping couriers.
       </p>
+    </div>
+
+    <!-- Visual Interactive Orchestration Flow Diagram -->
+    <div class="mb-16 rounded-3xl border border-slate-200/90 bg-white/80 p-6 sm:p-10 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.05),0_0_30px_rgba(16,185,129,0.05)] relative overflow-hidden">
+      
+      <!-- Section Header inside Diagram -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-8 border-b border-slate-200/80 mb-8">
+        <div>
+          <span class="font-mono text-xs text-emerald-700 font-bold uppercase tracking-wider block">Live Data Pipeline</span>
+          <h3 class="font-heading text-xl sm:text-2xl font-bold text-slate-900 mt-1">Autonomous Commerce Loop</h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="font-mono text-xs text-emerald-700 font-semibold">Bi-Directional Sync Active</span>
+        </div>
+      </div>
+
+      <!-- 3-Stage Pipeline Diagram with animated connecting paths -->
+      <div class="grid gap-6 lg:grid-cols-3 items-center relative">
+        
+        <!-- Stage 1: Social Inbound -->
+        <div class="space-y-3">
+          <div class="text-xs font-mono font-semibold text-slate-600 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="h-1.5 w-1.5 rounded-full bg-pink-500"></span>
+            1. Social Inbound
+          </div>
+          {channels.map((ch) => (
+            <div class="rounded-2xl border border-slate-200/80 bg-white p-3.5 flex items-center gap-3.5 hover:border-pink-300 hover:bg-pink-50/50 transition-all group shadow-2xs">
+              <span class="text-xl shrink-0 p-2 rounded-xl bg-slate-100 group-hover:scale-110 transition-transform">{ch.icon}</span>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs font-bold text-slate-900 truncate">{ch.name}</div>
+                <div class="text-[11px] text-slate-600 truncate font-medium">{ch.action}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Stage 2: VoluChat Central AI Brain -->
+        <div class="relative rounded-2xl border border-emerald-500/40 bg-gradient-to-b from-emerald-50/80 via-white to-emerald-50/40 p-6 text-center space-y-4 shadow-[0_4px_25px_rgba(16,185,129,0.12)] my-2 lg:my-0 backdrop-blur-xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-mono font-bold">
+            <span class="animate-spin text-emerald-600">⚙️</span> VoluChat AI Core
+          </div>
+          
+          <div class="space-y-2 py-1">
+            <div class="font-heading text-lg font-bold text-slate-900">Autonomous Decision Engine</div>
+            <p class="text-xs text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Understands sizing charts, checks live variant stock, calculates UPI links & applies boutique guardrails.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-[10px] font-mono text-emerald-800 pt-2 border-t border-emerald-200">
+            <div class="bg-white/80 p-1.5 rounded-lg border border-emerald-200 font-semibold shadow-2xs">⚡ 2s Response</div>
+            <div class="bg-white/80 p-1.5 rounded-lg border border-emerald-200 font-semibold shadow-2xs">🛡️ Margin Safe</div>
+            <div class="bg-white/80 p-1.5 rounded-lg border border-emerald-200 font-semibold shadow-2xs">👗 Size Advising</div>
+            <div class="bg-white/80 p-1.5 rounded-lg border border-emerald-200 font-semibold shadow-2xs">💳 1-Tap Pay</div>
+          </div>
+        </div>
+
+        <!-- Stage 3: Commerce & Couriers -->
+        <div class="space-y-3">
+          <div class="text-xs font-mono font-semibold text-slate-600 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="h-1.5 w-1.5 rounded-full bg-teal-500"></span>
+            3. Fulfillment & Settle
+          </div>
+          {backendSystems.map((sys) => (
+            <div class="rounded-2xl border border-slate-200/80 bg-white p-3.5 flex items-center gap-3.5 hover:border-teal-300 hover:bg-teal-50/50 transition-all group shadow-2xs">
+              <span class="text-xl shrink-0 p-2 rounded-xl bg-slate-100 group-hover:scale-110 transition-transform">{sys.icon}</span>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs font-bold text-slate-900 truncate">{sys.name}</div>
+                <div class="text-[11px] text-slate-600 truncate font-medium">{sys.role}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
     </div>
 
     <!-- 3-Pillar Clean Architecture Grid -->
     <div class="grid gap-8 lg:grid-cols-3 items-stretch">
       {
-        systemPillars.map((pillar) => (
-          <div class={`rounded-3xl border ${pillar.highlight ? "border-emerald-500/40 bg-gradient-to-b from-emerald-950/20 via-[#070709] to-[#070709]" : "border-white/[0.08] bg-[#070709]"} p-8 sm:p-9 flex flex-col justify-between transition-[border-color] duration-200 hover:border-white/[0.2]`}>
+        pillars.map((pillar) => (
+          <div class={`rounded-3xl border ${pillar.highlight ? "border-emerald-500/50 bg-gradient-to-b from-emerald-50/90 via-white to-white shadow-sm" : "border-slate-200/90 bg-white/80"} p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 hover:border-emerald-500/40 hover:-translate-y-1 hover:shadow-md backdrop-blur-xl`}>
             <div>
-              <div class="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-6">
-                <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">
+              <div class="flex items-center justify-between pb-4 border-b border-slate-200/80 mb-6">
+                <span class="font-mono text-xs text-emerald-700 font-bold uppercase tracking-wider">
                   Step {pillar.step}
                 </span>
-                <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono text-slate-300">
+                <span class="rounded-full border border-slate-200 bg-slate-100/80 px-2.5 py-0.5 text-[10px] font-mono text-slate-700">
                   {pillar.badge}
                 </span>
               </div>
 
-              <span class="text-[11px] uppercase font-mono tracking-wider text-slate-400 font-semibold block mb-1">
+              <span class="text-[11px] uppercase font-mono tracking-wider text-slate-500 font-semibold block mb-1">
                 {pillar.label}
               </span>
-              <h3 class="font-heading text-xl font-bold text-white mb-3">
+              <h3 class="font-heading text-xl font-bold text-slate-900 mb-3">
                 {pillar.title}
               </h3>
-              <p class="text-sm text-slate-400 font-normal leading-relaxed mb-6">
+              <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed mb-6">
                 {pillar.desc}
               </p>
 
               <div class="space-y-3 pt-2">
                 {
                   pillar.features.map((feat) => (
-                    <div class="flex items-start gap-2.5 text-xs text-slate-300">
-                      <span class="text-emerald-400 mt-0.5 shrink-0 font-bold">✓</span>
+                    <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium">
+                      <span class="text-emerald-600 mt-0.5 shrink-0 font-bold">✓</span>
                       <span>{feat}</span>
                     </div>
                   ))
@@ -96,33 +188,18 @@ const systemPillars = [
             </div>
 
             {pillar.highlight ? (
-              <div class="mt-8 pt-4 border-t border-emerald-500/30 flex items-center justify-between text-xs font-mono text-emerald-300">
+              <div class="mt-8 pt-4 border-t border-emerald-200 flex items-center justify-between text-xs font-mono text-emerald-800">
                 <span>Autonomous Intelligence</span>
                 <span class="font-bold">Zero Manual Work</span>
               </div>
             ) : (
-              <div class="mt-8 pt-4 border-t border-white/[0.06] text-xs font-mono text-slate-500">
-                Full System Synchronization
+              <div class="mt-8 pt-4 border-t border-slate-200/80 text-xs font-mono text-slate-500">
+                100% Automated Synchronization
               </div>
             )}
           </div>
         ))
       }
-    </div>
-
-    <!-- Architectural Pipeline Ribbon -->
-    <div class="mt-12 rounded-2xl border border-white/[0.08] bg-[#070709] p-6">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-        <div class="flex items-center gap-3">
-          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-xs sm:text-sm text-slate-300 font-medium">
-            <strong class="text-white font-semibold">End-to-End Loop:</strong> Reel Comment &rarr; Size Advisory &rarr; UPI Payment &rarr; Live Courier Tracking &rarr; Routine Exchange
-          </span>
-        </div>
-        <span class="text-xs font-mono text-emerald-400 font-medium shrink-0">
-          From First DM to Final Delivery
-        </span>
-      </div>
     </div>
 
   </div>

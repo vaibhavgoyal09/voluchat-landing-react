@@ -58,7 +58,7 @@ const demoHref = "/free-trial";
     >
       <!-- Dedicated pill background layer: hardware accelerated opacity + scale -->
       <div
-        class="lp-nav-pill-bg pointer-events-none absolute inset-0 rounded-full border border-white/[0.14] bg-[#0c0e15]/85 shadow-[0_12px_36px_-4px_rgba(0,0,0,0.7),inset_0_1px_1px_0_rgba(255,255,255,0.2)] backdrop-blur-2xl"
+        class="lp-nav-pill-bg pointer-events-none absolute inset-0 rounded-full border border-slate-200/90 bg-white/85 shadow-[0_12px_36px_-4px_rgba(0,0,0,0.06),inset_0_1px_1px_0_rgba(255,255,255,1)] backdrop-blur-2xl"
         aria-hidden="true"
       >
       </div>
@@ -71,10 +71,10 @@ const demoHref = "/free-trial";
             <img
               src="/voluchat_logo.svg"
               alt="VoluChat Logo"
-              class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl object-contain drop-shadow-[0_2px_12px_rgba(16,185,129,0.25)] transition-transform duration-200 group-hover:scale-105"
+              class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl object-contain drop-shadow-[0_2px_8px_rgba(5,150,105,0.2)] transition-transform duration-200 group-hover:scale-105"
             />
             <span
-              class="font-heading text-[1.2rem] sm:text-[1.25rem] font-bold tracking-tight text-[#fcfdff] transition-colors group-hover:text-white"
+              class="font-heading text-[1.2rem] sm:text-[1.25rem] font-bold tracking-tight text-slate-900 transition-colors group-hover:text-emerald-700"
               >VoluChat</span
             >
           </div>
@@ -89,23 +89,23 @@ const demoHref = "/free-trial";
               <div class="nav-dropdown-wrap group relative">
                 <a
                   href={item.href}
-                  class="nav-link relative inline-flex items-center gap-1 py-1 text-[13.5px] font-medium text-[rgba(245,245,247,0.75)] transition-colors duration-200 hover:text-[#ffffff]"
+                  class="nav-link relative inline-flex items-center gap-1 py-1 text-[13.5px] font-semibold text-slate-700 transition-colors duration-200 hover:text-slate-900"
                   aria-haspopup="true"
                 >
                   {item.name}
-                  <svg class="h-3 w-3 opacity-60 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
+                  <svg class="h-3 w-3 text-slate-500 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>
                 </a>
                 <div class="nav-dropdown invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 translate-y-1 pt-3 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                  <div class="overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0c0e15]/95 p-1.5 shadow-[0_24px_60px_rgba(0,0,0,0.85)] backdrop-blur-2xl">
+                  <div class="overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 p-1.5 shadow-[0_24px_60px_rgba(0,0,0,0.12)] backdrop-blur-2xl">
                     {item.children.map((child) => (
                       <a
                         href={child.href}
-                        class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-[13px] font-medium text-[rgba(245,245,247,0.8)] transition hover:bg-white/[0.06] hover:text-white"
+                        class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-[13px] font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
                       >
                         <span>{child.name}</span>
-                        <span class="text-white/25">→</span>
+                        <span class="text-slate-400">→</span>
                       </a>
                     ))}
                   </div>
@@ -114,7 +114,7 @@ const demoHref = "/free-trial";
             ) : (
               <a
                 href={item.href}
-                class="nav-link relative py-1 text-[13.5px] font-medium text-[rgba(245,245,247,0.75)] transition-colors duration-200 hover:text-[#ffffff]"
+                class="nav-link relative py-1 text-[13.5px] font-semibold text-slate-700 transition-colors duration-200 hover:text-slate-900"
               >
                 {item.name}
               </a>
@@ -127,7 +127,7 @@ const demoHref = "/free-trial";
       <div class="relative z-10 hidden lg:flex lg:flex-1 lg:justify-end">
         <a
           href={demoHref}
-          class="btn-primary !w-auto !px-4.5 !py-2 !text-[13px] shadow-[0_4px_16px_rgba(20,184,166,0.25)] hover:shadow-[0_6px_20px_rgba(20,184,166,0.35)]"
+          class="btn-primary !w-auto !px-4.5 !py-2 !text-[13px] shadow-[0_4px_16px_rgba(5,150,105,0.25)] hover:shadow-[0_6px_20px_rgba(5,150,105,0.35)]"
         >
           30-Day Free Trial &rarr;
         </a>
@@ -137,14 +137,14 @@ const demoHref = "/free-trial";
       <div class="relative z-10 flex items-center gap-2.5 lg:hidden">
         <a
           href={demoHref}
-          class="inline-flex h-8.5 items-center justify-center rounded-full bg-[#fcfdff] px-3.5 text-[12.5px] font-semibold text-[#000000] transition hover:bg-white shadow-[0_2px_10px_rgba(255,255,255,0.2)] whitespace-nowrap active:scale-95"
+          class="inline-flex h-8.5 items-center justify-center rounded-full bg-emerald-600 px-3.5 text-[12.5px] font-semibold text-white transition hover:bg-emerald-500 shadow-xs whitespace-nowrap active:scale-95"
         >
           Free Trial &rarr;
         </a>
         <button
           type="button"
           id="lp-mobile-menu-btn"
-          class="grid h-9 w-9 place-items-center rounded-full border border-white/[0.14] bg-white/[0.07] text-white backdrop-blur-xl transition hover:bg-white/12 active:scale-95"
+          class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-900 backdrop-blur-xl transition hover:bg-slate-50 active:scale-95 shadow-2xs"
           aria-expanded="false"
           aria-label="Toggle navigation menu"
         >
@@ -159,7 +159,7 @@ const demoHref = "/free-trial";
   <!-- Mobile Drawer Backdrop -->
   <div
     id="lp-mobile-backdrop"
-    class="fixed inset-0 top-[60px] -z-10 bg-black/80 backdrop-blur-md lg:hidden"
+    class="fixed inset-0 top-[60px] -z-10 bg-slate-100/80 backdrop-blur-sm lg:hidden"
     aria-hidden="true"
   >
   </div>
@@ -167,7 +167,7 @@ const demoHref = "/free-trial";
   <!-- Mobile Menu Dropdown -->
   <div
     id="lp-mobile-menu"
-    class="fixed inset-x-4 top-[70px] z-40 max-w-lg mx-auto rounded-3xl border border-white/[0.12] bg-[#0c0e15]/95 p-4 sm:p-5 backdrop-blur-2xl shadow-[0_24px_60px_rgba(0,0,0,0.85),inset_0_1px_1px_rgba(255,255,255,0.18)] lg:hidden"
+    class="fixed inset-x-4 top-[70px] z-40 max-w-lg mx-auto rounded-3xl border border-slate-200/90 bg-white/95 p-4 sm:p-5 backdrop-blur-2xl shadow-[0_24px_60px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,1)] lg:hidden"
     role="dialog"
     aria-modal="true"
   >
@@ -176,11 +176,11 @@ const demoHref = "/free-trial";
         navigation.map((item) => (
           <a
             href={item.href}
-            class="lp-mobile-link group flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] font-medium text-[rgba(245,245,247,0.85)] transition hover:bg-white/[0.06] hover:text-white active:bg-white/[0.09]"
+            class="lp-mobile-link group flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 active:bg-slate-200"
           >
             <span>{item.name}</span>
             <svg
-              class="h-4 w-4 text-white/30 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-emerald-400"
+              class="h-4 w-4 text-slate-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-emerald-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="2"
@@ -194,18 +194,18 @@ const demoHref = "/free-trial";
     </div>
 
     <!-- Mobile Menu Bottom Action Strip -->
-    <div class="mt-4 pt-3.5 border-t border-white/[0.08] flex flex-col gap-2.5">
+    <div class="mt-4 pt-3.5 border-t border-slate-200/80 flex flex-col gap-2.5">
       <a
         href={demoHref}
-        class="lp-mobile-link flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 py-3 text-center text-[14px] font-semibold text-[#050608] shadow-[0_4px_16px_rgba(16,185,129,0.3)] transition active:scale-[0.98]"
+        class="lp-mobile-link flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-600 hover:bg-emerald-500 py-3 text-center text-[14px] font-semibold text-white shadow-[0_4px_16px_rgba(5,150,105,0.25)] transition active:scale-[0.98]"
       >
         <span>Start 30-Day Free Trial</span>
         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
         </svg>
       </a>
-      <div class="flex items-center justify-center gap-2 text-[11.5px] text-white/50 pt-1">
-        <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+      <div class="flex items-center justify-center gap-2 text-[11.5px] text-slate-500 pt-1 font-medium">
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
         <span>Official Meta Partner &bull; Zero credit card needed</span>
       </div>
     </div>

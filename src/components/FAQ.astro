@@ -12,36 +12,32 @@ const faqs = customFaqs && customFaqs.length > 0 ? customFaqs : defaultFaqs;
 
 <section
   id="faq"
-  class="section-pad section-band-quiet relative overflow-hidden bg-[#000000] border-t border-white/[0.08]"
+  class="section-pad section-band-quiet relative overflow-hidden bg-[#f8fafc] border-t border-slate-200/80"
 >
-  <div class="absolute inset-0 -z-10 pointer-events-none">
-    <div class="sect-grid opacity-20"></div>
-  </div>
-
   <div class="page-shell">
     <div class="mx-auto mb-14 max-w-3xl text-center">
-      <div class="chip mb-4 mx-auto inline-flex">
-        <span class="mini-label text-emerald-400">Questions &amp; Answers</span>
+      <div class="chip-emerald mb-4 mx-auto inline-flex">
+        <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">Questions &amp; Answers</span>
       </div>
-      <h2 class="section-title font-heading mt-2">
+      <h2 class="section-title font-heading mt-2 text-slate-900">
         Frequently asked <em class="serif-accent">questions</em>.
       </h2>
-      <p class="section-copy mx-auto mt-4 max-w-xl">
-        Everything boutique founders want to know about hiring an AI Employee for online operations.
+      <p class="section-copy mx-auto mt-4 max-w-xl text-slate-600">
+        Everything boutique founders want to know about setting up an AI Sales Agent for online operations.
       </p>
     </div>
 
     <div
-      class="reveal-on-scroll mx-auto max-w-3xl border-t border-white/[0.08]"
+      class="reveal-on-scroll mx-auto max-w-3xl border-t border-slate-200/80"
     >
       {
         faqs.map((faq, index) => (
-          <div class="faq-item border-b border-white/[0.08] transition-colors duration-200" data-index={index}>
+          <div class="faq-item border-b border-slate-200/80 transition-colors duration-200" data-index={index}>
             <button class="faq-toggle group flex w-full items-center justify-between gap-6 py-6 text-left transition-colors">
-              <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-[#f5f5f7] transition-colors group-hover:text-emerald-300">
+              <span class="font-heading text-lg sm:text-xl font-semibold leading-snug tracking-tight text-slate-900 transition-colors group-hover:text-emerald-700">
                 {faq.question}
               </span>
-              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/[0.14] bg-transparent transition-colors duration-200 group-hover:border-emerald-500/40">
+              <span class="faq-icon-wrap flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white transition-colors duration-200 group-hover:border-emerald-500 shadow-2xs">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="15"
@@ -52,7 +48,7 @@ const faqs = customFaqs && customFaqs.length > 0 ? customFaqs : defaultFaqs;
                   stroke-width="2.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="faq-chevron text-slate-400 transition-[transform,color] duration-200 group-hover:text-emerald-300"
+                  class="faq-chevron text-slate-500 transition-[transform,color] duration-200 group-hover:text-emerald-700"
                 >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
@@ -60,7 +56,7 @@ const faqs = customFaqs && customFaqs.length > 0 ? customFaqs : defaultFaqs;
             </button>
             <div class="faq-body max-h-0 overflow-hidden transition-[max-height] duration-200 ease-out">
               <div class="pb-7">
-                <p class="text-base font-normal leading-relaxed text-[#86868b]">
+                <p class="text-base font-normal leading-relaxed text-slate-600">
                   {faq.answer}
                 </p>
               </div>

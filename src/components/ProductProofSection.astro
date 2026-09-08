@@ -2,9 +2,10 @@
 const scenarios = [
   {
     id: "discover",
-    label: "01 — Catalog & Stock",
-    title: "Reel Inquiry to Instant Stock Check",
-    subtitle: "Searches your live catalog and checks real-time size availability in 2 seconds.",
+    label: "01 — Sizing & Stock Check",
+    title: "Reel Inquiry to Live Inventory Check",
+    subtitle: "Searches your synced boutique catalog and verifies real-time variant stock in 2 seconds.",
+    category: "Instant Sizing",
     messages: [
       {
         sender: "customer",
@@ -14,12 +15,18 @@ const scenarios = [
       {
         sender: "ai",
         time: "11:14 PM",
-        text: "Hi Priya! ✨ That's our handcrafted Chanderi Silk Anarkali Set with zardozi embroidery. Price is ₹3,899 (inclusive of taxes).",
-      },
-      {
-        sender: "ai",
-        time: "11:14 PM",
-        text: "Yes, Size M (Bust 38\", Waist 32\") has 2 pieces left in stock today. We also have Size S and L available.",
+        text: "Hi Priya! ✨ That's our handcrafted Chanderi Silk Anarkali Set with zardozi handwork.",
+        productCard: {
+          title: "Chanderi Silk Anarkali Set",
+          price: "₹3,899",
+          originalPrice: "₹4,500",
+          sizes: [
+            { label: "S (36\")", stock: "In Stock", active: false },
+            { label: "M (38\")", stock: "2 Left", active: true },
+            { label: "L (40\")", stock: "In Stock", active: false },
+          ],
+          fabric: "Pure Chanderi Silk • Full Shantoon Lining",
+        },
       },
       {
         sender: "customer",
@@ -34,22 +41,40 @@ const scenarios = [
       },
     ],
     note: "Reads your synced catalog, verifies exact variant stock in real time, and manages the customer's cart directly in chat.",
+    prompts: [
+      { label: "💬 Ask about fabric lining", reply: "Yes! It comes with a pure Shantoon cotton lining for full comfort." },
+      { label: "🛍️ Reserve Size M now", reply: "Reserved Size M for 15 minutes! Please share your shipping address to generate 1-click UPI link." },
+    ],
   },
   {
     id: "visual",
-    label: "02 — Visual Search",
+    label: "02 — Visual Search Match",
     title: "Customer Photo to Catalog Match",
     subtitle: "Identifies outfits from customer screenshots and recommends matching catalog pieces.",
+    category: "Visual AI",
     messages: [
       {
         sender: "customer",
         time: "03:20 PM",
-        text: "[Photo attached: Pastel Organza Lehenga] Hi! Do you have any outfit similar to this for a sangeet?",
+        text: "Hi! Do you have any outfit similar to this pastel lehenga for a sangeet?",
+        imageAttachment: "📸 Photo: Pastel Organza Lehenga with Mirror Work",
       },
       {
         sender: "ai",
         time: "03:20 PM",
-        text: "Found 2 matching pieces from our festive collection! ✨\n1. Blush Rose Organza Lehenga — ₹6,499 (Sizes S to XL)\n2. Dust Pink Tissue Silk Saree — ₹4,299",
+        text: "Found 2 matching pieces from our festive collection! ✨",
+        productCard: {
+          title: "Blush Rose Organza Lehenga",
+          price: "₹6,499",
+          originalPrice: "₹7,999",
+          sizes: [
+            { label: "S", stock: "In Stock", active: false },
+            { label: "M", stock: "In Stock", active: false },
+            { label: "L (40\")", stock: "Ready to Dispatch", active: true },
+          ],
+          fabric: "Pure Organza • Thread & Mirror Embroidery",
+        },
+        badge: "Visual AI Match from Catalog",
       },
       {
         sender: "customer",
@@ -59,17 +84,21 @@ const scenarios = [
       {
         sender: "ai",
         time: "03:21 PM",
-        text: "Yes! Size L (Bust 40\") is in stock and ready to dispatch within 24 hours. Would you like me to reserve it for you?",
-        badge: "Visual AI Match from Catalog",
+        text: "Yes! Size L (Bust 40\") is ready to dispatch within 24 hours. Free express shipping included!",
       },
     ],
     note: "Customers share Pinterest or Instagram photos. VoluChat's visual search matches similar garments in your active inventory.",
+    prompts: [
+      { label: "👗 Recommend matching jewellery", reply: "We recommend our Kundan Polki Choker Set (₹1,899) — pairs beautifully with Blush Rose!" },
+      { label: "⚡ Proceed to 1-Click Pay", reply: "Great! Let me generate your 1-click UPI checkout link." },
+    ],
   },
   {
     id: "checkout",
-    label: "03 — In-Chat Pay",
+    label: "03 — 1-Click UPI Pay",
     title: "Address Collection to 1-Click UPI",
     subtitle: "Collects delivery address in-chat and generates a 1-click UPI checkout link.",
+    category: "Zero Cart Drops",
     messages: [
       {
         sender: "customer",
@@ -89,17 +118,28 @@ const scenarios = [
       {
         sender: "ai",
         time: "08:41 PM",
-        text: "Here is your 1-click UPI payment link for ₹6,499: [upi://pay?pa=boutique@upi...]. Once paid, your order is instantly confirmed with free express delivery!",
+        text: "Here is your 1-click UPI payment link for ₹6,499. Once paid, your order is instantly confirmed!",
+        upiCard: {
+          amount: "₹6,499",
+          orderId: "ORD-9842",
+          items: "Blush Rose Organza Lehenga (Size L)",
+          apps: ["GPay", "PhonePe", "Paytm", "BHIM"],
+        },
         badge: "Draft Order Synced to Store",
       },
     ],
     note: "Captures shipping address cleanly, creates the checkout draft in your store, and sends a native 1-click UPI payment link.",
+    prompts: [
+      { label: "💳 Simulate UPI Payment Success", reply: "✅ Payment Received ₹6,499 via Google Pay! Order #ORD-9842 confirmed. Dispatching tomorrow with Delhivery Express." },
+      { label: "📍 Edit delivery address", reply: "Please reply with your updated pincode and street address." },
+    ],
   },
   {
     id: "tracking",
-    label: "04 — Track & Handover",
+    label: "04 — Tracking & Escalation",
     title: "Live Courier Tracking & VIP Handover",
     subtitle: "Fetches live courier status in seconds and alerts you for bespoke custom orders.",
+    category: "Fulfillment & VIP",
     messages: [
       {
         sender: "customer",
@@ -109,7 +149,14 @@ const scenarios = [
       {
         sender: "ai",
         time: "02:30 PM",
-        text: "Looking up order #1084... Dispatched yesterday via Delhivery (AWB: 9821839210). Status: Out for delivery today by 6 PM in Bangalore.",
+        text: "Looking up order #1084... Here is your live courier status:",
+        trackingCard: {
+          courier: "Delhivery Express",
+          awb: "AWB-9821839210",
+          status: "Out for Delivery",
+          eta: "Today by 6:00 PM",
+          city: "Indiranagar, Bangalore",
+        },
       },
       {
         sender: "customer",
@@ -124,35 +171,44 @@ const scenarios = [
       },
     ],
     note: "Answers repetitive tracking lookups from couriers. The moment a client asks for custom bridal tailoring, it alerts you immediately.",
+    prompts: [
+      { label: "🔔 Alert Head Stylist on WhatsApp", reply: "Alert sent to Ananya (+91-9876543210)! She will join this chat in under 5 minutes." },
+      { label: "📦 Resend Delivery AWB link", reply: "Live tracking link: https://delhivery.com/track/package/9821839210" },
+    ],
   },
 ];
 ---
 
-<section id="proof" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-white/[0.08] bg-[#000000]">
+<section id="proof" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-slate-200/80 bg-[#f8fafc]">
+  <!-- Backdrop gradient -->
+  <div class="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+    <div class="h-[600px] w-[900px] rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.08)_0%,rgba(20,184,166,0.03)_50%,transparent_70%)] blur-[120px]"></div>
+  </div>
+
   <div class="page-shell relative z-10">
     <div class="mb-16 lg:mb-20 max-w-3xl">
-      <div class="chip mb-4">
-        <span class="mini-label text-emerald-400">Interactive Demonstration</span>
+      <div class="chip-emerald mb-4 inline-flex">
+        <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">Interactive Demonstration</span>
       </div>
-      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-        See your AI Employee <em class="serif-accent">at work</em>.
+      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
+        See your AI Sales Agent <em class="serif-accent">at work</em>.
       </h2>
-      <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
-        Real-world simulations across core boutique responsibilities. Explore live customer interactions from the first Reel inquiry to post-purchase fulfillment. Works across Instagram, WhatsApp, and Facebook Messenger. Chat timelines are compressed for demo &mdash; real orders close at the customer&rsquo;s pace, with follow-ups.
+      <p class="section-copy mt-5 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+        Real-world simulations across core boutique responsibilities. Explore live customer interactions from the first Reel inquiry to post-purchase fulfillment. Click tabs or test interactive prompts below.
       </p>
     </div>
 
     <!-- Tab Container -->
     <div class="product-proof-wrapper max-w-5xl mx-auto">
       <!-- Tab Navigation Buttons: Apple-style pill segmented control -->
-      <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-3xl sm:rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl mb-10 max-w-2xl mx-auto" role="tablist" aria-label="Boutique scenarios">
+      <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-3xl sm:rounded-full bg-slate-200/60 border border-slate-200/90 backdrop-blur-xl mb-10 max-w-2xl mx-auto" role="tablist" aria-label="Boutique scenarios">
         {
           scenarios.map((scenario, index) => (
             <button
               type="button"
               role="tab"
               aria-selected={index === 0 ? "true" : "false"}
-              class={`proof-tab-btn flex-1 min-w-[140px] px-3.5 py-2 rounded-full text-xs font-mono font-medium transition-[background-color,color,box-shadow] duration-200 text-slate-400 hover:text-white hover:bg-white/[0.04] active:scale-[0.98] ${index === 0 ? "is-active" : ""}`}
+              class={`proof-tab-btn flex-1 min-w-[140px] px-3.5 py-2 rounded-full text-xs font-mono font-medium transition-[background-color,color,box-shadow] duration-200 text-slate-600 hover:text-slate-900 hover:bg-white/60 active:scale-[0.98] ${index === 0 ? "is-active text-slate-900 bg-white shadow-xs font-bold" : ""}`}
               data-target={scenario.id}
             >
               {scenario.label}
@@ -167,95 +223,196 @@ const scenarios = [
           scenarios.map((scenario, index) => (
             <div
               id={`proof-panel-${scenario.id}`}
-              class={`proof-panel transition-opacity duration-200 ${index === 0 ? "block opacity-100" : "hidden opacity-0"}`}
+              class={`proof-panel transition-opacity duration-300 ${index === 0 ? "block opacity-100" : "hidden opacity-0"}`}
             >
-              <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 items-center">
+              <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 items-center">
                 
-                <!-- Chat Window Mockup -->
-                <div class="rounded-3xl p-6 sm:p-8 border border-white/[0.10] bg-[#070709] shadow-2xl relative overflow-hidden flex min-h-[430px] flex-col">
+                <!-- Chat Window Mockup with Rich Interactive Elements -->
+                <div class="rounded-3xl p-5 sm:p-7 border border-slate-200/90 bg-[#efeae2]/80 shadow-[0_20px_50px_rgba(0,0,0,0.06),0_0_20px_rgba(16,185,129,0.06)] relative overflow-hidden flex min-h-[480px] flex-col justify-between backdrop-blur-2xl">
+                
                   <!-- Chat Header -->
-                  <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-6">
-                    <div class="flex items-center gap-3">
-                      <div class="relative h-9 w-9 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xs">
-                        VC
-                        <span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-black"></span>
-                      </div>
-                      <div>
-                        <div class="text-xs sm:text-sm font-semibold text-white">VoluChat AI Employee</div>
-                        <div class="text-[10px] text-emerald-400 font-mono flex items-center gap-1">
-                          Online &bull; Active for Boutique
+                  <div>
+                    <div class="flex items-center justify-between border-b border-slate-300/80 pb-3.5 mb-5 bg-white/70 -mx-5 -mt-5 p-4 rounded-t-3xl backdrop-blur-md">
+                      <div class="flex items-center gap-3">
+                        <div class="relative h-9 w-9 rounded-full bg-emerald-600 border border-emerald-500 flex items-center justify-center text-white font-bold text-xs shadow-2xs">
+                          VC
+                          <span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-white"></span>
                         </div>
-                      </div>
-                    </div>
-                    <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono text-slate-400">
-                      Live Simulation
-                    </span>
-                  </div>
-
-                  <!-- Messages Flow -->
-                  <div class="space-y-4 flex flex-1 flex-col justify-end">
-                    {
-                      scenario.messages.map((msg) => (
-                        <div class={`flex flex-col ${msg.sender === "customer" ? "items-end" : "items-start"}`}>
-                          <div
-                            class={`max-w-[85%] rounded-2xl px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed ${
-                              msg.sender === "customer"
-                                ? "wa-out rounded-br-md"
-                                : msg.sender === "staff"
-                                ? "bg-amber-950/40 border border-amber-500/40 text-amber-200 rounded-bl-md"
-                                : "wa-in rounded-bl-md"
-                            }`}
-                          >
-                            {msg.text}
+                        <div>
+                          <div class="text-xs sm:text-sm font-semibold text-slate-900">VoluChat AI Sales Agent</div>
+                          <div class="text-[10px] text-emerald-700 font-mono flex items-center gap-1 font-semibold">
+                            Online &bull; 2.0s Instant Reply
                           </div>
-                          
-                          {msg.badge && (
-                            <div class="mt-1.5 flex items-center gap-1.5 rounded-md bg-emerald-950/40 border border-emerald-500/30 px-2.5 py-1 text-[10px] font-mono text-emerald-300">
-                              <span>✓</span>
-                              <span>{msg.badge}</span>
-                            </div>
-                          )}
-
-                          <span class="text-[9px] text-slate-500 font-mono mt-1 px-1">
-                            {msg.time}{msg.sender !== "customer" ? "  ✓✓" : ""}
-                          </span>
                         </div>
-                      ))
-                    }
+                      </div>
+                      <span class="rounded-full border border-emerald-600/20 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-mono text-emerald-800 font-bold">
+                        {scenario.category}
+                      </span>
+                    </div>
+
+                    <!-- Messages Flow -->
+                    <div class="space-y-3.5 flex flex-col justify-end" id={`chat-stream-${scenario.id}`}>
+                      {
+                        scenario.messages.map((msg) => (
+                          <div class={`flex flex-col ${msg.sender === "customer" ? "items-end" : "items-start"}`}>
+                            {msg.imageAttachment && (
+                              <div class="mb-1 rounded-xl border border-pink-200 bg-pink-50 px-3 py-1.5 text-xs text-pink-900 font-medium">
+                                {msg.imageAttachment}
+                              </div>
+                            )}
+
+                            <div
+                              class={`max-w-[88%] rounded-2xl px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed shadow-2xs ${
+                                msg.sender === "customer"
+                                  ? "wa-out rounded-br-md text-emerald-950 font-medium"
+                                  : "wa-in rounded-bl-md text-slate-900 font-normal"
+                              }`}
+                            >
+                              {msg.text}
+                            </div>
+                            
+                            <!-- Rich Product Card Rendering -->
+                            {msg.productCard && (
+                              <div class="mt-2 w-full max-w-[92%] rounded-2xl border border-slate-200/90 bg-white p-3.5 text-xs space-y-2.5 shadow-xs">
+                                <div class="flex items-center justify-between">
+                                  <span class="font-semibold text-slate-900 text-[13px]">{msg.productCard.title}</span>
+                                  <div class="flex items-center gap-1.5 font-mono">
+                                    <span class="font-bold text-emerald-700 text-xs">{msg.productCard.price}</span>
+                                    <span class="text-[10px] text-slate-600 line-through">{msg.productCard.originalPrice}</span>
+                                  </div>
+                                </div>
+                                <div class="text-[11px] text-slate-600 font-normal">
+                                  {msg.productCard.fabric}
+                                </div>
+                                <div class="flex items-center gap-2 pt-1 border-t border-slate-100">
+                                  <span class="text-[10px] font-mono text-slate-500 font-semibold">Available:</span>
+                                  {msg.productCard.sizes.map((s) => (
+                                    <span class={`px-2 py-0.5 rounded text-[10px] font-mono ${s.active ? "bg-emerald-600 text-white font-bold ring-1 ring-emerald-500" : "bg-slate-100 text-slate-700"}`}>
+                                      {s.label}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+
+                            <!-- Rich UPI Payment Card -->
+                            {msg.upiCard && (
+                              <div class="mt-2 w-full max-w-[92%] rounded-2xl border border-emerald-500/40 bg-white p-3.5 space-y-2.5 shadow-sm">
+                                <div class="flex items-center justify-between text-xs">
+                                  <span class="font-mono text-slate-600 font-semibold">1-Click UPI Payment</span>
+                                  <span class="font-bold text-emerald-700 font-mono text-sm">{msg.upiCard.amount}</span>
+                                </div>
+                                <div class="text-[11px] text-slate-700 font-medium">
+                                  {msg.upiCard.items}
+                                </div>
+                                <button class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-xs active:scale-[0.99] transition-all">
+                                  <span>⚡ Pay {msg.upiCard.amount} via UPI</span>
+                                </button>
+                                <div class="flex items-center justify-center gap-3 text-[10px] font-mono text-slate-500 pt-1">
+                                  <span>GPay</span> &bull; <span>PhonePe</span> &bull; <span>Paytm</span> &bull; <span>BHIM</span>
+                                </div>
+                              </div>
+                            )}
+
+                            <!-- Rich Courier Tracking Card -->
+                            {msg.trackingCard && (
+                              <div class="mt-2 w-full max-w-[92%] rounded-2xl border border-slate-200/90 bg-white p-3.5 space-y-2 text-xs shadow-xs">
+                                <div class="flex items-center justify-between">
+                                  <span class="font-bold text-slate-900 flex items-center gap-1.5">
+                                    <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                    {msg.trackingCard.courier}
+                                  </span>
+                                  <span class="font-mono text-[10px] text-slate-500">{msg.trackingCard.awb}</span>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-2.5 border border-slate-100 space-y-1.5">
+                                  <div class="flex justify-between text-[11px]">
+                                    <span class="text-emerald-700 font-bold">{msg.trackingCard.status}</span>
+                                    <span class="text-slate-800 font-mono font-semibold">{msg.trackingCard.eta}</span>
+                                  </div>
+                                  <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-emerald-500 to-teal-500 h-1.5 rounded-full w-5/6"></div>
+                                  </div>
+                                  <div class="text-[10px] text-slate-500">Destination: {msg.trackingCard.city}</div>
+                                </div>
+                              </div>
+                            )}
+
+                            {msg.badge && (
+                              <div class="mt-1.5 flex items-center gap-1.5 rounded-md bg-emerald-50 border border-emerald-500/30 px-2.5 py-1 text-[10px] font-mono text-emerald-800 font-semibold">
+                                <span>✓</span>
+                                <span>{msg.badge}</span>
+                              </div>
+                            )}
+
+                            <span class="text-[9px] text-slate-600 font-mono mt-1 px-1">
+                              {msg.time}{msg.sender !== "customer" ? "  ✓✓" : ""}
+                            </span>
+                          </div>
+                        ))
+                      }
+                    </div>
                   </div>
+
+                  <!-- Interactive Shopper Prompt Chips (Try-it-live) -->
+                  <div class="mt-4 pt-3.5 border-t border-slate-300/80">
+                    <div class="text-[10px] font-mono text-slate-600 mb-2 flex items-center gap-1.5 font-semibold">
+                      <span class="text-emerald-600">⚡</span>
+                      <span>Try clicking a prompt to simulate live response:</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                      {scenario.prompts.map((p) => (
+                        <button
+                          type="button"
+                          class="interactive-prompt-chip text-[11px] font-mono px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-800 hover:border-emerald-500 hover:bg-emerald-50 hover:text-emerald-900 transition-all text-left shadow-2xs active:scale-[0.98] font-medium"
+                          data-chat={scenario.id}
+                          data-user={p.label}
+                          data-reply={p.reply}
+                        >
+                          {p.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
                 </div>
 
                 <!-- Scenario Explanation -->
                 <div class="space-y-6 lg:pl-2">
-                  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-slate-300">
-                    <span class="text-emerald-400">●</span> Scenario Context
+                  <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs font-mono text-slate-700 shadow-2xs">
+                    <span class="text-emerald-500">●</span> Scenario Context
                   </div>
 
-                  <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  <h3 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
                     {scenario.title}
                   </h3>
 
-                  <p class="text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
+                  <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
                     {scenario.subtitle}
                   </p>
 
-                  <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
-                    <div class="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider mb-1.5">
+                  <div class="p-5 rounded-2xl bg-white/90 border border-slate-200/90 space-y-2 shadow-2xs backdrop-blur-xl">
+                    <div class="text-xs font-mono font-semibold text-emerald-700 uppercase tracking-wider">
                       System Capability
                     </div>
-                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
                       {scenario.note}
                     </p>
                   </div>
 
-                  <div class="pt-2">
+                  <div class="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                    <a
+                      href="/free-trial"
+                      class="btn-primary !py-2.5 !px-5 inline-flex items-center gap-2 text-xs font-semibold"
+                    >
+                      <span>Deploy for Your Boutique</span> &rarr;
+                    </a>
                     <a
                       href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                      class="btn-secondary !py-2.5 !px-4 inline-flex items-center gap-2 text-xs"
                     >
-                      <span>Test this live on WhatsApp &rarr;</span>
+                      <span>Test on WhatsApp</span> &rarr;
                     </a>
                   </div>
                 </div>
@@ -278,12 +435,11 @@ const scenarios = [
       btn.addEventListener("click", () => {
         const targetId = btn.getAttribute("data-target");
 
-        // Single source of truth: .is-active (styled in global.css)
         buttons.forEach((b) => {
-          b.classList.remove("is-active");
+          b.classList.remove("is-active", "text-slate-900", "bg-slate-100", "shadow-sm");
           b.setAttribute("aria-selected", "false");
         });
-        btn.classList.add("is-active");
+        btn.classList.add("is-active", "text-slate-900", "bg-slate-100", "shadow-sm");
         btn.setAttribute("aria-selected", "true");
 
         // Update Panels
@@ -301,9 +457,63 @@ const scenarios = [
         });
       });
     });
+
+    // Handle interactive prompt chips
+    const chips = document.querySelectorAll<HTMLButtonElement>(".interactive-prompt-chip");
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const chatId = chip.getAttribute("data-chat");
+        const userText = chip.getAttribute("data-user");
+        const replyText = chip.getAttribute("data-reply");
+        if (!chatId || !userText || !replyText) return;
+
+        const stream = document.getElementById(`chat-stream-${chatId}`);
+        if (!stream) return;
+
+        // Disable chip once clicked to prevent double spam
+        chip.disabled = true;
+        chip.classList.add("opacity-50", "pointer-events-none");
+
+        // Append user bubble
+        const userMsg = document.createElement("div");
+        userMsg.className = "flex flex-col items-end animate-fade-in";
+        userMsg.innerHTML = `
+          <div class="max-w-[88%] rounded-2xl rounded-br-md px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed wa-out text-white shadow-sm">
+            ${userText.replace(/^[^\s]+\s/, "")}
+          </div>
+          <span class="text-[9px] text-slate-500 font-mono mt-1 px-1">Just now</span>
+        `;
+        stream.appendChild(userMsg);
+
+        // Typing indicator
+        const typingIndicator = document.createElement("div");
+        typingIndicator.className = "flex flex-col items-start";
+        typingIndicator.innerHTML = `
+          <div class="rounded-2xl rounded-bl-md px-3.5 py-2 text-xs wa-in text-emerald-400 font-mono flex items-center gap-1.5">
+            <span class="animate-pulse">●</span> VoluChat AI is typing...
+          </div>
+        `;
+        stream.appendChild(typingIndicator);
+
+        setTimeout(() => {
+          typingIndicator.remove();
+          const aiMsg = document.createElement("div");
+          aiMsg.className = "flex flex-col items-start animate-fade-in";
+          aiMsg.innerHTML = `
+            <div class="max-w-[88%] rounded-2xl rounded-bl-md px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed wa-in text-slate-800 shadow-sm">
+              ${replyText}
+            </div>
+            <div class="mt-1 flex items-center gap-1 rounded-md bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 text-[9px] font-mono text-emerald-300">
+              ✓ Interactive Live Simulated
+            </div>
+            <span class="text-[9px] text-slate-500 font-mono mt-1 px-1">Just now ✓✓</span>
+          `;
+          stream.appendChild(aiMsg);
+        }, 600);
+      });
+    });
   }
 
-  // Init on DOM ready and view transitions
   setupProofTabs();
   document.addEventListener("astro:page-load", setupProofTabs);
 </script>

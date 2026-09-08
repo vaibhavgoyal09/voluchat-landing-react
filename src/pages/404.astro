@@ -44,7 +44,7 @@ const helpfulLinks = [
 >
   <Header />
 
-  <main class="min-h-[85vh] overflow-hidden bg-[#000000]">
+  <main class="min-h-[85vh] overflow-hidden bg-white">
     <section class="hero-stripe pb-16 pt-32 sm:pt-40">
       <div class="section-glow-emerald"></div>
       <div class="sect-grid opacity-20"></div>
@@ -55,7 +55,7 @@ const helpfulLinks = [
             <span class="mini-label">404 Error</span>
           </div>
 
-          <h1 class="text-4xl font-semibold leading-[1.08] text-[#fcfdff] sm:text-5xl lg:text-6xl font-heading">
+          <h1 class="text-4xl font-semibold leading-[1.08] text-slate-900 sm:text-5xl lg:text-6xl font-heading">
             Page not found.
           </h1>
 
@@ -76,7 +76,7 @@ const helpfulLinks = [
     </section>
 
     <!-- Helpful Navigation Grid -->
-    <section class="pb-28 bg-[#000000]">
+    <section class="pb-28 bg-slate-50">
       <div class="page-shell">
         <div class="mx-auto max-w-3xl">
           <p class="section-eyebrow mb-6 text-center">Popular destinations</p>
@@ -85,10 +85,10 @@ const helpfulLinks = [
               helpfulLinks.map((item) => (
                 <a
                   href={item.href}
-                  class="notfound-card group block rounded-xl border border-white/[0.12] bg-[#0c0c10] p-6 transition-all duration-200 hover:border-emerald-500/40 hover:bg-[#121216]"
+                  class="notfound-card group block rounded-xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-emerald-500/40 hover:bg-slate-50"
                 >
                   <div class="flex items-center justify-between gap-4">
-                    <h2 class="text-base font-heading font-semibold text-white transition-colors group-hover:text-emerald-400">
+                    <h2 class="text-base font-heading font-semibold text-slate-900 transition-colors group-hover:text-emerald-400">
                       {item.title}
                     </h2>
                     <span class="text-slate-400 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-emerald-400">
