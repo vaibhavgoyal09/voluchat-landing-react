@@ -5,12 +5,39 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Manual Sales Reps — Hiring Chat Staff vs AI Closer";
+const seoTitle = "VoluChat vs Manual Sales Reps — Hiring Chat Staff vs AI Closer | Manual Rep Alternative";
 const seoDescription =
-  "Compare hiring full-time chat reps with VoluChat's autonomous AI sales stylist for WhatsApp and Instagram. 24/7 availability, zero churn, and 10x ROI standard.";
+  "Compare hiring full-time chat reps with VoluChat's autonomous AI sales stylist for WhatsApp, Instagram, and Facebook Messenger. 24/7 availability, zero churn, and 10x ROI standard.";
 const seoKeywords =
-  "hire WhatsApp sales reps vs chatbot, ecommerce chat rep cost India, Instagram DM sales agent, boutique sales closer WhatsApp, 24/7 chat sales";
+  "hire WhatsApp sales reps vs chatbot, ecommerce chat rep cost India, Instagram DM sales agent, boutique sales closer WhatsApp, 24/7 chat sales, manual sales reps alternative";
 const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "How much does VoluChat save vs hiring 4 chat reps?",
+    answer:
+      "4 reps at ₹20K/month each = ₹80,000/month in salaries alone — plus PF, ESI, training, and management overhead. VoluChat costs ₹4,999/month. That's a saving of over ₹75,000/month.",
+  },
+  {
+    question: "Can VoluChat replace all 4 daily shifts?",
+    answer:
+      "Yes. VoluChat works 24/7 with zero breaks, sick days, or shift handovers. It covers the 10 PM–2 AM peak when manual reps are offline and 80%+ of impulse fashion buyers go cold.",
+  },
+  {
+    question: "Will customers notice they're talking to AI?",
+    answer:
+      "VoluChat is designed to feel like a natural conversation — most customers don't notice it's AI. It answers sizing questions, recommends styles, and handles objections just like your best sales rep would.",
+  },
+  {
+    question: "What happens when a customer needs a human?",
+    answer:
+      "VoluChat never invents answers. When a query falls outside its rules — like bespoke bridal alterations or bulk orders — it immediately alerts you on WhatsApp with full chat history so you can step in with one tap.",
+  },
+  {
+    question: "Is VoluChat as knowledgeable as my best rep?",
+    answer:
+      "VoluChat has your entire catalog, size charts, fabric details, and pricing loaded. It never forgets a product or gives inconsistent sizing advice — unlike human reps who vary in knowledge and mood.",
+  },
+];
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -22,7 +49,7 @@ const structuredData = {
 const comparison = [
   {
     category: "Late Night Speed (10 PM – 2 AM)",
-    detail: "Coverage when Instagram Reel ads and browsing peak",
+    detail: "Coverage when Instagram Reel ads, Facebook posts, and browsing peak",
     manual: "15–45 minutes during working hours. Next-morning replies lose 80%+ of impulse fashion shoppers.",
     voluchat: "Sub-2 seconds. Instant response while the outfit impulse and buying mood are hottest.",
     voluAdvantage: "Sub-2s 24/7 speed",
@@ -74,7 +101,7 @@ const costBreakdown = [
 
 const verdict = {
   chooseManual: "Your chat volume is under 5 boutique inquiries per day, every piece is custom-tailored to unique body measurements, and you're okay with offline midnight gaps.",
-  chooseVoluchat: "You want 24/7 instant sizing answers, live catalog inventory checks, zero manual UPI screenshot chasing, and autonomous WhatsApp order closing.",
+  chooseVoluchat: "You want 24/7 instant sizing answers, live catalog inventory checks, zero manual UPI screenshot chasing, and autonomous WhatsApp, Instagram, and Facebook Messenger order closing.",
 };
 ---
 
@@ -231,6 +258,6 @@ const verdict = {
     </section>
   </main>
 
-  <FAQ />
+  <FAQ faqs={pageFaqs} />
   <Footer />
 </Layout>

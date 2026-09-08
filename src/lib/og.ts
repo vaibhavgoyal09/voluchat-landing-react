@@ -9,7 +9,7 @@ export interface OgImageOptions {
 
 export async function createOgImage({
   title,
-  description = "Turn Instagram DMs and WhatsApp chats into 24/7 automated revenue for fashion boutiques.",
+  description = "Turn Instagram DMs, Facebook Messenger, and WhatsApp chats into 24/7 automated revenue for fashion boutiques.",
   logo = true,
 }: OgImageOptions): Promise<Buffer> {
   const logoPath = path.resolve("./public/android-chrome-192x192.png");

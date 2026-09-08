@@ -5,12 +5,39 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Limechat — Boutique AI Closer vs Enterprise Bot Platform";
+const seoTitle = "VoluChat vs Limechat — Boutique AI Closer vs Enterprise Bot Platform | Limechat Alternative";
 const seoDescription =
   "Compare VoluChat with Limechat. See why fashion boutiques choose VoluChat's 100% done-for-you setup, specialized sizing intelligence, and in-chat UPI checkout.";
 const seoKeywords =
   "VoluChat vs Limechat, Limechat alternative fashion, boutique WhatsApp bot, AI sales closer Shopify, Limechat pricing alternative";
 const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is VoluChat better than Limechat for small boutiques?",
+    answer:
+      "Yes. Limechat is built for large enterprises with complex multi-brand teams. VoluChat is designed for fast-growing fashion boutiques — with done-for-you setup in 48 hours and no enterprise complexity.",
+  },
+  {
+    question: "Does VoluChat have Limechat's Shopify integration?",
+    answer:
+      "VoluChat works with any product catalog — Shopify, WooCommerce, or a simple CSV. Limechat is Shopify-focused, so VoluChat gives you more flexibility if you sell across multiple platforms.",
+  },
+  {
+    question: "Why is VoluChat cheaper than Limechat?",
+    answer:
+      "Limechat is enterprise-priced with long sales cycles and complex contracts. VoluChat is built for SMBs — flat-fee pricing at ₹4,999/mo with a 30-day free trial and no long-term commitment.",
+  },
+  {
+    question: "Can I use Limechat and VoluChat together?",
+    answer:
+      "Yes. You can keep Limechat for enterprise features while VoluChat handles all automated sales conversations. But for most boutiques, VoluChat alone covers 90%+ of customer interactions.",
+  },
+  {
+    question: "Which is better for fashion — VoluChat or Limechat?",
+    answer:
+      "VoluChat is purpose-built for fashion boutiques. It understands sizing charts, fabric types, styling combinations, and handles in-chat UPI checkout. Limechat is a general-purpose bot platform that works across industries.",
+  },
+];
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -24,7 +51,7 @@ const comparison = [
     category: "Target Audience & Complexity",
     detail: "Who the software is engineered for",
     limechat: "Large enterprise D2C corporations with complex multi-brand support teams and long sales cycles.",
-    voluchat: "Fast-growing fashion, clothing, and ethnic wear boutiques selling through Instagram Reels & WhatsApp DMs.",
+    voluchat: "Fast-growing fashion, clothing, and ethnic wear boutiques selling through Instagram Reels, Facebook posts, and WhatsApp DMs.",
     voluAdvantage: "Boutique Fashion Focus",
   },
   {
@@ -66,7 +93,7 @@ const comparison = [
 
 const verdict = {
   chooseLimechat: "You are an enterprise brand with 50+ customer support agents handling thousands of general inquiries across multiple product verticals.",
-  chooseVoluchat: "You are a fashion brand or boutique that wants a dedicated, autonomous AI stylist to close sales, qualify sizing, and collect UPI payments 24/7.",
+  chooseVoluchat: "You are a fashion brand or boutique that wants a dedicated, autonomous AI stylist to close sales, qualify sizing, and collect UPI payments 24/7 across WhatsApp, Instagram, and Facebook Messenger.",
 };
 ---
 
@@ -191,6 +218,6 @@ const verdict = {
     </section>
   </main>
 
-  <FAQ />
+  <FAQ faqs={pageFaqs} />
   <Footer />
 </Layout>

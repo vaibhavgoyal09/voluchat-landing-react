@@ -1,0 +1,224 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "VoluChat vs AiSensy — Autonomous AI Sales Agent vs Broadcast Chatbot";
+const seoDescription =
+  "Compare VoluChat's autonomous AI sales agent with AiSensy's broadcast-first chatbot. See why in-chat UPI checkout and 24/7 AI closes more fashion boutique orders.";
+const seoKeywords =
+  "VoluChat vs AiSensy, AiSensy alternative fashion, WhatsApp broadcast bot clothing, AiSensy vs VoluChat, boutique WhatsApp automation India";
+const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is AiSensy a good alternative to VoluChat for fashion boutiques?",
+    answer:
+      "It depends on what you need. AiSensy is strong for WhatsApp broadcast campaigns and festival sale blasts at affordable India-first pricing. VoluChat is purpose-built for fashion boutiques that want to convert Instagram Reel comments, Facebook post comments, and WhatsApp sizing inquiries into paid UPI orders with an AI that handles fabric doubts, size chart recommendations, and cross-sells 24/7. If broadcasts are your primary channel, AiSensy works. If autonomous in-chat sales are what you need, VoluChat is the better fit.",
+  },
+  {
+    question: "Does VoluChat handle Instagram comments like AiSensy?",
+    answer:
+      "VoluChat auto-replies to Instagram Reel and Facebook post comments in 2 seconds with exact pricing, photos, and sizing. AiSensy has no native Instagram comment-to-DM automation — it requires manual outreach or third-party integrations. For boutiques where viral Reels and Facebook posts drive discovery, VoluChat's comment-to-DM engine captures buyers before they scroll away.",
+  },
+  {
+    question: "Why is VoluChat more expensive than AiSensy?",
+    answer:
+      "AiSensy's entry plans start lower but add Meta per-message fees on top, and its AI is rule-based — not capable of natural sizing or fabric conversations. VoluChat at ₹4,999/mo is flat-fee with no per-message charges and includes a full AI Stylist trained on your catalog. For boutiques doing 200+ conversations/month, the total cost is often comparable — but VoluChat closes sales in-chat rather than pushing external links.",
+  },
+  {
+    question: "Can I use AiSensy and VoluChat together?",
+    answer:
+      "Yes. Many boutiques use AiSensy for broadcast marketing campaigns and festival sale blasts, while VoluChat handles all 1:1 sales conversations inside WhatsApp, Instagram, and Facebook Messenger DMs. AiSensy drives traffic; VoluChat closes the sale.",
+  },
+  {
+    question: "Which has better AI for fashion — AiSensy or VoluChat?",
+    answer:
+      "VoluChat's AI is purpose-built for fashion sales conversations. It understands sizing charts, fabric types, styling combinations, and fit qualification in natural language. AiSensy uses rule-based flowchart menus with limited keyword triggers — it can't handle open-ended sizing or styling questions. For a boutique where buyers ask 'I'm between M and L, which works for the linen co-ord?', only VoluChat answers naturally.",
+  },
+];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/compare/aisensy`,
+};
+
+const comparison = [
+  {
+    category: "Conversation & Sales Style",
+    detail: "How the tool handles buyer questions about sizing, pricing, and fabric",
+    aisensy: "Rule-based flowchart menus with limited keyword triggers. Cannot handle open-ended sizing or styling questions naturally.",
+    voluchat: "Conversational AI Stylist that answers sizing doubts, fabric queries, and styling questions in natural language — like a real sales rep.",
+    voluAdvantage: "Natural AI conversation",
+  },
+  {
+    category: "Payment & Checkout Loop",
+    detail: "Completing the order and collecting payment",
+    aisensy: "Sends external website links or payment pages where mobile buyers frequently drop off before completing checkout.",
+    voluchat: "Generates 1-click UPI links (GPay, PhonePe, Paytm) inside WhatsApp. Customer pays without leaving the chat.",
+    voluAdvantage: "Native in-chat UPI",
+  },
+  {
+    category: "Instagram Comment-to-DM Engine",
+    detail: "Converting viral Reel comments into paying customers",
+    aisensy: "No native Instagram comment-to-DM automation. Requires manual outreach or third-party integrations.",
+    voluchat: "Auto-replies to Instagram Reel and Facebook post comments in 2 seconds with exact pricing, photos, and sizing for that specific post.",
+    voluAdvantage: "Sub-2s Reel-to-DM",
+  },
+  {
+    category: "Broadcast & Campaign Limits",
+    detail: "Sending promotional messages to customer lists",
+    aisensy: "Strong broadcast engine for WhatsApp campaigns and festival blasts. India-first pricing with affordable entry.",
+    voluchat: "Focused on 1:1 autonomous sales conversations, not bulk broadcasts. Prioritizes conversion over reach.",
+    voluAdvantage: "24/7 autonomous sales",
+  },
+  {
+    category: "Meta Per-Message Charges",
+    detail: "Hidden costs on top of subscription pricing",
+    aisensy: "Subscription + Meta per-conversation fees apply on every inbound and outbound message. Costs spike with high volume.",
+    voluchat: "Flat monthly pricing with no per-message surprise charges. Predictable costs for budgeting.",
+    voluAdvantage: "Predictable flat pricing",
+  },
+  {
+    category: "Setup & Maintenance Effort",
+    detail: "How much work the boutique owner must do",
+    aisensy: "Self-serve DIY setup. You build and maintain your own flowchart trees and broadcast lists.",
+    voluchat: "100% Done-For-You by our founder. Meta Cloud APIs, catalog sync, and AI voice tuning included free.",
+    voluAdvantage: "Zero technical work",
+  },
+];
+
+const verdict = {
+  chooseAisensy: "You run a generic D2C brand and primarily need affordable WhatsApp broadcast campaigns, festival sale blasts, and simple auto-reply flows on a tight budget.",
+  chooseVoluchat: "You run a fashion boutique or clothing brand and want to convert Instagram Reel comments, Facebook post comments, and WhatsApp inquiries into paid UPI orders automatically — with AI that handles sizing, fabric doubts, and cross-sells 24/7.",
+};
+
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare/aisensy", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema(pageFaqs)]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="compare-hero-text mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            VoluChat vs AiSensy
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+          >
+            Autonomous AI Sales Agent vs
+            <span class="block text-emerald-400">Broadcast Chatbot.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            AiSensy automates WhatsApp broadcasts and marketing campaigns with flowchart menus. VoluChat is an autonomous sales closer built for fashion boutiques — qualifying sizing, answering fabric doubts, and closing UPI orders inside chat 24/7.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side by Side Deep Comparison Grid -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Detailed Breakdown</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares to AiSensy.
+          </h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-5">
+          {
+            comparison.map((item, idx) => (
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+                  <div>
+                    <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
+                  </div>
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                    ✓ {item.voluAdvantage}
+                  </span>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-400">AiSensy Approach</span>
+                    </div>
+                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.aisensy}</p>
+                  </div>
+
+                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                    </div>
+                    <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict Cards -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+          <div class="solid-card p-6 sm:p-8">
+            <span class="mini-label text-slate-400">Choose AiSensy if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Broadcast-First Marketing</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseAisensy}</p>
+          </div>
+
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
+            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Autonomous Fashion Sales</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center">
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-3.5">
+            <a href="/free-trial" class="btn-primary">Start My 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary inline-flex items-center gap-2"
+            >
+              Try it on WhatsApp &rarr;
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-slate-500">
+            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ faqs={pageFaqs} />
+  <Footer />
+</Layout>

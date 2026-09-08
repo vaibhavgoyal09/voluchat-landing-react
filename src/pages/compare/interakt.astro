@@ -5,12 +5,39 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Interakt — Autonomous AI Sales vs Shared Inbox";
+const seoTitle = "VoluChat vs Interakt — Autonomous AI Sales vs Shared Inbox | Interakt Alternative";
 const seoDescription =
   "Compare VoluChat's autonomous AI sales closer with Interakt's manual shared inbox. See why automated sizing qualification and in-chat UPI closes more orders.";
 const seoKeywords =
   "VoluChat vs Interakt, Interakt alternative fashion, WhatsApp shared inbox vs AI agent, boutique WhatsApp sales closer, clothing WhatsApp automation";
 const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is VoluChat better than Interakt for small boutiques?",
+    answer:
+      "Yes. Interakt is a shared inbox that requires your team to manually type every reply. VoluChat is an autonomous AI sales stylist that qualifies sizing, checks stock, and completes checkout without human reps.",
+  },
+  {
+    question: "Interakt offers a free plan — why pay for VoluChat?",
+    answer:
+      "Interakt's free plan has message limits and still requires your team to respond manually. VoluChat at ₹4,999/mo replaces the need for a human support rep entirely — it works 24/7 with zero breaks.",
+  },
+  {
+    question: "Does VoluChat integrate with Shopify like Interakt?",
+    answer:
+      "VoluChat works with any product catalog — Shopify, WooCommerce, or a simple CSV. Interakt is Shopify-focused, so VoluChat gives you more flexibility if you sell across multiple platforms.",
+  },
+  {
+    question: "Can I use Interakt and VoluChat together?",
+    answer:
+      "Yes. You can keep Interakt for your team's manual support channel while VoluChat handles all automated sales conversations. But for most boutiques, VoluChat alone covers 90%+ of customer interactions.",
+  },
+  {
+    question: "Which is better for Instagram DMs — Interakt or VoluChat?",
+    answer:
+      "VoluChat auto-replies to Instagram comments, Facebook post comments, and DMs within 2 seconds. Interakt is an inbox-only tool — it waits for you to log in and type replies. VoluChat never sleeps.",
+  },
+];
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -51,8 +78,8 @@ const comparison = [
   {
     category: "Instagram Reel Comment Integration",
     detail: "Converting viral comments into direct WhatsApp chats",
-    interakt: "Primarily WhatsApp-focused. No native 2-second Instagram Comment-to-WhatsApp sales loop.",
-    voluchat: "Detects comments on Instagram Reels in 2 seconds and smoothly transitions high-intent buyers into WhatsApp sales chats.",
+    interakt: "Primarily WhatsApp-focused. No native 2-second Instagram or Facebook comment-to-WhatsApp sales loop.",
+    voluchat: "Detects comments on Instagram Reels and Facebook posts in 2 seconds and smoothly transitions high-intent buyers into WhatsApp sales chats.",
     voluAdvantage: "Reel-to-WhatsApp loop",
   },
   {
@@ -66,7 +93,7 @@ const comparison = [
 
 const verdict = {
   chooseInterakt: "You have a large team of 10+ support agents handling post-purchase order tracking tickets, delivery returns, and customer service grievances.",
-  chooseVoluchat: "You want to automate pre-purchase sales, qualify fashion sizing doubts, recover abandoned checkouts, and collect UPI payments 24/7 without hiring more reps.",
+  chooseVoluchat: "You want to automate pre-purchase sales, qualify fashion sizing doubts, recover abandoned checkouts, and collect UPI payments 24/7 across WhatsApp, Instagram, and Facebook Messenger without hiring more reps.",
 };
 ---
 
@@ -191,6 +218,6 @@ const verdict = {
     </section>
   </main>
 
-  <FAQ />
+  <FAQ faqs={pageFaqs} />
   <Footer />
 </Layout>

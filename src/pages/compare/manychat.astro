@@ -5,12 +5,39 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Manychat — AI Stylist vs Social Keyword Bot";
+const seoTitle = "VoluChat vs Manychat — AI Stylist vs Social Keyword Bot | Manychat Alternative";
 const seoDescription =
   "Compare VoluChat's in-chat WhatsApp sales agent with Manychat's external link-pusher. See why in-chat checkout converts 3x better for fashion boutiques.";
 const seoKeywords =
   "VoluChat vs Manychat, Manychat alternative fashion, Instagram DM automation, WhatsApp checkout vs Manychat, fashion ecommerce chatbot";
 const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is VoluChat really different from Manychat's automation?",
+    answer:
+      "Yes. Manychat uses keyword triggers and pre-built flows — it's a rule-based bot. VoluChat uses natural AI conversation that understands context, sizing, fabric, and styling doubts without any trigger words.",
+  },
+  {
+    question: "Manychat is free — why pay ₹4,999?",
+    answer:
+      "Manychat's free plan is limited in messages and contacts. VoluChat at ₹4,999/mo handles end-to-end sales — from first comment to UPI payment — with no message caps or hidden fees.",
+  },
+  {
+    question: "Does VoluChat work on Instagram like Manychat?",
+    answer:
+      "Yes. VoluChat auto-replies to Instagram comments, Facebook post comments, and DMs in under 2 seconds. Manychat can trigger on keywords but pushes external links — VoluChat closes the sale in-chat.",
+  },
+  {
+    question: "Can Manychat close sales in-chat?",
+    answer:
+      "No. Manychat pushes external website links. 70%+ of mobile shoppers bounce before completing payment on an external browser. VoluChat generates native UPI payment links directly in WhatsApp — no browser drop-off.",
+  },
+  {
+    question: "Why choose VoluChat over Manychat for fashion?",
+    answer:
+      "VoluChat's AI is purpose-built for fashion. It understands sizing charts, fabric types, styling combinations, and fit qualification. Manychat is a generic tool that works across any industry.",
+  },
+];
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -43,9 +70,9 @@ const comparison = [
   },
   {
     category: "Comment-to-WhatsApp Flow",
-    detail: "Moving buyers from Instagram comments to WhatsApp closing",
+    detail: "Moving buyers from Instagram and Facebook comments to WhatsApp closing",
     manychat: "Traps buyers inside Instagram DMs with generic link cards.",
-    voluchat: "Auto-replies to comments in 2 seconds and smoothly transitions high-intent shoppers to WhatsApp for personalized styling.",
+    voluchat: "Auto-replies to Instagram Reel and Facebook post comments in 2 seconds and smoothly transitions high-intent shoppers to WhatsApp for personalized styling.",
     voluAdvantage: "High-conversion bridge",
   },
   {
@@ -66,7 +93,7 @@ const comparison = [
 
 const verdict = {
   chooseManychat: "You run a creator account or lead-gen business where simple PDF distribution or sending followers to an external blog/landing page is your only goal.",
-  chooseVoluchat: "You run an apparel brand or boutique where buyers have sizing hesitations, and you want to convert Instagram Reel comments into verified UPI orders directly in WhatsApp.",
+  chooseVoluchat: "You run an apparel brand or boutique where buyers have sizing hesitations, and you want to convert Instagram Reel comments and Facebook post comments into verified UPI orders directly in WhatsApp.",
 };
 ---
 
@@ -191,6 +218,6 @@ const verdict = {
     </section>
   </main>
 
-  <FAQ />
+  <FAQ faqs={pageFaqs} />
   <Footer />
 </Layout>

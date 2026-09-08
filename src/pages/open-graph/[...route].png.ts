@@ -9,7 +9,7 @@ const STATIC_PAGE_META: Record<string, { title: string; description: string }> =
   features: {
     title: "VoluChat Features — WhatsApp AI Sales Agent for Fashion Boutiques",
     description:
-      "Explore VoluChat features: Instagram comment-to-DM, AI sizing stylist, 1-click UPI checkout, and 24/7 WhatsApp sales automation for clothing boutiques.",
+      "Explore VoluChat features: Instagram comment-to-DM, Facebook Messenger automation, AI sizing stylist, 1-click UPI checkout, and 24/7 WhatsApp sales automation for clothing boutiques.",
   },
   pricing: {
     title: "VoluChat Pricing — 30-Day Free Trial & Done-For-You Setup",
@@ -54,12 +54,12 @@ const STATIC_PAGE_META: Record<string, { title: string; description: string }> =
   "compare/manual-reps": {
     title: "VoluChat vs Manual Sales Reps — Hiring Chat Staff vs AI Closer",
     description:
-      "Compare hiring full-time chat reps with VoluChat's autonomous AI sales stylist for WhatsApp and Instagram. 24/7 availability, zero churn.",
+      "Compare hiring full-time chat reps with VoluChat's autonomous AI sales stylist for WhatsApp, Instagram, and Facebook Messenger. 24/7 availability, zero churn.",
   },
   about: {
     title: "About VoluChat — Built for Fashion & Clothing Boutiques",
     description:
-      "Why we built VoluChat — autonomous WhatsApp and Instagram sales agent that closes orders, recommends sizes, and collects UPI payments 24/7.",
+      "Why we built VoluChat — autonomous WhatsApp, Instagram, and Facebook Messenger sales agent that closes orders, recommends sizes, and collects UPI payments 24/7.",
   },
   contact: {
     title: "Contact VoluChat — Direct Founder & Support Desk",
@@ -69,7 +69,7 @@ const STATIC_PAGE_META: Record<string, { title: string; description: string }> =
   glossary: {
     title: "E-Commerce & WhatsApp Sales Glossary | VoluChat",
     description:
-      "Key terms for WhatsApp & Instagram sales automation: comment-to-DM, sizing AI, cart recovery, and in-chat UPI checkout defined.",
+      "Key terms for WhatsApp, Instagram, and Facebook Messenger sales automation: comment-to-DM, sizing AI, cart recovery, and in-chat UPI checkout defined.",
   },
   security: {
     title: "Security & Brand Guardrails | VoluChat AI Sales",
@@ -79,12 +79,12 @@ const STATIC_PAGE_META: Record<string, { title: string; description: string }> =
   privacy: {
     title: "Privacy Policy | VoluChat",
     description:
-      "VoluChat privacy policy for autonomous WhatsApp and Instagram sales agents, Shopify catalog syncing, and conversation data.",
+      "VoluChat privacy policy for autonomous WhatsApp, Instagram, and Facebook Messenger sales agents, Shopify catalog syncing, and conversation data.",
   },
   terms: {
     title: "Terms & Conditions | VoluChat",
     description:
-      "VoluChat terms and conditions for autonomous WhatsApp and Instagram sales automation and conversational checkout workflows.",
+      "VoluChat terms and conditions for autonomous WhatsApp, Instagram, and Facebook Messenger sales automation and conversational checkout workflows.",
   },
   "what-is/comment-to-DM-automation": {
     title: "What is Comment-to-DM Automation? | VoluChat Guide",
@@ -122,9 +122,9 @@ const STATIC_PAGE_META: Record<string, { title: string; description: string }> =
       "Connect Cashfree Payments with VoluChat to generate instant UPI deep-links, verify payments in WhatsApp, and auto-sync paid orders to Shopify.",
   },
   "blog/index": {
-    title: "VoluChat Blog | WhatsApp & Instagram Sales Guides",
+    title: "VoluChat Blog | WhatsApp, Instagram & Facebook Messenger Sales Guides",
     description:
-      "Guides on WhatsApp and Instagram DM e-commerce automation: upsells, cross-sells, cart recovery, in-chat checkout, and D2C sales strategies.",
+      "Guides on WhatsApp, Instagram, and Facebook Messenger DM e-commerce automation: upsells, cross-sells, cart recovery, in-chat checkout, and D2C sales strategies.",
   },
 };
 

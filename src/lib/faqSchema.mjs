@@ -2,7 +2,7 @@ const faqs = [
   {
     question: "How is VoluChat different from chatbot tools like Wati or ManyChat?",
     answer:
-      "Rule-based tools rely on rigid button menus ('Press 1 for Price') and external links where shoppers drop off. VoluChat acts like a digital sales employee: it understands natural fashion conversations, advises on size & fit, checks real-time stock, generates 1-click UPI payment links, and answers parcel tracking queries directly in chat.",
+      "Rule-based tools rely on rigid button menus ('Press 1 for Price') and external links where shoppers drop off. VoluChat acts like a digital sales employee: it understands natural fashion conversations, advises on size & fit, checks real-time stock, generates 1-click UPI payment links, and answers parcel tracking queries directly in chat across WhatsApp, Instagram, and Facebook Messenger.",
   },
   {
     question: "What happens when the AI doesn't know an answer or a client needs custom styling?",
@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "How does setup work and how quickly can we launch?",
     answer:
-      "We provide white-glove onboarding in under 48 hours. Our team connects your Instagram, WhatsApp Business API, catalog, and courier preferences directly with you—zero coding or technical headache required.",
+      "We provide white-glove onboarding in under 48 hours. Our team connects your Instagram, Facebook Page, WhatsApp Business API, catalog, and courier preferences directly with you—zero coding or technical headache required.",
   },
 ];
 

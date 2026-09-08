@@ -5,12 +5,39 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Wati — AI Stylist vs WhatsApp Flowchart Bot";
+const seoTitle = "VoluChat vs Wati — AI Stylist vs WhatsApp Flowchart Bot | Wati Alternative";
 const seoDescription =
   "Compare VoluChat's AI sales stylist with Wati's flowchart bot. See why natural AI conversation closes more fashion and boutique orders.";
 const seoKeywords =
   "VoluChat vs Wati, Wati alternative fashion, WhatsApp sales bot clothing, boutique WhatsApp automation, size chart AI agent";
 const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is VoluChat really different from Wati's chatbot?",
+    answer:
+      "Yes. Wati uses rigid flowchart menus ('Press 1 for Price, Press 2 for Sizing') where shoppers get stuck in decision loops. VoluChat is an AI sales stylist that speaks naturally, answers sizing queries, and handles styling doubts without any buttons.",
+  },
+  {
+    question: "Can I keep using Wati alongside VoluChat?",
+    answer:
+      "Yes, but VoluChat handles most of Wati's core use cases. For fashion boutiques, VoluChat's natural AI conversation and in-chat UPI checkout close more orders than Wati's flowchart bots.",
+  },
+  {
+    question: "Wati is cheaper at ₹2,999 — why pay ₹4,999?",
+    answer:
+      "Wati's base plan is cheaper but charges extra for Meta per-message fees on top. VoluChat is a flat-fee model with no per-message charges — one price covers everything.",
+  },
+  {
+    question: "Does VoluChat handle broadcast campaigns like Wati?",
+    answer:
+      "VoluChat focuses on 1:1 sales conversations rather than bulk broadcasts. If you need mass promotional blasts, Wati is stronger there. But for converting individual shoppers into buyers, VoluChat outperforms.",
+  },
+  {
+    question: "Why should fashion boutiques choose VoluChat over Wati?",
+    answer:
+      "VoluChat closes sales in-chat with native UPI checkout. Wati pushes external links where 70%+ of mobile shoppers bounce. VoluChat also understands sizing, fabric, and styling — not just menu buttons.",
+  },
+];
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -45,7 +72,7 @@ const comparison = [
     category: "Instagram Reel Drop Support",
     detail: "Handling viral comments and converting them to DMs",
     wati: "Basic auto-replies without knowing which outfit or size was featured in the post.",
-    voluchat: "Comment-to-DM engine auto-replies in 2 seconds with exact pricing, photos, and sizing for that exact post.",
+    voluchat: "Comment-to-DM engine auto-replies in 2 seconds to Instagram Reel and Facebook post comments with exact pricing, photos, and sizing for that exact post.",
     voluAdvantage: "Sub-2s Reel-to-DM",
   },
   {
@@ -66,7 +93,7 @@ const comparison = [
 
 const verdict = {
   chooseWati: "You run a large generic D2C brand and primarily need bulk WhatsApp marketing broadcasts for festival sales or simple 'Press 1 for tracking' support tickets.",
-  chooseVoluchat: "You run a fashion brand or clothing boutique and want to convert Instagram Reel comments and WhatsApp inquiries into paid UPI orders automatically without losing buyers to robotic menus.",
+  chooseVoluchat: "You run a fashion brand or clothing boutique and want to convert Instagram Reel comments, Facebook post comments, and WhatsApp inquiries into paid UPI orders automatically without losing buyers to robotic menus.",
 };
 ---
 
@@ -191,6 +218,6 @@ const verdict = {
     </section>
   </main>
 
-  <FAQ />
+  <FAQ faqs={pageFaqs} />
   <Footer />
 </Layout>

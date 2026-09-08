@@ -1,0 +1,433 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
+
+const seoTitle = "Best WhatsApp Sales Bot Alternatives 2025 — VoluChat Comparison Hub";
+const seoDescription =
+  "Compare every WhatsApp sales bot alternative for fashion boutiques. VoluChat vs Wati, Interakt, Manychat, AiSensy, Respond.io, Chatfuel, Tidio, Zoko, BIK, Limechat, and manual reps.";
+const seoKeywords =
+  "WhatsApp sales bot alternatives, Wati alternative, Manychat alternative, AiSensy alternative, Respond.io alternative, Chatfuel alternative, fashion boutique chatbot, WhatsApp AI sales agent, best WhatsApp automation 2025";
+const siteUrl = "https://www.voluchat.com";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/alternatives`,
+};
+
+const competitors = [
+  {
+    name: "Wati",
+    type: "Flowchart Bot",
+    price: "₹3,000+/mo",
+    bestFor: "Bulk WhatsApp broadcasts & simple flowchart menus",
+    slug: "/compare/wati",
+    voluAdvantage: "Natural conversation instead of rigid button menus",
+  },
+  {
+    name: "Interakt",
+    type: "Shared Inbox",
+    price: "₹2,500+/mo",
+    bestFor: "Team-shared WhatsApp inbox & basic automation",
+    slug: "/compare/interakt",
+    voluAdvantage: "Autonomous sales closing, not just message routing",
+  },
+  {
+    name: "Manychat",
+    type: "Keyword Bot",
+    price: "$15+/mo",
+    bestFor: "Instagram comment auto-replies & link distribution",
+    slug: "/compare/manychat",
+    voluAdvantage: "In-chat UPI checkout instead of external website links",
+  },
+  {
+    name: "Manual Reps",
+    type: "Human Staff",
+    price: "₹20,000–40,000/mo",
+    bestFor: "Under 5 chats/day with fully bespoke garments",
+    slug: "/compare/manual-reps",
+    voluAdvantage: "24/7 coverage at a fraction of the salary cost",
+  },
+  {
+    name: "BIK",
+    type: "Marketing Platform",
+    price: "Custom pricing",
+    bestFor: "Outbound WhatsApp marketing blasts & re-engagement",
+    slug: "/compare/bik",
+    voluAdvantage: "In-chat sales closer, not an outbound broadcast tool",
+  },
+  {
+    name: "Limechat",
+    type: "Enterprise Bot",
+    price: "Enterprise pricing",
+    bestFor: "Large D2C brands with complex multi-brand support",
+    slug: "/compare/limechat",
+    voluAdvantage: "48-hour white-glove launch for boutiques, not multi-week enterprise onboarding",
+  },
+  {
+    name: "AiSensy",
+    type: "Broadcast & Bot",
+    price: "₹999+/mo",
+    bestFor: "WhatsApp bulk messaging & basic chatbot flows",
+    slug: "/compare/aisensy",
+    voluAdvantage: "AI sales stylist that qualifies sizing & closes UPI orders",
+  },
+  {
+    name: "Respond.io",
+    type: "Omnichannel Inbox",
+    price: "$79+/mo",
+    bestFor: "Multi-channel inbox consolidation (WhatsApp, FB, IG)",
+    slug: "/compare/respond-io",
+    voluAdvantage: "Autonomous AI agent, not a team inbox you staff manually",
+  },
+  {
+    name: "Chatfuel",
+    type: "No-Code Bot",
+    price: "$14.99+/mo",
+    bestFor: "Facebook Messenger & Instagram chatbot flows",
+    slug: "/compare/chatfuel",
+    voluAdvantage: "WhatsApp-native sales with in-chat UPI, not Messenger-only bots",
+  },
+  {
+    name: "Tidio",
+    type: "Live Chat",
+    price: "Free–$29/mo",
+    bestFor: "Website live chat widget & basic visitor support",
+    slug: "/compare/tidio",
+    voluAdvantage: "Mobile-first WhatsApp sales for social buyers, not desktop live chat",
+  },
+  {
+    name: "Zoko",
+    type: "Shopify Commerce",
+    price: "₹2,999+/mo",
+    bestFor: "Shopify-integrated WhatsApp catalog & order management",
+    slug: "/compare/zoko",
+    voluAdvantage: "Done-for-you AI sales agent with 10x ROI standard",
+  },
+];
+
+const categories = [
+  {
+    label: "Broadcasts & Marketing",
+    icon: "📡",
+    description: "You need bulk WhatsApp promotional messages, festival sale blasts, and coupon distribution.",
+    competitors: ["AiSensy", "Wati", "BIK"],
+    pickIf: "Your primary goal is reaching 50,000+ contacts with promotional campaigns.",
+    caveat: "Marketing blasts drive traffic, but convert under 2% without a conversational closer.",
+  },
+  {
+    label: "Omnichannel Inbox",
+    icon: "📨",
+    description: "You need a shared team inbox to manage WhatsApp, Instagram, Facebook, and email in one dashboard.",
+    competitors: ["Respond.io", "Interakt"],
+    pickIf: "You have a support team managing multiple channels and need ticketing workflows.",
+    caveat: "Shared inboxes route messages to humans — they don't autonomously close sales.",
+  },
+  {
+    label: "No-Code Chatbot Builder",
+    icon: "🔧",
+    description: "You want a drag-and-drop flowchart builder to wire simple keyword triggers and auto-replies.",
+    competitors: ["Chatfuel", "Manychat"],
+    pickIf: "You're comfortable building and maintaining bot flows yourself and only need basic automation.",
+    caveat: "Flowchart bots fail when shoppers ask natural questions like 'Will this fit a 38 bust?'",
+  },
+  {
+    label: "Website Live Chat",
+    icon: "💬",
+    description: "You need a live chat widget on your e-commerce website for real-time visitor support.",
+    competitors: ["Tidio"],
+    pickIf: "Most of your sales come from your website, not Instagram or WhatsApp DMs.",
+    caveat: "Fashion shoppers discover on Instagram Reels and buy on WhatsApp — website chat misses them entirely.",
+  },
+  {
+    label: "Shopify Commerce",
+    icon: "🛒",
+    description: "You need WhatsApp catalog sync, order management, and Shopify integration for commerce operations.",
+    competitors: ["Zoko", "BIK"],
+    pickIf: "You already have a Shopify store and need WhatsApp-based order tracking and catalog browsing.",
+    caveat: "Catalog browsing is passive — it doesn't actively qualify sizing, upsell, or close with UPI links.",
+  },
+  {
+    label: "Done-For-You AI Sales",
+    icon: "🤖",
+    description: "You want a 24/7 autonomous AI agent that qualifies sizing, closes UPI orders, and needs zero setup from you.",
+    competitors: ["VoluChat"],
+    pickIf: "You sell fashion on Instagram/WhatsApp and want to convert every DM inquiry into a paid order.",
+    caveat: "VoluChat is purpose-built for fashion boutiques — the only option in this category.",
+  },
+];
+
+const whyVoluchat = [
+  {
+    title: "Natural AI Conversation",
+    description: "No button menus or flowchart trees. VoluChat speaks naturally — answering sizing, fabric, and styling questions like a real boutique stylist.",
+  },
+  {
+    title: "In-Chat UPI Checkout",
+    description: "1-click payment links (GPay, PhonePe, Paytm) generated inside WhatsApp. Buyers never leave chat, eliminating the 70%+ drop-off from website redirects.",
+  },
+  {
+    title: "24/7 Autonomous Sales",
+    description: "Captures midnight impulse buyers (10 PM – 2 AM) when Reels drive peak traffic. No human staff needed on night shifts.",
+  },
+  {
+    title: "Done-For-You Setup",
+    description: "Go live in under 48 hours. Our founder personally sets up your Meta Cloud API, catalog sync, and AI voice calibration — zero technical work required.",
+  },
+];
+
+const faqItems = [
+  {
+    question: "What are the best alternatives to Wati for WhatsApp sales?",
+    answer: "Wati is a solid broadcast and flowchart bot platform, but fashion boutiques often outgrow its rigid button menus. VoluChat is a purpose-built alternative that uses natural AI conversation to qualify sizing, answer fabric questions, and close UPI orders inside WhatsApp — without sending buyers to external websites.",
+  },
+  {
+    question: "Is VoluChat better than Manychat for Instagram DM sales?",
+    answer: "Manychat excels at keyword-triggered auto-replies and link distribution on Instagram and Facebook. However, it pushes buyers to external websites where 70%+ abandon their cart. VoluChat keeps the entire conversation and payment inside WhatsApp, closing sales with 1-click UPI links across WhatsApp, Instagram, and Facebook Messenger.",
+  },
+  {
+    question: "How does VoluChat compare to AiSensy and Wati for WhatsApp marketing?",
+    answer: "AiSensy and Wati are built for bulk WhatsApp broadcasts and marketing campaigns. VoluChat is built for autonomous sales closing — it qualifies sizing, checks live inventory, generates UPI payment links, and recovers abandoned carts inside chat. Use AiSensy/Wati for marketing blasts, VoluChat for closing the actual sale.",
+  },
+  {
+    question: "Why not just use Respond.io or Interakt for my boutique?",
+    answer: "Respond.io and Interakt are omnichannel shared inboxes designed for support teams. They route messages to human agents — they don't autonomously close sales. VoluChat is an AI sales agent that works 24/7 without staffing, qualifying and closing orders automatically.",
+  },
+  {
+    question: "Can I use VoluChat alongside other tools like Wati or AiSensy?",
+    answer: "Yes. Many boutiques use AiSensy or Wati for broadcast marketing campaigns and VoluChat as the autonomous sales closer inside DMs. Marketing tools drive traffic; VoluChat closes the sale.",
+  },
+  {
+    question: "How much does VoluChat cost compared to other alternatives?",
+    answer: "VoluChat starts at ₹4,999/month with a 30-day free trial and 100% free setup. Compare this to manual sales reps (₹20,000–40,000/month), enterprise tools like Limechat (custom pricing), or the revenue lost when buyers bounce from website links pushed by cheaper chatbot tools.",
+  },
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/alternatives", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema(faqItems)]}
+>
+  <Navbar />
+
+  <main class="overflow-hidden pt-20">
+    <!-- Hero -->
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            11 Competitors Compared
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+          >
+            Find the right WhatsApp
+            <span class="block text-emerald-400">sales bot for your boutique.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Wati, Manychat, AiSensy, Respond.io — every tool has a strength. Here is how 11 alternatives compare for fashion boutiques selling through Instagram Reels and WhatsApp DMs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Comparison Table -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Quick Reference</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            All 11 alternatives at a glance.
+          </h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto overflow-x-auto">
+          <div class="min-w-[800px]">
+            <!-- Table Header -->
+            <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-3 border-b border-white/[0.12]">
+              <span class="mini-label text-slate-500">Competitor</span>
+              <span class="mini-label text-slate-500">Type</span>
+              <span class="mini-label text-slate-500">Price</span>
+              <span class="mini-label text-slate-500">Best For</span>
+              <span class="mini-label text-emerald-400">VoluChat Advantage</span>
+            </div>
+
+            <!-- VoluChat Row -->
+            <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-4 border-b border-emerald-500/20 bg-emerald-950/10">
+              <span class="font-heading font-bold text-emerald-400 text-sm">VoluChat</span>
+              <span class="text-sm text-emerald-300 font-medium">AI Sales Agent</span>
+              <span class="text-sm text-white font-mono">₹4,999/mo</span>
+              <span class="text-sm text-emerald-100">Fashion boutiques wanting 24/7 in-chat sales</span>
+              <span class="text-sm text-emerald-300 font-medium">— The benchmark</span>
+            </div>
+
+            <!-- Competitor Rows -->
+            {
+              competitors.map((c) => (
+                <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-4 border-b border-white/[0.06] hover:bg-white/[0.02] transition-colors">
+                  <a href={c.slug} class="font-heading font-semibold text-white text-sm hover:text-emerald-400 transition-colors underline underline-offset-2 decoration-white/20 hover:decoration-emerald-400/60">
+                    {c.name} &rarr;
+                  </a>
+                  <span class="text-sm text-slate-300">{c.type}</span>
+                  <span class="text-sm text-slate-400 font-mono">{c.price}</span>
+                  <span class="text-sm text-slate-300">{c.bestFor}</span>
+                  <span class="text-sm text-emerald-300/80">{c.voluAdvantage}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categorized Recommendations -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center mb-14">
+          <p class="section-eyebrow">Categorized Guide</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            What do you actually need?
+          </h2>
+          <p class="section-copy mx-auto mt-4 max-w-2xl">
+            Pick the category that matches your primary goal. Then read the caveat — every tool has a blind spot.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {
+            categories.map((cat) => (
+              <div class={`solid-card p-6 flex flex-col ${cat.competitors[0] === "VoluChat" ? "!border-emerald-500/30 solid-card-elevated" : ""}`}>
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="grid h-10 w-10 place-items-center rounded-xl bg-[#101012] border border-white/[0.14] text-xl">
+                    {cat.icon}
+                  </span>
+                  <h3 class="font-heading font-bold text-white text-base">{cat.label}</h3>
+                </div>
+
+                <p class="text-sm text-slate-300 leading-relaxed mb-4">{cat.description}</p>
+
+                <div class="mb-4">
+                  <p class="mini-label text-slate-400 mb-2">Top picks:</p>
+                  <div class="flex flex-wrap gap-2">
+                    {cat.competitors.map((name) => (
+                      <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-mono font-medium ${
+                        name === "VoluChat"
+                          ? "border border-emerald-500/25 bg-emerald-500/10 text-emerald-300"
+                          : "border border-white/[0.12] bg-white/[0.04] text-slate-300"
+                      }`}>
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="mt-auto rounded-xl border border-white/[0.08] bg-[#0a0a0c] p-4">
+                  <p class="text-xs text-emerald-400 font-medium mb-1">Choose this if:</p>
+                  <p class="text-xs text-slate-300 leading-relaxed">{cat.pickIf}</p>
+                </div>
+
+                <div class="mt-3 rounded-xl border border-rose-500/15 bg-[#12080a] p-4">
+                  <p class="text-xs text-rose-400 font-medium mb-1">Heads up:</p>
+                  <p class="text-xs text-slate-400 leading-relaxed">{cat.caveat}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Why VoluChat -->
+    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center mb-14">
+          <p class="section-eyebrow">The Differentiators</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Why fashion boutiques choose VoluChat.
+          </h2>
+          <p class="section-copy mx-auto mt-4 max-w-2xl">
+            Every competitor above does something well. VoluChat is the only one purpose-built to close the complete comment-to-checkout loop for fashion.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+          {
+            whyVoluchat.map((item) => (
+              <div class="solid-card-elevated p-6 sm:p-7 border border-emerald-500/20">
+                <h3 class="text-lg font-heading font-bold text-emerald-400 mb-2">{item.title}</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">{item.description}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-14 text-center">
+          <div class="inline-block max-w-3xl rounded-2xl border border-emerald-500/30 bg-gradient-to-b from-[#0a1410] to-[#0a0a0c] p-8 sm:p-10 shadow-2xl">
+            <h3 class="text-2xl font-heading font-bold text-white">
+              The 90-second sale, automated.
+            </h3>
+            <p class="section-copy mx-auto mt-3 max-w-xl text-sm sm:text-base">
+              Comment &rarr; DM &rarr; Sizing qualification &rarr; UPI checkout. 30 days free, done-for-you setup included.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
+              <a href="/free-trial" class="btn-primary">Start My 30-Day Free Trial &rarr;</a>
+              <a
+                href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary inline-flex items-center gap-2"
+              >
+                Try it on WhatsApp &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Common Questions</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            Alternatives FAQ.
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          {
+            faqItems.map((faq) => (
+              <details class="solid-card rounded-2xl border border-white/[0.10] overflow-hidden group">
+                <summary class="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-heading font-semibold text-white text-sm sm:text-base">
+                  {faq.question}
+                  <span class="shrink-0 text-slate-500 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-white/[0.06]">
+                  <p class="text-sm text-slate-300 leading-relaxed mt-4">{faq.answer}</p>
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ />
+  <Footer />
+</Layout>

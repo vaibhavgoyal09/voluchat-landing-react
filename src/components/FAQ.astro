@@ -1,5 +1,13 @@
 ---
-import { faqs } from "../lib/faqSchema.mjs";
+import { faqs as defaultFaqs } from "../lib/faqSchema.mjs";
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const { faqs: customFaqs } = Astro.props as { faqs?: FaqItem[] };
+const faqs = customFaqs && customFaqs.length > 0 ? customFaqs : defaultFaqs;
 ---
 
 <section

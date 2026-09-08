@@ -1,0 +1,224 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "VoluChat vs Respond.io — Affordable AI Sales Agent vs Expensive Omnichannel Inbox";
+const seoDescription =
+  "Compare VoluChat's ₹4,999/mo AI sales agent with Respond.io's $79+/mo omnichannel inbox. See why VoluChat is 50-70% cheaper for Indian fashion boutiques.";
+const seoKeywords =
+  "VoluChat vs Respond.io, Respond.io alternative India, Respond.io vs VoluChat, omnichannel WhatsApp fashion boutique, affordable WhatsApp automation India";
+const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is Respond.io worth the extra cost over VoluChat for fashion boutiques?",
+    answer:
+      "For most Indian fashion boutiques, no. Respond.io is a powerful omnichannel inbox starting at $79/mo (~₹6,600) with advanced plans hitting $279/mo (~₹23,300). It's built for enterprises needing multi-channel support across email, Messenger, Telegram, and WhatsApp with complex workflow automations. VoluChat at ₹4,999/mo is 50-70% cheaper and purpose-built for the fashion sales use case — handling sizing, fabric doubts, UPI checkout, and Instagram comment-to-DM. Unless you genuinely need omnichannel support across 5+ platforms, Respond.io is overkill and overpriced for a boutique.",
+  },
+  {
+    question: "What's the main difference between Respond.io's AI and VoluChat's AI?",
+    answer:
+      "Respond.io offers workflow automation builders with optional AI agents — powerful but complex, requiring technical setup and ongoing configuration by your team. VoluChat's AI Stylist is trained specifically on your size charts, fabric guides, and clothing-specific sales conversations. It handles sizing doubts, cross-sells, and UPI checkout in natural language without you building or maintaining any workflows. Respond.io gives you tools to build; VoluChat gives you a sales employee that already knows your catalog.",
+  },
+  {
+    question: "Does VoluChat support omnichannel like Respond.io?",
+    answer:
+      "VoluChat focuses on WhatsApp, Instagram, and Facebook Messenger DMs — the channels where fashion buyers actually send sizing questions and DM inquiries. Respond.io covers WhatsApp, email, Messenger, Instagram, Telegram, and more. If you're an enterprise brand needing unified inbox management across 5+ channels, Respond.io's breadth wins. If you're a fashion boutique that sells primarily through WhatsApp, Instagram, and Facebook Messenger, VoluChat's deep specialization on those channels delivers better conversion per rupee spent.",
+  },
+  {
+    question: "Can I migrate from Respond.io to VoluChat?",
+    answer:
+      "Yes. VoluChat handles the full migration: connecting your Meta Cloud APIs, syncing your product catalog or Shopify store, calibrating the AI voice to your brand, and going live in 48 hours. You don't need to export complex workflow configurations — VoluChat's AI learns your catalog and sales patterns from scratch, so there's nothing to migrate manually. Start your 30-day free trial and we handle the switch.",
+  },
+  {
+    question: "Does Respond.io's USD pricing cause issues for Indian businesses?",
+    answer:
+      "Yes. Respond.io bills in USD ($79-$279/mo), which means your costs fluctuate with currency exchange rates. A rupee depreciation can silently increase your monthly bill. VoluChat bills in flat INR from ₹4,999/mo — no currency risk, no surprise charges, and your costs stay predictable for budgeting. For Indian fashion boutiques watching margins, INR billing removes a real headache.",
+  },
+];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/compare/respond-io`,
+};
+
+const comparison = [
+  {
+    category: "Pricing & Affordability",
+    detail: "Total cost for an Indian fashion boutique",
+    respondio: "USD pricing starting at $79/mo (~₹6,600). Advanced plans hit $279/mo (~₹23,300). Contact-based billing (MACs) can spike unexpectedly.",
+    voluchat: "Flat INR pricing from ₹4,999/mo. No per-contact or per-conversation surprise charges. 50-70% cheaper than Respond.io.",
+    voluAdvantage: "50-70% cheaper",
+  },
+  {
+    category: "Conversation Style",
+    detail: "How the tool handles buyer questions about sizing and fabric",
+    respondio: "Workflow automation builder with AI agents. Powerful but complex — requires technical setup and ongoing configuration.",
+    voluchat: "Conversational AI Stylist trained on your exact size charts and fabric guides. Handles sizing doubts naturally without flowcharts.",
+    voluAdvantage: "Natural AI conversation",
+  },
+  {
+    category: "Payment & Checkout Loop",
+    detail: "Completing the order and collecting payment",
+    respondio: "No native in-chat checkout. Requires external payment gateways or website redirects that lose mobile buyers.",
+    voluchat: "Native In-DM UPI checkout links (GPay, PhonePe, Paytm). Customer completes payment without leaving WhatsApp.",
+    voluAdvantage: "Native in-chat UPI",
+  },
+  {
+    category: "Omnichannel Coverage",
+    detail: "Supporting customers across WhatsApp, email, Messenger, etc.",
+    respondio: "Covers WhatsApp, email, Messenger, Instagram, Telegram, and more. Strong for brands needing multi-channel support.",
+    voluchat: "Focused on WhatsApp, Instagram, and Facebook Messenger DMs where fashion buyers actually convert. Deep specialization beats shallow coverage.",
+    voluAdvantage: "Fashion-specialized",
+  },
+  {
+    category: "Setup & Onboarding",
+    detail: "Time and effort to get started",
+    respondio: "Complex self-serve onboarding. Requires workflow configuration, channel connections, and ongoing maintenance by your team.",
+    voluchat: "100% Done-For-You in 48 hours. Founder handles Meta Cloud APIs, catalog sync, Shopify integration, and AI voice calibration.",
+    voluAdvantage: "48h white-glove setup",
+  },
+  {
+    category: "Instagram Comment-to-DM",
+    detail: "Converting viral Reel comments into paying customers",
+    respondio: "Basic Instagram integration for inbox management. No automated comment-to-DM engine for converting Reel engagement.",
+    voluchat: "Auto-replies to Instagram comments in 2 seconds with exact pricing, photos, and sizing for that specific post.",
+    voluAdvantage: "Sub-2s Reel-to-DM",
+  },
+];
+
+const verdict = {
+  chooseRespondio: "You run an enterprise or multi-department brand needing omnichannel support across email, Messenger, Telegram, and WhatsApp with complex workflow automations and have the budget for USD pricing.",
+  chooseVoluchat: "You run a fashion boutique or clothing brand in India and want an affordable, done-for-you AI sales agent that converts Instagram comments, Facebook post comments, and WhatsApp inquiries into UPI orders — without enterprise complexity or pricing.",
+};
+
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare/respond-io", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema(pageFaqs)]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="compare-hero-text mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            VoluChat vs Respond.io
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+          >
+            ₹4,999 AI Sales Agent vs
+            <span class="block text-emerald-400">$79+ Omnichannel Inbox.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Respond.io is a powerful omnichannel inbox with complex workflow builders — but costs 50-70% more and requires self-serve setup. VoluChat is an affordable, done-for-you AI sales agent built specifically for Indian fashion boutiques.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side by Side Deep Comparison Grid -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Detailed Breakdown</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares to Respond.io.
+          </h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-5">
+          {
+            comparison.map((item, idx) => (
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+                  <div>
+                    <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
+                  </div>
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                    ✓ {item.voluAdvantage}
+                  </span>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-400">Respond.io Approach</span>
+                    </div>
+                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.respondio}</p>
+                  </div>
+
+                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                    </div>
+                    <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict Cards -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+          <div class="solid-card p-6 sm:p-8">
+            <span class="mini-label text-slate-400">Choose Respond.io if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Enterprise Omnichannel Support</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseRespondio}</p>
+          </div>
+
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
+            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Affordable Fashion Sales AI</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center">
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-3.5">
+            <a href="/free-trial" class="btn-primary">Start My 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary inline-flex items-center gap-2"
+            >
+              Try it on WhatsApp &rarr;
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-slate-500">
+            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ faqs={pageFaqs} />
+  <Footer />
+</Layout>

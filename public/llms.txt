@@ -1,8 +1,8 @@
 # VoluChat
 
-> Autonomous AI sales agent on WhatsApp for fashion & clothing boutiques. Closes sales, qualifies sizing, recovers abandoned carts, drives upsells, and completes in-chat UPI checkout — 24/7, no human intervention needed.
+> Autonomous AI sales agent on WhatsApp, Instagram, and Facebook Messenger for fashion & clothing boutiques. Closes sales, qualifies sizing, recovers abandoned carts, drives upsells, and completes in-chat UPI checkout — 24/7, no human intervention needed.
 
-VoluChat is an AI sales stylist that operates inside Instagram DMs and WhatsApp conversations. It captures leads from Instagram comments on fashion Reels, qualifies buyer sizing & fit, answers fabric questions using live catalog inventory, and completes orders with native in-chat UPI payment.
+VoluChat is an AI sales stylist that operates inside Instagram DMs, Facebook Messenger, and WhatsApp conversations. It captures leads from Instagram comments on fashion Reels and Facebook posts, qualifies buyer sizing & fit, answers fabric questions using live catalog inventory, and completes orders with native in-chat UPI payment.
 
 ## Product
 
@@ -20,12 +20,20 @@ VoluChat is an AI sales stylist that operates inside Instagram DMs and WhatsApp 
 - [VoluChat vs Manychat](https://www.voluchat.com/compare/manychat): In-chat UPI checkout vs external link push
 - [VoluChat vs Interakt](https://www.voluchat.com/compare/interakt): Autonomous sales agent vs shared support inbox
 - [VoluChat vs Manual Reps](https://www.voluchat.com/compare/manual-reps): 24/7 AI vs human chat rep cost and availability
+- [VoluChat vs Bik.ai](https://www.voluchat.com/compare/bik): Autonomous sales closer vs outbound WhatsApp marketing
+- [VoluChat vs Limechat](https://www.voluchat.com/compare/limechat): Boutique AI closer vs enterprise bot platform
+- [VoluChat vs AiSensy](https://www.voluchat.com/compare/aisensy): AI sales agent vs WhatsApp broadcast chatbot
+- [VoluChat vs Respond.io](https://www.voluchat.com/compare/respond-io): Specialized AI vs omnichannel inbox
+- [VoluChat vs Chatfuel](https://www.voluchat.com/compare/chatfuel): AI sales agent vs no-code chatbot builder
+- [VoluChat vs Tidio](https://www.voluchat.com/compare/tidio): WhatsApp+Instagram AI vs website-only live chat
+- [VoluChat vs Zoko](https://www.voluchat.com/compare/zoko): Platform-agnostic AI vs Shopify-only WhatsApp commerce
+- [All Alternatives](https://www.voluchat.com/alternatives): Complete comparison hub of 11 WhatsApp/Instagram sales tools
 
 ## Learn
 
-- [Comment-to-DM Automation](https://www.voluchat.com/what-is/comment-to-DM-automation): How Instagram comment-to-DM capture works
+- [Comment-to-DM Automation](https://www.voluchat.com/what-is/comment-to-DM-automation): How Instagram and Facebook comment-to-DM capture works
 - [WhatsApp Sales Bot](https://www.voluchat.com/what-is/whatsapp-sales-bot): Types of WhatsApp sales bots compared
-- [Glossary](https://www.voluchat.com/glossary): 20 terms across e-commerce automation, WhatsApp, and Instagram DMs
+- [Glossary](https://www.voluchat.com/glossary): 20 terms across e-commerce automation, WhatsApp, Instagram, and Facebook Messenger DMs
 - [Security & Guardrails](https://www.voluchat.com/security): Meta Cloud API compliance and brand safety
 - [Blog](https://www.voluchat.com/blog): Guides, comparisons, and e-commerce automation insights
 

@@ -1,0 +1,224 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "VoluChat vs Zoko — AI Sales Agent vs Shopify-Only WhatsApp Commerce";
+const seoDescription =
+  "Compare VoluChat's platform-agnostic AI sales agent with Zoko's Shopify-only WhatsApp commerce tool. See why VoluChat includes Instagram automation and works with any catalog.";
+const seoKeywords =
+  "VoluChat vs Zoko, Zoko alternative fashion, Zoko vs VoluChat, WhatsApp commerce Shopify India, fashion boutique automation";
+const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is Zoko a good alternative to VoluChat for Shopify fashion stores?",
+    answer:
+      "Zoko is tightly integrated with Shopify and works well for basic WhatsApp commerce — catalog browsing, cart recovery reminders, and order management. But it's Shopify-only (useless if you sell on WooCommerce, custom sites, or offline catalogs), charges in USD (~$49.99-59.99/mo) creating currency risk for Indian businesses, and has limited AI capabilities for complex sizing or fabric conversations. VoluChat works with any platform, bills in flat INR, and includes a full AI Stylist that handles sizing doubts, cross-sells, and UPI checkout. If you're Shopify-only and just need catalog browsing, Zoko works. If you need AI-driven fashion sales on any platform, VoluChat is the better choice.",
+  },
+  {
+    question: "Does Zoko work with non-Shopify platforms?",
+    answer:
+      "No. Zoko is a Shopify-only WhatsApp commerce tool. If you sell on WooCommerce, custom-built sites, offline catalogs, or any platform other than Shopify, Zoko can't connect to your store. VoluChat reads from Shopify when connected but works with any catalog or e-commerce platform — the core AI sales automation doesn't depend on Shopify. More integrations are coming soon.",
+  },
+  {
+    question: "Why does Zoko's USD billing matter for Indian businesses?",
+    answer:
+      "Zoko charges in USD (~$49.99-59.99/mo), which means your monthly cost fluctuates with the rupee-dollar exchange rate. When the rupee depreciates, your bill quietly increases without any change in usage. VoluChat bills in flat INR from ₹4,999/mo — no currency risk, no surprise charges, and your costs stay predictable for monthly budgeting. For Indian fashion boutiques watching margins, this removes a real financial headache.",
+  },
+  {
+    question: "How does Zoko's cart recovery compare to VoluChat's?",
+    answer:
+      "Zoko offers basic cart recovery with generic WhatsApp reminders and product links. VoluChat's cart recovery is autonomous and personalized: it reminds the buyer with fit advice specific to their sizing conversation, recommends cross-sell pieces based on what they viewed, and generates 1-click UPI checkout links inside WhatsApp. Zoko sends reminders; VoluChat closes the sale.",
+  },
+  {
+    question: "Does VoluChat sync with Shopify catalogs like Zoko?",
+    answer:
+      "Yes, VoluChat syncs with Shopify catalogs to read live variant stock in real-time. The difference: Zoko is tightly coupled to Shopify for everything (orders, inventory, cart recovery), while VoluChat uses Shopify as one data source alongside any catalog format. VoluChat never promises an out-of-stock size because it checks live inventory before confirming availability — the same protection Zoko offers, but without being locked to Shopify-only.",
+  },
+];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/compare/zoko`,
+};
+
+const comparison = [
+  {
+    category: "Platform Compatibility",
+    detail: "Which e-commerce platforms the tool supports",
+    zoko: "Shopify-only integration. Tightly coupled to Shopify's ecosystem — useless if you sell on WooCommerce, custom sites, or offline catalogs.",
+    voluchat: "Works with any catalog or e-commerce platform. Reads from Shopify when connected, but core automation works without it. More integrations coming.",
+    voluAdvantage: "Platform-agnostic",
+  },
+  {
+    category: "Instagram Automation",
+    detail: "Converting Reel comments and DM inquiries into orders",
+    zoko: "WhatsApp-only tool. No Instagram comment-to-DM automation — misses the channel where fashion shoppers discover and inquire about products.",
+    voluchat: "Comment-to-DM engine auto-replies to Instagram Reels and Facebook posts in 2 seconds with exact pricing, photos, and sizing for that specific post.",
+    voluAdvantage: "Instagram, Facebook &amp; WhatsApp",
+  },
+  {
+    category: "AI Conversation Intelligence",
+    detail: "Handling sizing doubts, fabric queries, and styling questions",
+    zoko: "Limited AI capabilities. Primarily catalog browsing and basic product queries — cannot handle complex sizing or fabric questions conversationally.",
+    voluchat: "Conversational AI Stylist trained on your size charts and fabric guides. Handles complex sizing doubts, cross-sells, and styling questions naturally.",
+    voluAdvantage: "Natural AI Stylist",
+  },
+  {
+    category: "Pricing & Currency",
+    detail: "Billing transparency and cost predictability",
+    zoko: "USD billing (~$49.99-59.99/mo) creates currency fluctuation risk for Indian businesses. Costs can vary month to month.",
+    voluchat: "Flat INR pricing from ₹4,999/mo. No currency risk, no per-message charges. Predictable costs for Indian fashion boutiques.",
+    voluAdvantage: "INR flat pricing",
+  },
+  {
+    category: "Cart Recovery & Upsells",
+    detail: "Recovering abandoned carts and increasing order value",
+    zoko: "Basic cart recovery with WhatsApp reminders. Limited upsell or cross-sell intelligence — sends generic product links.",
+    voluchat: "Autonomous cart recovery with personalized fit advice, cross-sell recommendations, and 1-click UPI checkout links inside WhatsApp.",
+    voluAdvantage: "Smart cart recovery",
+  },
+  {
+    category: "Setup & Onboarding",
+    detail: "Time and effort to get started",
+    zoko: "Self-serve setup requiring Shopify app installation and configuration. You connect your catalog and configure flows yourself.",
+    voluchat: "100% Done-For-You in 48 hours. Founder handles Meta APIs, catalog sync, Shopify integration, and AI voice tuning — no self-serve required.",
+    voluAdvantage: "48h white-glove setup",
+  },
+];
+
+const verdict = {
+  chooseZoko: "You run a Shopify-only fashion store and want a simple WhatsApp commerce tool with basic catalog browsing, cart recovery, and order management tightly integrated with Shopify.",
+  chooseVoluchat: "You run a fashion boutique or clothing brand — on any platform — and want to convert Instagram Reel comments, Facebook post comments, and WhatsApp inquiries into paid UPI orders automatically with AI that handles sizing, cross-sells, and works without Shopify lock-in.",
+};
+
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare/zoko", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema(pageFaqs)]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="compare-hero-text mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            VoluChat vs Zoko
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+          >
+            Platform-Agnostic AI Agent vs
+            <span class="block text-emerald-400">Shopify-Only Commerce.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Zoko is a WhatsApp commerce tool built exclusively for Shopify stores. VoluChat works with any catalog, adds Instagram and Facebook Messenger automation, and closes sales with AI — not just catalog browsing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side by Side Deep Comparison Grid -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Detailed Breakdown</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares to Zoko.
+          </h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-5">
+          {
+            comparison.map((item, idx) => (
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+                  <div>
+                    <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
+                  </div>
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                    ✓ {item.voluAdvantage}
+                  </span>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-400">Zoko Approach</span>
+                    </div>
+                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.zoko}</p>
+                  </div>
+
+                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                    </div>
+                    <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict Cards -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+          <div class="solid-card p-6 sm:p-8">
+            <span class="mini-label text-slate-400">Choose Zoko if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Shopify-Only WhatsApp Commerce</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseZoko}</p>
+          </div>
+
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
+            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Any-Platform Fashion Sales AI</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center">
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-3.5">
+            <a href="/free-trial" class="btn-primary">Start My 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary inline-flex items-center gap-2"
+            >
+              Try it on WhatsApp &rarr;
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-slate-500">
+            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ faqs={pageFaqs} />
+  <Footer />
+</Layout>

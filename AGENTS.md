@@ -6,10 +6,10 @@ This file documents the architecture, directory layout, component hierarchy, pos
 
 ## 1. Project Overview & Core Positioning
 
-VoluChat is an **Autonomous AI Sales Agent on WhatsApp for Fashion & Clothing Boutiques**. It solves the critical revenue leak in DM-based selling: when fashion shoppers comment on Instagram Reels or message in DMs at night asking about pricing and sizing, manual chat reps are offline or overwhelmed, and rigid chatbot builders (like Wati, Interakt, ManyChat) leak 60%+ of high-intent boutique buyers.
+VoluChat is an **Autonomous AI Sales Agent on WhatsApp, Instagram, and Facebook Messenger for Fashion & Clothing Boutiques**. It solves the critical revenue leak in DM-based selling: when fashion shoppers comment on Instagram Reels or Facebook posts, or message in DMs at night asking about pricing and sizing, manual chat reps are offline or overwhelmed, and rigid chatbot builders (like Wati, Interakt, ManyChat) leak 60%+ of high-intent boutique buyers.
 
 VoluChat automates the complete 90-second fashion comment-to-checkout loop:
-1. **Comment-to-DM Engine**: Auto-replies to Instagram comments in 2 seconds and slides into DMs with exact pricing, photos, and sizing options.
+1. **Comment-to-DM Engine**: Auto-replies to Instagram and Facebook comments in 2 seconds and slides into DMs with exact pricing, photos, and sizing options.
 2. **AI Stylist & Sizing Intelligence**: Live product inventory checks, fabric details, size chart recommendations, and fit qualification without hallucinations.
 3. **Upsells, Cross-Sells & Cart Recovery**: Recommends complementary styling pieces, recovers abandoned carts, and maximizes AOV — all in-chat.
 4. **Native In-DM UPI Checkout**: Generates 1-click UPI payment links / draft orders directly in chat, eliminating website drop-offs and reducing COD RTO.

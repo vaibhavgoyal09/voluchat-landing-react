@@ -5,12 +5,39 @@ import Footer from "../../components/Footer.astro";
 import FAQ from "../../components/FAQ.astro";
 import { getFaqSchema } from "../../lib/faqSchema.mjs";
 
-const seoTitle = "VoluChat vs Bik.ai — Autonomous AI Sales Stylist vs WhatsApp Marketing Platform";
+const seoTitle = "VoluChat vs Bik.ai — Autonomous AI Sales Stylist vs WhatsApp Marketing Platform | Bik Alternative";
 const seoDescription =
   "Compare VoluChat with Bik.ai. See why autonomous sizing qualification and in-chat 1-click UPI checkout convert 3x more boutique shoppers than broadcast marketing.";
 const seoKeywords =
   "VoluChat vs Bik, Bik.ai alternative fashion, WhatsApp marketing vs sales agent, Bik WhatsApp ecommerce, boutique WhatsApp sales closer";
 const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is VoluChat better than Bik.ai for fashion?",
+    answer:
+      "Yes. Bik.ai is a general WhatsApp marketing platform for outbound broadcasts. VoluChat is purpose-built for fashion boutiques — it handles 1:1 sales conversations, sizing qualification, and in-chat UPI checkout.",
+  },
+  {
+    question: "Does VoluChat have Bik's broadcast features?",
+    answer:
+      "VoluChat focuses on 1:1 sales conversations rather than bulk broadcasts. If your primary need is mass promotional blasts, Bik is stronger. But for converting individual shoppers into buyers, VoluChat outperforms.",
+  },
+  {
+    question: "Why is VoluChat cheaper than Bik?",
+    answer:
+      "Bik.ai charges per-contact and per-message, so costs scale with your audience size. VoluChat is a flat-fee per-store model — one price covers unlimited conversations with no hidden charges.",
+  },
+  {
+    question: "Can I use Bik and VoluChat together?",
+    answer:
+      "Yes. You can keep Bik for broadcast campaigns while VoluChat handles all 1:1 sales conversations. But for most boutiques, VoluChat alone covers 90%+ of customer interactions.",
+  },
+  {
+    question: "Which has better AI — VoluChat or Bik?",
+    answer:
+      "VoluChat's AI is purpose-built for fashion sales conversations. It understands sizing charts, fabric types, styling combinations, and fit qualification. Bik's AI is designed for general message delivery, not fashion-specific sales.",
+  },
+];
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -45,7 +72,7 @@ const comparison = [
     category: "Instagram Reel Comment-to-DM",
     detail: "Handling viral comments and driving them into sales chats",
     bik: "Basic comment auto-replies without product-specific sizing intelligence.",
-    voluchat: "Replies to Reel comments in 2 seconds with exact pricing, photos, and sizing options for that specific outfit.",
+    voluchat: "Replies to Instagram Reel and Facebook post comments in 2 seconds with exact pricing, photos, and sizing options for that specific outfit.",
     voluAdvantage: "Sub-2s Reel-to-DM",
   },
   {
@@ -66,7 +93,7 @@ const comparison = [
 
 const verdict = {
   chooseBik: "You are a large multi-category brand primarily looking to run heavy outbound WhatsApp broadcast campaigns, discount blasts, and CRM retention sequences.",
-  chooseVoluchat: "You are an apparel or boutique brand losing sales to slow DM replies, sizing hesitations, and website drop-offs, and want to close sales directly in WhatsApp 24/7.",
+  chooseVoluchat: "You are an apparel or boutique brand losing sales to slow DM replies, sizing hesitations, and website drop-offs, and want to close sales directly in WhatsApp, Instagram, and Facebook Messenger 24/7.",
 };
 ---
 
@@ -191,6 +218,6 @@ const verdict = {
     </section>
   </main>
 
-  <FAQ />
+  <FAQ faqs={pageFaqs} />
   <Footer />
 </Layout>

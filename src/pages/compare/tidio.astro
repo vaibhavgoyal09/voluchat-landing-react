@@ -1,0 +1,224 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "VoluChat vs Tidio — WhatsApp, Instagram & Facebook Messenger AI Agent vs Website-Only Live Chat";
+const seoDescription =
+  "Compare VoluChat's WhatsApp, Instagram, and Facebook Messenger AI sales agent with Tidio's website live chat. See why in-chat AI and payments beat $749/mo Lyro AI.";
+const seoKeywords =
+  "VoluChat vs Tidio, Tidio alternative WhatsApp, Tidio vs VoluChat, website chatbot vs WhatsApp AI, fashion boutique live chat";
+const siteUrl = "https://www.voluchat.com";
+const pageFaqs = [
+  {
+    question: "Is Tidio's Lyro AI comparable to VoluChat's AI Stylist?",
+    answer:
+      "Not at the same price point. Tidio's Lyro AI chatbot is locked behind the $749/mo Tidio+ plan — that's roughly ₹62,000/mo. The Starter and Growth plans only offer basic rules-based chatbots. VoluChat's full AI Stylist — trained on your size charts, fabric guides, and clothing sales conversations — is included at ₹4,999/mo (~$60). For fashion boutiques, VoluChat delivers comparable AI capability at 1/12th the cost.",
+  },
+  {
+    question: "Can Tidio handle WhatsApp, Instagram, and Facebook Messenger like VoluChat?",
+    answer:
+      "No. Tidio is a website-only live chat and chatbot tool. It can't engage buyers on WhatsApp, Instagram, or Facebook Messenger DMs — the channels where fashion shoppers actually send sizing questions and inquire about products. VoluChat works natively on WhatsApp, Instagram, and Facebook Messenger, including the comment-to-DM engine that auto-replies to Reel and post comments in 2 seconds. If your buyers are on those platforms (and for fashion, they are), Tidio can't reach them.",
+  },
+  {
+    question: "Is Tidio's free plan enough for a fashion boutique?",
+    answer:
+      "Tidio's free plan includes a basic live chat widget for your website and limited chatbot flows. It can handle simple visitor questions on your site. But it can't: (1) engage buyers on WhatsApp, Instagram, or Facebook Messenger where fashion inquiries happen, (2) handle sizing or fabric conversations naturally, (3) process UPI payments inside chat, or (4) auto-reply to Instagram Reel or Facebook post comments. For a fashion boutique, the free plan is a visitor support tool, not a sales channel.",
+  },
+  {
+    question: "Why would I choose Tidio over VoluChat?",
+    answer:
+      "Choose Tidio if you run a SaaS, WordPress blog, or general e-commerce store and need an affordable website live chat widget with basic AI for visitor support. Tidio is excellent for capturing website visitors, answering FAQs, and routing support tickets. Choose VoluChat if you run a fashion boutique and need to convert Instagram Reel comments, Facebook post comments, and WhatsApp DM inquiries into paid UPI orders with AI that handles sizing, fabric doubts, and cross-sells 24/7. They solve fundamentally different problems.",
+  },
+  {
+    question: "Can I use both Tidio and VoluChat together?",
+    answer:
+      "You could, but it's redundant for most fashion boutiques. Tidio handles website live chat; VoluChat handles WhatsApp, Instagram, and Facebook Messenger DM sales. If your website gets significant traffic and you want live chat there, Tidio covers that. But for the core fashion sales flow — Reel comment → DM → sizing advice → UPI checkout — VoluChat handles it all end-to-end. Most boutique owners find VoluChat alone covers their needs since their sales conversations happen on WhatsApp, Instagram, and Facebook Messenger, not their website.",
+  },
+];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: `${siteUrl}/compare/tidio`,
+};
+
+const comparison = [
+  {
+    category: "Platform Coverage",
+    detail: "Where the tool can engage and convert buyers",
+    tidio: "Website-only live chat and AI chatbot (Lyro). No WhatsApp or Instagram DM automation — misses the channels where fashion buyers actually ask questions.",
+    voluchat: "Works on WhatsApp, Instagram, and Facebook Messenger DMs where fashion shoppers send sizing questions and DM inquiries. Meets buyers where they already are.",
+    voluAdvantage: "WhatsApp, Instagram & Facebook Messenger native",
+  },
+  {
+    category: "AI Chatbot Pricing",
+    detail: "Cost of accessing AI-powered conversations",
+    tidio: "Lyro AI chatbot locked behind the $749/mo Tidio+ plan. Starter and Growth plans only offer basic rules-based chatbots.",
+    voluchat: "Full AI Stylist included at ₹4,999/mo (~$60). Handles sizing, fabric doubts, cross-sells, and UPI checkout from day one.",
+    voluAdvantage: "AI included at ₹4,999",
+  },
+  {
+    category: "Payment & Checkout",
+    detail: "Completing the order inside the conversation",
+    tidio: "No in-chat payment capability. Redirects visitors to external checkout pages where conversion rates drop.",
+    voluchat: "Native In-DM UPI checkout links (GPay, PhonePe, Paytm). Customer completes payment inside WhatsApp without leaving the chat.",
+    voluAdvantage: "Native in-chat UPI",
+  },
+  {
+    category: "Instagram Comment-to-DM",
+    detail: "Converting viral Reel comments into paying customers",
+    tidio: "No Instagram, WhatsApp, or Facebook Messenger DM automation. Only captures website visitors through embeddable chat widgets.",
+    voluchat: "Auto-replies to Instagram Reel and Facebook post comments in 2 seconds with exact pricing, photos, and sizing for that specific post.",
+    voluAdvantage: "Sub-2s Reel-to-DM",
+  },
+  {
+    category: "Target Audience Fit",
+    detail: "Built for your specific business type",
+    tidio: "General-purpose website chat for SaaS, WordPress sites, and e-commerce. Not specialized for fashion or clothing boutiques.",
+    voluchat: "Built specifically for Indian fashion boutiques. Trained on size charts, fabric guides, and clothing-specific sales conversations.",
+    voluAdvantage: "Fashion-specialized",
+  },
+  {
+    category: "Setup & Maintenance",
+    detail: "Effort required to get started and keep running",
+    tidio: "Easy WordPress/Shopify plugin install. Self-serve configuration for chat widgets, triggers, and basic automation flows.",
+    voluchat: "100% Done-For-You in 48 hours. Founder handles Meta APIs, catalog sync, Shopify integration, and AI voice tuning — no plugin installs needed.",
+    voluAdvantage: "48h white-glove setup",
+  },
+];
+
+const verdict = {
+  chooseTidio: "You run a SaaS, WordPress blog, or general e-commerce store and need a free or affordable website live chat widget with basic AI for visitor support on your site.",
+  chooseVoluchat: "You run a fashion boutique or clothing brand and want to convert Instagram Reel comments, Facebook post comments, and WhatsApp DM inquiries into paid UPI orders — with AI that handles sizing, fabric doubts, and cross-sells 24/7 on the channels your buyers actually use.",
+};
+
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/compare/tidio", siteUrl).toString()}
+  structuredData={[structuredData, getFaqSchema(pageFaqs)]}
+>
+  <Header />
+
+  <main class="overflow-hidden pt-20">
+    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+      >
+      </div>
+      <div class="ambient-noise"></div>
+
+      <div class="page-shell">
+        <div class="compare-hero-text mx-auto max-w-4xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            VoluChat vs Tidio
+          </div>
+          <h1
+            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+          >
+            WhatsApp, Instagram &amp; Facebook Messenger AI Agent vs
+            <span class="block text-emerald-400">Website-Only Live Chat.</span>
+          </h1>
+          <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
+            Tidio is a solid website live chat tool — but its AI chatbot (Lyro) costs $749/mo and it can't reach buyers on WhatsApp, Instagram, or Facebook Messenger where fashion shoppers actually ask questions. VoluChat meets buyers on the channels they already use.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side by Side Deep Comparison Grid -->
+    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <p class="section-eyebrow">Detailed Breakdown</p>
+          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+            How VoluChat compares to Tidio.
+          </h2>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-5">
+          {
+            comparison.map((item, idx) => (
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+                  <div>
+                    <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
+                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
+                  </div>
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                    ✓ {item.voluAdvantage}
+                  </span>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-400">Tidio Approach</span>
+                    </div>
+                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.tidio}</p>
+                  </div>
+
+                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                    </div>
+                    <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict Cards -->
+    <section class="py-20 sm:py-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
+          <div class="solid-card p-6 sm:p-8">
+            <span class="mini-label text-slate-400">Choose Tidio if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Website Visitor Support</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseTidio}</p>
+          </div>
+
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
+            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">WhatsApp, Instagram &amp; Facebook Messenger Sales AI</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center">
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-3.5">
+            <a href="/free-trial" class="btn-primary">Start My 30-Day Free Trial &rarr;</a>
+            <a
+              href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary inline-flex items-center gap-2"
+            >
+              Try it on WhatsApp &rarr;
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-slate-500">
+            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FAQ faqs={pageFaqs} />
+  <Footer />
+</Layout>
