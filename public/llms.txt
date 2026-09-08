@@ -8,6 +8,8 @@ VoluChat is an AI sales stylist that operates inside Instagram DMs and WhatsApp 
 
 - [Home](https://www.voluchat.com): Main site with live demo and pilot signup
 - [Free Trial & Setup](https://www.voluchat.com/free-trial): 30-day free trial with done-for-you onboarding
+- [Pricing Specification](https://www.voluchat.com/pricing.md): Machine-readable pricing and free trial terms
+- [Full LLM Knowledge Base](https://www.voluchat.com/llms-full.txt): Complete product specifications and comparisons
 - [Features](https://www.voluchat.com/features): Capture → Qualify → Close → Settle architecture
 - [Pricing](https://www.voluchat.com/pricing): Pilot cohort scope and 10x ROI commitment
 - [Shopify Integration](https://www.voluchat.com/integrations/shopify): 5-step flow, catalog sync, security guardrails
