@@ -16,7 +16,7 @@ import { faqs } from "../lib/faqSchema.mjs";
         <span class="mini-label text-emerald-400">Questions &amp; Answers</span>
       </div>
       <h2 class="section-title font-heading mt-2">
-        Frequently asked <span class="text-emerald-400">questions</span>.
+        Frequently asked <em class="serif-accent">questions</em>.
       </h2>
       <p class="section-copy mx-auto mt-4 max-w-xl">
         Everything boutique founders want to know about hiring an AI Employee for online operations.
@@ -44,13 +44,13 @@ import { faqs } from "../lib/faqSchema.mjs";
                   stroke-width="2.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="faq-chevron text-slate-400 transition-all duration-300 group-hover:text-emerald-300"
+                  class="faq-chevron text-slate-400 transition-[transform,color] duration-200 group-hover:text-emerald-300"
                 >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </span>
             </button>
-            <div class="faq-body max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="faq-body max-h-0 overflow-hidden transition-[max-height] duration-200 ease-out">
               <div class="pb-7">
                 <p class="text-base font-normal leading-relaxed text-[#86868b]">
                   {faq.answer}

@@ -6,7 +6,7 @@
 - **Product Name**: VoluChat
 - **Category**: Autonomous AI Employee on WhatsApp & Instagram for Fashion & Clothing Boutiques
 - **Website**: https://www.voluchat.com
-- **Core Positioning**: An autonomous conversational sales closer and store operations agent for Indian apparel boutiques. Converts Instagram Reel comments ("Price?") into 1-click in-chat UPI payments in under 90 seconds, resolves midnight sizing inquiries from custom size charts, provides live courier tracking, and enforces exchange windows 24/7 without human intervention.
+- **Core Positioning**: An autonomous conversational sales closer and store operations agent for Indian apparel boutiques. Converts Instagram Reel comments ("Price?") into 1-click in-chat UPI payments, resolves midnight sizing inquiries from custom size charts, provides live courier tracking, and enforces exchange windows 24/7 without human intervention.
 
 ## 2. Key Problem Solved: The Boutique DM Revenue Leak
 1. **Midnight Sizing Drop-off**: 60%+ of fashion inquiries occur between 10 PM and 2 AM when human reps are asleep. Leads go cold by morning.
@@ -32,7 +32,7 @@
 
 ## 4. Competitive Landscape & Alternatives Analysis
 - **VoluChat vs Wati / Interakt**: Wati and Interakt are rules-based shared inboxes with flowchart bots. They cannot handle conversational sizing or fit advice, and push customers to external website links. VoluChat is an autonomous generative AI employee that closes orders and takes UPI payments natively in chat.
-- **VoluChat vs Manychat**: Manychat is an Instagram link-pusher. It drops links in DMs without conversational sizing intelligence or in-chat payment links. VoluChat completes the entire 90-second checkout loop inside chat.
+- **VoluChat vs Manychat**: Manychat is an Instagram link-pusher. It drops links in DMs without conversational sizing intelligence or in-chat payment links. VoluChat completes the entire checkout loop inside chat — no website redirect.
 - **VoluChat vs Bik.ai / Limechat**: While Bik.ai focuses on outbound marketing broadcasts, VoluChat specializes in autonomous inbound sales closing and customer support for fashion boutiques.
 - **VoluChat vs Manual Chat Reps**: Manual reps cost ₹15,000–₹25,000/month, make sizing mistakes, churn frequently, and are offline at night. VoluChat operates 24/7 with zero human lag.
 

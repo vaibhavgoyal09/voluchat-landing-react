@@ -6,6 +6,7 @@ const jobs = [
     title: "Sell & Close",
     detail: "Turns casual 'Price?' comments and DMs into completed orders with size guidance and direct 1-click UPI links.",
     badge: "Revenue",
+    outcome: "Comment → Paid",
   },
   {
     num: "02",
@@ -13,6 +14,7 @@ const jobs = [
     title: "Track Parcels",
     detail: "Answers 'Where is my parcel?' instantly by fetching live status directly from Delhivery, Shiprocket, or your courier.",
     badge: "Fulfillment",
+    outcome: "WISMO → Zero",
   },
   {
     num: "03",
@@ -20,6 +22,7 @@ const jobs = [
     title: "Resolve Exchanges",
     detail: "Handles routine exchange requests by verifying your 7-day policy, collecting tag photos, and creating tickets.",
     badge: "Operations",
+    outcome: "Ticket → Ready",
   },
   {
     num: "04",
@@ -27,6 +30,7 @@ const jobs = [
     title: "24/7 Support",
     detail: "Answers questions on pure fabrics, lining, wash care, boutique timings, and shipping timelines in your tone.",
     badge: "Support",
+    outcome: "Asked → Answered",
   },
 ];
 ---
@@ -38,18 +42,25 @@ const jobs = [
         <span class="mini-label text-emerald-400">Core Scope of Work</span>
       </div>
       <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-        4 Jobs. <span class="text-emerald-400">One AI Employee</span>.
+        4 Jobs. <em class="serif-accent">One AI Employee</em>.
       </h2>
       <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
         What work does your AI Employee actually execute every single day? Four core daily store jobs running autonomously under your exact business rules.
       </p>
     </div>
 
+    <!-- Flow rail: progression cue on desktop, hidden on mobile -->
+    <div class="mb-10 hidden items-center gap-3 lg:flex" aria-hidden="true">
+      <span class="h-px flex-1 bg-white/[0.08]"></span>
+      <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">Runs in order, every day</span>
+      <span class="h-px flex-1 bg-white/[0.08]"></span>
+    </div>
+
     <!-- 4 Clean Modular Cards with Generous Spacing -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
       {
         jobs.map((job, idx) => (
-          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-white/[0.08] bg-[#070709] p-7 sm:p-8 flex flex-col justify-between hover:border-white/[0.18] transition-all duration-300 group`}>
+          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-white/[0.08] bg-[#070709] p-7 sm:p-8 flex flex-col justify-between transition-[border-color,background-color,box-shadow,transform] duration-200 hover:border-white/[0.18] group`}>
             <div>
               <div class="flex items-center justify-between mb-6">
                 <span class="font-mono text-xs font-bold text-emerald-400">
@@ -73,7 +84,7 @@ const jobs = [
 
             <div class="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-400">
               <span>Job 0{idx + 1}</span>
-              <span class="text-emerald-400 font-medium group-hover:translate-x-1 transition-transform">Active 24/7 &rarr;</span>
+              <span class="text-slate-200 font-medium">{job.outcome}</span>
             </div>
           </div>
         ))

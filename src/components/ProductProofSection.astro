@@ -135,26 +135,24 @@ const scenarios = [
         <span class="mini-label text-emerald-400">Interactive Demonstration</span>
       </div>
       <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-        See your AI Employee <span class="text-emerald-400">at work</span>.
+        See your AI Employee <em class="serif-accent">at work</em>.
       </h2>
       <p class="section-copy mt-5 text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
-        Real-world simulations across core boutique responsibilities. Explore live customer interactions from the first Reel inquiry to post-purchase fulfillment.
+        Real-world simulations across core boutique responsibilities. Explore live customer interactions from the first Reel inquiry to post-purchase fulfillment. Chat timelines are compressed for demo &mdash; real orders close at the customer&rsquo;s pace, with follow-ups.
       </p>
     </div>
 
     <!-- Tab Container -->
     <div class="product-proof-wrapper max-w-5xl mx-auto">
       <!-- Tab Navigation Buttons: Apple-style pill segmented control -->
-      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 p-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl mb-10 max-w-xl mx-auto lg:mx-0">
+      <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-3xl sm:rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl mb-10 max-w-2xl mx-auto" role="tablist" aria-label="Boutique scenarios">
         {
           scenarios.map((scenario, index) => (
             <button
               type="button"
-              class={`proof-tab-btn flex-1 min-w-[100px] px-3.5 py-2 rounded-full text-xs font-mono font-medium transition-all ${
-                index === 0
-                  ? "bg-white text-black font-semibold shadow-[0_2px_10px_rgba(255,255,255,0.2)]"
-                  : "text-slate-400 hover:text-white hover:bg-white/[0.04]"
-              }`}
+              role="tab"
+              aria-selected={index === 0 ? "true" : "false"}
+              class={`proof-tab-btn flex-1 min-w-[140px] px-3.5 py-2 rounded-full text-xs font-mono font-medium transition-[background-color,color,box-shadow] duration-200 text-slate-400 hover:text-white hover:bg-white/[0.04] active:scale-[0.98] ${index === 0 ? "is-active" : ""}`}
               data-target={scenario.id}
             >
               {scenario.label}
@@ -164,17 +162,17 @@ const scenarios = [
       </div>
 
       <!-- Scenarios Panels -->
-      <div class="relative">
+      <div class="proof-stage relative">
         {
           scenarios.map((scenario, index) => (
             <div
               id={`proof-panel-${scenario.id}`}
-              class={`proof-panel transition-opacity duration-300 ${index === 0 ? "block opacity-100" : "hidden opacity-0"}`}
+              class={`proof-panel transition-opacity duration-200 ${index === 0 ? "block opacity-100" : "hidden opacity-0"}`}
             >
               <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 items-center">
                 
                 <!-- Chat Window Mockup -->
-                <div class="rounded-3xl p-6 sm:p-8 border border-white/[0.10] bg-[#070709] shadow-2xl relative overflow-hidden">
+                <div class="rounded-3xl p-6 sm:p-8 border border-white/[0.10] bg-[#070709] shadow-2xl relative overflow-hidden flex min-h-[430px] flex-col">
                   <!-- Chat Header -->
                   <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-6">
                     <div class="flex items-center gap-3">
@@ -195,17 +193,17 @@ const scenarios = [
                   </div>
 
                   <!-- Messages Flow -->
-                  <div class="space-y-4 min-h-[290px] flex flex-col justify-end">
+                  <div class="space-y-4 flex flex-1 flex-col justify-end">
                     {
                       scenario.messages.map((msg) => (
                         <div class={`flex flex-col ${msg.sender === "customer" ? "items-end" : "items-start"}`}>
                           <div
                             class={`max-w-[85%] rounded-2xl px-4 py-2.5 text-xs sm:text-[13px] leading-relaxed ${
                               msg.sender === "customer"
-                                ? "bg-emerald-600 text-white rounded-br-xs"
+                                ? "wa-out rounded-br-md"
                                 : msg.sender === "staff"
-                                ? "bg-amber-950/40 border border-amber-500/40 text-amber-200 rounded-bl-xs"
-                                : "bg-white/[0.07] border border-white/[0.08] text-slate-200 rounded-bl-xs"
+                                ? "bg-amber-950/40 border border-amber-500/40 text-amber-200 rounded-bl-md"
+                                : "wa-in rounded-bl-md"
                             }`}
                           >
                             {msg.text}
@@ -219,7 +217,7 @@ const scenarios = [
                           )}
 
                           <span class="text-[9px] text-slate-500 font-mono mt-1 px-1">
-                            {msg.time}
+                            {msg.time}{msg.sender !== "customer" ? "  ✓✓" : ""}
                           </span>
                         </div>
                       ))
@@ -280,13 +278,13 @@ const scenarios = [
       btn.addEventListener("click", () => {
         const targetId = btn.getAttribute("data-target");
 
-        // Update Buttons
+        // Single source of truth: .is-active (styled in global.css)
         buttons.forEach((b) => {
-          b.classList.remove("bg-emerald-500/20", "text-emerald-300", "border-emerald-500/40", "shadow-[0_4px_12px_rgba(16,185,129,0.15)]");
-          b.classList.add("text-slate-400", "border-transparent");
+          b.classList.remove("is-active");
+          b.setAttribute("aria-selected", "false");
         });
-        btn.classList.add("bg-emerald-500/20", "text-emerald-300", "border-emerald-500/40", "shadow-[0_4px_12px_rgba(16,185,129,0.15)]");
-        btn.classList.remove("text-slate-400", "border-transparent");
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-selected", "true");
 
         // Update Panels
         panels.forEach((p) => {

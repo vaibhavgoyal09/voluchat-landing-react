@@ -10,10 +10,6 @@
   <div class="hero-bg" aria-hidden="true">
     <div class="hero-bg-grid"></div>
     <div class="hero-bg-mesh"></div>
-    <div class="hero-bg-orb hero-bg-orb--teal"></div>
-    <div class="hero-bg-orb hero-bg-orb--emerald"></div>
-    <div class="hero-bg-orb hero-bg-orb--violet"></div>
-    <div class="hero-bg-scan"></div>
     <div class="hero-bg-vignette"></div>
   </div>
 
@@ -34,15 +30,15 @@
           class="hero-title mt-7 font-heading text-[2.75rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-[3.25rem] lg:text-[3.6rem] xl:text-[4rem] text-[#fcfdff]"
         >
           <span>
-            Your boutique keeps selling&mdash;even when you&rsquo;re asleep.
+            Your boutique keeps selling&mdash;even when you&rsquo;re <em class="serif-accent">asleep</em>.
           </span>
-          <span class="block bg-gradient-to-r from-emerald-300 via-teal-200 to-emerald-400 bg-clip-text text-transparent pb-1">&ldquo;Price?&rdquo; to UPI payment&mdash;in 90 seconds.</span>
+          <span class="block pb-1 text-[#f5f5f7]"><span class="serif-accent">&ldquo;Price?&rdquo;</span> answered in <span class="bg-gradient-to-r from-emerald-300 via-teal-200 to-emerald-400 bg-clip-text text-transparent">seconds</span>&mdash;even at 2am.</span>
         </h1>
 
         <p
           class="hero-text mx-auto mt-6 max-w-xl text-lg font-normal leading-relaxed text-[rgba(245,245,247,0.72)] sm:text-xl lg:mx-0"
         >
-          VoluChat replies to your Reel comments in 2 seconds, advises size from your size chart, collects delivery address, sends 1-click GPay links — then answers "Where is my parcel?" itself. All on Instagram and WhatsApp.
+          Every &ldquo;Price?&rdquo; comment gets a reply in 2 seconds &mdash; sizing from your chart, address collected, 1-click UPI link sent, with polite follow-ups till they pay. You wake up to paid orders, not cold chats. All inside Instagram and WhatsApp.
         </p>
 
         <div
@@ -57,7 +53,7 @@
             rel="noopener noreferrer"
             class="btn-secondary inline-flex items-center gap-2"
           >
-            💬 Test Drive on WhatsApp
+            Try it on WhatsApp &rarr;
           </a>
         </div>
         <p class="mt-3.5 text-xs text-slate-400 font-mono">
@@ -72,12 +68,12 @@
               <p class="text-[11px] font-normal text-slate-400 mt-0.5">Comment-to-DM</p>
             </div>
             <div>
-              <div class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">&lt;90<span class="text-emerald-400">s</span></div>
-              <p class="text-[11px] font-normal text-slate-400 mt-0.5">Comment to UPI Pay</p>
+              <div class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">24<span class="text-emerald-400">/7</span></div>
+              <p class="text-[11px] font-normal text-slate-400 mt-0.5">Follows up till they pay</p>
             </div>
             <div>
               <div class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">4<span class="text-emerald-400"> Jobs</span></div>
-              <p class="text-[11px] font-normal text-slate-400 mt-0.5">1 AI Employee</p>
+              <p class="text-[11px] font-normal text-slate-400 mt-0.5">One AI employee</p>
             </div>
             <div>
               <div class="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight">48<span class="text-emerald-400">h</span></div>
@@ -104,7 +100,7 @@
           </span>
         </div>
 
-        <div class="animate-float absolute -bottom-4 -right-6 z-30 hidden sm:flex items-center gap-2.5 rounded-full border border-white/20 bg-slate-950/70 px-4 py-2 shadow-[0_12px_32px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.25)] backdrop-blur-2xl">
+        <div class="animate-float absolute -bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2.5 rounded-full border border-white/20 bg-slate-950/70 px-4 py-2 shadow-[0_12px_32px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.25)] backdrop-blur-2xl sm:left-auto sm:right-[-1.5rem] sm:translate-x-0">
           <div class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
             <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="20 6 9 17 4 12"></polyline>
@@ -112,7 +108,7 @@
           </div>
           <div class="text-left">
             <p class="text-[9px] uppercase font-semibold tracking-wider text-slate-400">Secure UPI Checkout</p>
-            <p class="text-xs font-bold text-white">₹7,999 Closed in 85s</p>
+            <p class="text-xs font-bold text-white">₹7,999 collected on UPI</p>
           </div>
         </div>
 
@@ -136,6 +132,23 @@
               
               <!-- Screen Container (Exact 9:20 matching the video aspect ratio perfectly) -->
               <div class="relative overflow-hidden rounded-[2.4rem] bg-[#000000] ring-1 ring-black" style="aspect-ratio: 9 / 20;">
+
+                <!-- Dynamic Island -->
+                <div class="absolute left-1/2 top-2.5 z-30 h-[22px] w-[76px] -translate-x-1/2 rounded-full bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]" aria-hidden="true">
+                  <span class="absolute right-2.5 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#1a1d29] shadow-[inset_0_0_2px_rgba(0,0,0,0.9)]"></span>
+                </div>
+
+                <!-- Status bar: time + radios, sits over the demo video -->
+                <div class="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 pt-3 text-[10px] font-semibold text-white" aria-hidden="true">
+                  <span class="tracking-wide">11:14</span>
+                  <span class="flex items-center gap-1">
+                    <svg class="h-2.5 w-3.5" viewBox="0 0 16 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="0.5"/><rect x="4.5" y="5" width="3" height="7" rx="0.5"/><rect x="9" y="2.5" width="3" height="9.5" rx="0.5"/><rect x="13" y="7" width="3" height="5" rx="0.5" opacity="0.4"/></svg>
+                    <svg class="h-2.5 w-3.5" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1.5 4.5a10 10 0 0 1 13 0"/><path d="M4 7.2a6.4 6.4 0 0 1 8 0"/><circle cx="8" cy="10" r="1" fill="currentColor" stroke="none"/></svg>
+                    <svg class="h-2.5 w-5" viewBox="0 0 22 12" fill="none"><rect x="0.5" y="0.5" width="17" height="11" rx="3" stroke="currentColor" opacity="0.5"/><rect x="2.5" y="2.5" width="11" height="7" rx="1.5" fill="currentColor"/><rect x="19" y="4" width="2" height="4" rx="1" fill="currentColor" opacity="0.5"/></svg>
+                  </span>
+                </div>
+                <!-- Top scrim so the status bar reads over bright video frames -->
+                <div class="pointer-events-none absolute inset-x-0 top-0 z-20 h-12 bg-gradient-to-b from-black/50 to-transparent"></div>
                 
                 <!-- Realistic Screen Glass Specular Sheen -->
                 <div class="pointer-events-none absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.07]"></div>
@@ -187,21 +200,21 @@
   }
 
   .hero-title {
-    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: heroFadeUp 0.7s var(--ease-out) forwards;
   }
 
   .hero-text {
-    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    animation: heroFadeUp 0.7s var(--ease-out) 0.1s forwards;
     opacity: 0;
   }
 
   .hero-ctas {
-    animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    animation: heroFadeUp 0.7s var(--ease-out) 0.2s forwards;
     opacity: 0;
   }
 
   .hero-mockup {
-    animation: heroMockupPop 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    animation: heroMockupPop 0.85s var(--ease-out) 0.15s forwards;
     opacity: 0;
   }
 

@@ -44,6 +44,10 @@
   --font-heading:
     "Sora", "Inter", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Editorial serif accent — system stack, zero download. Use ONLY for
+     2–3 emotional words per page (fashion voice vs SaaS voice). */
+  --font-accent:
+    "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
   --font-mono:
     ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", "Roboto Mono",
     Menlo, Consolas, monospace;
@@ -68,11 +72,17 @@
   --color-ash: #a1a1a6;
   --color-stone: #424245;
 
-  /* Green / Emerald Accent Palette (Preserved signature brand accent) */
+  /* Green = money/live ONLY (₹, 2s, Online, UPI link). Everything else
+     fashion: ivory ink + warm champagne. Do not add new emerald uses. */
   --color-accent-green: #10b981;
   --color-accent-green-glow: rgba(16, 185, 129, 0.18);
   --color-accent-teal: #14b8a6;
   --color-accent-teal-glow: rgba(45, 212, 191, 0.18);
+
+  /* Warm boutique neutrals — champagne reserved for emotional/fashion
+     accents, never for metrics or CTAs. */
+  --color-champagne: #e8dcc8;
+  --color-ivory: #f5f1e8;
 
   /* Titanium neutrals — Apple material, single green accent preserved */
   --color-titanium-hi: #e8e8ed;
@@ -93,6 +103,12 @@
 
   --color-coral-500: #65e4cf;
   --color-coral-700: #14b8a6;
+
+  /* Motion tokens — custom curves with punch. Built-in easings are banned
+     for UI animation (too weak). ease-in is banned everywhere. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 @layer base {
@@ -154,54 +170,57 @@
     background: linear-gradient(180deg, rgba(10, 11, 16, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
   }
 
-  /* Liquid Glass Base Surface (Apple-style frosted glass with specular rim highlight) */
-  .liquid-glass {
-    position: relative;
-    background: rgba(18, 20, 26, 0.60);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow:
-      0 8px 32px 0 rgba(0, 0, 0, 0.45),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.16),
-      inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Editorial serif accent — fashion voice. System serif stack, no download. */
+  .serif-accent {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-champagne);
   }
 
-  .liquid-glass:hover {
-    border-color: rgba(255, 255, 255, 0.22);
-    background: rgba(24, 28, 38, 0.70);
-    box-shadow:
-      0 16px 40px -8px rgba(0, 0, 0, 0.6),
-      0 0 24px -4px rgba(16, 185, 129, 0.12),
-      inset 0 1px 2px 0 rgba(255, 255, 255, 0.28);
-    transform: translateY(-2px);
+  /* Warm paper interlude — the single rhythm breaker on the homepage.
+     Founder section only. Do not reuse for feature grids. */
+  .band-warm {
+    background:
+      radial-gradient(60% 50% at 50% 0%, rgba(232, 220, 200, 0.08), transparent 65%),
+      linear-gradient(180deg, #0d0c0a 0%, #12100c 100%);
+    border-top: 1px solid rgba(232, 220, 200, 0.14);
+    border-bottom: 1px solid rgba(232, 220, 200, 0.10);
   }
 
-  /* Liquid Glass Pill / Capsule (Apple Dynamic Island / Control Center aesthetic) */
-  .glass-pill {
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px) saturate(190%);
-    -webkit-backdrop-filter: blur(20px) saturate(190%);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow:
-      0 4px 20px -2px rgba(0, 0, 0, 0.35),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Proof tabs — single source of truth. JS toggles .is-active only. */
+  .proof-tab-btn.is-active {
+    background: #f5f5f7;
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+  }
+  .proof-stage {
+    min-height: 560px;
+  }
+  @media (min-width: 1024px) {
+    .proof-stage {
+      min-height: 480px;
+    }
   }
 
-  .glass-pill:hover {
-    background: rgba(255, 255, 255, 0.09);
-    border-color: rgba(255, 255, 255, 0.25);
-    box-shadow:
-      0 8px 24px -4px rgba(0, 0, 0, 0.5),
-      inset 0 1px 2px 0 rgba(255, 255, 255, 0.35);
+  /* WhatsApp-native dark bubbles (outgoing #005c4b / incoming #1f2c34). */
+  .wa-out {
+    background: #005c4b;
+    color: #e7ffdb;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .wa-in {
+    background: #1f2c34;
+    color: #e9edef;
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   /* Resend/Apple Surface Card with Liquid Glass Treatment */
   .solid-card {
-    @apply rounded-2xl p-6 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)];
+    @apply rounded-2xl p-6 transition-[border-color,background-color,box-shadow,transform] duration-200;
+    transition-timing-function: var(--ease-out);
     background: rgba(14, 16, 22, 0.65);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -223,7 +242,8 @@
 
   /* Elevated cards (featured tiers, highlighted panels) */
   .solid-card-elevated {
-    @apply rounded-2xl p-6 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)];
+    @apply rounded-2xl p-6 transition-[border-color,background-color,box-shadow,transform] duration-200;
+    transition-timing-function: var(--ease-out);
     background: rgba(20, 23, 31, 0.75);
     backdrop-filter: blur(24px) saturate(190%);
     -webkit-backdrop-filter: blur(24px) saturate(190%);
@@ -242,15 +262,13 @@
     transform: translateY(-2px);
   }
 
-  .glass-panel-premium {
-    @apply rounded-2xl;
-    background: rgba(14, 16, 22, 0.7);
-    backdrop-filter: blur(30px) saturate(190%);
-    -webkit-backdrop-filter: blur(30px) saturate(190%);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow:
-      0 20px 50px -15px rgba(0, 0, 0, 0.7),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.16);
+  /* Touch devices: hover lift is a false positive on tap — kill the
+     transform, keep the color/border feedback. */
+  @media (hover: none), (pointer: coarse) {
+    .solid-card:hover,
+    .solid-card-elevated:hover {
+      transform: none;
+    }
   }
 
   .section-title {
@@ -263,17 +281,7 @@
     color: #86868b;
   }
 
-  /* Titanium surfaces — brushed metal + specular rim, green reserved for money/live */
-  .titanium-surface {
-    background: linear-gradient(135deg, rgba(232,232,237,0.08), rgba(161,161,166,0.04) 30%, rgba(18,20,26,0.65) 70%);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow:
-      0 20px 50px -15px rgba(0, 0, 0, 0.7),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
-      inset 0 -1px 1px 0 rgba(0, 0, 0, 0.35);
-  }
+  /* ponytail: titanium-surface purged — zero usages repo-wide. */
 
   /* Apple spec row — hairline dividers instead of cards */
   .hairline-row {
@@ -285,7 +293,8 @@
 
   /* Primary Button: Apple-like sleek action with micro specular reflection */
   .btn-primary {
-    @apply relative inline-flex w-full items-center justify-center rounded-full bg-[#f5f5f7] px-6 py-3 text-[14px] font-medium tracking-tight text-[#000000] transition-all duration-300 hover:bg-white active:scale-[0.98] sm:w-auto;
+    @apply relative inline-flex w-full items-center justify-center rounded-full bg-[#f5f5f7] px-6 py-3 text-[14px] font-medium tracking-tight text-[#000000] hover:bg-white active:scale-[0.98] sm:w-auto;
+    transition: background-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out), transform 160ms var(--ease-out);
     box-shadow:
       0 2px 10px rgba(255, 255, 255, 0.2),
       0 8px 24px -6px rgba(0, 0, 0, 0.4),
@@ -302,7 +311,8 @@
 
   /* Secondary / Ghost Button: Frosted liquid glass pill */
   .btn-secondary {
-    @apply inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-[14px] font-medium tracking-tight text-[#f5f5f7] transition-all duration-300 active:scale-[0.98] sm:w-auto;
+    @apply inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-[14px] font-medium tracking-tight text-[#f5f5f7] active:scale-[0.98] sm:w-auto;
+    transition: background-color 200ms var(--ease-out), border-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out), transform 160ms var(--ease-out);
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -324,7 +334,14 @@
 
   /* Ghost outline button */
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-full border border-white/[0.14] bg-transparent px-5 py-2.5 text-[14px] font-medium tracking-tight text-[#fcfdff] transition-all duration-200 hover:bg-white/[0.08] active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full border border-white/[0.14] bg-transparent px-5 py-2.5 text-[14px] font-medium tracking-tight text-[#fcfdff] hover:bg-white/[0.08] active:scale-[0.98];
+    transition: background-color 200ms var(--ease-out), border-color 200ms var(--ease-out), transform 160ms var(--ease-out);
+  }
+
+  /* Visible keyboard focus — invisible details compound. */
+  :focus-visible {
+    outline: 2px solid rgba(45, 212, 191, 0.7);
+    outline-offset: 3px;
   }
 
   /* Badge pill */
@@ -357,21 +374,7 @@
     @apply text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400;
   }
 
-  /* Code Window Shell */
-  .code-window {
-    @apply rounded-2xl border border-white/[0.14] p-5 font-mono text-[13px] text-slate-300;
-    background: rgba(10, 11, 16, 0.7);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.12);
-  }
-
-  .code-tab {
-    @apply rounded-md bg-white/[0.04] px-3 py-1 text-xs text-slate-400 transition hover:text-white;
-  }
-  .code-tab.active {
-    @apply border-b border-emerald-400 text-white font-medium bg-white/[0.08];
-  }
+  /* ponytail: code-window/code-tab purged — zero usages repo-wide. */
 
   /* Text Input */
   .text-input {
@@ -442,9 +445,7 @@
     border: 1px solid rgba(255,255,255,0.10);
   }
 
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-emerald-300 to-slate-300;
-  }
+  /* ponytail: .gradient-text purged — zero usages repo-wide. */
 
   /* Design System: Container & Section Band Standards */
   .hero-stripe {
@@ -477,7 +478,8 @@
 
   /* Unified Card Variants */
   .solid-card-subtle {
-    @apply rounded-xl border border-white/[0.06] bg-[#06060a] p-5 transition-all duration-200 hover:border-white/[0.14] hover:bg-[#0a0a0c];
+    @apply rounded-xl border border-white/[0.06] bg-[#06060a] p-5 hover:border-white/[0.14] hover:bg-[#0a0a0c];
+    transition: border-color 200ms var(--ease-out), background-color 200ms var(--ease-out);
   }
 
   .blog-prose-shell {
@@ -624,34 +626,7 @@
 
 /* ---------- Modern animation system ---------- */
 
-/* Animated gradient text: flowing teal→white→emerald */
-@keyframes textGradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.gradient-text-anim {
-  background: linear-gradient(
-    110deg,
-    #ffffff 10%,
-    #5eeac9 35%,
-    #ffffff 50%,
-    #34d399 65%,
-    #ffffff 90%
-  );
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textGradientFlow 6s linear infinite;
-}
+/* ponytail: textGradientFlow + .gradient-text-anim purged — zero usages. */
 
 /* Slow vertical float for decorative elements */
 @keyframes floatY {
@@ -670,21 +645,8 @@
   animation: floatY 9s ease-in-out infinite;
 }
 
-/* Pulsing soft ring */
-@keyframes pulseRing {
-  0% {
-    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 12px rgba(45, 212, 191, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0);
-  }
-}
-.animate-pulse-ring {
-  animation: pulseRing 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
+/* ponytail: pulseRing purged — box-shadow keyframes are off-GPU and the
+   class had zero usages. Live dots use transform-based animate-ping. */
 
 /* Shimmer sweep used by skeleton / button sheen */
 @keyframes sheenSweep {
@@ -700,7 +662,7 @@
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
   will-change: opacity, transform;
 }
 
@@ -718,19 +680,19 @@
 }
 
 .reveal-delay-1 {
-  transition-delay: 80ms;
+  transition-delay: 60ms;
 }
 
 .reveal-delay-2 {
-  transition-delay: 160ms;
+  transition-delay: 120ms;
 }
 
 .reveal-delay-3 {
-  transition-delay: 240ms;
+  transition-delay: 180ms;
 }
 
 .reveal-delay-4 {
-  transition-delay: 320ms;
+  transition-delay: 240ms;
 }
 
 /* ---------- Spotlight hover card (mouse-tracked glow) ---------- */
@@ -749,12 +711,14 @@
     transparent 60%
   );
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 200ms var(--ease-out);
   z-index: -1;
   pointer-events: none;
 }
-.spotlight:hover::before {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .spotlight:hover::before {
+    opacity: 1;
+  }
 }
 
 /* Sheen sweep on hover for primary buttons */
@@ -779,14 +743,51 @@
   pointer-events: none;
 }
 .btn-sheen:hover::before {
-  animation: sheenSweep 0.9s ease;
+  animation: sheenSweep 0.9s var(--ease-out);
+}
+
+/* Range sliders — custom thumb so the estimator feels tactile, not native. */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  outline-offset: 6px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 999px;
+  background: #f5f5f7;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(16, 185, 129, 0.15);
+  cursor: pointer;
+  transition: box-shadow 160ms var(--ease-out), transform 160ms var(--ease-out);
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(16, 185, 129, 0.22);
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(0.92);
+}
+input[type="range"]::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 999px;
+  background: #f5f5f7;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(16, 185, 129, 0.15);
+  cursor: pointer;
 }
 
 /* Tilt container helper (JS sets --rx/--ry) */
 .tilt {
   transform: perspective(900px) rotateX(var(--rx, 0deg))
     rotateY(var(--ry, 0deg));
-  transition: transform 0.2s ease-out;
+  transition: transform 200ms var(--ease-out);
   transform-style: preserve-3d;
 }
 
@@ -810,10 +811,8 @@
     transform: none;
   }
 
-  .gradient-text-anim,
   .animate-float,
-  .animate-float-slow,
-  .animate-pulse-ring {
+  .animate-float-slow {
     animation: none;
   }
 
