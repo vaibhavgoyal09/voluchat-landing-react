@@ -22,8 +22,8 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "VoluChat AI Employee — Early Access Program",
-    description: "Done-for-you AI employee setup for fashion boutique online operations. Includes Meta Cloud API, WhatsApp Business API, full catalog sync, tracking and return policy rules, in-chat checkout, brand voice calibration, and 24/7 autonomous operations — with 30 days free.",
+    name: "VoluChat AI Employee — Starter Plan",
+    description: "AI employee for fashion boutiques: Instagram comment-to-DM, AI sizing, 1-click UPI checkout, courier tracking, and 24/7 automation for up to 200 conversations per month.",
     provider: {
       "@type": "Organization",
       name: "VoluChat",
@@ -34,6 +34,98 @@ const structuredData = [
       name: "India",
     },
     serviceType: "Autonomous AI Employee Setup for Fashion Boutiques",
+    offers: {
+      "@type": "Offer",
+      price: "4999",
+      priceCurrency: "INR",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "4999",
+        priceCurrency: "INR",
+        billingDuration: {
+          "@type": "QuantitativeValue",
+          value: 1,
+          unitCode: "MON",
+        },
+      },
+      availability: "https://schema.org/InStock",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "VoluChat AI Employee — Growth Plan",
+    description: "Full-scope AI employee for fashion boutiques: unlimited conversations, cross-sell/upsell, priority WhatsApp support, white-glove 48h setup, and complete autonomous sales automation.",
+    provider: {
+      "@type": "Organization",
+      name: "VoluChat",
+      url: siteUrl,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    serviceType: "Autonomous AI Employee Setup for Fashion Boutiques",
+    offers: {
+      "@type": "Offer",
+      price: "9999",
+      priceCurrency: "INR",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "9999",
+        priceCurrency: "INR",
+        billingDuration: {
+          "@type": "QuantitativeValue",
+          value: 1,
+          unitCode: "MON",
+        },
+      },
+      availability: "https://schema.org/InStock",
+    },
+  },
+];
+
+const tiers = [
+  {
+    name: "Starter",
+    price: "₹4,999",
+    period: "/mo",
+    description: "Core automation for growing boutiques",
+    cta: "Start Free Trial",
+    ctaLink: "/free-trial",
+    highlight: false,
+    features: [
+      { text: "Up to 200 conversations/mo", included: true },
+      { text: "Instagram Comment-to-DM", included: true },
+      { text: "AI Sizing & Styling", included: true },
+      { text: "1-Click UPI Checkout", included: true },
+      { text: "Courier Tracking", included: true },
+      { text: "Basic Exchange Handling", included: true },
+      { text: "Cross-sell / Upsell", included: false },
+      { text: "Priority WhatsApp Support", included: false },
+      { text: "White-glove 48h Setup", included: false },
+    ],
+  },
+  {
+    name: "Growth",
+    price: "₹9,999",
+    period: "/mo",
+    description: "Full-scope AI employee — recommended",
+    cta: "Start Free Trial",
+    ctaLink: "/free-trial",
+    highlight: true,
+    badge: "Most Popular",
+    features: [
+      { text: "Unlimited conversations", included: true },
+      { text: "Instagram Comment-to-DM", included: true },
+      { text: "AI Sizing & Styling", included: true },
+      { text: "1-Click UPI Checkout", included: true },
+      { text: "Courier Tracking", included: true },
+      { text: "Full Exchange Handling", included: true },
+      { text: "Cross-sell / Upsell", included: true },
+      { text: "Priority WhatsApp Support", included: true },
+      { text: "White-glove 48h Setup", included: true },
+    ],
   },
 ];
 
@@ -112,26 +204,26 @@ const cohortPromise = [
         <div class="mx-auto max-w-3xl">
           <div class="chip mb-4">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse mr-1.5"></span>
-            Special Offer &bull; First 10 Stores Only
+            30-Day Free Trial &bull; No Card Required
           </div>
             <h1
               class="mt-6 text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
             >
-              Your boutique keeps selling&mdash;even when you&rsquo;re <em class="serif-accent">asleep</em>.
-              <span class="block text-emerald-400">&ldquo;Price?&rdquo; answered in seconds &mdash; UPI payment in chat.</span>
+              Hire an AI Employee for<br class="hidden sm:block" /> <em class="serif-accent">₹4,999/mo</em>.
+              <span class="block text-emerald-400">Replaces 4 daily store jobs — 24/7.</span>
             </h1>
             <p class="section-copy mx-auto mt-6 max-w-2xl">
-              30 days free. White-glove setup in 48 hours. VoluChat replies to &ldquo;Price?&rdquo; in 2 seconds, advises size, sends 1-click UPI links, and tracks parcels — all on Instagram and WhatsApp.
+              One AI employee handles selling, sizing, tracking, and support — while you sleep. Start free for 30 days. White-glove setup in 48 hours.
             </p>
             <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
-              <a href="/free-trial" class="btn-primary">Start My 30-Day Free Trial &rarr;</a>
+              <a href="#plans" class="btn-primary">See Plans &amp; Pricing &rarr;</a>
               <a
-                href="https://wa.me/919530840375?text=Hi%2C%20show%20me%20your%20summer%20dress%20collection."
+                href="https://wa.me/919530840375?text=Hi%2C%20I'd%20like%20to%20learn%20about%20VoluChat%20pricing."
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-secondary inline-flex items-center gap-2"
               >
-                Try it on WhatsApp &rarr;
+                Ask on WhatsApp &rarr;
               </a>
             </div>
         </div>
@@ -189,6 +281,62 @@ const cohortPromise = [
             ))
           }
         </div>
+      </div>
+    </section>
+
+    <section id="plans" class="relative py-16 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+      <div class="page-shell">
+        <div class="mx-auto mb-12 max-w-2xl text-center">
+          <p class="section-eyebrow">Choose Your Plan</p>
+          <h2 class="section-title mt-3 font-heading">
+            Simple pricing. <em class="serif-accent">No surprises.</em>
+          </h2>
+          <p class="section-copy mx-auto mt-4 max-w-2xl">
+            Start with 30 days free. Pick a plan that fits your boutique — upgrade or cancel anytime.
+          </p>
+        </div>
+
+        <div class="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 sm:gap-8">
+          {tiers.map((tier) => (
+            <div class={`relative flex flex-col rounded-2xl border p-8 sm:p-10 ${tier.highlight ? 'border-emerald-500/40 bg-gradient-to-b from-emerald-950/30 to-[#0a0a0f] shadow-[0_0_40px_rgba(16,185,129,0.08)]' : 'border-white/[0.10] bg-[#0c0c12]'}`}>
+              {tier.badge && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-4 py-1 text-xs font-bold text-black">
+                  {tier.badge}
+                </span>
+              )}
+              <div>
+                <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-[#a1a1a6]">{tier.name}</p>
+                <div class="mt-4 flex items-baseline gap-1">
+                  <span class="text-4xl sm:text-5xl font-heading font-bold text-[#fcfdff]">{tier.price}</span>
+                  <span class="text-sm text-[#86868b]">{tier.period}</span>
+                </div>
+                <p class="mt-3 text-sm text-[#86868b]">{tier.description}</p>
+              </div>
+              <div class="mt-8 flex flex-col gap-3">
+                <a href={tier.ctaLink} class={tier.highlight ? 'btn-primary w-full justify-center' : 'btn-secondary w-full justify-center'}>
+                  {tier.cta} &rarr;
+                </a>
+                <p class="text-center text-xs text-[#86868b]">30 days free &bull; No card required</p>
+              </div>
+              <ul class="mt-8 flex flex-col gap-3 border-t border-white/[0.08] pt-6">
+                {tier.features.map((f) => (
+                  <li class="flex items-start gap-3 text-sm">
+                    {f.included ? (
+                      <svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    ) : (
+                      <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#3a3a3c]" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    )}
+                    <span class={f.included ? 'text-[rgba(252,253,255,0.85)]' : 'text-[#4a4a4c]'}>{f.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <p class="mx-auto mt-8 max-w-2xl text-center text-sm text-[#86868b]">
+          Both plans include 30-day free trial with full features. After trial, choose Starter (₹4,999/mo) or Growth (₹9,999/mo). Annual billing: 2 months free.
+        </p>
       </div>
     </section>
 

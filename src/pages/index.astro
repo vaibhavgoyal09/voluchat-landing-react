@@ -31,14 +31,24 @@ const structuredData = [
     operatingSystem: "Web",
     url: siteUrl,
     description: seoDescription,
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "INR",
-      name: "30-Day Free Trial",
-      description: "30-day free trial with white-glove setup in 48 hours.",
-      availability: "https://schema.org/InStock",
-    },
+    offers: [
+      {
+        "@type": "Offer",
+        price: "4999",
+        priceCurrency: "INR",
+        name: "Starter Plan",
+        description: "Core AI employee automation — up to 200 conversations/mo. 30-day free trial.",
+        availability: "https://schema.org/InStock",
+      },
+      {
+        "@type": "Offer",
+        price: "9999",
+        priceCurrency: "INR",
+        name: "Growth Plan",
+        description: "Full-scope AI employee — unlimited conversations, cross-sell, priority support, white-glove setup. 30-day free trial.",
+        availability: "https://schema.org/InStock",
+      },
+    ],
   },
   {
     "@context": "https://schema.org",
