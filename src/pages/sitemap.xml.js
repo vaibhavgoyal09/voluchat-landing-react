@@ -29,6 +29,8 @@ const STATIC_ROUTES = [
   { path: "/what-is/in-chat-upi-checkout", priority: "0.75" },
   { path: "/what-is/whatsapp-cart-recovery", priority: "0.75" },
   { path: "/glossary", priority: "0.6" },
+  { path: "/comment-revenue-leak-calculator", priority: "0.8" },
+  { path: "/blog/instagram-comment-revenue-leak-fashion-boutiques", priority: "0.6" },
 ];
 
 export async function GET({ site }) {
