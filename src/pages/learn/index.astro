@@ -1,0 +1,124 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "Learn — Guides, Glossary & Tools | VoluChat";
+const seoDescription =
+  "Learn WhatsApp and Instagram sales automation: what-is guides, 20-term glossary, field blog and the free comment revenue leak calculator.";
+const seoKeywords =
+  "VoluChat learn, WhatsApp sales guides, Instagram DM automation learn, e-commerce glossary, comment revenue calculator";
+const siteUrl = "https://www.voluchat.com";
+
+const sections = [
+  {
+    href: "/what-is",
+    tag: "Start here",
+    title: "What-is guides",
+    text: "4 definitional guides: comment-to-DM, sales bots, UPI checkout, cart recovery.",
+  },
+  {
+    href: "/glossary",
+    tag: "Reference",
+    title: "20-term glossary",
+    text: "Core concepts, checkout, catalog and recovery terms — each linked to its guide.",
+  },
+  {
+    href: "/blog",
+    tag: "Field notes",
+    title: "Blog",
+    text: "Boutique playbooks on upsells, recovery and in-chat checkout strategy.",
+  },
+  {
+    href: "/comment-revenue-leak-calculator",
+    tag: "Free tool",
+    title: "Revenue leak calculator",
+    text: "Enter monthly comments and see what unanswered 'Price?' costs you.",
+  },
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/learn`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: sections.map((s, i) => ({
+      "@type": "SiteNavigationElement",
+      position: i + 1,
+      name: s.title,
+      url: `${siteUrl}${s.href}`,
+    })),
+  },
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/learn", siteUrl).toString()}
+  structuredData={[...structuredData, getFaqSchema()]}
+>
+  <Navbar />
+
+  <main class="overflow-hidden">
+    <section class="hero-stripe">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center">
+          <Breadcrumbs items={[{ label: "Learn" }]} />
+          <div class="chip mb-4">
+            <span class="mini-label text-emerald-400">Learn hub</span>
+          </div>
+          <h1 class="mt-6 text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading">
+            Learn the loop. Then automate it.
+          </h1>
+          <p class="section-copy mx-auto mt-5 max-w-2xl">
+            Guides for the curious, glossary for the precise, blog for the
+            ambitious — and a calculator that shows what waiting costs.
+          </p>
+          <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/comment-revenue-leak-calculator" class="btn-primary">Calculate my leak &rarr;</a>
+            <a href="/what-is" class="btn-secondary">Start with definitions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <p class="section-eyebrow mb-4">Everything to learn</p>
+          <div class="grid gap-4 md:grid-cols-2">
+            {sections.map((s) => (
+              <a href={s.href} class="solid-card group p-6 md:p-8 transition-all">
+                <span class="mini-label text-slate-400">{s.tag}</span>
+                <h2 class="mt-3 text-xl font-heading font-semibold text-[#fcfdff] transition-colors group-hover:text-emerald-400">
+                  {s.title}
+                </h2>
+                <p class="mt-2 text-sm sm:text-base font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                  {s.text}
+                </p>
+                <p class="mt-4 text-sm font-semibold text-white">Open →</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ />
+  </main>
+
+  <Footer />
+</Layout>

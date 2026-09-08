@@ -1,0 +1,152 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import FAQ from "../../components/FAQ.astro";
+import { getFaqSchema } from "../../lib/faqSchema.mjs";
+
+const seoTitle = "Integrations — Shopify, Razorpay & Cashfree | VoluChat";
+const seoDescription =
+  "Connect VoluChat to your store stack: live Shopify catalog sync with draft orders, plus Razorpay and Cashfree 1-click UPI checkout inside WhatsApp and Instagram DMs.";
+const seoKeywords =
+  "VoluChat integrations, Shopify WhatsApp integration, Razorpay WhatsApp UPI, Cashfree WhatsApp payment, boutique automation integrations";
+const siteUrl = "https://www.voluchat.com";
+
+const integrations = [
+  {
+    name: "Shopify",
+    tag: "Catalog & Orders",
+    icon: "🛍️",
+    href: "/integrations/shopify",
+    title: "Live catalog sync + draft orders in chat",
+    text: "Variant stock, pricing, fabric details and pincode SLA read live; draft orders written back to admin.",
+  },
+  {
+    name: "Razorpay",
+    tag: "UPI Checkout",
+    icon: "💳",
+    href: "/integrations/razorpay",
+    title: "1-click UPI links with instant verification",
+    text: "GPay, PhonePe and Paytm links generated in-chat, verified via webhook in under a second.",
+  },
+  {
+    name: "Cashfree",
+    tag: "UPI Checkout",
+    icon: "⚡",
+    href: "/integrations/cashfree",
+    title: "Prepaid-first checkout that cuts COD RTO",
+    text: "Frictionless prepaid links inside WhatsApp lift prepaid ratios from 40% to 75%+.",
+  },
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/integrations`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: integrations.map((item, i) => ({
+      "@type": "SiteNavigationElement",
+      position: i + 1,
+      name: item.name,
+      url: `${siteUrl}${item.href}`,
+    })),
+  },
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  canonical={new URL("/integrations", siteUrl).toString()}
+  structuredData={[...structuredData, getFaqSchema()]}
+>
+  <Navbar />
+
+  <main class="overflow-hidden">
+    <section class="hero-stripe">
+      <div class="section-glow-emerald"></div>
+      <div class="sect-grid opacity-20"></div>
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl">
+          <Breadcrumbs items={[{ label: "Integrations" }]} />
+          <div class="chip mb-4">
+            <span class="mini-label text-emerald-400">Integrations hub</span>
+          </div>
+          <h1 class="mt-6 text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading">
+            Your store stack, wired into every chat.
+          </h1>
+          <p class="section-copy mx-auto mt-5 max-w-2xl">
+            VoluChat reads live catalog data and writes orders back — so every
+            sizing answer, stock check and UPI link in WhatsApp is accurate.
+          </p>
+          <div class="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
+            <a href="/free-trial" class="btn-primary">Start 30-Day Free Trial &rarr;</a>
+            <a href="/security" class="btn-secondary">Review Brand Guardrails</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="mx-auto max-w-4xl">
+          <p class="section-eyebrow mb-4">All integrations</p>
+          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-8">
+            3 live connections. Zero technical setup.
+          </h2>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {integrations.map((item) => (
+              <a href={item.href} class="solid-card group p-6 transition-all">
+                <p class="text-2xl">{item.icon}</p>
+                <p class="mini-label mt-4 text-slate-400">{item.tag}</p>
+                <h3 class="mt-2 text-lg font-heading font-semibold text-[#fcfdff] transition-colors group-hover:text-emerald-400">
+                  {item.name}
+                </h3>
+                <p class="mt-1 text-sm font-semibold text-emerald-300">{item.title}</p>
+                <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                  {item.text}
+                </p>
+                <p class="mt-4 text-sm font-semibold text-white">Explore →</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24 bg-[#000000]">
+      <div class="page-shell">
+        <div class="solid-card-elevated mx-auto max-w-4xl p-8 sm:p-12">
+          <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p class="section-eyebrow">How it fits</p>
+              <h2 class="mt-4 text-3xl font-heading font-semibold leading-[1.1] text-[#fcfdff]">
+                Reads live. Writes orders back. Never guesses.
+              </h2>
+              <p class="mt-4 text-base font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                See the end-to-end flow in <a href="/features" class="text-emerald-300 underline underline-offset-4">Features</a>,
+                and how margins stay protected in <a href="/security" class="text-emerald-300 underline underline-offset-4">Security &amp; Guardrails</a>.
+              </p>
+            </div>
+            <div class="flex flex-col gap-3">
+              <a href="/free-trial" class="btn-primary w-full">Start My 30-Day Free Trial &rarr;</a>
+              <a href="/compare" class="btn-secondary w-full">See how we compare</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ />
+  </main>
+
+  <Footer />
+</Layout>

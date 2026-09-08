@@ -1,13 +1,37 @@
 ---
-const isHome = Astro.url.pathname === "/";
-const homeHref = (hash: string) => (isHome ? hash : `/${hash}`);
-
 const navigation = [
   { name: "Features", href: "/features" },
-  { name: "How It Works", href: homeHref("#how-it-works") },
+  {
+    name: "Compare",
+    href: "/compare",
+    children: [
+      { name: "vs Wati", href: "/compare/wati" },
+      { name: "vs Manychat", href: "/compare/manychat" },
+      { name: "vs Interakt", href: "/compare/interakt" },
+      { name: "All comparisons", href: "/compare" },
+    ],
+  },
+  {
+    name: "Integrations",
+    href: "/integrations",
+    children: [
+      { name: "Shopify", href: "/integrations/shopify" },
+      { name: "Razorpay", href: "/integrations/razorpay" },
+      { name: "Cashfree", href: "/integrations/cashfree" },
+      { name: "All integrations", href: "/integrations" },
+    ],
+  },
+  {
+    name: "Learn",
+    href: "/learn",
+    children: [
+      { name: "What-is guides", href: "/what-is" },
+      { name: "Glossary", href: "/glossary" },
+      { name: "Blog", href: "/blog" },
+      { name: "Revenue calculator", href: "/comment-revenue-leak-calculator" },
+    ],
+  },
   { name: "Pricing", href: "/pricing" },
-  { name: "Compare", href: "/compare" },
-  { name: "Free Calculator", href: "/comment-revenue-leak-calculator" },
   { name: "About", href: "/about" },
 ];
 
@@ -49,15 +73,43 @@ const demoHref = "/free-trial";
       </div>
 
       <!-- Desktop Nav Links -->
-      <div class="relative z-10 hidden lg:flex lg:gap-x-8 items-center">
+      <div class="relative z-10 hidden lg:flex lg:gap-x-7 items-center">
         {
           navigation.map((item) => (
-            <a
-              href={item.href}
-              class="nav-link relative py-1 text-[13.5px] font-medium text-[rgba(245,245,247,0.75)] transition-colors duration-200 hover:text-[#ffffff]"
-            >
-              {item.name}
-            </a>
+            item.children ? (
+              <div class="nav-dropdown-wrap group relative">
+                <a
+                  href={item.href}
+                  class="nav-link relative inline-flex items-center gap-1 py-1 text-[13.5px] font-medium text-[rgba(245,245,247,0.75)] transition-colors duration-200 hover:text-[#ffffff]"
+                  aria-haspopup="true"
+                >
+                  {item.name}
+                  <svg class="h-3 w-3 opacity-60 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </a>
+                <div class="nav-dropdown invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                  <div class="overflow-hidden rounded-2xl border border-white/[0.12] bg-[#0c0e15]/95 p-1.5 shadow-[0_24px_60px_rgba(0,0,0,0.85)] backdrop-blur-2xl">
+                    {item.children.map((child) => (
+                      <a
+                        href={child.href}
+                        class="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-[13px] font-medium text-[rgba(245,245,247,0.8)] transition hover:bg-white/[0.06] hover:text-white"
+                      >
+                        <span>{child.name}</span>
+                        <span class="text-white/25">→</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                href={item.href}
+                class="nav-link relative py-1 text-[13.5px] font-medium text-[rgba(245,245,247,0.75)] transition-colors duration-200 hover:text-[#ffffff]"
+              >
+                {item.name}
+              </a>
+            )
           ))
         }
       </div>
