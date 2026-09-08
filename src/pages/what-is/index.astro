@@ -78,9 +78,9 @@ const structuredData = [
         <div class="mx-auto max-w-3xl text-center">
           <Breadcrumbs items={[{ label: "Learn", href: "/learn" }, { label: "What-is" }]} />
           <div class="chip mb-4">
-            <span class="mini-label text-emerald-400">Definitions</span>
+            <span class="mini-label text-emerald-600">Definitions</span>
           </div>
-          <h1 class="mt-6 text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading">
+          <h1 class="mt-6 text-4xl font-semibold leading-[1.04] text-slate-900 sm:text-6xl font-heading">
             E-commerce automation, defined.
           </h1>
           <p class="section-copy mx-auto mt-5 max-w-2xl">
@@ -91,28 +91,28 @@ const structuredData = [
       </div>
     </section>
 
-    <section class="pb-24 bg-[#000000]">
+    <section class="pb-24 bg-white">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl">
           <p class="section-eyebrow mb-4">All guides</p>
           <div class="grid gap-4 md:grid-cols-2">
             {guides.map((g) => (
               <a href={g.href} class="solid-card group p-6 md:p-8 transition-all">
-                <span class="mini-label text-slate-400">{g.tag}</span>
-                <h2 class="mt-3 text-xl font-heading font-semibold text-[#fcfdff] transition-colors group-hover:text-emerald-400">
+                <span class="mini-label text-slate-500">{g.tag}</span>
+                <h2 class="mt-3 text-xl font-heading font-semibold text-slate-900 transition-colors group-hover:text-emerald-600">
                   {g.title}
                 </h2>
-                <p class="mt-2 text-sm sm:text-base font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                <p class="mt-2 text-sm sm:text-base font-normal leading-relaxed text-slate-600">
                   {g.text}
                 </p>
-                <p class="mt-4 text-sm font-semibold text-white">Read guide →</p>
+                <p class="mt-4 text-sm font-semibold text-slate-900">Read guide →</p>
               </a>
             ))}
           </div>
           <div class="solid-card mx-auto mt-8 max-w-4xl p-6 text-center sm:p-8">
-            <p class="text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
-              Need terms, not guides? Browse the <a href="/glossary" class="text-emerald-300 underline underline-offset-4">20-term Glossary</a>
-              or quantify your leak with the <a href="/comment-revenue-leak-calculator" class="text-emerald-300 underline underline-offset-4">free revenue calculator</a>.
+            <p class="text-sm font-normal leading-relaxed text-slate-600">
+              Need terms, not guides? Browse the <a href="/glossary" class="text-emerald-700 underline underline-offset-4">20-term Glossary</a>
+              or quantify your leak with the <a href="/comment-revenue-leak-calculator" class="text-emerald-700 underline underline-offset-4">free revenue calculator</a>.
             </p>
           </div>
         </div>

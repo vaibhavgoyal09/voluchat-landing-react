@@ -61,7 +61,7 @@ const authorInitials = blog.author.name
       class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-teal-300/5 backdrop-blur-[2px]"
     >
       <div
-        class="w-12 h-12 rounded-full flex items-center justify-center text-teal-200 bg-slate-100/80 border border-slate-300 scale-75 group-hover:scale-100 transition-transform duration-500"
+        class="w-12 h-12 rounded-full flex items-center justify-center text-emerald-700 bg-white/80 border border-slate-300 scale-75 group-hover:scale-100 transition-transform duration-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -114,18 +114,18 @@ const authorInitials = blog.author.name
     </div>
 
     <h2
-      class="text-xl font-bold text-white mb-4 group-hover:text-teal-200 transition-colors line-clamp-2 leading-tight"
+      class="text-xl font-bold text-slate-900 mb-4 group-hover:text-emerald-700 transition-colors line-clamp-2 leading-tight"
     >
       {blog.title}
     </h2>
 
-    <p class="text-slate-300 text-sm leading-relaxed mb-8 line-clamp-3">
+    <p class="text-slate-600 text-sm leading-relaxed mb-8 line-clamp-3">
       {blog.excerpt}
     </p>
 
     <!-- Footer -->
     <div
-      class="mt-auto pt-6 border-t border-white/10 flex items-center justify-between"
+      class="mt-auto pt-6 border-t border-slate-200 flex items-center justify-between"
     >
       <div class="flex items-center gap-2">
         {
@@ -137,18 +137,18 @@ const authorInitials = blog.author.name
               decoding="async"
               width="32"
               height="32"
-              class="h-8 w-8 rounded-full object-cover border border-white/10"
+              class="h-8 w-8 rounded-full object-cover border border-slate-200"
             />
           ) : (
-            <div class="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center font-bold text-[10px] text-teal-200 border border-white/10">
+            <div class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center font-bold text-[10px] text-emerald-700 border border-emerald-200">
               {authorInitials || "VT"}
             </div>
           )
         }
-        <span class="text-xs font-bold text-slate-200">{blog.author.name}</span>
+        <span class="text-xs font-bold text-slate-700">{blog.author.name}</span>
       </div>
 
-      <div class="text-teal-200 font-bold text-xs flex items-center gap-1.5">
+      <div class="text-emerald-700 font-bold text-xs flex items-center gap-1.5">
         Read More
         <svg
           xmlns="http://www.w3.org/2000/svg"

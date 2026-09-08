@@ -46,23 +46,23 @@ const structuredData = [
 >
   <Navbar />
 
-  <main class="min-h-screen overflow-hidden bg-[#000000]">
+  <main class="min-h-screen overflow-hidden bg-white">
     <!-- Hero -->
-    <section class="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20 bg-[#000000]">
+    <section class="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20 bg-white">
       <div class="absolute inset-0 -z-10 bg-[radial-gradient(60%_45%_at_50%_10%,rgba(16,185,129,0.12),transparent_65%)]"></div>
       <div class="sect-grid opacity-20 pointer-events-none"></div>
       <div class="page-shell relative z-10">
         <div class="mx-auto max-w-3xl text-center">
           <div class="chip mx-auto mb-5">
-            <span class="mini-label text-emerald-400">Free Tool</span>
+            <span class="mini-label text-emerald-600">Free Tool</span>
           </div>
-          <h1 class="text-3xl font-bold leading-[1.1] text-[#fcfdff] sm:text-5xl lg:text-6xl font-heading tracking-tight">
+          <h1 class="text-3xl font-bold leading-[1.1] text-slate-900 sm:text-5xl lg:text-6xl font-heading tracking-tight">
             How much revenue are your unanswered Instagram comments costing you?
           </h1>
           <p class="section-copy mx-auto mt-5 max-w-2xl text-base sm:text-lg">
             Enter your boutique's monthly numbers and see exactly how much revenue leaks from comments that never become DMs — and what instant automation recovers.
           </p>
-          <div class="mt-6 flex items-center justify-center gap-3 text-xs font-mono text-slate-400">
+          <div class="mt-6 flex items-center justify-center gap-3 text-xs font-mono text-slate-500">
             <span>✓ No signup required</span>
             <span>&bull;</span>
             <span>✓ 30 seconds</span>
@@ -74,16 +74,16 @@ const structuredData = [
     </section>
 
     <!-- Calculator -->
-    <section class="border-t border-white/[0.08] bg-[#06060a] py-16 sm:py-24">
+    <section class="border-t border-slate-200 bg-slate-50 py-16 sm:py-24">
       <div class="page-shell">
         <div class="mx-auto max-w-6xl">
           <div class="grid gap-8 lg:grid-cols-2 items-start">
             <!-- Left: Inputs -->
             <div class="solid-card p-6 sm:p-8 space-y-8 reveal-on-scroll">
               <div class="flex items-center gap-3">
-                <span class="grid h-8 w-8 place-items-center rounded-full border border-white/[0.14] font-mono text-xs font-bold text-white">1</span>
+                <span class="grid h-8 w-8 place-items-center rounded-full border border-slate-200 font-mono text-xs font-bold text-slate-900">1</span>
                 <div>
-                  <p class="text-sm font-semibold text-white">Your boutique numbers</p>
+                  <p class="text-sm font-semibold text-slate-900">Your boutique numbers</p>
                   <p class="text-xs text-[#86868b]">Adjust the sliders to match your business.</p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ const structuredData = [
                     <label for="comments" class="text-sm font-medium text-[#f5f5f7]">
                       Monthly Instagram comments &amp; Reel interactions
                     </label>
-                    <span id="comments-val" class="font-mono text-sm text-emerald-300 tabular-nums">1,000</span>
+                    <span id="comments-val" class="font-mono text-sm text-emerald-700 tabular-nums">1,000</span>
                   </div>
                   <input
                     type="range"
@@ -103,7 +103,7 @@ const structuredData = [
                     max="20000"
                     step="100"
                     value="1000"
-                    class="w-full h-2 rounded-full bg-white/[0.08] appearance-none cursor-pointer accent-emerald-400"
+                    class="w-full h-2 rounded-full bg-slate-100 appearance-none cursor-pointer accent-emerald-400"
                     style="accent-color: #34d399;"
                   />
                   <div class="flex justify-between text-[11px] text-[#86868b] mt-2">
@@ -117,7 +117,7 @@ const structuredData = [
                     <label for="responseTime" class="text-sm font-medium text-[#f5f5f7]">
                       Average reply time to a comment
                     </label>
-                    <span id="responseTime-val" class="font-mono text-sm text-emerald-300">4–12 hours</span>
+                    <span id="responseTime-val" class="font-mono text-sm text-emerald-700">4–12 hours</span>
                   </div>
                   <input
                     type="range"
@@ -126,7 +126,7 @@ const structuredData = [
                     max="4"
                     step="1"
                     value="3"
-                    class="w-full h-2 rounded-full bg-white/[0.08] appearance-none cursor-pointer"
+                    class="w-full h-2 rounded-full bg-slate-100 appearance-none cursor-pointer"
                     style="accent-color: #34d399;"
                   />
                   <div class="flex justify-between text-[11px] text-[#86868b] mt-2">
@@ -135,7 +135,7 @@ const structuredData = [
                   </div>
                   <div class="mt-3 flex flex-wrap gap-2" id="responseTimeChips">
                     {["Under 2 min", "Under 30 min", "1–4 hours", "4–12 hours", "24+ hours"].map((label, i) => (
-                      <span class={`response-chip rounded-full border px-2.5 py-1 text-[11px] font-medium transition-colors ${i === 3 ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-200" : "border-white/[0.08] bg-white/[0.04] text-[#86868b]"}`}>
+                      <span class={`response-chip rounded-full border px-2.5 py-1 text-[11px] font-medium transition-colors ${i === 3 ? "border-emerald-300 bg-emerald-500/10 text-emerald-700" : "border-slate-200 bg-slate-50 text-[#86868b]"}`}>
                         {label}
                       </span>
                     ))}
@@ -147,7 +147,7 @@ const structuredData = [
                     <label for="aov" class="text-sm font-medium text-[#f5f5f7]">
                       Average order value (₹)
                     </label>
-                    <span id="aov-val" class="font-mono text-sm text-emerald-300 tabular-nums">₹1,200</span>
+                    <span id="aov-val" class="font-mono text-sm text-emerald-700 tabular-nums">₹1,200</span>
                   </div>
                   <input
                     type="range"
@@ -156,7 +156,7 @@ const structuredData = [
                     max="20000"
                     step="100"
                     value="1200"
-                    class="w-full h-2 rounded-full bg-white/[0.08] appearance-none cursor-pointer"
+                    class="w-full h-2 rounded-full bg-slate-100 appearance-none cursor-pointer"
                     style="accent-color: #34d399;"
                   />
                   <div class="flex justify-between text-[11px] text-[#86868b] mt-2">
@@ -170,7 +170,7 @@ const structuredData = [
                     <label for="convRate" class="text-sm font-medium text-[#f5f5f7]">
                       Current comment-to-DM conversion rate
                     </label>
-                    <span id="convRate-val" class="font-mono text-sm text-emerald-300">3%</span>
+                    <span id="convRate-val" class="font-mono text-sm text-emerald-700">3%</span>
                   </div>
                   <input
                     type="range"
@@ -179,7 +179,7 @@ const structuredData = [
                     max="15"
                     step="0.5"
                     value="3"
-                    class="w-full h-2 rounded-full bg-white/[0.08] appearance-none cursor-pointer"
+                    class="w-full h-2 rounded-full bg-slate-100 appearance-none cursor-pointer"
                     style="accent-color: #34d399;"
                   />
                   <div class="flex justify-between text-[11px] text-[#86868b] mt-2">
@@ -194,22 +194,22 @@ const structuredData = [
             <div class="space-y-6">
               <div class="solid-card-elevated p-6 sm:p-8 reveal-on-scroll reveal-delay-1">
                 <div class="flex items-center gap-3 mb-5">
-                  <span class="grid h-8 w-8 place-items-center rounded-full border border-white/[0.14] font-mono text-xs font-bold text-white">2</span>
+                  <span class="grid h-8 w-8 place-items-center rounded-full border border-slate-200 font-mono text-xs font-bold text-slate-900">2</span>
                   <div>
                     <p class="text-xs font-bold uppercase tracking-widest text-[#a1a1a6]">Your leak at a glance</p>
                     <p class="text-[11px] text-[#86868b]">Updated live as you adjust the sliders.</p>
                   </div>
                 </div>
                 <div class="space-y-0">
-                  <div class="flex items-baseline justify-between py-4 border-b border-white/[0.08]">
+                  <div class="flex items-baseline justify-between py-4 border-b border-slate-200">
                     <span class="text-sm text-[#86868b]">Comments going cold per month</span>
-                    <span id="coldComments" class="text-xl font-semibold text-white font-heading tabular-nums">9,700</span>
+                    <span id="coldComments" class="text-xl font-semibold text-slate-900 font-heading tabular-nums">9,700</span>
                   </div>
-                  <div class="flex items-baseline justify-between py-4 border-b border-white/[0.08]">
+                  <div class="flex items-baseline justify-between py-4 border-b border-slate-200">
                     <span class="text-sm text-[#86868b]">Leads lost per month</span>
-                    <span id="leadsLost" class="text-xl font-semibold text-white font-heading tabular-nums">7,520</span>
+                    <span id="leadsLost" class="text-xl font-semibold text-slate-900 font-heading tabular-nums">7,520</span>
                   </div>
-                  <div class="flex items-baseline justify-between py-4 border-b border-white/[0.08]">
+                  <div class="flex items-baseline justify-between py-4 border-b border-slate-200">
                     <span class="text-sm text-[#86868b]">Revenue leaked per month</span>
                     <span id="revenueLeaked" class="text-xl font-semibold text-[#fca5a5] font-heading tabular-nums">₹9,02,400</span>
                   </div>
@@ -220,16 +220,16 @@ const structuredData = [
                 </div>
               </div>
 
-              <div class="solid-card p-6 sm:p-8 border-emerald-500/25 bg-emerald-950/15 reveal-on-scroll reveal-delay-2">
+              <div class="solid-card p-6 sm:p-8 border-emerald-300 bg-emerald-50 reveal-on-scroll reveal-delay-2">
                 <div class="flex items-center gap-3 mb-4">
-                  <span class="grid h-8 w-8 place-items-center rounded-full border border-emerald-500/40 font-mono text-xs font-bold text-emerald-300">3</span>
+                  <span class="grid h-8 w-8 place-items-center rounded-full border border-emerald-300 font-mono text-xs font-bold text-emerald-700">3</span>
                   <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-300">With VoluChat comment-to-DM automation</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-700">With VoluChat comment-to-DM automation</p>
                     <p class="text-[11px] text-[#86868b]">Replying in under 2 minutes and converting cold commenters into checkout-ready DMs.</p>
                   </div>
                 </div>
                 <p class="text-sm text-[#86868b] mb-1">Recoverable revenue per month</p>
-                <p id="recoverable" class="text-4xl font-semibold text-emerald-300 font-heading tabular-nums">₹8,08,560</p>
+                <p id="recoverable" class="text-4xl font-semibold text-emerald-700 font-heading tabular-nums">₹8,08,560</p>
                 <div class="mt-5">
                   <a href="/free-trial" class="btn-primary btn-sheen !w-full justify-center text-center">
                     See how VoluChat recovers this →
@@ -240,13 +240,13 @@ const structuredData = [
               <!-- Lead capture -->
               <div id="capture-block" class="solid-card p-6 sm:p-8 reveal-on-scroll reveal-delay-3">
                 <div class="flex items-start gap-3 mb-4">
-                  <div class="mt-0.5 h-5 w-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
-                    <svg class="h-3 w-3 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <div class="mt-0.5 h-5 w-5 rounded-full bg-emerald-500/15 border border-emerald-300 flex items-center justify-center">
+                    <svg class="h-3 w-3 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
                   <div>
-                    <p class="text-sm font-medium text-white">Get your free breakdown</p>
+                    <p class="text-sm font-medium text-slate-900">Get your free breakdown</p>
                     <p class="text-xs text-[#86868b] mt-1">
                       We'll email you a shareable report with your exact leak numbers and a 3-step recovery plan.
                     </p>
@@ -269,7 +269,7 @@ const structuredData = [
                   </button>
                   <p class="text-[11px] text-[#86868b] text-center">No spam. Unsubscribe anytime.</p>
                 </form>
-                <p id="form-ok" class="hidden mt-3 text-center text-sm font-medium text-emerald-300">
+                <p id="form-ok" class="hidden mt-3 text-center text-sm font-medium text-emerald-700">
                   Report sent — check your inbox.
                 </p>
               </div>
@@ -280,7 +280,7 @@ const structuredData = [
     </section>
 
     <!-- How it works -->
-    <section class="border-t border-white/[0.08] bg-[#000000] py-16 sm:py-24">
+    <section class="border-t border-slate-200 bg-white py-16 sm:py-24">
       <div class="page-shell">
         <div class="mx-auto max-w-3xl text-center mb-12 reveal-on-scroll">
           <p class="section-eyebrow">How it works</p>
@@ -297,8 +297,8 @@ const structuredData = [
             { num: "04", title: "Cart recovery", desc: "If the buyer abandons, automated reminders with payment links recover the sale — even at 2 AM." },
           ].map((step) => (
             <div class="solid-card p-6 reveal-on-scroll" style="transition-delay: 0ms;">
-              <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-400">{step.num}</span>
-              <h3 class="mt-2 text-sm font-semibold text-white font-heading">{step.title}</h3>
+              <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-600">{step.num}</span>
+              <h3 class="mt-2 text-sm font-semibold text-slate-900 font-heading">{step.title}</h3>
               <p class="mt-2 text-xs text-[#86868b] leading-relaxed">{step.desc}</p>
             </div>
           ))}
@@ -358,11 +358,11 @@ const structuredData = [
 
         responseTimeChips.forEach((chip, i) => {
           if (i === responseTimeIdx) {
-            chip.classList.remove("border-white/[0.08]", "bg-white/[0.04]", "text-[#86868b]");
-            chip.classList.add("border-emerald-500/40", "bg-emerald-500/10", "text-emerald-200");
+            chip.classList.remove("border-slate-200", "bg-slate-50", "text-[#86868b]");
+            chip.classList.add("border-emerald-300", "bg-emerald-500/10", "text-emerald-700");
           } else {
-            chip.classList.add("border-white/[0.08]", "bg-white/[0.04]", "text-[#86868b]");
-            chip.classList.remove("border-emerald-500/40", "bg-emerald-500/10", "text-emerald-200");
+            chip.classList.add("border-slate-200", "bg-slate-50", "text-[#86868b]");
+            chip.classList.remove("border-emerald-300", "bg-emerald-500/10", "text-emerald-700");
           }
         });
 

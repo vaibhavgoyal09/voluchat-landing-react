@@ -11,31 +11,6 @@ const seoDescription =
 const seoKeywords =
   "VoluChat vs Chatfuel, Chatfuel alternative fashion, Chatfuel vs VoluChat, no-code WhatsApp chatbot India, fashion boutique automation";
 const siteUrl = "https://www.voluchat.com";
-const structuredData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: seoTitle,
-    description: seoDescription,
-    url: `${siteUrl}/compare/chatfuel`,
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "VoluChat vs Chatfuel — Comparison Categories",
-    description:
-      "Detailed comparison categories between VoluChat's autonomous AI sales agent and Chatfuel's no-code chatbot builder for fashion boutiques.",
-    url: `${siteUrl}/compare/chatfuel`,
-    itemListElement: comparison.map((item, idx) => ({
-      "@type": "ListItem",
-      position: idx + 1,
-      name: item.category,
-      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
-      url: `${siteUrl}/compare/chatfuel#category-${idx + 1}`,
-    })),
-  },
-];
-
 const comparison = [
   {
     category: "Payment & Checkout",
@@ -81,6 +56,32 @@ const comparison = [
   },
 ];
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/chatfuel`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Chatfuel — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's autonomous AI sales agent and Chatfuel's no-code chatbot builder for fashion boutiques.",
+    url: `${siteUrl}/compare/chatfuel`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/chatfuel#category-${idx + 1}`,
+    })),
+  },
+];
+
+
 const verdict = {
   chooseChatfuel: "You run a general e-commerce brand or creator business and want a visual no-code builder to create custom chatbot flows for lead capture, FAQ responses, and simple automation across Facebook and Instagram.",
   chooseVoluchat: "You run a fashion boutique or clothing brand and want to convert Instagram Reel comments, Facebook post comments, and WhatsApp inquiries into paid UPI orders automatically — with AI that handles sizing, fabric doubts, and cross-sells without per-contact pricing spikes.",
@@ -122,22 +123,22 @@ const pageFaqs = [
   <main class="overflow-hidden pt-20">
     <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
       <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(16,185,129,0.10),transparent_34%)]"
       >
       </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="compare-hero-text mx-auto max-w-4xl text-center">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700 mb-5">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             VoluChat vs Chatfuel
           </div>
           <h1
-            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-slate-900 sm:text-6xl lg:text-7xl font-heading"
           >
             AI Sales Closer vs
-            <span class="block text-emerald-400">No-Code Chatbot Builder.</span>
+            <span class="block text-emerald-600">No-Code Chatbot Builder.</span>
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
             Chatfuel gives you a visual no-code builder to create chatbot flows — but you still push external links for checkout. VoluChat closes the full sale inside WhatsApp with AI that handles sizing, cross-sells, and UPI payment.
@@ -147,11 +148,11 @@ const pageFaqs = [
     </section>
 
     <!-- Side by Side Deep Comparison Grid -->
-    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+    <section class="py-16 sm:py-20 border-t border-slate-200 bg-slate-50">
       <div class="page-shell">
         <div class="mx-auto max-w-2xl text-center mb-12">
           <p class="section-eyebrow">Detailed Breakdown</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+          <h2 class="section-title mt-3 text-slate-900 font-heading">
             How VoluChat compares to Chatfuel.
           </h2>
         </div>
@@ -159,30 +160,30 @@ const pageFaqs = [
         <div class="max-w-5xl mx-auto space-y-5">
           {
             comparison.map((item, idx) => (
-              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-white/[0.10] hover:border-emerald-500/30 transition-all">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4 mb-5">
+              <div class="solid-card p-6 sm:p-8 rounded-2xl border border-slate-200 hover:border-emerald-300 transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-4 mb-5">
                   <div>
                     <span class="font-mono text-xs text-slate-500 font-bold uppercase">CATEGORY 0{idx + 1}</span>
-                    <h3 class="text-xl font-heading font-bold text-white mt-0.5">{item.category}</h3>
+                    <h3 class="text-xl font-heading font-bold text-slate-900 mt-0.5">{item.category}</h3>
                   </div>
-                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-300">
+                  <span class="inline-flex self-start sm:self-auto items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-700">
                     ✓ {item.voluAdvantage}
                   </span>
                 </div>
 
                 <div class="grid gap-4 md:grid-cols-2">
-                  <div class="rounded-xl border border-rose-500/20 bg-[#12080a] p-5">
+                  <div class="rounded-xl border border-rose-200 bg-rose-50 p-5">
                     <div class="flex items-center gap-2 mb-2">
-                      <span class="text-rose-400 font-mono font-bold text-xs">✕</span>
-                      <span class="mini-label text-rose-400">Chatfuel Approach</span>
+                      <span class="text-rose-600 font-mono font-bold text-xs">✕</span>
+                      <span class="mini-label text-rose-600">Chatfuel Approach</span>
                     </div>
-                    <p class="text-sm font-normal text-slate-300 leading-relaxed">{item.chatfuel}</p>
+                    <p class="text-sm font-normal text-slate-600 leading-relaxed">{item.chatfuel}</p>
                   </div>
 
-                  <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5">
+                  <div class="rounded-xl border border-emerald-300 bg-emerald-50 p-5">
                     <div class="flex items-center gap-2 mb-2">
-                      <span class="text-emerald-400 font-mono font-bold text-xs">✓</span>
-                      <span class="mini-label text-emerald-400">VoluChat Approach</span>
+                      <span class="text-emerald-600 font-mono font-bold text-xs">✓</span>
+                      <span class="mini-label text-emerald-600">VoluChat Approach</span>
                     </div>
                     <p class="text-sm font-medium text-emerald-100 leading-relaxed">{item.voluchat}</p>
                   </div>
@@ -195,19 +196,19 @@ const pageFaqs = [
     </section>
 
     <!-- Verdict Cards -->
-    <section class="py-20 sm:py-24 bg-[#000000]">
+    <section class="py-20 sm:py-24 bg-white">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
           <div class="solid-card p-6 sm:p-8">
-            <span class="mini-label text-slate-400">Choose Chatfuel if...</span>
-            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">Visual No-Code Builder</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseChatfuel}</p>
+            <span class="mini-label text-slate-500">Choose Chatfuel if...</span>
+            <h3 class="text-xl font-heading font-bold text-slate-900 mt-2 mb-3">Visual No-Code Builder</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{verdict.chooseChatfuel}</p>
           </div>
 
-          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-500/30">
-            <span class="mini-label text-emerald-400">Choose VoluChat if...</span>
-            <h3 class="text-xl font-heading font-bold text-white mt-2 mb-3">In-Chat Fashion Sales</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">{verdict.chooseVoluchat}</p>
+          <div class="solid-card-elevated p-6 sm:p-8 border-emerald-300">
+            <span class="mini-label text-emerald-600">Choose VoluChat if...</span>
+            <h3 class="text-xl font-heading font-bold text-slate-900 mt-2 mb-3">In-Chat Fashion Sales</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{verdict.chooseVoluchat}</p>
           </div>
         </div>
 
@@ -224,7 +225,7 @@ const pageFaqs = [
             </a>
           </div>
           <p class="mt-4 text-sm text-slate-500">
-            Or explore <a href="/compare" class="text-emerald-400 hover:text-emerald-300 underline">all comparisons</a>.
+            Or explore <a href="/compare" class="text-emerald-600 hover:text-emerald-700 underline">all comparisons</a>.
           </p>
         </div>
       </div>

@@ -10,14 +10,14 @@ const { items = [] } = Astro.props as { items: Crumb[] };
   <nav aria-label="Breadcrumb" class="mb-6">
     <ol class="flex flex-wrap items-center gap-1.5 text-xs font-mono text-slate-500">
       <li>
-        <a href="/" class="transition-colors hover:text-emerald-300">Home</a>
+        <a href="/" class="transition-colors hover:text-emerald-700">Home</a>
       </li>
       {items.map((item) => (
         <>
           <li aria-hidden="true" class="text-slate-700">/</li>
           <li>
             {item.href ? (
-              <a href={item.href} class="transition-colors hover:text-emerald-300">{item.label}</a>
+              <a href={item.href} class="transition-colors hover:text-emerald-700">{item.label}</a>
             ) : (
               <span aria-current="page" class="text-slate-300">{item.label}</span>
             )}

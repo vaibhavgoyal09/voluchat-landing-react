@@ -238,22 +238,22 @@ const faqItems = [
     <!-- Hero -->
     <section class="relative overflow-hidden pt-20 pb-16 sm:pt-24 lg:pb-24">
       <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(16,185,129,0.10),transparent_34%)]"
       >
       </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="mx-auto max-w-4xl text-center">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700 mb-5">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             11 Competitors Compared
           </div>
           <h1
-            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl lg:text-7xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-slate-900 sm:text-6xl lg:text-7xl font-heading"
           >
             Find the right WhatsApp
-            <span class="block text-emerald-400">sales bot for your boutique.</span>
+            <span class="block text-emerald-600">sales bot for your boutique.</span>
           </h1>
           <p class="section-copy mx-auto mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed">
             Wati, Manychat, AiSensy, Respond.io — every tool has a strength. Here is how 11 alternatives compare for fashion boutiques selling through Instagram Reels and WhatsApp DMs.
@@ -263,11 +263,11 @@ const faqItems = [
     </section>
 
     <!-- Quick Comparison Table -->
-    <section class="py-16 sm:py-20 border-t border-white/[0.08] bg-[#06060a]">
+    <section class="py-16 sm:py-20 border-t border-slate-200 bg-slate-50">
       <div class="page-shell">
         <div class="mx-auto max-w-2xl text-center mb-12">
           <p class="section-eyebrow">Quick Reference</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+          <h2 class="section-title mt-3 text-slate-900 font-heading">
             All 11 alternatives at a glance.
           </h2>
         </div>
@@ -275,34 +275,34 @@ const faqItems = [
         <div class="max-w-6xl mx-auto overflow-x-auto">
           <div class="min-w-[800px]">
             <!-- Table Header -->
-            <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-3 border-b border-white/[0.12]">
+            <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-3 border-b border-slate-200">
               <span class="mini-label text-slate-500">Competitor</span>
               <span class="mini-label text-slate-500">Type</span>
               <span class="mini-label text-slate-500">Price</span>
               <span class="mini-label text-slate-500">Best For</span>
-              <span class="mini-label text-emerald-400">VoluChat Advantage</span>
+              <span class="mini-label text-emerald-600">VoluChat Advantage</span>
             </div>
 
             <!-- VoluChat Row -->
-            <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-4 border-b border-emerald-500/20 bg-emerald-950/10">
-              <span class="font-heading font-bold text-emerald-400 text-sm">VoluChat</span>
-              <span class="text-sm text-emerald-300 font-medium">AI Sales Agent</span>
-              <span class="text-sm text-white font-mono">₹4,999/mo</span>
+            <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-4 border-b border-emerald-300 bg-emerald-50">
+              <span class="font-heading font-bold text-emerald-600 text-sm">VoluChat</span>
+              <span class="text-sm text-emerald-700 font-medium">AI Sales Agent</span>
+              <span class="text-sm text-slate-900 font-mono">₹4,999/mo</span>
               <span class="text-sm text-emerald-100">Fashion boutiques wanting 24/7 in-chat sales</span>
-              <span class="text-sm text-emerald-300 font-medium">— The benchmark</span>
+              <span class="text-sm text-emerald-700 font-medium">— The benchmark</span>
             </div>
 
             <!-- Competitor Rows -->
             {
               competitors.map((c) => (
-                <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-4 border-b border-white/[0.06] hover:bg-white/[0.02] transition-colors">
-                  <a href={c.slug} class="font-heading font-semibold text-white text-sm hover:text-emerald-400 transition-colors underline underline-offset-2 decoration-white/20 hover:decoration-emerald-400/60">
+                <div class="grid grid-cols-[1.2fr_1fr_0.8fr_1.5fr_1.5fr] gap-3 px-5 py-4 border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                  <a href={c.slug} class="font-heading font-semibold text-slate-900 text-sm hover:text-emerald-600 transition-colors underline underline-offset-2 decoration-white/20 hover:decoration-emerald-400/60">
                     {c.name} &rarr;
                   </a>
-                  <span class="text-sm text-slate-300">{c.type}</span>
-                  <span class="text-sm text-slate-400 font-mono">{c.price}</span>
-                  <span class="text-sm text-slate-300">{c.bestFor}</span>
-                  <span class="text-sm text-emerald-300/80">{c.voluAdvantage}</span>
+                  <span class="text-sm text-slate-600">{c.type}</span>
+                  <span class="text-sm text-slate-500 font-mono">{c.price}</span>
+                  <span class="text-sm text-slate-600">{c.bestFor}</span>
+                  <span class="text-sm text-emerald-700/80">{c.voluAdvantage}</span>
                 </div>
               ))
             }
@@ -312,11 +312,11 @@ const faqItems = [
     </section>
 
     <!-- Categorized Recommendations -->
-    <section class="py-20 sm:py-24 bg-[#000000]">
+    <section class="py-20 sm:py-24 bg-white">
       <div class="page-shell">
         <div class="mx-auto max-w-3xl text-center mb-14">
           <p class="section-eyebrow">Categorized Guide</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+          <h2 class="section-title mt-3 text-slate-900 font-heading">
             What do you actually need?
           </h2>
           <p class="section-copy mx-auto mt-4 max-w-2xl">
@@ -327,24 +327,24 @@ const faqItems = [
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {
             categories.map((cat) => (
-              <div class={`solid-card p-6 flex flex-col ${cat.competitors[0] === "VoluChat" ? "!border-emerald-500/30 solid-card-elevated" : ""}`}>
+              <div class={`solid-card p-6 flex flex-col ${cat.competitors[0] === "VoluChat" ? "!border-emerald-300 solid-card-elevated" : ""}`}>
                 <div class="flex items-center gap-3 mb-4">
-                  <span class="grid h-10 w-10 place-items-center rounded-xl bg-[#101012] border border-white/[0.14] text-xl">
+                  <span class="grid h-10 w-10 place-items-center rounded-xl bg-slate-100 border border-slate-200 text-xl">
                     {cat.icon}
                   </span>
-                  <h3 class="font-heading font-bold text-white text-base">{cat.label}</h3>
+                  <h3 class="font-heading font-bold text-slate-900 text-base">{cat.label}</h3>
                 </div>
 
-                <p class="text-sm text-slate-300 leading-relaxed mb-4">{cat.description}</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">{cat.description}</p>
 
                 <div class="mb-4">
-                  <p class="mini-label text-slate-400 mb-2">Top picks:</p>
+                  <p class="mini-label text-slate-500 mb-2">Top picks:</p>
                   <div class="flex flex-wrap gap-2">
                     {cat.competitors.map((name) => (
                       <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-mono font-medium ${
                         name === "VoluChat"
-                          ? "border border-emerald-500/25 bg-emerald-500/10 text-emerald-300"
-                          : "border border-white/[0.12] bg-white/[0.04] text-slate-300"
+                          ? "border border-emerald-300 bg-emerald-500/10 text-emerald-700"
+                          : "border border-slate-200 bg-slate-50 text-slate-600"
                       }`}>
                         {name}
                       </span>
@@ -352,14 +352,14 @@ const faqItems = [
                   </div>
                 </div>
 
-                <div class="mt-auto rounded-xl border border-white/[0.08] bg-[#0a0a0c] p-4">
-                  <p class="text-xs text-emerald-400 font-medium mb-1">Choose this if:</p>
-                  <p class="text-xs text-slate-300 leading-relaxed">{cat.pickIf}</p>
+                <div class="mt-auto rounded-xl border border-slate-200 bg-white p-4">
+                  <p class="text-xs text-emerald-600 font-medium mb-1">Choose this if:</p>
+                  <p class="text-xs text-slate-600 leading-relaxed">{cat.pickIf}</p>
                 </div>
 
-                <div class="mt-3 rounded-xl border border-rose-500/15 bg-[#12080a] p-4">
-                  <p class="text-xs text-rose-400 font-medium mb-1">Heads up:</p>
-                  <p class="text-xs text-slate-400 leading-relaxed">{cat.caveat}</p>
+                <div class="mt-3 rounded-xl border border-rose-200 bg-rose-50 p-4">
+                  <p class="text-xs text-rose-600 font-medium mb-1">Heads up:</p>
+                  <p class="text-xs text-slate-500 leading-relaxed">{cat.caveat}</p>
                 </div>
               </div>
             ))
@@ -369,11 +369,11 @@ const faqItems = [
     </section>
 
     <!-- Why VoluChat -->
-    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+    <section class="py-20 sm:py-24 border-t border-slate-200 bg-slate-50">
       <div class="page-shell">
         <div class="mx-auto max-w-3xl text-center mb-14">
           <p class="section-eyebrow">The Differentiators</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+          <h2 class="section-title mt-3 text-slate-900 font-heading">
             Why fashion boutiques choose VoluChat.
           </h2>
           <p class="section-copy mx-auto mt-4 max-w-2xl">
@@ -384,17 +384,17 @@ const faqItems = [
         <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
           {
             whyVoluchat.map((item) => (
-              <div class="solid-card-elevated p-6 sm:p-7 border border-emerald-500/20">
-                <h3 class="text-lg font-heading font-bold text-emerald-400 mb-2">{item.title}</h3>
-                <p class="text-sm text-slate-300 leading-relaxed">{item.description}</p>
+              <div class="solid-card-elevated p-6 sm:p-7 border border-emerald-300">
+                <h3 class="text-lg font-heading font-bold text-emerald-600 mb-2">{item.title}</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">{item.description}</p>
               </div>
             ))
           }
         </div>
 
         <div class="mt-14 text-center">
-          <div class="inline-block max-w-3xl rounded-2xl border border-emerald-500/30 bg-gradient-to-b from-[#0a1410] to-[#0a0a0c] p-8 sm:p-10 shadow-2xl">
-            <h3 class="text-2xl font-heading font-bold text-white">
+          <div class="inline-block max-w-3xl rounded-2xl border border-emerald-300 bg-gradient-to-b from-emerald-50 to-slate-50 p-8 sm:p-10 shadow-2xl">
+            <h3 class="text-2xl font-heading font-bold text-slate-900">
               The 90-second sale, automated.
             </h3>
             <p class="section-copy mx-auto mt-3 max-w-xl text-sm sm:text-base">
@@ -417,11 +417,11 @@ const faqItems = [
     </section>
 
     <!-- FAQ -->
-    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#000000]">
+    <section class="py-20 sm:py-24 border-t border-slate-200 bg-white">
       <div class="page-shell">
         <div class="mx-auto max-w-2xl text-center mb-12">
           <p class="section-eyebrow">Common Questions</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+          <h2 class="section-title mt-3 text-slate-900 font-heading">
             Alternatives FAQ.
           </h2>
         </div>
@@ -429,13 +429,13 @@ const faqItems = [
         <div class="max-w-3xl mx-auto space-y-4">
           {
             faqItems.map((faq) => (
-              <details class="solid-card rounded-2xl border border-white/[0.10] overflow-hidden group">
-                <summary class="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-heading font-semibold text-white text-sm sm:text-base">
+              <details class="solid-card rounded-2xl border border-slate-200 overflow-hidden group">
+                <summary class="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-heading font-semibold text-slate-900 text-sm sm:text-base">
                   {faq.question}
                   <span class="shrink-0 text-slate-500 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
                 </summary>
-                <div class="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-white/[0.06]">
-                  <p class="text-sm text-slate-300 leading-relaxed mt-4">{faq.answer}</p>
+                <div class="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-slate-200">
+                  <p class="text-sm text-slate-600 leading-relaxed mt-4">{faq.answer}</p>
                 </div>
               </details>
             ))

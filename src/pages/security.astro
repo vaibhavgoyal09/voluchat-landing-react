@@ -136,7 +136,7 @@ const codGuardrails = [
             We treat your brand reputation as sacred. VoluChat wraps every AI response in strict margin limits, verified stock checks, catalog isolation, and instant human fallback — so your brand never says the wrong thing.
           </p>
           <p class="mt-4 max-w-xl text-sm font-normal leading-relaxed text-slate-500">
-            <strong class="text-slate-400">What does this mean?</strong> Your e-commerce automation agent can only say what your catalog says, can only discount within your configured margins, and hands off to a human the moment something is ambiguous.
+            <strong class="text-slate-500">What does this mean?</strong> Your e-commerce automation agent can only say what your catalog says, can only discount within your configured margins, and hands off to a human the moment something is ambiguous.
           </p>
         </div>
       </div>
@@ -149,8 +149,8 @@ const codGuardrails = [
           <div class="grid gap-4 sm:grid-cols-3">
             {metaCompliance.map((item) => (
               <article class="sec-card opacity-0 solid-card p-5 md:p-6">
-                <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
-                <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
+                <h3 class="text-base font-heading font-semibold text-slate-900">{item.title}</h3>
+                <p class="mt-2 text-sm font-normal leading-relaxed text-slate-600">{item.description}</p>
               </article>
             ))}
           </div>
@@ -165,10 +165,10 @@ const codGuardrails = [
           <div class="grid gap-4 sm:grid-cols-3">
             {dataFlow.map((group) => (
               <article class="sec-card opacity-0 solid-card p-5 md:p-6">
-                <h3 class="text-base font-heading font-semibold text-[#fcfdff] mb-3">{group.title}</h3>
+                <h3 class="text-base font-heading font-semibold text-slate-900 mb-3">{group.title}</h3>
                 <ul class="space-y-2">
                   {group.items.map((item) => (
-                    <li class="flex gap-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                    <li class="flex gap-2.5 text-sm font-normal leading-relaxed text-slate-600">
                       <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"></span>
                       <span>{item}</span>
                     </li>
@@ -190,13 +190,13 @@ const codGuardrails = [
               <article class="sec-guardrail opacity-0 solid-card p-6 md:p-8">
                 <div class="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-start">
                   <div>
-                    <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
-                    <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
+                    <h3 class="text-lg font-heading font-semibold text-slate-900">{item.title}</h3>
+                    <p class="mt-2 text-sm font-normal leading-relaxed text-slate-600">{item.description}</p>
                   </div>
                   <ul class="space-y-2.5">
                     {item.details.map((d) => (
-                      <li class="flex gap-2.5 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
-                        <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#101012] border border-white/[0.14] font-mono text-[10px] font-bold text-emerald-300">
+                      <li class="flex gap-2.5 text-sm font-normal leading-relaxed text-slate-600">
+                        <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-slate-100 border border-slate-200 font-mono text-[10px] font-bold text-emerald-700">
                           ✓
                         </span>
                         <span>{d}</span>
@@ -218,8 +218,8 @@ const codGuardrails = [
           <div class="grid gap-4 sm:grid-cols-3">
             {codGuardrails.map((item) => (
               <article class="sec-card opacity-0 solid-card p-5 md:p-6">
-                <h3 class="text-base font-heading font-semibold text-[#fcfdff]">{item.title}</h3>
-                <p class="mt-2 text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">{item.description}</p>
+                <h3 class="text-base font-heading font-semibold text-slate-900">{item.title}</h3>
+                <p class="mt-2 text-sm font-normal leading-relaxed text-slate-600">{item.description}</p>
               </article>
             ))}
           </div>
@@ -229,7 +229,7 @@ const codGuardrails = [
 
     <section class="pb-24 bg-white">
       <div class="page-shell text-center">
-        <h2 class="section-title text-[#fcfdff]">Ready to deploy with full brand control?</h2>
+        <h2 class="section-title text-slate-900">Ready to deploy with full brand control?</h2>
         <p class="section-copy mx-auto mt-4 max-w-2xl">
           Get 30 days free with 100% done-for-you setup. We configure every guardrail, test every edge case, and tune the AI on your brand voice before going live.
         </p>

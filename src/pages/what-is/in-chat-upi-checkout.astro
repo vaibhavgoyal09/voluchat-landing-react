@@ -88,19 +88,19 @@ const benefits = [
   <main class="overflow-hidden pt-20">
     <section class="relative overflow-hidden pt-20 pb-20 sm:pt-24 lg:pb-28">
       <div
-        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(15,23,42,0.55),transparent_34%)]"
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,rgba(16,185,129,0.15),transparent_32%),radial-gradient(circle_at_82%_20%,rgba(16,185,129,0.10),transparent_34%)]"
       >
       </div>
       <div class="ambient-noise"></div>
 
       <div class="page-shell">
         <div class="mx-auto max-w-3xl text-center whatis-hero-text">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-5">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700 mb-5">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             WhatsApp Commerce Guide
           </div>
           <h1
-            class="text-4xl font-semibold leading-[1.04] text-[#fcfdff] sm:text-6xl font-heading"
+            class="text-4xl font-semibold leading-[1.04] text-slate-900 sm:text-6xl font-heading"
           >
             What is In-Chat UPI Checkout?
           </h1>
@@ -111,7 +111,7 @@ const benefits = [
 
         <div class="mx-auto mt-14 max-w-3xl solid-card-elevated p-8 md:p-10">
           <p class="section-eyebrow mb-2">The Short Answer</p>
-          <blockquote class="font-heading text-xl md:text-2xl font-semibold text-[#fcfdff] leading-relaxed">
+          <blockquote class="font-heading text-xl md:text-2xl font-semibold text-slate-900 leading-relaxed">
             "In-chat UPI checkout lets customers pay with GPay, PhonePe, or Paytm inside WhatsApp with a single tap — turning Instagram DM conversations into verified prepaid orders without leaving chat."
           </blockquote>
         </div>
@@ -119,11 +119,11 @@ const benefits = [
     </section>
 
     <!-- 4-Step Process -->
-    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+    <section class="py-20 sm:py-24 border-t border-slate-200 bg-slate-50">
       <div class="page-shell">
         <div class="mx-auto max-w-2xl text-center mb-14">
           <p class="section-eyebrow">How It Works</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+          <h2 class="section-title mt-3 text-slate-900 font-heading">
             From WhatsApp chat to paid order in 4 steps.
           </h2>
           <p class="section-copy mx-auto mt-4 max-w-xl">
@@ -137,17 +137,17 @@ const benefits = [
               <div class="whatis-step solid-card p-6 flex flex-col justify-between">
                 <div>
                   <div class="flex items-center justify-between mb-4">
-                    <span class="grid h-8 w-8 place-items-center rounded-full bg-[#101012] border border-emerald-400/30 font-mono text-xs font-bold text-emerald-300">
+                    <span class="grid h-8 w-8 place-items-center rounded-full bg-slate-100 border border-emerald-300 font-mono text-xs font-bold text-emerald-700">
                       {item.step}
                     </span>
-                    <span class="font-mono text-[10px] uppercase font-bold text-emerald-400">
+                    <span class="font-mono text-[10px] uppercase font-bold text-emerald-600">
                       Step {item.step}
                     </span>
                   </div>
-                  <h3 class="text-base font-heading font-semibold text-[#fcfdff]">
+                  <h3 class="text-base font-heading font-semibold text-slate-900">
                     {item.title}
                   </h3>
-                  <p class="mt-2 text-xs sm:text-sm leading-relaxed text-[rgba(252,253,255,0.7)] font-normal">
+                  <p class="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
                     {item.detail}
                   </p>
                 </div>
@@ -159,11 +159,11 @@ const benefits = [
     </section>
 
     <!-- Why It Matters -->
-    <section class="py-20 sm:py-24 bg-[#000000]">
+    <section class="py-20 sm:py-24 bg-white">
       <div class="page-shell">
         <div class="mx-auto max-w-2xl text-center mb-14">
           <p class="section-eyebrow">The Business Impact</p>
-          <h2 class="section-title mt-3 text-[#fcfdff] font-heading">
+          <h2 class="section-title mt-3 text-slate-900 font-heading">
             Why Indian boutiques are replacing website links with WhatsApp checkout.
           </h2>
         </div>
@@ -173,12 +173,12 @@ const benefits = [
             benefits.map((benefit) => (
               <div class="whatis-benefit solid-card p-6 sm:p-7">
                 <div class="flex items-center gap-2 mb-3">
-                  <span class="text-emerald-400 font-bold font-mono text-sm">✓</span>
-                  <h3 class="text-lg font-heading font-semibold text-[#fcfdff]">
+                  <span class="text-emerald-600 font-bold font-mono text-sm">✓</span>
+                  <h3 class="text-lg font-heading font-semibold text-slate-900">
                     {benefit.title}
                   </h3>
                 </div>
-                <p class="text-sm font-normal leading-relaxed text-[rgba(252,253,255,0.7)]">
+                <p class="text-sm font-normal leading-relaxed text-slate-600">
                   {benefit.desc}
                 </p>
               </div>
@@ -189,17 +189,17 @@ const benefits = [
     </section>
 
     <!-- Comparison Table -->
-    <section class="py-20 sm:py-24 border-t border-white/[0.08] bg-[#06060a]">
+    <section class="py-20 sm:py-24 border-t border-slate-200 bg-slate-50">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl solid-card-elevated p-8 md:p-10">
           <p class="section-eyebrow mb-4">The Difference</p>
-          <h2 class="text-2xl font-heading font-semibold text-[#fcfdff] mb-6">
+          <h2 class="text-2xl font-heading font-semibold text-slate-900 mb-6">
             Manual Bank Details vs Automated In-Chat UPI Checkout
           </h2>
           <div class="grid gap-5 md:grid-cols-2">
             <div class="solid-card-subtle p-5">
-              <p class="mini-label text-rose-400">Manual DM Selling</p>
-              <ul class="mt-3 space-y-2.5 text-sm font-normal text-[rgba(252,253,255,0.7)]">
+              <p class="mini-label text-rose-600">Manual DM Selling</p>
+              <ul class="mt-3 space-y-2.5 text-sm font-normal text-slate-600">
                 <li>Texting your UPI ID / bank account manually</li>
                 <li>Waiting 30+ minutes for customer screenshot</li>
                 <li>Checking banking app to verify transaction</li>
@@ -207,9 +207,9 @@ const benefits = [
                 <li>Manual order entry mistakes in dispatch</li>
               </ul>
             </div>
-            <div class="solid-card-subtle border-emerald-500/30 p-5">
-              <p class="mini-label text-emerald-400">VoluChat In-Chat UPI</p>
-              <ul class="mt-3 space-y-2.5 text-sm font-normal text-[rgba(252,253,255,0.86)]">
+            <div class="solid-card-subtle border-emerald-300 p-5">
+              <p class="mini-label text-emerald-600">VoluChat In-Chat UPI</p>
+              <ul class="mt-3 space-y-2.5 text-sm font-normal text-slate-700">
                 <li>1-click dynamic UPI link generated in 2 seconds</li>
                 <li>Buyer pays with GPay, PhonePe, or Paytm instantly</li>
                 <li>Instant automatic payment confirmation webhook</li>
@@ -223,14 +223,14 @@ const benefits = [
     </section>
 
     <!-- Bottom CTA -->
-    <section class="pb-24 bg-[#000000]">
+    <section class="pb-24 bg-white">
       <div class="page-shell">
         <div class="mx-auto max-w-4xl text-center">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-300 mb-4">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700 mb-4">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             Official Meta Tech Partner
           </div>
-          <h2 class="text-3xl font-heading font-semibold text-[#fcfdff] mb-4">
+          <h2 class="text-3xl font-heading font-semibold text-slate-900 mb-4">
             Ready to collect instant UPI orders inside WhatsApp?
           </h2>
           <p class="section-copy mx-auto mb-8 max-w-2xl">
