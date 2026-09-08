@@ -2,7 +2,7 @@ const faqs = [
   {
     question: "How is VoluChat different from chatbot tools like Wati or ManyChat?",
     answer:
-      "Rule-based tools rely on rigid button menus ('Press 1 for Price') and external links where shoppers drop off. VoluChat acts like a digital sales employee: it understands natural fashion conversations, advises on size & fit, checks real-time stock, generates 1-click UPI payment links, and answers parcel tracking queries directly in chat across WhatsApp, Instagram, and Facebook Messenger.",
+      "Rule-based tools rely on rigid button menus ('Press 1 for Price') and external links where shoppers drop off. VoluChat acts like a digital AI sales agent: it understands natural fashion conversations, advises on size & fit, checks real-time stock, generates 1-click UPI payment links, and answers parcel tracking queries directly in chat across WhatsApp, Instagram, and Facebook Messenger.",
   },
   {
     question: "What happens when the AI doesn't know an answer or a client needs custom styling?",

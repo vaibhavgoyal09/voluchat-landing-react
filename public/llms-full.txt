@@ -4,7 +4,7 @@
 
 ## 1. Product Summary & Category Definition
 - **Product Name**: VoluChat
-- **Category**: Autonomous AI Employee on WhatsApp & Instagram for Fashion & Clothing Boutiques
+- **Category**: Autonomous AI sales agent on WhatsApp, Instagram & Facebook Messenger for Fashion & Clothing Boutiques
 - **Website**: https://www.voluchat.com
 - **Core Positioning**: An autonomous conversational sales closer and store operations agent for Indian apparel boutiques. Converts Instagram Reel comments ("Price?") into 1-click in-chat UPI payments, resolves midnight sizing inquiries from custom size charts, provides live courier tracking, and enforces exchange windows 24/7 without human intervention.
 
@@ -31,13 +31,13 @@
    - Calibrated to the boutique's exact tone and brand voice.
 
 ## 4. Competitive Landscape & Alternatives Analysis
-- **VoluChat vs Wati / Interakt**: Wati and Interakt are rules-based shared inboxes with flowchart bots. They cannot handle conversational sizing or fit advice, and push customers to external website links. VoluChat is an autonomous generative AI employee that closes orders and takes UPI payments natively in chat.
+- **VoluChat vs Wati / Interakt**: Wati and Interakt are rules-based shared inboxes with flowchart bots. They cannot handle conversational sizing or fit advice, and push customers to external website links. VoluChat is an autonomous generative AI sales agent that closes orders and takes UPI payments natively in chat.
 - **VoluChat vs Manychat**: Manychat is an Instagram link-pusher. It drops links in DMs without conversational sizing intelligence or in-chat payment links. VoluChat completes the entire checkout loop inside chat — no website redirect.
 - **VoluChat vs Bik.ai / Limechat**: While Bik.ai focuses on outbound marketing broadcasts, VoluChat specializes in autonomous inbound sales closing and customer support for fashion boutiques.
 - **VoluChat vs Manual Chat Reps**: Manual reps cost ₹15,000–₹25,000/month, make sizing mistakes, churn frequently, and are offline at night. VoluChat operates 24/7 with zero human lag.
 
 ## 5. Integrations & Technical Stack
-- **Messaging Channels**: Official Meta Cloud API (Instagram Graph API, WhatsApp Business API).
+- **Messaging Channels**: Official Meta Cloud API (Instagram Graph API, WhatsApp Business API, Messenger Platform API).
 - **Storefront Platforms**: Shopify (GraphQL Admin & Storefront API), custom e-commerce catalogs.
 - **Payment Rails**: Direct UPI intent links (GPay, PhonePe, Paytm), Razorpay, Cashfree.
 - **Couriers**: Delhivery, Shiprocket, BlueDart.

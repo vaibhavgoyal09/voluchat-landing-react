@@ -5,9 +5,9 @@ export const prerender = false;
 
 export const GET: APIRoute = async () => {
   const image = await createOgImage({
-    title: "VoluChat — AI WhatsApp Sales Agent for Fashion Boutiques",
+    title: "VoluChat — AI WhatsApp, Instagram & Messenger Sales Agent for Fashion Boutiques",
     description:
-      "Autonomous AI sales agent on WhatsApp for fashion boutiques. Automates Reel comment-to-DM, answers sizing questions, and closes UPI checkouts 24/7.",
+      "Autonomous AI sales agent on WhatsApp, Instagram & Facebook Messenger for fashion boutiques. Automates Reel comment-to-DM, answers sizing questions, and closes UPI checkouts 24/7.",
   });
 
   return new Response(image, {

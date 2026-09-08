@@ -7,14 +7,14 @@ export const prerender = false;
 // Predefined metadata mapping for core static pages
 const STATIC_PAGE_META: Record<string, { title: string; description: string }> = {
   features: {
-    title: "VoluChat Features — WhatsApp AI Sales Agent for Fashion Boutiques",
+    title: "VoluChat Features — WhatsApp, Instagram & Messenger AI Sales Agent for Fashion Boutiques",
     description:
       "Explore VoluChat features: Instagram comment-to-DM, Facebook Messenger automation, AI sizing stylist, 1-click UPI checkout, and 24/7 WhatsApp sales automation for clothing boutiques.",
   },
   pricing: {
     title: "VoluChat Pricing — 30-Day Free Trial & Done-For-You Setup",
     description:
-      "Claim a 30-day free trial of VoluChat with 100% done-for-you setup for fashion boutiques. Includes live Shopify catalog sync, sizing qualification, and WhatsApp UPI checkout.",
+      "Claim a 30-day free trial of VoluChat with 100% done-for-you setup for fashion boutiques. Includes live Shopify catalog sync, sizing qualification, and WhatsApp, Instagram & Messenger UPI checkout.",
   },
   "free-trial": {
     title: "Claim 30-Day Free Trial | VoluChat AI WhatsApp Sales Stylist",
@@ -67,14 +67,14 @@ const STATIC_PAGE_META: Record<string, { title: string; description: string }> =
       "Get in touch with the VoluChat team. Direct WhatsApp founder line, email support, and pilot store intake.",
   },
   glossary: {
-    title: "E-Commerce & WhatsApp Sales Glossary | VoluChat",
+    title: "E-Commerce & WhatsApp, Instagram & Messenger Sales Glossary | VoluChat",
     description:
       "Key terms for WhatsApp, Instagram, and Facebook Messenger sales automation: comment-to-DM, sizing AI, cart recovery, and in-chat UPI checkout defined.",
   },
   security: {
     title: "Security & Brand Guardrails | VoluChat AI Sales",
     description:
-      "Official Meta APIs, margin floors, zero out-of-stock selling, and instant human escalation on WhatsApp.",
+      "Official Meta APIs, margin floors, zero out-of-stock selling, and instant human escalation on WhatsApp, Instagram & Facebook Messenger.",
   },
   privacy: {
     title: "Privacy Policy | VoluChat",
@@ -133,9 +133,9 @@ export const GET: APIRoute = async ({ params, url }) => {
   // Strip trailing slashes or extensions if any
   route = route.replace(/\.(png|jpg|jpeg|webp)$/, "").replace(/^\/+|\/+$/g, "");
 
-  let title = "VoluChat — AI WhatsApp Sales Agent";
+  let title = "VoluChat — AI WhatsApp, Instagram & Messenger Sales Agent";
   let description =
-    "Autonomous AI sales agent on WhatsApp for fashion boutiques. Automates Reel comment-to-DM, answers sizing questions, and closes UPI checkouts 24/7.";
+    "Autonomous AI sales agent on WhatsApp, Instagram & Facebook Messenger for fashion boutiques. Automates Reel comment-to-DM, answers sizing questions, and closes UPI checkouts 24/7.";
 
   // Check query parameters first for ad-hoc custom titles/descriptions
   const customTitle = url.searchParams.get("title");
