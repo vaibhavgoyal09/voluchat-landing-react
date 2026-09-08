@@ -38,13 +38,30 @@ const pageFaqs = [
       "VoluChat closes sales in-chat with native UPI checkout. Wati pushes external links where 70%+ of mobile shoppers bounce. VoluChat also understands sizing, fabric, and styling — not just menu buttons.",
   },
 ];
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/wati`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/wati`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Wati — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's AI sales stylist and Wati's flowchart chatbot for fashion boutiques.",
+    url: `${siteUrl}/compare/wati`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/wati#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -102,7 +119,7 @@ const verdict = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/wati", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema()]}
+  structuredData={[...structuredData, getFaqSchema()]}
 >
   <Header />
 

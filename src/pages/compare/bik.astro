@@ -38,13 +38,30 @@ const pageFaqs = [
       "VoluChat's AI is purpose-built for fashion sales conversations. It understands sizing charts, fabric types, styling combinations, and fit qualification. Bik's AI is designed for general message delivery, not fashion-specific sales.",
   },
 ];
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/bik`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/bik`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Bik.ai — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's autonomous AI sales stylist and Bik.ai's broadcast marketing platform for fashion boutiques.",
+    url: `${siteUrl}/compare/bik`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/bik#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -102,7 +119,7 @@ const verdict = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/bik", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema()]}
+  structuredData={[...structuredData, getFaqSchema()]}
 >
   <Header />
 

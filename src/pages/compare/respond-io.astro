@@ -38,13 +38,30 @@ const pageFaqs = [
       "Yes. Respond.io bills in USD ($79-$279/mo), which means your costs fluctuate with currency exchange rates. A rupee depreciation can silently increase your monthly bill. VoluChat bills in flat INR from ₹4,999/mo — no currency risk, no surprise charges, and your costs stay predictable for budgeting. For Indian fashion boutiques watching margins, INR billing removes a real headache.",
   },
 ];
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/respond-io`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/respond-io`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Respond.io — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's affordable AI sales agent and Respond.io's expensive omnichannel inbox for fashion boutiques.",
+    url: `${siteUrl}/compare/respond-io`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/respond-io#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -103,7 +120,7 @@ const verdict = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/respond-io", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema(pageFaqs)]}
+  structuredData={[...structuredData, getFaqSchema(pageFaqs)]}
 >
   <Header />
 

@@ -38,13 +38,30 @@ const pageFaqs = [
       "VoluChat's AI is purpose-built for fashion. It understands sizing charts, fabric types, styling combinations, and fit qualification. Manychat is a generic tool that works across any industry.",
   },
 ];
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/manychat`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/manychat`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Manychat — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's in-chat sales agent and Manychat's external link-pusher for fashion boutiques.",
+    url: `${siteUrl}/compare/manychat`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/manychat#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -102,7 +119,7 @@ const verdict = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/manychat", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema()]}
+  structuredData={[...structuredData, getFaqSchema()]}
 >
   <Header />
 

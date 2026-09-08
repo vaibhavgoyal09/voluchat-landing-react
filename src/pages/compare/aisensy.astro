@@ -38,13 +38,30 @@ const pageFaqs = [
       "VoluChat's AI is purpose-built for fashion sales conversations. It understands sizing charts, fabric types, styling combinations, and fit qualification in natural language. AiSensy uses rule-based flowchart menus with limited keyword triggers — it can't handle open-ended sizing or styling questions. For a boutique where buyers ask 'I'm between M and L, which works for the linen co-ord?', only VoluChat answers naturally.",
   },
 ];
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/aisensy`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/aisensy`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs AiSensy — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's autonomous AI sales agent and AiSensy's broadcast chatbot for fashion boutiques.",
+    url: `${siteUrl}/compare/aisensy`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/aisensy#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -103,7 +120,7 @@ const verdict = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/aisensy", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema(pageFaqs)]}
+  structuredData={[...structuredData, getFaqSchema(pageFaqs)]}
 >
   <Header />
 

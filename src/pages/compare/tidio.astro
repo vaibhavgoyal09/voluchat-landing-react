@@ -38,13 +38,30 @@ const pageFaqs = [
       "You could, but it's redundant for most fashion boutiques. Tidio handles website live chat; VoluChat handles WhatsApp, Instagram, and Facebook Messenger DM sales. If your website gets significant traffic and you want live chat there, Tidio covers that. But for the core fashion sales flow — Reel comment → DM → sizing advice → UPI checkout — VoluChat handles it all end-to-end. Most boutique owners find VoluChat alone covers their needs since their sales conversations happen on WhatsApp, Instagram, and Facebook Messenger, not their website.",
   },
 ];
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/tidio`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/tidio`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Tidio — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's WhatsApp/Instagram/Facebook Messenger AI agent and Tidio's website-only live chat for fashion boutiques.",
+    url: `${siteUrl}/compare/tidio`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/tidio#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -103,7 +120,7 @@ const verdict = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/tidio", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema(pageFaqs)]}
+  structuredData={[...structuredData, getFaqSchema(pageFaqs)]}
 >
   <Header />
 

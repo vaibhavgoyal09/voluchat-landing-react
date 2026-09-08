@@ -38,13 +38,30 @@ const pageFaqs = [
       "VoluChat is purpose-built for fashion boutiques. It understands sizing charts, fabric types, styling combinations, and handles in-chat UPI checkout. Limechat is a general-purpose bot platform that works across industries.",
   },
 ];
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/limechat`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/limechat`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Limechat — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's boutique AI closer and Limechat's enterprise bot platform for fashion boutiques.",
+    url: `${siteUrl}/compare/limechat`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/limechat#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -102,7 +119,7 @@ const verdict = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/limechat", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema()]}
+  structuredData={[...structuredData, getFaqSchema()]}
 >
   <Header />
 

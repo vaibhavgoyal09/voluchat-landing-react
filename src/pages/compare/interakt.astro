@@ -38,13 +38,30 @@ const pageFaqs = [
       "VoluChat auto-replies to Instagram comments, Facebook post comments, and DMs within 2 seconds. Interakt is an inbox-only tool — it waits for you to log in and type replies. VoluChat never sleeps.",
   },
 ];
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/interakt`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/interakt`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Interakt — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's autonomous AI sales closer and Interakt's manual shared inbox for fashion boutiques.",
+    url: `${siteUrl}/compare/interakt`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/interakt#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -102,7 +119,7 @@ const verdict = {
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/interakt", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema()]}
+  structuredData={[...structuredData, getFaqSchema()]}
 >
   <Header />
 

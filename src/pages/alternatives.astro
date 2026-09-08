@@ -11,13 +11,30 @@ const seoDescription =
 const seoKeywords =
   "WhatsApp sales bot alternatives, Wati alternative, Manychat alternative, AiSensy alternative, Respond.io alternative, Chatfuel alternative, fashion boutique chatbot, WhatsApp AI sales agent, best WhatsApp automation 2025";
 const siteUrl = "https://www.voluchat.com";
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/alternatives`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/alternatives`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "WhatsApp Sales Bot Alternatives for Fashion Boutiques",
+    description:
+      "Structured comparison of 11 WhatsApp sales bot alternatives including Wati, Interakt, Manychat, AiSensy, Respond.io, Chatfuel, Tidio, Zoko, BIK, Limechat, and manual chat reps.",
+    url: `${siteUrl}/alternatives`,
+    itemListElement: competitors.map((c, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: c.name,
+      description: `${c.type} — ${c.bestFor}. VoluChat advantage: ${c.voluAdvantage}.`,
+      url: `${siteUrl}${c.slug}`,
+    })),
+  },
+];
 
 const competitors = [
   {
@@ -213,7 +230,7 @@ const faqItems = [
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/alternatives", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema(faqItems)]}
+  structuredData={[...structuredData, getFaqSchema(faqItems)]}
 >
   <Navbar />
 

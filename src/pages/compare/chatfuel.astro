@@ -11,13 +11,30 @@ const seoDescription =
 const seoKeywords =
   "VoluChat vs Chatfuel, Chatfuel alternative fashion, Chatfuel vs VoluChat, no-code WhatsApp chatbot India, fashion boutique automation";
 const siteUrl = "https://www.voluchat.com";
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: seoTitle,
-  description: seoDescription,
-  url: `${siteUrl}/compare/chatfuel`,
-};
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: seoTitle,
+    description: seoDescription,
+    url: `${siteUrl}/compare/chatfuel`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "VoluChat vs Chatfuel — Comparison Categories",
+    description:
+      "Detailed comparison categories between VoluChat's autonomous AI sales agent and Chatfuel's no-code chatbot builder for fashion boutiques.",
+    url: `${siteUrl}/compare/chatfuel`,
+    itemListElement: comparison.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.category,
+      description: `${item.detail}. VoluChat advantage: ${item.voluAdvantage}.`,
+      url: `${siteUrl}/compare/chatfuel#category-${idx + 1}`,
+    })),
+  },
+];
 
 const comparison = [
   {
@@ -98,7 +115,7 @@ const pageFaqs = [
   description={seoDescription}
   keywords={seoKeywords}
   canonical={new URL("/compare/chatfuel", siteUrl).toString()}
-  structuredData={[structuredData, getFaqSchema(pageFaqs)]}
+  structuredData={[...structuredData, getFaqSchema(pageFaqs)]}
 >
   <Header />
 

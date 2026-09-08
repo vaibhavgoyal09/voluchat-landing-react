@@ -40,6 +40,9 @@ const STATIC_ROUTES = [
   { path: "/glossary", priority: "0.6" },
   { path: "/comment-revenue-leak-calculator", priority: "0.8" },
   { path: "/blog/instagram-comment-revenue-leak-fashion-boutiques", priority: "0.6" },
+  { path: "/llms.txt", priority: "0.6" },
+  { path: "/llms-full.txt", priority: "0.6" },
+  { path: "/pricing.md", priority: "0.6" },
 ];
 
 export async function GET({ site }) {
