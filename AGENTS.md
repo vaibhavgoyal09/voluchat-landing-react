@@ -23,7 +23,7 @@ VoluChat automates the complete 90-second fashion comment-to-checkout loop:
 | Framework         | Astro 6 (SSR via `@astrojs/vercel`)           |
 | Styling           | Tailwind CSS v4 (via `@tailwindcss/vite`)     |
 | Animation         | GSAP 3 (`ScrollTrigger`, custom timelines)    |
-| Fonts             | Geist Sans (body), Space Grotesk (headings)   |
+| Fonts             | Inter (body), Sora (headings)                  |
 | Blog backend      | Django CMS API (fetched at request time)      |
 | Deployment        | Vercel (SSR, ISR)                             |
 | Code Quality      | TypeScript, ESLint 9, Prettier                |
@@ -57,14 +57,18 @@ VoluChat automates the complete 90-second fashion comment-to-checkout loop:
 │   │   ├── Navbar.astro         # Fixed header (How It Works, Revenue Loop, Pricing, Guardrails, Compare, About)
 │   │   ├── Hero.astro           # E-commerce automation hero with interactive 85-second live WhatsApp checkout simulation
 │   │   ├── ProblemSection.astro # "The DM Revenue Leak" — 6 revenue leaks (LEAK-01 to LEAK-06)
-│   │   ├── ProductLoopSection.astro # "The 90-Second Sales Loop" — 6-step visual execution flow
-│   │   ├── TrustSection.astro   # "White-Glove & Controlled" — 4 trust cards + mid-page pilot CTA strip
+│   │   ├── HowItWorksFlow.astro # "The 90-Second Sales Loop" — 4-step visual execution flow
+│   │   ├── ProductProofSection.astro # Product proof and social validation
+│   │   ├── ConnectedSystemSection.astro # Connected system integration showcase
 │   │   ├── UseCasesSection.astro# "The 4-Pillar Revenue Engine" — Capture, Qualify, Close, Settle
 │   │   ├── FounderNoteSection.astro # Founder blockquote & 10x value standard commitment
 │   │   ├── GuardrailsSection.astro  # Snappy 4-card brand safety and margin protection stack
+│   │   ├── RoiCalculatorSection.astro # ROI calculator interactive section
+│   │   ├── EarlyAccessSection.astro # Early access CTA section
 │   │   ├── FAQ.astro            # Accordion FAQ (Wati/Manychat comparison, pilot details, JSON-LD)
 │   │   ├── Footer.astro         # 5-section footer: Product, Compare, Learn, Company, Legal + social links (incl. GitHub)
 │   │   ├── BlogCard.astro       # Reusable blog card component
+│   │   ├── Breadcrumbs.astro    # Breadcrumb navigation component
 │   │   └── CookieConsent.astro  # Analytics cookie consent banner (scroll + click accept)
 │   │
 │   ├── pages/
@@ -120,24 +124,24 @@ VoluChat automates the complete 90-second fashion comment-to-checkout loop:
 The homepage is structured in a high-conversion narrative sequence designed to eliminate skepticism and drive pilot applications:
 
 1. **Hero (`Hero.astro`)**:
-   - Headline: *"Turn Instagram DMs & WhatsApp Chats into 24/7 Automated Revenue."*
-   - Definitional one-liner: *"What is VoluChat? An autonomous e-commerce automation agent for Instagram and WhatsApp DMs — upsells, cross-sells, cart recovery, and in-chat UPI checkout."*
-   - Live interactive simulation showing an Instagram Reel comment (`"Price?"`) resolving into a **₹2,899 WhatsApp Draft Order closed in 85 seconds**.
-   - Primary CTA: *"Apply for 1 of 10 Pilot Spots →"*
+   - Headline: *"Your boutique keeps selling—even when you're asleep."*
+   - Sub: *"Price?" answered in seconds—even at 2am.*
+   - Primary CTA: *"Start My 30-Day Free Trial →"*
 2. **Problem Section (`ProblemSection.astro`)**:
    - Exposes the 6 specific leaks: 11 PM leads going cold, viral comment backlog, flowchart chatbot fatigue, external link cart drops, chat rep churn, and high COD RTO rates.
-3. **Product Loop (`ProductLoopSection.astro`)**:
-   - The immediate "Aha!" moment: 6-step flow showing real-time variant stock reading, delivery pincode validation, UPI link generation, and order sync.
-4. **Trust & Mid-Page CTA (`TrustSection.astro`)**:
-   - Addresses technical objection immediately: *"Zero technical setup. Total brand control."*
-   - Includes embedded conversion action strip: *"Ready to deploy on your Shopify store? [Apply for 1 of 10 Pilot Spots →]"*
-5. **The 4-Pillar Commerce Engine (`UseCasesSection.astro`)**:
-   - Breaks down the four core modules: Comment-to-DM Engine, Deep Catalog & Sizing Intelligence, WhatsApp Sales Closer, Native In-DM UPI Checkout.
-6. **Founder Note (`FounderNoteSection.astro`)**:
-   - Founder accountability: *"I will deliver 10x the value of what we charge. Anything less is unacceptable."*
-7. **Brand Safety & Guardrails (`GuardrailsSection.astro`)**:
+3. **How It Works Flow (`HowItWorksFlow.astro`)**:
+   - 4-step visual: Sell & Close, Track Parcels, Resolve Exchanges, 24/7 Support.
+4. **Product Proof (`ProductProofSection.astro`)**:
+   - Social proof and validation metrics.
+5. **Connected System (`ConnectedSystemSection.astro`)**:
+   - Integration showcase and ecosystem.
+6. **Brand Safety & Guardrails (`GuardrailsSection.astro`)**:
    - Snappy 4-card safety stack: Strict Margin Protection, Zero Out-of-Stock Selling, Instant Human Escalation, and Brand Voice Calibration.
-8. **FAQ & Pre-Footer (`FAQ.astro` & `Footer.astro`)**:
+7. **ROI Calculator (`RoiCalculatorSection.astro`)**:
+   - Interactive ROI calculator section.
+8. **Early Access CTA (`EarlyAccessSection.astro`)**:
+   - Conversion action strip.
+9. **FAQ & Pre-Footer (`FAQ.astro` & `Footer.astro`)**:
    - Direct objection handling vs Wati, Manychat, and manual reps.
 
 ---

@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
+import { getFaqSchema } from "../lib/faqSchema.mjs";
 
 const siteUrl = "https://www.voluchat.com";
 
@@ -11,25 +13,28 @@ const seoDescription =
 const seoKeywords =
   "Instagram comment revenue calculator, fashion boutique Instagram sales, comment to DM conversion, Instagram DM automation ROI, Reel comment revenue leak, Instagram sales automation";
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Instagram Comment Revenue Leak Calculator",
-  description: seoDescription,
-  url: `${siteUrl}/comment-revenue-leak-calculator`,
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Any",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "INR",
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Instagram Comment Revenue Leak Calculator",
+    description: seoDescription,
+    url: `${siteUrl}/comment-revenue-leak-calculator`,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "INR",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "VoluChat",
+      url: siteUrl,
+    },
   },
-  provider: {
-    "@type": "Organization",
-    name: "VoluChat",
-    url: siteUrl,
-  },
-};
+  getFaqSchema(),
+];
 ---
 
 <Layout
@@ -306,6 +311,8 @@ const structuredData = {
         </div>
       </div>
     </section>
+
+    <FAQ />
   </main>
 
   <Footer />
