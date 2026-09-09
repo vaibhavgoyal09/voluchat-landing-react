@@ -286,7 +286,7 @@ const cohortPromise = [
 
         <div class="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 sm:gap-8">
           {tiers.map((tier) => (
-            <div class={`relative flex flex-col rounded-2xl border p-8 sm:p-10 ${tier.highlight ? 'border-emerald-300 bg-gradient-to-b from-emerald-50 to-slate-50 shadow-[0_0_40px_rgba(16,185,129,0.08)]' : 'border-slate-200 bg-slate-100'}`}>
+            <div class={`relative flex flex-col rounded-[20px] border p-8 sm:p-10 ${tier.highlight ? 'border-emerald-600/25 bg-[#fffefb]' : 'border-slate-900/[0.07] bg-[#fffdf9]'}`}>
               {tier.badge && (
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-4 py-1 text-xs font-bold text-black">
                   {tier.badge}

@@ -52,12 +52,12 @@
     ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", "Roboto Mono",
     Menlo, Consolas, monospace;
 
-  /* Light Frosted Liquid Glass Surface Palette */
-  --color-canvas: #f8fafc;
-  --color-surface-deep: #f1f5f9;
-  --color-surface-card: rgba(255, 255, 255, 0.85);
-  --color-surface-elevated: rgba(255, 255, 255, 0.95);
-  --color-surface-light: #ffffff;
+  /* Lindy Clean — warm cream cards on pale lavender canvas */
+  --color-canvas: #e9ebf4;
+  --color-surface-deep: #f3f1ea;
+  --color-surface-card: #fffdf9;
+  --color-surface-elevated: #fffefb;
+  --color-surface-light: #fffefb;
 
   /* Specular hairlines and liquid frost borders */
   --color-hairline: rgba(0, 0, 0, 0.08);
@@ -109,7 +109,7 @@
   }
 
   body {
-    @apply text-slate-800 antialiased bg-[#f8fafc];
+    @apply text-slate-800 antialiased bg-[#e9ebf4];
     min-width: 320px;
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
@@ -117,7 +117,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Liquid Glass Ambient Mesh Sheen across light canvas */
+  /* Lindy Clean ambient — soft warm edge washes, no mesh grid */
   body::before {
     content: "";
     position: fixed;
@@ -125,9 +125,17 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 90% 50% at 50% -10%, rgba(16, 185, 129, 0.08), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 85% 50%, rgba(20, 184, 166, 0.06), transparent 55%),
-      radial-gradient(ellipse 70% 45% at 15% 40%, rgba(245, 158, 11, 0.05), transparent 60%);
+      radial-gradient(ellipse 50% 30% at 8% 30%, rgba(251, 191, 36, 0.14), transparent 60%),
+      radial-gradient(ellipse 50% 30% at 92% 70%, rgba(251, 146, 60, 0.12), transparent 60%);
+  }
+
+  /* ponytail: legacy full-bleed bands — subpages painted bg-white/bg-slate-50
+     sections before the lavender canvas existed; neutralize so every page
+     shares it. Real cards/inputs are divs, unaffected. */
+  main.bg-white,
+  main section.bg-white,
+  main section.bg-slate-50 {
+    background-color: transparent;
   }
 
   h1,
@@ -136,8 +144,9 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-heading);
-    letter-spacing: -0.03em;
+    font-family: var(--font-accent);
+    font-weight: 550;
+    letter-spacing: -0.02em;
     text-wrap: balance;
     @apply text-slate-900;
   }
@@ -158,8 +167,8 @@
 
   .section-band,
   .section-band-quiet {
-    @apply relative border-t border-slate-200/80;
-    background: linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.9) 100%);
+    @apply relative border-t border-slate-900/[0.06];
+    background: transparent;
   }
 
   /* Editorial serif accent — fashion luxury voice. */
@@ -201,45 +210,33 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   }
 
-  /* Frosted Liquid Glass Card */
+  /* Lindy Clean Card — solid cream, no blur, soft edge */
   .solid-card {
-    @apply rounded-2xl p-6 transition-[border-color,background-color,box-shadow,transform] duration-200;
+    @apply rounded-[20px] p-6 transition-[border-color,background-color,box-shadow,transform] duration-200;
     transition-timing-function: var(--ease-out);
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 10px 30px -10px rgba(0, 0, 0, 0.04),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+    background: #fffdf9;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    box-shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.08);
   }
 
   .solid-card:hover {
-    border-color: rgba(5, 150, 105, 0.35);
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow:
-      0 18px 45px -10px rgba(0, 0, 0, 0.08),
-      0 0 30px -5px rgba(5, 150, 105, 0.10),
-      inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+    border-color: rgba(5, 150, 105, 0.3);
+    background: #fffefb;
+    box-shadow: 0 16px 40px -12px rgba(15, 23, 42, 0.12);
     transform: translateY(-2px);
   }
 
   .solid-card-elevated {
-    @apply rounded-2xl p-6 transition-[border-color,background-color,box-shadow,transform] duration-200;
+    @apply rounded-[20px] p-6 transition-[border-color,background-color,box-shadow,transform] duration-200;
     transition-timing-function: var(--ease-out);
-    background: #ffffff;
-    border: 1px solid rgba(5, 150, 105, 0.3);
-    box-shadow:
-      0 14px 40px -12px rgba(5, 150, 105, 0.12),
-      inset 0 1px 1.5px 0 rgba(255, 255, 255, 1);
+    background: #fffefb;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    box-shadow: 0 14px 36px -14px rgba(15, 23, 42, 0.1);
   }
 
   .solid-card-elevated:hover {
-    border-color: rgba(5, 150, 105, 0.5);
-    box-shadow:
-      0 20px 50px -12px rgba(5, 150, 105, 0.18),
-      0 0 35px -5px rgba(5, 150, 105, 0.12),
-      inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+    border-color: rgba(5, 150, 105, 0.35);
+    box-shadow: 0 18px 44px -14px rgba(15, 23, 42, 0.14);
     transform: translateY(-2px);
   }
 
@@ -253,8 +250,10 @@
   }
 
   .section-title {
-    @apply font-semibold leading-[1.02] text-slate-900 tracking-[-0.04em];
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    @apply leading-[1.05] text-slate-900;
+    font-weight: 550;
+    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 4vw, 3rem);
   }
 
   .section-copy {
@@ -263,7 +262,7 @@
 
   /* Spec row dividers */
   .hairline-row {
-    @apply border-t border-slate-200 py-7 sm:py-8;
+    @apply border-t border-slate-900/[0.07] py-7 sm:py-8;
   }
   .hairline-row:last-child {
     @apply border-b;
@@ -363,16 +362,12 @@
     );
   }
 
-  /* Visual storytelling helpers — kid-simple, Apple-clean */
+  /* Visual storytelling helpers — Lindy-clean flat cream */
   .visual-frame {
-    background: linear-gradient(135deg, rgba(248,250,252,0.9), rgba(241,245,249,0.6) 30%, rgba(255,255,255,0.9) 70%);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid #e2e8f0;
-    box-shadow:
-      0 20px 50px -15px rgba(15, 23, 42, 0.15),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
-    @apply rounded-3xl p-6 sm:p-8;
+    background: #fffdf9;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    box-shadow: 0 20px 50px -20px rgba(15, 23, 42, 0.12);
+    @apply rounded-[24px] p-6 sm:p-8;
   }
   .chat-ai {
     @apply rounded-2xl rounded-tl-md px-4 py-3 text-sm leading-relaxed text-emerald-800;
@@ -809,7 +804,7 @@ input[type="range"]::-moz-range-thumb {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: #f8fafc;
+  background: transparent;
 }
 
 /* Atmospheric subtle radial glow at section top */
@@ -818,38 +813,21 @@ input[type="range"]::-moz-range-thumb {
   inset: -10%;
   background:
     radial-gradient(
-      60% 45% at 50% 0%,
-      rgba(16, 185, 129, 0.12),
-      transparent 65%
-    ),
-    radial-gradient(
-      45% 35% at 15% 15%,
-      rgba(20, 184, 166, 0.08),
+      45% 35% at 12% 40%,
+      rgba(251, 191, 36, 0.16),
       transparent 60%
     ),
     radial-gradient(
-      45% 35% at 85% 15%,
-      rgba(245, 158, 11, 0.06),
+      45% 35% at 88% 60%,
+      rgba(251, 146, 60, 0.12),
       transparent 60%
     );
   filter: blur(40px);
 }
 
-/* Fine hairline grid on light canvas */
+/* Fine hairline grid on light canvas — off for Lindy-clean */
 .hero-bg-grid {
-  position: absolute;
-  inset: -2px;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(
-    75% 65% at 50% 30%,
-    #000 0%,
-    transparent 78%
-  );
-  mask-image: radial-gradient(75% 65% at 50% 30%, #000 0%, transparent 78%);
-  opacity: 0.9;
+  display: none;
 }
 
 .hero-bg-vignette {

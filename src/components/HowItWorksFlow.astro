@@ -2,204 +2,53 @@
 const jobs = [
   {
     num: "01",
-    label: "Selling & Sizing",
-    title: "Sell & Close",
-    detail: "Turns casual 'Price?' comments and DMs into completed orders with size guidance and direct 1-click UPI links.",
-    badge: "Revenue",
-    outcome: "Comment → Paid",
-    type: "sell",
-    metrics: "2.0s Avg Close",
+    title: "Sell & close",
+    detail: "'Price?' comments and DMs become paid orders — size guidance plus 1-click UPI link in chat.",
+    meta: "2.0s avg reply",
   },
   {
     num: "02",
-    label: "Courier Updates",
-    title: "Track Parcels",
-    detail: "Answers 'Where is my parcel?' instantly by fetching live status directly from Delhivery, Shiprocket, or your courier.",
-    badge: "Fulfillment",
-    outcome: "WISMO → Zero",
-    type: "track",
-    metrics: "100% Automated",
+    title: "Track parcels",
+    detail: "'Where is my parcel?' answered instantly from Delhivery / Shiprocket live status.",
+    meta: "100% automated",
   },
   {
     num: "03",
-    label: "Policy & Exchanges",
-    title: "Resolve Exchanges",
-    detail: "Handles routine exchange requests by verifying your 7-day policy, collecting tag photos, and creating tickets.",
-    badge: "Operations",
-    outcome: "Ticket → Ready",
-    type: "exchange",
-    metrics: "Zero Friction",
+    title: "Resolve exchanges",
+    detail: "7-day policy checked, tag photo collected, exchange ticket created — no staff needed.",
+    meta: "Zero friction",
   },
   {
     num: "04",
-    label: "Store & Care FAQs",
-    title: "24/7 Support",
-    detail: "Answers questions on pure fabrics, lining, wash care, boutique timings, and shipping timelines in your tone.",
-    badge: "Support",
-    outcome: "Asked → Answered",
-    type: "faq",
-    metrics: "Instant Answers",
+    title: "24/7 support",
+    detail: "Fabrics, lining, wash care, timings, shipping — answered in your boutique's tone.",
+    meta: "Instant answers",
   },
 ];
 ---
 
-<section id="how-it-works" class="relative overflow-hidden py-28 sm:py-32 lg:py-36 border-t border-slate-200/80 bg-[#f8fafc]">
-  <!-- Subtle ambient background glow -->
-  <div class="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-    <div class="h-[600px] w-[800px] rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)] blur-[120px]"></div>
-  </div>
-
+<section id="how-it-works" class="relative scroll-mt-28 py-20 sm:py-24">
   <div class="page-shell relative z-10">
-    <!-- Header with generous breathing room -->
-    <div class="mb-16 lg:mb-20 max-w-3xl">
-      <div class="chip-emerald mb-4 inline-flex">
-        <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">Core Scope of Work</span>
-      </div>
-      <h2 class="section-title font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
-        4 Daily Jobs. <em class="serif-accent">One Autonomous Engine</em>.
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="section-eyebrow">Core scope of work</p>
+      <h2 class="mt-4 text-4xl sm:text-5xl leading-[1.05]">
+        4 daily jobs. <em class="serif-accent">One autonomous engine</em>.
       </h2>
-      <p class="section-copy mt-5 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-        What does VoluChat execute for your store every single day? Four essential boutique operations running under your exact guidelines.
+      <p class="section-copy mt-5">
+        Four boutique operations running every day under your exact guidelines.
       </p>
     </div>
 
-    <!-- Flow rail: progression cue on desktop, hidden on mobile -->
-    <div class="mb-10 hidden items-center gap-3 lg:flex" aria-hidden="true">
-      <span class="h-px flex-1 bg-gradient-to-r from-transparent via-slate-200 to-slate-100"></span>
-      <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500 flex items-center gap-1.5 font-semibold">
-        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-        Autonomous 24/7 Execution Loop
-      </span>
-      <span class="h-px flex-1 bg-gradient-to-r from-slate-100 via-slate-200 to-transparent"></span>
-    </div>
-
-    <!-- 4 Interactive Visual Workstation Cards -->
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+    <div class="mx-auto mt-12 grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
       {
-        jobs.map((job, idx) => (
-          <div class={`reveal-on-scroll reveal-delay-${idx + 1} rounded-3xl border border-slate-200/90 bg-white/80 backdrop-blur-xl p-6 sm:p-7 flex flex-col justify-between transition-[border-color,background-color,box-shadow,transform] duration-300 hover:border-emerald-500/50 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_0_24px_rgba(16,185,129,0.08)] group relative overflow-hidden`}>
-            <!-- Top Card Header -->
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="font-mono text-xs font-bold text-emerald-600 flex items-center gap-1.5">
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-                  {job.num}
-                </span>
-                <span class="rounded-full border border-slate-200 bg-slate-100/80 px-2.5 py-0.5 text-[10px] font-mono text-slate-700 group-hover:border-emerald-500/30 group-hover:text-emerald-700 transition-colors">
-                  {job.badge}
-                </span>
-              </div>
-
-              <span class="text-[11px] uppercase font-mono tracking-wider text-slate-500 font-semibold block mb-1">
-                {job.label}
-              </span>
-              <h3 class="font-heading text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                {job.title}
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed mt-2.5 mb-5">
-                {job.detail}
-              </p>
-
-              <!-- Embedded Interactive Visual Miniature for Each Job -->
-              <div class="rounded-2xl border border-slate-200/80 bg-slate-50/90 p-3.5 space-y-2.5 my-3 relative overflow-hidden group-hover:border-slate-300 transition-colors">
-                
-                {job.type === "sell" && (
-                  <div class="space-y-2 text-[11px]">
-                    <!-- Mini IG Comment -->
-                    <div class="flex items-start gap-2 bg-pink-50 border border-pink-200 rounded-xl p-2 text-pink-900">
-                      <span class="text-xs">📸</span>
-                      <div class="flex-1">
-                        <div class="font-semibold text-[10px] text-pink-700 flex items-center justify-between">
-                          <span>@priya_style</span>
-                          <span class="text-[9px] text-pink-600">Reel comment</span>
-                        </div>
-                        <p class="text-slate-800 text-[11px] mt-0.5 font-medium">Price please? Size M available? 😍</p>
-                      </div>
-                    </div>
-                    <!-- Instant WhatsApp Conversion -->
-                    <div class="bg-emerald-50/90 border border-emerald-500/30 rounded-xl p-2 space-y-1.5">
-                      <div class="flex items-center justify-between text-[10px] text-emerald-800 font-mono">
-                        <span class="flex items-center gap-1 font-bold text-emerald-700">⚡ Sent in 2s</span>
-                        <span class="font-bold">₹2,899</span>
-                      </div>
-                      <div class="flex items-center gap-2 pt-1 border-t border-emerald-500/20">
-                        <div class="h-6 w-6 rounded bg-emerald-100 flex items-center justify-center text-[10px]">👗</div>
-                        <div class="text-[10px] text-slate-700 font-medium flex-1 truncate">Chanderi Silk Set (M)</div>
-                        <span class="px-2 py-0.5 rounded bg-emerald-600 text-white font-bold text-[9px] shadow-2xs">1-Tap UPI</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {job.type === "track" && (
-                  <div class="space-y-2 text-[11px]">
-                    <div class="flex items-center justify-between text-[10px] font-mono text-slate-600">
-                      <span>Delhivery AWB #98218</span>
-                      <span class="text-emerald-700 font-bold">🟢 On Time</span>
-                    </div>
-                    <!-- 3-step progress track -->
-                    <div class="space-y-1.5 pt-1">
-                      <div class="flex items-center gap-1 text-[10px] text-slate-700">
-                        <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-                        <span class="font-semibold text-slate-900">Out for Delivery Today</span>
-                      </div>
-                      <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
-                        <div class="bg-gradient-to-r from-emerald-500 to-teal-500 h-1.5 rounded-full w-4/5"></div>
-                      </div>
-                      <div class="text-[9px] font-mono text-slate-500 pt-0.5 flex justify-between">
-                        <span>Dispatched</span>
-                        <span>Hub</span>
-                        <span class="text-emerald-700 font-bold">Arriving 5 PM</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {job.type === "exchange" && (
-                  <div class="space-y-2 text-[11px]">
-                    <div class="bg-white rounded-xl p-2 border border-slate-200/80 space-y-1.5 shadow-2xs">
-                      <div class="flex items-center justify-between text-[10px]">
-                        <span class="font-mono text-emerald-700 font-bold">✓ Policy Check</span>
-                        <span class="text-[9px] text-slate-500">Day 3 of 7</span>
-                      </div>
-                      <div class="flex items-center gap-2 text-[10px] text-slate-700">
-                        <span class="text-emerald-600">🏷️</span>
-                        <span class="font-medium">Original Tags Intact</span>
-                        <span class="ml-auto text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-semibold">Approved</span>
-                      </div>
-                      <div class="text-[9px] text-slate-500 pt-1 border-t border-slate-100 flex items-center justify-between">
-                        <span>Courier Pickup</span>
-                        <span class="text-slate-900 font-semibold">Auto-Booked</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {job.type === "faq" && (
-                  <div class="space-y-1.5 text-[11px]">
-                    <div class="bg-white rounded-xl p-2 border border-slate-200/80 space-y-1 shadow-2xs">
-                      <div class="flex items-center gap-1.5 text-[10px] text-emerald-800 font-mono">
-                        <span>✨</span>
-                        <span class="font-bold">Boutique Garment Spec</span>
-                      </div>
-                      <div class="text-[10px] text-slate-700 grid grid-cols-2 gap-1 pt-1">
-                        <div><span class="text-slate-500">Fabric:</span> Pure Mulmul</div>
-                        <div><span class="text-slate-500">Lining:</span> Shantoon</div>
-                        <div><span class="text-slate-500">Care:</span> Dry Clean</div>
-                        <div><span class="text-slate-500">Dispatch:</span> 24 Hours</div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-              </div>
-            </div>
-
-            <!-- Bottom Outcome Row -->
-            <div class="mt-4 pt-3.5 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
-              <span class="text-emerald-600 font-semibold">{job.metrics}</span>
-              <span class="text-slate-800 font-medium group-hover:text-emerald-700 transition-colors">{job.outcome}</span>
-            </div>
+        jobs.map((job) => (
+          <div class="border-t-2 border-slate-900/[0.1] pt-6">
+            <p class="font-accent text-5xl italic text-slate-300" style="font-family: var(--font-accent)">{job.num}</p>
+            <h3 class="mt-3 text-lg">{job.title}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{job.detail}</p>
+            <p class="mt-3 font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-700">
+              {job.meta}
+            </p>
           </div>
         ))
       }
