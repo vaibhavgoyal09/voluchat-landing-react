@@ -38,7 +38,7 @@ VoluChat automates the complete 90-second fashion comment-to-checkout loop:
 /
 ├── public/                      # Static assets (images, fonts, icons, robots.txt, manifest)
 │   ├── voluchat_logo.svg
-│   ├── og-image.webp
+│   ├── og-image.png
 │   ├── about_hero.webp
 │   ├── mission_collaboration.webp
 │   ├── favicon.ico

@@ -429,10 +429,10 @@ const faqItems = [
         <div class="max-w-3xl mx-auto space-y-4">
           {
             faqItems.map((faq) => (
-              <details class="solid-card rounded-2xl border border-slate-200 overflow-hidden group">
+              <details class="solid-card rounded-2xl border border-slate-200 overflow-hidden">
                 <summary class="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-heading font-semibold text-slate-900 text-sm sm:text-base">
                   {faq.question}
-                  <span class="shrink-0 text-slate-500 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+                  <span class="faq-plus shrink-0 text-slate-500 transition-transform text-xl leading-none">+</span>
                 </summary>
                 <div class="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-slate-200">
                   <p class="text-sm text-slate-600 leading-relaxed mt-4">{faq.answer}</p>
@@ -448,3 +448,9 @@ const faqItems = [
   <FAQ />
   <Footer />
 </Layout>
+
+<style>
+  details[open] .faq-plus {
+    transform: rotate(45deg);
+  }
+</style>

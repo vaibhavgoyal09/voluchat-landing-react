@@ -39,7 +39,7 @@ const canonicalUrl = new URL(
 ).toString();
 
 const cleanPath = Astro.url.pathname.replace(/^\/+|\/+$/g, "");
-const defaultOgImage = "/og-image.webp";
+const defaultOgImage = "/og-image.png";
 const ogImagePath = image || defaultOgImage;
 const imageUrl = new URL(ogImagePath, siteOrigin).toString();
 const articleTags = Array.isArray(tags) ? tags.filter(Boolean) : [];
@@ -116,8 +116,10 @@ const structuredDataItems = [
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="VoluChat — AI Sales Agent for fashion boutiques" />
     <meta property="og:site_name" content="VoluChat" />
     {
       type === "article" && author && (
@@ -140,10 +142,10 @@ const structuredDataItems = [
     }
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalUrl} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
     <meta name="twitter:site" content="@voluchat" />
     <meta name="twitter:creator" content="@voluchat" />
